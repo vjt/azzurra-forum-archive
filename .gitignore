@@ -5,3 +5,6 @@ forum.db
 forum.db-wal
 forum.db-shm
 __pycache__/
+
+# Per-snapshot retry downloads; the winners are promoted into pages/ by pick_zero.py.
+retry/
