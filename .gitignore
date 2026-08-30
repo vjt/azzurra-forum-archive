@@ -6,5 +6,5 @@ forum.db-wal
 forum.db-shm
 __pycache__/
 
-# Per-snapshot retry downloads; the winners are promoted into pages/ by pick_zero.py.
-retry/
+# retry/ IS tracked on purpose: the losing candidates are Archive material too, and
+# refetching them costs hours. Only the DB stays out.
