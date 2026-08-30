@@ -84,6 +84,18 @@ SMILEY_EMOJI = {
     "naughty": "😏", "feedtroll": "🧌", "nonono": "🙅", "stordita": "😵",
     "barba": "🧔", "birthday": "🎂", "love": "❤️", "haveniceday": "👋",
     "senzasperanza": "😩", "mmmm": "🤨",
+    # The board's own short codes, the ones that also survive as bare text
+    # (`:rotfl:`, `:okay:`) where the snapshot dropped the <img> tag.
+    "rotfl": "🤣", "okay": "👌", "prrr": "😛", "lol": "😂", "nope": "🙅",
+    "smart": "🤓", "grin": "😁", "proud": "😤", "razz": "😛",
+    # No `d`/`p`/`o`: `:D:P:O` are ASCII emoticons the poster typed by hand,
+    # and a run of them (`:D:D:D`) would be eaten as codes.  They read fine.
+    "sad": "🙁", "up": "👍", "down": "👎",
+    "groan": "😩", "dead": "💀", "cry": "😢", "sleepy": "😴", "zzz": "😴",
+    "shh": "🤫", "cool": "😎", "neutral": "😐", "blackeye": "🤕",
+    "confused": "🤔", "noway": "🙅", "sbav": "🤤", "gaah": "😫",
+    "evil": "😈", "shy": "😊", "happy": "😄", "roll": "🙄", "perplex": "😕",
+    "quest": "❓", "sun": "☀️", "arrow": "➡️", "exclaim": "❗",
 }
 # The long tail comes from packs named by theme with a serial number
 # (`cibo28.gif`, `sonno39.gif`): the number says nothing, the prefix does.
@@ -91,7 +103,16 @@ SMILEY_FAMILY = (
     ("felici", "😄"), ("lingua", "😛"), ("conf", "🤔"), ("cool", "😎"),
     ("sonno", "😴"), ("love", "❤️"), ("angel", "😇"), ("sport", "⚽"),
     ("cibo", "🍽️"), ("jump", "🤸"),
+    # Same shape, but these prefixes say what the face does, so the serial can
+    # be dropped without inventing anything: `shy2.gif`, `eek1.gif`, `mad2.gif`.
+    ("shy", "😊"), ("sad", "🙁"), ("eek", "😲"), ("roll", "🙄"),
+    ("happy", "😄"), ("perplex", "😕"), ("evil", "😈"), ("mad", "😠"),
+    ("wink", "😉"), ("quest", "❓"), ("sun", "☀️"),
 )
+
+# Packs whose names carry no meaning at all (`cart31`, `kaoani09`): the image is
+# gone and the name says nothing, so they keep the honest `*` placeholder.
+UNKNOWN_PACKS = ("cart", "kaoani", "anim", "spec", "donia", "varie", "icone")
 
 
 def smiley_for(name: str) -> str | None:
@@ -129,12 +150,65 @@ def _smiley_to_text(m: re.Match[str]) -> str:
     return '<span class="smiley">*</span>'
 
 
+# Text codes left naked in the body by the lofi flattening.  Digits alone are
+# never a smiley: `:07:` is a timestamp out of a pasted IRC log, and there are
+# ~7000 of those.
+RE_TEXT_SMILEY = re.compile(r":([a-z][a-z0-9_]{0,14}):", re.I)
+RE_TAG_SPLIT = re.compile(r"(<[^>]*>)")
+
+
+def _text_smiley(m: re.Match[str]) -> str:
+    name = m.group(1).lower()
+    emoji = smiley_for(name)
+    if emoji:
+        return f'<span class="emo" title=":{name}:">{emoji}</span>'
+    stem = name.rstrip("0123456789")
+    if stem != name and stem in UNKNOWN_PACKS:
+        return f'<span class="smiley" title=":{name}:">*</span>'
+    # Not a smiley this board ever had: `:mypassword:` and `:http:` are text,
+    # and guessing an emoji for them would corrupt the post.
+    return m.group(0)
+
+
+def _sub_text_smilies(text: str) -> str:
+    """Codes come in runs (`:eek2::sad2:`, `:love::wink:`) where one colon both
+    closes a code and opens the next, so the scan backs up one char every time
+    instead of consuming the closer."""
+    out, i = [], 0
+    while True:
+        m = RE_TEXT_SMILEY.search(text, i)
+        if not m:
+            out.append(text[i:])
+            return "".join(out)
+        rep = _text_smiley(m)
+        out.append(text[i:m.start()])
+        if rep == m.group(0):          # not a smiley — put the text back as it was
+            out.append(text[m.start():m.end() - 1])
+            i = m.end() - 1
+        else:
+            out.append(rep)
+            # Hand the closing colon to the next code only if there is one:
+            # otherwise it is this code's own closer and must not survive.
+            nxt = m.end() - 1
+            i = nxt if RE_TEXT_SMILEY.match(text, nxt) else m.end()
+
+
+def text_smilies(body: str) -> str:
+    """Map the bare `:name:` codes, and only those the smiley map can name."""
+    if ":" not in body:
+        return body
+    return "".join(
+        part if part.startswith("<") else _sub_text_smilies(part)
+        for part in RE_TAG_SPLIT.split(body)
+    )
+
+
 def sanitise(body: str) -> str:
     body = RE_BAD_BLOCK.sub("", body)
     body = RE_BAD_OPEN.sub("", body)
     body = RE_ON_ATTR.sub("", body)
     body = RE_JS_URL.sub(r"\1#", body)
-    return RE_SMILEY.sub(_smiley_to_text, body)
+    return text_smilies(RE_SMILEY.sub(_smiley_to_text, body))
 
 
 # ------------------------------------------------------------------ entities
@@ -283,9 +357,385 @@ def bbcode(body: str) -> str:
     return RE_BB_ORPHAN_CLOSE.sub("", body)
 
 
-def body_html(raw: str) -> str:
+# ------------------------------------------------------- flattened quotes
+#
+# Two quote styles never reached us as BBCode at all: the lo-fi renderer had
+# already flattened them to plain text, so `[quote]` is gone and only a header
+# line survives.  They are invisible to `bbcode()` above.
+#
+#   vB2 (2001-2003):  `In data 2002-03-30 17:34, overruns scrive:`
+#   vB3 (2004-2016):  `Citazione:` + `Originale inviato da <nick>`
+#
+# Census over the 8833 snapshot pages: 338 vB2 headers in 104 files, 154 vB3
+# headers in 55 files (`[quote=...]`, which DOES survive, is 4001 in 410).
+#
+# The hard part is not the header, it is where the quote ENDS.  vB2 quoting is
+# interleaved — quoted chunk, reply, quoted chunk, reply — and the flattening
+# left nothing but blank lines between them, so the structure alone cannot say
+# which chunk is whose.  What CAN say it: the quoted text is a verbatim copy of
+# another post in the same thread.  So each blank-line-separated chunk is
+# matched against the rest of the thread; a chunk that appears there verbatim
+# is the quote, everything else is the reply.  No heuristic, an equality test.
+RE_CHUNK_SPLIT = re.compile(r"(?:\s*<br\s*/?>\s*){2,}", re.I)
+RE_VB2_HEAD = re.compile(
+    r"^\s*In data\s+([^,<]{4,40}?)\s*,\s*(.{1,40}?)\s+scrive\s*:\s*(?:<br\s*/?>\s*)?",
+    re.I)
+RE_VB3_HEAD = re.compile(
+    r"^\s*Citazione\s*:\s*(?:<br\s*/?>\s*)?"
+    r"(?:Originale inviato da\s+(.{1,40}?)\s*(?:<br\s*/?>\s*|$))?",
+    re.I)
+RE_TAGS = re.compile(r"<[^>]{1,300}>")
+# Cheap unanchored probe: is it worth building this thread's sibling text at all?
+RE_FLAT_HEAD = re.compile(r"In data\s[^,<]{4,40},.{1,40}?\sscrive\s*:|Citazione\s*:", re.I)
+# A chunk this short can collide with an unrelated post by accident ("ok", "si
+# quoto"), so below the floor the verbatim test is not evidence of anything.
+QUOTE_MIN_CHARS = 25
+
+
+def norm_text(s: str) -> str:
+    """Tag-free, whitespace-collapsed, case-folded — for the verbatim test."""
+    return RE_WS.sub(" ", html.unescape(RE_TAGS.sub(" ", s))).strip().lower()
+
+
+def _wrap(chunks: list[str], cite: str | None) -> str:
+    inner = "<br />\n<br />\n".join(chunks)
+    head = f"<cite>{esc(cite)} ha scritto:</cite>" if cite else ""
+    return f'<blockquote class="bbq">{head}{inner}</blockquote>'
+
+
+def flat_quotes(body: str, siblings: str) -> str:
+    """Rebuild the quote blocks the lo-fi renderer flattened into plain text."""
+    chunks = RE_CHUNK_SPLIT.split(body)
+    who, seen_head = None, False
+    kept, is_quote = [], []
+    for chunk in chunks:
+        m = RE_VB2_HEAD.match(chunk) or RE_VB3_HEAD.match(chunk)
+        if m:
+            # A header eats itself; its own chunk's remainder is the quote it
+            # introduces, by construction. Only the FIRST header names a nick —
+            # later ones in the same post are the same conversation.
+            if who is None:
+                who = m.group(2) if m.re is RE_VB2_HEAD else m.group(1)
+            seen_head = True
+            kept.append(chunk[m.end():])
+            is_quote.append(True)
+            continue
+        kept.append(chunk)
+        # Everything after a header has to earn the quote: it counts only if it
+        # is a verbatim copy of another post in this thread.
+        n = norm_text(chunk)
+        is_quote.append(seen_head and len(n) >= QUOTE_MIN_CHARS and n in siblings)
+    if not seen_head:
+        return body
+
+    out, run, first = [], [], True
+    for chunk, is_q in zip(kept, is_quote):
+        if is_q:
+            run.append(chunk)
+            continue
+        if run:
+            out.append(_wrap(run, who if first else None))
+            run, first = [], False
+        out.append(chunk)
+    if run:
+        out.append(_wrap(run, who if first else None))
+    return "<br />\n<br />\n".join(o for o in out if o.strip())
+
+
+# ------------------------------------------------------------- IRC log paste
+#
+# Half this forum is people pasting IRC. Proportional type destroys the column
+# the log is read by, so a run of consecutive log-shaped lines becomes a <pre>.
+# The nick brackets survive escaped (`&lt;nick&gt;`), which is why this pass
+# runs on the sanitised HTML and not before it.
+NICK = r"[\w`\[\]{}|^\\-]{1,30}"
+RE_LOG_LINE = re.compile(
+    # A coloured paste opens the line with the raw control bytes: they are part
+    # of the shape too, not a reason to miss the line.
+    r"^[\s\x02\x03\x0f\x16\x1d\x1f]*(?:\d{1,2}(?:,\d{1,2})?)?\s*(?:"
+    rf"&lt;\s*[@+%~&amp;]?{NICK}\s*&gt;\s"          # <nick> said something
+    rf"|\*\s+{NICK}\s"                              # * nick does something
+    # 12:34 / [12:34:56] / `[ 13:47:05 ]` — mIRC and irssi both pad inside the
+    # brackets, so the spaces are part of the shape, not noise to trim first.
+    r"|\[?\s*\d{1,2}:\d{2}(?::\d{2})?\s*\]?\s"
+    r"|(?:\*\*\*|--&gt;|&lt;--|-!-|===)\s"          # join/part/mode chatter
+    r")", re.I)
+RE_BR_SPLIT = re.compile(r"<br\s*/?>", re.I)
+LOG_MIN_LINES = 3
+
+
+def irc_logs(body: str) -> str:
+    """Wrap runs of >= 3 consecutive IRC-log lines in a monospace <pre>."""
+    if "&lt;" not in body and ":" not in body:
+        return body
+    lines = RE_BR_SPLIT.split(body)
+    out, run = [], []
+
+    def flush() -> None:
+        if len(run) >= LOG_MIN_LINES:
+            out.append('<pre class="irclog">' + "\n".join(x.strip() for x in run)
+                       + "</pre>")
+        else:
+            out.extend(run)
+        run.clear()
+
+    for line in lines:
+        if RE_LOG_LINE.match(line):
+            run.append(line)
+            continue
+        # A blank line inside a paste is part of the paste, not the end of it.
+        if run and not line.strip():
+            run.append(line)
+            continue
+        flush()
+        out.append(line)
+    flush()
+    # A <pre> is already a block: putting a <br /> against it would open a gap
+    # the paste never had.
+    parts = []
+    for o in out:
+        if parts and not (o.startswith("<pre class=") or parts[-1].endswith("</pre>")):
+            parts.append("<br />")
+        parts.append(o)
+    return "".join(parts)
+
+
+# ------------------------------------------------------------ internal links
+# Posts quote each other by URL on the dead board.  Those that name a thread we
+# hold get pointed at the local page instead of at a 404.
+#
+# `showthread.php?t=N` only: measured against the post dates, 202 of its 213
+# resolvable targets are older than the post linking them (95%, i.e. right), but
+# `forum/viewtopic.php?t=N` scores 12 of 39 (31%) — the phpBB board it came from
+# numbered its topics in a different space, so those ids are NOT ours and are
+# left alone.  Same for the ids that land on a thread newer than the link.
+RE_OLD_THREAD = re.compile(
+    r"https?://(?:www\.)?forum\.azzurra\.org/showthread\.php\?"
+    r"(?P<q>[\w=&;%#.+-]{0,120})", re.I)
+RE_Q_T = re.compile(r"(?:^|[&;])t=(\d+)", re.I)
+RE_Q_P = re.compile(r"(?:^|[&;])p=(\d+)", re.I)
+RE_OLD_POST = re.compile(
+    r"https?://(?:www\.)?forum\.azzurra\.org/showpost\.php\?"
+    r"(?P<q>[\w=&;%#.+-]{0,120})", re.I)
+
+THREAD_LINKS: dict[int, tuple[str, str, str]] = {}   # id -> (href, title, first)
+POST_LINKS: dict[int, tuple[int, int]] = {}          # vb post id -> (thread, seq)
+
+
+def _local_href(m: re.Match[str], when_posted: str) -> tuple[str, int] | None:
+    q = html.unescape(m.group("q")).replace("&amp;", "&")
+    tid = seq = None
+    hit = RE_Q_T.search(q)
+    if hit:
+        tid = int(hit.group(1))
+    else:
+        hit = RE_Q_P.search(q)
+        if hit and int(hit.group(1)) in POST_LINKS:
+            tid, seq = POST_LINKS[int(hit.group(1))]
+    if tid is None or tid not in THREAD_LINKS:
+        return None
+    href, _title, first = THREAD_LINKS[tid]
+    # A thread cannot be linked before it exists: that is a foreign id, not ours.
+    if first and when_posted and first > when_posted:
+        return None
+    return href + (f"#post-{seq}" if seq else ""), tid
+
+
+RE_A_HREF = re.compile(r"<a\s[^>]*href=\"([^\"]+)\"[^>]*>(.*?)</a>", re.I | re.S)
+
+
+def internal_links(body: str, when_posted: str = "") -> str:
+    """Repoint old board URLs at the local pages, in the href and in the text."""
+    if "forum.azzurra.org" not in body:
+        return body
+
+    def fix_anchor(m: re.Match[str]) -> str:
+        url, text = m.group(1), m.group(2)
+        hit = RE_OLD_THREAD.match(url) or RE_OLD_POST.match(url)
+        found = _local_href(hit, when_posted) if hit else None
+        if not found:
+            return m.group(0)
+        new, tid = found
+        # When the visible text is the dead URL itself, the thread title says
+        # more than a link nobody can follow.
+        if "azzurra.org" in RE_TAGS.sub("", text):
+            text = esc(THREAD_LINKS[tid][1])
+        return f'<a href="{new}">{text}</a>'
+
+    body = RE_A_HREF.sub(fix_anchor, body)
+
+    def fix_bare(m: re.Match[str]) -> str:
+        found = _local_href(m, when_posted)
+        if not found:
+            return m.group(0)
+        new, tid = found
+        return f'<a href="{new}">{esc(THREAD_LINKS[tid][1])}</a>'
+
+    body = RE_OLD_THREAD.sub(fix_bare, body)
+    return RE_OLD_POST.sub(fix_bare, body)
+
+
+# Whatever is left points at a board that has been down since 2016: the phpBB
+# ids (`viewtopic.php?topic=693&forum=25`) belong to a numbering we do not hold,
+# the member and reply URLs never had a local page at all.  The Archive is the
+# only place those still resolve, so they go there, dated to the post that
+# links them.
+RE_OLD_ANY = re.compile(
+    r"https?://(?:www\.)?(?:forum\.)?azzurra\.org/[^\s\"'<>\]\[)]*", re.I)
+RE_HREF_ATTR = re.compile(r"(href=\")([^\"]+)(\")", re.I)
+WAYBACK = "https://web.archive.org/web/{year}/{url}"
+
+
+def _wayback(url: str, year: str) -> str:
+    # The href is HTML: the query string's `&` has to go back in escaped.
+    plain = html.unescape(url)
+    return WAYBACK.format(year=year, url=plain).replace("&", "&amp;")
+
+
+def archive_links(body: str, when_posted: str = "") -> str:
+    """Send the old board URLs we cannot serve to the Archive's copy."""
+    if "azzurra.org" not in body:
+        return body
+    year = (when_posted[:4] if when_posted[:4].isdigit() else "2005")
+
+    def in_tag(tag: str) -> str:
+        if "href=" not in tag.lower():
+            return tag                      # <img src=...> is left alone
+        return RE_HREF_ATTR.sub(
+            lambda m: m.group(1) + (_wayback(m.group(2), year)
+                                    if RE_OLD_ANY.fullmatch(m.group(2))
+                                    else m.group(2)) + m.group(3), tag)
+
+    def in_text(m: re.Match[str]) -> str:
+        # The URL stays visible exactly as it was typed: it is the record. Only
+        # the destination changes, and it becomes clickable on the way.
+        return (f'<a href="{_wayback(m.group(0), year)}" '
+                f'title="copia su archive.org">{m.group(0)}</a>')
+
+    return "".join(
+        in_tag(part) if part.startswith("<") else RE_OLD_ANY.sub(in_text, part)
+        for part in RE_TAG_SPLIT.split(body)
+    )
+
+
+# ------------------------------------------------------------- mIRC controls
+# Pasted logs carry the raw control bytes the client wrote: 0x03 colour (with
+# `fg[,bg]` in decimal), 0x02 bold, 0x1f underline, 0x1d italic, 0x16 reverse,
+# 0x0f reset.  118 posts have them, 5662 colour codes in all.  Rendering them
+# is the whole point of pasting a coloured log.
+MIRC_PALETTE = (
+    "#ffffff", "#000000", "#00007f", "#009300", "#ff0000", "#7f0000",
+    "#9c009c", "#fc7f00", "#ffff00", "#00fc00", "#009393", "#00ffff",
+    "#0000fc", "#ff00ff", "#7f7f7f", "#d2d2d2",
+)
+RE_MIRC_COLOR = re.compile(r"\x03(\d{1,2})?(?:,(\d{1,2}))?")
+MIRC_CTRL = "\x02\x03\x0f\x16\x1d\x1f"
+
+
+def _mirc_style(fg: int | None, bg: int | None, bold: bool,
+                under: bool, italic: bool, rev: bool) -> str:
+    if rev:
+        fg, bg = (bg if bg is not None else 0), (fg if fg is not None else 1)
+    css = []
+    if fg is not None:
+        css.append(f"color:{MIRC_PALETTE[fg % 16]}")
+        # mIRC drew on a white window: black-on-black is not what the poster
+        # saw, so the dark half of the palette brings that canvas with it.
+        if bg is None and fg % 16 in (1, 2, 5, 6, 12, 14):
+            bg = 0
+    if bg is not None:
+        css.append(f"background:{MIRC_PALETTE[bg % 16]}")
+    if bold:
+        css.append("font-weight:700")
+    if under:
+        css.append("text-decoration:underline")
+    if italic:
+        css.append("font-style:italic")
+    return ";".join(css)
+
+
+def _mirc_segment(text: str) -> str:
+    """One text run: close and reopen a single span at every state change, so
+    the markup stays balanced whatever the paste does."""
+    out, i = [], 0
+    fg = bg = None
+    bold = under = italic = rev = False
+    open_span = False
+
+    def restyle() -> None:
+        """Close what is open; the next span opens only when text needs it, so
+        a run of codes with nothing between them leaves no empty markup."""
+        nonlocal open_span
+        if open_span:
+            out.append("</span>")
+            open_span = False
+
+    def emit(ch: str) -> None:
+        nonlocal open_span
+        if not open_span:
+            css = _mirc_style(fg, bg, bold, under, italic, rev)
+            if css:
+                out.append(f'<span style="{css}">')
+                open_span = True
+        out.append(ch)
+
+    while i < len(text):
+        ch = text[i]
+        if ch == "\x03":
+            m = RE_MIRC_COLOR.match(text, i)
+            fg = int(m.group(1)) if m.group(1) else None
+            bg = int(m.group(2)) if m.group(2) else (bg if m.group(1) else None)
+            i = m.end()
+            restyle()
+            continue
+        if ch in MIRC_CTRL:
+            if ch == "\x02":
+                bold = not bold
+            elif ch == "\x1f":
+                under = not under
+            elif ch == "\x1d":
+                italic = not italic
+            elif ch == "\x16":
+                rev = not rev
+            else:                                   # 0x0f — plain text again
+                fg = bg = None
+                bold = under = italic = rev = False
+            i += 1
+            restyle()
+            continue
+        if ch == "\n":                              # mIRC state dies with the line
+            restyle()
+            fg = bg = None
+            bold = under = italic = rev = False
+            out.append(ch)
+            i += 1
+            continue
+        emit(ch)
+        i += 1
+    if open_span:
+        out.append("</span>")
+    return "".join(out)
+
+
+def mirc_colors(body: str) -> str:
+    """Turn the mIRC control bytes into spans, leaving the tags untouched."""
+    if not any(c in body for c in MIRC_CTRL):
+        return body
+    return "".join(
+        part if part.startswith("<") else _mirc_segment(part)
+        for part in RE_TAG_SPLIT.split(body)
+    )
+
+
+def body_html(raw: str, siblings: str = "", when_posted: str = "") -> str:
     """Entities first (BBCode hides inside `&#91;b&#93;`), then tags, then scrub."""
-    return sanitise(bbcode(unescape_entities(raw)))
+    body = bbcode(unescape_entities(raw))
+    if siblings:
+        body = flat_quotes(body, siblings)
+    body = internal_links(sanitise(body), when_posted)
+    # Colours last: irc_logs still has to see the line starts as text, and the
+    # spans this emits would hide them.
+    return mirc_colors(irc_logs(archive_links(body, when_posted)))
 
 
 RE_BB_ANY = re.compile(
@@ -368,6 +818,10 @@ blockquote.bbq cite{display:block;font-size:.8rem;color:var(--dim);font-style:no
 margin-bottom:.25rem}
 pre.bbc-code{margin:.5rem 0;padding:.5rem .7rem;background:var(--bg);border:1px solid
 var(--line);border-radius:4px;overflow-x:auto;font-size:.85em;white-space:pre-wrap}
+pre.irclog{margin:.5rem 0;padding:.5rem .7rem;background:var(--bg);border-left:3px solid
+var(--line);border-radius:0 4px 4px 0;overflow-x:auto;font-size:.85em;line-height:1.45;
+font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+white-space:pre-wrap;word-break:break-word}
 ul.bbl,ol.bbl{margin:.4rem 0 .4rem 1.2rem;padding:0}
 .bbc{text-align:center}
 .pager{margin:1.2rem 0;font-size:.9rem}
@@ -553,6 +1007,19 @@ def render(db_path: Path, out: Path, base_url: str) -> None:
     threads = db.execute(
         "SELECT id, title, forum_id, post_count FROM threads ORDER BY id"
     ).fetchall()
+    # Index for the internal-link rewrite: thread pages are siblings, so the
+    # href from inside one of them is `../<id>-<slug>/`.
+    THREAD_LINKS.clear()
+    for t in db.execute("SELECT id, title, first_post_at FROM threads"):
+        title = t["title"] or f"discussione {t['id']}"
+        THREAD_LINKS[t["id"]] = (f"../{t['id']}-{slug(title)}/", title,
+                                 t["first_post_at"] or "")
+    POST_LINKS.clear()
+    POST_LINKS.update({
+        r["vb_post_id"]: (r["thread_id"], r["seq"])
+        for r in db.execute("SELECT vb_post_id, thread_id, seq FROM posts "
+                            "WHERE vb_post_id IS NOT NULL")
+    })
     empty = 0
     for t in threads:
         posts = db.execute(
@@ -562,15 +1029,25 @@ def render(db_path: Path, out: Path, base_url: str) -> None:
         ).fetchall()
         title = t["title"] or f"discussione {t['id']}"
         blocks = []
-        for p in posts:
+        # Only threads that actually carry a flattened quote header pay for the
+        # sibling text — building it for all 6565 threads would be O(posts^2)
+        # of string work to answer a question 104 files ask.
+        norms = ([norm_text(p["body_text"] or "") for p in posts]
+                 if any(RE_FLAT_HEAD.search(p["body_html"] or "") for p in posts)
+                 else None)
+        for i, p in enumerate(posts):
             trunc = ('<div class="trunc">[lo snapshot dell\'Archive si interrompe '
                      "qui: il messaggio e' incompleto]</div>" if p["truncated"] else "")
+            # The post's OWN text is excluded: it matches itself, always.
+            sib = " \n".join(n for j, n in enumerate(norms) if j != i) if norms else ""
             blocks.append(
                 f'<article class="post" id="post-{p["seq"]}">'
                 f'<header><span class="who">{esc(p["username"] or "anonimo")}</span>'
                 f' &middot; {when(p["posted_at"])} &middot; '
                 f'<a href="#post-{p["seq"]}">#{p["seq"]}</a></header>'
-                f'<div class="body">{body_html(p["body_html"])}</div>{trunc}</article>'
+                f'<div class="body">'
+                f'{body_html(p["body_html"], sib, p["posted_at"] or "")}</div>'
+                f"{trunc}</article>"
             )
         if not blocks:
             empty += 1
