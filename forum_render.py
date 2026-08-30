@@ -727,9 +727,27 @@ def mirc_colors(body: str) -> str:
     )
 
 
+# vB2 wrote its own edit footer escaped — `&lt;font size=-1&gt;[ Questo
+# messaggio e' stato modificato da: ... ]&lt;/font&gt;` — so the board printed
+# the tags at the reader instead of the note.  456 posts carry it.  The other
+# escaped <font>s (29) are the posters' own markup, escaped by the same bug.
+RE_EDIT_NOTE = re.compile(
+    r"&lt;\s*font[^&]{0,60}?&gt;\s*\[\s*(Questo messaggio[^\]]{0,200}?)\s*\]\s*"
+    r"&lt;\s*/\s*font\s*&gt;", re.I)
+RE_ESC_FONT = re.compile(r"&lt;\s*(/?\s*font[^&]{0,60}?)\s*&gt;", re.I)
+
+
+def edit_notes(body: str) -> str:
+    if "&lt;" not in body:
+        return body
+    body = RE_EDIT_NOTE.sub(lambda m: f'<div class="edited">[{m.group(1)}]</div>',
+                            body)
+    return RE_ESC_FONT.sub(lambda m: f"<{m.group(1)}>", body)
+
+
 def body_html(raw: str, siblings: str = "", when_posted: str = "") -> str:
     """Entities first (BBCode hides inside `&#91;b&#93;`), then tags, then scrub."""
-    body = bbcode(unescape_entities(raw))
+    body = edit_notes(bbcode(unescape_entities(raw)))
     if siblings:
         body = flat_quotes(body, siblings)
     body = internal_links(sanitise(body), when_posted)
@@ -812,6 +830,7 @@ article.post img{max-width:100%;height:auto}
 .emo{font-size:1.1em;line-height:1;font-family:"Apple Color Emoji","Segoe UI Emoji",
   "Noto Color Emoji",sans-serif}
 .trunc{font-size:.8rem;color:var(--acc);margin-top:.4rem}
+.edited{font-size:.8rem;color:var(--dim);margin-top:.5rem;font-style:italic}
 blockquote.bbq{margin:.5rem 0;padding:.4rem .7rem;border-left:3px solid var(--line);
 background:var(--bg);border-radius:0 4px 4px 0}
 blockquote.bbq cite{display:block;font-size:.8rem;color:var(--dim);font-style:normal;
