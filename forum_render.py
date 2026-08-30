@@ -376,20 +376,40 @@ ul.bbl,ol.bbl{margin:.4rem 0 .4rem 1.2rem;padding:0}
 footer.foot{margin-top:2.5rem;border-top:1px solid var(--line);padding-top:.8rem;
 font-size:.8rem;color:var(--dim)}
 table{max-width:100%;display:block;overflow-x:auto}
-/* Pagefind ships a light-only default palette: feed it our own tokens so the
-   search page follows prefers-color-scheme like every other page. */
-:root{--pagefind-ui-primary:var(--fg);--pagefind-ui-text:var(--fg);
+"""
+
+# Pagefind's own stylesheet carries a light-only palette in a plain `:root`
+# block — `--pagefind-ui-text:#393939` and friends.  It is linked AFTER
+# style.css, so an identical `:root` override there loses the cascade on equal
+# specificity and every result renders dark-grey-on-black.  These rules go
+# INLINE on the search page, after that <link>, and the ones that collide with
+# Pagefind's Svelte-scoped selectors (`.pagefind-ui__result-title.svelte-xxxx
+# .pagefind-ui__result-link.svelte-xxxx`, four classes) are written long enough
+# to match that weight and win on order.
+PAGEFIND_CSS = """\
+<style>
+:root{--pagefind-ui-primary:var(--acc);--pagefind-ui-text:var(--fg);
 --pagefind-ui-background:var(--card);--pagefind-ui-border:var(--line);
 --pagefind-ui-tag:var(--line);--pagefind-ui-border-width:1px;
---pagefind-ui-border-radius:6px;--pagefind-ui-font:inherit}
-.pagefind-ui__search-input,.pagefind-ui__search-clear{background:var(--card);
-color:var(--fg);border-color:var(--line)}
-.pagefind-ui__search-input::placeholder{color:var(--dim)}
-.pagefind-ui__result{border-top:1px solid var(--line)}
-.pagefind-ui__result-link{color:var(--acc)}
-.pagefind-ui__result-excerpt,.pagefind-ui__message{color:var(--fg)}
-.pagefind-ui__result-excerpt mark{background:var(--line);color:var(--fg)}
-"""
+--pagefind-ui-border-radius:6px;--pagefind-ui-font:inherit;
+--pagefind-ui-scale:.9}
+.pagefind-ui .pagefind-ui__form .pagefind-ui__search-input{background:var(--card);
+color:var(--fg);border:1px solid var(--line)}
+.pagefind-ui .pagefind-ui__form .pagefind-ui__search-input::placeholder{
+color:var(--dim);opacity:1}
+.pagefind-ui .pagefind-ui__form .pagefind-ui__search-clear{background:var(--card);
+color:var(--acc)}
+.pagefind-ui .pagefind-ui__results-area .pagefind-ui__message{color:var(--fg)}
+.pagefind-ui .pagefind-ui__results .pagefind-ui__result{border-top:1px solid
+var(--line)}
+.pagefind-ui .pagefind-ui__result .pagefind-ui__result-title
+.pagefind-ui__result-link{color:var(--acc);font-weight:600}
+.pagefind-ui .pagefind-ui__result .pagefind-ui__result-excerpt{color:var(--fg)}
+.pagefind-ui .pagefind-ui__result-excerpt mark{background:var(--acc);
+color:var(--bg);padding:0 .12em;border-radius:2px;font-weight:600}
+.pagefind-ui .pagefind-ui__result .pagefind-ui__result-tag{background:var(--line);
+color:var(--fg)}
+</style>"""
 
 PAGE = """\
 <!doctype html>
@@ -577,7 +597,8 @@ def render(db_path: Path, out: Path, base_url: str) -> None:
     write(out / "cerca" / "index.html", title="Cerca — Archivio forum Azzurra",
           crumb='<a href="../">forum</a> &rsaquo; cerca', root="../",
           desc="Ricerca full-text nell'archivio dei forum di Azzurra.",
-          extra='<link rel="stylesheet" href="../pagefind/pagefind-ui.css">',
+          extra=('<link rel="stylesheet" href="../pagefind/pagefind-ui.css">'
+                 + PAGEFIND_CSS),
           body=('<h2 class="tt">Cerca nell\'archivio</h2>'
                 '<div id="search"></div>'
                 '<noscript><p class="meta">La ricerca ha bisogno di JavaScript. '
