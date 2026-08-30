@@ -170,6 +170,24 @@ def write(path: Path, *, title: str, crumb: str, body: str, root: str,
     )
 
 
+def db_download_note(out: Path) -> str:
+    """Offer the SQLite database on the index, but only once it is next to it.
+
+    The compressed DB is dropped into the output directory by hand (it is not a
+    render product), so the paragraph appears when the file is there and stays
+    quiet when it is not — no dead link on a freshly rendered tree.
+    """
+    blob = out / "forum.db.zst"
+    if not blob.exists():
+        return ""
+    mb = blob.stat().st_size / 1e6
+    return ('<p class="meta">Lo stesso archivio sta in un database SQLite, con la '
+            'ricerca full-text gia\' dentro: <a href="forum.db.zst">forum.db.zst</a>, '
+            f'{mb:.0f} MB compressi. <code>zstd -d forum.db.zst</code> e poi ci si '
+            'parla in SQL: tabelle <code>forums</code>, <code>threads</code>, '
+            '<code>posts</code> e l\'indice <code>posts_fts</code>.</p>')
+
+
 def pager(pages: int, cur: int, root_up: str, base: str) -> str:
     if pages < 2:
         return ""
@@ -218,7 +236,8 @@ def render(db_path: Path, out: Path, base_url: str) -> None:
                f"{n_posts} messaggi dal 2001 al 2016.",
           body=(f'<p class="meta">{len(forums)} forum, {n_threads} discussioni, '
                 f'{n_posts} messaggi, dal {when(span[0])} al {when(span[1])}.</p>'
-                f'<ul class="list">{rows}</ul>'))
+                f'<ul class="list">{rows}</ul>'
+                + db_download_note(out)))
     n_files += 1
 
     # --- forums -------------------------------------------------------------
