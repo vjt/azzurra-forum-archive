@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="PHP e date, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] PHP e date Programmazione e dintorni" />
+		<title>PHP e date [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-23.html">Programmazione e dintorni</a> &gt; PHP e date</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=6933">PHP e date</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">liquid_snake</div><div class="date">17-01-2005, 16:31</div></div><div class="posttext">riscontro qualche problema con la funzione date().<br />
+ In pratica non interagisce con la variabile timestamp che gli do per generarmi una data, quindi se scrivo la funzione echo (date( D d-m-Y,$data)) mi da un risultato sbagliato e più precisamente il limite di range impostato dalla funzione ( 01-01-1970)<br />
+  <br />
+ Nel caso di echo(date($data)) il timestamp è pero' giusto, e anche echo(date(D d-m-Y)) e' giusto, pero' ovviamente quest'ultimop mi restituisce la data odierna.<br />
+ Ho provato a cercare su php.net ma non vengono fatti esempi sulla visualizzazione di date estrapolate da query a database, quindi non ho potuto controllare la sintassi corretta.<br />
+  Se qualcuno conosce l'errore che ho commesso oppure una funzione piu' adatta al mio caso ...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Progeny</div><div class="date">17-01-2005, 20:26</div></div><div class="posttext">il timestamp deve essere espresso come in unix date (numero di secondi trascorsi dal 1 gennaio 1970).<br />
+   <br />
+ tempo fa avendo bisogno di una formattazione &quot;particolare&quot; (non ricordo cosa mi serviva di preciso :D) scrissi questa funzione, forse ti puo' essere d'aiuto..<br />
+  <br />
+  <br />
+   function mysql_format_date($date) {<br />
+   include(&quot;dbhead.php&quot;);<br />
+   $query = &quot;SELECT DATE_FORMAT('$date', '%d/%m/%Y')&quot;;<br />
+   $result = mysql_query($query, $db);<br />
+   $res = mysql_fetch_row($result);<br />
+   return $res[0];<br />
+   }</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">liquid_snake</div><div class="date">17-01-2005, 22:07</div></div><div class="posttext">forse non capisco la funzione o forse non c'e scritto, quindi ti complico la vita :-)<br />
+ come faccio a salvare un dato unix timestamp in mysql?<br />
+ e poi come lo tiro fuori correttamente sto date() ?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Progeny</div><div class="date">21-01-2005, 15:45</div></div><div class="posttext">al seguente link c'è tutto quello che serve per usare la funzione date()<br />
+ http://it.php.net/manual/en/function.date.php</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">liquid_snake</div><div class="date">23-01-2005, 20:46</div></div><div class="posttext">ho risolto più o meno: <br />
+nel senso che la pagina di manuale non mi ha aiutato e quindi ho optato per un'atra srada cioè quella di scomporre il timestamp e poi con una piccola funzione convertire i numeri dei mesi in nomi, di li gli do un'altra visualizzazione.<br />
+Poco professionale? purtroppo si lo so !!!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Progeny</div><div class="date">24-01-2005, 15:24</div></div><div class="posttext">Come riporta l'esempio nella documentazione della funzione date()<br />
+<br />
+$today = date(&quot;F j, Y, g:i a&quot;);                 // March 10, 2001, 5:16 pm<br />
+<br />
+ti basterebbe:<br />
+$mese = date(&quot;F&quot;, $timestamp);<br />
+<br />
+per ottenere la data in ita ti basterebbe poi un setlocale(LC_TIME, 'it-IT');<br />
+oppure fatti una funzione per i mesi in ita :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">}gu|do[z]{®©</div><div class="date">28-01-2005, 13:10</div></div><div class="posttext">per ottenere la data in ita ti basterebbe poi un setlocale(LC_TIME, 'it-IT');<br />
+<br />
+<br />
+questo non funge sempre.. la cos amigliore è farsi un array<br />
+<br />
+$mesi = array('gennaio','febbraio'.... etc etc);<br />
+<br />
+e poi usare come indice dell'array il valore numerico restituito da date con non ricordo quale flag [vedere manuale :D]<br />
+<br />
+ciauz</div></div><hr />
+
+
+<div id="copyright">vBulletin v3.5.3, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

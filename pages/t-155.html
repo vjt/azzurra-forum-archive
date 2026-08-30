@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content=" chiarimenti sulle "mask", azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio]  chiarimenti sulle "mask" IRCHelp - Aiuto su IRC e Servizi di Azzurra" />
+	
+	<title> chiarimenti sulle "mask" [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="http://forum.azzurra.org/archive/index.php">Azzurra IRC Network Forum</a> &gt; <a href="http://forum.azzurra.org/archive/index.php/f-6.html">Network Central</a> &gt; <a href="http://forum.azzurra.org/archive/index.php/f-11.html">IRCHelp - Aiuto su IRC e Servizi di Azzurra</a> &gt;  chiarimenti sulle "mask"</div>
+<hr />
+<div class="pda"><a href="http://forum.azzurra.org/archive/index.php/t-155.html?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=155">chiarimenti sulle "mask"</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Wind-on-face</div><div class="date">22-08-2001, 12:08</div></div><div class="posttext">Salve a tutti, mi piacerebbe avere chiarimenti sulle mask, credo di aver capito che è tutto ciò che si vede dopo il nick quando ad esempio facciamo un INFO su quel nick ma ciò che non so è se:<br />
+1. è possibile effettuare la ricerca di un nick attraverso una mask ? (ovvero cerco la mask e lui mi darà il nick col quale è presente!)<br />
+2. è possibile bannare una mask invece di un nick ? (è facile aggirare un ban cambiando nick, invece nel caso della mask si deve proprio riconnettere alla rete e sperare di avere un ip diverso....credo!)<br />
+<br />
+Sarei felice se qualche anima buona (e ce ne sono tante su azzurra) mi aiuta !<br />
+<br />
+Grazie</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">City_Hunter</div><div class="date">23-08-2001, 11:07</div></div><div class="posttext">per quel che riguarda i bans o altre azioni sulle mask (anche il sistema di ignora utente si basa sulle stesse) puoi attivarle comodamente così:<br />
+<br />
+/mode #canale +b mask<br />
+<br />
+al posto di mask inserisci quella che intendi escludere, per esempio nel caso di un utente che ha come nick pollo e come mask pollo!pennuto@coccode.123.it puoi bannarlo sull'host invece che sul nick inserendo come mask *!*@coccode.123.it<br />
+<br />
+in pratica si usa il simbolo * vuol dire qualsiasi carattere, per cui l'utente che abbia l'host uguale a quello scritto sopra viene escluso dal canale, a prescindere dal nick (pollo) o dall'ident (pennuto).<br />
+<br />
+ban efficace contro i meno esperti (o rompiscatole occasionali) è quello sull'ident, in questo caso la mask da adottare sarebbe *!pennuto@* che in pratica a prescindere dal nick e anche dall'host, esclude dal canale tutti quelli con l'ident pennuto. Cambiare l'ident non è difficile, ma rimane una seccatura maggiore del cambio di nick. Sta bene attento a non esagerare però, perchè un uso eccessivo dei caratteri jolly * rischia di tener fuori anche persone che non c'entrano nulla... per esempio un ban su *!java@* terrebbe fuori quasi tutti quelli che si connettono dal web.<br />
+<br />
+Se usi mIRC (e se non lo usi, impara ad usarlo!) puoi richiamare le varie maschere per i ban semplicemente con un numero<br />
+il comando da usare è<br />
+<br />
+/ban #canale nick NUMERO<br />
+<br />
+al posto di NUMERO inserisci un numero che va da 0 a 9 e corrisponde alla seguente maschera:<br />
+<br />
+  0: *!user@host<br />
+  1: *!*user@host<br />
+  2: *!*@host<br />
+  3: *!*user@*.host<br />
+  4: *!*@*.host<br />
+  5: nick!user@host<br />
+  6: nick!*user@host<br />
+  7: nick!*@host<br />
+  8: nick!*user@*.host<br />
+  9: nick!*@*.host<br />
+<br />
+per quel che riguarda la ricerca dei nick attraverso le mask, ti puoi avvalere del comando /who mask<br />
+generalmente funziona<br />
+ora ti saluto e parto per il mio ultimo viaggetto di questa estate... /images/smiles/icon_biggrin.gif</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Wind-on-face</div><div class="date">24-08-2001, 15:03</div></div><div class="posttext">GRAZIE !!<br />
+Sapevo di poter contare sulla comunità di Azzurra e non mi sbagliavo, grazie mille Hunter e divertiti (anche alla faccia mia che invece sono al lavoro !!)<br />
+<br />
+ciao</div></div><hr />
+
+
+<div id="copyright">vBulletin&reg; v3.7.3, Copyright &copy;2000-2008, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Anti !list @find, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] Anti !list @find Programmazione e dintorni" />
+		<title>Anti !list @find [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-23.html">Programmazione e dintorni</a> &gt; Anti !list @find</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=3906">Anti !list @find</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Dracoo</div><div class="date">25-01-2004, 22:47</div></div><div class="posttext">Questa è una mia creazione fatta oggi... :)<br />
+<br />
+Serve per kickbannare se si vuole un utente che scrive !list o @find in un canale:<br />
+<br />
+<br />
+//Da inserire nei remote<br />
+on *&#58;text&#58;*&#58;#&#58;&#123;<br />
+    if &#40;$me isop $chan&#41; &#123;<br />
+    if &#40;&#40;$1 == !list&#41; || &#40;$1 == @find&#41;&#41; &#123; set %wareznick $nick | set %warezchan $chan | set %wareztype $1 | WarezDifense | join $chan &#125;<br />
+  &#125;<br />
+&#125;<br />
+<br />
+dialog WarezDifense &#123;<br />
+  title &amp;quot;WarezDifense&amp;quot;<br />
+  size -1 -1 170 90<br />
+  option dbu<br />
+<br />
+  box &amp;quot;Caution&amp;quot;, 1, 5 5 160 80<br />
+  text %wareznick ha esordito con un %wareztype in %warezchan Lo devo Kickbannare?, 2, 10 15 230 110<br />
+  button &amp;quot;&amp;amp;Sì, con re&amp;amp;ason di default&amp;quot;, 3, 10 35 70 15, default<br />
+  button &amp;quot;&amp;amp;No&amp;quot;, 4, 90 35 70 15, cancel<br />
+  button &amp;quot;&amp;amp;Si, con re&amp;amp;ason alternativo&amp;quot;, 5, 50 60 70 15, default<br />
+<br />
+<br />
+&#125;<br />
+<br />
+dialog ReasonA &#123;<br />
+  title &amp;quot;Alternative Reason...&amp;quot;<br />
+  size -1 -1 140 60<br />
+  option dbu<br />
+<br />
+  box &amp;quot;Re&amp;amp;ason&amp;quot;, 1, 5 5 130 50<br />
+  edit &amp;quot;&amp;quot;, 2, 10 15 120 10, autohs limit 307<br />
+  button &amp;quot;&amp;amp;OK&amp;quot;, 3, 10 35 55 15,default<br />
+  button &amp;quot;&amp;amp;Annulla&amp;quot;, 4, 75 35 55 15, cancel<br />
+&#125;<br />
+<br />
+on 1&#58;dialog&#58;WarezDifense&#58;sclick&#58;*&#58; &#123;<br />
+  if &#40;$did == 3&#41; &#123; ban %warezchan %wareznick 2 | kick %warezchan %wareznick Non siamo un canale warez!! Perciò è inutile che tu ti esibisca con un %wareztype $+ !!! Non troverai mai nulla qui! | dialog -x $dname | unset %warez* &#125;<br />
+  if &#40;$did == 5&#41; &#123; reasonA &#125;<br />
+&#125;<br />
+<br />
+on 1&#58;dialog&#58;ReasonA&#58;sclick&#58;*&#58;&#123;<br />
+  if &#40;$did == 3&#41; &#123; ban %warezchan %wareznick 2 | kick %warezchan %wareznick $did&#40;2&#41;.text | dialog -x $dname | dialog -x WarezDifense | unset %warez* &#125;<br />
+&#125;<br />
+<br />
+<br />
+//Da inserire negli alias &#40;ho creare un alias alternativo da mettere nei remote&#41;<br />
+/WarezDifense /dialog -m WarezDifense WarezDifense<br />
+/reasonA /dialog -m reasonA reasonA<br />
+<br />
+:)<br />
+<br />
+Script per mIRC. Testato sulla versione 6.12<br />
+Mi sollevo da ogni responsabilità nel caso in cui il programma causi problemi a coloro che lo utilizzeranno.</div></div><hr />
+
+
+<div id="copyright">vBulletin v3.5.3, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="win2000 SP4 e IPV6, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] win2000 SP4 e IPV6 Angolo tecnico" />
+	
+	<title>win2000 SP4 e IPV6 [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php/">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-13.html">Angolo tecnico</a> &gt; win2000 SP4 e IPV6</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=3096">win2000 SP4 e IPV6</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Kid</div><div class="date">27-09-2003, 12:41</div></div><div class="posttext">ciao, non sono sicuro di essere nel posto giusto ma ci provo lo stesso  :P <br />
+<br />
+ho win2000 con installato il nuovo service pack 4, vorrei installare IPV6, ma lo stack per il mio SP non l'ho trovato sul sito microsoft  :( <br />
+<br />
+non è 1 problema aspettare che lo rilascino ...... o lo hanno già fatto??<br />
+<br />
+help me please  :) <br />
+<br />
+ciauuuuuu</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">nMe</div><div class="date">28-09-2003, 02:23</div></div><div class="posttext">Ciao, lo stack ipv6 per windows 2000 lo trovi qua:<br />
+<br />
+http://msdn.microsoft.com/downloads/sdks/platform/tpipv6.asp<br />
+<br />
+penso che tu abbia già provveduto a scaricare il file perché leggo nel tuo post: &quot;ma lo stack per il mio SP non l'ho trovato&quot;.<br />
+Infatti se provi ad installare questo aggiornamento dovresti ricevere un errore (service pack errato).<br />
+<br />
+Per poterlo installare correttamente, basta seguire le istruzioni riportate nelle FAQ all'indirizzo:<br />
+<br />
+http://msdn.microsoft.com/downloads/sdks/platform/tpipv6/faq.asp<br />
+<br />
+Esattamente alla domanda:<br />
+<br />
+How do I install the Technology Preview on Windows 2000 SP3?<br />
+<br />
+Tuttavia, affinché funzioni con SP4 bisogna modifcare il punto 5 con il seguente:<br />
+<br />
+---------------------------------------------------------------------------------<br />
+5. In the [Version] section of the Hotfix.inf file, change the line<br />
+****NTServicePackVersion=256 to NTServicePackVersion=1024,<br />
+    and then save changes. <br />
+---------------------------------------------------------------------------------<br />
+<br />
+In pratica devi inserire 1024 (= NUMEROSP * 256) a posto di 768. (tnx drittz)<br />
+<br />
+Spero di essere stato chiaro (da notare l'orario)!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kid</div><div class="date">28-09-2003, 14:30</div></div><div class="posttext">mille grazie a nMe ma sono ancora in difficoltà<br />
+<br />
+il messaggio &quot;failed to install catalog files.&quot; è rimasto nonostante la modifica suggerita  :( <br />
+<br />
+uffffffffffffffff<br />
+<br />
+<br />
+ciao  :) [/quote]</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">nMe</div><div class="date">28-09-2003, 15:53</div></div><div class="posttext">http://www.jsiinc.com/SUBG/TIP3200/rh3280.htm<br />
+<br />
+hai provato questo procedimento per risolvere il problema?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kid</div><div class="date">01-10-2003, 19:39</div></div><div class="posttext">http://www.jsiinc.com/SUBG/TIP3200/rh3280.htm<br />
+<br />
+hai provato questo procedimento per risolvere il problema?<br />
+<br />
+<br />
+ehmmmm, scusa il ritardo, ma uesta settimana lavorativa è scandalosa  |) <br />
+<br />
+<br />
+ho provato il procedimento ke mi consigli e ti ringrazio, ma la siatuazione è invariata ........ formatterò ... forse .... un giorno <br />
+<br />
+<br />
+grazie ciauuuuuuuuu  :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">01-10-2003, 20:20</div></div><div class="posttext">ho provato il procedimento ke mi consigli e ti ringrazio, ma la siatuazione è invariata ........ formatterò ... forse .... un giorno <br />
+<br />
+Domandina... usi mica un router per connetterti alla rete?<br />
+Cioe',qualcosa di diverso da un modem (56k, xDSL...) ?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kid</div><div class="date">01-10-2003, 20:33</div></div><div class="posttext">Domandina... usi mica un router per connetterti alla rete?<br />
+Cioe',qualcosa di diverso da un modem (56k, xDSL...) ?<br />
+<br />
+uhm no, solo 1 umile modem USB x adsl ..... prima dell'ultimo formattone causa crash totale (forse virus, bo') ipv6 andava<br />
+<br />
+di diverso ho la patch RHCP ke prima nn avevo e il SP4<br />
+<br />
+bò!!!  |)</div></div><hr />
+
+
+<div id="copyright">vBulletin&reg; v3.6.7, Copyright &copy;2000-2007, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

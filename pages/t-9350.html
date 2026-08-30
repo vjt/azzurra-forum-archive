@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="[JavaScript] Funzione write in una nuova window!, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] [JavaScript] Funzione write in una nuova window! Programmazione e dintorni" />
+		<title>[JavaScript] Funzione write in una nuova window! [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-23.html">Programmazione e dintorni</a> &gt; [JavaScript] Funzione write in una nuova window!</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=9350">[JavaScript] Funzione write in una nuova window!</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Dracoo</div><div class="date">01-07-2005, 15:40</div></div><div class="posttext">Buondì... passo subito al mio problemuccio...<br />
+ &lt;html&gt; <br />
+&lt;head&gt;<br />
+&lt;script language=&quot;JavaScript&quot;&gt;<br />
+window.open(&quot;ciao.html&quot;,ciaowin)<br />
+&lt;/script&gt;<br />
+&lt;/head&gt;<br />
+&lt;/html&gt;<br />
+<br />
+Supponiamo che questo pezzo di codice sia nel file index.html<br />
+Supponiamo che io voglia scrivere qualcosa nella nuova window, con un metodo analogo a write()... come fo?<br />
+Vi adoro :okay:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Delphino</div><div class="date">06-07-2005, 10:44</div></div><div class="posttext">ciau<br />
+<br />
+partendo da una pagina ciao.html che contiene questo codice:&lt;html&gt; <br />
+&lt;body&gt;ciao<br />
+&lt;div id=&quot;messaggio&quot; name=&quot;messaggio&quot;&gt;miao miao&lt;/div&gt;<br />
+&lt;/html&gt;puoi notare che c'è una div particolare di nome messaggio che verrà usata per scrivere il messaggio al suo interno da parte di un'altra pagina.<br />
+<br />
+Abbiamo quindi la pagina con il codice da te postato, leggermente modificato:&lt;html&gt; <br />
+&lt;head&gt;<br />
+&lt;script language=&quot;JavaScript&quot;&gt;<br />
+  var ciaowin = window.open('ciao.html', 'ciaowin');<br />
+<br />
+function cambia()<br />
+{<br />
+  var messaggio = ciaowin.document.getElementById('messaggio');<br />
+  messaggio.innerHTML='Testo modificato';<br />
+//  alert(messaggio.innerHTML);<br />
+}<br />
+&lt;/script&gt;<br />
+&lt;/head&gt;<br />
+&lt;body&gt;&lt;input type=&quot;button&quot; onClick=&quot;cambia();&quot;&gt;&lt;/body&gt;<br />
+&lt;/html&gt;Provato con successo sia su IE che su FireFox<br />
+Ho usato un pulsante ma puoi usare qualsiasi altro evento che però sia successivo al caricamento della div (e quindi del codice della pagina che la contiene); non dovresti metterlo subito dopo il popup perchè la sua esecuzione è asincrona. al limite puoi usare un timer di X millisecondi che scatti dopo il popup, qualcosa del generesetTimeout('cambia()', 2000);ciau  ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dracoo</div><div class="date">07-07-2005, 15:06</div></div><div class="posttext">Ti ringrazio, ma son riuscito a risolvere con:<br />
+ <br />
+ &lt;html&gt; <br />
+  &lt;head&gt;<br />
+  &lt;/head&gt;<br />
+  &lt;body&gt;<br />
+	&lt;button onclick=&quot;ciao=open ('prova.html','winname','width=200,height=200')&quot;&gt;Ciao&lt;/button&gt;<br />
+	&lt;button onclick='ciao.document.write(&quot;Ciaoo&quot;)'&gt;Scrivi&lt;/button&gt;<br />
+  &lt;/body&gt;<br />
+&lt;/html&gt;<br />
+ <br />
+ <br />
+:-)</div></div><hr />
+
+
+<div id="copyright">vBulletin v3.5.3, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

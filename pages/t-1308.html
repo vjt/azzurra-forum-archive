@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="mode, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] mode Services - I servizi IRC di Azzurra" />
+	
+	<title>mode [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-6.html">Network Central</a> &gt; <a href="f-30.html">Services - I servizi IRC di Azzurra</a> &gt; mode</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=1308">mode</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">cdv</div><div class="date">20-11-2002, 16:12</div></div><div class="posttext">mmm volevo sottoporvi un problema..<br />
+<br />
+mlock = -m ecc<br />
+<br />
+l'mlock lo puo settare solo il founder....e lo può attivare a seconda dei casi..<br />
+<br />
+ora il setto il +m ,  il problema è che se io ho settato questo ci sarà un motivo! però gli aop possono portare lo stato a -m di nuovo, e non  lo blocca chanserv perche è messo in mlock -m <br />
+<br />
+forse non mi sono spiegato bene comunque!!!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Koper</div><div class="date">20-11-2002, 16:48</div></div><div class="posttext">mmm volevo sottoporvi un problema..<br />
+<br />
+mlock = -m ecc<br />
+<br />
+l'mlock lo puo settare solo il founder....e lo può attivare a seconda dei casi..<br />
+<br />
+ora il setto il +m ,  il problema è che se io ho settato questo ci sarà un motivo! però gli aop possono portare lo stato a -m di nuovo, e non  lo blocca chanserv perche è messo in mlock -m <br />
+<br />
+forse non mi sono spiegato bene comunque!!!<br />
+<br />
+Se tu setti l'MLOCK a -m, il ChanServ terrà sempre il canale -m (a meno che non sia il founder o un cfounder a settare la mode), e quindi e' giusto che lasci settare ad un AOP la -m, che invece non potrà mettere il canale +m. Se vuoi invece impedirgli di toglierla, dovresti includere nel tuo mlock la +m .</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">20-11-2002, 16:52</div></div><div class="posttext">mmm volevo sottoporvi un problema..<br />
+<br />
+mlock = -m ecc<br />
+<br />
+l'mlock lo puo settare solo il founder....e lo può attivare a seconda dei casi..<br />
+<br />
+ora il setto il +m ,  il problema è che se io ho settato questo ci sarà un motivo! però gli aop possono portare lo stato a -m di nuovo, e non  lo blocca chanserv perche è messo in mlock -m <br />
+<br />
+forse non mi sono spiegato bene comunque!!!<br />
+<br />
+in effetti, interpreto a vista :)<br />
+<br />
+Mettere mlock -m vuol dire ordinare a ChanServ di tenere un canale non moderato, e solo il founder puo' contravvenire a questo ordine mettendo un +m. Successivamente, se qualche @p setta il -m , ChanServ vede il canale non moderato e non interviene: interverrebbe, invece, se il mlck fosse +m e l'@p volesse fare il contrario :)<br />
+<br />
+NB: secondo me, mlock +m non ha senso, cmq... e non tiratemi fuori la storia dell'autovoice o dell'autoop che a mio avviso sono ancora piu' insensati! :P<br />
+<br />
+EDIT: non avevo visto la risposta di Koper, sorry ^^;;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">cdv</div><div class="date">21-11-2002, 14:10</div></div><div class="posttext">non sarebbe opportuno che se il founder ha nell'mlock il mode -m ma decidesse di settare il +m ... fosse solo lui a poterlo portare a -m ?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">21-11-2002, 15:11</div></div><div class="posttext">non sarebbe opportuno che se il founder ha nell'mlock il mode -m ma decidesse di settare il +m ... fosse solo lui a poterlo portare a -m ?<br />
+<br />
+beh, il flag +m o -m puo' essere settato da un qualsiasi operatore, il founder fa quel che gli pare ma negli altri casi ChanServ rispetta il mlock -m senza eccezioni (IRCop a parte, forse :P)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">cdv</div><div class="date">22-11-2002, 22:06</div></div><div class="posttext">scusate :PPP</div></div><hr />
+
+
+<div id="copyright">vBulletin&reg; v3.6.4, Copyright &copy;2000-2007, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Reason per il Restricted, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] Reason per il Restricted Services - I servizi IRC di Azzurra" />
+	
+	<title>Reason per il Restricted [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-6.html">Network Central</a> &gt; <a href="f-30.html">Services - I servizi IRC di Azzurra</a> &gt; Reason per il Restricted</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=4017">Reason per il Restricted</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Dracoo</div><div class="date">08-02-2004, 22:38</div></div><div class="posttext">Come da oggetto...<br />
+<br />
+Penso sia di facile implemento e di &quot;peso&quot; trascurabile... ma la sua utilità è grande, in quanto se uno vuole ovviare a questo, deve fare un akick su <br />
+*!*@*, cosa che può essere fastidiosa nel caso in cui qualcuno provi ad entrare nel canale (VOP+) dopo che ChanServ abbia impostato il ban. O magari qualcuno nel canale ha una protezione antiban e leva il ban, permettendo a l'utente di rientrare (metti il caso che l'utente abbia il &quot;rejoin on kick&quot;) facendo una bella &quot;lotta&quot; con ChanServ.<br />
+<br />
+Opinioni, commenti, critiche :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Irvine</div><div class="date">09-02-2004, 00:44</div></div><div class="posttext">deve fare un akick su *!*@*, cosa che può essere fastidiosa nel caso in cui qualcuno provi ad entrare nel canale (VOP+) dopo che ChanServ abbia impostato il ban. <br />
+<br />
+<br />
+Non ho ben capito che fastidio possa dare l'akick ai VOP+.<br />
+Mi è capitata su #IRCHelp questa domanda, e come risposta ho consigliato come possibile soluzione appunto l'akick su *!*@*. Comunque penso che poter mettere una reason per l'opzione Restrict non sia una cattiva idea, ma mi viene da pensare che se i coders non hanno aggiunto questa opzione ci sarà un motivo, o forse l'hanno semplicemente dimenticato  :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">notung</div><div class="date">09-02-2004, 09:38</div></div><div class="posttext">Trovo che sia un'ottima idea.<br />
+Ciao.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">09-02-2004, 10:03</div></div><div class="posttext">Anche a me sembra sensata come idea... vedremo che risponderanno i coder :-)<br />
+<br />
+Ciao.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">anaconda</div><div class="date">09-02-2004, 11:03</div></div><div class="posttext">Beh... se io permetto l'accesso ad un canale a determinate persone e basta non vedo perchè dovrei dire il motivo a te ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dracoo</div><div class="date">09-02-2004, 11:39</div></div><div class="posttext">Beh... se io permetto l'accesso ad un canale a determinate persone e basta non vedo perchè dovrei dire il motivo a te ;)<br />
+<br />
+Beh, pensavo fosse sottointeso che il motivo debba essere opzionale (se non metti nulla, ti lascia quello di default che c'è ora cfr: &quot;Non hai il permesso di entrare in questo canale&quot;)<br />
+<br />
+Non ho ben capito che fastidio possa dare l'akick ai VOP+.<br />
+Faccio un esempio:<br />
+<br />
+Il canale #chan è akick *!*@*<br />
+<br />
+Tizio, che non è VOP+, cerca di entrarci, ma ovviamente viene bankickato da ChanServ, il quale mette un ban nel canale di tipo *!*@*<br />
+Se ora un Caio, che è AOP in #chan vuole entrarci, deve per forza invitarsi o togliersi il ban, perchè ovviamente anche lui rispecchia la mask bannata *!*@*<br />
+<br />
+Oppure può succedere (esempio stupido)che quando Tizio entra in #chan, ChanServ lo kickbanna, e magari Osvaldo, (founder di #chan), toglie il ban in automatico grazie ad un suo script. Ora Tizio può rientrare nel canale, in quanto il ban è stato tolto. Si inizierà un ciclo che si concluderà solo quando Osvaldo toglierà lo script, o Tizio la smetterà di joinare il canale.<br />
+<br />
+Tutto questo non succederebbe con il restricted, in quanto chanserv mette un ban (se non erro) di tipo *!*@host<br />
+<br />
+Spero di esser stato + chiaro ^^</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Irvine</div><div class="date">09-02-2004, 13:07</div></div><div class="posttext">Adesso ho capito meglio cosa intendevi  Dracoo :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">notung</div><div class="date">09-02-2004, 20:23</div></div><div class="posttext">Secondo me la frase: &quot; Non hai il permesso di entrare in questo canale&quot; e relativo ban è un po' sgradevole.<br />
+Nel mio canale l'opzione restrict avrebbe avuto un senso, come immagino per altri, ma non l'ho scelta per questo che d'autoritario che si porta dietro.<br />
+Se avessi la possibilità di scegliere, scriverei una motivazione meno &quot;violenta&quot; e contemporaneamente, mi eviterei rotture di palle tipo ban, akick ecc ecc.<br />
+Per ora ho risolto il problema moderando il canale, ed anche così, qualcuno s'offende.<br />
+Quindi, confermo, se c'è la possibilità, ben venga il reason sul restrict.<br />
+Ciao.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gastaman</div><div class="date">09-02-2004, 23:42</div></div><div class="posttext">L'idea non è malvagia, e sicuramente prima o poi verrà inserita. Purtroppo ci vorrà un po'... nella versione attuale non è implementabile, e nemmeno in quella nuova che metteremo su a breve... mentre nella successiva non ci saranno problemi.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dracoo</div><div class="date">10-02-2004, 18:37</div></div><div class="posttext">L'idea non è malvagia, e sicuramente prima o poi verrà inserita. Purtroppo ci vorrà un po'... nella versione attuale non è implementabile, e nemmeno in quella nuova che metteremo su a breve... mentre nella successiva non ci saranno problemi.<br />
+<br />
+Ok, grazie mille... :)<br />
+<br />
+Giusto per ficcanasaggine, si può avere qualche spoiler sui nuovi services? (solo news scottanti :P)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">10-02-2004, 21:17</div></div><div class="posttext">si può avere qualche spoiler sui nuovi services? (solo news scottanti :P)<br />
+<br />
+Una modifica carina ed anticipata gia' su questo stesso forum e' il LOCK per le singole entry di una qualsiasi lista del canale, in modo che solo al Founder sia permesso toccare quella specifica entry. Faccio alcuni esempi pratici perche' forse non mi sono espresso benissimo: si potra' evitare che qualcuno tolga una AKICK, o promuova un VOP, od elimini un AOP, oppure ancora degradare un SOP... a meno che non sia lo stesso Founder a farlo. Ovviamente questa funzione non varra' per i CoFounder, dato che la gestione delle loro liste e' gia' di esclusiva competenza del Founder.<br />
+Un'altra implementazione che verra' riguarda la possibilita' di variare i tempi di attivazione del KILL per il nick: normale (60 secondi, come oggi), media (20 secondi) o veloce (5 secondi). Ad ognuno la sua scelta, il default restera' sui 60 secondi attuali :-)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dracoo</div><div class="date">10-02-2004, 21:55</div></div><div class="posttext">Quella del Lock ne avevo già sentito parlare anch'io, quella del &quot;Time to Kill&quot; ( ^^ ) non sapevo che fosse in progetto, anche se ho un vago ricordo di un thread che ne parlava... Idea ottima :) ... io volevo proporre un'opzione ancora più drastica (ma ora penso sia TROPPO drastica) ovvero che non si possa usare un nick finchè non ci si identifica... un settaggio del genere l'ho visto nei services Auspice...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Koper</div><div class="date">17-03-2004, 15:45</div></div><div class="posttext">Si può già fare. Togli il restrict e fai /cs akick #canale add *!*@* 2 Motivo del restrict... Così ottieni lo stesso identico effetto del restrict, ma puoi specificare la ragione</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dracoo</div><div class="date">18-03-2004, 15:26</div></div><div class="posttext">Perfetto! Non sapevo si potesse specificare un bantype per ogni singola voce dell'Akick List... ^^<br />
+É un po' un controsenso che un akick su una mask ne banni una diversa (però sono convinto della sua utilità), ma è proprio quello che cercavo...<br />
+Tnx :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Koper</div><div class="date">19-03-2004, 23:44</div></div><div class="posttext">É un po' un controsenso che un akick su una mask ne banni una diversa<br />
+<br />
+Perché? Sei tu che gli dici di bannarne una diversa.. per esempio se metti in akick pippo!*@*, puoi decidere di farlo bannare sull'host, così anche se cambia nick non può rientrare</div></div><hr />
+
+
+<div id="copyright">vBulletin&reg; v3.6.4, Copyright &copy;2000-2007, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

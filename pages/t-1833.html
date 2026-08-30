@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="phpBB2 su un servizio web GRATUITO?, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] phpBB2 su un servizio web GRATUITO? Programmazione e dintorni" />
+		<title>phpBB2 su un servizio web GRATUITO? [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-23.html">Programmazione e dintorni</a> &gt; phpBB2 su un servizio web GRATUITO?</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=1833">phpBB2 su un servizio web GRATUITO?</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Playstation2</div><div class="date">17-03-2003, 12:33</div></div><div class="posttext">Salve,<br />
+<br />
+Qualcuno di voi conosce qualche servizio web GRATUITO (tipo Xoom, Tripod, Digilander) che consenta di utilizzare PHP e abbia il supporto MySQL per poter installare il Forum phpBB2? ( http://www.phpbb.com ).<br />
+Io ho provato con Tripod e dopo aver speso un po' di tempo a reperire i dati per l'installazione corretta del Forum, l'ho installato con successo. Funziona tutto, compresi avatar, temi, utenze, autorizzazioni.<br />
+<br />
+Peccato che abbia un difetto: Quando faccio il login con l'utenza di amministratore del forum (o con qualisiai altra utenza), dopo aver inserito user e password e premuto invio, invece di ricaricare la homepage del forum con l'utente autenticato, appare quella di Tripod :(.<br />
+Premendo il tasto BACK del browser (ritorno al Forum) e aggiornando la pagina, risulto correttamente loggato con tutti i privilegi relativi, ma è chiaro che non posso costringere gli utenti ad effettuare ogni volta questi step :)<br />
+Qualcun'altro ha avuto già questo mio stesso problema? Esiste un altro servizio gratuito analogo a Tripod per poter installare phpBB2?<br />
+<br />
+Grazie per l'attenzione!<br />
+<br />
+Ciao!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Playstation2</div><div class="date">17-03-2003, 16:05</div></div><div class="posttext">Dimenticavo di scrivere che ho già tentato i link proposti gentilmente da Progeny nel post http://www.azzurra.org/forum/viewtopic.php?t=406 ma senza trovare nulla di compatibile con quanto sopra descritto :(<br />
+<br />
+Ciao!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Playstation2</div><div class="date">17-03-2003, 17:37</div></div><div class="posttext">Rispondo a me stesso poichè ho trovato per puro caso (che culo eh...) la soluzione!<br />
+<br />
+Cercate in includes/functions.php<br />
+<br />
+function redirect&#40;$url&#41;<br />
+&#123;<br />
+	global $db, $board_config;<br />
+<br />
+	if &#40;!empty&#40;$db&#41;&#41;<br />
+	&#123;<br />
+		$db-&amp;gt;sql_close&#40;&#41;;<br />
+	&#125;<br />
+<br />
+	$server_protocol = &#40;$board_config&#91;'cookie_secure'&#93;&#41; ? 'https&#58;//' &#58; 'http&#58;//';<br />
+	$server_name = preg_replace&#40;'#^\/?&#40;.*?&#41;\/?$#', '\1', trim&#40;$board_config&#91;'server_name'&#93;&#41;&#41;;<br />
+	$server_port = &#40;$board_config&#91;'server_port'&#93; &amp;lt;&amp;gt; 80&#41; ? '&#58;' . trim&#40;$board_config&#91;'server_port'&#93;&#41; &#58; '';<br />
+	$script_name = preg_replace&#40;'#^\/?&#40;.*?&#41;\/?$#', '\1', trim&#40;$board_config&#91;'script_path'&#93;&#41;&#41;;<br />
+	$script_name = &#40;$script_name == ''&#41; ? $script_name &#58; '/' . $script_name;<br />
+	$url = preg_replace&#40;'#^\/?&#40;.*?&#41;\/?$#', '/\1', trim&#40;$url&#41;&#41;;<br />
+<br />
+	// Redirect via an HTML form for PITA webservers<br />
+	if &#40;@preg_match&#40;'/Microsoft|WebSTAR|Xitami/', getenv&#40;'SERVER_SOFTWARE'&#41;&#41;&#41;<br />
+	&#123;<br />
+		header&#40;'Refresh&#58; 0; URL=' . $server_protocol . $server_name . $server_port . $script_name . $url&#41;;<br />
+		echo '&amp;lt;!DOCTYPE HTML PUBLIC &amp;quot;-//W3C//DTD HTML 4.01 Transitional//EN&amp;quot;&amp;gt;&amp;lt;html&amp;gt;&amp;lt;head&amp;gt;&amp;lt;meta http-equiv=&amp;quot;Content-Type&amp;quot; content=&amp;quot;text/html; charset=iso-8859-1&amp;quot;&amp;gt;&amp;lt;meta http-equiv=&amp;quot;refresh&amp;quot; content=&amp;quot;0; url=' . $server_protocol . $server_name . $server_port . $script_name . $url . '&amp;quot;&amp;gt;&amp;lt;title&amp;gt;Redirect&amp;lt;/title&amp;gt;&amp;lt;/head&amp;gt;&amp;lt;body&amp;gt;&amp;lt;div align=&amp;quot;center&amp;quot;&amp;gt;If your browser does not support meta redirection please click &amp;lt;a href=&amp;quot;' . $server_protocol . $server_name . $server_port . $script_name . $url . '&amp;quot;&amp;gt;HERE&amp;lt;/a&amp;gt; to be redirected&amp;lt;/div&amp;gt;&amp;lt;/body&amp;gt;&amp;lt;/html&amp;gt;';<br />
+		exit;<br />
+	&#125;<br />
+<br />
+	// Behave as per HTTP/1.1 spec for others<br />
+	header&#40;'Location&#58; ' . $server_protocol . $server_name . $server_port . $script_name . $url&#41;;<br />
+	exit;<br />
+&#125;<br />
+Modificate in :<br />
+<br />
+function redirect&#40;$url&#41; <br />
+&#123; <br />
+   global $db, $board_config; <br />
+    <br />
+           if &#40;!empty&#40;$db&#41;&#41; <br />
+           &#123; <br />
+                   $db-&amp;gt;sql_close&#40;&#41;; <br />
+           &#125; <br />
+<br />
+   $server_protocol = &#40;$board_config&#91;'cookie_secure'&#93;&#41; ? 'https&#58;//' &#58; 'http&#58;//'; <br />
+   $server_name = preg_replace&#40;'#^\/?&#40;.*?&#41;\/?$#', '\1', trim&#40;$board_config&#91;'server_name'&#93;&#41;&#41;; <br />
+   $server_port = &#40;$board_config&#91;'server_port'&#93; &amp;lt;&amp;gt; 80&#41; ? '&#58;' . trim&#40;$board_config&#91;'server_port'&#93;&#41; &#58; ''; <br />
+   $script_name = preg_replace&#40;'#^\/?&#40;.*?&#41;\/?$#', '\1', trim&#40;$board_config&#91;'script_path'&#93;&#41;&#41;; <br />
+   $script_name = &#40;$script_name == ''&#41; ? $script_name &#58; '/' . $script_name; <br />
+   //$url = preg_replace&#40;'#^\/?&#40;.*?&#41;\/?$#', '/\1', trim&#40;$url&#41;&#41;; <br />
+<br />
+   // Redirect via an HTML form for PITA webservers <br />
+   if &#40;@preg_match&#40;'/Microsoft|WebSTAR|Xitami/', getenv&#40;'SERVER_SOFTWARE'&#41;&#41;&#41; <br />
+   &#123; <br />
+      header&#40;'Refresh&#58; 0; URL=' . $server_protocol . $server_name . $server_port . $script_name . $url&#41;; <br />
+      echo '&amp;lt;!DOCTYPE HTML PUBLIC &amp;quot;-//W3C//DTD HTML 4.01 Transitional//EN&amp;quot;&amp;gt;&amp;lt;html&amp;gt;&amp;lt;head&amp;gt;&amp;lt;meta http-equiv=&amp;quot;Content-Type&amp;quot; content=&amp;quot;text/html; charset=iso-8859-1&amp;quot;&amp;gt;&amp;lt;meta http-equiv=&amp;quot;refresh&amp;quot; content=&amp;quot;0; url=' . $server_protocol . $server_name . $server_port . $script_name . $url . '&amp;quot;&amp;gt;&amp;lt;title&amp;gt;Redirect&amp;lt;/title&amp;gt;&amp;lt;/head&amp;gt;&amp;lt;body&amp;gt;&amp;lt;div align=&amp;quot;center&amp;quot;&amp;gt;If your browser does not support meta redirection please click &amp;lt;a href=&amp;quot;' . $server_protocol . $server_name . $server_port . $script_name . $url . '&amp;quot;&amp;gt;HERE&amp;lt;/a&amp;gt; to be redirected&amp;lt;/div&amp;gt;&amp;lt;/body&amp;gt;&amp;lt;/html&amp;gt;'; <br />
+      exit; <br />
+   &#125; <br />
+<br />
+   // Behave as per HTTP/1.1 spec for others <br />
+   //header&#40;'Location&#58; ' . $server_protocol . $server_name . $server_port . $script_name . $url&#41;; <br />
+   header&#40;'Location&#58; ' . $url&#41;; <br />
+   exit; <br />
+&#125;<br />
+<br />
+Ciao!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">MiPKy</div><div class="date">23-03-2003, 13:37</div></div><div class="posttext">Io ho installato PhpBB2 su Tripod e non ho questo problema, cmq stavo cercando un altro servizio di hosting perchè questo è veramente troooooppo lento...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Alex1</div><div class="date">23-03-2003, 19:53</div></div><div class="posttext">www.coolfreepage.com<br />
+<br />
+però ha dei popup fastidiosi <br />
+<br />
+sennò altervista che tra l'altro lo attiva di default su richiesta :wink:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">LeGoLaS</div><div class="date">15-04-2003, 20:21</div></div><div class="posttext">Io ho installato PhpBB2 su Tripod e non ho questo problema, cmq stavo cercando un altro servizio di hosting perchè questo è veramente troooooppo lento...<br />
+<br />
+Puoi provare anche http://www.lycos.it<br />
+<br />
+Bye</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Playstation2</div><div class="date">16-04-2003, 15:22</div></div><div class="posttext">Io ho provato con Tripod...<br />
+<br />
+Ciao Legolas,<br />
+<br />
+ma Tripod Italia e Lycos.it non offrono lo stesso servizio web?<br />
+<br />
+Ciao!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">thesaint</div><div class="date">16-04-2003, 23:00</div></div><div class="posttext">si cmq cn altervista devi guadagnare gli alter cents e poi è un casino. Il problema che hai avuto dipende dal forum che evidentemente aveva qualche difetto (potrebbe essere anche la skin che hai installato)<br />
+Sauti.</div></div><hr />
+
+
+<div id="copyright">vBulletin v3.5.3, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

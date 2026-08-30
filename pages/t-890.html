@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<title>Azzurra IRC Network Forum - Come si FA?</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="Azzurra IRC Network Forum" />
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-23.html">Programmazione e dintorni</a> &gt; Come si FA?</div>
+<hr />
+<div class="pda"><a href="?pda=1">PDA</a></div>
+<p class="largefont">Mostra versione intera : <a href="http://forum.azzurra.org/showthread.php?t=890">Come si FA?</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">pisquit</div><div class="date">22-08-2002, 13:39</div></div><div class="posttext">salve è la prima volta che passo nel forum e spero di non essere andato fuori tema, vorrei mettere un forum nel mio sito e ho pensato al phpBB, solo che non ho mai avuto a che fare con un forum e non ho la + pallida idea di come si possa installare o impostare, qualcuno può aiutarmi??<br />
+grazie<br />
+<br />
+By Pisquit</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">_theone_</div><div class="date">22-08-2002, 14:14</div></div><div class="posttext">I passi fondamentali per installare un forum (qualsiasi esso sia) sono questi:<br />
+<br />
+ <br />
+  verifica che il provider presso il quale hai intenzione di pubblicare il forum supporti i requisiti che quest'ultimo impone (normalmente nella documentazione trovi scritto che tipo di supporto richieda, se ASP o PHP, e quale tipo di database sia necessario)<br />
+<br />
+  installa e configura il database come spiegato nella documentazione del forum<br />
+<br />
+[list:90598b4956]<br />
+ phpBB 1.4.x richiede la creazione di un database mysql, la creazione di un nome utente e l'impostazione di una password e dei relativi permessi di accesso e, infine, l'inserimento manuale di un file .sql, contenente le definizioni delle tabelle.<br />
+<br />
+ phpBB 2.0.x richiede soltanto la creazione del database e l'impostazione di username, password e permessi.<br />
+La creazione delle tabelle viene effettuata in modo automatica dalla procedura di installazione.<br />
+<br />
+<br />
+<br />
+ configura le impostazioni base del forum <br />
+<br />
+<br />
+ Nel caso di phpBB 1.4.x si tratta di editare il file config.php  e di settare i valori corretti che rispecchiano la configurazione del tuo web server<br />
+<br />
+ Nel caso di phpBB 2.0.x anche queste opzioni vengono settate in modo automatico dalla procedura di installazione (ulteriori personalizzazioni sono poi gestite totalmente dal pannello amministrativo)<br />
+<br />
+<br />
+ esegui, se presente, la procedura di installazione (solitamente si tratta di richiamare l'indirizzo http://tuo.web.server/phpBB/install.php, ma anche in questo caso è bene leggere la documentazione allegata)<br />
+[/list:o:90598b4956]<br />
+<br />
+A questo punto dovresti avere una installazione di default del tuo forum, senza alcuna opzione aggiuntiva, ma perfettamente funzionale nelle sue caratteristiche di base.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">pisquit</div><div class="date">22-08-2002, 21:33</div></div><div class="posttext">allora io ho verificato e utilizzando Lycos (tripod) il supporto c'è.<br />
+- per installare il forum devo pubblicare tutta la cartella &quot;phpBB-2.0.2&quot; su tripod?<br />
+<br />
+&quot;phpBB 2.0.x richiede la creazione del database e l'impostazione di username, password e permessi. <br />
+La creazione delle tabelle viene effettuata in modo automatica dalla procedura di installazione. &quot;<br />
+come posso fare questo? <br />
+<br />
+<br />
+grazie<br />
+Pisquit</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">_theone_</div><div class="date">23-08-2002, 01:05</div></div><div class="posttext">allora io ho verificato e utilizzando Lycos (tripod) il supporto c'è.<br />
+- per installare il forum devo pubblicare tutta la cartella &quot;phpBB-2.0.2&quot; su tripod?<br />
+<br />
+<br />
+Si.<br />
+<br />
+<br />
+&quot;phpBB 2.0.x richiede la creazione del database e l'impostazione di username, password e permessi. <br />
+La creazione delle tabelle viene effettuata in modo automatica dalla procedura di installazione. &quot;<br />
+come posso fare questo?<br />
+<br />
+<br />
+Per questo devi verificare come avvenga l'attivazione del database mysql, eventualmente informandoti presso l'help desk di Lycos/Tripod.<br />
+Non conosco Lycos, nè altri provider gratuiti purtroppo, quindi non saprei come esserti utile.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">thema77</div><div class="date">08-01-2003, 20:20</div></div><div class="posttext">io ti consiglio vivamente di spendere 35 euro e acquistare un dominio con supporto mysql.<br />
+L'installazione del forum e semplicissima se hosty su aruba.<br />
+Ce anche un vademecum che ti spiega tutto</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">thesaint</div><div class="date">09-01-2003, 01:38</div></div><div class="posttext">lycos è + che sufficiente,perchè sinceramente 25 mb sn buoni se bissogna fare un forum che debba sdupportare un numero accettabile di utenti.quindi basta che dal phpnyadmin di lycos attivi il database e poi segui le istruzioni che theone ha inserito nelk post precedente.ciao</div></div><hr />
+
+<div id="copyright">vBulletin Versione 3.0.7, Copyright &copy;2000-2005, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

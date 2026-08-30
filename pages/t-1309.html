@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Dead error, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] Dead error Angolo tecnico" />
+	
+	<title>Dead error [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php/">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-13.html">Angolo tecnico</a> &gt; Dead error</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=1309">Dead error</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">20-11-2002, 17:58</div></div><div class="posttext">Miracoli dell'ADSL: il mio pc e la mia connessione hanno un uptime di 8 giorni, e sono su Azzurra a fare un po' il bot :)<br />
+Stamane ho cambiato nick in `work`, mi sono messo away e son filato in ufficio. Tornato a casa, ho visto che l'ultimo messaggio su mIRC era datato alle 09:29 , e nello status non ho avuto alcuna riconnessione automatica. A quel punto, ho eseguito una disconnessione, ho killato il mio stunnel, e mi son riconnesso nuovamente in SSL.<br />
+Rientrato in canale, mi e' stato riferito il mio quit message:<br />
+<br />
+(18:48:12) * `work` (~steve@62.123.AzzurraNET=712D9CA6) Quit (Read/Dead Error: Input/output error)<br />
+<br />
+...qualcuno me lo sa decifrare, o mi sa dire cosa e' successo nelle 9 ore fra l'ultimo messaggio e la mia disconnessione? :)<br />
+<br />
+Tnx! ^^<br />
+<br />
+Edit/Update : dai log del mio router, 9 ore fa mi sono disconnesso e riconnesso... strano che mIRC non se ne sia accorto, e strano anche che la mia assenza sia stata segnalata proprio quando mi sono disconnesso, anche se con un quit &quot;inedito&quot;...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">void`</div><div class="date">30-11-2002, 16:29</div></div><div class="posttext">[cut]<br />
+<br />
+(18:48:12) * `work` (~steve@62.123.AzzurraNET=712D9CA6) Quit (Read/Dead Error: Input/output error)<br />
+<br />
+...qualcuno me lo sa decifrare, o mi sa dire cosa e' successo nelle 9 ore fra l'ultimo messaggio e la mia disconnessione? :)<br />
+<br />
+Edit/Update : dai log del mio router, 9 ore fa mi sono disconnesso e riconnesso... strano che mIRC non se ne sia accorto, e strano anche che la mia assenza sia stata segnalata proprio quando mi sono disconnesso, anche se con un quit &quot;inedito&quot;...<br />
+<br />
+<br />
+il problema risiede in come e` fatto l`ircd, e nel suo originario non-supporto per SSL. quando<br />
+c`e` un errore non ricoverabile durante la connessione, il server e` costretto ad abortirla<br />
+nel peggiore dei modi, e questo e` stato implementato marcando il socket come &quot;DEAD&quot;,<br />
+per evitare che su una connessione gia` morta venisse inviata la stringa &quot;ERROR&quot;, causando<br />
+un loop e quindi uno stack overflow =)<br />
+<br />
+in questi casi ho quindi deciso di marcare forzatamente come &quot;DEAD&quot; il socket e, se non ho<br />
+informazioni sufficienti sulla natura dell`errore utilizzo EIO, cioe` un generico errore di Input/<br />
+output.<br />
+<br />
+il codice relativo e` questo:<br />
+<br />
+<br />
+    /* if we reply&#40;&#41; something here, we might just trigger another<br />
+     * fatal_ssl_error&#40;&#41; call and loop until a stack overflow... <br />
+     * the client won`t get the ERROR &#58; ... string, but this is<br />
+     * the only way to do it.<br />
+     * IRC protocol wasn`t SSL enabled .. --vjt<br />
+     */<br />
+<br />
+    errno = errtmp ? errtmp &#58; EIO; /* Stick a generic I/O error */<br />
+    sptr-&amp;gt;sockerr = IRCERR_SSL;<br />
+    sptr-&amp;gt;flags |= FLAGS_DEADSOCKET;<br />
+<br />
+<br />
+non e` il massimo della pulizia, ma fa il suo dovere =)<br />
+<br />
+spero di non esser stato troppo tecnico =)<br />
+<br />
+ciao</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">30-11-2002, 20:40</div></div><div class="posttext">Grazie per la risposta vjt :)<br />
+Non temere, l'ho capita, anche se non so nemmeno che linguaggio di programmazione usa quel pezzo di codice che hai pastato... :D<br />
+<br />
+Comunque, il mio dubbio dubbioso rimane sempre questo: se io alle 9 mi sono sconnesso e riconnesso, devo avere per forza perso il link con crypto.azzurra.org, giusto? Eppure, perche' il Dead Error mi e' giunto esattamente quando sul mio client, alle 18, ho cliccato su &quot;disconnect&quot; ? Dal momento che mi ero sconnesso e NON riconnesso ad irc, come faceva l'ircd a sapere che mi stavo disconnettendo?<br />
+<br />
+...stavolta spero di essere stato chiaro io... :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">void`</div><div class="date">01-12-2002, 20:11</div></div><div class="posttext">Comunque, il mio dubbio dubbioso rimane sempre questo: se io alle 9 mi sono sconnesso e riconnesso, devo avere per forza perso il link con crypto.azzurra.org, giusto? Eppure, perche' il Dead Error mi e' giunto esattamente quando sul mio client, alle 18, ho cliccato su &quot;disconnect&quot; ? Dal momento che mi ero sconnesso e NON riconnesso ad irc, come faceva l'ircd a sapere che mi stavo disconnettendo?<br />
+<br />
+...stavolta spero di essere stato chiaro io... :)<br />
+<br />
+<br />
+ora ho capito davvero che intendevi dire .. e non so risponderti. e` come se la connessione fosse rimasta in &quot;stallo&quot;  ed il tuo stunnel non l`abbia chiusa. ovviamente quando lo hai chiuso essa e` stata forzatamente chiusa. mi documentero` ma penso sia uno di quei bug &quot;oscuri&quot; di openssl (non e` ancora 1.0 =)<br />
+<br />
+ciao =)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">01-12-2002, 20:32</div></div><div class="posttext">ora ho capito davvero che intendevi dire .. e non so risponderti. e` come se la connessione fosse rimasta in &quot;stallo&quot;  ed il tuo stunnel non l`abbia chiusa. ovviamente quando lo hai chiuso essa e` stata forzatamente chiusa. mi documentero` ma penso sia uno di quei bug &quot;oscuri&quot; di openssl (non e` ancora 1.0 =)<br />
+<br />
+ciao =)<br />
+<br />
+Azzardo un'ipotesi... Non so se la mia connessione e' ad IP statico, ma se lo fosse potrebbe voler dire qualcosa? Magari invece di cadere per ping timeout son finito in questa strana situazione...<br />
+Grazie per l'analisi, cmq e' piu' una curiosita' che altro... difatti ora sto chattando senza problemi :D</div></div><hr />
+
+
+<div id="copyright">vBulletin&reg; v3.6.7, Copyright &copy;2000-2007, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

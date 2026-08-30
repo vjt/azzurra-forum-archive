@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<title>Azzurra IRC Network Forum - DCC e Fastweb</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="Azzurra IRC Network Forum" />
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-13.html">Angolo tecnico</a> &gt; DCC e Fastweb</div>
+<hr />
+<div class="pda"><a href="?pda=1">PDA</a></div>
+<p class="largefont">Mostra versione intera : <a href="http://forum.azzurra.org/showthread.php?t=538">DCC e Fastweb</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Mav</div><div class="date">02-05-2002, 02:34</div></div><div class="posttext">Modifico il post per risolvere un problema riscontrato dagli utilizzatori del server delta.azzurra.org quando tentano di inviare DCC agli abbonati di altri provider. Tale soluzione si applica anche agli users che continuano ad utilizzare gli altri server di Azzurra.<br />
+<br />
+Dunque... come tutti gli abbonati Fastweb sapranno una delle limitazioni più fastidiose dovute all'architettura della rete Fastweb è costituita dall'utilizzo di un IP privato e di server NAT che rendono problematico l'utilizzo delle DCC.<br />
+<br />
+Purtroppo non è possibile trovare una soluzione definitiva che funzioni in ogni caso, ma si può comunque dividere il problema a seconda dei casi e risolvere l'intoppo in modi diversi.<br />
+<br />
+CASO 1: DCC da abbonati Fastweb ad altri ISP<br />
+<br />
+In questo caso i passi da compiere (usando mIRC) sono i seguenti:<br />
+1) Andare alla sezione Connect-&amp;gt;Firewall delle opzioni di mIRC<br />
+2) Disattivare la casella Server e attivare la casella DCC<br />
+3) Selezionare il protocollo SOCKS5<br />
+4) Inserire l'indirizzo IP del SOCKS interno alla MAN di Fastweb: 10.31.254.64<br />
+5) Inserire 1080 come porta, lasciare vuoti i campi User ID e Password<br />
+6) Clickare su OK<br />
+7) Proseguire dal punto 2 del caso successivo<br />
+<br />
+CASO 2: DCC tra abbonati Fastweb<br />
+<br />
+1) Andare alla sezione Connect-&amp;gt;Firewall delle opzioni di mIRC e disabilitare la casella DCC se attivata<br />
+2) Andare alla sezione Connect-&amp;gt;Local Info delle opzioni di mIRC<br />
+3) Inserire nella casella di testo IP Address il proprio IP privato<br />
+4) Disattivare la casella Local Host lasciando attiva la casella IP Address<br />
+5) Attivare la casella Normal sotto Lookup Method<br />
+6) Clickare su OK<br />
+<br />
+NB: in entrambi i casi le istruzioni riportate si riferiscono alla versione 6.0 (o successive) di mIRC.<br />
+<br />
+ATTENZIONE: a causa di una implementazione particolare delle DCC su mIRC nel primo caso le DCC funzioneranno solo verso altri utenti che usino mIRC e non usino SOCKS/Firewall<br />
+In caso di problemi il canale #irchelp è sempre a vostra disposizione.<br />
+<br />
+NB: la versione aggiornata dell'alias /fwdcc è riportata nel post seguente.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">City_Hunter</div><div class="date">02-05-2002, 12:18</div></div><div class="posttext">Roxa troppo questo ragazzo :grin:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mav</div><div class="date">02-05-2002, 13:22</div></div><div class="posttext">Modifico il post per risolvere un problema riscontrato dagli utilizzatori del server delta.azzurra.org quando tentano di inviare DCC agli abbonati di altri provider. Tale soluzione si applica anche agli users che continuano ad utilizzare gli altri server di Azzurra.<br />
+<br />
+Rispondo a me stesso per aggiungere un piccolo alias fatto ad hoc per automatizzare le operazioni sopra descritte.<br />
+<br />
+Aprite la finestra Alias di mIRC (Alt+A) e copiate nella finestra il testo seguente:<br />
+<br />
+/fwdcc &#123;<br />
+  if &#40;$$1 == on&#41; &#123;<br />
+    localinfo -h<br />
+    .firewall -d off<br />
+    echo -at 2* Ora puoi usare le DCC verso abbonati Fastweb<br />
+  &#125;<br />
+  if &#40;$$1 == off&#41; &#123;<br />
+    localinfo -h<br />
+    .firewall -cm5+d on 10.31.254.64 1080<br />
+    .firewall +d off<br />
+    echo -at 2* Ora puoi usare le DCC verso abbonati di altri provider<br />
+  &#125;<br />
+&#125;<br />
+<br />
+<br />
+<br />
+Chiudete il mIRC Editor clickando su OK.<br />
+<br />
+Da questo momento potrete passare velocemente tra i due modi di utilizzo delle DCC:<br />
+<br />
+Per inviare DCC ad abbonati Fastweb: /fwdcc on <br />
+Per inviare DCC ad abbonati di altri provider: /fwdcc off <br />
+<br />
+Spero che questo alias possa esservi utile.<br />
+<br />
+Come sempre #irchelp per dubbi vari.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Luca`</div><div class="date">03-05-2004, 23:09</div></div><div class="posttext">Ho impostato mirc, mi sono connesso con i vari server per fastweb e non ho risolto nulla... stufo della situazione ho trovato un sito interessante e ho risolto il problema, ecco a voi : <br />
+<br />
+<br />
+http://snaker.altervista.org/html/fw_dcc/fw_dcc.htm<br />
+<br />
+<br />
+Leggete attentamente. Ciauu</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">City_Hunter</div><div class="date">04-05-2004, 00:19</div></div><div class="posttext">La guida che citi riporta metodi straconosciuti, messi nero su bianco proprio dal sottoscritto e da Mav in una guida sulle DCC (http://www.azzurra.org/documents.php?document_id=14&amp;amp;referer=/irchelp.php&amp;amp;section=irchelp&amp;amp;section_name=IRCHelp) che è sul sito di Azzurra da anni :)<br />
+<br />
+Comunque senza bisogno di andare a prendere quella guida, che tratta l'argomento a livello generale e non solo per quel che riguarda fastweb, basta recarsi nella sezione #irchelp di questo forum dove sin dal 18 Aprile c'è questo post di typedef_c:<br />
+http://www.azzurra.org/forum/viewtopic.php?t=6035<br />
+che tratta proprio le dcc con fastweb, sia per client mIRC che per Xchat.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">losko</div><div class="date">04-05-2004, 21:07</div></div><div class="posttext">È di nuovo cambiato qualcosa? Non vanno più le dcc con i parametri e i proxy con cui andavano fino a pochi giorni fà...</div></div><hr />
+
+<div id="copyright">vBulletin Versione 3.0.7, Copyright &copy;2000-2005, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

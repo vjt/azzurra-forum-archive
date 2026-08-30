@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Aggiornamento Servizi 29/2/2004, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] Aggiornamento Servizi 29/2/2004 Services - I servizi IRC di Azzurra" />
+	
+	<title>Aggiornamento Servizi 29/2/2004 [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-6.html">Network Central</a> &gt; <a href="f-30.html">Services - I servizi IRC di Azzurra</a> &gt; Aggiornamento Servizi 29/2/2004</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=4182">Aggiornamento Servizi 29/2/2004</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Gastaman</div><div class="date">28-02-2004, 23:53</div></div><div class="posttext">ChanServ:<br />
+<br />
+- Aggiunte:<br />
+  * SET BANTYPE - Permette di scegliere il tipo di ban applicato a chi entra e viene bannato in caso di canale settato RESTRICT, oppure di AutoKick inserite su nick di utenti (cioè non su mask). I tipi di ban sono gli stessi utilizzati da mIRC. Per visualizzarli: /help $mask<br />
+<br />
+  * SET NEVEROP - Se impostata, tutti gli AOP+ non verranno automaticamente oppati all'entrata del canale. Possono comunque opparsi in ogni momento tramite il comando OP di ChanServ.<br />
+<br />
+  * VOP/AOP/SOP/AKICK LOCK NICK - E' ora possibile bloccare singoli nick/mask all'interno di una lista. Queste entry possono essere modificate solo dal founder.<br />
+<br />
+  * DROP UNDO<br />
+<br />
+- Modifiche:<br />
+  * La lunghezza massima della descrizione di un canale è stata abbassata a 400 caratteri (era 450).<br />
+  * Il messaggio di benvenuto è stato accorciato (il canale appare tra [ ] e non c'è più la scritta &quot;Messaggio di benvenuto di&quot;)<br />
+  * Controlli più stretti sulle mask inserite nelle liste.<br />
+  * E' di nuovo possibile inserire reason con control codes nelle varie liste, tutti i control codes verranno chiusi automaticamente dai servizi alla fine della reason, per evitare di colorare quanto segue.<br />
+  * Non è più possibile deoppare AOP+ tramite ChanServ se l'opzione PROTECT è attiva.<br />
+  * Il nuovo founder è ora notificato del passaggio di proprietà del canale nel momento in cui avviene. La password viene inoltre cambiata con una casuale e notificata al nuovo founder al momento del passaggio.<br />
+  * Non è più possibile identificarsi a canali il cui founder ha il nick bloccato.<br />
+  * Non è più possibile per i SOP usare il comando MODE per cambiare i modes del canale in contrasto con il modelock.<br />
+  * Il comando WHY ora effettua una ricerca nelle liste in caso il nick richiesto sia offline.<br />
+<br />
+<br />
+- Bug:<br />
+  * UNBAN ME ora rimuove anche ban su IP, anche nel caso in cui chi usa il comando abbia un host risolto.<br />
+  * Non è più possibile registrare canali sospesi.<br />
+  * Il messaggio di AKick di default è ora inviato nella lingua corretta.<br />
+<br />
+<br />
+MemoServ:<br />
+<br />
+- Aggiunte:<br />
+  * LIST [CHANNEL|USER] - Lista solo i memo verso canali, o solo quelli diretti.<br />
+  * DEL ALL [CHANNEL|NEW|USER] - Cancella tutti i memo non ancora letti (NEW), verso canali (CHANNEL) o diretti (USER).<br />
+<br />
+- Modifiche:<br />
+  * Non è più possibile inviare memo a canali bloccati/sospesi/chiusi.<br />
+  * I memo verso canali non vengono più bloccati dall'opzione No Memo (serve la nuova No Chan Memo).<br />
+<br />
+- Bug:<br />
+  * Corretto un bug nel riordinamento dei memo durante l'utilizzo del comando PURGE.<br />
+  * Corretto un bug che mostrava un numero errato del memo al READ.<br />
+<br />
+<br />
+NickServ:<br />
+<br />
+- Aggiunte:<br />
+  * KILL [FAST|NORMAL|SLOW] - L'opzione KILL ha ora tre modalità di utilizzo. SLOW (Default) concede 60 secondi per l'inserimento della password, dopodiché cambia il nick in Guest e carica un Enforcer.                 La modalità NORMAL concede 20 secondi, mentre la modalità FAST ne concede solo 5.<br />
+<br />
+  * DROP UNDO<br />
+<br />
+  * SET NOCHANMEMO - Blocca la ricezione di tutti e soli i memo inviati a canali a cui si è in lista, tranne quelli inviati a canali di cui si è Founder.<br />
+<br />
+  * SET NOWELCOME - Se impostato su on, nessun messaggio di benvenuto verrà inviato al join di un canale registrato.<br />
+<br />
+<br />
+- Modifiche:<br />
+  * Non è più possibile fornire E-Mail false alla registrazione.<br />
+  * Il +r viene conferito solo previa autorizzazione del nick, non più al momento della registrazione.<br />
+<br />
+<br />
+Altro:<br />
+  * Due nuove lingue, Spagnolo (tradotto da K_o_R) e Francese (tradotto da tulifaiv).<br />
+<br />
+<br />
+Vi preghiamo di segnalare eventuali bugs nel canale #services.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gastaman</div><div class="date">29-02-2004, 02:47</div></div><div class="posttext">Purtroppo c'è stato un imprevisto, e per poter implementare parte delle nuove modifiche è stato necessario cancellare tutte le akick impostate su nick registrati.<br />
+Quindi, mentre per le akick su mask non ci sono problemi di alcun tipo, quelle sui nick, se lo si desidera, vanno rimesse a mano.<br />
+Consideratela una sorta di amnistia carnevalizia... ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dracoo</div><div class="date">29-02-2004, 11:44</div></div><div class="posttext">Purtroppo c'è stato un imprevisto, e per poter implementare parte delle nuove modifiche è stato necessario cancellare tutte le akick impostate su nick registrati.<br />
+Quindi, mentre per le akick su mask non ci sono problemi di alcun tipo, quelle sui nick, se lo si desidera, vanno rimesse a mano.<br />
+Consideratela una sorta di amnistia carnevalizia... ;)<br />
+<br />
+Cavoletti... non è possibile sapere gli akick tolti di un dato canale? :\</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">City_Hunter</div><div class="date">29-02-2004, 14:30</div></div><div class="posttext">Cavoletti... non è possibile sapere gli akick tolti di un dato canale? :\<br />
+Se avevi dei nick in akick potrebbe verificarsi una delle seguenti situazioni:<br />
+1) il nick disturbatore non si presenta più, ergo non ti serve l'akick<br />
+2) il nick disturbatore si ripresenta per dar fastidio, e ti dà quindi modo di rimetterglielo</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Biba</div><div class="date">01-03-2004, 23:09</div></div><div class="posttext">Magari mi sbaglio, ma che fine ha fatto la funzione mlock di chansy? @.@</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Whole</div><div class="date">01-03-2004, 23:13</div></div><div class="posttext">Mlock esiste sempre, credo che tu fai /cs help Mlock , e giustamente il ChanServ segnala che il comando non esiste.<br />
+Questo perche' il comando e' /cs set #canale Mlock +\- modes quindi puoi leggere l'help digitando /cs help set mlock come per tutti i comandi SET quali opguard per esempio URL ecc ecc. (/cs help set url | /cs help set OpGuard)<br />
+<br />
+<br />
+Saluti Whole 8)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Superfre`</div><div class="date">02-03-2004, 00:00</div></div><div class="posttext">ah ecco perche oggi la akick list del mio canale era vuota.<br />
+<br />
+Pasticcioni  ^^  (scherzo, tanto ne avevo solo uno in akick e l'ho rimesso)</div></div><hr />
+
+
+<div id="copyright">vBulletin&reg; v3.6.4, Copyright &copy;2000-2007, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

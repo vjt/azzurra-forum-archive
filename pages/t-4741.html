@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="una piccola rete in casa ... una grossa confusione in testa, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] una piccola rete in casa ... una grossa confusione in testa Discussioni Linux" />
+	
+	<title>una piccola rete in casa ... una grossa confusione in testa [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-28.html">Discussioni Linux</a> &gt; una piccola rete in casa ... una grossa confusione in testa</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=4741">una piccola rete in casa ... una grossa confusione in testa</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">liquid_snake</div><div class="date">14-05-2004, 09:41</div></div><div class="posttext">Salve a tutti.<br />
+Ho impostato una piccola rete domestica composta da un winXP e una slackware 9.1. I due pc sono connessi trammite un hub 3com dal quale esce anche la connessione adsl tramite modem/router (Telindus 1110 adsl bridge). A livello hardware sembra funzioni tutto ma le connessioni sono unaltro discorso.<br />
+Allora su win ho impostato manualmente ip netmask e getway.<br />
+Su slackware ho fatto lo stesso.<br />
+Ora da win pingo linux, il modem, e internet; da linux pingo win e il modem, ma non internet.<br />
+Su linux ho effettuato i seghuenti passi:<br />
+1 ) #ifconfig eth0 down<br />
+2 ) #ifconfig eth0 192.168.1.4 up netmask 255.255.255.0<br />
+3 ) #route add default gw 192.168.1.1<br />
+4 ) #lsmod     // ho appurato che non c'era il protocollo pppoe<br />
+5 ) #depmod<br />
+6 ) #modprobe pppoe<br />
+7 ) #lsmod    // ok ora c'e'<br />
+8 ) in /etc/resolv.conf  ho inserito nameserver 212.216.112.112<br />
+                                                nameserver 212.216.62.172<br />
+Il modem è già connesso quindi non penso servi fare adsl-start cmq anche provandoci nessun risultato.<br />
+<br />
+<br />
+Se qualcuno fosse in grado di dirmi dove ho sbagliato lo ricomnpenserei con una fato della mia vicina di casa che prende il sole in terrazzo. La ricompensa è alettante perciò vi prego di farvi avanti<br />
+grazie</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">14-05-2004, 09:59</div></div><div class="posttext">Innanzi tutto quello che hai e' un router e non un modem (il modem va installato su un computer, mentre un router ha un IP autonomo).<br />
+In seconda battuta, data la situazione, e' sufficiente che i vari nodi della rete abbiano un IP nella stessa classe C del router (mi par di capire sia 192.168.1.xxx), ed il router stesso come gateway. A questo punto la connessione ad internet spetta al router stesso, su cui puoi andare a configurare quel che ti serve. In particolare, il PPPoE serve al router per dialogare verso l'esterno, mentre nella LAN tutto questo e' pienamente trasparente: sia su Windows che su Linux basta che la rete sia attiva. Allo stesso tempo il router si occupa di gestire il DNS, mentre per i tuoi due computer devi usare come DNS il router stesso.<br />
+<br />
+....prova a vedere se cosi' ti funziona meglio :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">liquid_snake</div><div class="date">14-05-2004, 12:30</div></div><div class="posttext">probabilmente non ho capito bene, visto che non mi si connette ancora.<br />
+faccio uno schema riassuntivo<br />
+<br />
+WINXP<br />
+ip 192.168.1.5<br />
+netmask 255.255.255.255<br />
+gw 192.168.1.1<br />
+<br />
+SLACKWARE<br />
+ip 192.168.1.4<br />
+netmask 255.255.255.0<br />
+gw 192.168.1.1<br />
+<br />
+ROUTER <br />
+netmask 255.255.255.0<br />
+ip 192.168.1.1<br />
+pppoe <br />
+<br />
+<br />
+/ETC/RESOLV.CONF<br />
+nameserver 192.168.1.1<br />
+<br />
+ADSL-SETUP<br />
+usrname xxxxxx<br />
+pws xxxxxxxx<br />
+dns 192.168.1.1<br />
+firewall 0<br />
+<br />
+provando a pingare fuori mi dice &quot;destination host unrechable&quot;<br />
+Non so cosa provare. Le mie risorse conoscitive si fermano qui, o forse si erano fermate anche prima<br />
+<br />
+<br />
+<br />
+comunque ti sei guadagnato la tua foto di donzella nuda sul poggiolo di casa  :-P<br />
+ http://www.sfondo.com/tws3dart/Missing.jpg</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">14-05-2004, 13:02</div></div><div class="posttext">ADSL-SETUP<br />
+usrname xxxxxx<br />
+pws xxxxxxxx<br />
+dns 192.168.1.1<br />
+firewall 0<br />
+<br />
+A mio avviso l'errore e' qui.<br />
+I modem sono fatti per andare in rete attraverso un computer, che difatti non ha necessita' di avere una scheda di rete (pensa ai modem usb, per esempio).<br />
+I router invece hanno una scheda di rete propria (ed annesso indirizzo IP) e possono garantire la connessione ad internet anche se i computer della rete interna fossero tutti spenti.<br />
+Nel tuo caso, c'e' un router che ha IP 192.168.1.1 : a che ti serve un ADSL setup sulla slackare? Devi invece configurarti il router perche' si connetta in rete, vedi la manualistica del router per maggiori dettagli (manuali online non ne ho trovati, ma si fa cenno ad un'interfaccia http che risulta generalmente molto comoda... buona ricerca :))<br />
+<br />
+comunque ti sei guadagnato la tua foto di donzella nuda sul poggiolo di casa  :-P<br />
+<br />
+Peccato che son dietro firewall, mi da' un errore 403 :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">liquid_snake</div><div class="date">17-05-2004, 10:43</div></div><div class="posttext">Azz nuovi problemi pervadono la mia rete.<br />
+Sabato è saltata la corrente in casa e da li non ho + accesso al router.<br />
+Lui si &quot; linka&quot; ad internet ma io non ho + accesso a lui. Ne lo pingo ne visualizzo la pagina http del router stesso.<br />
+Ho provato a tentativi a vedere se era un problema di configurazione della rete interna ma dopo tutte le prove fatte arrivo alla conclusione sia un problema del router.<br />
+Grazie ad un programma ( telindus 9100 manteniance), il quale trova in automatico il router nella rete, riesco a resettarlo alle impostazioni di default ma niente. Ho paura di aver bruciato l'ennesimo hardware.<br />
+<br />
+Mi aggiornerò non appena saprò se telindus sia in grado di aiutarmi (???).<br />
+CIAEZ</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">liquid_snake</div><div class="date">17-05-2004, 18:56</div></div><div class="posttext">il router funziona correttamente, anche se sulla confgiurazione via http non ho trovato nulla che mi facesse pensare che quello che ho sia un router. Comunque, con windoz ffunziona attraverso dhcp che mi assegna alla macchina lo stesso ip che ho in internet (!!!).<br />
+impostando slakware con un ip tipo 192.168.1.2 non ho la possibilità di accedere ad internet.<br />
+<br />
+consigli???</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">17-05-2004, 19:04</div></div><div class="posttext">il router funziona correttamente, anche se sulla confgiurazione via http non ho trovato nulla che mi facesse pensare che quello che ho sia un router. Comunque, con windoz ffunziona attraverso dhcp che mi assegna alla macchina lo stesso ip che ho in internet (!!!).<br />
+impostando slakware con un ip tipo 192.168.1.2 non ho la possibilità di accedere ad internet.<br />
+<br />
+consigli???<br />
+<br />
+Si sta creando confusione sul fattoc he tu abbia un router o un modem... se e' un modem, e' giusto che il pc a cui e' connesso abbia l'IP pubblico (ma mi aspetto che sia connesso via usb o seriale), se invece e' connesso via rete allora hai IP privati (quelli dei pc + IP privato del router) e indirizzo pubblico del router.<br />
+Per uscire in rete, il router deve fare da gateway e DNS predefinito per gli altri pc, verifica che il tuo provider non ti dia il server DNS da usare (mi stupirei del contrario... cmq che provider usi?)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">liquid_snake</div><div class="date">18-05-2004, 09:09</div></div><div class="posttext">Per uscire in rete, il router deve fare da gateway e DNS predefinito per gli altri pc, verifica che il tuo provider non ti dia il server DNS da usare (mi stupirei del contrario... cmq che provider usi?)<br />
+Aliceadsl.<br />
+Non ho capito bene<br />
+in pratica dovrei impostare manualmente ogni pc con<br />
+ip: 192.168.1.x<br />
+netm: 255.255.255.0<br />
+gw: 192.168.1.1<br />
+dns: 192.168.1.1</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">18-05-2004, 09:33</div></div><div class="posttext">Aliceadsl.<br />
+Non ho capito bene<br />
+in pratica dovrei impostare manualmente ogni pc con<br />
+ip: 192.168.1.x<br />
+netm: 255.255.255.0<br />
+gw: 192.168.1.1<br />
+dns: 192.168.1.1<br />
+<br />
+Si', puo' essere una buona soluzione ma il router che fa da gw+dns deve avere IP privato 192.168.1.1 .<br />
+<br />
+Se puo' essere utile, in questa pagina (http://www.sandrodiremigio.com/documenti/tutorials/pop3smtpnntp.htm) sono riportati i seguenti DNS server per Aliceadsl: <br />
+<br />
+212.216.172.62  =&amp;gt; ns1.tin.it<br />
+212.216.112.112  =&amp;gt; ns4.tin.it<br />
+131.154.1.3  =&amp;gt; server2.infn.it<br />
+151.99.125.2  =&amp;gt; dns.interbusiness.it<br />
+151.99.125.3  =&amp;gt; dns2.interbusiness.it<br />
+<br />
+...non so quanto possano essere affidabili, ma comunque spero per te che almeno uno su cinque funzioni :P<br />
+Ad ogni modo dovresti avere uno o due DNS direttamente dal provider al momento della connessione, forse non ti servono nemmeno.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">liquid_snake</div><div class="date">18-05-2004, 11:55</div></div><div class="posttext">Steve, il mio problema sta a monte:<br />
+non riesco a farmi assegnare in dhcp dal router un ip di classe 192.168.1.x<br />
+Di conseguenza non posso avere due macchine ( winXP e Slackware ) sulla stessa rete locale e non posso nemmeno entrare in internet con la seconda macchina visto che l'unico ip valido che mi permette di accedere ad internet è quello di uscita 80.116.xxx.x che il router mi assegna alla prima macchina.<br />
+Se conosci in linea di base quali settaggi bisogna impostare sul router perchè assegni degli ip diversi da quello &quot;d'uscita&quot; forse riesco a risolvere il problema.<br />
+<br />
+<br />
+in oltre:<br />
+io per accedere ai comandi del router apro il browser su 192.168.1.1, quindi arrivo alla conclusione che il suo ip di rete sia quello</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">18-05-2004, 12:31</div></div><div class="posttext">non posso nemmeno entrare in internet con la seconda macchina visto che l'unico ip valido che mi permette di accedere ad internet è quello di uscita 80.116.xxx.x che il router mi assegna alla prima macchina.<br />
+[...]<br />
+io per accedere ai comandi del router apro il browser su 192.168.1.1, quindi arrivo alla conclusione che il suo ip di rete sia quello<br />
+<br />
+Ho fatto un po' di mente locale tra me e san Google, a questo punto direi che il tuo &quot;Telindus 1110 adsl bridge&quot; non e' ne' un modem ne' un router, ma e' un bridge (...d'oh! V_V).<br />
+I bridge si occupano di fare da &quot;ponte&quot; fra la rete esterna e quella interna, ma hanno un indirizzo IP privato (che un modem non ha) senza opzioni di connessione automatica o port forwarding (che un router ha). E', per farla breve, una chimera intermedia che ha un utilizzo ottimale quando la rete interna e' composta da un pc solo, o quando quel pc viene usato per fare cio' che un router farebbe (connettersi, girare pacchetti nella rete, ...). Giusto per dare un riferimento, ecco questa pagina (http://www.practicallynetworked.com/networking/bridge_types.htm) in inglese.<br />
+<br />
+Soluzione #1: buttare via tutto e prendere un router che sia degno di questo nome, quindi settare cio' che ho gia' detto nei post precedenti.<br />
+Soluzione #2: applicare al Coso un'etichetta con su scritto &quot;sei una chiavica&quot;, fare in modo che l'IP pubblico sia assegnato ad un pc specifico e sempre a quello (Linux o Windows, scegli tu...), e su quel pc mettersi a smanettare affinche' condivida la connessione all'interno della rete privata.<br />
+<br />
+Capisco che sia doloroso come suggerimento, ma io punterei decisamente sulla prima opzione: evidentemente ad Alice non piace molto che la gente si connetta con piu' di un pc per volta e devo dire che come soluzione risulta particolarmente efficace. Ma che non vengano a dire che ti hanno dato un router in comodato perche' ti piglierebbero bellamente per il fondoschiena...<br />
+<br />
+Qualche indizio per identificare dei fortunati (!!) possessori del Coso:<br />
+http://groups.google.it/groups?th=dbe8203ba1056e69<br />
+http://groups.google.it/groups?th=e00b899de7e82188 <br />
+http://groups.google.it/groups?th=bd6c5706e7003c24</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">liquid_snake</div><div class="date">19-05-2004, 12:02</div></div><div class="posttext">grazie mille Steve. Mi pareva che ad hardware stessi apposto.<br />
+Per la cronaca non mi è mai successo di avere tutti i componenti giusti prima di iniziare un qualche progetto computeristico :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">liquid_snake</div><div class="date">20-05-2004, 00:19</div></div><div class="posttext">Ok, penso opterò per una nuova soluzione:<br />
+Doppia scheda di rete su linux. La prima verso la lan e la seconda verso il modem bridge. Poi, teoricamente anche windozdovrebbe poter navigare grazie a linux?<br />
+<br />
+Non sono comunque riuscito a far partire la connessione in linux, anche se è il solo a comunicare con il modem.<br />
+Facendo netconfig ed impostandolo come dhcp il modem non mi assegna l'indirizzo ip che assegnava prima a windoz ( in win avevo un ip pubblico in linux ho un ip provato). Facendo un'altra prova scopro che riesco a pingare il modem (192.168.1.1) ma non ad entrare corretamente nell'interfaccia di configurazione dello stesso. Boh<br />
+<br />
+ancora un po' di pazienza e sono sicuro arriverà la soluzione anche a questo dilemma.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">20-05-2004, 07:16</div></div><div class="posttext">Ok, penso opterò per una nuova soluzione:<br />
+Doppia scheda di rete su linux. La prima verso la lan e la seconda verso il modem bridge. Poi, teoricamente anche windozdovrebbe poter navigare grazie a linux?<br />
+<br />
+Si', come architettura e' quella che avrei scelto pure io :)<br />
+Fra l'altro alla fin fine sul linux potrai divertirti con iptables (a meno che tu non voglia stare senza firewall... ^^) e amenita' varie.<br />
+<br />
+Quanto al resto... boh, chiedi a quelli del tuo provider se il Coso supporta linux o se l'ha fatto Bill Gates ;P</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">liquid_snake</div><div class="date">20-05-2004, 23:24</div></div><div class="posttext">In effetti per come il modem, funziona Bill Gates è uno di quelli che ho messo in cima alla lista degli ipotetici costruttori !!!<br />
+<br />
+Per il resto c'e' scritto in giro che linux è supportato... però mi fa girare troppo le balle che per far partire uno schifo di connessione mi devo spaccare il culo così tanto. Non capisco perchè con windoz basta impostare il dhcp e lui fa tutto in automatico mentre con linux bisogna addirittura dirgli le dimensioni del modem e dove lo appoggi all'interno della tua camera. Come politica non è di certo user-frendly. Insomma non voglio dire che gli automatismi di microsoft risolvono i problemi, se poi appena ti sei connesso sasser e compagnia bella ti disattivano firewall e i live-update degli antivirus, ma almeno una persona può installare il sistema operativo e configurare la propria macchina in breve tempo, tanto da poterla utilizzare per quel breve periodo che inesorabilmente la farà diventare obsoleta.<br />
+Ora non vorrei essere frainteso, che sono nuovo in quest'ambiente si capiva da tutti i miei post precedenti, ma una tale difficoltà d'approccio non me l'aspettavo.<br />
+<br />
+Comunque grazie mille Steve per l'aiuto ed il tempo perso dietro al newbie di turno.</div></div><hr />
+
+
+<div id="copyright">vBulletin&reg; v3.6.4, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

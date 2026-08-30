@@ -1,0 +1,276 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="/dccallow, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] /dccallow Services - I servizi IRC di Azzurra" />
+	
+	<title>/dccallow [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-6.html">Network Central</a> &gt; <a href="f-30.html">Services - I servizi IRC di Azzurra</a> &gt; /dccallow</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=5604">/dccallow</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Dracoo</div><div class="date">15-09-2004, 22:14</div></div><div class="posttext">Trascurando il fatto di quali file richiedono il /dccallow, vorrei chiedere se fosse possibile cambiare un po' la sintassi, mettendo da /dccallow +nick a /dccallow add (ovviamente il - con il del).<br />
+O magari far si che siano corrette entrambe</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Tecnicodaniele</div><div class="date">16-09-2004, 16:20</div></div><div class="posttext">Se posso dare la mia opinione , non ne vedo molto il significato , da add a + non è che cambi moltissimo , solitamente le liste gestite con add , sono quelle dei servizi (esempio le liste di chanserv) , per quanto riguarda la dccallow così come la silence , sono liste che fanno parte dell'ircd e funzionano tutte con + e - nick , io sinceramente non vedo la necessità di modificare tali prametri poi, ovviamente la mia è solo un'opinione non spetta certamente a me tale decisione :)<br />
+<br />
+Saluti Tecnicodaniele<br />
+Email: Tecnicodaniele@azzurra.org</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">21-09-2004, 10:35</div></div><div class="posttext">per quanto riguarda la dccallow così come la silence , sono liste che fanno parte dell'ircd e funzionano tutte con + e - nick<br />
+<br />
+Non solo, ma dccallow e silence servono solo per la sessione in corso... anche secondo me con &quot;add&quot; e &quot;del&quot; si generebbe confusione con le modifiche sui servizi. :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Whole</div><div class="date">23-10-2004, 16:18</div></div><div class="posttext">dunque, ho questa idea da tanto tempo, e girando per il forum ho notato che ne stavate discutendo.<br />
+Come tutti sanno se non si allowa un utente ad inviare files (del tipo *.exe per esempio) non si possono ricevere.<br />
+Secondo me e' anche una mezza scocciatura per utenti che conoscono Azzurra e dico, sanno dimesticarsi con le DCC anche quelle pericolose.<br />
+Sarebbe possibile inserire la facolta' di eliminare il /dccallow nel senso di creare un domando /dccallow ON|OFF (off di default) in modo di poterlo anche eliminare.<br />
+Ho pensato che potrebbe essere anche &quot;pericoloso&quot; per chi ha l'autoget pero' preferire sentire il parere di qualche coder se effettivamente e' possibile apportare questa modifica o ci sono controindicazioni.<br />
+<br />
+Saluti Whole 8)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dracoo</div><div class="date">23-10-2004, 17:56</div></div><div class="posttext">Effettivamente si potrebbe creare un /dccallow OFF, così un utente &quot;esperto&quot;, se lo può mettere nel perform, affinchè disattivi il filtro delle DCC ogni volta che si connette.<br />
+Buona idea Whole :P</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Superfre`</div><div class="date">25-10-2004, 00:57</div></div><div class="posttext">si io penso sia una buona idea.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gastaman</div><div class="date">25-10-2004, 22:37</div></div><div class="posttext">Per quanto riguarda la richiesta ADD/DEL non penso verrà fatto, perché non cambia di fatto assolutamente niente, ma creerebbe problemi a chi è abituato alla sintassi attuale (ovvero tutti).<br />
+Per il discorso ON/OFF, peraltro già discusso svariate volte, non verrà implementato per il semplice fatto che non appena venisse fatto inizierebbero tutti a modificare gli script per inserire in perform /DCCALLOW OFF e li passerebbero agli amici, e dopo una settimana di passaparola tutti lo avranno disabilitato, di fatto rendendolo inutile.<br />
+Mi rendo conto che per le persone esperte e' un intralcio, ma purtroppo la maggior parte dell'utenza non è esperta, e basta una singola persona infetta su #italia a distribuire un trojan anche inconsapevolmente per creare grossi danni a decine e decine di altri utenti, cosa che per noi non è accettabile.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Superfre`</div><div class="date">25-10-2004, 23:19</div></div><div class="posttext">beh si da questo punto di vista avete piu che ragione.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">}gu|do[z]{®©</div><div class="date">26-10-2004, 20:42</div></div><div class="posttext">Sarebbe possibile inserire la facolta' di eliminare il /dccallow nel senso di creare un domando /dccallow ON|OFF (off di default) in modo di poterlo anche eliminare.<br />
+Ho pensato che potrebbe essere anche &quot;pericoloso&quot; per chi ha l'autoget pero' preferire sentire il parere di qualche coder se effettivamente e' possibile apportare questa modifica o ci sono controindicazioni.<br />
+<br />
+Saluti Whole 8)<br />
+<br />
+sono venuto esattamente per chiedere questo!<br />
+<br />
+a volte sono lontano dal pc e la gente cerca di mandarmi files.. io ho l'autoget perchè voglio accettare tutto.. poi valuto io la pericolosità o meno.. d autente esperto mi snerva il dccallow... si potrebbe rendere disabilitabile!<br />
+<br />
+se il problema è quello degli script che lo potrebbero disabilitare malignamente.. innanzitutto c'è l'ignore di mirc già di default.. chi non è esperto abbastanza non l'avrà levato.. in secondo luogo si potrebbe imporre che per disabilitarlo si debba inserire la password del pèroprio niick.. o qualche altra cosa...<br />
+<br />
+per favore.. è ODIOSO</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Superfre`</div><div class="date">26-10-2004, 20:52</div></div><div class="posttext">una soluzione migliore, un'idea geniale! E chi poteva averla? IO!<br />
+* Superfre` modesto<br />
+<br />
+Per disabilitare il dccallow bisogna fare come per le registrazioni dei nick: <br />
+<br />
+-prima scrivi il comando &quot;disabilitami per sempre&quot; (ma il periodo puo anche essere limitato a una settimana o un mese) <br />
+-poi arriva una email da azzurra che spiega perche la scelta è pericolosa e che rischi comporta questa cosa <br />
+-infine in fondo all'email c'è un comando tipo /msg bla bla bla che contiene un codice col quale azzurra assimila come confermata la richiesta di disabilitazione dell'utente.<br />
+<br />
+Questa soluzione permette ad azzurra:<br />
+- di informare gli utenti meno esperti sui rischi<br />
+- non rompere le scatoline a quelli piu esperti<br />
+- intervenire a sua discrezione nel caso di periodi di piu intensa proliferazione di virus<br />
+<br />
+Che ne pensate?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">26-10-2004, 20:53</div></div><div class="posttext">{®©]sono venuto esattamente per chiedere questo!<br />
+<br />
+Ha gia' risposto Gastaman a questa proposta.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Superfre`</div><div class="date">26-10-2004, 20:53</div></div><div class="posttext">steve, occhio a non perderti il mio post, abbiamo postato assieme :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">}gu|do[z]{®©</div><div class="date">26-10-2004, 20:58</div></div><div class="posttext">appunto.. basta usare qualcosa che chi eventualmente fa uno script fraudolento non può sapere... steve leggere fino in fondo no eh? -.-<br />
+<br />
+Ma poi sinceramente.. sarà che mi conoscono nel mo chan.. ma se devo amndare qualcosa a qualcuno dico scrivi /dccallow +}gu|do[z]{ e nessuno chiede spiegazini... ^__^<br />
+<br />
+a me non sembra una cosa così essenziale.. in ogni caso appunto.. si può fare che i nick registrati lo possono disabilitare inserendo la propria password.. oppure con un codice mandato in e-mail<br />
+<br />
+in questo modo gli script lamer non fungono.. ^_^<br />
+<br />
+ciauz</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">26-10-2004, 20:58</div></div><div class="posttext">steve, occhio a non perderti il mio post, abbiamo postato assieme :)<br />
+<br />
+Letta, comunque concordo con Gastaman e quindi per me la situazione va bene cosi' come e'.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">}gu|do[z]{®©</div><div class="date">26-10-2004, 21:01</div></div><div class="posttext">steve, occhio a non perderti il mio post, abbiamo postato assieme :)<br />
+<br />
+Letta, comunque concordo con Gastaman e quindi per me la situazione va bene cosi' come e'.<br />
+<br />
+ma se si può levare il fastidio agli esperti senza creare pericolo per gli inesperti.. perchè?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">26-10-2004, 21:05</div></div><div class="posttext">{®©]ma se si può levare il fastidio agli esperti senza creare pericolo per gli inesperti.. perchè?<br />
+<br />
+Ad esempio per evitare che tutti (esperti o meno) lascino il pc a scaricare allegramente durante la notte, quando Azzurra e' da tempo contro il warez. :)<br />
+O per evitare che passino virus all'improvviso, mi rifaccio al post di Gastaman ed all'esempio che ha fatto per #italia .</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">}gu|do[z]{®©</div><div class="date">26-10-2004, 21:06</div></div><div class="posttext">o quantomeno si potrebbe far sì che i nick registrati possano avere una lista permanente di altri nick registrati autorizzati.. se io mi fido di superfrè lo inserisco in lista.. essendo frè registrato nessun altro può spacciarsi per lui e almeno una volta allowato una volta lo sarebbe per sepre.. <br />
+<br />
+anche se preferirei la possibilità di disabilitare con qualche sistema di sicurezza che eviti disabilitazioni non consenzienti... l'idea di superfrè mi sembra ottima</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">}gu|do[z]{®©</div><div class="date">26-10-2004, 21:08</div></div><div class="posttext">{®©]ma se si può levare il fastidio agli esperti senza creare pericolo per gli inesperti.. perchè?<br />
+<br />
+Ad esempio per evitare che tutti (esperti o meno) lascino il pc a scaricare allegramente durante la notte, quando Azzurra e' da tempo contro il warez. :)<br />
+O per evitare che passino virus all'improvviso, mi rifaccio al post di Gastaman ed all'esempio che ha fatto.per #italia .<br />
+<br />
+pe ril punto 1 capisco.. ma se un mio amico vuole mandarmi un rar con le foto del raduno tal dei tali ed io dormo o sono fuori casa... le foto non arrivano -.-<br />
+<br />
+per il punto 2 mi sembra stupido.. se io esperto disabilito l'allow non vuol dire che eseguo eseguibili di dubbia provenienza... ^_^<br />
+se l'utente inesperto lo disabilita.. beh.. probabilmente avrebbe accettato lo stesso il file scrivendo dccallow etc etc ^_^<br />
+ma poi ripeto.. gli inesperti hanno già l'ignore di mirc... buh</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">typedef_c</div><div class="date">26-10-2004, 21:15</div></div><div class="posttext">{®©]o quantomeno si potrebbe far sì che i nick registrati possano avere una lista permanente di altri nick registrati autorizzati.. se io mi fido di superfrè lo inserisco in lista.. essendo frè registrato nessun altro può spacciarsi per lui e almeno una volta allowato una volta lo sarebbe per sepre.. <br />
+<br />
+<br />
+Hai idea di quanto costerebbe in risorse tenere attiva una lista dccallow permanente per ogni utente (o esagerando nick registrato)?:)<br />
+<br />
+Ad ogni modo sono d'accordo con Steve e Gastaman su tutto quello detto.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Superfre`</div><div class="date">26-10-2004, 22:59</div></div><div class="posttext">Io stesso prima ho dato ragione a Gastaman e anche Steve ne ha da vendere. Tuttavia se noi giovani menti riusciamo a trovare una soluzione che possa far ben convivere i bisogni dell'utenza con i bisogni di azzurra sarebbe fantastico.<br />
+<br />
+Nessuna critica per Azzurra ne per l'operato di Steve e Typedef_c ma qualche volta sembrate un po' troppo ostinati nel bocciare le idee proposte dagli utenti. Anziche dire &quot;che è cosi e basta&quot; non è meglio dire &quot;e' un idea carina ma&quot; quando qualcuno vi propone qualcosa?<br />
+<br />
+Da quanto ho letto la mia idea non è stata smontata, la ritengo ancora valida. Mi sembra tuttavia legittima l'osservazione di Steve per il quale un sistema con disabilitazione tramite email andrebbe a cozzare con la politica antiwarez di azzurra. Allora troviamo una soluzione per migliorare la mia idea anziche bocciarla totalmente no?<br />
+<br />
+Io d'altro canto potrei contestare che se volessi fare un chan warez su azzurra potrei invitare tutti gli utenti a condividere i files rinominando i files sharati o meglio ancora distribuire uno script che quando uno invia da' un primo segnale di invio fittizio a chi riceve il file in modo che in automatico lo stesso script nelle mani di chi riceve faccia il dccallow per il nick che trasmette e di seguito il trasmittente riinvia lo stesso files il tutto in automatico. Non sono uno scripter ma temo sarebbe possibile farlo volendo. L'attuale sistema è dunque troppo facilmente aggirabile anche cosi.<br />
+<br />
+Boccio l'idea di Guidoz perche come gli ho detto in query se io metto in trust A che mette in trust B che mette in trust C un virus preso da C viene trasmesso fino ad A.<br />
+<br />
+Oddio questo anche col mio sistema per la verità...<br />
+<br />
+boh ma ci deve essere una soluzione! :(</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">26-10-2004, 23:31</div></div><div class="posttext">Non e' questione di bocciare le idee preventivamente, se avessi da contestare quel che ha scritto Gastaman lo avrei fatto, ma la realta' e' che approvo in toto il suo intervento.<br />
+<br />
+Intanto, il dccallow non se l'e' inventato un coder di Azzurra ma fa parte del bahamut... quindi non e' un capriccio ma risponde ad esigenze precise che non sono solo di Azzurra.<br />
+In secondo luogo, questa discussione emerge solo di recente perche' e' stato se non sbaglio triplicato il numero di estensioni bloccate con il dccallow. E questo e' successo perche' di porcherie ne giravano in abbondanza, certo non perche' gli utenti esperti abusassero del sistema.<br />
+Per gestire la cosa senza arrivare al taglio drastico delle estensioni bloccate, ecco che arriva il dccallow a certificare che entrambi gli utenti (mittente e destinatario) sono vivi e consensuali. Mettere cose tramite mail e' un bastone tra le ruote, basta gia' la notice contenente il comando bell'e pronto per il copia/incolla.<br />
+Quindi ti riprendo il concetto di Gastaman: mettendo un automatismo che bypassa il dccallow, automagicamente nasceranno scriptini-backdoor che forzino una cosa simile ad un utente da attaccare, e poi via con le DCC farcite di virus e di letame.<br />
+<br />
+Il dccallow salva capra e cavoli, ed offre uno scudo sufficiente contro chi spedisce immondizia. Se non ci fossero di questi problemi, probabilmente il dccallow non esisterebbe nemmeno, ed invece e' stato messo in piedi proprio per essere il male minore all'interno delle trasmissioni DCC (che, formalmente, sono extra-IRC, notare...)<br />
+<br />
+Ciao.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Whole</div><div class="date">26-10-2004, 23:35</div></div><div class="posttext">volevo rispondere io..ma l'ha fatto in maniera chiara Steve, non sto a ripetere le stesse cose e sono d'accordo con lui..<br />
+comunque non volevo far nascere tutta sta mega-discussione...<br />
+<br />
+<br />
+Saluti Whole 8)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Superfre`</div><div class="date">26-10-2004, 23:40</div></div><div class="posttext">Ok ok io lo so che avete ragione ma.. sigh</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dracoo</div><div class="date">27-10-2004, 08:43</div></div><div class="posttext">Mi permetto di dire la mia.<br />
+L'idea di Frengo a mio avviso è irrealizzabile in quanto il /dccallow è una cosa volatile, ovvero appena il client si sconnette sparisce tutto (come anche il /silence, per esempio).<br />
+Per l'idea di Whole, e per evitare che la gente inesperta disattivi il dccallow, si potrebbe fare all'invio del comando /dccallow OFF un bel notice che spieghi chiaramente il pericolo di ricevere file infetti, script idioti e tutte le altre porcherie in chat!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">27-10-2004, 08:53</div></div><div class="posttext">per evitare che la gente inesperta disattivi il dccallow, si potrebbe fare all'invio del comando /dccallow OFF un bel notice che spieghi chiaramente il pericolo di ricevere file infetti, script idioti e tutte le altre porcherie in chat!<br />
+<br />
+Nel 99% dei casi, gli inesperti sono trojanizzati da utenti esperti che sanno benissimo come utilizzare raw, decode e quant'altro per far abboccare le proprie vittime. Gente che, se solo usasse le sue conoscenze a fin di bene invece che per inculare gli sprovveduti, forse avrebbe persino qualche possibilita' di passare i test per irchelp o perlomeno avere una buona reputazione nella rete.<br />
+La notice c'e' gia', dice di fare /dccallow +nickname e spiega brevemente la situazione.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dracoo</div><div class="date">27-10-2004, 09:16</div></div><div class="posttext">per evitare che la gente inesperta disattivi il dccallow, si potrebbe fare all'invio del comando /dccallow OFF un bel notice che spieghi chiaramente il pericolo di ricevere file infetti, script idioti e tutte le altre porcherie in chat!<br />
+<br />
+Nel 99% dei casi, gli inesperti sono trojanizzati da utenti esperti che sanno benissimo come utilizzare raw, decode e quant'altro per far abboccare le proprie vittime. Gente che, se solo usasse le sue conoscenze a fin di bene invece che per inculare gli sprovveduti, forse avrebbe persino qualche possibilita' di passare i test per irchelp o perlomeno avere una buona reputazione nella rete.<br />
+La notice c'e' gia', dice di fare /dccallow +nickname e spiega brevemente la situazione.<br />
+<br />
+Qui mi sento preso in causa, anche se sottolineo di non aver mai trojanizzato nessuno e che mai questo mi è passato per la testa.<br />
+E tengo poi a precisare che vedo virtualmente impossibile far si che un utente tramite un $decode, riesca a bloccare un eventuale raw dal server (come quella per /dccallow help),  alla sua vittima, facendogli mandare ignaramente il comando /dccallow OFF</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">27-10-2004, 09:21</div></div><div class="posttext">Qui mi sento preso in causa<br />
+<br />
+No, non stavo pensando a te... tranquillo! :)<br />
+Pero' e' innegabile che i trojan siano fatti da gente esperta a danno di gente inesperta. E' nell'ordine naturale delle cose, difatti il contrario sarebbe alquanto insensato... :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">shi84</div><div class="date">24-12-2004, 13:38</div></div><div class="posttext">scusate ho scritto un po' di cose senza aver letto tutte le risposte, il mio post si puo' anche cancellare</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">24-12-2004, 13:45</div></div><div class="posttext">spero che la implementerete al piu' presto <br />
+ Rileggiti il topic prima di rispondere, e' gia' stato confermato che questa opzione non verra' implementata.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Raynk</div><div class="date">24-12-2004, 14:14</div></div><div class="posttext">una soluzione migliore, un'idea geniale! E chi poteva averla? IO!<br />
+ * Superfre` modesto<br />
+ <br />
+ <br />
+ Per disabilitare il dccallow bisogna fare come per le registrazioni dei nick: <br />
+ <br />
+ -prima scrivi il comando &quot;disabilitami per sempre&quot; (ma il periodo puo anche essere limitato a una settimana o un mese) <br />
+ -poi arriva una email da azzurra che spiega perche la scelta è pericolosa e che rischi comporta questa cosa <br />
+ -infine in fondo all'email c'è un comando tipo /msg bla bla bla che contiene un codice col quale azzurra assimila come confermata la richiesta di disabilitazione dell'utente.<br />
+ <br />
+ Questa soluzione permette ad azzurra:<br />
+ - di informare gli utenti meno esperti sui rischi<br />
+ - non rompere le scatoline a quelli piu esperti<br />
+ - intervenire a sua discrezione nel caso di periodi di piu intensa proliferazione di virus<br />
+ <br />
+ Che ne pensate? <br />
+ <br />
+ Disattivare il dccallow come hai detto tu è una cosa non gestibile direttamente dall'ircd, in quanto la lista dei dccallow è gestita diversamente e viene svuotata ad ogni connessione... ad ogni modo irc NON è fatta per scaricare files, ma per chattare, quindi anche i più &quot;esperti&quot; non dovrebbero avere tutti sti problemi nel dare un comando quelle (teoricamente) poche volte che necessitano di farsi inviare qualche file bloccato.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gastaman</div><div class="date">05-01-2005, 18:49</div></div><div class="posttext">Anche se è passato un po' di tempo ci tenevo a fare chiarezza su alcuni punti.<br />
+In primis, la parte inerente il dccallow è interamente gestita da parte dell'IRCd. Mettere una lista utenti statica nell'IRCd non è possibile, perché tutte le informazioni relative ad ogni client connesso vengono cancellate in blocco appena questo si disconnette. Metterla nei servizi è teoricamente possibile, ma ci sono due grossi problemi di fondo: uno è che se cadono i servizi il sistema non funzionerebbe più, ma questo è relativamente grave visto che i servizi sono praticamente sempre online. Quello più grave è che non c'è un metodo semplice per far comunicare IRCd e servizi (come potrebbe essere ad esempio SQL), quindi sostanzialmente si dovrebbe ricorrere a una di queste due soluzioni (al momento mi vengono solo queste):<br />
+<br />
+1) A manda un file a B, l'IRCd su cui sta B manda un comando apposito &quot;PIPPO A B&quot; a NickServ chiedendo se A è in lista per B. NickServ invia la risposta all'IRCd, ad esempio dicendo &quot;PIPPO A B SI&quot;, e questo si comporta di conseguenza. Oltre a essere estremamente rozza, una soluzione del genere comporta problemi dovuti alla comunicazione fra server, problemi se i servizi non ci sono, etc.<br />
+<br />
+2) La lista interna mantenuta dai servizi viene usata semplicemente inviando &quot;DCCALLOW NICK +A +B +C +D ... +Z&quot; all'identify, dove NICK è il nick dell'utente registrato che la propria lista di utenti da mettere in allow (A, B, ..., Z). Questa soluzione è molto più facilmente implementabile dal client con un /DCCALLOW in perform.<br />
+<br />
+Questo per quanto riguarda il discorso della lista statica di nick. Per il discorso dei trojan, l'utilità del DCCALLOW non sta tanto nel fatto di impedire a un utente esperto di inviare un trojan, visto che comunque se un utente è inesperto è facile che venga convinto ad accettare un file magari spacciato per SpiaQuery o simile, quanto nel bloccare l'attività di tutti quei worm/virus/trojan che fra le varie cose mandano onjoin dei files infetti (e ce ne sono tanti, netsol.scr è forse il più famoso). Gli utenti non se ne rendono conto perché con questo sistema non si vede più, ma la quantità di virus di questo tipo bloccati dal DCCALLOW è veramente grossa.<br />
+<br />
+Scartate quindi le idee di liste, servizi ed E-Mail, teoricamente le migliori, ma di fatto purtroppo irrealizzabili, le alternative che rimangono sono ben poche... o si lascia così (magari aumentando il numero di utenti che si possono mettere in lista contemporaneamente, ma credo sia stato già fatto o si farà a breve) oppure si mette il /DCCALLOW OFF, che però comporta una serie di problemi già discussi e che per questo probabilmente non vedrà mai la luce.<br />
+<br />
+Una alternativa che mi era venuta in mente qualche tempo fa (ma di cui non sono sicuro perché non sono molto esperto del protocollo DCC) era quella di salvare il PRIVMSG inviato da A a B per iniziare l'invio del file, e nel caso in cui B metta A in DCCALLOW, l'IRCd potrebbe rimandare a B lo stesso messaggio di prima di A, in questo modo l'invio del file dovrebbe ripartire automaticamente (perché B dovrebbe mandare indietro un altro DCC SEND per accettare la richiesta). Non so se la cosa funzionerebbe per tutti i client o se non funzionerebbe proprio (e non ho voglia di controllare :) ), ma se dovesse funzionare i più esperti potrebbero scriptare intorno al DCCALLOW, e visto che la cosa non sarebbe soltanto un semplice /DCCALLOW OFF inserito nel perform non dovrebbe creare i problemi che creerebbe l'eventuale comando OFF.<br />
+<br />
+In ogni caso Azzurra è sempre attenta alle esigenze degli utenti, e le idee non vengono bocciate a priori o per partito preso, se viene fatto c'è sempre un buon motivo dietro. Se qualcuno dovesse avere un'idea nuova a cui nessuno magari aveva pensato e che risolve un problema senza crearne altri, penso non ci saranno problemi a vederla attuata.<br />
+<br />
+Tengo a precisare che tutto quanto ho espresso ha valore strettamente personale, perché come qualcuno avrà notato, non faccio più parte dello staff di Azzurra. :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">k0smik0</div><div class="date">18-07-2005, 19:13</div></div><div class="posttext">Del &quot;dccallow&quot; e di altre facezie:<br />
+io direi che per ovviare ai vari problemi sia sufficiente usare client seri, immuni ai vari script trojans e quant'altro... leggasi kvirc, xchat, irssi bitchx e altri ancora... per windows linux macos freebsd e solaris... direi che la soluzione c'è... <br />
+e tra parentesi si potrebbe &quot;almeno&quot; evitare che la /dccallow sia solo una features di sessione, e che ogni volta che ci si ricollega bisogni riautorizzare l'utente (che potrebbe essere un mio amico fidato e ogni volta è una gran rogna, come qualche sera fa).<br />
+Volete rendere irc-azzurra un po migliore? iniziate a diffondere l'idea di &quot;software decente&quot;, e non mettete pezze per boiate altrui (leggasi bug di mirc_pfui). Ahinoi il computer non è una cosa semplice da usare.. per guidare la macchina bisogna prendere la patente... per usare un computer ci vogliono un po di accorgimenti... e la gente non puo pretendere di avere le cose funzionanti se si affida a gente incopetente... se si lamentano perche qualche trojans ha infettato i loro documentiimportantidilavoro... beh... potevano documentarsi, prima di entrare sprovveduti su irc...<br />
+<br />
+saluti a tutti</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Superfre`</div><div class="date">19-07-2005, 01:14</div></div><div class="posttext">Del &quot;dccallow&quot; e di altre facezie:<br />
+io direi che per ovviare ai vari problemi sia sufficiente usare client seri, immuni ai vari script trojans e quant'altro... leggasi kvirc, xchat, irssi bitchx e altri ancora... per windows linux macos freebsd e solaris... direi che la soluzione c'è... <br />
+<br />
+Azzurra non puo decidere per l'utente cosa installare. Mirc attualmente è il piu diffuso. Anche per questo è anche quello piu preso di mira dai trojan.</div></div><hr />
+
+
+<div id="copyright">vBulletin&reg; v3.6.4, Copyright &copy;2000-2007, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

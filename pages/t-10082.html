@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="[C]problema con send e recv in remoto, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] [C]problema con send e recv in remoto Programmazione e dintorni" />
+		<title>[C]problema con send e recv in remoto [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-23.html">Programmazione e dintorni</a> &gt; [C]problema con send e recv in remoto</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=10082">[C]problema con send e recv in remoto</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">viridovix</div><div class="date">27-08-2005, 23:59</div></div><div class="posttext">Sistema op suse 9.2 compilatore gcc linguaggio C (stesse versioni su entrambi i PC).<br />
+Server e client sono connessi tramite socket con protocollo TCP<br />
+Un server invia una matrice(statica) al client che la visualizza su schermo.<br />
+<br />
+1 caso) Client e server girano sulla stessa macchina(cmq viene simulta la connessione xchè si utlizzano i socket). <br />
+La visualizzazione da parte del client su video avviene senza problemi.<br />
+<br />
+2 caso) Client e Server girano su macchine differenti.(stesso  codice del primo  caso) .<br />
+IL client nn visualizza la matrice (a volte in parte ,a volte no) e si blocca.<br />
+<br />
+Di seguito riporto il codice del server che inizializza/crea la matrice.<br />
+Non fate caso al puntatore che mi serve x mantenre condiviso un flag(posto vuoto/libero) che cmq nn viene utilizzato con la send e recv, quindi nn coinvolge il client.<br />
+<br />
+struct posto<br />
+{<br />
+  unsigned char idPosto[6]; // i caratteri che indicano fila e posto sono<br />
+memo qui<br />
+	int *flag;   // flag poso libero/prenotato<br />
+};<br />
+<br />
+<br />
+<br />
+<br />
+struct posto cinema [3][3];<br />
+<br />
+void inizializza_cinema(struct posto cine[3][3],int *p)<br />
+{<br />
+ <br />
+ unsigned char i,j,k;<br />
+ int *pp,*ppp;<br />
+ pp=p;<br />
+ ppp=p;<br />
+ for(i='A';i&lt;='C';i++)<br />
+  {<br />
+	<br />
+	for(j='1';j&lt;='3';j++)<br />
+	 {cine[i-'A'][j-'1'].flag=ppp;<br />
+	  ppp=ppp+1;<br />
+	 }<br />
+   }<br />
+   <br />
+ k='1';<br />
+ for(i='A';i&lt;='C';i++)<br />
+  {<br />
+  <br />
+	for(j='1';j&lt;='3';j++)<br />
+	 { *pp=0;<br />
+	   cine[i-'A'][j-'1'].flag=0;<br />
+	   cine[i-'A'][j-'1'].idPosto[0]=' ';<br />
+	   cine[i-'A'][j-'1'].idPosto[1]=i;<br />
+	   cine[i-'A'][j-'1'].idPosto[2]=j;<br />
+	   cine[i-'A'][j-'1'].idPosto[3]=' ';<br />
+	   cine[i-'A'][j-'1'].idPosto[4]='\t';<br />
+	   cine[i-'A'][j-'1'].idPosto[5]='\0';<br />
+	   pp=pp+1;<br />
+	 }<br />
+	 cine[i-'A'][2].idPosto[4]='\n';<br />
+   }<br />
+ };<br />
+<br />
+<br />
+di seguito il codice del server che spedisce la matrice vettore x vettore al client.<br />
+<br />
+<br />
+ void posti_vuoti(struct posto cine[3][3],int *p)<br />
+ { int *pp;<br />
+   pp=p;<br />
+   unsigned char i,j;<br />
+   i='A';<br />
+   j='1';<br />
+   send(ds_sock_acc,&quot;\n\nI posti contrassegnati con le parentesi quadre sono<br />
+già <br />
+assegnati!!\n\n&quot;,MAX_DIM,0);<br />
+<br />
+   for (i='A'; i&lt;='C'; i++)<br />
+	 {<br />
+	   <br />
+	   for (j='1'; j&lt;='3'; j++)<br />
+		 {<br />
+	if (*pp==0)<br />
+	if (cine[i-'A'][j-'1'].flag==0)<br />
+	  { cine[i-'A'][j-'1'].idPosto[0]=' ';<br />
+		cine[i-'A'][j-'1'].idPosto[3]=' ';<br />
+		send(ds_sock_acc,&amp;cine[i-'A'][j-'1'].idPosto,MAX_DIM,0);<br />
+		<br />
+	   }<br />
+	else //posto occupato lo stampo tra le parentesi []<br />
+	   { cine[i-'A'][j-'1'].idPosto[0]='[';<br />
+		 cine[i-'A'][j-'1'].idPosto[3]=']'; <br />
+		 <br />
+  send(ds_sock_acc,&amp;cine[i-'A'][j-<br />
+'1'].idPosto,MAX_DIM,0);<br />
+		  }<br />
+		pp=pp+1;<br />
+   }<br />
+	   }<br />
+	<br />
+	<br />
+	  send (ds_sock_acc,&quot;\nFatto&quot;,10,0);<br />
+};<br />
+<br />
+<br />
+ora  codice funzione visualizza matrice del client:<br />
+<br />
+<br />
+void visualizza()<br />
+{ char buf[MAX_DIM];<br />
+  do<br />
+	{<br />
+	  recv(ds_sock,&amp;buf,MAX_DIM,0);<br />
+	  if (strcmp(buf,&quot;Fatto&quot;)!=0)<br />
+	  {<br />
+	  printf(&quot;%s&quot;,buf);<br />
+	  }<br />
+	} <br />
+	 while (strcmp(buf,&quot;\nFatto&quot;)!=0);<br />
+  sleep(3);<br />
+  <br />
+};<br />
+<br />
+<br />
+Quindi il client x primo stampa il messaggio :i posti prenotato si trovano tra parentesi []<br />
+il primo vettore della matrice A1 A2 A3 e poi si blocca.<br />
+Nel caso di processi su macchina locale come detto il client stampa<br />
+A1 A2 A3<br />
+B1 B2 B3<br />
+C1 C2 C3<br />
+Quindi il server invia \nFatto  che è la condizione di uscita.<br />
+Ripeto in locale(simulata xro' la connessione) funziona, da remoto no :(<br />
+Non riesco a capire come mai le send e recv nn funzionino a dovere con la connessione in remoto .<br />
+Qualcuna spero mi sappia aiutare. C'è un modo x controllare il giusto flusso di dati x garantire la giusta visualizzazione ????????</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Progeny</div><div class="date">15-09-2005, 11:56</div></div><div class="posttext">Premettendo che non letto il codice, se in locale funziona tutto, credo sia corretto (anche dal punto di vista logico).<br />
+Per controllare il flusso dei dati, uoi usare tcpdump.<br />
+Magari può essere un problema di routing, tipo se sul tuo pc sono impostati due default gateway...<br />
+route -n <br />
+e controlla.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">MeDevil</div><div class="date">27-10-2005, 21:33</div></div><div class="posttext">è normale che non funzioni...<br />
+<br />
+con questa send:<br />
+<br />
+send(ds_sock_acc, &amp;cine[i-'A'][j-'1'].idPosto, MAX_DIM, 0);<br />
+<br />
+stai inviando al server l'indirizzo della prima locazione di memoria della matrice dei posti (mi pare fosse di 6 char). prova togliendo il &amp; prima di cine[ etc etc].<br />
+<br />
+Spero sia utile...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">sottovento</div><div class="date">21-11-2005, 10:22</div></div><div class="posttext">Nel codice c'e' qualcosa da sistemare. In effetti non avrebbe mai dovuto funzionare.<br />
+<br />
+Il problema numero 1 e' la recv(). Non controlli il ritorno, dando per scontato che venga letto il numero esatto di byte (fra l'altro, variabile senza che il ricevente possa sapere quando un messaggio e' completato). Esiste un flag (MSG_WAITALL) da mettere al posto dell'ultimo parametro (quello che hai posto a 0) per ottenere il numero esatto di byte.<br />
+Cmq nemmeno questo ti assicura di leggere tutto correttamente, dovresti controllare anche se non ci sono stati errori. Oltre, ovviamente, a spedire qualche informazione in piu', che so, il numero di byte di cui e' composto il messaggio.<br />
+<br />
+Ti funziona quando 'gira' tutto sulla stessa macchina poiche' i messaggi che spedisci sono tali da rientrare in un solo pacchetto. Abbastanza fortunato, direi.<br />
+<br />
+Come ultima cosa, ti consiglio di fare in modo che le due strcmp() siano uguali. Se pero' ci pensi, potresti trovare una soluzione piu' efficace, non ultima quella di ridurre il numero di questi controlli ad uno solo.<br />
+<br />
+Per prima cosa, pero', controlla la recv. Analogamente devi gestire gli errori di invio. Non darli per scontati, poi non funziona niente e non sai perche'.<br />
+<br />
+Spero di esser stato utile.<br />
+Ciao ciao<br />
+sottovento</div></div><hr />
+
+
+<div id="copyright">vBulletin v3.5.3, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

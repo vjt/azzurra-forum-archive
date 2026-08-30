@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Info per una &quot;modifica&quot; del modulo chat Azzurra in, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] Info per una &quot;modifica&quot; del modulo chat Azzurra in Programmazione e dintorni" />
+		<title>Info per una &quot;modifica&quot; del modulo chat Azzurra in [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-23.html">Programmazione e dintorni</a> &gt; Info per una &quot;modifica&quot; del modulo chat Azzurra in</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=2668">Info per una &quot;modifica&quot; del modulo chat Azzurra in</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">InSaNe2k</div><div class="date">15-07-2003, 16:07</div></div><div class="posttext">Ciao a tutti :)<br />
+Volevo una piccola info...<br />
+<br />
+<br />
+function entrachat(){<br />
+finestradmc=window.open('about:blank','finestramod  e','scrollbars=no,resizable=no,width=670,height=39  0,status=no,location=no,toolbar=no');<br />
+finestradmc.document.write('&amp;lt;html&amp;gt;&amp;lt;head&amp;gt;&amp;lt;title&amp;gt;DMC   Chat - Azzurranet&amp;lt;/title&amp;gt;&amp;lt;/head&amp;gt;&amp;lt;body topmargin=&quot;0&quot; leftmargin=&quot;0&quot; marginheight=&quot;0&quot; marginwidth=&quot;0&quot;&amp;gt;');<br />
+finestradmc.document.write('&amp;lt;applet codebase=&quot;http://chat.azzurra.org/&quot; code=&quot;EIRC&quot; archive=&quot;EIRC.jar,EIRC-gfx.jar&quot; name=&quot;EIRC&quot; width=&quot;670&quot; height=&quot;390&quot;&amp;gt;');<br />
+finestradmc.document.write('&amp;lt;param name=&quot;server&quot; value=&quot;chat.azzurra.org&quot;&amp;gt;');<br />
+finestradmc.document.write('&amp;lt;param name=&quot;port&quot; value=&quot;6667&quot;&amp;gt;');<br />
+finestradmc.document.write('&amp;lt;param name=&quot;mainbg&quot; value=&quot;#C0C0C0&quot;&amp;gt;');<br />
+finestradmc.document.write('&amp;lt;param name=&quot;mainfg&quot; value=&quot;#000000&quot;&amp;gt;');<br />
+finestradmc.document.write('&amp;lt;param name=&quot;textbg&quot; value=&quot;#FFFFFF&quot;&amp;gt;');<br />
+finestradmc.document.write('&amp;lt;param name=&quot;textfg&quot; value=&quot;#000000&quot;&amp;gt;');<br />
+finestradmc.document.write('&amp;lt;param name=&quot;selbg&quot; value=&quot;#00007F&quot;&amp;gt;');<br />
+finestradmc.document.write('&amp;lt;param name=&quot;selfg&quot; value=&quot;#FFFFFF&quot;&amp;gt;');<br />
+finestradmc.document.write('&amp;lt;param name=&quot;channel&quot; value=&quot;'+document.entrata.stanza.value+'&quot;&amp;gt;');<br />
+finestradmc.document.write('&amp;lt;param name=&quot;titleExtra&quot; value=&quot; - by Azzurra IRC Network&quot;&amp;gt;');<br />
+finestradmc.document.write('&amp;lt;param name=&quot;username&quot; value=&quot;JavaUser&quot;&amp;gt;');<br />
+finestradmc.document.write('&amp;lt;param name=&quot;realname&quot; value=&quot;Azzurra (EIRC) - http://www.azzurra.org&quot;&amp;gt;');<br />
+if(document.entrata.nickname.value==&quot;&quot;){<br />
+finestradmc.document.write('&amp;lt;param name=&quot;nickname&quot; value=&quot;modellista|???&quot;&amp;gt;');<br />
+}<br />
+else{<br />
+finestradmc.document.write('&amp;lt;param name=&quot;nickname&quot; value=&quot;'+document.entrata.nickname.value+'&quot;&amp;gt;');<br />
+}<br />
+finestradmc.document.write('&amp;lt;param name=&quot;login&quot; value=&quot;1&quot;&amp;gt;');<br />
+finestradmc.document.write('&amp;lt;param name=&quot;language&quot; value=&quot;it&quot;&amp;gt;');<br />
+finestradmc.document.write('Questa applicazione necessita di un browser abilitato Java ');<br />
+finestradmc.document.write('&amp;lt;/applet&amp;gt;');<br />
+finestradmc.document.write('&amp;lt;/body&amp;gt;&amp;lt;/html&amp;gt;');<br />
+}<br />
+<br />
+<br />
+In questo modo con un modulo posso far scegliere il nick all'utente prima ancora di entrare in chat.. bene...<br />
+Ora... come posso fare a far eseguire un &quot;perform&quot; dopo il collegamento al canale?<br />
+Il mio scopo è quello di far inserire all'utente il suo NICK e la relativa PASS, e di utilizzare queste due &quot;variabili&quot; con un /ns identify PASS successivo alla connessione.<br />
+<br />
+Come posso fargli eseguire questa operazione?<br />
+Grazie<br />
+<br />
+Ciaoo!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Progeny</div><div class="date">17-07-2003, 16:30</div></div><div class="posttext">Puoi vedere se c'è qualcosa nella documentazione su http://eirc.sourceforge.com.<br />
+Se usi JavIRC il TAG è:<br />
+&amp;lt;param name=FirstCommand value=&quot;;MOTD;JOIN #canale&quot;&amp;gt;<br />
+<br />
+bye</div></div><hr />
+
+
+<div id="copyright">vBulletin v3.5.3, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

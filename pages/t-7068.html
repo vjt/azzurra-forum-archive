@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="PHP: upload di files, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] PHP: upload di files Programmazione e dintorni" />
+		<title>PHP: upload di files [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-23.html">Programmazione e dintorni</a> &gt; PHP: upload di files</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=7068">PHP: upload di files</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Progeny</div><div class="date">26-01-2005, 14:07</div></div><div class="posttext">&lt;?php<br />
+include('dbhead.php');<br />
+<br />
+if(!isset($_COOKIE['id'])) {<br />
+die(&quot;Non hai effettuato il login!&lt;br&gt;Per accedere a questa pagina occorre essere identificati!&lt;br&gt;&quot;);<br />
+}<br />
+<br />
+if(isset($_POST['Send_x'])) {<br />
+$my_id = $_COOKIE['id'];<br />
+$query = &quot;SELECT regione FROM utenti WHERE id='$my_id'&quot;;<br />
+$result = mysql_query($query, $db);<br />
+$sql_data = mysql_fetch_object($result);<br />
+$code = strtolower(substr($sql_data-&gt;regione, 0, 2)) . $my_id;<br />
+<br />
+/* Uploads dei files.. */<br />
+$dir = getcwd() .  '/uploads/' . $code . '/';<br />
+	if(isset($_FILES['cd']['tmp_name'])) {<br />
+		if(move_uploaded_file($_FILES['cd']['tmp_name'], $dir . $_FILES['cd']['name'])) {<br />
+		echo &quot;Il file 1 e` stato correttamente uplodato.&lt;br&gt;&quot;;<br />
+		echo &quot;Tmp: &quot; . $_FILES['cd']['tmp_name'] . &quot;&lt;br&gt;&quot;;<br />
+		echo &quot;Dir: $dir&lt;br&gt;&quot;;<br />
+		echo &quot;DirF: &quot; . $dir . $_FILES['cd']['name'] . &quot;&lt;br&gt;&quot;;<br />
+		} else {<br />
+		echo &quot;Si e` verificato un errore durante l`upload del file: &quot; . $_FILES['cd']['error'] . &quot;&lt;br&gt;&quot;;<br />
+		}<br />
+	}<br />
+	if(isset($_FILES['card']['tmp_name'])) {<br />
+		if(move_uploaded_file($_FILES['cd']['tmp_name'], $dir . $_FILES['cd']['name'])) {<br />
+		echo &quot;Il file 2 e` stato correttamente uplodato.&lt;br&gt;&quot;;<br />
+		} else {<br />
+		echo &quot;Si e` verificato un errore durante l`upload del file: &quot; . $_FILES['cd']['error'] . &quot;&lt;br&gt;&quot;;<br />
+		}<br />
+	}<br />
+}<br />
+<br />
+?&gt;<br />
+ <br />
+<br />
+la directory 'uploads/' ha permessi di scrittura, infatti con un'altra pagina PHP, usando la funzione mkdir (e specificando i permessi 0700) riesco a creare altre sotto directory con permessi di scrittura.<br />
+facendo la prova ad uplodare un file, non ricevo errori, tutto sembra filare liscio.. però il file non viene uplodato, non trovo nulla nella directory..<br />
+ho provado ad usare anche system(&quot;mv bla bla&quot;); ma non ho risolto nulla<br />
+anche dal print_r($_FILES); sembra tutto ok..<br />
+<br />
+idee?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Progeny</div><div class="date">26-01-2005, 14:44</div></div><div class="posttext">ftp&gt; ls<br />
+200 PORT command successful<br />
+150 Opening ASCII mode data connection for file list<br />
+drwxr-xr-x   2 www      www           512 Jan 23 22:02 Ab10<br />
+drwxr-xr-x   2 www      www           512 Jan 23 21:59 Ba0<br />
+drwxr-xr-x   2 www      www           512 Jan 23 22:01 Ve0<br />
+drwx------   2 ftpmicrolab www           512 Jan 25 23:15 ca11<br />
+226 Transfer complete.<br />
+<br />
+<br />
+mhmm credo di aver capito (forse).. probabilmente bisogna impostare l'owner 'www'  per la directory 'ca11' .. purtroppo quella dir l'ho creata prima di mettere nel file che esegue la registrazione, il mkdir($dir, 0700);<br />
+aspetto che il provider mi cambi i permessi :D<br />
+<br />
+bye!</div></div><hr />
+
+
+<div id="copyright">vBulletin v3.5.3, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

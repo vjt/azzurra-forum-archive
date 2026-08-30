@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<title>Azzurra IRC Network Forum - Chiarimenti riguardo una nostra fantomatica patch per spiare</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="Azzurra IRC Network Forum" />
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-6.html">Network Central</a> &gt; <a href="f-19.html">Comunicazioni ufficiali di Azzurra</a> &gt; Chiarimenti riguardo una nostra fantomatica patch per spiare</div>
+<hr />
+<div class="pda"><a href="?pda=1">PDA</a></div>
+<p class="largefont">Mostra versione intera : <a href="http://forum.azzurra.org/showthread.php?t=765">Chiarimenti riguardo una nostra fantomatica patch per spiare</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Gastaman</div><div class="date">01-07-2002, 19:02</div></div><div class="posttext">Da un po' di tempo gira la voce dell'esistenza della inclusione nella nostra patch del demone IRC bahamut di un comando per spiare le query.<br />
+<br />
+Non esiste niente del genere.<br />
+<br />
+La voce e' stata messa in giro da alcuni utenti di un altro network concorrente, che dopo essere ricorsi allo spam su AzzurraNet, su it.comp.software.irc (un newsgroup dedicato ad IRC in generale, chi lo frequenta sa benissimo di chi sto parlando, c'e' un post di spam ogni 5 post normali) e su vari forum online, non avendo racimolato piu' di una decina di utenti, sono passati a questo sotterfugio per sottrarci utenti.<br />
+<br />
+Noi abbiamo patchato bahamut. Perche' lo abbiamo fatto? Semplice. Bahamut e' secondo noi il miglior demone IRC esistente al momento, ma e' sprovvisto di un usermode +x per la criptazione degli IP. Poiche' noi su AzzurraNet siamo convinti che la chat deve essere un luogo tranquillo su cui trascorrere del tempo in pace, rilassarsi e  divertirsi, il bahamut di base non andava bene. Abbiamo provveduto ad inserire una funzione di criptazione IP perfettamente funzionante, e molto piu' sicura di molte altre presenti al momento (per esempio quella di UnrealIRCd 3.1.x e 3.2.x e' gia' stata crackata). Il bahamut di base e' anche sprovvisto di supporto SSL (Secure Sockets Layer) e IPv6. Abbiamo aggiunto anche questo, e rese pubbliche le patch su sourceforge.<br />
+<br />
+Perche' la patch del +x non e' pubblica? Semplice. Un algoritmo di criptazione ha un punto debole intrinseco nel fatto che ogni utente conosce il proprio IP e la sua controparte criptata. Il non rendere noto il codice ci permette di combinare la sicurezza dell'algoritmo usato con il fatto che nessuno conosce l'algoritmo stesso, e questo rende molto piu' difficile risalire all'IP originale, ed evitare quello che e' successo ad Unreal.<br />
+<br />
+E' stato quindi deciso di non pubblicarlo, in pieno rispetto della GPL: nessuno infatti e' tenuto, secondo quanto precisato nella licenza GPL sotto cui e' stato rilasciato il codice del demone IRC bahamut, a pubblicare i sorgenti modificati dello stesso. E' obbligatorio pubblicare i sorgenti solo nel caso in cui venga distribuito l'eseguibile, e il nostro eseguibile non e' disponibile al pubblico. Tutto qui.<br />
+<br />
+Ci tengo inoltre a precisare alcune cose:<br />
+<br />
+- Una patch del genere consumerebbe una quantita' di risorse enorme, e produrrebbe svariati gigabyte di log al giorno.<br />
+<br />
+- Non abbiamo alcun interesse a spiare le query degli utenti, e anzi se effettivamente creassimo questa funzione e qualcuno riuscisse ad usarla e ad avere le prove probabilmente il network chiuderebbe e perderemmo tutta l'utenza che abbiamo faticato a guadagnare in questi anni. Dov'e' la convenienza?<br />
+<br />
+- Chi afferma di essere 'meglio di noi' o di offrire maggiore sicurezza al riguardo per il solo fatto che usa software open-source non tiene in conto che chiunque puo' modificare il software senza dirlo e spacciarlo per 'originale'. Noi almeno abbiamo avuto il buon senso di renderlo noto.<br />
+<br />
+- E' sempre bene diffidare dalle voci di corridoio, soprattutto se sparse da concorrenti che vogliono recarci danno per sottrarci utenza, finche' non si hanno in mano delle prove sicure. Qualcuno ne ha?</div></div><hr />
+
+<div id="copyright">vBulletin Versione 3.0.6, Copyright &copy;2000-2005, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

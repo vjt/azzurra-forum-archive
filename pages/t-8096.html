@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Configurare Sygate...help!, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] Configurare Sygate...help! Angolo tecnico" />
+	
+	<title>Configurare Sygate...help! [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php/">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-13.html">Angolo tecnico</a> &gt; Configurare Sygate...help!</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=8096">Configurare Sygate...help!</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">GokuSSJ3</div><div class="date">03-04-2005, 19:38</div></div><div class="posttext">Ciao a tutti, ho un problema che mi ha sempre tormentato da quando ho installato questo firewall. In pratica quando mi connetto con mIRC su Azzurra o qualsiasi altro server, dopo un 20 secondi più o meno, non posso più ricevere messaggi, entrare in canali ecc. come se si fosse disconnesso in pratica.<br />
+Se mi disconnetto e riconnetto succede di nuovo.<br />
+ <br />
+Quindi vi chiedo: c'è un modo per configurare Sygate?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">trekfan1</div><div class="date">03-04-2005, 20:42</div></div><div class="posttext">http://forum.azzurra.org/showthread.php?t=4011</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">GokuSSJ3</div><div class="date">03-04-2005, 20:56</div></div><div class="posttext">in pratica non c'è soluzione di connettersi ad azzurra con sygate?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">typedef_c</div><div class="date">04-04-2005, 00:22</div></div><div class="posttext">in pratica non c'è soluzione di connettersi ad azzurra con sygate?<br />
+<br />
+Partendo dal presupposto che se non ricordo male sygate accetta solo ip. <br />
+La soluzione potrebbe essere usare un server specifico e non il roundrobin irc.azzurra.org. Vado a fare un esempio:<br />
+<br />
+1) recuperi facendo un dns ip del server al quale ti vuoi connettere, supponiamo 2night.azzurra.org, (195.78.193.35) e del proxy-checker (213.203.143.50), proxy-check.azzurra.org<br />
+<br />
+2) inserisci i due ip tra gli allowed di sygate<br />
+<br />
+3) ti connetti con il tuo client irc a 2night.azzurra.org (con mirc /server 2night.azzurra.org)<br />
+<br />
+Con questo procedimento non dovresti aver problemi :)<br />
+<br />
+PS: il procedimento sopra vale per qualsiasi server di Azzurra IRC Network, chiaramente cambia l'ip del server quello del proxy-checker dovrebbe rimanere lo stesso.<br />
+<br />
+type</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">}gu|do[z]{®©</div><div class="date">23-04-2005, 16:17</div></div><div class="posttext">io veramente uso sygate da tempo e non ho problemi...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Delphino</div><div class="date">24-04-2005, 02:05</div></div><div class="posttext">qualora utilizzassi la versione Pro di Sygate Personal Firewall puoi disattivare l'active Response, cioè il blocco degli IP quando avvengono scansioni di porte come quella che effettua il proxy checker.<br />
+<br />
+Trovi l'opzione in questione andando alla voce<br />
+Tools<br />
+  Options<br />
+    Security<br />
+      Automatically block attackers IP addresses for [xxx] second(s)<br />
+<br />
+Nell'edizione gratuita del firewall tale scelta è disattivata e bloccata<br />
+Ciao</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">EvolutionCrazy</div><div class="date">14-05-2005, 23:41</div></div><div class="posttext">in pratica non c'è soluzione di connettersi ad azzurra con sygate?<br />
+<br />
+segui quanto scritto nella mia risposta qui:<br />
+<br />
+http://forum.azzurra.org/showthread.php?t=4011&amp;page=3&amp;pp=10<br />
+<br />
+e tornerai a chattare su qualsiasi network irc senza problemi causati da sygate :prrr:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">iose`</div><div class="date">13-10-2005, 16:12</div></div><div class="posttext">oohh finalmente, anche io avevo lo stesso problema e ho risolto grazie a Delphino!!.. Se avete Sygate Personal Pro disabilitate l'opzione &quot; Automatically block attackers IP addresses for [xxx] second(s)&quot;</div></div><hr />
+
+
+<div id="copyright">vBulletin&reg; v3.6.7, Copyright &copy;2000-2007, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<title>Azzurra IRC Network Forum - Problemuccio</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="Azzurra IRC Network Forum" />
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-7.html">I Vostri Forum</a> &gt; <a href="f-89.html">#fisica</a> &gt; Problemuccio</div>
+<hr />
+<div class="pda"><a href="?pda=1">PDA</a></div>
+<p class="largefont">Mostra versione intera : <a href="http://forum.azzurra.org/showthread.php?t=9137">Problemuccio</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Phoenix87</div><div class="date">18-06-2005, 13:14</div></div><div class="posttext">Come mio primo thread propongo un problema per testare il latex.<br />
+Per inserire formule, giacché i forum di azzurra nn ne danno la possibilità,<br />
+si può scrivere sul render latex: il TeXer (http://www.artofproblemsolving.com/LaTeX/AoPS_L_TeXer.php). Le formule vanno poi inserite come<br />
+immagini nel post. Per prelevare l'immagine, seguire le istruzioni del TeXer.<br />
+ <br />
+Ecco il problema:<br />
+ <br />
+<br />
+Una sfera di raggio http://www.artofproblemsolving.com/Forum/latexrender/pictures/4b43b0aee35624cd95b910189b3dc231.gif e massa http://www.artofproblemsolving.com/Forum/latexrender/pictures/6f8f57715090da2632453988d9a1501b.gif è sospesa ad una altezza http://www.artofproblemsolving.com/Forum/latexrender/pictures/2510c39011c5be704182423e3a695e91.gif da un recipiente<br />
+abbastanza profondo e riempito di olio di densità http://www.artofproblemsolving.com/Forum/latexrender/pictures/d2606be4e0cd2c9a6179c8f2e3547a85.gif e coefficiente di viscosità http://www.artofproblemsolving.com/Forum/latexrender/pictures/ffe9f913124f345732e9f00fa258552e.gif.<br />
+Determinare lo spazio percorso, la velocità e l'accelerazione della sfera dopo il<br />
+tempo http://www.artofproblemsolving.com/Forum/latexrender/pictures/171d612f8c4bd1b1088cbf51a0ebeb66.gif dall'entrata nell'olio.<br />
+ <br />
+http://www.artofproblemsolving.com/Forum/latexrender/pictures/a08f7fcf1de7e9f48c369878b62f54eb.gif<br />
+ <br />
+ <br />
+Scrivete in questo thread le vostre risposte.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">R[i]dd[i]cK</div><div class="date">20-06-2005, 22:29</div></div><div class="posttext">Lasciando a voi la soluzione matematica del problema, colgo l'occasione per affiancare la programmazione al calcolo scientifico. Il codice esposto qui sotto è una macro che calcola Velocità, Spazio perscorso e Accelerazione di un corpo sferico in un mezzo viscoso.<br />
+<br />
+Sub Calcola()<br />
+'<br />
+' Calcola Macro<br />
+'<br />
+Dim g As Currency<br />
+Dim V0 As Currency<br />
+Dim massa As Currency<br />
+Dim Rsfera As Currency<br />
+Dim viscosità As Currency<br />
+Dim delta_t As Currency<br />
+Dim cost_attrito As Currency<br />
+Dim tempo As Currency<br />
+Dim posizione As Currency<br />
+Dim velocità As Currency<br />
+Dim accelerazione As Currency<br />
+Dim pi_greco As Currency<br />
+Dim differenza As Currency<br />
+Dim velocità_precedente As Currency<br />
+<br />
+	pi_greco = Range(&quot;$h$7&quot;).Value<br />
+	g = Range(&quot;$b$7&quot;).Value<br />
+	V0 = Range(&quot;$b$8&quot;).Value<br />
+	massa = Range(&quot;$B$9&quot;).Value<br />
+	Rsfera = Range(&quot;$b$10&quot;).Value<br />
+	viscosità = Range(&quot;$b$11&quot;).Value<br />
+	delta_t = Range(&quot;$b$12&quot;).Value<br />
+	cost_attrito = 6 * pi_greco * viscosità * Rsfera / massa<br />
+	vel_regime = g / cost_attrito<br />
+	epsilon = Range(&quot;$e$7&quot;).Value<br />
+	densità = Range(&quot;$e$10&quot;).Value<br />
+'vengono calcolati i valori iniziali e posti nella riga 14<br />
+	tempo = 0<br />
+	posizione = 0<br />
+	velocità = V0<br />
+	accelerazione = g<br />
+	differenza = 10<br />
+	<br />
+'assegna alle celle della riga 14 i valori assegnati<br />
+	Range(&quot;a14&quot;).Value = tempo<br />
+	Range(&quot;b14&quot;).Value = velocità<br />
+	Range(&quot;c14&quot;).Value = g * (1 - 4 / 3 * pi_greca * Rsfera ^ 3 * densità) - cost_attrito * V0<br />
+	Range(&quot;d14&quot;).Value = posizione<br />
+	Range(&quot;a14&quot;).Select<br />
+'viene calcolata la riga successiva e,se è valida la condizione,il procedimento prosegue.<br />
+'in pratica è un ciclo in cui la condizione è verificata all'inizio,cioè se la differenza<br />
+'tra la velocità raggiunta e quella dell'intervallo di tempo precedente è minore di<br />
+'epsilon(costante arbitraria piccola a piacere inserita nelle condizioni iniziali),<br />
+'allora scende di una riga ed esegue i calcoli, altrimenti si ferma.<br />
+	Do While differenza &gt; epsilon<br />
+			tempo = tempo + delta_t<br />
+			posizione = posizione + velocità * delta_t<br />
+			velocità_precedente = velocità<br />
+			velocità = velocità + accelerazione * delta_t<br />
+		 accelerazione = g * (1 - 4 / 3 * pi_greca * Rsfera ^ 3 * densità) - cost_attrito * velocità<br />
+			<br />
+	'assegna alle celle i valori calcolati<br />
+		 ActiveCell.Offset(1, 0).Activate	 ' va giù di una riga<br />
+			ActiveCell.Value = tempo<br />
+		 ActiveCell.Offset(0, 1).Activate	 'va destra di una cella<br />
+			ActiveCell.Value = velocità<br />
+		 ActiveCell.Offset(0, 1).Activate	 'va adestra di una colonna<br />
+			ActiveCell.Value = accelerazione<br />
+		 ActiveCell.Offset(0, 1).Activate	 'va a destra di una colonna<br />
+			ActiveCell.Value = posizione<br />
+		 ActiveCell.Offset(0, -3).Activate	 'si poneall'inizio della riga<br />
+			differenza = Abs(velocità - velocità_precedente)<br />
+	 Loop<br />
+	 Range(&quot;A14&quot;).Select<br />
+	 <br />
+<br />
+'<br />
+End Sub<br />
+<br />
+Chi vuole può svolgere questo problema implementando il codice in un foglio Excel e ricavando i risultati controllarne la correttezza.<br />
+<br />
+PS - Questo esercizio è facoltativo! La cosa importante è la soluzione matematica, che sono certo qualcuno di voi darà al più presto. ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">funnybird</div><div class="date">28-06-2005, 01:57</div></div><div class="posttext">Come mio primo thread propongo un problema per testare il latex.<br />
+ <br />
+conosco una che il lattex lo testa proprio bene!!! :rotfl: <br />
+ <br />
+scusami so' di essere sembrato un po' fuoriluogo ma non ho saputo resistere! <br />
+in grande amicizia! <br />
+in gamba per il vs. forum! :okay:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">frosty`</div><div class="date">29-06-2005, 21:16</div></div><div class="posttext">ma la figa vi piace?<br />
+LOL</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">IPPOPOTAMA</div><div class="date">30-06-2005, 02:44</div></div><div class="posttext">whahaha io sono venuta nella vostra room a farmi risolvere un problema di giuseppe_dj ahahahhahaahahah:D:D:D:D:okay:scusatemi membri del chan di #fisica potrei kiedervi di darci qualche problemuccio cosi noi ve li risolviamo,io son bravaaa li risolvo sulserio:D:D:D:D:prrr:;):okay:<br />
+siau frostyyyy;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">funnybird</div><div class="date">05-07-2005, 18:51</div></div><div class="posttext">ma stai daperutto LOL non hai ancora postato su #veneto.it?</div></div><hr />
+
+<div id="copyright">vBulletin Versione 3.0.7, Copyright &copy;2000-2005, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="[C]martrice statica o dinamica o memoria condivisa, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] [C]martrice statica o dinamica o memoria condivisa Programmazione e dintorni" />
+		<title>[C]martrice statica o dinamica o memoria condivisa [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-23.html">Programmazione e dintorni</a> &gt; [C]martrice statica o dinamica o memoria condivisa</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=9966">[C]martrice statica o dinamica o memoria condivisa</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">viridovix</div><div class="date">16-08-2005, 15:34</div></div><div class="posttext">Sistema Suse 9.2, linguaggio C , compilatore gcc.<br />
+Ho realizzato un sistema di prenotazione posti per una sala cinematografica, con un processo su una macchina server che gestisce la mappa dei posti.<br />
+Ogni posto è caratterizzato da numero di fila, numero di poltrona e da un flag che indica se il posto è prenotato o meno.<br />
+Il server accetta e processa sequenzialmente le richieste prenotazioni di posti da uno o piu' client che possono essere sulla stessa macchina o in remoto(quindi macchine diverse).<br />
+<br />
+Come struttura ho utilizzato una matrice statica [3][3]<br />
+Con un unico client funziona tutto perfettamente , ma quando si connette un secondo client ,questo visualizza una matrice che nn tiene conto delle prenotazioni effettuate dal primo client, e la stessa cosa vale per il primo client.<br />
+Quindi i vari client nn fanno riferimento alla stessa matrice:(<br />
+All'inizio pensavo che dipendesse dalla posizione dell chiamata alla funzione inizializza(cinema) , ma  quando il secondo client si connette questa nn dovrebe essere chiamata.<br />
+<br />
+Ecco (http://server4.103092804.com/Release3/linkredirect.php?h=42321,13951,1124199258) il codice del main del server:<br />
+<br />
+<br />
+<br />
+//main server<br />
+int main(int argc,char *argv[])<br />
+{<br />
+  char scelta[1];<br />
+  char out[MAX_DIM];<br />
+  char buff[MAX_DIM];<br />
+  int ds_sock,/*ds_sock_acc,*/ret,lenght;<br />
+  struct sockaddr_in server;<br />
+  struct sockaddr client;<br />
+  struct posto cinema[3][3];<br />
+  //<br />
+  inizializza_cinema(cinema);<br />
+  //<br />
+  system(&quot;clear&quot; );<br />
+	//qui ho omesso il codice del socket x snellire la lettura del testo<br />
+<br />
+  printf(&quot;in attesa di connessione da parte del client!!\n\n&quot; );<br />
+  //<br />
+	//<br />
+  while(1)<br />
+	{ <br />
+	  while((ds_sock_acc=accept(ds_sock,&amp;client,&amp;lenght)) ==-1);<br />
+	  printf(&quot;client connesso!!\n\n&quot; );<br />
+	  if (fork()==0)<br />
+		{ close(ds_sock);<br />
+			   do<br />
+		   <br />
+				 { strcpy(out,&quot; &quot;);<br />
+	 read(ds_sock_acc,buff,MAX_DIM);<br />
+//				   scelta=buff;<br />
+				   if ((strcmp(buff,&quot;A&quot;)==0)||(strcmp(buff,&quot;a&quot;) ==0))<br />
+						{   posti_vuoti(cinema);<br />
+							//printf(&quot;%s\n&quot;,buff);<br />
+						}<br />
+				   else if ((strcmp(buff,&quot;B&quot;)==0)||(strcmp(buff,&quot;b&quot;) ==0))<br />
+					{ <br />
+					 controllo_posto(cinema);<br />
+					 } <br />
+	<br />
+	else if ((strcmp(buff,&quot;C&quot;) ==0)||(strcmp(buff,&quot;c&quot;) ==0))<br />
+				 { <br />
+					 annulla_posto(cinema);<br />
+				   }<br />
+			 else	 if((strcmp(buff,&quot;D&quot;) ==0)||(strcmp(buff,&quot;d&quot;) ==0))<br />
+						{  strcpy(out,&quot;fatto&quot;);<br />
+						}<br />
+<br />
+				  }//relativa al do<br />
+				 while (strcmp(out,&quot;fatto&quot;) !=0);<br />
+//<br />
+				write(ds_sock_acc,&quot;\n\nArrivederci!!&quot;,20);<br />
+				close(ds_sock_acc);<br />
+				printf(&quot;Client disconnesso!!\n\n&quot;);<br />
+				printf(&quot;\nIn attesa di connessione da nuovo client!!\n\n&quot;);<br />
+				exit(0);<br />
+<br />
+			}//della fork<br />
+		  else close(ds_sock_acc); //è del fork==0<br />
+<br />
+	   }//del while(1)<br />
+}//del main<br />
+<br />
+<br />
+<br />
+La struttra posto l'ho definita cosi<br />
+<br />
+struct posto<br />
+{<br />
+  unsigned char idPosto[6];<br />
+  int flag;<br />
+};<br />
+<br />
+la funzione inizializza_cinema<br />
+<br />
+void inizializza_cinema(struct posto cine[3][3])<br />
+{<br />
+ unsigned char i,j,k;<br />
+ k='1';<br />
+ for(i='A';i&lt;='C';i++)<br />
+  {<br />
+	//printf(&quot;\n&quot;);<br />
+	for(j='1';j&lt;='3';j++)<br />
+	 {<br />
+	   cine[i-'A'][j-'1'].flag=0;<br />
+	   cine[i-'A'][j-'1'].idPosto[0]=' ';<br />
+	   cine[i-'A'][j-'1'].idPosto[1]=i;<br />
+	   cine[i-'A'][j-'1'].idPosto[2]=j;<br />
+	   cine[i-'A'][j-'1'].idPosto[3]=' ';<br />
+	   cine[i-'A'][j-'1'].idPosto[4]='\t';<br />
+	   cine[i-'A'][j-'1'].idPosto[5]='\0';<br />
+	 }<br />
+	 cine[i-'A'][2].idPosto[4]='\n';<br />
+   }<br />
+<br />
+<br />
+Non ben chiaro come procedere per risolvere. Se usare una matrice dinamica (ho il problema che la matrice l'ho dichiarata di tipo posto), memoria condivisa o tutte e due.<br />
+Spero che la discussione troppo lunga nn spaventi e che qualcuno riesca ad aiutarmi.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">sottovento</div><div class="date">21-11-2005, 14:35</div></div><div class="posttext">Non farti imbrogliare! Nel momento che esegui la fork(), viene fatta una copia del processo, tale e quale a quella di partenza!<br />
+Questo vuol dire che viene duplicata la tabella dei descrittori degli stream aperti, ...<br />
+Viene ovviamente duplicata anche la memoria. Dal momento che fai la fork(), dunque, hai due tabelle diverse, a cui ovviamente i tuoi client fanno riferimento.<br />
+<br />
+Per quello che vuoi fare, questa soluzione non va bene. Ti consiglio di ripensarci ed usare altre strutture condivise (oppure,banalmente, un file).<br />
+In alternativa, il sistema da te utilizzato supporta i thread, i quali non duplicano memoria ma la condividono. Questo ti risolve il problema.<br />
+(ovviamente la tabella diventa una risorsa condivisa, dunque dovrai fare attenzione a regolarne gli accessi con qualche meccanismo di sincronizzazione).<br />
+<br />
+ciao ciao<br />
+sottovento</div></div><hr />
+
+
+<div id="copyright">vBulletin v3.5.3, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

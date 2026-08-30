@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Canon pixma iP1500, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] Canon pixma iP1500 Discussioni Linux" />
+	
+	<title>Canon pixma iP1500 [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-28.html">Discussioni Linux</a> &gt; Canon pixma iP1500</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=6860">Canon pixma iP1500</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Progeny</div><div class="date">12-01-2005, 15:36</div></div><div class="posttext">Salve,<br />
+sapete dove reperire i drivers per questa stampante?<br />
+<br />
+nofx:/home/progeny# /etc/init.d/hotplug start<br />
+Kernel hotplug support not enabled.<br />
+<br />
+io ricordavo di aver abilitato tutto nel kernel :-?<br />
+<br />
+nofx:/home/progeny# lsmod | grep usb<br />
+usblp                  12416  0<br />
+usb_storage            27264  0<br />
+usbcore               101340  5 usblp,usb_storage,ehci_hcd<br />
+<br />
+nofx:/home/progeny# tail /var/log/messages<br />
+Jan 12 15:14:00 nofx kernel: drivers/usb/core/usb.c: registered new driver usblp<br />
+Jan 12 15:14:00 nofx kernel: drivers/usb/class/usblp.c: v0.13: USB Printer Device Class driver<br />
+<br />
+almeno usblp c'è e worka..</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">12-01-2005, 15:49</div></div><div class="posttext">sapete dove reperire i drivers per questa stampante?<br />
+<br />
+Google mi fa sapere che i drivers sono disponibili su http://turboprint.de/english.html , guarda te...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">City_Hunter</div><div class="date">12-01-2005, 18:50</div></div><div class="posttext">Correct, sembrano gli unici driver esistenti per il tuo modello.<br />
+(gimp-print non supporta, ad oggi, quel tipo di stampanti Canon)<br />
+<br />
+Sono liberamente scaricabili ed adoperabili per uso privato, si integrano con CUPS e hanno anche un'interfaccia di configurazione (http://turboprint.de/screen1big.gif) in GTK. Progeny, direi che ti è andata di lusso.<br />
+Del resto, come i driver nVIDIA insegnano, non tutto il closed source vien per nuocere!<br />
+(traduzione: a volte ci si deve accontentare)<br />
+<br />
+So già che nMe sta per comparire dal nulla per dirmi che sto bestemmiando e che dovrei essere legato e messo al rogo da Stallman e soci :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Progeny</div><div class="date">12-01-2005, 19:20</div></div><div class="posttext">mhmm ci sarà qualcosa di strano che non mi fa funzionare la stampante <br />
+con l'utility &quot;TurboPrint Config&quot; non riesco a stampare la pagina di test.. e non da nessun errore :(<br />
+<br />
+nofx:~# /etc/init.d/hotplug start<br />
+Kernel hotplug support not enabled.<br />
+<br />
+confidavo in hotplug.. :sospiro:<br />
+<br />
+passerò i prossimi giorni su google mi sa :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">skanny</div><div class="date">13-02-2005, 20:27</div></div><div class="posttext">scusa progeny ho il tuo stesso identico problema. Anch'io ho preso turbo print, mi dice che la stampante è connessa, riconosciuta e pronta per la stampa, ma alla fine non stampa nulla. Tu sei riuscito a risolvere? thank</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Progeny</div><div class="date">13-02-2005, 23:42</div></div><div class="posttext">La mia pecca è stata quella di non aver abilitato hotplug mesi fa, quando non avevo hw usb e la quick cam usb cmq ero riuscito a farla andare.<br />
+Appena ho tempo proverò abilitando hotplug.<br />
+<br />
+Provato a fare echo asd &gt; /dev/usb/lp0 ?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BuDuS</div><div class="date">14-02-2005, 14:25</div></div><div class="posttext">La mia pecca è stata quella di non aver abilitato hotplug mesi fa, quando non avevo hw usb e la quick cam usb cmq ero riuscito a farla andare.<br />
+Appena ho tempo proverò abilitando hotplug.<br />
+<br />
+Provato a fare echo asd &gt; /dev/usb/lp0 ?<br />
+<br />
+Io ho una IP2000 e in questo modo non funziona.<br />
+<br />
+Cmq con il driver gimp-print io riesco a stampare solo da GIMP, altrimenti devo usare una CANON-BJC-7100 (vado a memoria :-)  ) e mi funziano anche programmi come Firefox.<br />
+<br />
+Io uso una gentoo 2004.3, kernel 2.6.10 ricompilato e cups+foomatic.<br />
+<br />
+L'alternativa e', come ti e' stato suggerito all'inizio, utilizzare TurboPrint che la supporta piuttosto bene; puoi usarlo anche solo per verificare se la stampante riceve i dati ;) <br />
+<br />
+Ciao, U D A.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">skanny</div><div class="date">14-02-2005, 20:08</div></div><div class="posttext">ok adesso funzia... ma raga cos'è quell'insulso logo che salta fuori???? conoscete qualche modo per farlo sparire?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Bl4ckm0r3</div><div class="date">19-02-2005, 11:22</div></div><div class="posttext">è perchè è una versione shareware...i bastardoni della turboprint hanno fatto sta cosa...rendendo di fatto i driver inutili...io ho provato anche con dei c*r*a*c*k trovati sul mulo ma nn hanno funzionato a dovere...ora sto cercando altre cose (ho anche io una ip2000) ma niente da fare...cmq mettendo altri driver stampa uguale, ma senza possibilità di accedere alle impostazioni!</div></div><hr />
+
+
+<div id="copyright">vBulletin v3.6.0, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

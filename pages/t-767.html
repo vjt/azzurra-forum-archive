@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Password Recovery, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] Password Recovery Programmazione e dintorni" />
+		<title>Password Recovery [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-23.html">Programmazione e dintorni</a> &gt; Password Recovery</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=767">Password Recovery</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">[[D4RkNeSs]]</div><div class="date">01-07-2002, 20:34</div></div><div class="posttext">Ho creato un programmino che ti recupera le password sotto gli asterischi, la compilazione me la da giusta ma appena apro l'exe nn succede niente:<br />
+<br />
+#include &lt;windows.h&gt;<br />
+#include &quot;resource.h&quot;<br />
+<br />
+BOOL CALLBACK DlgProc (HWND, UINT, WPARAM, LPARAM) ;  <br />
+<br />
+<br />
+<br />
+int WINAPI WinMain (HINSTANCE hInstance, HINSTANCE hPrevInstance, <br />
+                    PSTR lpszCmdLine, int cmdShow)       <br />
+     {<br />
+<br />
+     DialogBox (hInstance, MAKEINTRESOURCE(IDD_DIALOGBAR), NULL, DlgProc) ;<br />
+<br />
+     return 0 ;<br />
+     }<br />
+<br />
+<br />
+BOOL CALLBACK<br />
+DlgProc (HWND hwnd, UINT mMsg, WPARAM wParam, LPARAM lParam) <br />
+     {<br />
+	 POINT Punto;<br />
+	 HWND Finestra;<br />
+	 char Buffer [100];<br />
+     switch (mMsg)<br />
+          {<br />
+          case WM_INITDIALOG :<br />
+               {<br />
+<br />
+					SetTimer(hwnd,1,100,NULL);<br />
+<br />
+					SetWindowPos(hwnd,HWND_TOPMOST,0,0,0,0,SWP_NOMOVE | SWP_NOACTIVATE | SWP_NOSIZE | SWP_SHOWWINDOW);<br />
+                    return TRUE ;<br />
+               }<br />
+			<br />
+		  case WM_TIMER:<br />
+<br />
+		        GetCursorPos(&amp;Punto);<br />
+<br />
+				Finestra = WindowFromPoint(Punto);<br />
+<br />
+				SendMessage(Finestra,WM_GETTEXT, (WPARAM) 100, (LPARAM) Buffer);<br />
+<br />
+				SetDlgItemText(hwnd,IDC_EDIT,Buffer);<br />
+		  return TRUE;<br />
+<br />
+		  case WM_CLOSE:<br />
+				KillTimer(hwnd,1);<br />
+				EndDialog(hwnd,0);<br />
+		  return TRUE;<br />
+          default :<br />
+               return FALSE ;<br />
+          }<br />
+     }</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Shaka</div><div class="date">02-07-2002, 11:06</div></div><div class="posttext">Ti faccio notare che non puoi mandare un WM_GETTEXT ad una qualsiasi finestra con l'intenzione di ottenere il suo testo. Questo perchè il puntatore al buffer di memoria che specifichi (quello in cui in teoria verrebbe copiato il testo della finestra) è valido soltanto all'interno dello spazio di indirizzamento del tuo processo. Per un altro processo quel puntatore non è valido, quindi non può scriverci dentro in poche parole.<br />
+<br />
+Shaka</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">[[D4RkNeSs]]</div><div class="date">03-07-2002, 22:25</div></div><div class="posttext">quindi che code potrei fare per fare un Password Recovery?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Shaka</div><div class="date">03-07-2002, 23:16</div></div><div class="posttext">Perchè non provi invece con un + didattico &amp;quot;Hello WinWorld?&amp;quot;<br />
+<br />
+Shaka</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">[[D4RkNeSs]]</div><div class="date">04-07-2002, 16:42</div></div><div class="posttext">Dici che viene meglio?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Shaka</div><div class="date">04-07-2002, 16:45</div></div><div class="posttext">Sicuramente</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">[[D4RkNeSs]]</div><div class="date">05-07-2002, 16:09</div></div><div class="posttext">mi potresti aiutare?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Shaka</div><div class="date">05-07-2002, 17:02</div></div><div class="posttext">Se hai domande specifiche credo che tutti qui siano disposti a darti una risposta.<br />
+<br />
+Shaka</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">[[D4RkNeSs]]</div><div class="date">05-07-2002, 21:20</div></div><div class="posttext">si grazie ma<br />
+intendevo proprio a realizzare il code se hai tempo</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Shaka</div><div class="date">05-07-2002, 22:46</div></div><div class="posttext">Così facendo si impara poco. Scegli un obbiettivo realistico da realizzare, definisci bene cosa deve fare e inizia a buttar giù codice aiutandoti con la documentazione del caso. In caso di problemi chiedi pure qua :)<br />
+<br />
+Shaka<br />
+<br />
+ps: potresti usare con parsimonia la tua sign ? è un pochetto ingombrante :)<br />
+<br />
+&lt;font size=-1&gt;[ Questo messaggio &amp;egrave; stato modificato da: Shaka il 2002-07-05 22:46 ]&lt;/font&gt;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">[[D4RkNeSs]]</div><div class="date">06-07-2002, 21:55</div></div><div class="posttext">grazie mille farò così</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">[[D4RkNeSs]]</div><div class="date">06-07-2002, 21:59</div></div><div class="posttext">thx farà così</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">[[D4RkNeSs]]</div><div class="date">06-07-2002, 21:59</div></div><div class="posttext">thx farà così</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">tulifaiv</div><div class="date">06-07-2002, 23:15</div></div><div class="posttext">Le ultime parole famose di Shaka... :smile:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">[[D4RkNeSs]]</div><div class="date">04-08-2002, 09:58</div></div><div class="posttext">.... ho scritto quel mess troppe vole xchè pensavo che nn riuscivo a postare invece aveva cambiato pagina :smile: <br />
+cmq il Password Recvery sono riuscito a farlo</div></div><hr />
+
+
+<div id="copyright">vBulletin v3.5.3, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

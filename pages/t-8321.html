@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Aiuto di due righe php, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] Aiuto di due righe php Programmazione e dintorni" />
+		<title>Aiuto di due righe php [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-23.html">Programmazione e dintorni</a> &gt; Aiuto di due righe php</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=8321">Aiuto di due righe php</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">birobiro</div><div class="date">19-04-2005, 16:14</div></div><div class="posttext">Ho provato a portare fare girare un chat php sul mio sito, ma aimè mi rileva degli errori nelle righe<br />
+Adesso Viu riporto il codice<br />
+ <br />
+    $fp = fopen(&quot;go.txt&quot;,  &quot;a&quot;);<br />
+    $text1 = stripslashes($text_here);<br />
+    $text = strip_tags($text1);<br />
+    fputs($fp, &quot;&lt;table width=\&quot;100%\&quot; border=\&quot;1\&quot; bgcolor=\&quot;#CCCCCC\&quot;&gt;&lt;tr&gt;&lt;td&gt;&lt;img src=\&quot;ikoner/$icon_id\&quot; border=\&quot;0\&quot;&gt;&lt;font face=\&quot;Verdana\&quot; Size=\&quot;1\&quot;&gt;&amp;nbsp;&amp;nbsp;$date &amp;nbsp;&lt;/font&gt;&lt;font face=\&quot;Verdana\&quot; Size=\&quot;2\&quot;&gt;$text&lt;/font&gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&quot;);<br />
+  fclose($fp);<br />
+ <br />
+ <br />
+Ora... Che errore c'è? mi dice che un errore e nella riga $fp.....<br />
+L'altro errore è nella riga fputs....<br />
+Il fatto è che un php 4.03<br />
+qundi inferiore a 4.2<br />
+Sarà questo il motivo che mi vede l'errore?<br />
+Oppure c'è un errore davvero?<br />
+A me sembra giusto!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Progeny</div><div class="date">19-04-2005, 17:03</div></div><div class="posttext">ad occhio non vedo nessun errore, se però ce lo riporti magari possiamo darti una risposta :)<br />
+comunque dai uno sguardo qui: http://php.it/manual/en/function.fwrite.php<br />
+anche se mi sembra che tu abbia usato correttamente la funzione</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">birobiro</div><div class="date">19-04-2005, 18:32</div></div><div class="posttext">questo è il file completo!<br />
+ <br />
+&lt;html&gt;<br />
+&lt;head&gt;<br />
+&lt;script language=&quot;JavaScript&quot;&gt;<br />
+&lt;!--<br />
+var time = null<br />
+function move() {<br />
+window.location = 'goinput.php'<br />
+}<br />
+//--&gt;<br />
+&lt;/script&gt;<br />
+&lt;/head&gt;<br />
+&lt;body onload=&quot;timer=setTimeout('move()',0)&quot;&gt;<br />
+&lt;?php<br />
+//Date stamp on message<br />
+  $date = (date (&quot;d/n -H:i&quot;));<br />
+<br />
+<br />
+  //Write to text<br />
+    $fp = fopen(&quot;go.txt&quot;,  &quot;a&quot;);<br />
+    $text1 = stripslashes($text_here);<br />
+    $text = strip_tags($text1);<br />
+    fputs($fp, &quot;&lt;table width=\&quot;100%\&quot; border=\&quot;1\&quot; bgcolor=\&quot;#CCCCCC\&quot;&gt;&lt;tr&gt;&lt;td&gt;&lt;img src=\&quot;ikoner/$icon_id\&quot; border=\&quot;0\&quot;&gt;&lt;font face=\&quot;Verdana\&quot; Size=\&quot;1\&quot;&gt;&amp;nbsp;&amp;nbsp;$date &amp;nbsp;&lt;/font&gt;&lt;font face=\&quot;Verdana\&quot; Size=\&quot;2\&quot;&gt;$text&lt;/font&gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&quot;);<br />
+  fclose($fp);<br />
+<br />
+//delete file whwn it gets to big, and plase new message.<br />
+$file=&quot;go.txt&quot;;<br />
+$file_size = filesize(&quot;$file&quot;);<br />
+if ($file_size &gt;= 4000) {<br />
+fopen(&quot;$file&quot;,&quot;w+&quot;);<br />
+fwrite($file,&quot;&quot;);<br />
+fclose($file);<br />
+}<br />
+?&gt;<br />
+<br />
+&lt;/body&gt;<br />
+&lt;/html&gt;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Progeny</div><div class="date">20-04-2005, 19:07</div></div><div class="posttext">e l'errore..? :sospiro:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">birobiro</div><div class="date">20-04-2005, 19:20</div></div><div class="posttext">e l'errore..? :sospiro:<br />
+E che ne so... mi dice errore nella riga 20 e nella riga 23!<br />
+Che ne so che errore c'è!<br />
+Lo sto chiedendo a voi!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Progeny</div><div class="date">20-04-2005, 19:25</div></div><div class="posttext">incolla qui la riga che ti viene visualizzata quando hai l'errore..</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">birobiro</div><div class="date">21-04-2005, 11:04</div></div><div class="posttext">Ma l'errore viene visualizzato solo per 2 secondi e poi si toglie!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Progeny</div><div class="date">21-04-2005, 14:16</div></div><div class="posttext">togli questo che poi non scompare<br />
+<br />
+&lt;body onload=&quot;timer=setTimeout('move()',0)&quot;&gt;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">}gu|do[z]{®©</div><div class="date">23-04-2005, 17:14</div></div><div class="posttext">a giudicare dalle righe cui si riferiscono gli errori potrebbe essere un errore di permessi sul file..<br />
+<br />
+insomma.. prova a dare chmod 777 sul file go.txt<br />
+<br />
+ciauz</div></div><hr />
+
+
+<div id="copyright">vBulletin v3.5.3, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

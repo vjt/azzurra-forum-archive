@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Il signor Tramite... :), azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] Il signor Tramite... :) Services - I servizi IRC di Azzurra" />
+	
+	<title>Il signor Tramite... :) [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-6.html">Network Central</a> &gt; <a href="f-30.html">Services - I servizi IRC di Azzurra</a> &gt; Il signor Tramite... :)</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=1880">Il signor Tramite... :)</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">24-03-2003, 21:17</div></div><div class="posttext">Premessa: gia' identificato a Steve, mi sono identificato con JoJoFC e con quest'ultimo nick mi sono oppato sul canale dove sia Steve che JoJoFC sono CoFounder. Ecco che e' successo:<br />
+<br />
+(20:49:19) -&amp;gt; *ChanServ* OP #jojofc JoJoFC<br />
+(20:49:20) * ChanServ sets mode: +o JoJoFC<br />
+(20:49:20) -ChanServ:@#jojofc- JoJoFC (tramite Steve) ha usato OP su JoJoFC<br />
+<br />
+Domanda: perche' Steve ha fatto da tramite, se entrambi i nick hanno pari accesso a quel canale? E' corretto che sia accaduto questo fatto? ^^<br />
+<br />
+Grazie mille &amp;amp; ciao! :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gastaman</div><div class="date">26-03-2003, 14:04</div></div><div class="posttext">E' successo perché la funzione che ricava l'accesso al canale di un certo utente si gira i vari nick a cui un utente e' identificato, quelli in cui e' sulla access, ecc., e appena trova un accesso con livello &amp;gt; 0 (cioe' da VOP in su) imposta quello come livello di accesso, e in seguito lo modifica solo se trova qualche altro accesso con livello superiore, altrimenti prende quello con il nick associato.<br />
+<br />
+Per questo motivo, avendo Steve e JoJoFC pari accesso al canale, ma essendoti tu identificato prima a Steve che a JoJoFC, l'accesso salvato e' quello relativo al nick Steve quando controlla il primo nick, e poi quando controlla JoJoFC non lo aggiorna essendo uguale.<br />
+<br />
+Per il momento la cosa e' cosi', stiamo vedendo se e' possibile migliorarla senza far danni. :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">15-04-2003, 18:06</div></div><div class="posttext">Per il momento la cosa e' cosi', stiamo vedendo se e' possibile migliorarla senza far danni. :D<br />
+<br />
+Dunque, vediamo se mi e' venuta in mente una buona idea o no...<br />
+Partendo dal presupposto che deve essere un po' problematico tracciare l'access &amp;gt; 0 di un utente registrato che cambia nick, suggerisco una cosa di questo genere:<br />
+<br />
+if &#91; $utente ha i diritti per eseguire l'operazione richiesta &#93;<br />
+then<br />
+     # esegui l'operazione richiesta<br />
+else<br />
+     # verifico l'access dei nick precedenti &#40;se possibile&#41;<br />
+     if &#91; $utente si era identificato ad un nick con i diritti necessari &#93;<br />
+     then<br />
+          # esegui l'operazione richiesta<br />
+     else<br />
+          # 2 di Picche rulez<br />
+     fi<br />
+fi<br />
+...in italiano, sarebbe a dire che potreste verificare prima se il nick richiedente ha gli accessi per eseguire l'operazione, ed eventualmente verificare le registrazioni precedenti per soddisfare la sua richiesta.<br />
+Certo, questo significherebbe eseguire un test in piu' per buona parte delle richieste ai servizi, ma se il nick e' giusto in partenza si evitano le verifiche sui vari nick passati (che, onestamente, non so quanto siano pesanti).<br />
+<br />
+Ciao! ^^<br />
+<br />
+{{ ...ma quanto sono lamer oggi? :P }}</div></div><hr />
+
+
+<div id="copyright">vBulletin&reg; v3.6.4, Copyright &copy;2000-2007, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

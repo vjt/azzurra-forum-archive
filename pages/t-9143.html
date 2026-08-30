@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="PHP: Meteo!, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] PHP: Meteo! Programmazione e dintorni" />
+		<title>PHP: Meteo! [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-23.html">Programmazione e dintorni</a> &gt; PHP: Meteo!</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=9143">PHP: Meteo!</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Progeny</div><div class="date">18-06-2005, 15:49</div></div><div class="posttext">in questo pomeriggio afoso, prima inziare a studiare, ho codato un piccolo script che forse potrà far comodo a qualcuno di voi..<br />
+<br />
+ &lt;?php<br />
+/*<br />
+Written by<br />
+		   Progeny@Azzurra IRC Network<br />
+		  &lt;v.bellini@gmail.com&gt;<br />
+<br />
+		  http://www.unimatrix0-1.org/<br />
+*/<br />
+setlocale(LC_TIME, 'italian');<br />
+$city = 9; /* Bari */<br />
+$url_form = 'http://www.ilmeteo.it/triorario.php';<br />
+$gg = date(&quot;w&quot;)+1;<br />
+if($gg == 7) { $gg = 0; }<br />
+$time = mktime(0,0,0, date(&quot;m&quot;), $gg, date(&quot;Y&quot;));<br />
+$data = date(&quot;F jS Y&quot;, $time);<br />
+$params = 'citta='.$city.'&amp;gg_from='.$gg.'&amp;ora_from='.$time.'&amp;submit=Previsioni';<br />
+<br />
+$ch = curl_init();<br />
+curl_setopt($ch, CURLOPT_POST, 1);<br />
+curl_setopt($ch, CURLOPT_POSTFIELDS, $params);<br />
+curl_setopt($ch, CURLOPT_URL, $url_form);<br />
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);<br />
+curl_setopt($ch, CURLOPT_USERAGENT, 'Firefox');<br />
+$content = curl_exec($ch);<br />
+<br />
+$tokenize = strpos($content, '&lt;table class=principale cellpadding=3 cellspacing=0 &gt;');<br />
+?&gt;<br />
+<br />
+&lt;style&gt;<br />
+body {margin-top:0px; margin-left:0px; margin-right:0px; margin-bottom:0px; font-family: verdana, arial, helvetica;}<br />
+.giorni { background: #FFFF00; }<br />
+.intestazione { background: #FFFFCC;  font-size: 10px; font-weight:bold;}<br />
+.bordo1 { border-left: 1px solid #A0A0A0; }<br />
+.bordo2 { border-left: 1px solid #E0E0E0; }<br />
+.principale { border: 2px solid #A0A0A0; }<br />
+.riga1 { background:#FCFCFC; font-size: 10px; text-align:center;}<br />
+.riga2 { background:#F0F0F0; font-size: 10px;  text-align:center;}<br />
+.bottone { border: 1px solid #000; font-size:12px; width:105px; height:20px;}<br />
+.selezionato { border: 1px solid #F00; background: #FCC; font-size:12px; width:90px; height:20px;}<br />
+.credits {font-size:10px;}<br />
+form {margin-bottom : 0; margin-top:0px;}<br />
+&lt;/style&gt;<br />
+<br />
+&lt;?php<br />
+echo(&quot;Giorno: $data&lt;br&gt;&quot;);<br />
+echo substr($content, $tokenize, strlen($content));<br />
+?&gt;<br />
+<br />
+<br />
+potete modificarlo e farne ciò che volete,<br />
+byebye</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Progeny</div><div class="date">19-06-2005, 20:30</div></div><div class="posttext">nuova versione, fixato un bug e risulta piu` semplice scegliere la citta`, basta impostare la variabile $my_city<br />
+<br />
+http://www.unimatrix0-1.org/php/meteoservice.tar.gz<br />
+<br />
+ho richiesto anche a www.ilmeteo.it l'autorizzazione per lo script, ho appena ricevuto risposta positiva :)<br />
+<br />
+potete usarlo come preferite ;)</div></div><hr />
+
+
+<div id="copyright">vBulletin v3.5.3, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

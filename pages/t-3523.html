@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="PHP: referrers, possibili fake?, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] PHP: referrers, possibili fake? Programmazione e dintorni" />
+		<title>PHP: referrers, possibili fake? [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-23.html">Programmazione e dintorni</a> &gt; PHP: referrers, possibili fake?</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=3523">PHP: referrers, possibili fake?</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">fanatiko</div><div class="date">08-12-2003, 17:19</div></div><div class="posttext">Volendo utilizzare la variabile $_SERVER[&quot;HTTP_REFERER&quot;] per validare una chiamata ad uno script PHP (vale a dire, la chiamata è stata fatta proprio dal mio sito e i parametri sono, perciò, 'autentici'), mi chiedevo: è possibile *alterare* il valore di questa variabile da lato client, con la conseguenza che questo metodo non è sicuro?<br />
+<br />
+<br />
+if&#40;$_SERVER&#91;&amp;quot;HTTP_REFERER&amp;quot;&#93;===&amp;quot;http&#58;//www.miosito.ext/miapagina.htm&amp;quot;&#41;&#123;<br />
+...esegui il lavoro...<br />
+&#125;<br />
+else&#123;<br />
+...fake...<br />
+&#125;<br />
+<br />
+<br />
+Grazie, saluti...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Progeny</div><div class="date">10-12-2003, 22:17</div></div><div class="posttext">Se il client lo codi tu puoi fare quello che vuoi, il referer puoi anche modifcarlo con php con la funzione header();</div></div><hr />
+
+
+<div id="copyright">vBulletin v3.5.3, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

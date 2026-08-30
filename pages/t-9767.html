@@ -1,0 +1,239 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="[C]Help,vari bug nel programma, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] [C]Help,vari bug nel programma Programmazione e dintorni" />
+		<title>[C]Help,vari bug nel programma [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-23.html">Programmazione e dintorni</a> &gt; [C]Help,vari bug nel programma</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=9767">[C]Help,vari bug nel programma</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">viridovix</div><div class="date">25-07-2005, 22:54</div></div><div class="posttext">Questo programma simula un servizio di prenotazione posti cinema (dalla stessa macchina x ora).<br />
+Purtroppo presenta una serie di  problemi :( che nn riesco ancora a risolvere.LA compilazione perlomeno è ok.<br />
+<br />
+Da i seguenti problemi:<br />
+1) Usando la prima volta l'opzione a)visualizza posti liberi<br />
+    nonostante siano tutti posti non prenotati la matrice appare cosi<br />
+<br />
+     A2  A3<br />
+B1  B2 B3<br />
+C1  C2  C3<br />
+<br />
+nel main ho aggiunto la chiamata alla funzione che visualizza i posti x vedere se combinava la stessa cosa invece visualizza anche il posto A1.<br />
+Ma se poi uso la chiamata se lo mangia anche se è presente(infatti è possibile prenotarlo).<br />
+<br />
+2)altro bug:<br />
+   Se ad esempio il posto B2 è libero e lo prenoto<br />
+   su schermo stampa:<br />
+- posto non disponibile<br />
+-Inserisci il posto<br />
+-Il posto è vuoto lo riserviamo a voi<br />
+<br />
+IN effetti il posto viene cmq prenotato anche se nn ci dovrebbero essere le prime 2 stampate<br />
+<br />
+3) questo piu' che altro è un problema estetico<br />
+     Se prenoto un posto ad esempio A1 poi visualizza la<br />
+      matrice cosi<br />
+      <br />
+       A2 A3<br />
+       B1 B2 B3<br />
+       C1 C2 C3<br />
+<br />
+Ora ecco il codice del file .h:<br />
+<br />
+struct posto<br />
+{<br />
+  unsigned char idPosto[3];<br />
+  int flag;<br />
+};<br />
+<br />
+//typedef struct posto cine[3][3];<br />
+// funzioni<br />
+<br />
+void inizializza_cinema(struct posto cine[3][3]);<br />
+int cinema_pieno(struct posto cine[3][3]);<br />
+void posti_vuoti(struct posto cine[3][3]);<br />
+//int cinema_pieno(struct posto cine[3][3]);<br />
+void assegna_posto(struct posto cine[3][3],unsigned char x, unsigned char y);<br />
+void controllo_posto(struct posto cine[3][3]);<br />
+void menu();<br />
+_______________________________________________<br />
+<br />
+ora il file principale: x ora nn fate caso alle // sparse xchè ho fatto vari tentativi (inutil idirei :( )<br />
+<br />
+#include &lt;stdio.h&gt;<br />
+//#include &lt;stdlib.h&gt;<br />
+#include &quot;header.h&quot;<br />
+//#include &quot;funzioni.h&quot;<br />
+//#include &quot;header.h&quot;<br />
+//#include &lt;stdio.h&gt;<br />
+// Funzioni<br />
+//<br />
+//Inizializza la struttura cinema a 0 (posti vuoti)<br />
+//con idPosto vettore della posizione<br />
+//<br />
+void inizializza_cinema(struct posto cine[3][3])<br />
+{<br />
+  unsigned char i,j;<br />
+  for(i='A';i&lt;='C';i++)<br />
+   {<br />
+     for(j='1';j&lt;='3';j++)<br />
+      {<br />
+        cine[i-'A'][j-'1'].flag=0;<br />
+ cine[i-'A'][j-'1'].idPosto[0]=i;<br />
+ cine[i-'A'][j-'1'].idPosto[1]=j;<br />
+ cine[i-'A'][j-'1'].idPosto[2]='\0';<br />
+      }<br />
+    }<br />
+ }<br />
+ //<br />
+//Stampa posti non prenotati<br />
+//<br />
+void posti_vuoti(struct posto cine[3][3])<br />
+{<br />
+  //system(&quot;clear&quot;);<br />
+  unsigned char i,j;<br />
+  printf(&quot;\n\n&quot;);<br />
+  for(i='A';i&lt;='C';i++)<br />
+   {<br />
+    printf(&quot;\n&quot;);<br />
+    for(j='1';j&lt;='3';j++)<br />
+     {<br />
+       if (cine[i-'A'][j-'1'].flag==0) printf(&quot;%s\t&quot;,cine[i-'A'][j-'1'].idPosto);<br />
+      }<br />
+     }<br />
+   printf(&quot;\n\n&quot;);<br />
+   //getchar();<br />
+ }<br />
+ //<br />
+//<br />
+//Controlla se il cinema è pieno<br />
+//e restituisce il numero dei posti vuoti<br />
+//<br />
+int cinema_pieno(struct posto cine[3][3])<br />
+{<br />
+  int conta=0;<br />
+  unsigned char i,j;<br />
+  //<br />
+  for(i='A';i&lt;='C';i++)<br />
+      {<br />
+        for(j='1';j&lt;='3';j++)<br />
+         {<br />
+   if(cine[i-'A'][j-'1'].flag==1) conta++;<br />
+   }<br />
+       }<br />
+  return conta;<br />
+ };<br />
+ //<br />
+ //assegna il posto alla persona<br />
+void assegna_posto(struct posto cine[3][3],unsigned char x,unsigned char y)<br />
+{<br />
+  printf(&quot;\nil posto è vuoto lo riserviamo a voi!!&quot;);<br />
+  cine[x-'A'][y-'1'].flag=1;<br />
+};<br />
+//<br />
+//Controlla i posti se sono assegnati oppure no<br />
+//<br />
+void controllo_posto(struct posto cine[3][3])<br />
+{<br />
+  int flag_cinema_pieno;<br />
+  unsigned char x,y;<br />
+  printf(&quot;\nInserisci il posto che vuoi prenotare diviso da virgola, fila,posto :&quot;);<br />
+  scanf(&quot;%c,%c&quot;,&amp;x,&amp;y);<br />
+  while ((x&lt;'A')||(x&gt;'C')||(y&lt;'1')||(y&gt;'3'))<br />
+  {<br />
+    printf(&quot;\nPosto non disponibile&quot;);<br />
+    printf(&quot;\nInserisci il posto che vuoi prenotare diviso da virgola, fila,posto :&quot;);<br />
+    scanf(&quot;%c,%c&quot;,&amp;x,&amp;y);<br />
+   }<br />
+  fflush(stdin);<br />
+  x=toupper(x);<br />
+  y=toupper(y);<br />
+  flag_cinema_pieno=cinema_pieno(cine);<br />
+  if (flag_cinema_pieno!=9) //se il cinema nn è pieno<br />
+  //controlla posto<br />
+    { <br />
+      if (cine[x-'A'][y-'1'].flag==0)<br />
+        { assegna_posto(cine,x,y);<br />
+ }<br />
+       else //il posto è già occupato<br />
+          {<br />
+     printf(&quot;\nIl posto è già prenotato&quot;);<br />
+     printf(&quot;\nI posti liberi sono&quot;);<br />
+     posti_vuoti(cine/*[3][3]*/);<br />
+     //controllo_posto(cine);<br />
+     /*printf(&quot;\nInserisci il posto che vuoi prenotare diviso da virgola, fila,posto :&quot;);<br />
+  scanf(&quot;%c,%c&quot;,&amp;x,&amp;y);<br />
+  fflush(stdin);<br />
+  x=toupper(x);<br />
+  y=toupper(y);<br />
+  assegna_posto(cine,x,y);*/<br />
+  <br />
+  }<br />
+    <br />
+     }<br />
+   else printf(&quot;Cinema pieno,oggi disco!!&quot;);<br />
+};<br />
+//<br />
+//stampa menu scelte opzioni<br />
+//<br />
+void menu()<br />
+{<br />
+  //system(&quot;clear&quot;);<br />
+  printf(&quot;\n&quot;);<br />
+  printf(&quot;****************************\n&quot;);<br />
+  printf(&quot;*           MENU           *\n&quot;);<br />
+  printf(&quot;****************************\n&quot;);<br />
+  printf(&quot;a) visualizza posti vuoti\n&quot;);<br />
+  printf(&quot;b) prenota posto         \n&quot;);<br />
+  printf(&quot;c) disconnetti           \n&quot;);<br />
+  printf(&quot;\n inserisci scelta prego   \n&quot;);<br />
+};<br />
+<br />
+ <br />
+<br />
+int main(int argc, char *argv[])<br />
+{ <br />
+  struct posto cinema[3][3];<br />
+  char scelta[1];<br />
+  inizializza_cinema(cinema);<br />
+  posti_vuoti(cinema);<br />
+  menu();<br />
+  scanf(&quot;%s&quot;,scelta);<br />
+  //printf(&quot;\n&quot;);<br />
+  while (strcmp(scelta,&quot;c&quot;)!=0)<br />
+     { //printf(&quot;\n&quot;);<br />
+       if (strcmp(scelta,&quot;a&quot;)==0) posti_vuoti(cinema);<br />
+       else if (strcmp(scelta,&quot;b&quot;)==0)  controllo_posto(cinema);<br />
+            else<br />
+        {<br />
+          printf(&quot;\nripeti scelta\n&quot;);<br />
+   sleep(2);<br />
+  }<br />
+ menu();<br />
+ scanf(&quot;%s&quot;,scelta);<br />
+     }<br />
+  return 0;<br />
+}<br />
+<br />
+<br />
+Mi serve una manona ,grazie a chiunque si interessi :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">viridovix</div><div class="date">04-08-2005, 22:25</div></div><div class="posttext">nn so se ho impostato male la richiesta che quindi nn meritava risposta, cmq nn ho mollato e sti problemi li ho risolti.Ho modificato intanto un po' il codice migliorandolo e poi ho appreso che la fflush nn serve a molto perche' forza la scrittura solo sugli output buffer (quindi stdout e stderr al limite) l'ho scoperto a mi e spese e poi bazzicando x la rete ho avuto conferma.<br />
+LA soluzione è usare un while con con una getchar() e x migliorare il tutto la si puo' definire come una macro cosi:<br />
+#define fflush(stdin) while ((getchar()) != '\n') e li problema è risolto.<br />
+Quindi la soluzione è questa e in sostanza il problema è che nel buffer rimane&quot;\n&quot; dalla volta precedente che si è premuto invio , per questo con quel while si cattura il \n che nn rompe +</div></div><hr />
+
+
+<div id="copyright">vBulletin v3.5.3, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

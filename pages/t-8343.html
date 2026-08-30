@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="problemi uscita porta 80?, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] problemi uscita porta 80? Discussioni Linux" />
+	
+	<title>problemi uscita porta 80? [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-28.html">Discussioni Linux</a> &gt; problemi uscita porta 80?</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=8343">problemi uscita porta 80?</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">giococco</div><div class="date">21-04-2005, 09:30</div></div><div class="posttext">configurazione: router adsl, 2 pc. <br />
+la rete e internet con windows funzionano. <br />
+installando sia fedora core3, sia mandrake 10.1 che knoppix  non pinga. <br />
+il dns funziona (risolve i nomi) con mandrake il browser navigava solo nelle pagine https (porta diversa da 80) con gli altri non ho provato. <br />
+traceroute traccia. <br />
+ping va in timeout e non si riesce a navigare nemmeno a fune. <br />
+knoppix live ha funzionato alla prima botta, ma dopo averlo installato su hd da' gli stessi problemi delle altre distribuzioni. <br />
+cosa sto sbagliando? <br />
+dimenticavo il router e' anche dhcp.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">21-04-2005, 09:40</div></div><div class="posttext">Ma la mia domanda e': cosa stai pingando, e da dove? ^^<br />
+Che regole di routing usi? (man ifconfig)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">giococco</div><div class="date">21-04-2005, 10:09</div></div><div class="posttext">non ho impostato nessuna regola, e tutto di default. pingo qualunque cosa dal pc con linux (www.yahoo.com (http://www.yahoo.com), www.daveblog.net (http://www.daveblog.net)) e viene risolto (pinging xxx.xxx.xxx.xxx).<br />
+ma poi va in timeout.<br />
+se ributto in win tutto funge bene.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">21-04-2005, 10:16</div></div><div class="posttext">Quali indirizzi IP utilizzi nella tua rete interna? E quale DNS?<br />
+Ci sono differenze tra questi parametri in Windows e in Linux? (Immagino tu abbia un pc con dual boot)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">giococco</div><div class="date">21-04-2005, 10:28</div></div><div class="posttext">Quali indirizzi IP utilizzi nella tua rete interna?<br />
+192.168.1.x <br />
+<br />
+ E quale DNS?<br />
+uso sia la configurazione automatica  da dhcp da sola che anche con i dns del mio provider<br />
+<br />
+ Ci sono differenze tra questi parametri in Windows e in Linux? (Immagino tu abbia un pc con dual boot)<br />
+non noto nessuna differenza.<br />
+il router e' 192.168.1.1 che imposto anche come gateway nel caso setti gli indirizzi a manina.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">21-04-2005, 11:21</div></div><div class="posttext">Cosi' su due piedi non saprei dirti, a meno che il router non sia fatto coi piedi e rifiuti connessioni non-windows... non ne ho mai visti, ma potrei non stupirmi :D<br />
+In linux, dai ifconfig eth0 e incollami il risultato (anche via MP, se non ti fidi... per me e' uguale)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">giococco</div><div class="date">21-04-2005, 11:32</div></div><div class="posttext">Cosi' su due piedi non saprei dirti, a meno che il router non sia fatto coi piedi e rifiuti connessioni non-windows... non ne ho mai visti, ma potrei non stupirmi :D<br />
+<br />
+con knoppix in versione live funziona tutto bene. E' quello che mi ha convinto a installare su hd knoppix, dopo giornate perse con mandrake e fedora. escluderei il router.<br />
+<br />
+<br />
+In linux, dai ifconfig eth0 e incollami il risultato (anche via MP, se non ti fidi... per me e' uguale)<br />
+i pc sono a casa, quindi a stassera per incollare.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">giococco</div><div class="date">21-04-2005, 18:36</div></div><div class="posttext">ifconfig etho<br />
+eth0 Link encap:Ethernet HWaddr 00:02:A5:A7:E2:93<br />
+inet addr:192.168.1.2 (http://192.168.1.2/)0 Bcast:192.168.1.254 (http://192.168.1.255/) Mask:255.255.255.0 (http://255.255.255.0/)<br />
+inet6 addr:fe80::202:a5ff:fea7:xxxxx Scope:Link<br />
+UP BROADCAST RUNNING MULTICAST MTU:1500 Metric:1<br />
+RX packets:32 errors:0 dropped:0 overruns:0 frame:0<br />
+TX packets:26 errors:0 dropped:0 overruns:0 carrier:0<br />
+collisions:0 txqueuelen:1000<br />
+RX bytes:4884 (4.7 KiB) TX bytes:3227 (3.1 KiB)<br />
+Interrupt:11 Base address:0xc000<br />
+ <br />
+che sia l'ipv6 che nella versione live non c'e'?<br />
+mo cerco come toglierlo.<br />
+ <br />
+aggiornamento: togliendo l'ipv6 da mozilla funge perfettamente.!!!<br />
+ora non resta che toglierlo da tutto linux :-(<br />
+ <br />
+aggiornamento:<br />
+tolto da modprobe.conf e ora i browsers funzionano.<br />
+grazie mille a tutti per le dritte.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">21-04-2005, 21:51</div></div><div class="posttext">Praticamente hai risolto tutto da solo :D<br />
+Io comunque ho levato ipv6 dai miei USE di gentoo, perche' il mio router non supporta il protocollo e quindi sono impietosamente tagliato fuori.<br />
+Magari lo stesso vale anche per te, informati presso il costruttore (sempre che ti interessi usarlo!)</div></div><hr />
+
+
+<div id="copyright">vBulletin&reg; v3.6.4, Copyright &copy;2000-2007, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

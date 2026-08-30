@@ -1,0 +1,286 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content=" BuDuScRiPt 3.0.00 per X-Chat 2.8.4, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio]  BuDuScRiPt 3.0.00 per X-Chat 2.8.4 #buduscript" />
+	
+	<title> BuDuScRiPt 3.0.00 per X-Chat 2.8.4 [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="http://forum.azzurra.org/archive/index.php">Azzurra IRC Network Forum</a> &gt; <a href="http://forum.azzurra.org/archive/index.php/f-7.html">I Vostri Forum</a> &gt; <a href="http://forum.azzurra.org/archive/index.php/f-117.html">#buduscript</a> &gt;  BuDuScRiPt 3.0.00 per X-Chat 2.8.4</div>
+<hr />
+<div class="pda"><a href="http://forum.azzurra.org/archive/index.php/t-14621.html?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=14621">BuDuScRiPt 3.0.00 per X-Chat 2.8.4</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">BuDuS</div><div class="date">18-07-2007, 23:06</div></div><div class="posttext">Direi che si tratta senza dubbio del rilascio più importante e travagliato degli ultimi anni, se non di sempre.<br />
+<br />
+ Il passaggio diretto dalla versione 2.7.37 alla 3.0.00 è dovuto alla miriade di correzioni e nuove possibilità che ho implementato.<br />
+<br />
+ A livello del plug-in in se stesso, in realtà, le modifiche non sono state enormi, anche se comunque importanti, quanto piuttosto a quella che considero la vera novità: l'integrazione dello script con l'interfaccia grafica di X-Chat.<br />
+<br />
+ Ebbene si', dopo almeno 7 anni di vita di questo script (meglio tardi che mai :prrr: ) mi sono finalmente deciso ad esaudire una delle richieste Vostre più assidue, la personalizzazione dell'interfaccia grafica.<br />
+<br />
+ Sono sempre stato molto restio a questa cosa, in particolare alla creazione di &quot;accelerazioni da tastiera&quot; (infatti quest'ultime sono pochissime, ma significative), attività che ho sempre preferito lasciare in mano agli utenti, ognuno libero di sistemarsi le cose a proprio piacimento.<br />
+ La realtà tuttavia mi ha dimostrato invece che gli utenti molto raramente operano questa personalizzazione, tutt'altro, e quindi finiscono per scoprire si' e no il 3% delle potenzialità dello script.<br />
+<br />
+ Ho quindi deciso di fare un notevole sforzo per rendere disponibili TUTTE le funzionalità dello script tramite i MENU A TENDINA di X-Chat.<br />
+<br />
+ Anche se qualche problema tecnico mi ha impedito di fare tutto quello che avevo in mente (mi riferisco al menu contestuale della Lista Utenti, che ho dovuto invece rendere fisso sotto il nome di Comandi Utente), sostanzialmente ho realizzato un sistema che realmente consente di governare lo script. Ho infatti, laddove necessario, persino creato delle procedure guidate che aiutano l'utente nelle operazioni fino ad oggi più complicate (lo sono ancora un po', lo ammetto, ma molto, molto meno), come ad esempio la gestione delle Sentinelle (magari non sapete neppure cosa sono :sospiro: ed è invece una delle cose più potenti dello script ! :okay:) e delle MACRO.<br />
+<br />
+ Come se tutto cio' non bastasse, non mi sono dimenticato nemmeno dell'aspetto Multimediale.<br />
+ Molti mi hanno chiesto: ma perché non fai qualcosa per gestire XMMS ?<br />
+ La mia riposta è sempre stata: eh, c'è già un sacco di ottimi script che lo fanno !<br />
+<br />
+Beh, sbagliavo, in realtà non è che ci sia granché ed ecco che ho deciso di fornire qualcosa in merito; in particolare, per chi utilizza Audacious (per chi non lo sapesse e' un clone di XMMS che, su distribuzioni come Gentoo, ha persino sostituito quest'ultimo, ormai considerato obsoleto e soprattutto pieno di bug) viene, se installato (cioè se il player multimediale in questione è installato), aggiunto un menu apposito che ne consente la pressoché totale gestione, con anche la possibilità di scrivere nel canale corrente (o anche più di uno) il brano in ascolto, anche in automatico.<br />
+<br />
+ BuDuScRiPt lo considero un plug-in full-featured, nel senso che copre una vastissima gamma di problematiche e offre all'utente la possibilità di colmare qualsiasi lacuna del client di base.<br />
+ Basti pensare ad esempio alla &quot;mancanza&quot; di un comando come &quot;slap&quot;, cioè la possibilità di inserire un nickname nel prompt facendo doppio click nella UserList,  di X-Chat.<br />
+ Di default BuDuScRiPt non cambia l'impostazione di X-Chat, quindi ancora facendo doppi click si aprirà la QUERY privata, tuttavia oltre ad esserci la possibilità di cambiare questo comportamento, già nel menu Comandi Utente c'è proprio in testa questo comando che, tra l'altro, a differenza delle precedenti versioni, imposta il focus direttamente al prompt (sembrerà una cosa banale, ma io non credo esistano altri script/plug-in che hanno questa funzionalità, seppur richiesta nel Forum Ufficiale di X-Chat).NB: Porre attenzione al fatto che l'utilizzo della funzione /budus InsertInBuffer(), se utilizzata con una versione del plug-in non compatibile con quella di X-Chat, può causare il crash di quest'ultimo.<br />
+<br />
+Ciò e' dovuto al fatto che, per implementare questo comando, vengono utilizzate funzioni a basso livello di X-Chat normalmente non accessibili (ed è per questo che altri script, soprattutto i NON plug-in, non possono proprio avere questa possibilità).<br />
+Un altro cambiamento rilevante è l'introduzione di un &quot;programma personalizzato&quot; per la riproduzione degli avvisi acustici; pur rimanendo la difficoltà di trovare il device audio della propria distribuzione Linux, direi che ora far suonare lo script si è nettamente semplificato, non fosse altro che viene utilizzato un comando (udaplaysound) dal comportamento certo (i vari play, esdplay, ecc... si comportano tutti in modo diverso uno dall'altro, rendendo impossibile una gestione semplificata della cosa).<br />
+<br />
+ Il mio invito, giusto per terminare questa pappardella :prrr: è quello di &quot;navigare&quot; nel Menu a tendina di BuDuScRiPt provando i vari comandi; ad esempio è stato introdotto un menu che consente di memorizzare i propri &quot;canali preferiti&quot;, in modo che, selezionandoli, si possa fare un join automatico, per non parlare della possibilità di gestire la lista dei nickname da monitorare in modo semplice tramite gli appositi comandi, ecc...<br />
+<br />
+ Non abbiate paura, insomma, di provare e soprattutto di scrivermi segnalando anomalie o suggerendomi miglioramenti :okay:<br />
+<br />
+ Chiaramente, con tutte queste novità, è possibile che ci siano cose che non funzionano come previsto, ma garantisco che, nelle mie disponibilità, lavorerò per sistemarle.<br />
+<br />
+ Infine segnalo che, oltre allo script, ho rilasciato anche una nuova versione del BOT, anch'essa piena di correzioni e novità, certamente da provare :proud:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BuDuS</div><div class="date">21-07-2007, 19:07</div></div><div class="posttext">Come sospettavo, non funzionava tutto perfettamente e credo non potesse essere altrimenti vista la quantità di novità introdotte ma, almeno per ora, mi ritengo soddisfatto perché i difetti riscontrati sono minimali.<br />
+<br />
+ Purtroppo mi sono dimenticato, durante la fase di creazione dei pacchetti (3.0.00), di inserire le icone per il menu Audacious; chi non usa questo player, non si sarà accorto di nulla, perché viene aggiunto solo se installato il programma. Ora sono presenti anche quelle.<br />
+<br />
+ Mi sono accorto che, durante la ricerca nel Database, la visualizzazione dei FLAGS relativi agli utenti intercettati, poteva risultare fastidiosa; ora, per ogni singolo utente intercettato nella ricerca, i relativi FLAGS verranno mostrati una sola volta.<br />
+<br />
+ Quando si chiede la guida di una variabile, lo script ha sempre mostrato il valore di default e non quello attualmente impostato; ciò ha sempre determinato confusione e quindi ho deciso di sistemare la cosa, rendendola più chiara: c'è il valore attuale e opportunamente evidenziato quello di default.<br />
+<br />
+ Chi non ha l'ADD-ON E-List installato, di fatto non aveva nessun comando per gestire il File Domini (/budus help file_domini); ora ho aggiunto una procedura che consente di aggiungere i nickname al file (se non è presente il file, lo crea in modo opportuno).<br />
+ Non è la stessa cosa di usare E-List, ma direi che aiuta abbastanza.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BuDuS</div><div class="date">23-07-2007, 23:55</div></div><div class="posttext">Una delle precedenti novità (nella versione 3.0.03) è stata la possibilità di verificare il valore di una variabile anche chiedendone la guida (ex: /budus help maxsent).<br />
+ Purtroppo questa novità ha introdotto un gravissimo bug che causa il crash immediato del client nel momento in cui si chiede una &quot;guida generica&quot; e ciò avviene anche quando lo script non riconosce la variabile o il comando digitato.<br />
+<br />
+ In poche parole, semplicemente scrivendo &quot;/budus&quot;, X-Chat va in crash :sospiro:<br />
+<br />
+ E' chiaramente consigliato molto vivamente l'aggiornamento alla release 3.0.04 dove il problema è stato corretto.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BuDuS</div><div class="date">03-08-2007, 19:19</div></div><div class="posttext">Dopo un altro bel po' di lavoro, che ha visto sì parecchie correzioni ma soprattutto un'infinità di novità, rilascio la versione 3.0.11.<br />
+<br />
+ Dopo quella che oserei dire &quot;epocale&quot; introduzione dei Menu, ho deciso di soddisfare un'altra richiesta che mi è stata spesso proposta e che poi è pure alla base della nascita dello script stesso: la possibilità di avere X-Chat più simile a certi script per mIRC.<br />
+<br />
+ In particolare, alcuni utenti sentono la mancanza nel mondo Linux di uno script IRC analogo (se non uguale) a quello che magari erano abituati ad usare quando utilizzavano Windows.<br />
+<br />
+ Ebbene, non dico che ho raggiunto l'obiettivo, tuttavia penso di aver introdotto una novità che potrebbe fare la felicità di molti: la possibilità di importare i menu - con relativi comandi - di uno Script mIRC<br />
+<br />
+ Ammetto che c'è molto ancora da fare e che comunque è possibile importare solo le cose più semplici, però sono convinto valga la pena provare la nuova possibilità.<br />
+<br />
+ Per chi è un minimo esperto di mIRC scripting (il bello è che io non lo sono ! :sospiro: ) provo a spiegare un po' più nel dettaglio cosa ho combinato; ebbene, dato un file INI mIRC con righe come le seguenti:<br />
+<br />
+<br />
+n1=  .Saluti<br />
+n2=  ..Per chi Entra<br />
+n3=  ...* Normale:/ME saluta $$1 e gli da il benvenuto in $chan !<br />
+n4=  ...* Dedica:/ME saluta $$1 e gli dedica un pensiero: &quot;$$?=&quot;Scrivi il pensiero&quot;&quot;<br />
+n5=  ...-<br />
+n6=  ...* SalutaV:/ME da il benvenuto a $$1 e .... | .timer 1 3 /VOICE $$1 | .timer 1 6 /SAY .... gli da un bel + !<br />
+ho realizzato uno script in bash che riesce a tradurle in MACRO per BuDuScRiPt, così da ricreare il medesimo menu, sostituire le variabili utilizzate ($$1, $chan, ecc...) in modo opportuno, implementare l'input da parte dell'utente (vedi &quot;n4=&quot;) e addirittura i &quot;comandi multipli&quot; (cosa normalmente non possibile con X-Chat) separati da un '|' .<br />
+<br />
+ Ho fatto un test su uno script mIRC che conteneva oltre 1000 righe tipo queste e un buon 80% sono state importate perfettamente ! :proud:<br />
+<br />
+ L'importazione è abbastanza banale perché, una volta individuato il file .INI contenente il menu mIRC che si vuole importare, basta copiarlo nella proprio HOME directory di Linux e lanciare l'apposito comando di BuDuScRiPt:<br />
+<br />
+BuDuScRiPt-&gt;Avanzate-&gt;Importa file INI di mIRC ... Qualche inconveniente si può verificare nel caso in cui il file INI non sia codificato secondo il set UTF-8 ma invece lo sia il Sistema Linux usato (ex, su Ubuntu, e le più recenti distribuzioni è già così), tuttavia la procedura di importazione dovrebbe accorgersene automaticamente e proporre la soluzione.<br />
+<br />
+ Oltre a questa - direi importante - novità, ho pure aggiunto qualche novità nei menù nativi di BuDuScRiPt, in particolare:<br />
+ Comandi di IGNORE  e BAN a tempo<br />
+ Possibilità di aggiungere disegni ascii-art (basta copiarli nella directory buduscript/asciiart ); come esempio ho inserito la scritta &quot;BuDuScRiPt&quot; in vari modi, giusto per dare un esempio.<br />
+ Possibilità di aggiungere messaggi che possono essere inviati in modo casuale (basta copiarli nella directory buduscript/messages ); attualmente ho messo un file di nome &quot;tips_e_tricks.txt&quot; che offre numerosi spunti sull'uso del plug-in Ho pure aggiunto qualche cosa al motore del plug-in, in particolare:<br />
+ Direttiva #budusmenu nei file MACRO per facilitare il caricamento di menu anche molto corposi.<br />
+ Comando /budus ban che, permette di eseguire BAN a tempo.<br />
+ Rivista la sintassi della Condizione nelle Sentinelle<br />
+ Possibilità di leggere e salvare le sentinelle su un file diverso da quello di defaultLa modifica della sintassi nella Condizione delle Sentinelle è ciò che mi ha causato maggiore fatica; i problemi sono nati dall'introduzione delle Espressioni Regolari che, utilizzando alcuni caratteri (spesso usati nei nickname, ecc...) per costruire, appunto, le proprie espressioni, di fatto potevano causare comportamenti &quot;imprevisti&quot;.<br />
+<br />
+Ad esempio una sentinella come questa:<br />
+/event add 0 jchannel '|-BuDuS-|'='$ru' /budus PlaySound() dpotrebbe far pensare che, ogni volta che l'utente |-BuDuS-| entra in un canale, viene generato un suono di avvertimento di default.<br />
+Il problema è che il carattere | fa parte di quell'insieme utilizzato dalle Espressioni Regolari .<br />
+Data la sintassi della Condizione così fatta:<br />
+&lt;costante&gt;&lt;operatore&gt;&lt;variabile&gt;abbiamo che, a seconda dell'&lt;operatore&gt;, per semplicità assumiamo sia '=', lo script tenterà di:<br />
+ verificare che la &lt;costante&gt; sia contenuta nella &lt;variabile&gt;<br />
+ verificare che la &lt;variabile&gt; sia contenuta nella &lt;costante&gt;<br />
+ verificare che l'Espressione Regolare della &lt;costante&gt; venga soddisfatta dal contenuto della &lt;variabile&gt;ecco che, anche fallendo le condizioni 1 e 2, quando veniva presa in considerazione l'ipotesi 3, un'espressione regolare &quot;malformata&quot; come &quot;|-BuDuS-|&quot; (ricordo che | ha un significato particolare, cioè di OR binario), di fatto rendeva la Condizione sempre vera !<br />
+Per evitare il problema si sarebbe dovuto utilizzare il carattere di escape \ in questo modo:<br />
+/event add 0 jchannel '\|-BuDuS-\|'='$ru' /budus PlaySound() dCapirete però che questo modo di fare non era proprio banale da comprendere :sospiro:<br />
+<br />
+Ebbene, per risolvere alla radice, ho deciso di fare in modo che, nel momento in cui una &lt;condizione&gt; inizia con il carattere apice ' , di fatto il controllo dell'Espressione Regolare è inibito, lasciando quindi i controlli 1 e 2 soltanto, che sono ciò che normalmente un utente si aspetta.<br />
+<br />
+Qualcuno quindi si potrebbe chiedere &quot;beh, ma allora che senso hanno ste Espressioni Regolari se fanno del caos ?&quot;; eh, non è così semplice, a volte capita di dover creare delle Condizioni &quot;sofisticate&quot; che non sarebbero risolvibili con meri confronti con lo stile dei punti 1 e 2, ad esempio, prendiamo in considerazione una sentinella come questa:<br />
+/event add 0 text ^(ciao|giorno)[$_]*$nick([$_,]|$)='$data' /SAY Ciao $ru !mi rendo conto che, messa così è un po' criptica, etrapoliamo solo la Condizione:<br />
+^(ciao|giorno)[$_]*$nick([$_,]|$)='$data'ora sostituiamo $_ con lo spazio:<br />
+^(ciao|giorno)[ ]*$nick([ ,]|$)='$data'al posto di $nick ci andiamo a mettere il &quot;nostro nickname&quot; supponiamo BuDuS:<br />
+^(ciao|giorno)[ ]*BuDuS([ ,]|$)='$data'Analizzando la sola Espressione Regolare:<br />
+^(ciao|giorno)[ ]*BuDuS([ ,]|$)abbiamo che:<br />
+ ^ significa: deve iniziare con quello che viene dopo<br />
+ (ciao|giorno) significa: deve aspettarsi la parola ciao oppure giorno<br />
+ [ ]* significa: aspettati un qualsiasi numero di spazi bianchi, anche nessuno.<br />
+ ([ ,]|$) significa: aspettati l'espressione [ ,] oppure l'espressione $<br />
+ [ ,] significa: aspettati uno spazio oppure una virgola<br />
+ $ significa: aspettati la fine della riga Tradotto in un linguaggio &quot;masticabile&quot;, potremmo descriverla cosi': una frase che inizi con ciao o giorno, eventualmente seguita da spazi, quindi il nickname dell'utente, che può essere seguito da uno spazio o da una virgola o anche niente.<br />
+<br />
+Immagino sarà evidente quanto queste famigerate Espressioni Regolari siano complicate ma altrettanto potenti ;)<br />
+<br />
+ Già con quella sentinella lì saremmo in grado di rispondere in automatico a buona parte dei saluti.<br />
+<br />
+ Comunque ricordo che è ora incluso uno script guidato che aiuta alla creazione di sentinelle, usando quello è difficile creare qualcosa che non funzioni :-)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BuDuS</div><div class="date">07-08-2007, 19:10</div></div><div class="posttext">Continua la fase di sviluppo serrata :proud:<br />
+<br />
+ A livello di plug-in ho introdotto il supporto ai Comandi di Massa per quanto riguarda i comandi ban (che ha pure cambiato sintassi) e ignore; in questo modo è possibile fare una selezione multipla direttamente dalla Lista Utenti di X-Chat ed utilizzare i vari comandi di menu per ottenere ban/ignore di massa.<br />
+<br />
+ Dove ho invece speso molto tempo di sviluppo è nello script che consente di importare i file INI di mIRC all'interno di X-Chat.<br />
+<br />
+ Ho fatto numerosi test e introdotto parecchie migliorie, al fine di rendere compatibile l'importatore con una sufficiente gamma di Script mIRC.<br />
+ Chiaramente non fa miracoli, ci sono script che vengono importati meglio e altri peggio, però complessivamente i risultati sono soddisfacenti.<br />
+ Se poi ci si arma di un po' di pazienza e si &quot;mette mano&quot; al file INI togliendo o modificando quello che non va, ecco che i risultati ottenibili possono essere davvero ottimi ! :okay:<br />
+<br />
+ Addirittura mi sono accorto che, anziché creare i menu &quot;via MACRO&quot;, creare direttamente un file INI ed importarlo è molto più semplice !<br />
+<br />
+ Un esempio di Menu Utente lo potete scaricare da qui:<br />
+<br />
+http://digilander.libero.it/udasoft/Software/Linux/buduscript/mirc.ini.gz<br />
+NB: La conversione da iso-8859-1 a UTF-8 non dovrebbe essere necessaria - il file l'ho creato con Unicode UTF-8 - quindi consiglio di non farla, salvo effettivamente le &quot;decorazioni&quot; non vengano rappresentate con caratteri &quot;troppo strani&quot;.<br />
+E' sufficiente copiare il file nella propria HOME directory e lanciare il comando di importazione in BuDuScRiPt-&gt;Avanzate .<br />
+<br />
+ Addirittura è possibile importare i files INI accodandoli al menu già presente - o creandone uno nuovo, se si specifica un nome diverso - così da ottenere &quot;più script in uno&quot;; insomma, ora le possibilità sono tante e credo che con questa possibilità la &quot;nostalgia&quot; per gli script Windows sia drasticamente ridotta, se non eliminata.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BuDuS</div><div class="date">12-08-2007, 18:30</div></div><div class="posttext">Pensavate mi fossi stancato ? :-?<br />
+<br />
+Ma neanche un po' ! :prrr:<br />
+<br />
+Nuova versione, 3.0.22, contenente un sacco di novità:<br />
+ Sistema BADWORD; ora è possibile creare un file contenente parole cattive che, quando scritte da un altro utente, generano un evento di tipo badword (che è nuovo) la cui variabile $data contiene il numero di intercettazioni che il medesimo utente ha subito.<br />
+ Controllo Automatico dell'aggiornamento; è chiaramente disattivabile, ma ora sarà il plug-in stesso ad informare quando c'è una versione nuova disponibile<br />
+ Ora è possibile determinare i MODE di un utente anche tramite le sentinelle o tramite il salvataggio del database, perché l'informazione viene salvata nel campo $data .<br />
+ Il comando &quot;budus sendsess&quot; ora consente di specificare anche l'eventuale server, in modo che non ci sia ambiguità nel caso in cui ci siano più sessioni con il medesimo nome.Ho poi migliorato i comandi a menu, aggiungendo la possibilità per l'utente di personalizzarsi dei Comandi da Eseguire all'Avvio (di X-Chat).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BuDuS</div><div class="date">13-08-2007, 18:20</div></div><div class="posttext">Nonostante il rilascio di ieri, ho deciso di fare qualche piccola correzione, nulla di eccezionale, chi è pigro può tenersi anche la versione precedente che tanto cambia poco.<br />
+<br />
+ Per la cronaca:<br />
+<br />
+ Ora, quando si fa una ricerca, tra i FLAGS appare anche il numero di intercettazioni effettuate sugli utenti intercettati. Qualche miglioria l'ha vista pure il BOT, dove ho aggiunto anche il Sistema Anti-Flood che lavora in modo praticamente identico a quello del BADWORD.<br />
+<br />
+ Ho aggiunto alcuni comandi al Menu Utente, proprio relativamente all'uso del BOT.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BuDuS</div><div class="date">15-08-2007, 18:38</div></div><div class="posttext">Continua il lavoro di &quot;raffinamento&quot; dello script dopo le numerose novità introdotte.<br />
+<br />
+ La principale modifica apportata è che ora, nella Condizione delle Sentinelle, se viene anteposto l'apostrofo ' alla costante in questo modo:<br />
+<br />
+'costante='variabile'ma non viene messo alla fine, sempre alla costante, sarà automaticamente rimosso e il suo scopo sarà esclusivamente quello di inibire il controllo per Espressione Regolare.<br />
+Se si desidera che non venga rimosso, bisogna anteporre il backslash \ , cosi':<br />
+<br />
+\'costante='variabile'Inoltre ora, solo nel controllo dell'Espressione Regolare, è attivo il controllo CASE-SENSITIVE, nel senso che è diverso se una cosa è scritta in MAIUSCOLO o minuscolo.<br />
+In questo modo è possibile fare cose di questo tipo:<br />
+<br />
+/event add 0 text ^[A-Z$_]*$='$data' /SAY $ru, sei pregato di NON scrivere in maiuscolo, togli CAPS-LOCK se necessario.<br />
+Per quanto riguarda l'Azione c'è ora la possibilità di creare sentinelle che, a loro volta, contengono comandi multipli, separandoli con la parola chiave _BUDUS_SEPARATOR_, come ad esempio:<br />
+<br />
+/event add 0 badword '3'='$data' /event add 0 badword '$ru'='^ru' /budus ban + *!*@$domain 300 $ru_BUDUS_SEPARATOR_/KICK $ru non dire parolacce\;/KICK $ru non dire parolacce o la prossima volta ti banno !<br />
+Sempre a proposito delle Sentinelle ora si può usare nell'Azione la variabile $number che ritorna il numero della sentinella stessa, ad esempio utilizzabile con il comando &quot;/event reset&quot;.<br />
+Quest'ultimo comando ha poi visto l'introduzione del parametro * che consente di resettare tutte le variabili, usandolo così:<br />
+/event reset *Il comando &quot;/event list&quot; ora permette di eliminare sentinelle &quot;per keyword&quot;, ad esempio:<br />
+/event list jchannel -rimuoverà tutte le sentinelle che nell'evento, nella condizione o nell'azione contengono la parola &quot;jchannel&quot;.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BuDuS</div><div class="date">18-08-2007, 00:19</div></div><div class="posttext">E' stato scoperto un bug nel comando /budus sendsess quando veniva specificato un parametro &quot;malformato&quot;, di questo tipo:<br />
+/budus sendsess irc.server.org/canaleomettendo il carattere # il plug-in andava in errore facendo crashare il client.<br />
+<br />
+<br />
+ Di già che c'ero, ho corretto piccole imperfezioni a livello di codice &quot;che non mi piacevano&quot; e soprattutto reso CASE-INSENSITIVE il Sistema BADWORD ; in questo modo non fa differenza come vengono scritte nel file badword.txt le parole o come le scrivono gli utenti, saranno comunque intercettate indipendentemente da MAIUSCOLE/minuscole, anche se si tratta di Espressioni Regolari (quindi l'uso di espressioni regolari che tentano di fare distinzione in tal senso, non funzioneranno come previsto).<br />
+<br />
+ Ho anche trovato degli errori nel Menu Utente in formato mIRC INI che è possibile importare separatamente.<br />
+ Consiglio di prelevare la versione aggiornata:<br />
+<br />
+http://digilander.libero.it/udasoft/Software/Linux/buduscript/mirc.ini.gz<br />
+<br />
+mettere il file nella propria HOME Directory e lanciare il comando di importazione nel menu BuDuScRiPt-&gt;Avanzate-&gt;Importa file INI .</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BuDuS</div><div class="date">24-08-2007, 14:41</div></div><div class="posttext">E' stato individuato un bug nella macro MC che ne compromette il funzionamento - in pratica non fa proprio nulla, qualsiasi comando si dia - nel caso in cui venga usata da un utente che ha nel nickname dei caratteri appartenenti alle Espressioni Regolari.<br />
+<br />
+Suddetta MACRO è la stessa utilizzata da molti comandi del &quot;Menu Utente&quot; che si ottiene importando un file INI di mIRC.<br />
+<br />
+ In altre parole, è sufficiente avere un nick tipo |-BuDuS-| (quindi contenete il carattere pipe '|' ) affinché la MACRO non funzioni correttamente.<br />
+<br />
+Per risolvere il problema si può procedere in 3 modi:<br />
+ Scaricare nuovamente lo script e re-installarlo, sovrascrivendo. Anche se la versione dello script non è cambiata, solo il file MC.mcr è stato corretto.<br />
+ Tramite un programma come mc (Midnight Commander) è possibile entrare dentro l'archivio e aggiornare il solo file MC.mcr .<br />
+ Modificare con qualsiasi editor di testo il file $HOME/.xchat2/buduscript/MC.mcr in modo che da così:/budus pipe_script_silent $HOME/$mxchat_path/buduscript/buduscript_script__multicommand.sh $mnick $mservername \($1-\)diventi così:<br />
+/budus pipe_script_silent $HOME/$mxchat_path/buduscript/buduscript_script__multicommand.sh \($mnick\) \($mservername\) \($1-\)A parte questa modifica, che è necessaria solo se si utilizzano nickname contenenti simboli di punteggiatura o comunque non solo lettere e numeri ([, ], |, {, }, ecc...), non è stato modificato nient'altro, per il momento la versione 3.0.32 si sta comportando molto bene :proud:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BuDuS</div><div class="date">06-10-2007, 10:05</div></div><div class="posttext">E' stato riscontrato che, nell'uso intensivo delle sentinelle, lo script poteva occupare abnormi quantità di memoria.<br />
+<br />
+Tale comportamento anomalo era particolarmente evidente quando si utilizza il BOT, perché quest'ultimo fa ampio uso delle sentinelle per funzionare.<br />
+<br />
+Se si ha l'abitudine di frequentare molti canali (oltre 3), sono attivate sentinelle che fanno uso di &quot;multi-comandi&quot; e si tende a lasciare X-Chat perennemente connesso, è facile che lo script vada ad allocare anche centinaia di Mb di memoria, rallentando pesantemente tutto il sistema; ciò è maggiormente evidente nell'uso del BOT dato che, anche se magari monitora un solo canale, deve gestire un tale numero di sentinelle che facilmente può manifestare il problema in modo pesante.<br />
+<br />
+Dopo un attento profiling sull'uso della memoria, il bug è stato individuato e risolto, quindi consiglio di aggiornarsi, anche in virtù del fatto che, a parte questo problema, è l'unica differenza rispetto alla versione 3.0.32 e già quest'ultima si è dimostrata una versione particolarmente stabile.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BuDuS</div><div class="date">21-10-2007, 21:42</div></div><div class="posttext">Grazie alla segnalazione di un gentile utente che ringrazio (tnx orione :okay:) ho individuato un altro bug che causava uso abnorme di memoria ram.<br />
+<br />
+ Il problema si verificava esclusivamente nel momento in cui si andava ad utilizzare il sistema di IGNORE di X-Chat/BuDuScRiPt.<br />
+<br />
+ Infatti immagino che, coloro i quali non fanno uso di IGNORE, non si siano accorti di nulla, viceversa si potevano avere incrementi nell'uso della ram anche molto consistenti, nell'ordine delle centinaia di Mb nel giro di poche ore :sospiro:<br />
+<br />
+ Ora il problema, con la versione 3.0.34, e' stato risolto, invito quindi ad eseguire opportuno aggiornamento.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BuDuS</div><div class="date">18-09-2008, 00:25</div></div><div class="posttext">Ciao Budus. Passando da Mirc ad X-Chat sono rimasto sorpreso dalla funzione multiserver, a me utilissima. Ho scelto X-chat dopo aver provato IceChat che è veramente un polmone. Però c'è una gran carenza di script. Considera che io prima usavo pizza40 e mi trovavo benissimo. <br />
+Praticamente ti sto chiedendo se ti è possibile creare uno script per X-Chat che consenda di mandare un messaggio a tutti gli utenti in un canale, di mandare un messaggio a tutti gli utente non OP di un canale, Il classico messaggio a chi entra nel canale ed infine il messaggio automatico nella chat pubblica del canale con possibilità di scegliere l'intervallo di tempo. Fidati che sarebbe un plugin molto ben accetto. Sarei disposto a pagartelo. E' possibile poi avere una lista autojoin per ogni scheda server? Fammi sapere per favore. X-Chat è veramente buono ma troppo povero di funzioni.<br />
+<br />
+mmm, se aprivi un post era meglio, mi sono accorto di questo mex &quot;per sbaglio&quot; :sospiro: (non mi ha mandato una mail di avviso, niente, neanche quando mi sono loggato non ha fatto salti mortali per avvisarmi ....)<br />
+<br />
+Cmq, veniamo ai problemi:<br />
+1) Mandare un mex a tutti gli utenti di un canale.<br />
+Questo già lo fa, vedi: /budus alluser<br />
+<br />
+2) Mandare un mex a tutti gli OP di un canale.<br />
+Non c'è un comando che lo fa direttamente, come &quot;alluser&quot;, per intenderci, tuttavia è possibile implementarlo tramite macro/script esterno.<br />
+<br />
+Le macro sono i file con estensione .mcr che contengono semplicemente, per ogni riga, un comando IRC/X-Chat/BuDuScRiPt.<br />
+<br />
+Le macro consentono l'uso di variabili; ad esempio abbiamo che $mdatabase viene sostituita con il percorso ad un file contenente la lista di TUTTI gli utenti presenti nel database dello script (cioè gli utenti di tutti i canali di tutti i servers collegati). Questo database è formattato in un certo modo e non è affatto difficile con dei &quot;grep&quot; estrapolare solo gli OP di un determinato canale su un certo server (la macro offre infatti possibilità di usare variabili come $mchannel e $mservername.<br />
+<br />
+In sostanza la macro andrebbe a chiamare uno script bash passandogli i giusti parametri (impostati proprio dalle variabili).<br />
+<br />
+Se riesco provo a fare qualcosa io stesso, ma se ti diverte fare questo tipo di cose posso darti supporto per realizzare la cosa tu stesso :proud:<br />
+<br />
+3) Il messaggio per chi entra nel canale già si fa in tutte le salse e proprio qui sul forum mi pare di aver scritto dei post che spiegano come fare.<br />
+La cosa più semplice parte da:<br />
+/event add 0 jchannel '#nomecanale:irc.nomeserver.net'='$channel:$server ' /SAY Ciao $ru, benvenuto in $channel !\;/KICK $ru si, però adesso togliti dai piedi, lol !<br />
+dove chiaramente #nomecanale e irc.nomeserver.net vanno opportunamente sostituite.<br />
+<br />
+4) Questo è già più complicato da fare del (3) ma tramite macro/script si fa, anzi, è già fatto: forse non lo hai notato ma lo script può essere trasformato in BOT e, tra le parecchie cose, c'è appunto il benvenuto per chi entra (3) e l'invio di un mex ogni tot o in modo specifico a quelli che entrano, ecc...<br />
+<br />
+Alcune cose si possono importare dagli script MIRC ma non devono essere &quot;troppo complicate&quot;; quelle sopra lo sono troppo, si puo' importare roba come &quot;messaggi colorati&quot; e poco oltre. Anche in questo caso sul forum c'e' un post dove descrivo la cosa, penso la puoi trovare interessante.<br />
+<br />
+Sul forum puoi chiedere quello che vuoi, ma non e' che lo leggo spessisimo .... e' pero' certo che io rispondo prima o poi :D</div></div><hr />
+
+
+<div id="copyright">vBulletin&reg; v3.7.4, Copyright &copy;2000-2008, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Postgresql e PHP, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] Postgresql e PHP Programmazione e dintorni" />
+		<title>Postgresql e PHP [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-23.html">Programmazione e dintorni</a> &gt; Postgresql e PHP</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=8799">Postgresql e PHP</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">hunter</div><div class="date">30-05-2005, 10:05</div></div><div class="posttext">Ciao a tutti, <br />
+ho un problema. Ho creato con postgresql un database di nome &quot;prova&quot;, costituito dalla tabella di nome &quot;prova&quot;, i cui campi sono: cognome, nome, id e prova_id_key PRIMARY KEY (id) . <br />
+<br />
+//Pagina di registrazione(a.php) <br />
+&lt;form method=&quot;post&quot; action=&quot;b.php&quot;&gt; <br />
+&lt;table border=&quot;0&quot; cellspacing=&quot;6&quot;&gt; <br />
+&lt;tr&gt;&lt;td&gt;&lt;b&gt;&lt;h3&gt;Registrati&lt;/h3&gt;&lt;/td&gt; <br />
+&lt;tr&gt;&lt;td&gt;Cognome&lt;/td&gt; <br />
+&lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;cognome&quot;&gt;&lt;/td&gt;&lt;/tr&gt; <br />
+&lt;tr&gt;&lt;td&gt;Nome&lt;/td&gt; <br />
+&lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;nome&quot;&gt;&lt;/td&gt;&lt;/tr&gt; <br />
+&lt;td&gt;&lt;input type=&quot;submit&quot; value=&quot;Invia&quot;&gt;&lt;/td&gt;&lt;/tr&gt; <br />
+&lt;/form&gt; <br />
+<br />
+//Pagina di visualizzazione(b.php) <br />
+&lt;? <br />
+$connessione = pg_connect (&quot;host=... dbname=prova user=postgres <br />
+password=...&quot;); <br />
+$cognome = $_REQUEST[cognome]; <br />
+$nome = $_REQUEST[nome]; <br />
+?&gt; <br />
+&lt;? <br />
+$query = pg_Exec($connessione,&quot;INSERT INTO prova <br />
+values('$cognome','$nome')&quot;); <br />
+$query = &quot;select * from prova&quot;; <br />
+$query = pg_Exec($connessione, $query); <br />
+$row = 0; <br />
+?&gt; <br />
+&lt;table border=&quot;1&quot; cellspacing=6&gt; <br />
+&lt;? <br />
+while ($row&lt;pg_numrows($query)) { <br />
+$data = pg_fetch_object ($query, $row); <br />
+?&gt; <br />
+&lt;tr&gt;&lt;td&gt;Cognome&lt;/td&gt; <br />
+&lt;td&gt;&lt;?= $data-&gt;cognome ?&gt;&lt;/td&gt;&lt;/tr&gt; <br />
+&lt;tr&gt;&lt;td&gt;Nome&lt;/td&gt; <br />
+&lt;td&gt;&lt;?= $data-&gt;nome ?&gt;&lt;/td&gt;&lt;/tr&gt; <br />
+&lt;? <br />
+$row++; <br />
+} <br />
+?&gt; <br />
+&lt;/table&gt; <br />
+&lt;form method=&quot;post&quot; action=&quot;c.php&quot;&gt; <br />
+&lt;input type=&quot;submit&quot; value=&quot;Conferma&quot;&gt; <br />
+&lt;/form&gt; <br />
+&lt;form method=&quot;post&quot; action=&quot;d.php&quot;&gt; <br />
+&lt;input type=&quot;submit&quot; value=&quot;Modifica&quot;&gt; <br />
+&lt;/form&gt; <br />
+<br />
+//Pagina di conferma(c.php) <br />
+&lt;? <br />
+print ('I dati sono stati inseriti correttamente'); <br />
+?&gt; <br />
+<br />
+Il problema è la pagina di modifica(d.php). Vorrei che cliccando sul <br />
+bottone modifica, l'utente possa rivedere i dati che ha inserito nella pagina inziale (a.php) in modo da poterli modificare se avesse <br />
+sbagliato. <br />
+Non so come fare http://www.debianitalia.org/uploads/smil4136e6da1cff7.gif , qualcuno potrebbe correggere il codice che ho scritto e aggiustarlo? <br />
+Grazie</div></div><hr />
+
+
+<div id="copyright">vBulletin v3.5.3, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

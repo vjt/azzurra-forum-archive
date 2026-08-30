@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Neverop.. selettivo?, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] Neverop.. selettivo? Services - I servizi IRC di Azzurra" />
+	
+	<title>Neverop.. selettivo? [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-6.html">Network Central</a> &gt; <a href="f-30.html">Services - I servizi IRC di Azzurra</a> &gt; Neverop.. selettivo?</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=7296">Neverop.. selettivo?</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">}gu|do[z]{®©</div><div class="date">08-02-2005, 18:00</div></div><div class="posttext">Non è possibile impostare il neverop solo per un chan?<br />
+Mi tornerebbe comodo e avrebbe un senso... :)<br />
+<br />
+ciauz</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">08-02-2005, 20:20</div></div><div class="posttext">{®©']Non è possibile impostare il neverop solo per un chan?<br />
+Mi tornerebbe comodo e avrebbe un senso... :)<br />
+<br />
+Il NEVEROP di NickServ non e' impostabile in modo selettivo su un solo canale.<br />
+Non so se risponde alle tue esigenze ma c'e' invece il NEVEROP di ChanServ, che agisce pero' su chiunque entri in quel canale e non solo su di te. Per maggiori informazioni, leggi qui (http://www.azzurra.org/irchelp-services.php?display=showCmd&amp;service_id=2&amp;command_id=51) o digita /cs help set neverop :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">}gu|do[z]{®©</div><div class="date">14-02-2005, 20:38</div></div><div class="posttext">grazie per la risposta.. me l'ero persa.. non avevo attivato la notifica per la discussione ^_^<br />
+<br />
+Poteva andare bene non volendo avere + nessun op nel chan.. ma a furor di popolo hanno rivoluto gli op.. e vabbè ^__^<br />
+<br />
+Lascio per i posteri la soluzione adottata nel frattempo:<br />
+<br />
+nel remote di mirc:<br />
+on 1:JOIN:#nomecanale:{ if ($nick == $me) { /cs deop $chan $nick } }<br />
+<br />
+:D<br />
+<br />
+ciauz</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">14-02-2005, 20:45</div></div><div class="posttext">{®©']Lascio per i posteri la soluzione adottata nel frattempo:<br />
+<br />
+nel remote di mirc:<br />
+on 1:JOIN:#nomecanale:{ if ($nick == $me) { /cs deop $chan $nick } }<br />
+<br />
+Prego per la risposta... Due suggerimenti su questo remote:<br />
+1) usa il comando /mode -o $chan $nick  , cosi' eviti di chiamare ChanServ (OK, son pignolo, ma un /mode non chiama i servizi mentre un /cs deop si'; secondo me il /cs deop ha senso solo se usato su altri nick mentre non si e' oppati o non si e' in canale)<br />
+2) non voglio pensare chi si sveglia prima tra ChanServ (ad opparti) ed il tuo remote (a deopparti)... mettici un timer prima di eseguire il comando, oppure meglio ancora verifica se sei operatore prima di deopparti. O anche enrambi, perche' no? :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">}gu|do[z]{®©</div><div class="date">14-02-2005, 20:49</div></div><div class="posttext">1) se usavo il mode [l'avevo fatto] chanserv mi rioppava.. non so perchè :D<br />
+2) l'avevo pnsato ma testando fungeva :D<br />
+<br />
+ciauz</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">14-02-2005, 20:55</div></div><div class="posttext">{®©']1) se usavo il mode [l'avevo fatto] chanserv mi rioppava.. non so perchè :D<br />
+<br />
+Forse il canale ha il Protect settato?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">}gu|do[z]{®©</div><div class="date">14-02-2005, 21:00</div></div><div class="posttext">sì può essere.. in effetti non volendo avere op nel mio specifico caso potevo disattivarlo.. ma a quel punto potevo mettere direttamente il neverop per il chan.<br />
+<br />
+Adesso invece sono founder ma non voglio l'op [mi piace stare con il popolo :D] nè disattivare il protect per gli altri op.. quindi me lo tengo così :D<br />
+<br />
+<br />
+cmq ti capisco steve.. so' pignolo anche io nelle cose che conosco bene.. l'informatica richiede la pignoleria :D<br />
+<br />
+grazie ancora.. ciauz</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dracoo</div><div class="date">14-02-2005, 22:38</div></div><div class="posttext">Forse il canale ha il Protect settato?<br />
+Scusa il piccolo &quot;OT&quot;, ma se io mi deoppo tramite /mode #chan -o nick in un canale dove è attivo il protect, ChanServ non mi rioppa mica!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">14-02-2005, 23:00</div></div><div class="posttext">Scusa il piccolo &quot;OT&quot;, ma se io mi deoppo tramite /mode #chan -o nick in un canale dove è attivo il protect, ChanServ non mi rioppa mica!<br />
+<br />
+Che livello hai nelle liste di quel canale?<br />
+Comunque ho fatto due test e mi par di notare che il /mode #canale -o nick su se' stessi passi senza problemi, e su altri nick passa solo se e' il Founder del canale a dare il -o</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Raynk</div><div class="date">15-02-2005, 14:58</div></div><div class="posttext">Che livello hai nelle liste di quel canale?<br />
+Comunque ho fatto due test e mi par di notare che il /mode #canale -o nick su se' stessi passi senza problemi, e su altri nick passa solo se e' il Founder del canale a dare il -o<br />
+ In realtà basta che il nick che lancia il comando /mode #canale -o nick abbia un accesso superiore al nick da deoppare affinchè ChanServ non lo rioppi.</div></div><hr />
+
+
+<div id="copyright">vBulletin&reg; v3.6.4, Copyright &copy;2000-2007, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

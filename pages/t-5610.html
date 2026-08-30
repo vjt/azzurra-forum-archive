@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="KVIrc e identificazione automatica del NickServ, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] KVIrc e identificazione automatica del NickServ Discussioni Linux" />
+	
+	<title>KVIrc e identificazione automatica del NickServ [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-28.html">Discussioni Linux</a> &gt; KVIrc e identificazione automatica del NickServ</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=5610">KVIrc e identificazione automatica del NickServ</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Petro_suse91</div><div class="date">16-09-2004, 12:50</div></div><div class="posttext">Uso KVIrc 3.0.1, e ho un nickname registrato sui server di Azzurra.<br />
+In Settings/IRC/NickServ ho abilitato l'identificazione automatica del nickname, con questi parametri:<br />
+<br />
+Nickname: Petro<br />
+Server: *.azzurra.org<br />
+nickserv mask: NickServ!service@azzurra.org<br />
+Identify command: /NickServ identify miapassword<br />
+<br />
+come comandi d'identificazione ho provato anche a usare i seguenti:<br />
+nickserv identify miapassword<br />
+msg identify miapassword<br />
+/msg identify miapassword<br />
+/msg nickserv identify miapassword<br />
+<br />
+Ma non ottengo nulla, non funziona. Sbaglio qualcosa io o è Azzurra che è incompatibile con l'identificazione automatica del nickserv?<br />
+<br />
+Ringrazio in anticipo, saluti a tutti</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">21-09-2004, 11:20</div></div><div class="posttext">Hai provato anche con /msg NickServ identify nickname password ? Vedi QUI (http://www.azzurra.org/irchelp-services.php?display=showCmd&amp;amp;service_id=1&amp;amp;command_ id=5) per maggiori informazioni.<br />
+In ogni caso, ricevi un particolare messaggio di errore?<br />
+<br />
+Attenzione, comunque: con &quot;msg identify password&quot; puoi aver dato la tua password a qualcuno che, eventualmente, in quel momento avesse nick &quot;identify&quot;. Suggerirei di cambiarla con il comando /msg NickServ set passwd vecchiapassword nuovapassword  (vedi anche QUI (http://www.azzurra.org/irchelp-services.php?display=showCmd&amp;amp;service_id=1&amp;amp;command_ id=19))<br />
+<br />
+Poi, su come si debba configurare questo o quel client IRC (KVirc nel tuo caso), direi senz'altro che Azzurra non ha nessun tipo di responsabilita'. La rete non sta a guardare se e' un comando viene dato dalla persona fisica o da qualche script locale, di fatto gli basta che la sintassi sia giusta e che eventuali password corrispondano con quelle riportate nel database dei servizi. Tanto per dire, mIRC non ha nessun problema ad usare la funzionalita' di Perform per questa ed altre necessita', quindi in definitiva posso solo suggerirti di ricontrollare il tuo programma e fare tutti i test del caso (ad esempio, per vedere se serve lo / iniziale). I comandi sono quelli che ti ho riportato, e che puoi trovare online facendo /ns help per NickServ oppure /cs help per ChanServ, oppure ancora meglio sul sito: http://help.azzurra.org .<br />
+<br />
+Spero di esserti stato utile, ciao :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">City_Hunter</div><div class="date">21-09-2004, 18:41</div></div><div class="posttext">Uso KVIrc 3.0.1, e ho un nickname registrato sui server di Azzurra.<br />
+In Settings/IRC/NickServ ho abilitato l'identificazione automatica del nickname, con questi parametri...<br />
+<br />
+Ciao Petro, ho provato a far funzionare l'identificazione automatica a nickserv presente in KVIrc, ma praticamente non c'è stato verso. Sai dirmi se su qualche altro server effettivamente funziona?<br />
+<br />
+Comunque c'è un sistema alternativo per risolvere il problema.<br />
+Dal pannello dei server, seleziona quello che usi per connetterti Azzurra e premi il pulsante Advanced.<br />
+Nella finestra server details che compare, spostati sull'ultima tab (quella denominata On Login) e inserisci lì il comando:<br />
+msg nickserv identify PASSWORD<br />
+<br />
+o in alternativa la versione comprensiva di nickname:<br />
+msg nickserv identify NICKNAME PASSWORD<br />
+<br />
+(in entrambi i casi, ricordati di omettere lo slash / che normalmente precede questo genere di comandi).<br />
+<br />
+Il sistema non è meno sicuro di quello che controlla la mask di NickServ.<br />
+Su Azzurra infatti, anche qualora NickServ sia temporaneamente indisponibile per un motivo qualsiasi, il suo nick è riservato e bloccato dall'ircd; nessuno quindi può &quot;impersonarlo&quot; per carpire password.</div></div><hr />
+
+
+<div id="copyright">vBulletin&reg; v3.6.3, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Problema con file upload - Perl 5.1, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] Problema con file upload - Perl 5.1 Programmazione e dintorni" />
+		<title>Problema con file upload - Perl 5.1 [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-23.html">Programmazione e dintorni</a> &gt; Problema con file upload - Perl 5.1</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=9915">Problema con file upload - Perl 5.1</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">joyboyss</div><div class="date">06-08-2005, 16:29</div></div><div class="posttext">Ho un problema sul mio portale http://keropinet.dyndns.org<br />
+vorrei fornire servizio di webhosting, ed ho trovato degli script in perl già pronti ai quali ho effetuate le modifiche richieste.<br />
+Tutto ok per quanto riguarda la creazione e il riconoscimento degli account, nonchè il trasferimento di files txt, log, bin, doc, e altri. <br />
+Ma quando vado a fare l' upload di immagini, zips, exe, o altri generi di files il browser rimane in 'connecting...'.<br />
+Nel codice perl non c' é nessuna limitazione, il settaggio del tipo dii trasferimento mi sembra corretto, a questo punto sospetto sia un errore dello script o dell' installazione di perl, che peraltro ho eseguito seguendo alla lettere la guida fornita assieme al linguaggio.<br />
+<br />
+Chi volesse provare, entrate nel portale, e nella parte basa del menu a sinistra  seguite i link Iscriviti e poi Il tuo spazio.<br />
+Provate a fare uploads vari e verificate.<br />
+Chiunque possa darmi una mano é benaccetto, contattatemi in pvt o per email e fornirò uno zip contenente gli script utilizzati.<br />
+<br />
+Ringrazio anticipatamente.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gitan</div><div class="date">06-08-2005, 19:10</div></div><div class="posttext">Hai controllato i permessi della cartella in cui esegui l'upload del file?<br />
+<br />
+PS. Comunque potevi anche evitare di scrivere il nome del tuo portale, era molto meglio il link allo script in perl</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">joyboyss</div><div class="date">06-08-2005, 21:03</div></div><div class="posttext">I permessi? si tratta del mio pc di casa, montante windows2000 s.p.3 eseguito con diritto di amministratore. Non ci dovrebbero essere problemi di permessi. Nel caso i permessi permettono i txt e bloccano le immagini?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gitan</div><div class="date">06-08-2005, 22:47</div></div><div class="posttext">Allora basta che la directory abbia i permessi di scrittura  ed hai risolto.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">joyboyss</div><div class="date">07-08-2005, 13:03</div></div><div class="posttext">No qui non ho risolto niente, non é questione di permessi, se volete esaminate gli script o provate in prim apersona cosa succede provando a fare gli uploads.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gitan</div><div class="date">07-08-2005, 14:37</div></div><div class="posttext">Ti pasto uno script in php che uso io in locale:<br />
+<br />
+&lt;?php<br />
+//vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  vvvvvvvvvv<br />
+//   You may change maxsize, and allowable upload file types.<br />
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^  ^^^^^^^^^^<br />
+//Mmaximum file size. You may increase or decrease.<br />
+$MAX_SIZE = 2000000000000000;<br />
+                            <br />
+//Allowable file Mime Types. Add more mime types if you want<br />
+$FILE_MIMES = array('image/jpeg','image/jpg','image/gif'<br />
+                   ,'image/png','application/msword','text/plain');<br />
+<br />
+//Allowable file ext. names. you may add more extension names.            <br />
+$FILE_EXTS = array('.jpg', '.gif', '.png', '.avi', '.mpg', '.mpeg', '.wmv', '.zip', '.rar', '.tar.gz', '.c', '.h', '.mp3' , '.txt' ); <br />
+<br />
+//Allow file delete? no, if only allow upload only<br />
+$DELETABLE  = false;                               <br />
+<br />
+<br />
+//vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  vvvvvvvvvv<br />
+//   Do not touch the below if you are not confident.<br />
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^  ^^^^^^^^^^<br />
+/**************************************************  **********<br />
+ *     Setup variables<br />
+ **************************************************  **********/<br />
+$site_name = $_SERVER['HTTP_HOST'];<br />
+$url_dir = &quot;http://&quot;.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']);<br />
+$url_this =  &quot;http://&quot;.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'];<br />
+<br />
+$upload_dir = &quot;files/&quot;;<br />
+$upload_url = $url_dir.&quot;/files/&quot;;<br />
+$message =&quot;&quot;;<br />
+<br />
+/**************************************************  **********<br />
+ *     Create Upload Directory<br />
+ **************************************************  **********/<br />
+if (!is_dir(&quot;files&quot;)) {<br />
+  if (!mkdir($upload_dir))<br />
+      die (&quot;upload_files directory doesn't exist and creation failed&quot;);<br />
+  if (!chmod($upload_dir,0755))<br />
+      die (&quot;change permission to 755 failed.&quot;);<br />
+}<br />
+<br />
+/**************************************************  **********<br />
+ *     Process User's Request<br />
+ **************************************************  **********/<br />
+if ($_REQUEST[del] &amp;&amp; $DELETABLE)  {<br />
+  $resource = fopen(&quot;log.txt&quot;,&quot;a&quot;);<br />
+  fwrite($resource,date(&quot;Ymd h:i:s&quot;).&quot;DELETE - $_SERVER[REMOTE_ADDR]&quot;.&quot;$_REQUEST[del]\n&quot;);<br />
+  fclose($resource);<br />
+  <br />
+  if (strpos($_REQUEST[del],&quot;/.&quot;)&gt;0);                  <br />
+  else if (strpos($_REQUEST[del],&quot;files/&quot;) === false); <br />
+  else if (substr($_REQUEST[del],0,6)==&quot;files/&quot;) {<br />
+    unlink($_REQUEST[del]);<br />
+    print &quot;&lt;script&gt;window.location.href='$url_this?message=deleted successfully'&lt;/script&gt;&quot;;<br />
+  }<br />
+}<br />
+else if ($_FILES['userfile']) {<br />
+  $resource = fopen(&quot;log.txt&quot;,&quot;a&quot;);<br />
+  fwrite($resource,date(&quot;Ymd h:i:s&quot;).&quot;UPLOAD - $_SERVER[REMOTE_ADDR]&quot;<br />
+            .$_FILES['userfile']['name'].&quot; &quot;<br />
+            .$_FILES['userfile']['type'].&quot;\n&quot;);<br />
+  fclose($resource);<br />
+<br />
+    $file_type = $_FILES['userfile']['type']; <br />
+  $file_name = $_FILES['userfile']['name'];<br />
+  $file_ext = strtolower(substr($file_name,strrpos($file_name,&quot;.&quot;)));<br />
+<br />
+  //File Size Check<br />
+  if ( $_FILES['userfile']['size'] &gt; $MAX_SIZE) <br />
+     $message = &quot;The file size is over 2MB.&quot;;<br />
+  //File Type/Extension Check<br />
+  else if (!in_array($file_type, $FILE_MIMES) <br />
+          &amp;&amp; !in_array($file_ext, $FILE_EXTS) )<br />
+     $message = &quot;Sorry, $file_name($file_type) is not allowed to be uploaded.&quot;;<br />
+  else<br />
+     $message = do_upload($upload_dir, $upload_url);<br />
+  <br />
+  print &quot;&lt;script&gt;window.location.href='$url_this?message=$message'&lt;/script&gt;&quot;;<br />
+}<br />
+else if (!$_FILES['userfile']);<br />
+else <br />
+    $message = &quot;Invalid File Specified.&quot;;<br />
+<br />
+function do_upload($upload_dir, $upload_url) {<br />
+<br />
+    $temp_name = $_FILES['userfile']['tmp_name'];<br />
+    $file_name = $_FILES['userfile']['name']; <br />
+  $file_name = str_replace(&quot;\\&quot;,&quot;&quot;,$file_name);<br />
+  $file_name = str_replace(&quot;'&quot;,&quot;&quot;,$file_name);<br />
+    $file_path = $upload_dir.$file_name;<br />
+<br />
+    //File Name Check<br />
+  if ( $file_name ==&quot;&quot;) { <br />
+      $message = &quot;Invalid File Name Specified&quot;;<br />
+      return $message;<br />
+  }<br />
+<br />
+  $result  =  move_uploaded_file($temp_name, $file_path);<br />
+  if (!chmod($file_path,0755))<br />
+       $message = &quot;change permission to 755 failed.&quot;;<br />
+  else<br />
+    $message = ($result)?&quot;$file_name uploaded successfully.&quot; :<br />
+               &quot;Somthing is wrong with uploading a file.&quot;;<br />
+  return $message;<br />
+}<br />
+<br />
+?&gt;<br />
+<br />
+&lt;center&gt;<br />
+   &lt;font color=red&gt;&lt;?=$_REQUEST[message]?&gt;&lt;/font&gt;<br />
+   &lt;br&gt;<br />
+   &lt;form name=&quot;upload&quot; id=&quot;upload&quot; ENCTYPE=&quot;multipart/form-data&quot; method=&quot;post&quot;&gt;<br />
+     Upload File &lt;input type=&quot;file&quot; id=&quot;userfile&quot; name=&quot;userfile&quot;&gt;<br />
+     &lt;input type=&quot;submit&quot; name=&quot;upload&quot; value=&quot;Upload&quot;&gt;<br />
+   &lt;/form&gt;</div></div><hr />
+
+
+<div id="copyright">vBulletin v3.5.3, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

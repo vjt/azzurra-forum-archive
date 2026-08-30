@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<title>Azzurra IRC Network Forum - Guida DCC per utenti fastweb</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="Azzurra IRC Network Forum" />
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-6.html">Network Central</a> &gt; <a href="f-11.html">IRCHelp - Aiuto su IRC e Servizi di Azzurra</a> &gt; Guida DCC per utenti fastweb</div>
+<hr />
+<div class="pda"><a href="?pda=1">PDA</a></div>
+<p class="largefont">Mostra versione intera : <a href="http://forum.azzurra.org/showthread.php?t=4530">Guida DCC per utenti fastweb</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">typedef_c</div><div class="date">18-04-2004, 15:24</div></div><div class="posttext">Inserisco qui questa guida in attesa che venga messa nella sezione help del sito. <br />
+<br />
+Questa guida è scritta con l'intento di aiutare gli utenti fastweb che cercano di inviare ,tramite DCC send, un file a utenti non fastweb.<br />
+Come molti utenti fastweb sapranno normalmente non è possibile l'invio di file, tramite DCC,a utenti non fastweb (a causa dell'utilizzo di un ip privato e di server NAT da parte di fastweb). L'unico modo per effettuare il send è utilizzare un server socks; grazie a questo documento potrete farlo senza l'utilizzo del server socks di fastweb ( che al momento in cui scrivo è disattivato). Ci sono due vie possibili per risolvere il problema: <br />
+<br />
+1.L'utilizzo di X-Chat come client irc (caso piu' semplice) <br />
+2.L'installazione di un server socks in locale e relativa configurazione di mirc (piu' complesso) <br />
+<br />
+Di seguito illustrero' entrambe le soluzioni:<br />
+<br />
+1.Risoluzione con l'utilizzo di X-Chat<br />
+<br />
+Questa soluzione è molto semplice pero è chiaro che non tutti sono disposti a migrare a un nuovo client irc, che personalmente reputo molto valido e versatile. <br />
+Entrando piu' in dettaglio è possibile reperire questo client irc al seguente indirizzo http://www.xchat.org/download/ (è presente sia una versione per windows che per linux). Dopo l'installazione per inviare un file a un utente non fastweb bastera' usare questo semplice comando: /dcc psend NICK e poi selezionare il file da inviare.<br />
+<br />
+<br />
+2.Risoluzione con l'utilizzo di un server socks in locale e di mirc<br />
+<br />
+Questa soluzione risulta decisamente piu' complessa rispetto alla precedente, perchè richiede l'installazione di un server socks in locale, ma permette l'utilizzo di mirc. <br />
+Iniziamo con l'installazione e configurazione del server socks. Prima di tutto scarichiamo il software da questo indirizzo http://www.analogx.com/files/proxyi.exe , questo programma è molto leggero e di facile configurazione. Al termine dell'installazione eseguiamo il programma e notiamo la presenza di una piccola icona verde nel tray (in basso a destra vicino all'orologio). Ci andiamo sopra con il mouse, clicchiamo sul tasto destro del mouse e selezioniamo &quot;configure&quot;. Il server andra' configurato come segue:<br />
+<br />
+1.Mettiamo su off tutti servizi tranne il Socks<br />
+2.Su &quot;Proxy Binding&quot; mettiamo: 127.0.0.1 (ovvero l'ip del nostro localhost)<br />
+3.Mettiamo la &quot;logging&quot; su disabled<br />
+<br />
+<br />
+http://www.whole.altervista.org/typedef/fig1.jpg<br />
+(questa immagine illustra in dettaglio i vari passaggi)<br />
+<br />
+<br />
+Se tutto è andato a buon fine dovremmo avere di nuovo la nostra icona di colore verde (che indica che il server è in funzione).<br />
+<br />
+Passiamo ora alla configurazione di mirc. Avviamo il client (ricordo che per chi non l'avesse che è possibile reperire la versione più aggiornata a questo indirizzo http://mirc.azzurra.org/mirc/mirc614.exe) e entriamo nelle opzioni di mirc cliccando su View e poi su Options (in alcune vecchie versione di mirc File---&amp;gt;Options). A questo punto cerchiamo connect , selezioniamo la voce firewall e la configuriamo come segue:<br />
+<br />
+1.Firewall support: solo DCC<br />
+2.Protocol: Socks5<br />
+3.Hostname: 127.0.0.1<br />
+4.Port: 1080<br />
+<br />
+<br />
+http://www.whole.altervista.org/typedef/fig2.jpg<br />
+(questa immagine illustra in dettagli i vari passaggi)<br />
+<br />
+<br />
+Ora clicchiamo su ok e riavviamo mirc. Se tutto è andato a buon fine non dovremmo avere piu' problemi a inviare dcc a utenti non fastweb.<br />
+Chi utilizzasse almeno mirc 6.01 puo aggiungere un alias che permette facilmente di passare dal settaggio per utenti fastweb a quello per utenti non fastweb.<br />
+<br />
+Aprite la finestra Alias di mIRC (Alt+A) e copiate nella finestra il testo seguente:<br />
+<br />
+<br />
+/fwdcc &#123;<br />
+  if &#40;$$1 == on&#41; &#123;<br />
+   localinfo -h<br />
+   .firewall -d off<br />
+   echo -at 2* Ora puoi usare le DCC verso abbonati Fastweb<br />
+  &#125;<br />
+  if &#40;$$1 == off&#41; &#123;<br />
+   localinfo -h<br />
+   .firewall -cm5+d on 127.0.0.1 1080<br />
+   .firewall +d off<br />
+   echo -at 2* Ora puoi usare le DCC verso abbonati di altri provider<br />
+  &#125;<br />
+ &#125;<br />
+<br />
+ <br />
+<br />
+Chiudete il mIRC Editor clickando su OK. <br />
+<br />
+<br />
+Da questo momento potrete passare velocemente tra i due modi di utilizzo delle DCC: <br />
+<br />
+Per inviare DCC ad abbonati Fastweb: /fwdcc on<br />
+Per inviare DCC ad abbonati di altri provider: /fwdcc off<br />
+<br />
+Per eventuali delucidazioni, il canale #irchelp è sempre a vostra disposizione.<br />
+<br />
+Un particolare ringraziamento va a Mav per l'alias, che ho semplicemente modificato, a FrankBlack, per editing delle immagini, e a Justarius per i test effettuati.<br />
+<br />
+Documento realizzato da typedef_c</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">trekfan1</div><div class="date">18-04-2004, 20:21</div></div><div class="posttext">typedef con Analogx impostato come lo hai messo tu in figura il proxy risulta in Open Mode e così scatta la K-Line per open proxy! bisogna mettere 127.0.0.1 anche in News Server Address<br />
+<br />
+http://www.draks78.com/irc/proxy.jpg<br />
+<br />
+chiaro?  :wink:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">typedef_c</div><div class="date">18-04-2004, 23:16</div></div><div class="posttext">non mi risulta proprio ... guarda che testo quello che scrivo  :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">trekfan1</div><div class="date">19-04-2004, 08:05</div></div><div class="posttext">Sarà, cmq consiglio di mettere 127.0.0.1 anche in News Server Address per sicurezza, non si sa mai  :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">19-04-2004, 09:52</div></div><div class="posttext">Sarà, cmq consiglio di mettere 127.0.0.1 anche in News Server Address per sicurezza, non si sa mai  :)<br />
+<br />
+Perdonatemi l'ignoranza ma su queste cose non sono molto ferrato: che ci azzecca un News Server con IRC ?<br />
+Vedo comunque un tasto &quot;Check if proxy is in open mode&quot;, magari puo' essere utile cliccarlo per vedere come si e' messi con la configurazione...<br />
+<br />
+Relativamente ad x-chat, segnalo pero' che e' stato rilevato un bug sul Socks5, se utilizzate questa soluzione vi consiglio di upgradare alla versione 2.0.8 e patchare il tutto. Per maggiori info, www.xchat.org o direttamente http://mail.nl.linux.org/xchat-announce/2004-04/msg00000.html .<br />
+Agli utenti Slackware Linux consiglio il tarball gia' preparato da City_Hunter, disponibile su http://slackware.azzurra.org .</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">typedef_c</div><div class="date">19-04-2004, 10:06</div></div><div class="posttext">Ringrazio Steve per la segnalazione.:) <br />
+<br />
+Per quanto riguarda trekfan1 visto che non ti fidi posso dirti che il campo che consigli di completare è inutile perchè: <br />
+<br />
+1. non ha nulla a che fare con il socks (che non è open visto che si connette perfettamente; puoi perfettamente controllare la cosa con il tastino &quot;Check if proxy is in Open mode&quot;) <br />
+<br />
+2. si riferisce all' NNTP server che è disattivato nella mia configurazione perche inutile per l'invio di dcc (si tratta di un server per newsgroup)<br />
+<br />
+quindi magari informati prima di fare una critica (che è sempre ben accetta chiaramente), ciauz :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">trekfan1</div><div class="date">23-04-2004, 13:10</div></div><div class="posttext">D'accordo, d'accordo, cmq anche se inutile sempre meglio sovrabbondare che beccarsi una kline!  :D <br />
+<br />
+Cmq quella guida può andare bene anche per chi ha una normale ADSL ed ha il pc in LAN (ovviamente con il pc server collegato ad un modem ethernet o USB) chi ha un router deve fare diversamente</div></div><hr />
+
+<div id="copyright">vBulletin Versione 3.0.7, Copyright &copy;2000-2005, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

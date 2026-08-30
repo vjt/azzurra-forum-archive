@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Script: Counter Grafico in PHP, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] Script: Counter Grafico in PHP Programmazione e dintorni" />
+		<title>Script: Counter Grafico in PHP [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-23.html">Programmazione e dintorni</a> &gt; Script: Counter Grafico in PHP</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=1115">Script: Counter Grafico in PHP</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">fank</div><div class="date">11-10-2002, 02:03</div></div><div class="posttext">FanKounter<br />
+Contatore di accessi che include semplici report statistici.<br />
+Scritto in PHP4 da fanatiko e utilizzabile senza condizioni/restrizioni.<br />
+<br />
+CARATTERISTICHE (alcune)<br />
+Doppia modalità: grafico/testo.<br />
+Altamente configurabile e personalizzabile.<br />
+<br />
+REQUISITI<br />
+(i) Hosting su WEB Server che supporti PHP4.<br />
+(ii) Librerie GD supportate da PHP.<br />
+<br />
+ESEMPIO<br />
+Guarda il mio avatar (si adatta ad ogni immagine PNG).<br />
+<br />
+Se sei interessato, per approfondimenti/istruzioni d'uso:<br />
+o vai lì (http://utenti.lycos.it/profitterol/fankounter/index.htm) (*),<br />
+o leggi qua (http://utenti.lycos.it/profitterol/fankounter/readme.txt) (*),<br />
+o scarica qui (http://utenti.lycos.it/profitterol/fankounter/fkounter.zip) (*).<br />
+_____<br />
+(*) tripod/lycos permettendo!<br />
+<br />
+Segue codice del modulo principale, anche &lt;u&gt;standalone&lt;/u&gt;...<br />
+<br />
+fanatiko</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">fank</div><div class="date">11-10-2002, 03:20</div></div><div class="posttext">&amp;lt;?php<br />
+<br />
+########## CONFIGURAZIONE<br />
+<br />
+$start_count=0;<br />
+$img_base=&amp;quot;counter.png&amp;quot;;<br />
+$back_color=array&#40;&amp;quot;R&amp;quot;=&amp;gt;0,&amp;quot;G&amp;quot;=&amp;gt;0,&amp;quot;B&amp;quot;=&amp;gt;0&#41;;<br />
+$text_color=array&#40;&amp;quot;R&amp;quot;=&amp;gt;255,&amp;quot;G&amp;quot;=&amp;gt;255,&amp;quot;B&amp;quot;=&amp;gt;255&#41;;<br />
+$store_file=&amp;quot;counter.dat&amp;quot;;<br />
+$stats_file=&amp;quot;stats.dat&amp;quot;;<br />
+$ref_paths=array&#40;&#41;;<br />
+<br />
+########## PARAMETRO IN INPUT &#40;opzionale&#41;<br />
+<br />
+$mode=&#40;$mode==&amp;quot;text&amp;quot;&#41;?$mode&#58;&amp;quot;graphic&amp;quot;;<br />
+<br />
+########## SEZIONE OPERATIVA<br />
+<br />
+function manstats&#40;$safemode&#41;&#123;<br />
+  global $store_file,$stats_file,$start_count;<br />
+  global $REMOTE_ADDR,$HTTP_REFERER,$HTTP_USER_AGENT;<br />
+  $return_count=0;<br />
+<br />
+  if&#40;file_exists&#40;$store_file&#41;==TRUE&#41;&#123;<br />
+    if&#40;&#40;$stats_id=fopen&#40;$stats_file,&amp;quot;a&amp;quot;&#41;&#41;!==FALSE&#41;&#123;<br />
+      if&#40;flock&#40;$stats_id,LOCK_EX&#41;!=FALSE&#41;&#123;<br />
+        if&#40;&#40;$store_id=fopen&#40;$store_file,&amp;quot;r&amp;quot;&#41;&#41;!==FALSE&#41;&#123;<br />
+          $return_count=fgets&#40;$store_id,filesize&#40;$store_file  &#41;+1&#41;;<br />
+          fclose&#40;$store_id&#41;;<br />
+          if&#40;$return_count!==FALSE&#41;&#123;<br />
+            settype&#40;$return_count,&amp;quot;integer&amp;quot;&#41;;<br />
+            ++$return_count;<br />
+            if&#40;!$safemode&#41;&#123;<br />
+              if&#40;&#40;$store_id=fopen&#40;$store_file,&amp;quot;w&amp;quot;&#41;&#41;!==FALSE&#41;&#123;<br />
+                if&#40;fwrite&#40;$store_id,$return_count&#41;==strlen&#40;$return  _count&#41;&#41;<br />
+                  fwrite&#40;$stats_id,$return_count.&amp;quot;,&amp;quot;.date&#40;&amp;quot;d-m-Y&amp;quot;&#41;.&amp;quot;,&amp;quot;.date&#40;&amp;quot;H&#58;i&#58;s&amp;quot;&#41;.&amp;quot;,&amp;quot;.$REMOTE_ADDR.&amp;quot;,&amp;quot;.$HTTP_U  SER_AGENT.&amp;quot;,&amp;quot;.$HTTP_REFERER.&amp;quot;\n&amp;quot;&#41;;<br />
+                fclose&#40;$store_id&#41;;<br />
+              &#125;<br />
+            &#125;<br />
+          &#125;<br />
+        &#125;<br />
+        unset&#40;$store_id&#41;;<br />
+        flock&#40;$stats_id,LOCK_UN&#41;;<br />
+      &#125;<br />
+      fclose&#40;$stats_id&#41;;<br />
+    &#125;<br />
+    unset&#40;$stats_id&#41;;<br />
+  &#125;<br />
+  elseif&#40;file_exists&#40;$store_file&#41;==FALSE&#41;&#123;<br />
+    $return_count=$start_count;<br />
+    $store_id=fopen&#40;$store_file,&amp;quot;w&amp;quot;&#41;;<br />
+    fwrite&#40;$store_id,$return_count&#41;;<br />
+    fclose&#40;$store_id&#41;;<br />
+    unset&#40;$store_id&#41;;<br />
+  &#125;<br />
+<br />
+  return $return_count;<br />
+  unset&#40;$safemode,$return_count&#41;;<br />
+&#125;<br />
+<br />
+if&#40;&#40;count&#40;$ref_paths&#41;==0&#41;||&#40;in_array&#40;&#40;&#40;strpos&#40;$HTT  P_REFERER,&amp;quot;?&amp;quot;&#41;===FALSE&#41;?$HTTP_REFERER&#58;substr&#40;$HTTP  _REFERER,0,strpos&#40;$HTTP_REFERER,&amp;quot;?&amp;quot;&#41;&#41;&#41;,$ref_paths&#41;  &#41;&#41;<br />
+  $new_count=manstats&#40;0&#41;;<br />
+else<br />
+  $new_count=manstats&#40;1&#41;;<br />
+<br />
+if&#40;&#40;$mode==&amp;quot;graphic&amp;quot;&#41;&amp;amp;&amp;amp;&#40;function_exists&#40;&amp;quot;imagepng&amp;quot;  &#41;&#41;&#41;&#123;<br />
+  if&#40;&#40;$img_base==&amp;quot;&amp;quot;&#41;||&#40;!&#40;$myimg=imagecreatefrompng&#40;$  img_base&#41;&#41;&#41;&#41;<br />
+    $myimg=imagecreate&#40;60,15&#41;;<br />
+  $basey=imagesy&#40;$myimg&#41;-15;<br />
+  $basey=&#40;$basey&amp;lt;0&#41;?0&#58;$basey;<br />
+  $bgcolor=imagecolorallocate&#40;$myimg,$back_color&#91;R&#93;,  $back_color&#91;G&#93;,$back_color&#91;B&#93;&#41;;<br />
+  imagefilledrectangle&#40;$myimg,0,$basey,59,$basey+14,  $bgcolor&#41;;<br />
+  $txtcolor=imagecolorallocate&#40;$myimg,$text_color&#91;R&#93;  ,$text_color&#91;G&#93;,$text_color&#91;B&#93;&#41;;<br />
+  imagestring&#40;$myimg,3,3,$basey+1,str_pad&#40;$new_count  ,8,&amp;quot;0&amp;quot;,STR_PAD_LEFT&#41;,$txtcolor&#41;;<br />
+  header&#40;&amp;quot;Content-type&#58; image/png&amp;quot;&#41;;<br />
+  imagepng&#40;$myimg&#41;;<br />
+  imagedestroy&#40;$myimg&#41;;<br />
+  unset&#40;$myimg,$txtcolor,$bgcolor,$basey&#41;;<br />
+&#125;<br />
+else<br />
+  echo&amp;quot;<br />
+	&amp;lt;HTML&amp;gt;<br />
+	&amp;lt;BODY BGCOLOR='#&amp;quot;.dechex&#40;$back_color&#91;R&#93;&#41;.dechex&#40;$back_co  lor&#91;G&#93;&#41;.dechex&#40;$back_color&#91;B&#93;&#41;.&amp;quot;' TEXT='#&amp;quot;.dechex&#40;$text_color&#91;R&#93;&#41;.dechex&#40;$text_color  &#91;G&#93;&#41;.dechex&#40;$text_color&#91;B&#93;&#41;.&amp;quot;'&amp;gt;<br />
+		&amp;lt;DIV ALIGN='center' STYLE='font-family&#58;Arial;font-size&#58;9pt;font-weight&#58;bold'&amp;gt;<br />
+			&amp;quot;.str_pad&#40;$new_count,8,&amp;quot;0&amp;quot;,STR_PAD_LEFT&#41;.&amp;quot;<br />
+		&amp;lt;/DIV&amp;gt;<br />
+	&amp;lt;/BODY&amp;gt;<br />
+	&amp;lt;/HTML&amp;gt;<br />
+  &amp;quot;;<br />
+<br />
+unset&#40;$new_count&#41;;<br />
+unset&#40;$start_count,$img_base,$back_color,$text_col  or,$store_file,$stats_file,$ref_paths&#41;;<br />
+<br />
+?&amp;gt;</div></div><hr />
+
+
+<div id="copyright">vBulletin v3.5.3, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

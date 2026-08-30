@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="DCC Ports, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] DCC Ports Angolo tecnico" />
+	
+	<title>DCC Ports [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php/">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-13.html">Angolo tecnico</a> &gt; DCC Ports</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=525">DCC Ports</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Scen</div><div class="date">26-04-2002, 08:29</div></div><div class="posttext">Ciao, spero di aver beccato la sezione giusta per questa richiesta di aiuto! :smile: Io voglio far funzionare i Transfers DCC attraverso un firewall (nel mio caso specifico uso Zonealarm Pro). Siccome non voglio settare nel firewall che mIRC abbia accesso a tutte le porte, ma solo a quelle necessarie, avrei bisogno di capire un attimo come funziona questo aspetto (per le porte IRC 6660-6670 e 7000 tutto ok :wink: ). Nelle opzioni di mIRC (il client che uso) le porte configurate di default per i DCC sono dalla 1024 alla 5000; ogni porta serve x un transfer DCC, o sbaglio? Se io volessi limitare il mio client a 10 transfers DCC in contemporanea, posso ridurre il range a 1024-1034 (x esempio)? O è necessario che entrambi i client utilizzino la stessa porta nel DCC (quindi per non avere problemi dovrei lasciare il range predefinito) ? <br />
+O ci sono delle porte &quot;preferenziali&quot; da usare nei DCC (tipo la 1040 ecc ecc. uaz uaz qui sto impazzendo, non cancellatemi il topic :wink: ) ?<br />
+Raga, datemi qualche ragguaglio, vi ringrazio in anticipo!<br />
+<br />
+Ciao<br />
+<br />
+Scen</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">debiAn</div><div class="date">26-04-2002, 08:48</div></div><div class="posttext">Nelle opzioni di mIRC (il client che uso) le porte configurate di default per i DCC sono dalla 1024 alla 5000; ogni porta serve x un transfer DCC, o sbaglio? <br />
+<br />
+<br />
+Si, ogni volta che apri una DCC una porta in quel range viene utilizzata dal client per stabilire la DCC.<br />
+<br />
+<br />
+Se io volessi limitare il mio client a 10 transfers DCC in contemporanea, posso ridurre il range a 1024-1034 (x esempio)? O è necessario che entrambi i client utilizzino la stessa porta nel DCC (quindi per non avere problemi dovrei lasciare il range predefinito) ? <br />
+<br />
+<br />
+Non so come ragiona mIRC ma teoricamente quello che dici è giusto, se limiti il range da 1024 a 1034 il mIRC utilizzera' solo porte comprese in quell'intervallo. Ovviamente il numero massimo N di DCC che potrai effettuare sarà uguale ad intervallo_superiore - intervallo_inferiore.<br />
+<br />
+Per la tua seconda domanda, non è assolutamente necessario che entrambi i client che stabiliscono la DCC debbano usare la stessa porta o il medesimo range.<br />
+<br />
+<br />
+O ci sono delle porte &quot;preferenziali&quot; da usare nei DCC (tipo la 1040 ecc ecc. uaz uaz qui sto impazzendo, non cancellatemi il topic :wink: ) ?<br />
+Raga, datemi qualche ragguaglio, vi ringrazio in anticipo!<br />
+<br />
+<br />
+Nessuna porta preferenziale, tutte le porte &gt; di 1024 sono *buone*<br />
+<br />
+Ciao<br />
+<br />
+-- debiAn</div></div><hr />
+
+
+<div id="copyright">vBulletin&reg; v3.6.7, Copyright &copy;2000-2007, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

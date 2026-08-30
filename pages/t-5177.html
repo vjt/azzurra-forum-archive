@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="pthread e system(), azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] pthread e system() Programmazione e dintorni" />
+		<title>pthread e system() [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-23.html">Programmazione e dintorni</a> &gt; pthread e system()</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=5177">pthread e system()</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">silentman</div><div class="date">16-07-2004, 10:06</div></div><div class="posttext">Un bel problema:<br />
+<br />
+#include &amp;lt;stdlib.h&amp;gt;<br />
+#include &amp;lt;unistd.h&amp;gt;<br />
+#include &amp;lt;stdio.h&amp;gt;<br />
+#include &amp;lt;pthread.h&amp;gt;<br />
+<br />
+void * thread_function&#40;void *x&#41;;<br />
+<br />
+int main&#40;int argc, char *argv&#91;&#93;&#41;<br />
+&#123;<br />
+	int rc;<br />
+	pthread_t tid;<br />
+	void *rp;<br />
+<br />
+	if &#40; pthread_create&#40;&amp;amp;tid, NULL, thread_function, rp&#41; != 0 &#41; &#123;<br />
+		return&#40;-1&#41;;<br />
+	&#125;<br />
+<br />
+	system &#40;&amp;quot;/bin/touch ./STOPPED&amp;quot;&#41;;<br />
+<br />
+	return&#40;0&#41;;<br />
+&#125;<br />
+<br />
+void * thread_function&#40;void *x&#41;<br />
+&#123;<br />
+	int count=0;<br />
+	while&#40;1&#41;<br />
+	&#123;<br />
+		printf&#40;&amp;quot;thread&#58; %d\n&amp;quot;,count++&#41;;<br />
+		sleep&#40;1&#41;;<br />
+	&#125;<br />
+	return&#40;NULL&#41;;<br />
+&#125;<br />
+<br />
+<br />
+A valle dell'esecuzione della pthread_create(), il programma rimane bloccato sulla system(), il file &quot;STOPPED&quot; non viene creato.<br />
+<br />
+Compilato con:<br />
+CC= g++ -fPIC $&#40;CFLAGS&#41; -g -O3 -static<br />
+<br />
+su vari kernel, stesso risultato.<br />
+<br />
+Provato anche a:<br />
+- creare il thread in DETACHED state<br />
+- uscire dal thread con pthread_exit() invece di return()<br />
+- usare pthread_cancel() dal main thread<br />
+<br />
+ottenendo sempre lo stesso risultato.<br />
+Idee?<br />
+<br />
+&quot;Astenersi perditempo&quot;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">silentman</div><div class="date">16-07-2004, 12:30</div></div><div class="posttext">Aggiornamento:<br />
+<br />
+$ uname -r<br />
+2.4.20-8smp<br />
+$ gcc --version<br />
+gcc (GCC) 3.2.2 20030222 (Red Hat Linux 3.2.2-5)<br />
+<br />
+Su questo sistema funziona.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">sviat</div><div class="date">22-07-2004, 09:42</div></div><div class="posttext">sviatoslav@worklab:/home/sviatoslav&amp;gt; cc -pthread -fPIC -o silent silent.c<br />
+sviatoslav@worklab:/home/sviatoslav&amp;gt; ./silent<br />
+thread: 0<br />
+sviatoslav@worklab:/home/sviatoslav&amp;gt;<br />
+<br />
+compilato su FreeBSD 5.2.1 <br />
+mi crea anche STOPPED<br />
+<br />
+P.S: ho cambiato il path di /bin/touch in /usr/bin/touch.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">silentman</div><div class="date">22-07-2004, 09:50</div></div><div class="posttext">Avevo dimenticato di postare per chiudere il thread, ma ho capito il perche'. La macchina su cui sviluppavo in origine e' piuttosto vecchia<br />
+<br />
+$ uname -r<br />
+2.2.14-5.0<br />
+$ gcc --version<br />
+egcs-2.91.66<br />
+Reading specs from /usr/lib/gcc-lib/i386-redhat-linux/egcs-2.91.66/specs<br />
+gcc version egcs-2.91.66 19990314/Linux &#40;egcs-1.1.2 release&#41;<br />
+<br />
+e' bastato upgradare kernel, gcc, e pthread per far si che tutto andasse alla perfezione.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">sviat</div><div class="date">22-07-2004, 10:04</div></div><div class="posttext">ah ecco: infatti non vedevo nulla di strano in quel code</div></div><hr />
+
+
+<div id="copyright">vBulletin v3.5.3, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

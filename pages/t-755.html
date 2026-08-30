@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="DEV-C++, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] DEV-C++ Programmazione e dintorni" />
+		<title>DEV-C++ [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-23.html">Programmazione e dintorni</a> &gt; DEV-C++</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=755">DEV-C++</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">[[D4RkNeSs]]</div><div class="date">30-06-2002, 14:30</div></div><div class="posttext">Salve io premetto che so ben poko di C/C++<br />
+mi dite se questo è giusto?<br />
+<br />
+#include<br />
+MessageBox (NULL, &quot;prova&quot; , &quot;Prova&quot;, 0 + MB_ICONEXCLAMATION);<br />
+<br />
+Cmq mettendo che  giusto o sbagliato<br />
+dopo che devo fare per farlo esegiure come exe?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Shaka</div><div class="date">30-06-2002, 21:23</div></div><div class="posttext">l' #include è di windows.h e il 0 + non è necessario. Per il resto è corretto.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">[[D4RkNeSs]]</div><div class="date">01-07-2002, 10:51</div></div><div class="posttext">compilazione fallita cmq ci sono riuscito<br />
+così<br />
+<br />
+#include &lt;windows.h&gt;<br />
+int main()<br />
+{<br />
+<br />
+MessageBox (NULL, Prova&quot;, 0 + MB_ICONEXCLAMATION);<br />
+}</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Shaka</div><div class="date">02-07-2002, 11:10</div></div><div class="posttext">Stavolta la sintassi è sbagliata.<br />
+<br />
+Quella corretta è:<br />
+<br />
+int MessageBox(HWND hWnd, LPCTSTR lpText, LPCTSTR lpCaption, UINT uType);<br />
+<br />
+ad eg:<br />
+<br />
+MessageBox(NULL, &quot;Questo è il testo&quot;, &quot;Questo è il titolo&quot;, MB_ICONEXCLAMATION);<br />
+<br />
+<br />
+Shaka</div></div><hr />
+
+
+<div id="copyright">vBulletin v3.5.3, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

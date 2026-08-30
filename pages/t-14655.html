@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content=" BOT : Come crearne uno su Linux usando X-Chat e BuDuScRiPt, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio]  BOT : Come crearne uno su Linux usando X-Chat e BuDuScRiPt #buduscript" />
+	
+	<title> BOT : Come crearne uno su Linux usando X-Chat e BuDuScRiPt [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="http://forum.azzurra.org/archive/index.php">Azzurra IRC Network Forum</a> &gt; <a href="http://forum.azzurra.org/archive/index.php/f-7.html">I Vostri Forum</a> &gt; <a href="http://forum.azzurra.org/archive/index.php/f-117.html">#buduscript</a> &gt;  BOT : Come crearne uno su Linux usando X-Chat e BuDuScRiPt</div>
+<hr />
+<div class="pda"><a href="http://forum.azzurra.org/archive/index.php/t-14655.html?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=14655">BOT : Come crearne uno su Linux usando X-Chat e BuDuScRiPt</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">BuDuS</div><div class="date">17-08-2007, 15:52</div></div><div class="posttext">Al fine di mostrare le potenzialità del plug-in (BuDuScRiPt), ho creato una serie di MACRO e di BASH SCRIPT che &quot;assemblati&quot; vanno a realizzare un sistema che, sostanzialmente, ha poco o nulla da invidiare a IRC BOT ben più blasonati e soprattutto famosi come eggdrop .<br />
+<br />
+ Il tutto è possibile realizzarlo partendo da X-Chat, che viene sfruttato come client per connettersi ai server IRC e gestire la connessione, e poi aggiungendo a quest'ultimo le numerose funzionalità offerte da BuDuScRiPt.<br />
+<br />
+ Inizialmente era solo un &quot;esempio&quot;, ma oggi, a suon di miglioramenti e aggiunte, è divenuto un vero e proprio BOT con la possibilità di gestire contemporaneamente più servers/canali, consentire un accesso ai comandi tramite Privilegi e dare la possibilità all'utente di aggiungere comandi &quot;costruendoseli&quot;.<br />
+<br />
+ Non è particolarmente difficile metterlo in piedi, anzi, gode di procedure automatiche che guidano l'utente passo-passo in modo da ottenere un BOT funzionante in pochissimo tempo.<br />
+<br />
+Dando per scontato che X-Chat è già installato e se ne conosce l'uso (almeno minimale), chiaramente è necessario procurarsi sia il plug-in che i files di personalizzazione del BOT da questo indirizzo:<br />
+<br />
+http://digilander.libero.it/udasoft/Software/Linux/buduscript/<br />
+<br />
+ Nella pagina download bisognerà prelevare prima il file binario; se ad esempio la versione di X-Chat in uso è la 2.8.0 , bisognerà scaricare il file buduscript_3030_2800.tar.gz .<br />
+<br />
+ Verso la fine della medesima pagina, oltre a parecchia altra roba di supporto che uno può scaricarsi, c'è pure il file del BOT, una cosa simile a: buduscript_bot-10.0.tar.gz<br />
+<br />
+ Una volta scaricati, probabilmente vengono messi proprio sul proprio Desktop. Per installarli, dovrebbe essere sufficiente aprire un terminale e procedere così:<br />
+<br />
+tar xvzf Desktop/buduscript_3030_2800.tar.gz -C .xchat2<br />
+tar xvzf Desktop/buduscript_bot-10.0.tar.gz -C .xchat2<br />
+cd .xchat2/buduscript<br />
+./install.sh<br />
+A questo punto sia plug-in che BOT sono installati, tuttavia il BOT non è configurato; prima di configurarlo è indispensabile accertarsi che almeno il plug-in funzioni senza problemi, per farlo occorre lanciare X-Chat e, una volta entrati in un canale vuoto (su qualsiasi server IRC), digitare il seguente comando (è un comando IRC da digitare al prompt di X-Chat):<br />
+<br />
+/budus ver<br />
+se tutto è andato ok dovrebbe apparire un messaggio con la versione del plug-in.<br />
+<br />
+ A questo punto occorre uscire da X-Chat e tornare nel terminale usato in precedenza (se lo si è chiuso, occorre ripetere solo il comando cd .xchat2/buduscript ); per configurare anche il BOT occorre lanciare il seguente comando:<br />
+./bot_configure_easy.sh Questa procedura farà una serie di domande alle quali è necessario rispondere con estrema attenzione, e sono:<br />
+ Nickname Amministratore ; il BOT deve conoscere il nickname dell'utente che avrà la facoltà di amministrarlo. L'Amministratore può usare tutti i comandi che verranno attivati, in qualsiasi canale sia presente il BOT. Normalmente solo un utente ha questo privilegio, a tutti gli altri viene concesso di usare solo specifici comandi.<br />
+ Hostname Amministratore ; dato che l'uso di alcuni comandi del BOT può causare un COLOSSALE BUCO DI SICUREZZA (sostanzialmente permettono di fare QUALSIASI COSA con i privilegi dell'uten

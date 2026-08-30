@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Visualizzazione Nick scaduti, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] Visualizzazione Nick scaduti Services - I servizi IRC di Azzurra" />
+	
+	<title>Visualizzazione Nick scaduti [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-6.html">Network Central</a> &gt; <a href="f-30.html">Services - I servizi IRC di Azzurra</a> &gt; Visualizzazione Nick scaduti</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=4863">Visualizzazione Nick scaduti</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">trekfan1</div><div class="date">31-05-2004, 07:40</div></div><div class="posttext">Quando pulisco le liste con il comando /cs ?op #chan clean chanserv mi risponde con:<br />
+<br />
+-Chanserv- x nicks scaduti sono stati rimossi dalla ?OP list di #xxxxxx<br />
+-Chanserv- @#xxxxx- trekfan1 ha rimosso i nick scaduti dalla ?OP list<br />
+<br />
+sarebbe possibile far visualizzare anche i nick scaduti? <br />
+<br />
+es:<br />
+<br />
+-Chanserv- x nicks scaduti sono stati rimossi dalla ?OP list di #xxxxxx<br />
+-Chanserv- @#xxxxx- trekfan1 ha rimosso i nick scaduti dalla ?OP list<br />
+-Chanserv- @#xxxxx- I seguenti nick sono stati rimossi: fdsf sfafad ecc<br />
+<br />
+Credo che in certi chan farebbe comodo, specialmente in quei chan con liste chilometriche :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dracoo</div><div class="date">31-05-2004, 10:30</div></div><div class="posttext">Concordo... perchè spulciare le liste cercando gli &quot;Expired&quot; fa venire male agli occhi :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">typedef_c</div><div class="date">31-05-2004, 13:06</div></div><div class="posttext">Personalmente credo che un founder dovrebbe conoscere le liste del proprio canale e quindi che il clean semplice basti e avanzi. :)<br />
+<br />
+Saluti type</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dracoo</div><div class="date">31-05-2004, 14:07</div></div><div class="posttext">Personalmente credo che un founder dovrebbe conoscere le liste del proprio canale e quindi che il clean semplice basti e avanzi. :)<br />
+<br />
+Saluti type<br />
+A parte il fatto che il clean è accessibile anche a Sop e Cf, non penso sia di così grande peso il tutto... no  :-?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Superfre`</div><div class="date">31-05-2004, 14:09</div></div><div class="posttext">Scusate ma.. non scompare da solo un nick dalla lista quando quel nick scade o viene droppato?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dracoo</div><div class="date">31-05-2004, 15:44</div></div><div class="posttext">Scusate ma.. non scompare da solo un nick dalla lista quando quel nick scade o viene droppato?<br />
+<br />
+No. Se fai il list della lista (scusa il gioco di parole) al posto dell'ultima mask usata, viene scritto &quot;Expired&quot;.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Superfre`</div><div class="date">31-05-2004, 16:40</div></div><div class="posttext">e una persona che registrasse quel nick dopo che é scaduto in lista si ritroverebbe operatore del canale????? Se é cosi é un bug di sicurezza per i chan.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">trekfan1</div><div class="date">31-05-2004, 17:05</div></div><div class="posttext">Eh si, per questo è importante ogni tanto dare il comando di clean!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">typedef_c</div><div class="date">31-05-2004, 18:05</div></div><div class="posttext">Eh si, per questo è importante ogni tanto dare il comando di clean!<br />
+<br />
+<br />
+No, nel caso il nick venga riregistrato deve essere cancellato e rinserito nelle liste del canale (in caso contrario rimane expired e non viene oppato). :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Superfre`</div><div class="date">31-05-2004, 20:41</div></div><div class="posttext">mmm ok, capito.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">trekfan1</div><div class="date">02-06-2004, 08:13</div></div><div class="posttext">Eh si, per questo è importante ogni tanto dare il comando di clean!<br />
+ <br />
+No, nel caso il nick venga riregistrato deve essere cancellato e rinserito nelle liste del canale (in caso contrario rimane expired e non viene oppato). :) <br />
+Ok, però per mantenere le liste pulite è sempre meglio ogni tanto dare il comando di clean, però ripeto: sapere che nick vengono rimossi sarebbe comodo :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Superfre`</div><div class="date">02-06-2004, 17:52</div></div><div class="posttext">adesso che l'ho scoperto pure io concordo.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">trekfan1</div><div class="date">15-06-2004, 19:26</div></div><div class="posttext">Mi sembra che questo topic sia passato inosservato 8) :-?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Superfre`</div><div class="date">25-10-2004, 01:07</div></div><div class="posttext">Riprendiamo questo topic...<br />
+<br />
+-Qualche giorno fa avevo 7 nick scaduti fra i 180 aop in lista. <br />
+-Sempre qualche giorno fa ho scoperto che si puo fare il list di una parte della lista aop con il comando<br />
+/cs aop #canale list pippo*<br />
+che restituisce tutti i nick che iniziano per pippo<br />
+- Entusiasta della mia scoperta sono entrato in irchelp e ho chiesto se era possibile fare la ricerca per mask e conoscere gli expired con questo sistema. Mi ha risposto tecnico daniele mi sembra.<br />
+- Perche non implementare una opzione dello stesso comando che riporti tutti gli expired?<br />
+/cs aop #canale list expired</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">trekfan1</div><div class="date">25-10-2004, 07:00</div></div><div class="posttext">Bè si non nego che un'opzione del genere farebbe comodo, però sarebbe anche comodo che chanserv visualizzi i nick scaduti al momento della rimozione, chiaro che se è una cosa piuttosto difficile da implementare andrebbe bene anche quella possibilità  :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dracoo</div><div class="date">25-10-2004, 14:20</div></div><div class="posttext">Bè si non nego che un'opzione del genere farebbe comodo, però sarebbe anche comodo che chanserv visualizzi i nick scaduti al momento della rimozione, chiaro che se è una cosa piuttosto difficile da implementare andrebbe bene anche quella possibilità  :)<br />
+<br />
+Non penso sia difficile... al momento della cancellazione, basta aggiungere un notice, oppure stampare la lista alla fine (aggiungendo i nick in una matrice per esempio...)<br />
+<br />
+Idem per la listare i nick scaduti, basta implementare un ciclo che stampi solo quelli scaduti... penso sia fattibile!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">25-10-2004, 22:34</div></div><div class="posttext">Esiste gia' il comando CLEAN per eliminare i nick scaduti... scusate ma non afferro il vostro problema :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gastaman</div><div class="date">25-10-2004, 22:49</div></div><div class="posttext">L'idea di listare solo i nick scaduti non è male, vedo di inserirla nel prossimo aggiornamento (la sintassi penso sarà XOP LIST [pattern] [EXPIRED]).<br />
+Per quanto riguarda la notifica al clean, per quanto di facile implementazione, potrebbe potenzialmente floodare il canale in caso di liste con molti nick scaduti, e con la possibilità di listarli prima di inviare il comando sarebbe di limitata utilità, quindi mi sa che non sarà fatto.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Superfre`</div><div class="date">25-10-2004, 23:21</div></div><div class="posttext">Perfetto! Mitico Gastaman!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">trekfan1</div><div class="date">02-11-2004, 07:32</div></div><div class="posttext">L'idea di listare solo i nick scaduti non è male, vedo di inserirla nel prossimo aggiornamento (la sintassi penso sarà XOP LIST [pattern] [EXPIRED]).<br />
+Per quanto riguarda la notifica al clean, per quanto di facile implementazione, potrebbe potenzialmente floodare il canale in caso di liste con molti nick scaduti, e con la possibilità di listarli prima di inviare il comando sarebbe di limitata utilità, quindi mi sa che non sarà fatto. <br />
+Ma se uno lo usa abbastanza frequentemente il comando di clean non penso che parta il flood, e cmq sarebbe solo un notice che si vede nei chan con attivo il verbose   :-)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Superfre`</div><div class="date">02-11-2004, 09:54</div></div><div class="posttext">piu che altro non capisco in che senso verrebbe flooddato il canale. Al limite verrebbe floddato il sop+ che si mette a pulire le liste. Ma e' lo stesso tipo di flood che avrebbe a visualizzare l'intera lista degli aop anzi, meno. Cmq a me va piu che bene l'opzione expired nel cs list quindi non discuto :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Superfre`</div><div class="date">28-03-2005, 13:13</div></div><div class="posttext">L'idea di listare solo i nick scaduti non è male, vedo di inserirla nel prossimo aggiornamento (la sintassi penso sarà XOP LIST [pattern] [EXPIRED]).<br />
+Per quanto riguarda la notifica al clean, per quanto di facile implementazione, potrebbe potenzialmente floodare il canale in caso di liste con molti nick scaduti, e con la possibilità di listarli prima di inviare il comando sarebbe di limitata utilità, quindi mi sa che non sarà fatto.<br />
+<br />
+Gastaman non è piu coder ma l'idea è morta li?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mav</div><div class="date">28-03-2005, 21:23</div></div><div class="posttext">Gastaman non è piu coder ma l'idea è morta li?<br />
+<br />
+Non è il caso di stare a spiegare qui la situazione che si è venuta a creare nel momento in cui è cambiato lo staff coder. Ti basti sapere che i coder che ci sono al momento fanno il possibile compatibilmente con i loro impegni e il loro tempo libero, come d'altra parte fa tutto il resto dello staff di Azzurra. :-)<br />
+<br />
+Sono state individuate delle priorità per supportare tempestivamente e al meglio l'aggiunta degli HalfOp sui servizi e correggere i relativi bug. Credo che la situazione al momento sia decisamente buona. Ciò non toglie che ci sono altri campi su cui lavorare e che al momento hanno priorità maggiore del supporto alla visualizzazione dei soli nick scaduti nelle access list dei canali.<br />
+<br />
+Insomma, al prossimo upgrade probabilmente quella feature sarà implementata. Tuttavia non c'è una data precisa... pazienza giovane padawan!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">tulifaiv</div><div class="date">28-03-2005, 21:30</div></div><div class="posttext">Personalmente la ritengo una feature abbastanza inutile, se non altro perché quando ho bisogno di listare gli scaduti uso una procedura molto più semplice (secondo me):<br />
+/xop (ho un simpatico alias che mi mostra le liste così)<br />
+ctrl+f<br />
+Digito exp<br />
+return<br />
+E mIRC mi visualizza i nick scaduti uno alla volta, senza stare a digitare roba ai services</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Superfre`</div><div class="date">28-03-2005, 22:14</div></div><div class="posttext">grazie mav, volevo solo sapere se era ancora nel to do o se era stata cancellata del tutto. Molto gentile.<br />
+<br />
+Tulifaiv, non sono capace di fare queste cose. Credo sia utile a mezza azzurra e infatti non è stata richiesta unicamente da me.</div></div><hr />
+
+
+<div id="copyright">vBulletin&reg; v3.6.4, Copyright &copy;2000-2007, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

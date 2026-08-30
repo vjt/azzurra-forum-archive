@@ -1,0 +1,300 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Eggdrop e &quot;SVSKilled: Smetti di floodare i servizi&quot, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] Eggdrop e &quot;SVSKilled: Smetti di floodare i servizi&quot Programmazione e dintorni" />
+		<title>Eggdrop e &quot;SVSKilled: Smetti di floodare i servizi&quot [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-23.html">Programmazione e dintorni</a> &gt; Eggdrop e &quot;SVSKilled: Smetti di floodare i servizi&quot</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=5940">Eggdrop e &quot;SVSKilled: Smetti di floodare i servizi&quot</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Kid</div><div class="date">23-10-2004, 11:33</div></div><div class="posttext">Ciao a tutti  :D <br />
+<br />
+sul mio eggdrop ho caricato la tcl Azzurra.tcl scaricata su egghelp, però ho un piccolo problema di flood hai servizi. Se l'egg joina su almeno 2/3 canali dove è solo vop, ogni 20/24 ore cade x flood. Telenettando il bot mi accorgo ke effettivamente ogni minuto tenta di ooparsi, ovviamente senza successo. Sarebbe possibile rallentare la richiesta di op? credo che impostandola ongi 5 minuti fare 1 grosso favore al mio egg e ad azzurra  :P <br />
+<br />
+grassie ciauuuuuuu</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">24-10-2004, 13:41</div></div><div class="posttext">Scusa, una domanda stupida: perche' tenta di opparsi se e' solo vop? Non puoi disabilitare direttamente quel comando?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kid</div><div class="date">24-10-2004, 18:14</div></div><div class="posttext">Scusa, una domanda stupida: perche' tenta di opparsi se e' solo vop? Non puoi disabilitare direttamente quel comando?<br />
+<br />
+si, a capire cosa editare ... si  :(</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kid</div><div class="date">02-11-2004, 22:42</div></div><div class="posttext">Scusa, una domanda stupida: perche' tenta di opparsi se e' solo vop? Non puoi disabilitare direttamente quel comando?ho provato varie tcl ma questa è senza dubbio la + completa e funzionale ( ovviamente ho corretto il bug del NS_pass / NS:pass ), così l'ho ricaricata e ho cominciato a giocarci tentando di rallentare un pochino la richiesta di riop.<br />
+ <br />
+credo di esserci riuscito, ora chiede il riop a chanserv ogni 5 minuti.<br />
+ <br />
+ <br />
+il prossimo passo sarebbe questo: fargli chiedere il riop per tutti i canali dove non è op, ed 1 volta che ha terminato &quot;il giro&quot; farlo fermare per 5 minuti. oppure settare in una variabile i soli canali dove ha il permesso di richiedere il riop<br />
+ <br />
+ <br />
+ricordo l'url della tcl iniziale: http://www.egghelp.org/cgi-bin/tcl_archive.tcl?mode=download&amp;id=752 ... e se volete posso postare il codice, magari (sicuramente) qualcuno + bravo di me ha qualche suggerimento<br />
+ <br />
+ <br />
+ciao :D :D :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dracoo</div><div class="date">02-11-2004, 23:12</div></div><div class="posttext">Io invece con quella tcl, ho il problema che si identifica al nick anche più di una volta al minuto... HELP!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kid</div><div class="date">10-11-2004, 22:25</div></div><div class="posttext">io ne sto scrivendo una analoga, perchè l'editing dell'originale mi ha dato + problemi che altro, ovviamente nel scrivere quella nuova sono partito da azzurra.tcl<br />
+ <br />
+mi da solo un errore:<br />
+[21:33] Tcl error [chanserv_ok]: wrong # args: should be &quot;chanserv_ok type&quot;<br />
+ <br />
+ <br />
+e la procedura è <br />
+ <br />
+proc chanserv_ok {args} { <br />
+incr cs_ok 1<br />
+}<br />
+ <br />
+ <br />
+io vorrei *solo* incrementare di 1 la variabile cs_ok, ma non riesco<br />
+ <br />
+qualcuno mi sa aiutare?<br />
+risolto questo dvrebbe funzionare benino e potrei renderla pubblica :-) <br />
+ <br />
+grassie<br />
+ <br />
+ <br />
+ <br />
+ciauuuuuu</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kid</div><div class="date">10-11-2004, 22:40</div></div><div class="posttext">mi rispondo da solo<br />
+ <br />
+ho corretto la procedura in questo modo<br />
+ <br />
+ <br />
+ <br />
+   <br />
+proc chanserv_ok {args} {<br />
+global cs_ok<br />
+incr cs_ok 1<br />
+}<br />
+ <br />
+ <br />
+uff, sembra fungere finalmente :D :D :D :D <br />
+ <br />
+se a qualcuno servisse lo dica, la passo volentieri per un test</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">zed</div><div class="date">30-12-2004, 01:39</div></div><div class="posttext">salve a tutti,<br />
+<br />
+riesumo questo post per sapere se qualcuno e' riuscito a modificare azzurra.tcl (visto che nei chan in cui l'egg e' solo VOP egli si identifica ogni 60 sec circa)<br />
+<br />
+grazie :-)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gitan</div><div class="date">30-12-2004, 03:17</div></div><div class="posttext">Ma non è meglio aggiungere queste 3 righe nel file *.conf  ??<br />
+ <br />
+bind evnt - init-server evnt:init_server<br />
+proc evnt:init_server {type} {<br />
+  global botnick<br />
+  putquick &quot;MODE $botnick +i-xws&quot;<br />
+  putserv &quot;PRIVMSG NICKSERV :identify NICK PASS&quot;<br />
+}</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dracoo</div><div class="date">30-12-2004, 13:25</div></div><div class="posttext">La sto riscrivendo da capo... diciamo che è fatta un po' con i piedi... solo che il mio bottolo è down ora :E</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">zed</div><div class="date">30-12-2004, 13:31</div></div><div class="posttext">@Gitan<br />
+<br />
+non penso che aggiungendo quelle righe si risolva il problema della multi-identificazione :D <br />
+<br />
+@dracoo<br />
+<br />
+quando l'hai finita la condividi? :shy2:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dracoo</div><div class="date">30-12-2004, 14:42</div></div><div class="posttext">@Gitan<br />
+ <br />
+non penso che aggiungendo quelle righe si risolva il problema della multi-identificazione :D <br />
+ <br />
+@dracoo<br />
+ <br />
+quando l'hai finita la condividi? :shy2:D'accordo, è che devo imparare ad usare gli eventi Mode e Raw... gh<br />
+Poi quando funzia, al limite la pubblico :-) <br />
+La mia prima tcl...gh</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dracoo</div><div class="date">30-12-2004, 21:03</div></div><div class="posttext">A Voi il debug...gh<br />
+ <br />
+ <br />
+set identified 0<br />
+set Nickpass &quot;pass&quot; <br />
+### Al posto di &quot;pass&quot; metteteci la passoword del Bottolo, gh :-) <br />
+adduser NickServ NickServ!service@azzurra.org<br />
+chattr NickServ -hp+fF<br />
+ <br />
+### BINDS<br />
+bind evnt - init-server identifica<br />
+bind notc -|F &quot;*Password accettata per il nick*&quot; conferma<br />
+bind mode - * deop_proc<br />
+bind raw - 473 invite_proc<br />
+bind raw - 475 invite_proc<br />
+ <br />
+### PROCS<br />
+ <br />
+proc identifica {} {<br />
+global Nickpass<br />
+putserv &quot;PRIVMSG NickServ :identify $NS_pass&quot;<br />
+}<br />
+ <br />
+proc conferma {nick uhost handle text {dest &quot;&quot;}} {<br />
+global botnick; if {$dest == &quot;&quot;} {set dest $botnick}<br />
+gloabl identified<br />
+if {$nick == NickServ} { set identified 1 }<br />
+}<br />
+ <br />
+proc deop_proc {nick uhost hand chan mc victim} {<br />
+global botnick <br />
+global identified<br />
+if {[$mc == &quot;-o&quot;] &amp;&amp; [$victim == $botnick] &amp;&amp; [$identified == 1]} {<br />
+putserv &quot;msg ChanServ :op $chan $botnick&quot;<br />
+}<br />
+}<br />
+proc invite_proc {from key arg} {<br />
+global botnick <br />
+global identified<br />
+set chan [lindex $arg 2]<br />
+if {[$identified == 1]} {<br />
+putserv &quot;msg ChanServ :invite $chan&quot;<br />
+putserv &quot;Join $chan&quot;<br />
+}<br />
+}</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Drizzt</div><div class="date">01-01-2005, 19:06</div></div><div class="posttext">Semplice tcl di autoidentificazione ;)<br />
+P.S. Non usare i raw quando non servono, usa bind need :)<br />
+<br />
+<br />
+#Password del Nickname<br />
+set nickserv(password) &quot;password_del_bot&quot;<br />
+#Nick di NickServ<br />
+set nickserv(nick) &quot;NickServ&quot;<br />
+#Host di NickServ<br />
+set nickserv(host) &quot;service@azzurra.org&quot;<br />
+<br />
+#Stringa di riconoscimento del Nickserv<br />
+bind notc - &quot;Questo nick e' stato registrato da un altro utente. Per favore scegline un altro.&quot; ns:id<br />
+<br />
+proc ns:id { nick uhost handle text dest } {<br />
+  global nickserv<br />
+  if { $nick == $nickserv(nick) &amp;&amp;  $uhost == $nickserv(host) } {<br />
+    putquick &quot;PRIVMSG $nickserv(nick) :identify $nickserv(password)&quot;<br />
+    putcmdlog &quot;Identificazione in corso....&quot;<br />
+  }<br />
+}</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dracoo</div><div class="date">01-01-2005, 20:55</div></div><div class="posttext">Semplice tcl di autoidentificazione ;)<br />
+P.S. Non usare i raw quando non servono, usa bind need :)<br />
+ <br />
+Se io metto un bind need sulla @ continua a farmi la procedura richiamata se questa non ha buon termine (perchè ad esempio il bot non è aop+ nel canale). Perciò mi trovo il bot che continua a tentare di opparsi...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kid</div><div class="date">16-01-2005, 13:08</div></div><div class="posttext">già che ci siamo posto pure la mia tcl, non sarà una meraviglia in quanto a codice, ma a me funge abbastanza bene :D <br />
+ <br />
+ <br />
+ <br />
+ <br />
+# Impostazioni per l'identificazione automatica a nickserv<br />
+set egg_nick &quot;nick&quot;<br />
+set egg_pass &quot;password&quot;<br />
+ <br />
+# controllo la corretta impostazione di nick e password<br />
+if {![info exists egg_nick]} {die &quot;TCL (automatismi.tcl (E' necessario impostare e registrare il nick per poter usare questo script.))&quot;}<br />
+if {![info exists egg_pass]} {die &quot;TCL (automatismi.tcl (E' necessario impostare una password e registrare il nick per poter usare questo script.))&quot;}<br />
+ <br />
+#aggiungo nickserv e chanserv come utenti del bot<br />
+adduser NickServ NickServ!service@azzurra.org<br />
+adduser ChanServ ChanServ!service@azzurra.org<br />
+chattr NickServ -hp+fS<br />
+chattr ChanServ -hp+fS<br />
+ <br />
+# identificazione alla connessione<br />
+# e<br />
+#identificazione al notice di nickserv<br />
+bind evnt - init-server ident_nickserv<br />
+bind notc S &quot;*registrato*&quot; ident_nickserv<br />
+bind notc S &quot;*identificati*&quot; ident_nickserv<br />
+proc ident_nickserv {args} {<br />
+global egg_nick<br />
+global egg_pass<br />
+putquick &quot;PRIVMSG NickServ : identify $egg_pass&quot;<br />
+}<br />
+ <br />
+# se l'egg cambia nick per un qualsiasi motivo<br />
+# si riprende il nick impostato<br />
+bind evnt - nick recover_nickserv<br />
+proc recover_nickserv {args} {<br />
+global egg_nick<br />
+global egg_pass<br />
+putquick &quot;PRIVMSG NickServ : recover $egg_nick $egg_pass&quot;<br />
+}<br />
+ <br />
+# abilitazione di base (1) dell'accesso al chanserv<br />
+# per funzioni di reop e unban personali<br />
+set cs_ok 1<br />
+ <br />
+# controllo notice di accesso negato a chanserv<br />
+# e incremento variabile $cs_ok<br />
+bind notc S &quot;*accesso negato*&quot; chanserv_ok<br />
+proc chanserv_ok {args} {<br />
+global cs_ok<br />
+incr cs_ok 1<br />
+}<br />
+ <br />
+# se non sono op provo a riopparmi<br />
+# controllo prima se ho l'accesso a chanserv<br />
+bind need - &quot;* op&quot; re_op<br />
+proc re_op {chan type} {<br />
+global cs_ok<br />
+global botnick<br />
+if {$cs_ok &lt; 7} {<br />
+putlog &quot; Tento di riprendermi l'op su $chan tramite ChanServ &quot;<br />
+putquick &quot;PRIVMSG ChanServ :op $chan $botnick&quot;<br />
+} else {<br />
+putlog &quot; Non è possibile riprendere l'op su $chan : -= AntiFlood ai servizi =- &quot;<br />
+}<br />
+}<br />
+ <br />
+# se vengo bannato provo a sbannarmi<br />
+# controllo prima se ho l'accesso a chanserv<br />
+bind need - &quot;* unban&quot; un_ban<br />
+proc un_ban {chan type} {<br />
+global cs_ok<br />
+global botnick<br />
+if {$cs_ok &lt; 7} {<br />
+putlog &quot;Azzurra.tcl -- Tento di rimuovermi il ban su $chan tramite ChanServ.&quot;<br />
+putquick &quot;PRIVMSG ChanServ :unban $chan me&quot;<br />
+} else {<br />
+putlog &quot; Non è possibile riprendere l'op su $chan : -= AntiFlood ai servizi =- &quot;<br />
+}<br />
+}<br />
+# ogni 10 minuti resetto a uno il valore<br />
+# della variabile di controllo del chanserv<br />
+bind time - &quot;?0 * * * *&quot; azzeramento_chanserv_ok<br />
+proc azzeramento_chanserv_ok {args} {<br />
+global cs_ok<br />
+set cs_ok 1<br />
+}</div></div><hr />
+
+
+<div id="copyright">vBulletin v3.5.3, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

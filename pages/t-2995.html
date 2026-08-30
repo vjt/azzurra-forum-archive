@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="DCC con Router, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] DCC con Router Angolo tecnico" />
+	
+	<title>DCC con Router [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php/">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-13.html">Angolo tecnico</a> &gt; DCC con Router</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=2995">DCC con Router</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">TheDoctor46</div><div class="date">14-09-2003, 17:54</div></div><div class="posttext">Salve a tutti,<br />
+ho da poco installato adsl con libero e router &quot;Starbridge EU&quot; e ho problemi a ricevere file in dcc, ma anche in chat come icq o C6 e anche winmx.<br />
+Ho sentito parlare e ho letto del Port-forwarding, ma l'articolo diceva di impostare un reindirizzamento verso &quot;da qualsiasi porta&quot; da &quot;qualsiasi ip&quot;.<br />
+Però nel mio router chiede una Public Port, una Private Port e un indirizzo ip per ogni nuova regola di reindirizzamento, come faccio a impostarlo per un port forwarding generale?<br />
+E' sufficiente questo per il router?<br />
+Come devo impostare Irc?<br />
+<br />
+Grazie mille</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">14-09-2003, 21:26</div></div><div class="posttext">Però nel mio router chiede una Public Port, una Private Port e un indirizzo ip per ogni nuova regola di reindirizzamento, come faccio a impostarlo per un port forwarding generale?<br />
+E' sufficiente questo per il router?<br />
+Come devo impostare Irc?<br />
+<br />
+Due indicazioni generali sono di cercare le discussioni gia' sviluppate in questo forum (la migliore e' questa (http://www.azzurra.org/forum/viewtopic.php?t=1341)), nonche' leggere il manuale del tuo router o cercare maggiori e piu' specifiche informazioni in rete. Tra l'altro, ogni marca di router usa un linguaggio tutto suo e quindi il manuale assume una discreta importanza.<br />
+A livello generale, comunque, devi impostare sia il router che il tuo client IRC (sparo a caso: usi mIRC?) in modo da ottenere le seguenti funzioni:<br />
+<br />
+A) sul router: fare in modo che tutte i pacchetti diretti verso l'IP pubblico del tuo router ad un piccolo intervallo di porte TCP, vengano reindirizzati verso il tuo PC privato sulla stessa porta TCP iniziale<br />
+B) sul client IRC: fare in modo che il client accetti solo connessioni su un limitato numero di porte TCP (altrimenti va a finire che non ti funziona piu' nulla perche' tutte le porte son dedicate ad IRC, il che e' decisamente esagerato...)<br />
+<br />
+Personalmente, io ho limitato le DCC alle sette porte listate tra la 1024 e la 1030 (estremi compresi), il che porta all'ovvia deduzione che non posso fare piu' di sette DCC per volta, ma anche che tutto cio' che arriva a quelle porte finisce da me, e non nel resto della rete.<br />
+(IN effetti, devo ancora provare ad installare mIRC anche negli altri PC ed attivare le DCC su di essi... non so cosa potrebbe accadere ^^;;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">TheDoctor46</div><div class="date">14-09-2003, 22:06</div></div><div class="posttext">Ho cercato già a destra e a manca prima di scrivere qui ma non ho concluso un gran che...il manuale del router spiega solo come installarlo e fare la prima connessione...<br />
+Per quanto riguarda i 2 punti che mi hai segnalato:<br />
+.per quanto riguarda il settaggio delle porte su irc...ok...so come fare...<br />
+.per il router: cosa intendi per &quot;porta TCP iniziale&quot;? Nell'articolo che mi hai segnalato (che avevo già letto) parla di &quot;Service Port&quot;... io ho Private Port e Public Port...<br />
+Non so, sto impazzendo, forse nn ho capito bene il meccanismo...il file viene indirizzato al router nel range di porte che indico nelle opzioni irc e io devo fare in modo che arrivino sul mio pc, esatto?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">14-09-2003, 22:18</div></div><div class="posttext">Ho cercato già a destra e a manca prima di scrivere qui ma non ho concluso un gran che...il manuale del router spiega solo come installarlo e fare la prima connessione...<br />
+<br />
+Giusto per chiarezza, che modello e'?<br />
+<br />
+Non so, sto impazzendo, forse nn ho capito bene il meccanismo...il file viene indirizzato al router nel range di porte che indico nelle opzioni irc e io devo fare in modo che arrivino sul mio pc, esatto?<br />
+<br />
+Grosso modo, e' esatto. Mi sbilancio pero' in una spiegazione un po' piu' esauriente: i file via DCC (e, molto piu' in generale, qualunque tipo di pacchetto dati) vengono inviati con un indirizzo IP ed una porta TCP/IP. L'indirizzo serve a determinare il destinatario della comunicazione, e la porta serve a permettere piu' trasmissioni contemporaneamente (altrimenti, rischio seriamente di avere una ed una sola comunicazione per volta fra due IP... e non e' bello :)). Detto brevemente che esistono porte TCP riservate e quindi inutilizzabili per le normali comunicazioni, la DCC giunge ad una porta ben precisa del tuo router (cioe' sull'IP pubblico), ed il lavoro di mappatura deve fare in modo che questa comunicazione giunga alla stessa porta TCP del PC interno (cioe' sull'IP privato). Poi, sara' quest'ultimo a ricevere la comunicazione e a farsene qualcosa, ma e' un discorso a parte.<br />
+Quindi in sostanza devi settare (A) la redirezione del traffico (sul router) e (B) l'accettazione delle DCC su alcune determinate porte (sul client IRC).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">TheDoctor46</div><div class="date">14-09-2003, 22:42</div></div><div class="posttext">Il router è uno StarBridge EU EB1040<br />
+Proprio adesso ho provato a reindirizzare le porte del router in questo modo:<br />
+public port: 1024<br />
+private port: 1024<br />
+type: TCP<br />
+Host IP Address: 10.0.0.6 (IP del mio PC in LAN)<br />
+<br />
+e così via fino alla 1030 aumentantdo di 1 tutte le porte, sia private sia public, ma non ricevo lo stesso...<br />
+In Irc ho ridotto l'intevallo delle porte da 1024 a 1030 e basta...<br />
+Un'altra cosa: in Irc come localhost ho il nome del mio pc e ip address 10.0.0.6 ed ho disabilitato &quot;on connect always get...&quot;<br />
+Bo, non ho più speranze ormai, mi sa che era meglio il modem  V_V</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">14-09-2003, 23:10</div></div><div class="posttext">Il router è uno StarBridge EU EB1040<br />
+<br />
+Beh, in rete non c'e' uno straccio di manualistica su questo router... Non male! :D<br />
+<br />
+Proprio adesso ho provato a reindirizzare le porte del router in questo modo:<br />
+public port: 1024<br />
+private port: 1024<br />
+type: TCP<br />
+Host IP Address: 10.0.0.6 (IP del mio PC in LAN)<br />
+<br />
+e così via fino alla 1030 aumentantdo di 1 tutte le porte, sia private sia public, ma non ricevo lo stesso...<br />
+In Irc ho ridotto l'intevallo delle porte da 1024 a 1030 e basta...<br />
+<br />
+Uh... il mio router mi ha fatto mettere irettamente il range 1024 ~ 1030, anche perche' comunque il mio router mi fa settare solo dieci regole... :)<br />
+Comunque il principio e' quello che hai seguito pure te.<br />
+<br />
+Un'altra cosa: in Irc come localhost ho il nome del mio pc e ip address 10.0.0.6 ed ho disabilitato &quot;on connect always get...&quot;<br />
+<br />
+...e qua casca l'asino :)<br />
+Il meccanismo di mapping ti permette di nascondere al mondo intero qual e' la tua infrastruttura di rete. In altre parole, quel che c'e' dietro al router sono affaracci tuoi, e comunque sia la DCC - proprio perche' e' Direct - pretende che i due nodi (mittente e ricevente) si raggiungano reciprocamente: se tu metti come localhost il tuo IP privato, stai sicuro che nessuno al mondo potra' pingarlo, perche' quell'IP e' nascosto dietro al router!<br />
+In definitiva: come localhost, invece dell'IP privato deve esserci l'IP pubblico, cioe' quello del router. Quel che c'e' dopo il router (mapping, configurazione di mIRC, ... son tutti  chezzi tuoi!! &amp;gt;___&amp;lt; <br />
+<br />
+:D<br />
+<br />
+<br />
+Bo, non ho più speranze ormai, mi sa che era meglio il modem  V_V<br />
+<br />
+La speranza e' l'ultima a morire, perche' vuole ghignare mentre tireremo le cuoia :D<br />
+Comunque e' meglio l'ADSL del modem, fidati! ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">TheDoctor46</div><div class="date">14-09-2003, 23:52</div></div><div class="posttext">cambiano gli addendi ma il risultato è sempre lo stesso...<br />
+cmq ho notato una cosa...dagli ADSL scarico, dalle fibre ottiche no, con o senza mappare le porte.<br />
+Mentre in C6 per esempio non ricevo nemmeno un file, e li come faccio a sapere le porte??? che palleeeeeeeeeeeeee :evil:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">14-09-2003, 23:59</div></div><div class="posttext"></div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">14-09-2003, 23:59</div></div><div class="posttext">cambiano gli addendi ma il risultato è sempre lo stesso...<br />
+<br />
+uhm... cioe'?<br />
+Che modifiche hai fatto, e con quali risultati?<br />
+<br />
+cmq ho notato una cosa...dagli ADSL scarico, dalle fibre ottiche no, con o senza mappare le porte.<br />
+<br />
+Beh, se dagli ADSL scarichi, un obiettivo l'hai gia' raggiunto :)<br />
+Quanto alla fibra ottica, suppongo si tratti di fastweb... e se dai un'occhiata a questo &quot;Angolo Tecnico&quot; vedrai che molto probabilmnte e' un problema tutto loro.<br />
+<br />
+Mentre in C6 per esempio non ricevo nemmeno un file, e li come faccio a sapere le porte???<br />
+<br />
+Uh... boh, non ho mai usato il C6 ^^</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">TheDoctor46</div><div class="date">15-09-2003, 00:02</div></div><div class="posttext">Ormai stiamo chattando...<br />
+dicevo C6 come può essere ICQ o WinMx...dovrà pur esistere una regola valida per tutti i programmi o mi devo andare a cercare da quale porta entrano tutti???</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">djkappa</div><div class="date">15-09-2003, 00:50</div></div><div class="posttext">ciao,voglio provare a dirti la mia, visto ke dopo 3 giorni(settantadue ORE) di smanetamenti vari col mio cazzuto router digicom michelangelo riesco a fare tutto :D<br />
+allora..<br />
+ho abilitato 7 porte come hai fatto te nel router, piu la 21,la 80 e la 59<br />
+fin qua tutto ok, poi in mirc, devi settare il range di quelle porte.<br />
+io poi ho abilitato una funzione ke sta in connection/advanced ke dice:<br />
+bind all sock to  this ip address e li ho inserito il mio ip di rete, 10.0.0.3, nel caso tu metti il tuo, 10.0.0.6 mi pare?<br />
+poi nella voce DCCserver/listen on port ho messo la 59<br />
+premetto ke non sono esperto in queste cose, e a forza di leggere forum e mandare in giro mail ho trovato questa configurazione, prova ancora e non arrenderti, e facci sapere! :D<br />
+spero di esserti stato utile anke se non sono esperto in materia e non conosco il significato preciso di tutto cio ke ho settato<br />
+ciao :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">15-09-2003, 09:44</div></div><div class="posttext">Ormai stiamo chattando...<br />
+<br />
+Parla per te, che io ero andato a dormire... :D<br />
+<br />
+dicevo C6 come può essere ICQ o WinMx...dovrà pur esistere una regola valida per tutti i programmi o mi devo andare a cercare da quale porta entrano tutti???<br />
+<br />
+L'ultima che hai detto. Auguri.<br />
+<br />
+ho abilitato 7 porte come hai fatto te nel router, piu la 21,la 80 e la 59 <br />
+<br />
+Dunque, vediamo un po' queste porte... (per maggiori info, puoi vederti il listone (http://www.iana.org/assignments/port-numbers) ;))<br />
+La porta 21 e' l'ftp: hai qualche server ftp sul computer?<br />
+La porta 80 e' l'http: hai qualche server web sul computer?<br />
+Se la risposta alle domande e' NO, disabilita pure quelle porte in ingresso. Altrimenti, lasciale.<br />
+<br />
+Quanto alla 59...<br />
+<br />
+io poi ho abilitato una funzione ke sta in connection/advanced ke dice: <br />
+bind all sock to this ip address e li ho inserito il mio ip di rete, 10.0.0.3, nel caso tu metti il tuo, 10.0.0.6 mi pare? <br />
+poi nella voce DCCserver/listen on port ho messo la 59 <br />
+<br />
+...l'hai abilitata per il DCC Server, che non conosco benissimo ma che personalmente tengo disabilitato come da default di mIRC (e a me le DCC vanno benissimo).<br />
+<br />
+Riassunto in una riga, bastava aprire le porte da 1024 a 1030, come gia' detto in questo e nell'altro thread :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">TheDoctor46</div><div class="date">15-09-2003, 21:02</div></div><div class="posttext">Grazie DjKappa,<br />
+ho aggiunti anke i settings che mi hai consigliato...ma dal tipo col fastweb non riesco a ricevere... booooooooooo</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">TheDoctor46</div><div class="date">15-09-2003, 21:09</div></div><div class="posttext">Infatti steve, sapevo della 21 e 80, ma ho provato la 59...nothing to do V_V</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">15-09-2003, 22:48</div></div><div class="posttext">Grazie DjKappa,<br />
+ho aggiunti anke i settings che mi hai consigliato...ma dal tipo col fastweb non riesco a ricevere... booooooooooo<br />
+<br />
+Come ti ho gia' detto in un post precedente, Fastweb ha problemi tutti suoi, e non solo con le DCC. Quindi, tu non puoi farci assolutamente nulla.</div></div><hr />
+
+
+<div id="copyright">vBulletin&reg; v3.6.9, Copyright &copy;2000-2008, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

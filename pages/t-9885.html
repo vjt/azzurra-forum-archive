@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="ATI e NVIDIA supportate in single e dual head ?, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] ATI e NVIDIA supportate in single e dual head ? Discussioni Linux" />
+		<title>ATI e NVIDIA supportate in single e dual head ? [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-28.html">Discussioni Linux</a> &gt; ATI e NVIDIA supportate in single e dual head ?</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=9885">ATI e NVIDIA supportate in single e dual head ?</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Kid</div><div class="date">04-08-2005, 10:29</div></div><div class="posttext">E' da qualche giorno (precisamente da domenica sera) che sto giocherellando infruttuosamente su linux con una ATI 9250 e una Leadtek A6200 TDH (ovviamente AGP e ovviamente installate 1 alla volta). Io vorrei attivare con un o con l'altra scheda (è indifferente, l'importante è che funzioni) il dual head (ho 2 monitor 17&quot; e io vorrei che il desktop si allargasse su entrambi, metà su 1 metà sull'altro). sotto windows con la ATI girava tutto a meraviglia. Su linux ... 100mila problemi.<br />
+<br />
+Distribuzioni provate:<br />
+Debian 3 / 3.1<br />
+Kubuntu 5.04<br />
+SimplyMepis 3.3.1<br />
+<br />
+<br />
+Ho lurkato parecchio sul forum di ubuntu (http://www.ubuntuforums.org) e in giro per google, ho modificato svariate volte il file conf di xorg/xfree ma con scarsi risultati. Mi sono concentrato soprattutto sulla Geforce in quanto mi è parso di capire sia meglio supportata. Inutile dire che ho provato sia i drever pacchettizzati (su Mepis e Kubuntu) sia il .run dal sito nvidia (su kubuntu)<br />
+<br />
+Tra le varie prove ho notato una incompatibilità tra Kubuntu con kernel 2.6.10-k7 (ho 1 athlon xp) e i driver nvidia, il kde si avviava illeggibile, come se fosse impostata una frequenza di refresh errata. Totale solo i driver vesa e/o nv sembrano funzionare, ma sempre in single head.<br />
+In caso di SimpleMepis uso il pannello di controllo dalla gui di kde, sia l'installazione dei driver ATI sia NVIDIA , ma al riavvio non parte più kde e mi tocca tornare ai driver vesa <br />
+<br />
+Su windows era tutto cosi facile mentre qui :mad: .... comincio a pensare di avere io qualcosa che non va nel pc oppure di essere proprio incapace (che forse è più facile) .... sinceramente non so più cosa fare se non installare windows :sad2:<br />
+<br />
+Cosa potrei fare? mi piacerebbe usare una distribuzione basata du debian<br />
+<br />
+graSSie :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kid</div><div class="date">05-08-2005, 11:12</div></div><div class="posttext">ho delle novità! :D  :D  :D <br />
+<br />
+ho reistallato la debian dal dvd di linux extra trovato in edicola, ho smanettato un pochino con il sources.list e ho aggiunto gli indirizzi per la testing. il kernel è sempre il 2.6.8-2-k7 installato di default. ho installato gli headers del mio kernel e poi il .run dal sito nvida, riavviato, editato il XF86Config-4 per attivare il driver &quot;nvidia&quot; e funziona  :D  :D  :D <br />
+<br />
+adesso mi dedico allo smanettamento del conf del server x per abilitare il 2° video  :sospiro:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kid</div><div class="date">05-08-2005, 12:40</div></div><div class="posttext">BBene BBene  :D  funziona tutto !!!  :okay: <br />
+<br />
+ricapitolo i miei passi, magari può servire a qualcuno (e magari servire a me in caso di reinstallazione  :mad: )<br />
+<br />
+. l'installazione di debian sarge mi ha fornito il kernel in versione 2.6.8-2-k7<br />
+. in /etc/apt/source.list ho aggiunto alcuni link, ora il file è così:<br />
+<br />
+deb http://security.debian.org/ testing/updates main contrib<br />
+deb http://debian.fastweb.it/debian/ stable main<br />
+deb-src http://debian.fastweb.it/debian/ stable main<br />
+deb http://debian.fastweb.it/debian/ testing main<br />
+deb-src http://debian.fastweb.it/debian/ testing main<br />
+# reposity per Amule<br />
+deb http://www.vollstreckernet.de/debian/ testing amule<br />
+deb http://www.vollstreckernet.de/debian/ testing wx<br />
+### Multimedia -- Video -- Marillat<br />
+deb ftp://ftp.nerim.net/debian-marillat/ testing main<br />
+# Testing Etch<br />
+deb http://http.us.debian.org/debian/ testing main contrib non-free<br />
+deb http://mirrors.kernel.org/debian/ testing main<br />
+# Testing Sources<br />
+deb-src http://http.us.debian.org/debian/ testing main contrib non-free<br />
+deb-src http://mirrors.kernel.org/debian/ testing main<br />
+ <br />
+. sempre da terminale, come utente root, ho aggiornato a mia debian con<br />
+ apt-get update &amp;&amp; apt-get upgrade &amp;&amp; apt-get dist-upgrade <br />
+. dal sito nvidia ho scaricato il file NVIDIA-Linux-x86-1.0-7667-pkg1.run<br />
+. dal terminale, dopo aver dato un bel &quot;su&quot; ho scaricato gli headers del mio kernel, precisamente <br />
+apt-get install kernel-heders-2.6.8-2-k7 <br />
+. il buon grub, all'avvio, mi permetteva di avviare sia il kernel normale cheil kernel in modalità &quot;recover&quot;, ho quindi riavviato usando questa 2 possibilità<br />
+. loggandomi sempre da root ho digitato<br />
+ sh NVIDIA-Linux-x86-1.0-7667-pkg1.run --kernel-name='2.6.8-2-k7' <br />
+specificando così il kernel usato (la versione me la sono scritta su un fogglietto, ma si potrebbe anche ricontrollare digitando uname -r  )<br />
+. ho fatto così installare i driver di nvidia<br />
+. ho riavviato il computer, è partito kde ma il refresh era sempre a 60Hz quindi ho temuto il peggio<br />
+. ho editato il file /etc/X11/XF86config-4 e ho visto che era ancora nella versione con driver &quot;vesa&quot;, l'ho quindi modificato pian pianino fino ad arrivare a questa versione:<br />
+<br />
+# XF86Config-4 (XFree86 X Window System server configuration file)<br />
+#<br />
+# This file was generated by dexconf, the Debian X Configuration tool, using<br />
+# values from the debconf database.<br />
+#<br />
+# Edit this file with caution, and see the XF86Config-4 manual page.<br />
+# (Type &quot;man XF86Config-4&quot; at the shell prompt.)<br />
+#<br />
+# This file is automatically updated on xserver-xfree86 package upgrades *only*<br />
+# if it has not been modified since the last upgrade of the xserver-xfree86<br />
+# package.<br />
+#<br />
+# If you have edited this file but would like it to be automatically updated<br />
+# again, run the following commands as root:<br />
+#<br />
+#   cp /etc/X11/XF86Config-4 /etc/X11/XF86Config-4.custom<br />
+#   md5sum /etc/X11/XF86Config-4 &gt;/var/lib/xfree86/XF86Config-4.md5sum<br />
+#   dpkg-reconfigure xserver-xfree86<br />
+<br />
+Section &quot;Files&quot;<br />
+	FontPath	&quot;unix/:7100&quot;			# local font server<br />
+	# if the local font server has problems, we can fall back on these<br />
+	FontPath	&quot;/usr/lib/X11/fonts/misc&quot;<br />
+	FontPath	&quot;/usr/lib/X11/fonts/cyrillic&quot;<br />
+	FontPath	&quot;/usr/lib/X11/fonts/100dpi/:unscaled&quot;<br />
+	FontPath	&quot;/usr/lib/X11/fonts/75dpi/:unscaled&quot;<br />
+	FontPath	&quot;/usr/lib/X11/fonts/Type1&quot;<br />
+	FontPath	&quot;/usr/lib/X11/fonts/CID&quot;<br />
+	FontPath	&quot;/usr/lib/X11/fonts/Speedo&quot;<br />
+	FontPath	&quot;/usr/lib/X11/fonts/100dpi&quot;<br />
+	FontPath	&quot;/usr/lib/X11/fonts/75dpi&quot;<br />
+EndSection<br />
+<br />
+Section &quot;Module&quot;<br />
+#	Load	&quot;GLcore&quot;<br />
+	Load	&quot;bitmap&quot;<br />
+	Load	&quot;dbe&quot;<br />
+	Load	&quot;ddc&quot;<br />
+#	Load	&quot;dri&quot;<br />
+	Load	&quot;extmod&quot;<br />
+	Load	&quot;freetype&quot;<br />
+	Load	&quot;glx&quot;<br />
+	Load	&quot;int10&quot;<br />
+	Load	&quot;record&quot;<br />
+	Load	&quot;speedo&quot;<br />
+	Load	&quot;type1&quot;<br />
+	Load	&quot;vbe&quot;<br />
+EndSection<br />
+<br />
+Section &quot;InputDevice&quot;<br />
+	Identifier	&quot;Generic Keyboard&quot;<br />
+	Driver		&quot;keyboard&quot;<br />
+	Option		&quot;CoreKeyboard&quot;<br />
+	Option		&quot;XkbRules&quot;	&quot;xfree86&quot;<br />
+	Option		&quot;XkbModel&quot;	&quot;pc105&quot;<br />
+	Option		&quot;XkbLayout&quot;	&quot;it&quot;<br />
+EndSection<br />
+<br />
+Section &quot;InputDevice&quot;<br />
+	Identifier	&quot;Configured Mouse&quot;<br />
+	Driver		&quot;mouse&quot;<br />
+	Option		&quot;CorePointer&quot;<br />
+	Option		&quot;Device&quot;		&quot;/dev/input/mice&quot;<br />
+	Option		&quot;Protocol&quot;		&quot;ImPS/2&quot;<br />
+	Option		&quot;Emulate3Buttons&quot;	&quot;true&quot;<br />
+	Option		&quot;ZAxisMapping&quot;		&quot;4 5&quot;<br />
+EndSection<br />
+<br />
+Section &quot;Device&quot;<br />
+	Identifier	&quot;Leadtek6200&quot;<br />
+	Driver		&quot;nvidia&quot;<br />
+EndSection<br />
+<br />
+Section &quot;Monitor&quot;<br />
+	Identifier	&quot;PHILIPS107MB&quot;<br />
+	Option		&quot;DPMS&quot;<br />
+	HorizSync	30-87<br />
+	VertRefresh	75-100<br />
+	Modeline &quot;1024x768&quot; 94.39 1024 1088 1200 1376 768 769 772 807 <br />
+EndSection<br />
+<br />
+Section &quot;Screen&quot;<br />
+ Identifier &quot;DualHead&quot;<br />
+ Device &quot;Leadtek6200&quot;<br />
+ Monitor &quot;PHILIPS107MB&quot;<br />
+ DefaultDepth 24<br />
+ Option &quot;NvAGP&quot; &quot;1&quot;<br />
+ Option &quot;NoLogo&quot; &quot;false&quot;<br />
+ Option &quot;HWCursor&quot; &quot;true&quot;<br />
+ Option &quot;ConnectedMonitor&quot; &quot;CRT-1, CRT-0&quot;<br />
+ Option &quot;TwinView&quot; &quot;true&quot;<br />
+ Option &quot;SecondMonitorHorizSync&quot; &quot;30 - 95&quot;<br />
+ Option &quot;SecondMonitorVertRefresh&quot; &quot;85&quot;<br />
+ Option &quot;MetaModes&quot; &quot;1024x768, 1024x768; 800x600, 800x600&quot;<br />
+ Option &quot;TwinViewOrientation&quot; &quot;RightOf&quot;<br />
+ Subsection &quot;Display&quot;<br />
+ Depth 24<br />
+ Modes &quot;1024x768&quot; &quot;800x600&quot;<br />
+ ViewPort 0 0<br />
+ EndSubsection<br />
+EndSection<br />
+<br />
+Section &quot;ServerLayout&quot;<br />
+	Identifier	&quot;Default Layout&quot;<br />
+	Screen		&quot;DualHead&quot;<br />
+	InputDevice	&quot;Generic Keyboard&quot;<br />
+	InputDevice	&quot;Configured Mouse&quot;<br />
+EndSection<br />
+<br />
+# Section &quot;DRI&quot;<br />
+#	Mode	0666<br />
+# EndSection<br />
+<br />
+<br />
+ho salvato e riavviato il pc. al riavvio ho *finalmente* un refreshg da 85Hz (migliorabile, ovviamente) e soprattutto vedo mezzo desktop su 1 monitor e mezzo sull'altro   <br />
+ :okay:  :rotfl:  :D <br />
+<br />
+Ultimo dubbio che rimane: la barra di KDE mi rimane sul desktop di sinistra (il principale, credo) vorrei allungarla fino a prendere anche l'altro schermo... continuo a smanettare  :proud: <br />
+<br />
+Ciau  :okay:</div></div><hr />
+
+
+<div id="copyright">vBulletin v3.5.3, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

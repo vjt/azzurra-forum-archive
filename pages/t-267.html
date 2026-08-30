@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<title>Azzurra IRC Network Forum - Forum mysql in locale</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="Azzurra IRC Network Forum" />
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-23.html">Programmazione e dintorni</a> &gt; Forum mysql in locale</div>
+<hr />
+<div class="pda"><a href="?pda=1">PDA</a></div>
+<p class="largefont">Mostra versione intera : <a href="http://forum.azzurra.org/showthread.php?t=267">Forum mysql in locale</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">T3rminat0r</div><div class="date">24-11-2001, 19:39</div></div><div class="posttext">Ho cambiato $dbhost ma credo che abbia sbagliato qualcosa visto che mi da errori del tipo <br />
+Warning: Unknown MySQL Server Host 'localhost/projet1/dbzgt.it%20forum/' (0) in c:programmieasyphpwwwprojet1dbzgt.it forumheader.php on line 25</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">T3rminat0r</div><div class="date">24-11-2001, 19:41</div></div><div class="posttext">E se non mi da quell'errore non metendo la sottodirectory e mettendo solo $dbhost=localhost mi dice questo Base 'Splash Forum' inconnue</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">_theone_</div><div class="date">24-11-2001, 22:32</div></div><div class="posttext">Dovresti postare la configurazione base del tuo mySQL e come hai configurato il php che accede al database..<br />
+<br />
+Così è alquanto improbabile riuscire a dirti qualcosa, se non il fatto che php si incazza a morte non riuscendo a connettere al server mySQL.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">T3rminat0r</div><div class="date">24-11-2001, 22:40</div></div><div class="posttext">&amp;lt;?<br />
+// START CONFIG.PHP \<br />
+<br />
+// Edit the following variables:<br />
+$dbname = &amp;quot;Splash Forum&amp;quot;;   // Database name<br />
+$dbuser = &amp;quot;localhost&amp;quot;;   // Database username<br />
+$dbpw = &amp;quot;localhost&amp;quot;;   // Database password<br />
+$dbhost = &amp;quot;localhost&amp;quot;;   // Database server<br />
+$tablepre = &amp;quot;xmb_&amp;quot;;   //Don't edit this after you install or it will mess up your board<br />
+<br />
+// END CONFIG.PHP \<br />
+?&amp;gt;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">_theone_</div><div class="date">25-11-2001, 13:13</div></div><div class="posttext">Hai creato un database su mySQL che si chiami &quot;Splash Forum&quot;, con permessi di lettura e scrittura per l'utente &quot;localhost&quot; (password &quot;localhost&quot;) ?<br />
+<br />
+Se si ti consiglierei di cambiare quanto prima il tutto, in caso contrario cambia un pò la configurazione, creati un database e un relativo account utente su mySQL assegnando i corretti permessi per il database del tuo forum, e quindi modifica i parametri del tuo php di conseguenza.<br />
+<br />
+Bye,</div></div><hr />
+
+<div id="copyright">vBulletin Versione 3.0.7, Copyright &copy;2000-2005, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

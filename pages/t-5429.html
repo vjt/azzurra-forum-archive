@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Installazione Conexant, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] Installazione Conexant Discussioni Linux" />
+		<title>Installazione Conexant [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-28.html">Discussioni Linux</a> &gt; Installazione Conexant</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=5429">Installazione Conexant</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Bolo</div><div class="date">23-08-2004, 07:53</div></div><div class="posttext">Ciao a tutti, potete aiutarmi ad installare il modem?<br />
+Ora vi spiego: <br />
+<br />
+Il mio modem è un CONEXANT HSF 56K con chipset CX11256; <br />
+Ho scaricato il driver (sorgenti) da linuxant; <br />
+La procedura d installazione prevede due fasi: <br />
+prima installare il driver (e fin qui ok) e poi eseguire hsfconfig (e qui ci sono i problemi). <br />
+<br />
+Precisamente questo è quello che succede durante l'installazione del driver (comando hsfconfig):<br />
+<br />
+Unpacking hsfmodem (from .../hsfmodem_6.03.00lnxt04072900full_i386.deb) ... <br />
+Setting up hsfmodem (6.03.00lnxt04072900full) ... <br />
+Conexant HSF softmodem driver, version 6.03.00lnxt04072900full <br />
+<br />
+No pre-built modules for: Debian-testing/unstable linux-2.6.6-1-386 i686 <br />
+<br />
+Trying to automatically build the driver modules... <br />
+(this requires a C compiler and proper kernel sources to be installed) <br />
+<br />
+Where is the linux source build directory that matches your running kernel? <br />
+[/usr/src/linux] <br />
+<br />
+WARNING: missing file /usr/src/linux/include/linux/autoconf.h <br />
+The cause of this is usually a missing or unconfigured <br />
+kernel source tree (and sometimes an incorrect directory or symbolic link). <br />
+<br />
+However, proper /boot/config-2.6.6-1-386 was found. <br />
+Would you like to try using it (in a temporary kernel tree)? [yes] yes <br />
+<br />
+Building modules for kernel 2.6.6, using source directory <br />
+/usr/src/kernel-source-2.6.6-cnxttmp2735. Please wait... <br />
+done. <br />
+<br />
+ERROR: hsf driver not active <br />
+dpkg: error processing hsfmodem (--install): <br />
+subprocess post-installation script returned error exit status 1 <br />
+Errors were encountered while processing: <br />
+hsfmodem <br />
+RESULT=1<br />
+<br />
+I sorgenti sono installati, il link /usr/src/linux punta alla cartella coi sorgenti, ed ho installato autoconf e automake.<br />
+<br />
+Cosa può essere??</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">liquid_snake</div><div class="date">23-08-2004, 12:05</div></div><div class="posttext">Non penso di essere la persona più adatta ad aiutarti, comunque sia, che distro usi?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Bolo</div><div class="date">24-08-2004, 00:51</div></div><div class="posttext">Uso la debian...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">24-08-2004, 13:41</div></div><div class="posttext">Non avendo mai configurato un modem su linux, non so aiutarti... pero' ti do' qualche spunto da Google, dove dicono che quel modello di modem ha dei driver molto simpatici... vedi questo articolo (http://groups.google.it/groups?selm=1XARN-cR-7%40gated-at.bofh.it) di meta' maggio. Se puo' consolare, di quel modem ne parlavano male gia' nel 2000 (vedi thread (http://groups.google.it/groups?threadm=j4ocu-8v2.ln1%40laptop.home.pvt)). <br />
+Puo' essere che i modem siano vecchi e non vadano bene per una Debian con kernel 2.6.6 ? Io valuterei anche questa ipotesi.</div></div><hr />
+
+
+<div id="copyright">vBulletin v3.5.3, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

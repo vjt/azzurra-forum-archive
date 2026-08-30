@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Ridimensionare partizioni ext3, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] Ridimensionare partizioni ext3 Discussioni Linux" />
+	
+	<title>Ridimensionare partizioni ext3 [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php/">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-28.html">Discussioni Linux</a> &gt; Ridimensionare partizioni ext3</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=4204">Ridimensionare partizioni ext3</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">City_Hunter</div><div class="date">03-03-2004, 01:34</div></div><div class="posttext">Premessa: le procedure indicate in questo post possono essere rischiose, chi volesse sperimentarle si assumerà automaticamente ogni responsabilità per l'eventuale perdita dei dati (do it at your own risk); un backup, come sempre prima di queste operazioni, è vivamente consigliato!<br />
+<br />
+Questa sera mi sono trovato nella situazione di dover ridimensionare la partizione di root (con filesystem ext3) di un box, peraltro dalla partition table piuttosto eterogenea:<br />
+<br />
+Device   Boot      Start         End      Blocks   Id  System<br />
+/dev/hdd1   *           1        1559    12522636   83  Linux<br />
+/dev/hdd2            2835        4858    16257780    f  W95 Ext'd &#40;LBA&#41;<br />
+/dev/hdd5            2835        2964     1044193+  82  Linux swap<br />
+/dev/hdd6            2965        4246    10297633+   7  HPFS/NTFS<br />
+/dev/hdd7            4247        4858     4915858+   b  W95 FAT32<br />
+Come si vede, c'è dello spazio libero non partizionato sul disco, fra la prima partizione linux e la partizione extended che comprende tutto il resto.<br />
+E' stata l'occasione per fare un giro tra i software disponibili per la gestione delle partizioni su Linux. Prima di tutto era necessario fare un backup della partizione di root.<br />
+Allo scopo ho trovato Partition Image (http://www.partimage.org/), software che ricorda un pò Norton Ghost per windows. Permette infatti di creare immagini delle partizioni, se necessario comprimendole e splittandole in più parti in modo da poterle trasportare su supporti rimovibili.<br />
+Purtroppo è possibile creare un'immagine soltanto per partizioni non montate e dovendo io backuppare quella di root, ho perso un pò di tempo in più dovendo usare apposti dischi di boot (http://www.partimage.org/doc/index-4.html) con il programma.<br />
+<br />
+Fatto questo, ho cercato qua e là un programma adatto per il resize della partizione. La scelta è ricaduta inizialmente su GNU Parted (http://www.gnu.org/software/parted/parted.html), che per scopi preposti somiglia al noto Partition Magic. Purtroppo questo programma, pur valido ma forse un pò acerbo, non ha giovato alla mia causa: sembrava che il filesystem ext3 proprio non gli piacesse.<br />
+Così sono andato per la via meno comoda (anche se in realtà alla fine è filato tutto liscio abbastanza rapidamente), ossia la dritta indicata nelle man page di resize2fs. Il programma in questione ridimensiona il filesystem all'interno della partizione, non la partizione stessa.<br />
+Spiega però che per operare in quest'ultimo senso si può adoperare fdisk per cancellare la partizione (!!) e crearne una nuova più grande, assicurandosi che questa abbia rigorosamente lo stesso cilindro di inizio della partizione cancellata. In caso contrario, non solo l'operazione di resize non funziona, ma probabilmente si sputtanano anche i dati.<br />
+<br />
+Per fortuna porto con me (servono quando si va a fare queste cose, cavolo se servono!) i cd di slackware 9.1. Bootando da cd infatti ho avuto a disposizione, senza dover montare la partizione di root, sia fdisk che resize2fs. Nonchè fsck, che fa sempre comodo.<br />
+Con fdisk ho provveduto a rifare la partizione, e la partition table è diventata:<br />
+<br />
+Device   Boot      Start         End      Blocks   Id  System<br />
+/dev/hdd1   *           1        2834    22764073+  83  Linux<br />
+/dev/hdd2            2835        4858    16257780    f  W95 Ext'd &#40;LBA&#41;<br />
+/dev/hdd5            2835        2964     1044193+  82  Linux swap<br />
+/dev/hdd6            2965        4246    10297633+   7  HPFS/NTFS<br />
+/dev/hdd7            4247        4858     4915858+   b  W95 FAT32<br />
+Dopodichè ho dato un fsck.ext3 -f /dev/hdd1 , che non fa mai male in questi casi. E poi con resize2fs /dev/hdd1 ho richiesto al filesystem di adeguarsi alla nuova dimensione della partizione. E' filato tutto liscio, la partizione di root ora sfrutta tutto lo spazio disponibile e tutti i dati già presenti sono integri.<br />
+<br />
+Ho pubblicato questo post pensando che magari, se qualcuno volesse ridimensionare partizioni, adesso potrebbe farlo con le idee un pò più chiare :)</div></div><hr />
+
+
+<div id="copyright">vBulletin&reg; v3.6.7, Copyright &copy;2000-2007, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Ridefinire /ame ed /amsg su mIRC, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] Ridefinire /ame ed /amsg su mIRC Programmazione e dintorni" />
+		<title>Ridefinire /ame ed /amsg su mIRC [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-23.html">Programmazione e dintorni</a> &gt; Ridefinire /ame ed /amsg su mIRC</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=3577">Ridefinire /ame ed /amsg su mIRC</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">15-12-2003, 16:05</div></div><div class="posttext">Ciao a tutti, vediamo innanzitutto se sono nel forum giusto! :D<br />
+<br />
+In alcuni canali c'e' una certa filosofia tesa a scoraggiare l'uso massiccio di /ame ed /amsg , mentre gli utenti vorrebbero invece usarli per determinati script come ad esempio quelli di ascolto musica.<br />
+Che voi sappiate, /ame ed /amsg sono ridefinibili su mIRC con alias che permettano l'invio del messaggio ad esclusione di canali specifici e configurabili? Come si potrebbero fare questi alias?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">15-12-2003, 23:04</div></div><div class="posttext">Questi sono gli alias da mettere su mIRC per escludere il #NomeCanale dagli /ame ed /amsg :<br />
+<br />
+amsg {<br />
+  var %i = $chan(0)<br />
+  while (%i &gt; 0) {<br />
+    if ($chan(%i) != #NomeCanale) msg $chan(%i) $1-<br />
+    dec %i<br />
+  }<br />
+}<br />
+<br />
+ame {<br />
+  var %i = $chan(0)<br />
+  while (%i &gt; 0) {<br />
+    if ($chan(%i) != #NomeCanale) describe $chan(%i) $1-<br />
+    dec %i<br />
+  }<br />
+}<br />
+<br />
+Se ci sono piu' canali da escludere, bisogna adattare la variabile in questo modo:<br />
+<br />
+if ($chan(%i) != #NomeCanale1 &amp;&amp; $chan(%i) != #NomeCanale2)<br />
+<br />
+...e il resto rimane uguale.<br />
+<br />
+Un enorme ringraziamento ad EvilMaio per avermi aiutato a risolvere il problema!! :D</div></div><hr />
+
+
+<div id="copyright">vBulletin v3.5.3, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

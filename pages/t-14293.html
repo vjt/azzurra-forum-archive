@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content=" Ubuntu: problemi riscontrati, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio]  Ubuntu: problemi riscontrati #buduscript" />
+	
+	<title> Ubuntu: problemi riscontrati [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="http://forum.azzurra.org/archive/index.php">Azzurra IRC Network Forum</a> &gt; <a href="http://forum.azzurra.org/archive/index.php/f-7.html">I Vostri Forum</a> &gt; <a href="http://forum.azzurra.org/archive/index.php/f-117.html">#buduscript</a> &gt;  Ubuntu: problemi riscontrati</div>
+<hr />
+<div class="pda"><a href="http://forum.azzurra.org/archive/index.php/t-14293.html?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=14293">Ubuntu: problemi riscontrati</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">BuDuS</div><div class="date">06-03-2007, 23:37</div></div><div class="posttext">Volevo segnalare che diversi utenti mi hanno segnalato i seguenti problemi con la Distribuzione Linux Ubuntu:<br />
+<br />
+<br />
+ Gli script di installazione e di compilazione &quot;install.sh&quot; e &quot;makescript.sh&quot; non funzionano.<br />
+ Alcune funzionalita' del plug-in, come l'Event Manager, il Monitoring e altro non funzionano minimamente, come se venissero completamente ignorate.<br />
+ Il Setup Grafico va in crash immediatamente quando lo si lancia.Per risolvere il primo problema, fino a quando non trovo il tempo di aggiornare tutto, e' sufficiente modificare la prima riga dei files .sh da:<br />
+#!/bin/sh<br />
+a<br />
+#!/bin/bash<br />
+<br />
+Il secondo problema sto cercando una soluzione grazie all'aiuto di un gentile utente (Straker, che ringrazio); probabilmente compilando xchat e buduscript, la cosa si risolve, ma ancora non posso confermarlo.<br />
+<br />
+Il terzo ... credo sia un problema di compatibilita' binaria con una qualche libreria, onestamente ho provato su un'Ubuntu installata al volo e a me funziona perfettamente :-?<br />
+<br />
+Spero presto di riuscire a risolvere tutti questi problemi; se qualcuno ne ha altri da sottopormi, non esiti, che in sto periodo sono molto produttivo :rotfl:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">solaris</div><div class="date">09-03-2007, 09:20</div></div><div class="posttext">Scusa, non avevo letto questa discussione e ho postato su un'altra :P<br />
+<br />
+<br />
+Per quanto riguarda il Monitoring a me funziona semplicemente caricando il file budus.so, sia il monitoraggio del join da parte di un particolare nick, sia il monitoraggio del mes da parte di un nick!! per il resto ora provo ad apportare la modifica che hai segnalato :D<br />
+<br />
+Grazie di tutto</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">solaris</div><div class="date">09-03-2007, 09:31</div></div><div class="posttext">Dimenticavo... anche l'event menager funziona!! a volte però entra in esecuzione una sentinella creata anche quando non dovrebbe (senza motivo), ma nulla di che!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BuDuS</div><div class="date">10-03-2007, 00:52</div></div><div class="posttext">Dunque:<br />
+<br />
+ A breve rilascero' una versione del plug-in che corregge i problemi di installazione su Ubuntu; effettivamente il problema era dovuto al fatto che questa distribuzione, di default, non usa bash come shell ma dash e quest'ultima non e' pienamente compatibile (insomma, sono diverse, altrimenti che senso aveva farne un'altra ? :sospiro:)<br />
+ Il problema dell'Events Manager era dovuto alle Maschere di Ignore.X-Chat consente di creare maschere di ignore e, per ognuna, impostare alcuni flags specifici (PRIV, NOTI, CHAN, CTCP, DCC,  INVI, UNIG).<br />
+<br />
+ Il plug-in, prima che correggessi, verificava se l'host di un utente soddisfava una maschera di ignore e, in caso positivo, lo ignorava completamente, indipendentemente dai flags.<br />
+<br />
+ Cio' comportava che ignorando uno o piu' host anche solo per il CTCP, di fatto il plug-in ignorava completamente tutti gli utenti che soddisfavano la maschera.<br />
+<br />
+ Ora invece ho fatto in modo che cio' avvenga solo per i flags PRIV, NOTI, CHAN.<br />
+<br />
+ Per quanto riguarda le Sentinelle: bisogna stare molto attenti, e' facile credere che una sentinella debba reagire solo in un certo contesto e sorprendersi quando ci si accorge che non e' cosi'.<br />
+ Non escludo bug, tuttavia, mi capita spesso di fare &quot;errori di valutazione&quot; nel crearle; ad esempio e' sempre opportuno verificare se e' il caso di usare il carattere  '  per limitare il modo in cui una regola puo' essere soddisfatta, mi spiego:<br />
+<br />
+/event add 0 text pippo=$data /SAY hai digitato pipposignifica che, quando qualcuno scrive pippo, il plug-in risponde &quot;hai digitato pippo&quot;, ma cio' avviene anche se viene scritto pippone, pippottolo, ultrapippo, ecc....<br />
+<br />
+Se ad esempio si vuole che la cosa funzioni solo per le frasi che INIZIANO con pippo, la sentinella corretta sarebbe questa:<br />
+/event add 0 text 'pippo='$data /SAY hai digitato pippoNon supportando le espressioni regolari (non escludo di implementarle, dato che in altre parti del plug-in gia' ci sono) e' difficile fare cose particolarmente complicate, se non inserendo piu' sentinelle che devono reagire alle varie possibilita' che magari si vuole considerare; attualmente penso che, se uno vuole fare cose particolarmente sofisticate, debba affidarsi a script di shell, invocati proprio da sentinelle con tanto di parametri (a quel punto le possibilita' aumentano parecchio); qualche esempio e' distribuito insieme al plug-in (vedere i files .sh).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">solaris</div><div class="date">10-03-2007, 14:03</div></div><div class="posttext">Ho modificato il file .sh di installazione<br />
+<br />
+ #!/bin/sh<br />
+<br />
+<br />
+sostituendo &quot;sh&quot; con &quot;bash&quot;  ora installa perfettamente! :)<br />
+<br />
+Per quanto riguarda le sentinelle probabilmente devo prendere un po di confidenza nel crearle, non avendolo mai fatto prima :P<br />
+<br />
+Per questo speravo di riuscire a installare il setup grafico (magari mi risulta un po più semplificata l'operazione); dopo essere riuscito a installare il buduscript correttamente, son riuscito anche a installare lo script per l'interfaccia grafica apportando la stessa modifica al file install.sh! <br />
+Purtroppo appena lancio il comando /budus macro setup (l'altro comando /budus macro config non va!) crasha anche a me: mi sconnette dai canali in cui mi trovo ( e mi sembra anche dal server, non ricordo bene!) :sad4:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BuDuS</div><div class="date">15-03-2007, 18:29</div></div><div class="posttext">Dunque, la precedente versione era normale &quot;disconnettesse&quot; perche' la differenza tra setup e config stava proprio nel fatto che il primo scollegava, faceva configurare e, all'uscita, ricaricava in automatico la configurazione, mentre il secondo era tutto &quot;manuale&quot;, cioe' ti lanciava il programma ma poi eri tu a dover caricare le eventuali modifiche con /budus read.<br />
+<br />
+<br />
+ Cmq ora ho rilasciato una nuova versione del setup, con una sola macro (setup) che, oltre a non chiedere piu' la versione di X-Chat (da per scontato sia la 2.x, salvo non venga lanciato in una cartella della 1.x), prevede che sia l'utente a caricare la configurazione con /budus read.<br />
+<br />
+ Onestamente non sono sicuro (per nulla) di aver risolto il problema del crash, non ho la possibilita' di provare la cosa (a me ha sempre funzionato perfettamente), pero' sono abbastanza fiducioso.<br />
+<br />
+ E' possibile scaricare il programma da qui:<br />
+http://digilander.libero.it/udasoft/Software/Linux/buduscript/buduscript_setup.tar.gz<br />
+<br />
+e per installarlo:<br />
+<br />
+tar xvzf buduscript_setup.tar.gz -C $HOME/.xchat2<br />
+cd $HOME/.xchat2/buduscript_setup<br />
+./install.sh<br />
+ Quindi da X-Chat dare il comando /budus macro setup, sperare che parta :prrr:, modificare la configurazione, salvarla, uscire e caricarla con /budus read.<br />
+<br />
+ Nel caso in cui vada ancora in crash, puo' comunque essere utile postarmi qua il file /tmp/buduscript_setup.log.</div></div><hr />
+
+
+<div id="copyright">vBulletin&reg; v3.7.3, Copyright &copy;2000-2008, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content=" Rimozione del worm W32.Spybot.Worm, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio]  Rimozione del worm W32.Spybot.Worm Comunicazioni ufficiali di Azzurra" />
+	
+	<title> Rimozione del worm W32.Spybot.Worm [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="http://forum.azzurra.org/archive/index.php">Azzurra IRC Network Forum</a> &gt; <a href="http://forum.azzurra.org/archive/index.php/f-6.html">Network Central</a> &gt; <a href="http://forum.azzurra.org/archive/index.php/f-19.html">Comunicazioni ufficiali di Azzurra</a> &gt;  Rimozione del worm W32.Spybot.Worm</div>
+<hr />
+<div class="pda"><a href="http://forum.azzurra.org/archive/index.php/t-3647.html?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=3647">Rimozione del worm W32.Spybot.Worm</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Mav</div><div class="date">22-12-2003, 16:41</div></div><div class="posttext">Da alcuni giorni gira in IRC il worm W32.Spybot.Worm che ha la caratteristica di diffondersi attraverso Kazaa e mIRC. Il worm si nasconde dietro un &quot;innocente&quot; link ad un file .jpg, il quale non è una vera immagine ma uno script che viene furbamente eseguito da Internet Exporer (grazie a qualche giochetto con il relativo MIME-Type).<br />
+<br />
+Ecco le istruzioni per la rimozione di tale worm:<br />
+<br />
+1) Rimozione dello script per mIRC che spamma il link del worm on JOIN:<br />
+<br />
+Lo script si chiama script1338.mrc. Per eliminarlo dovete digitare <br />
+//!unload -rs script1338.mrc<br />
+e provvedere successivamente a rimuovere il file incriminato dalla directory di mIRC (C:\mIRC nell'installazione di default).<br />
+<br />
+2) Rimozione del file .exe infetto:<br />
+<br />
+Questa fase è un po' più complessa. Se usate Windows 9x/ME dovete prima procurarvi questo tool: Process Explorer (http://www.sysinternals.com/files/procexp9x.zip). Se usate Windows 2000/XP avete già tutto il necessario (ovvero il Task Manager, accessibile con un click destro sulla barra delle applicazioni e scegliendo successivamente la voce &quot;Task Manager&quot;).<br />
+Una volta che vi siete procurati tutto il necessario dovete usare il tool in vostro possesso (Process Explorer o il Task Manager) per cercare il processo &quot;taskmangr.exe&quot;. Tale processo andrà killato: selezionare il processo e premere CTRL+K su Process Explorer oppure selezionare il processo e clickare su &quot;Termina Operazione&quot; su Task Manager. Una volta fatto questo dovrete rimuovere i file &quot;C:\WINDOW\SYSTEM\taskmangr.exe&quot; (su Win 9x/ME) o &quot;C:\WINDOWS\SYSTEM32\taskmangr.exe&quot; (su Win 2000/XP).<br />
+<br />
+ATTENZIONE: taskmon.exe (su Win 9x/ME), taskman.exe (su tutte le versioni di Win) e taskmgr.exe (su Win 2000/XP) NON sono worm, ma file di sistema!<br />
+<br />
+3) Rimozione delle chiavi del registro di sistema:<br />
+<br />
+Aprite l'editor del registro: Start -&amp;gt; Esegui -&amp;gt; regedit<br />
+Cercate la stringa &quot;taskmangr.exe&quot; usando l'apposita funzione di ricerca e rimuovete tutte le chiavi che vi fanno riferimento: su Win 9x/ME la chiave incriminata si trova sotto HKEY_LOCAL_MACHINE/Software/Microsoft/Windows/CurrentVersion/Run ed è chiamata &quot;Task Manager&quot;.<br />
+<br />
+4) Riavviate il sistema.<br />
+<br />
+ATTENZIONE: il worm potrebbe lasciare sul sistema alcuni suoi file in directory con nomi che riconducono a Kazaa. Cercate tali directory (ad esempio C:\WINDOWS\SYSTEM\KazaaBackupFiles) e rimuovetele dal sistema.<br />
+<br />
+Una volta seguite queste istruzioni dovreste poter stare tranquilli. Naturalmente valgono i soliti consigli:<br />
+<br />
+1) Eseguite periodicamente gli aggiornamenti di WindowsUpdate<br />
+2) NON CLICKATE per nessun motivo sui link che vi vengono spammati in query, nemmeno se sembrano delle innocue immagini.<br />
+3) Riportate eventuali spam sospetti agli operatori di Azzurra sul canale #operhelp: il vostro aiuto può essere molto utile a rallentare la diffusione di eventuali trojan.<br />
+<br />
+Buon divertimento su Azzurra IRC Network!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mav</div><div class="date">23-12-2003, 23:05</div></div><div class="posttext">Esiste una variante del worm di cui ho esposto la procedura di disinfezione nel post precedente. Le istruzioni rimangono le stesse, l'unica differenza sta nel nome dell'eseguibile: &quot;UPDT32V2.EXE&quot;. Di conseguenza dovrete:<br />
+<br />
+1) Cercare e killare il processo &quot;updt32v2.exe&quot;<br />
+2) Cercare e rimuovere le chiavi del registro che fanno riferimento a &quot;updt32v2.exe&quot;<br />
+3) Eliminare il file C:\WINDOWS\SYSTEM\UPDT32V2.EXE (su Win 9x/ME) oppure C:\WINDOWS\SYSTEM32\UPDT32V2.EXE (su Win 2000/XP).<br />
+<br />
+Le istruzioni per la rimozione dello script mIRC aggiunto dal worm sono le stesse del punto 1) del post precedente.</div></div><hr />
+
+
+<div id="copyright">vBulletin&reg; v3.7.0, Copyright &copy;2000-2008, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

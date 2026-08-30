@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content=" Kernel 2.6 , impressioni personali, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio]  Kernel 2.6 , impressioni personali Discussioni Linux" />
+	
+	<title> Kernel 2.6 , impressioni personali [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="http://forum.azzurra.org/archive/index.php">Azzurra IRC Network Forum</a> &gt; <a href="http://forum.azzurra.org/archive/index.php/f-8.html">Azzurra - Tech Center</a> &gt; <a href="http://forum.azzurra.org/archive/index.php/f-28.html">Discussioni Linux</a> &gt;  Kernel 2.6 , impressioni personali</div>
+<hr />
+<div class="pda"><a href="http://forum.azzurra.org/archive/index.php/t-4856.html?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=4856">Kernel 2.6 , impressioni personali</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">City_Hunter</div><div class="date">29-05-2004, 17:06</div></div><div class="posttext">Qualche tempo fa, in un momento di sana e lucida volontà masochistica, ho provato ad aggiornare il kernel di Linux passando dal 2.4.26 al 2.6.6.<br />
+<br />
+Come molti sapranno, le serie che portano numeri pari (2.2, 2.4, 2.6) sono quelle giudicate stabili ed adoperabili in ambienti di produzione. Molte distribuzioni supportano già attivamente la nuova serie 2.6 , Slackware Linux ha  deciso di procedere in modo più cauto.<br />
+Sebbene la nuova serie sia stata preceduta dalla lunga fila di kernel 2.5 che hanno permesso di rilevare errori e migliorare via via le nuove caratteristiche, è indubbio che con l'arrivo della serie 2.6 più gente abbia cominciato ad usare il nuovo kernel stabile e quindi sia iniziata una fase di test più consistente, legata all'utilizzo quotidiano.<br />
+<br />
+<br />
+Istruzioni per l'uso e moduli esterni<br />
+Chi abbia seguito recentemente il changelog (http://www.slackware.org/changelog/) di slackware-current, avrà avuto modo di vedere come molti dei recenti aggiornamenti siano stati pensati per una futura migrazione indolore al kernel 2.6.<br />
+Questo è vero specialmente per gli init scripts, tra i numerosi cambiamenti c'è ora il mount automatico su /sys del nuovo sysfs qualora gli scripts rilevino che il kernel usato è, per l'appunto, un 2.6.<br />
+Dunque un upgrade a slackware-current, almeno per quel che riguarda il gruppo A (quello contenente programmi e scripts basilari), è straconsigliato.<br />
+<br />
+In secondo luogo è necessario verificare il supporto del kernel 2.6 per tutti i driver che si adopera e che non sono inclusi nel kernel di linux. Infatti i moduli esterni al kernel progettati per il kernel 2.4 NON funzionano col kernel 2.6.<br />
+Nel mio caso:<br />
+<br />
+eagle-usb (http://eagle-usb.ath.cx/pub/) per il modem ADSL, a partire dalla recente versione 1.9.6 supporta il kernel 2.6.x. E' consigliabile comunque estrarre l'ultima versione del driver da CVS perchè la serie 2.6.x è in continua evoluzione. Per esempio un driver scritto per 2.6.4 potrebbe avere piccole difficoltà a compilare col 2.6.6 (in effetti per eagle-usb è proprio così, a causa di modifiche di struct per USB nel codice).<br />
+<br />
+linux-wlan-ng (http://www.linux-wlan.org) per le schede wireless; il supporto per 2.6 esiste, è dichiarato sperimentale. In realtà sulla mia piccola rete ad-hoc si è rivelato finora affidabilissimo e nella ML del driver ho trovato molta disponibilità per la segnalazione di eventuali problemi.<br />
+<br />
+nvidia linux driver (http://www.nvidia.com/object/linux.html) per la mia geforce. Supporto per kernel 2.6 presente e perfettamente funzionante. Meglio di così...<br />
+<br />
+Non so quanti abbiano ancora un vetusto scanner su porta parallela, io ce l'ho. Il driver del kernel pt_drv per plustek_pp (sane-project (http://www.sane-project.org/)) esiste e compila anche su 2.6, ma per qualche oscura ragione non rileva il mio Primax 4800 Direct (mentre sul 2.4 non c'erano problemi). Poco male, basta utilizzare la modalità diretta al posto della modalità kernel e si risolve.<br />
+<br />
+Menzione a parte merita il progetto lm-sensors (http://secure.netroedge.com/~lm78/), dedicato al controllo di salute dell'hardware (temperature, ventole, tensione). Sul kernel 2.4 era necessario compilare esternamente al kernel i vari moduli i2c. Sul 2.6 i moduli sono tutti presenti (e selezionabili) direttamente nel kernel, dunque è opportuno installare solo gli applicativi userspace del pacchetto lm-sensors.<br />
+<br />
+I driver audio sono quelli del progetto ALSA (http://www.alsa-project.org/) (uno dei fiori all'occhiello di Linux, ndG), che sostituiscono i driver OSS oramai obsoleti. Sul 2.4 era necessario compilare i driver ALSA esternamente al kernel (gli unici presenti nel kernel erano i driver OSS), sul 2.6 sono presenti entrambi i driver. Personalmente sul kernel non compilo moduli sonori, preferisco in ogni caso compilare i moduli ALSA esternamente in ogni caso per poter scegliere la loro versione a mio piacimento.<br />
+<br />
+Questi sono i driver esterni al kernel che ero solito comp

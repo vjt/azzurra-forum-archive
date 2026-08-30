@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content=" Evolution - crash all'avvio, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio]  Evolution - crash all'avvio Discussioni Linux" />
+	
+	<title> Evolution - crash all'avvio [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="http://forum.azzurra.org/archive/index.php">Azzurra IRC Network Forum</a> &gt; <a href="http://forum.azzurra.org/archive/index.php/f-8.html">Azzurra - Tech Center</a> &gt; <a href="http://forum.azzurra.org/archive/index.php/f-28.html">Discussioni Linux</a> &gt;  Evolution - crash all'avvio</div>
+<hr />
+<div class="pda"><a href="http://forum.azzurra.org/archive/index.php/t-9939.html?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=9939">Evolution - crash all'avvio</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Kid</div><div class="date">11-08-2005, 16:52</div></div><div class="posttext">Uso evolution 2.2 su Debian Testing. Ho pensato bene, mentre scaricavo la posta, di selezionare &quot;compiti&quot; (1 dei 4 pulsantini in basso a sinistra) e il programma è andato in crash. Ho riavviato evolution ma continua a crashare subito dopo l'avvio, senza darmi modo di fare nulla.<br />
+Dopo qualche avvio&amp;crash ho notato che nella barra del titolo appare sempre &quot;compiti&quot; a fianco di &quot;evolution&quot; come se tentasse sempre di partire da da quella &quot;cartella&quot;. ho pensato quindi fosse un problema di impostazioni, magari cancellando le impostazioni si riavvia sano e pulito.<br />
+<br />
+Ho provato a reinstallarlo con  apt-get remove --purge evolution <br />
+e poi l'ho reinstallato .... ma senza risultati, ho anche cancellato la cartella nascosta nella mia HOME, disinstallato sempre con il purge, riavviato il pc, ma nulla, non si avvia + :mad:<br />
+<br />
+ho notato che da terminale, se lo avvio come utente root, parte (anche se si incazza 1 po), però da utente &quot;normale&quot; non parte +!<br />
+<br />
+non so + cosa fare! :mad:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">morpheus</div><div class="date">11-08-2005, 17:34</div></div><div class="posttext">Prova a vedere quale componente risulta attivo per default nella configurazione di evolution:<br />
+$ gconftool-2 -g /apps/evolution/shell/view_defaults/component_idStando a quanto hai scritto, dovrebbe apparirti &quot;tasks&quot;.<br />
+<br />
+In quel caso, potresti provare a forzare manualmente mail come componente di default:<br />
+$ gconftool-2 -t string -s /apps/evolution/shell/view_defaults/component_id mail<br />
+Just my 2 cents :-)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kid</div><div class="date">11-08-2005, 18:24</div></div><div class="posttext">spettacolo!!! funziona!!! :okay::D:D:okay:<br />
+graSSie !!!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kid</div><div class="date">12-08-2005, 08:01</div></div><div class="posttext">Ho ancora un piccolo dubbio.<br />
+All'avvio di evolution avevo, ovviamente perso tutte le mail (avevo cancellato la cartella &quot;local&quot; ma ne ho fatto un backup, l'ho poi sostituita e funziona benone). <br />
+<br />
+Ho notato però che tutti gli account di posta che avevo impostato sono rimasti, nonostante io avessi cancellato pure la cartella nascosta &quot;.evolution&quot; presente nella mia /home/, ho dovuto reinserire solo le password. Dove vengono salvati gli account email ? graSSie :-)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">morpheus</div><div class="date">12-08-2005, 16:28</div></div><div class="posttext">Gli account (come gran parte delle impostazioni di evolution) vengono salvati nel &quot;database&quot; di gconf2, una specie di simil-registry usato dalle applicazioni gnome.<br />
+Se vuoi vedere l'elenco completo delle impostazioni di evolution, usa questo comando:<br />
+$ gconftool-2 -R /apps/evolutionTi consiglio di redirezionare stdout su un file o in pipe su more o less visto che le impostazioni sono moooolto numerose :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kid</div><div class="date">15-08-2005, 09:05</div></div><div class="posttext">ho avuto altri problemi (già lo sai) e ho installato Thunderbird. Mi è bastato prendere la cartella delle mail di evolution e farla leggere a TB per importare correttamente 4 annetti di messaggi :D<br />
+<br />
+unica pecca ... qualche cartella &quot;aggiuntiva/indesiderata&quot; causata dall'importazione, cartelle cancellate senza problemi :D<br />
+<br />
+graSSie :okay:</div></div><hr />
+
+
+<div id="copyright">vBulletin&reg; v3.8.1, Copyright &copy;2000-2009, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

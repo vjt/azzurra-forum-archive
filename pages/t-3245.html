@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="psybnc per win, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] psybnc per win Angolo tecnico" />
+		<title>psybnc per win [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-13.html">Angolo tecnico</a> &gt; psybnc per win</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=3245">psybnc per win</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Marckus</div><div class="date">19-10-2003, 14:48</div></div><div class="posttext">re raga,spero di non essere off-topic e non sono sicuro se ne avete già parlato di questo argomento,in caso vi prego di farmi avere l'url.....vi vorrei porgere una domanda...a voi il psybnc per win(per chi lo usa) funge? io non riesco da qualche annetto a questa parte a farlo fungere...cioè...parte,mi fa registrare come administrator,setto i miei caxxi ma al momento del connect non si connette...quando esco per rientrare non mi fa entrare <br />
+esempio: <br />
+. ..[. notice .].. . Welcome : psyBNC2.3.1-7 <br />
+. ..[. notice .].. . Welcome psyBNC2.3.1-7 <br />
+. ..[. notice .].. . -psyBNC : Your IRC Client did not support a password. Please type /QUOTE PASS yourpassword to connect. <br />
+. ..[. notice .].. . -psyBNC Your IRC Client did not support a password. Please type /QUOTE PASS yourpassword to connect. <br />
+ <br />
+[17:23] -&amp;gt; Server: PASS miapass <br />
+<br />
+ Auto Query Log Attivato su:[ -psyBNC ] <br />
+- <br />
+..:[-psyBNC]:.« Welcome Marckus ! » <br />
+..:[-psyBNC]:.« You are the first to connect to this new proxy server. » <br />
+<br />
+etc etc...poi: <br />
+..:[-psyBNC]:.« Server irc.azzurra.org port 6667 (password: None) added. » <br />
+..:[-psyBNC]:.« Sat Oct 18 15:24:15 :User Marckus () trying irc.azzurra.org port 6667 (). » <br />
+e rimane qua senza muoversi... <br />
+<br />
+[17:26] *** Connecting to 127.0.0.1 (8080) <br />
+<br />
+. ..[. notice .].. . Welcome : psyBNC2.3.1-7 <br />
+. ..[. notice .].. . Welcome psyBNC2.3.1-7 <br />
+. ..[. notice .].. . -psyBNC : Your IRC Client did not support a password. Please type /QUOTE PASS yourpassword to connect. <br />
+. ..[. notice .].. . -psyBNC Your IRC Client did not support a password. Please type /QUOTE PASS yourpassword to connect. <br />
+ <br />
+[17:26] -&amp;gt; Server: PASS miapass<br />
+ <br />
+[17:26] *** Disconnected <br />
+<br />
+come vedete non mi fa accedere....che mi dite? Vi saluto  <br />
+<br />
+Marckus</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">thesaint</div><div class="date">20-10-2003, 17:46</div></div><div class="posttext">devi impostare nel file psybnc.conf l'ip al momento della connessione non l'il localhost (127.0.0.1) altrimenti non funzionerà mai.<br />
+ciao :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Marckus</div><div class="date">24-10-2003, 17:02</div></div><div class="posttext">PSYBNC.SYSTEM.PORT1=8080<br />
+PSYBNC.SYSTEM.HOST1=192.168.0.1<br />
+PSYBNC.HOSTALLOWS.ENTRY0=*<br />
+<br />
+[18:00] &amp;lt;-psyBNC&amp;gt; Fri Oct 24 16:00:17 :User Marckus () trying imc.azzurra.org port 6667 ().<br />
+<br />
+io non ho mai cambiato quelle impostazionima ho seguito il tuo consiglio lo stesso....il psy continua a non connettersi....qualche altra idea?^^</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">24-10-2003, 17:39</div></div><div class="posttext">PSYBNC.SYSTEM.PORT1=8080<br />
+PSYBNC.SYSTEM.HOST1=192.168.0.1<br />
+PSYBNC.HOSTALLOWS.ENTRY0=*<br />
+<br />
+[18:00] &amp;lt;-psyBNC&amp;gt; Fri Oct 24 16:00:17 :User Marckus () trying imc.azzurra.org port 6667 ().<br />
+<br />
+io non ho mai cambiato quelle impostazionima ho seguito il tuo consiglio lo stesso....il psy continua a non connettersi....qualche altra idea?^^<br />
+<br />
+Io ne ho una: non usare il tuo IP privato, mettici quello pubblico... quello che usa il tuo router, tanto per capirci.<br />
+Non male, comunque... :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Marckus</div><div class="date">24-10-2003, 23:36</div></div><div class="posttext">alura<br />
+<br />
+PSYBNC.SYSTEM.PORT1=8080<br />
+PSYBNC.SYSTEM.HOST1=miohost.org<br />
+PSYBNC.HOSTALLOWS.ENTRY0=*<br />
+<br />
+[00:23] &amp;lt;-psyBNC&amp;gt; Fri Oct 24 22:23:07 :Hop requested by Marckus. Quitting.<br />
+[00:23] &amp;lt;-psyBNC&amp;gt; Fri Oct 24 22:23:07 :User Marckus got disconnected from server.<br />
+[00:23] &amp;lt;-psyBNC&amp;gt; Fri Oct 24 22:23:10 :User Marckus () trying imc.azzurra.org port 6667 ().<br />
+<br />
+ed è finita come sopra :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">24-10-2003, 23:44</div></div><div class="posttext">ed è finita come sopra :)<br />
+<br />
+Se il tuo IP e' 192.168.0.1, ne deduco che sei in una LAN, ovvero che tu abbia un router con IP pubblico A.B.C.D. A questo punto, tu stai facendo girare uno psybnc su 192.168.0.1 alla porta 8080, ma in realta' l'host remoto deve vedere A.B.C.D ... peccato che per il router la porta 8080 non voglia dire nulla. Quindi, altra idea che ti metto a disposizione: mappati il router in modo che la sua porta 8080 sia rediretta automagicamente verso l'IP 192.168.0.1 all'interno della LAN.<br />
+<br />
+La cosa divertente e' che io non uso psybnc, sto solo analizzando il file di configurazione che hai incollato... :D<br />
+Sicuramente cmq la mappatura dei router da' un po' di rogne... ne so qualcosa. -___-</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Marckus</div><div class="date">25-10-2003, 01:35</div></div><div class="posttext">la lan è siffatta: modem-hub-pc-resto della lan(sempre su hub) ho solo assegnato alla macchina che uso quell'ip..e cmq xp assegna di suo quell'ip alla scheda ethernet cosa che non facevano i vecchi prodotti microsoft che si aspettavano un server dhcp...ho provato anche con un demone in locale ma non funge...cosa che invece fungeva diverso tempo fa...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Marckus</div><div class="date">25-10-2003, 01:37</div></div><div class="posttext">(bello il nano peloso :P)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">25-10-2003, 08:48</div></div><div class="posttext">la lan è siffatta: modem-hub-pc-resto della lan(sempre su hub) ho solo assegnato alla macchina che uso quell'ip..e cmq xp assegna di suo quell'ip alla scheda ethernet cosa che non facevano i vecchi prodotti microsoft che si aspettavano un server dhcp...ho provato anche con un demone in locale ma non funge...cosa che invece fungeva diverso tempo fa...<br />
+<br />
+Non mi e' chiaro, sorry ^^<br />
+Innanzitutto, se il tuo &quot;modem&quot; ha un indirizzo IP interno ed uno esterno, allora non e' un &quot;modem&quot; ma un router... e come tale devi mapparti le porte se hai bisogno di certi servizi (tanto per dirne una: suppongo che a te le DCC non funzionino).<br />
+Poi, se per qualche strano motivo non riesci ad assegnare un IP statico al tuo pc (non mi e' ben chiaro il discorso sul dhcp...), allora penso che dovrai mappare quel router ad ogni boot del pc stesso. Nel caso, ti faccio gli auguri perche' prevedo che ti stuferai abbastanza in fretta :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Marckus</div><div class="date">25-10-2003, 14:49</div></div><div class="posttext">a me funge tutto senza mappare nulla...io uso il modem in comodato d'uso della telecom ethernet ipm datacom...ho un ip in locale assegnato da me medesimo come per gli altri pc connessi in lan e funge tutto :) l'unica cosa che non va è il psy(tengo due eggdrop da me ).Come ti ho scritto prima il psy non funge nemmeno se runno un demone irc in locale...capit?^^ <br />
+Saluti da zio Marckus</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Marckus</div><div class="date">25-10-2003, 14:55</div></div><div class="posttext">Il tuo host è che.ne.so . il tuo ISP è sono.cazzi.tuoi.it<br />
+Stai usando Windows bho e usi IE 39<br />
+W la figa e chi la castiga.</div></div><hr />
+
+
+<div id="copyright">vBulletin v3.5.3, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

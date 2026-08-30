@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Script: HAPPY HUMOR, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] Script: HAPPY HUMOR Programmazione e dintorni" />
+		<title>Script: HAPPY HUMOR [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-23.html">Programmazione e dintorni</a> &gt; Script: HAPPY HUMOR</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=264">Script: HAPPY HUMOR</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Progeny</div><div class="date">24-11-2001, 17:46</div></div><div class="posttext">Ecco a grande richiesta :razz: la mia ultima produzione &amp;gt;:)<br />
+<br />
+&amp;lt;?php<br />
+/*<br />
+Happy Humor v0.3<br />
+Questo e' un script free, potete modifcarlo a<br />
+seconda delle vostre esigenze senza chiedere alcuna<br />
+autorizzazione all'autore, a condizione, che venga<br />
+lasciato il banner pubblicitario.<br />
+<br />
+Progeny<br />
+*/<br />
+<br />
+// Come avrete di certo capito, il file happy.txt<br />
+// e' il file che contiene le barzellette,<br />
+// una per ogni singola riga<br />
+$filename = &amp;quot;happy.txt&amp;quot;;<br />
+$fd = fopen($filename, &amp;quot;r&amp;quot;) or die(&amp;quot;Impossibile aprire il file.&amp;quot;);<br />
+$lines = file($filename);<br />
+fclose($fd);<br />
+$random = rand(1, count($lines));<br />
+echo &amp;quot;&amp;lt;html&amp;gt;&amp;quot;;<br />
+echo &amp;quot;&amp;lt;head&amp;gt;&amp;quot;;<br />
+echo &amp;quot;&amp;lt;title&amp;gt;Happy Humor - by Progeny&amp;lt;/title&amp;gt;&amp;quot;;<br />
+echo &amp;quot;&amp;lt;/head&amp;gt;&amp;quot;;<br />
+echo &amp;quot;&amp;lt;body&amp;gt;&amp;quot;;<br />
+echo &amp;quot;&amp;lt;p align=&amp;quot;center&amp;quot;&amp;gt;&amp;lt;a href=&amp;quot;http://scambiobanner.aruba.it/linkxpro/linkxpro.asp?Task=Click&amp;amp;Mode=HTML&amp;amp;MemID=4976&amp;amp;SzID=  1&amp;amp;PageID=45620&amp;quot; target=&amp;quot;_new&amp;quot;&amp;gt;&amp;lt;img src=&amp;quot;http://scambiobanner.aruba.it/linkxpro/linkxpro.asp?Task=Get&amp;amp;Mode=HTML&amp;amp;MemID=4976&amp;amp;SzID=1&amp;amp;  PageID=45620&amp;quot; width=&amp;quot;468&amp;quot; height=&amp;quot;60&amp;quot; border=&amp;quot;0&amp;quot;&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt;&amp;quot;;<br />
+echo &amp;quot;&amp;lt;font face=&amp;quot;Verdana&amp;quot; size=&amp;quot;-1&amp;quot;&amp;gt;$lines[$random]&amp;quot;;<br />
+echo &amp;quot;&amp;lt;font face=&amp;quot;Verdana&amp;quot; size=&amp;quot;-1&amp;quot;&amp;gt;NetParty Virtual Community: http://www.net-party.it - http://www.net-party.it/chat&amp;quot;;<br />
+echo &amp;quot;&amp;lt;/body&amp;gt;&amp;quot;;<br />
+echo &amp;quot;&amp;lt;/html&amp;gt;&amp;quot;;<br />
+?&amp;gt;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Progeny</div><div class="date">24-11-2001, 17:48</div></div><div class="posttext">Ah, mi stavo dimenticando, http://www.net-party.it/happyhumor.php<br />
+Se avete qualche file MOLTO grande, pieno di barzellette DECENTI potete mandarmelo per email :wink: così le aggiungo a quelle già esistenti.<br />
+<br />
+Have fun!</div></div><hr />
+
+
+<div id="copyright">vBulletin v3.5.3, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

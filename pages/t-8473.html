@@ -1,0 +1,212 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Ubuntu: Linux senza root?, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] Ubuntu: Linux senza root? Discussioni Linux" />
+	
+	<title>Ubuntu: Linux senza root? [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-28.html">Discussioni Linux</a> &gt; Ubuntu: Linux senza root?</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=8473">Ubuntu: Linux senza root?</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">City_Hunter</div><div class="date">28-04-2005, 12:46</div></div><div class="posttext">Un cugino del sottoscritto ha deciso di provare Linux e<br />
+mi ha chiesto consiglio sulla distro con cui cominciare.<br />
+<br />
+Benchè sia appassionato e pienamente convinto della valenza didattica di Slackware Linux, non ritengo che sia la distro adatta per un primissimo impatto da utente (non power-user).<br />
+Ho pensato che fosse l'occasione per provare Ubuntu Linux (http://www.ubuntulinux.org), distribuzione di cui ultimamente si sente parlare abbastanza spesso in giro. Il software di Ubuntu è piuttosto recente, l'ultima release (hoary hedgehog) risale all'inizio di questo mese. E il sistema di aggiornamento è il collaudato apt.<br />
+Inoltre è possibile scegliere con facilità tra KDE e GNOME come ambiente desktop, dato che oltre al classico cd di Ubuntu (contenente GNOME) esiste una versione della iso di ubuntu appositamente pensata per KDE (e denominata kubuntu (http://www.kubuntu.org)).<br />
+<br />
+Nel raccogliere un pò di informazioni circa Ubuntu, mi sono imbattuto in una pagina dove veniva spiegata una caratteristica molto particolare. L'ennesima prova, se mai fosse necessaria, che le differenze tra le distro spesso non si limitano solo all'organizzazione dei file e alla gestione dei pacchetti.<br />
+In poche parole, Ubuntu di default ha l'utente root disabilitato.<br />
+<br />
+Per maggiori info, questa è la pagina:<br />
+http://www.ubuntulinux.org/wiki/RootSudo<br />
+<br />
+Per tutte le operazioni che richiedano l'utente root, si dovrà ricorrere a sudo.<br />
+Alcune software (come kdesu di KDE) sono stati appositamente patchati per seguire questa filosofia. A quanto ho capito però (sbaglio?), il normale utente di Ubuntu ha sempre accesso a sudo qualora lo desideri.<br />
+<br />
+Francamente questa cosa mi lascia un pò perplesso. Al di là del discorso di comodità (immagino sia questione d'abitudine), i benefici elencati sulla pagina non mi convincono.<br />
+<br />
+Ossia:<br />
+Initially the Ubuntu team wanted the easiest install possible. By not enabling root, a couple of steps requiring user interaction during install could be avoided. (Colin Watson)<br />
+Credo che chi voglia installare Linux dovrebbe essere ben disposto a fare quei due passaggi in più di configurazione e a studiarsi come funzionano.<br />
+<br />
+Even more significantly, if root were enabled during install, the user would be required to forever remember the password they chose--even though they would rarely use it. Root passwords are often forgotten by users who are new to the Unix security model.<br />
+Oddio... con tutto il rispetto e senza volontà di apparire antipatico, un tipo che dimentica la password di root non dovrebbe usare un computer. A prescindere dal sistema operativo...<br />
+<br />
+It avoids the &quot;I can do anything&quot; interactive login by default--you will be prompted for a password before major changes can happen, which should make you think about the consequences of what you are doing. If you were logged in as root, you could just delete some of those &quot;useless folders&quot; and not realize you were in the wrong directory until it's too late. It's been good Unix practice for a long time to &quot;su-command-^D&quot; regularly instead of staying in a root shell--unless you're doing serious system maintenance (at which point you can still &quot;sudo su&quot;)<br />
+Anche sulle altre distribuzioni di Linux si lavora normalmente con un utente senza privilegi particolari. Nel momento in cui uno accede come utente root, ci si aspetta semplicemente che si concentri un attimino di più su ciò che va a fare.<br />
+<br />
+Sudo adds a log entry of the command(s) run (In /var/log/auth.log). If you mess up, you can always go back and see what commands were run.<br />
+Si ok è carina come cosa... ma se si fa un pasticcio non è che il log possa far tornare indietro i dati persi, per esempio.<br />
+<br />
+Every cracker trying to brute-force their way into your box will know it has an account named &quot;root&quot; and will try that first. What they don't know is what the usernames of your other users are<br />
+Già. Peccato che se lo trova praticamente ha sudo a disposizione per fare qualsiasi cosa :/<br />
+Senza contare che il nome dell'utente normale potrebbe essere ricavabile in altri modi. Basti pensare all'ident su IRC (a meno che non sia stato opportunamente configurato per mostrare l'UID o un ident fasullo).<br />
+<br />
+Per carità, su qualsiasi distro la violazione di un account utente regolare può diventare molto pericolosa se questo utente conosce la pass di root e usa su. A prescindere da sudo.<br />
+E questa è proprio la giustificazione opposta da Ubuntu a chi definisce meno sicuro il suo modello.<br />
+<br />
+Francamente resto un pò perplesso :)<br />
+Mi piacerebbe sentire l'opinione di qualcuno che usi regolarmente Ubuntu e sia abituato a gestire il sistema in questo modo.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">28-04-2005, 13:22</div></div><div class="posttext">Installai Ubuntu come live-cd (Hoary anche per me, ma con Gnome) e non ci furono problemi con l'uid root, immagino che la vita sia stata resa diversa per l'installazione. Pero' in effetti, questa cosa risulta anche poco pratica... ad esempio questo thread (http://groups.google.it/groups?th=976a99fc15c88e4c) indica la difficolta' di far sudare anche una stupidissima echo!<br />
+Lascia perplesso anche me, non mi sembra una scelta molto saggia. :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">City_Hunter</div><div class="date">28-04-2005, 13:38</div></div><div class="posttext">ad esempio questo thread (http://groups.google.it/groups?th=976a99fc15c88e4c) indica la difficolta' di far sudare anche una stupidissima echo!<br />
+Beh oddio, qui Ubuntu c'entra poco.<br />
+Cercare di lanciare un programma di KDE (kate) usando sudo vuol dire non aver letto la documentazione. I programmi di KDE si lanciano con kdesu, che è presente anche in Ubuntu (ed è stato opportunamente patchato per funzionare correttamente) :)<br />
+<br />
+Per la cronaca, sudo -s a quanto ho letto non cambia le variabili d'ambiente quindi non credo sia necessario esportare la variabile di display sul profilo di root, esattamente come non è necessario per un su (a differenza di &quot;su -&quot;).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Alex1</div><div class="date">28-04-2005, 14:49</div></div><div class="posttext">direi che a parte essere una scelta di default e pertanto editabile io non ci vedo poi tutta questa immensa differenza tra il dare:<br />
+su<br />
+&lt;password&gt;<br />
+comando<br />
+<br />
+ e<br />
+ <br />
+ sudo comando<br />
+ &lt;password&gt;<br />
+<br />
+<br />
+quanto al punto sul brute-force della pass, ammesso che qualcuno voglia provarlo è più facile a mio avviso andare a scegliere l'user root (nome fisso) e far provare centinaia di pass che non doversi inventare l'id dell'utente con accesso sudo e provare le stesse centinaia di pass.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">28-04-2005, 14:55</div></div><div class="posttext">quanto al punto sul brute-force della pass, ammesso che qualcuno voglia provarlo è più facile a mio avviso andare a scegliere l'user root (nome fisso) e far provare centinaia di pass che non doversi inventare l'id dell'utente con accesso sudo e provare le stesse centinaia di pass.<br />
+<br />
+Vabbe' ma non ci vuole una scienza per sapere che sulla mia gentoo esistono solo due utenti: steve e root :)<br />
+A quel punto, se tanto mi da' tanto, vi /etc/passwd e sostituisco &quot;root&quot; con &quot;king&quot; nella prima riga... tanto il superutente e' quello con uid 1, mica deve necessariamente chiamarsi &quot;root&quot; :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mav</div><div class="date">28-04-2005, 16:32</div></div><div class="posttext">A quel punto, se tanto mi da' tanto, vi /etc/passwd e sostituisco &quot;root&quot; con &quot;king&quot; nella prima riga... tanto il superutente e' quello con uid 1, mica deve necessariamente chiamarsi &quot;root&quot; :)<br />
+<br />
+[Mav started in pedantic mode]<br />
+<br />
+Ehm... UID 0 per il superuser. :-)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">29-04-2005, 07:14</div></div><div class="posttext">Ehm... UID 0 per il superuser. :-)<br />
+<br />
+Ehm, uhm, ops...  :sospiro: <br />
+<br />
+Vabbe' dai c'ero vicino....  :-)<br />
+<br />
+Sbagliare e' umano, perseverare e' usare windows.  :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Alex1</div><div class="date">29-04-2005, 09:02</div></div><div class="posttext">Vabbe' ma non ci vuole una scienza per sapere che sulla mia gentoo esistono solo due utenti: steve e root :)<br />
+A quel punto, se tanto mi da' tanto, vi /etc/passwd e sostituisco &quot;root&quot; con &quot;king&quot; nella prima riga... tanto il superutente e' quello con uid 1, mica deve necessariamente chiamarsi &quot;root&quot; :)<br />
+<br />
+<br />
+cosa che però NON fa nessuno a questo mondo :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">29-04-2005, 09:04</div></div><div class="posttext">cosa che però NON fa nessuno a questo mondo :)<br />
+<br />
+Anche disabilitare root e' cosa rara: qui in ufficio da noi e' solo disabilitato (nemmeno dappertutto) il login diretto con root, ma si puo' fare il su - (salvo ulteriori disabilitazioni sul singolo utente).<br />
+Ci sono anche macchine con due utenti aventi uid 0... poche, per fortuna.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mav</div><div class="date">29-04-2005, 17:10</div></div><div class="posttext">root e toor per caso?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xin</div><div class="date">29-04-2005, 19:10</div></div><div class="posttext">Lo stesso discorso (root &quot;disabilitato&quot;) avviene su MacOSX, imho non è una gran trovata, se il destino vuole i danni, i danni saranno sia con su che con sudo.<br />
+Personalmente faccio sempre un sudo passwd root e mi &quot;attivo&quot; il mio root.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Progeny</div><div class="date">29-04-2005, 23:03</div></div><div class="posttext">toor non era roba di FreeBSD?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">29-04-2005, 23:07</div></div><div class="posttext">root e toor per caso?<br />
+<br />
+No, il secondo utente ha un nome legato al progetto seguito. Solo che poi non e' possibile eliminare il doppione... o cosi' dicono.<br />
+Tra parentesi, root e toor sono user e password predefiniti per Slax :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xin</div><div class="date">29-04-2005, 23:21</div></div><div class="posttext">toor non era roba di FreeBSD?<br />
+toor è stato introdotto in freebsd per &quot;l'uso root quotidiano&quot;, ossia poterlo usare con shell + userfriendly (ri-ossia bash :))</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">City_Hunter</div><div class="date">30-04-2005, 00:40</div></div><div class="posttext">Ok, questo pomeriggio ho fatto qualche prova col cuginetto.<br />
+Premetto che abbiamo provato kubuntu, non ubuntu.<br />
+<br />
+Mia personalissima opinione, a (k)ubuntu devo purtroppo dare una mezza bocciatura.<br />
+Indubbiamente l'installazione è semplice (al limite del demenziale) e questo è positivo.<br />
+Tuttavia una distro che vuole farsi conoscere per semplicità e immediatezza d'uso non può fallire nel far funzionare una banalissima sound blaster audigy. Moduli alsa caricati, nessun suono dalle casse. Ovviamente mixer configurato e tutto il resto.<br />
+Problema che a quanto pare (http://www.linuxquestions.org/questions/showthread.php?s=&amp;threadid=316640) (e non è l'unico thread) non abbiam riscontrato solo noi.<br />
+Questa è una mancanza sgradevole, soprattutto se si considera che persino le distro più spartane (Slackware, ndG) fanno funzionare la scheda audio &quot;out-of-the-box&quot;. Ma pazienza.<br />
+<br />
+Non ho simpatia per apt-get, ma questo credo dipenda soltanto da una questione d'abitudine. Quindi il mio giudizio a riguardo non farebbe testo.<br />
+Quello che invece purtroppo lo fa è il fatto che alcuni pacchetti (http://lists.ubuntu.com/archives/kubuntu-users/2005-April/000541.html) siano preparati male. Problema che non frena probabilmente un utente smaliziato (in fondo ho trovato la soluzione al primo giorno in cui ho toccato apt-get e dpkg) ma sicuramente crea noie al primo impatto con la distro, e può portare alla frustrazione qualcuno meno esperto.<br />
+<br />
+Last but not least, andare continuamente di sudo non mi piace. Onestamente non penso aiuti in termini di sicurezza. E per contro temo aiuti nel NON far funzionare a dovere alcuni programmi.<br />
+<br />
+Naturalmente, ubuntu con gnome potrebbe essere organizzato un pò meglio. Forse.<br />
+I miei migliori auguri per ubuntu, spero che col tempo possa limare questi problemini.<br />
+Onestamente, credo che farò installare slackware anche a mio cugino.<br />
+Tanto che alla fine lui debba ritrovarsi comunque a smazzare in console, preferisco che lo faccia per configurazioni testuali e nell'ambito della valenza didattica di slackware piuttosto che per sbattere la testa su problemi per cui non è responsabile :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mav</div><div class="date">30-04-2005, 16:16</div></div><div class="posttext">Ok, questo pomeriggio ho fatto qualche prova col cuginetto.<br />
+Premetto che abbiamo provato kubuntu, non ubuntu.<br />
+<br />
+<br />
+*boom*<br />
+<br />
+Non ho simpatia per apt-get, ma questo credo dipenda soltanto da una questione d'abitudine. Quindi il mio giudizio a riguardo non farebbe testo.<br />
+Quello che invece purtroppo lo fa è il fatto che alcuni pacchetti (http://lists.ubuntu.com/archives/kubuntu-users/2005-April/000541.html) siano preparati male. Problema che non frena probabilmente un utente smaliziato (in fondo ho trovato la soluzione al primo giorno in cui ho toccato apt-get e dpkg) ma sicuramente crea noie al primo impatto con la distro, e può portare alla frustrazione qualcuno meno esperto.<br />
+<br />
+KDE sta in uni/multiverse. Quei pacchetti a quanto ne so non ricevono supporto approfondito. Insomma... è l'equivalente (quanto a rischi) di usare debian unstable: non sono fatti per l'utente inesperto.<br />
+<br />
+Last but not least, andare continuamente di sudo non mi piace. Onestamente non penso aiuti in termini di sicurezza. E per contro temo aiuti nel NON far funzionare a dovere alcuni programmi.<br />
+<br />
+La soluzione sta nella stessa pagina del wiki che mi hai consigliato qualche giorno fa. :-) Nulla ti impedisce di settare una password a root, ed è quello che fa anche l'unico mio amico che usa ubuntu e di cui sono al corrente. Insomma, non credo ci siano i motivi per giudicare la distribuzione da questo (sia in positivo che in negativo).<br />
+<br />
+<br />
+Naturalmente, ubuntu con gnome potrebbe essere organizzato un pò meglio. Forse.<br />
+<br />
+<br />
+Direi di si :-) L'ho vista io stesso funzionare perfettamente out-of-the-box ieri su un Acer Aspire 1300.<br />
+<br />
+<br />
+I miei migliori auguri per ubuntu, spero che col tempo possa limare questi problemini.<br />
+<br />
+<br />
+Più che problemini (a parte quello della scheda audio, che cmq è comprensibilie) direi che sono scelte. Magari quando loro avranno più risorse o KDE sarà più semplice da gestire per i mainteiner forse i problemi nei pacchetti spariranno.<br />
+<br />
+<br />
+Onestamente, credo che farò installare slackware anche a mio cugino.<br />
+Tanto che alla fine lui debba ritrovarsi comunque a smazzare in console, preferisco che lo faccia per configurazioni testuali e nell'ambito della valenza didattica di slackware piuttosto che per sbattere la testa su problemi per cui non è responsabile :)<br />
+<br />
+Ah... il proselitismo... :sospiro:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">City_Hunter</div><div class="date">01-05-2005, 16:41</div></div><div class="posttext">Non me ne fai passare una, eh? :)<br />
+Beh, avessi voluto fare del proselitismo avrei dovuto anche raccontarvi che a distanza di un giorno, sulla stessa macchina, sono andato ad installare slackware 10.1. Neanche il tempo di fare il primo login sul sistema, lancio amp e già l'audio va che è un piacere. Prendo da kernel.org l'ultimo kernel 2.6 (slackware di default ha il 2.4 ma è predisposto per un eventuale passaggio al 2.6), lo compilo e lo installo, e senza fare uno straccio di modifica funziona tutto alla perfezione... ecc.ecc.<br />
+Poi le chiamano distro spartane!<br />
+<br />
+Ma se vi raccontassi tutto questo finirei OT...<br />
+...<br />
+...ops... l'ho appena fatto :p<br />
+<br />
+Tornando in topic, credo anche io che ubuntu + gnome sia ad uno stadio quantomeno più collaudato rispetto a kubuntu.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blaze</div><div class="date">01-05-2005, 17:32</div></div><div class="posttext">toor non è esattamente per uso quotidiano, in quanto come tutti voi ben sapete non è consigliabile fare uso quotidiano di una macchina da root, diciamo che è più un account di &quot;backup&quot; di root, una specie di accesso di emergenza in caso di problemi. (è il root backwards :)</div></div><hr />
+
+
+<div id="copyright">vBulletin&reg; v3.6.4, Copyright &copy;2000-2007, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

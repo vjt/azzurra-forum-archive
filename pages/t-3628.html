@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="LockNick x la lista akick, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] LockNick x la lista akick Services - I servizi IRC di Azzurra" />
+	
+	<title>LockNick x la lista akick [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-6.html">Network Central</a> &gt; <a href="f-30.html">Services - I servizi IRC di Azzurra</a> &gt; LockNick x la lista akick</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=3628">LockNick x la lista akick</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Feraligatr</div><div class="date">20-12-2003, 13:13</div></div><div class="posttext">Salve! Vorrei chiedere ai Services Coders se potrebbero mettere la funzione LockNick ke permette di bloccare  un nick/mask presente nella lista akick in modo che se ci sono altri untenti da akickare i SOP e I CF possono tranquillamente akickarli senza che ci sia l'intera lista bloccata</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dracoo</div><div class="date">20-12-2003, 21:53</div></div><div class="posttext">Sarebbe una cosa interessante estenderlo per tutte le liste, perchè a volte bloccare una lista solo perchè non si vuole che venga tolta una certa voce è un provvedimento un po' pesante.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">21-12-2003, 01:14</div></div><div class="posttext">Sarebbe una cosa interessante estenderlo per tutte le liste, perchè a volte bloccare una lista solo perchè non si vuole che venga tolta una certa voce è un provvedimento un po' pesante.<br />
+<br />
+Dal mio punto di vista sarebbe interessante fino ad un certo punto: per come la vedo io le AKick dovrebbero essere tolte dallo stesso operatore che le ha messe, o tutt'al piu' dal founder in persona. Se non c'e' sufficiente armonia fra SOP/CF/F per decidere univocamente che un certo nick/mask deve star fuori dal canale, allora non vedo perche' ricorrere a questo &quot;locknick&quot; che viene suggerito...<br />
+Gia' e' utile poter bloccare le liste, secondo me il resto non va dato dai servizi ma dal coordinamento fra gli operatori del canale.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dracoo</div><div class="date">21-12-2003, 13:21</div></div><div class="posttext">Dal mio punto di vista sarebbe interessante fino ad un certo punto: per come la vedo io le AKick dovrebbero essere tolte dallo stesso operatore che le ha messe, o tutt'al piu' dal founder in persona. Se non c'e' sufficiente armonia fra SOP/CF/F per decidere univocamente che un certo nick/mask deve star fuori dal canale, allora non vedo perche' ricorrere a questo &quot;locknick&quot; che viene suggerito...<br />
+Gia' e' utile poter bloccare le liste, secondo me il resto non va dato dai servizi ma dal coordinamento fra gli operatori del canale.<br />
+<br />
+Quello che dici è inequivocabilmente giusto, però come per il discorso dei cmode +a e +q, non è sempre facile trovare degli aop+ &quot;fedeli&quot; al 100%... magari una persona in akick contatta un sop che non conosce bene la situazione per cui questo tizio è finito in akick e lo toglie, non curandosi che è stato il founder stesso ad inserirlo. Per non parlare poi se esistono amicizie tra &quot;l'akickato&quot; e il sop (o cf che sia).<br />
+And the last but not the least tu puoi avere al massimo 5/6 utenti che &quot;obbediscono&quot; pienamente ai tuoi &quot;ordini&quot; perchè magari sono quelli che conosci di più... ma prendi un canale da 40 persone e passa, non si può conoscere bene tutto lo &quot;staff&quot; del canale, e non si può sapere quando una persona sia affidabile e quanto sia lamer...<br />
+Ora lascerei la parola a chi di dovere, ok Steve :D ?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gastaman</div><div class="date">09-01-2004, 12:30</div></div><div class="posttext">Pur essendo sostanzialmente d'accordo con quanto affermato da Steve, una funzione di questo tipo potrebbe a conti fatti tornare utile a molti canali, ha incidenza nulla sui consumi ed è di semplice implementazione.<br />
+La inseriremo sicuramente nella prossima versione dei servizi.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dracoo</div><div class="date">01-03-2004, 16:53</div></div><div class="posttext">Il Lock per singole voci delle liste è arrivato.<br />
+<br />
+Io però ho trovato un piccolo... bug. Riguarda l'Akick list.<br />
+Se si blocca una singola voce dell'Akick List, che sia però un nick, è possibile da parte dei sop e dei Cf aggiungere questa persona come vop o aop (e anche sop, se è un CF a farlo ^^), rendendo perciò l'Akick inutile (a meno che questo nick non entri nel canale non identificato.)<br />
+Perciò mio consiglio sarebbe d'impedire che un nick &quot;bloccato&quot; nell'akick list di un canale non possa venire aggiunto come vop+ (a meno che non sia il founder a farlo ;) )<br />
+<br />
+Bye :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">01-03-2004, 23:56</div></div><div class="posttext">Se si blocca una singola voce dell'Akick List, che sia però un nick, è possibile da parte dei sop e dei Cf aggiungere questa persona come vop o aop (e anche sop, se è un CF a farlo ^^), rendendo perciò l'Akick inutile (a meno che questo nick non entri nel canale non identificato.)<br />
+<br />
+Beh, ma era gia' cosi' da sempre: l'Akick non ha mai avuto valore se il nick in questione era Vop+ del canale, cioe' il nick entra regolarmente con i suoi privilegi d'accesso (vop, aop, sop, cf).<br />
+Il lock dell'Akick impedisce di rimuovere l'Akick in questione (founder escluso, of course), ma non previene l'inserimento di quel nick nelle liste del canale.</div></div><hr />
+
+
+<div id="copyright">vBulletin&reg; v3.6.4, Copyright &copy;2000-2007, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

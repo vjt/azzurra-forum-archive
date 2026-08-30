@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Java session, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] Java session Services - I servizi IRC di Azzurra" />
+	
+	<title>Java session [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-6.html">Network Central</a> &gt; <a href="f-30.html">Services - I servizi IRC di Azzurra</a> &gt; Java session</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=1046">Java session</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">20-09-2002, 23:50</div></div><div class="posttext">Stasera ho avuto un paio di disavventure con utenti che stavano usando una Java console... Niente di preoccupante, solo un paio di DCC mandate a schiantarsi sull'applet, solo che ho notato che non sempre e' facile riconoscere, mask alla mano, che l'utente e' su una sessione Java. Ad esempio:<br />
+<br />
+xxxxxxxxxxxxxx is ~MondoIRC@202.179.AzzurraNET-2E27390B * MondoIRC User ..::www.mondoirc.net::..'<br />
+<br />
+...ecco, questo non lo avrei mai identificato come utente Java :)<br />
+<br />
+Nel chiedermi se (e come) sia possibile identificare al volo se un utente sta usando una sessione Java o meno, mi sovvien da suggerire se si possa aggiungere qualcosa tipo &quot;Nickname is using a Java chat&quot; all'interno del /whois degli utenti +j , sull'onda del &quot;Nickname is using a secure connection (SSL)&quot; per gli utenti +S .<br />
+<br />
+Dite che puo' essere fattibile? :)<br />
+<br />
+Ciao,</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Progeny</div><div class="date">21-09-2002, 12:41</div></div><div class="posttext">Puoi sempre fare un CTCP Version.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">void`</div><div class="date">21-09-2002, 15:20</div></div><div class="posttext">Nel chiedermi se (e come) sia possibile identificare al volo se un utente sta usando una sessione Java o meno, mi sovvien da suggerire se si possa aggiungere qualcosa tipo &quot;Nickname is using a Java chat&quot; all'interno del /whois degli utenti +j , sull'onda del &quot;Nickname is using a secure connection (SSL)&quot; per gli utenti +S .<br />
+<br />
+Dite che puo' essere fattibile? :)<br />
+<br />
+Ciao,<br />
+<br />
+ho gia` implementato l`umode j nel bahamut, ma purtroppo solo per gli utenti connessi tramite javacr, la quale usa un protocollo nonstandard per fare il 'login' su IRC.<br />
+<br />
+le altre applet utilizzano il modo standard (cioe` USER e NICK) quindi non sarebbero identificabili dal demone come utenti java, e mettere l`umode a disposizione di tutti non mi e` parsa una buona idea.<br />
+<br />
+in caso di applet != da javacr, CTCP version come suggerito da progeny :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">21-09-2002, 20:54</div></div><div class="posttext">mettere l`umode a disposizione di tutti non mi e` parsa una buona idea.<br />
+<br />
+se posso chiedere... quali motivazioni ti hanno spinto verso questa considerazione?<br />
+<br />
+in caso di applet != da javacr, CTCP version come suggerito da progeny :)<br />
+<br />
+perfetto, ma il Version e' visibile a tutti nella barra di status, mentre un whois non crea problemi... +y a parte ;-)</div></div><hr />
+
+
+<div id="copyright">vBulletin&reg; v3.6.4, Copyright &copy;2000-2007, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

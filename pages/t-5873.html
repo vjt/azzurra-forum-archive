@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Da linux non vedo linux.azzurra.org (!), azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] Da linux non vedo linux.azzurra.org (!) Discussioni Linux" />
+	
+	<title>Da linux non vedo linux.azzurra.org (!) [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-28.html">Discussioni Linux</a> &gt; Da linux non vedo linux.azzurra.org (!)</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=5873">Da linux non vedo linux.azzurra.org (!)</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">14-10-2004, 07:55</div></div><div class="posttext">Questa e' bizzarra, onestamente non so perche' stia accadendo ma la realta' e' questa: dal mio pc con linux non riesco ad aprire http://linux.azzurra.org , mentre invece ci riesco benissimo dal pc windows di mio padre e da quello di mia madre, dunque sulla stessa rete LAN (cioe' stesso router, quindi stesso DNS). Non capisco quindi perche' slackware mi debba dire &quot;Host not found&quot; mentre entrambi i win2000 non hanno problemi a risolvere l'IP e proseguire con l'apertura delle pagine.<br />
+Preciso tutti i test sono stati fatti su entrambe le piattaforme con lo stesso browser, ovvero Mozilla Firefox, quindi escludo problemi specifici in questo senso. Non possono essere problemi delle pagine in se' o della loro visualizzazione, perche' proprio non riesco ad averne l'IP su linux, ma non ho problemi a risolvere un qualsiasi altro host *.azzurra.org (per entrare in chat o qui sul forum, ad esempio).<br />
+Lo stesso problema accade anche per http://irc.netsplit.de .<br />
+<br />
+... Qualcuno ha qualche suggerimento?  :-?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">liquid_snake</div><div class="date">14-10-2004, 15:34</div></div><div class="posttext">non saprei che dire.<br />
+Io apro senza problemi tutti e due i siti, ed uso un mozilla 1.7.2.<br />
+Dal codice html in oltre non mi pare ci siano delle controindicazio particolari, figurati che si può aprire anche con links!!!<br />
+per il resto nada</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">14-10-2004, 15:37</div></div><div class="posttext">Dal codice html in oltre non mi pare ci siano delle controindicazioni<br />
+<br />
+Al codice html non ci arrivo nemmeno, quindi non puo' essere quello il problema.<br />
+Che poi, a dirla tutta, in quel caso e' codice php... ma vabbe' ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">typedef_c</div><div class="date">14-10-2004, 17:33</div></div><div class="posttext">Io da Suse 9.1 lo apro perfettamente sia da Konqueror che da Firefox. Quindi presumo non sia un problema di compatibilita' ma di dns o di routing :) (provato un traceroute?almeno vedi se si blocca subito o cosa)<br />
+<br />
+Ciau type  :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">14-10-2004, 17:41</div></div><div class="posttext">provato un traceroute?<br />
+<br />
+Non e' che ci sia molto da tracciare...<br />
+<br />
+steve@jojofc&#58;~$ ping linux.azzurra.org<br />
+ping&#58; unknown host linux.azzurra.org<br />
+steve@jojofc&#58;~$ traceroute linux.azzurra.org<br />
+traceroute&#58; unknown host linux.azzurra.org<br />
+steve@jojofc&#58;~$</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">giuseppe_dj</div><div class="date">17-10-2004, 09:35</div></div><div class="posttext">Questa e' bizzarra, onestamente non so perche' stia accadendo ma la realta' e' questa: dal mio pc con linux non riesco ad aprire http://linux.azzurra.org ,... Qualcuno ha qualche suggerimento?  :-?<br />
+<br />
+A naso, da root:<br />
+echo &amp;quot;0&amp;quot; &amp;gt;/proc/sys/net/ipv4/tcp_window_scaling<br />
+e<br />
+echo &amp;quot;0&amp;quot; &amp;gt;/proc/sys/net/ipv4/tcp_default_win_scale<br />
+<br />
+Fammi sapere se funge,<br />
+<br />
+bye<br />
+<br />
+[/code]</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">17-10-2004, 10:38</div></div><div class="posttext">A naso, da root:<br />
+echo &amp;quot;0&amp;quot; &amp;gt;/proc/sys/net/ipv4/tcp_window_scaling<br />
+e<br />
+echo &amp;quot;0&amp;quot; &amp;gt;/proc/sys/net/ipv4/tcp_default_win_scale<br />
+<br />
+Fammi sapere se funge,<br />
+<br />
+Dunque... i valori erano rispettivamente 1 e 7 prima della modifica.<br />
+Una volta messi a zero, http://linux.azzurra.org non si apre ancora (stesso errore segnalato prima), mentre http://irc.netsplit.de si apre senza problemi.<br />
+La domanda sorge spontanea: cosa sono quei files? :) Mo' gugolo un po' :P</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">giuseppe_dj</div><div class="date">17-10-2004, 10:54</div></div><div class="posttext">Una volta messi a zero, http://linux.azzurra.org non si apre ancora (stesso errore segnalato prima), mentre http://irc.netsplit.de si apre senza problemi.<br />
+<br />
+<br />
+<br />
+Ho riletto meglio il post di prima :P linux.azzurra.org non lo risolvi nemmeno, quindi i problemi sono 2. Contralla i tuoi dns</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">17-10-2004, 11:17</div></div><div class="posttext">linux.azzurra.org non lo risolvi nemmeno, quindi i problemi sono 2. Controlla i tuoi dns<br />
+<br />
+Eh, e' questo il bello della vicenda: il DNS e' sul router che gestisce la LAN, con IP privato 192.168.1.1 <br />
+I due win2k (peraltro spianati meno di due settimane fa) hanno come unico DNS il 192.168.1.1<br />
+La mia slackware ha sempre lui:<br />
+<br />
+steve@jojofc&#58;~$ cat /etc/resolv.conf<br />
+search jojofc.home<br />
+nameserver 192.168.1.1<br />
+steve@jojofc&#58;~$<br />
+<br />
+Non so se possa essere un problema derivato dalla recente migrazione, in pratica ho comprato un pc nuovo e gli ho infilato il disco fisso su cui stava installata slack sul pc vecchio, limitandomi a ricompilare il kernel, i driver audio e qualche altra inezia. Ma i parametri di rete non li ho toccati...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">giuseppe_dj</div><div class="date">17-10-2004, 11:30</div></div><div class="posttext">Bhe fai un po' di prove, host linux.azzurra.org dns.tin.it e via dicendo.<br />
+Guarda pure nei log del router che dns prende.<br />
+<br />
+ciao</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">17-10-2004, 11:36</div></div><div class="posttext">Si', credo siano effettivamente due problemi diversi.<br />
+Quello su linux che hai risolto tu, e quello sul DNS che e' un'altra cosa.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Azzurra</div><div class="date">17-10-2004, 13:33</div></div><div class="posttext">Per quanto riguarda linux.azzurra.org, questi non è altro che un alias linux.inxide.it, se l'unico host *.azzurra.org a non risolvere è linux. è evidente che il problema è su linux.inxide.it, host appartenente ai gestori del canale #linux e gestito da un loro dns.<br />
+<br />
+Facendo due prove<br />
+<br />
+root@rose[~] # host linux.inxide.it ammi.mclink.it<br />
+;; connection timed out; no servers could be reached<br />
+root@rose[~] # <br />
+<br />
+root@rose[~] # host linux.inxide.it dns.flashnet.it<br />
+;; connection timed out; no servers could be reached<br />
+root@rose[~] # <br />
+<br />
+sembra proprio che il problema sia di linux.inxide.it, host a cui fa riferimento linux.azzurra.org.<br />
+<br />
+Per quanto riguarda dns.tin.it e il fatto che non risolva gli host *.azzurra.org, qui mi pare un problema diffuso a tutto il dns, tanto che :<br />
+<br />
+root@rose[~] # host irc.azzurra.tin.it dns.tin.it<br />
+;; connection timed out; no servers could be reached<br />
+root@rose[~] # <br />
+<br />
+Questo la dice lunga e si commenta da solo credo :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">18-10-2004, 11:44</div></div><div class="posttext">Ok, il papocchio sul DNS mi e' chiaro e ringrazio per la spiegazione :)<br />
+<br />
+Pero' mi rimaneva il dubbio su cosa fossero i due files citati da giuseppe_dj, quindi ho dato mandato a Google di provare a spiegarmeli, pescando due siti principalmente: uno su LWN (http://lwn.net/Articles/92727/) ed uno su ArchLinux (http://wiki.archlinux.org/index.php/Kernel%202.6.8.1%20slows%20down%20my%20internet%20 to%20a%20crawl!).<br />
+<br />
+Intanto, e' un problema dei kernel 2.6.8 e seguenti (io uso 2.6.8.1, che e' l'ultima versione stabile su kernel.org (http://www.kernel.org)), per i quali il default del tcp_default_win_scale e' passato da 0 a 7 ed il default di tcp_window_scaling e' passato da 0 a 1.<br />
+Se ho ben compreso, il problema risiede in uno stack del TCP/IP che offre supporto per il Windows Scaling, e viene generato dal fatto che molti router - incluso evidentemente il mio - azzerano il valore dello scaling invece di lasciarlo passare cosi' come giunge dall'esterno. <br />
+Per Linux, siccome il precedente default era zero, il problema semplicemente non si poneva; per Windows, evidentemente quello stack e' e restera' a zero in saecula saeculorum.<br />
+Azzerando il valore con quei due echo riporta la situazione al settaggio dei kernel precedenti e bypassa il problema.<br />
+<br />
+A questo punto, le cose che mi sfuggono...<br />
+1) cosa sia il Windows Scaling... forse mi rispondero' da solo leggendo la RFC 1323 (http://www.faqs.org/rfcs/rfc1323.html) :)<br />
+2) che utilita' pratica ha il Windows Scaling, se quello stack del TCP/IP viene troncato allegramente dal mio router (e, credo, anche da molti altri)<br />
+3) se il mio router debba essere aggiornato per gestire quello scaling o se, come immagino, si tratta di un'inezia che puo' continuare ad essere troncata ad ogni passaggio<br />
+<br />
+Grazie ancora a chi ha lasciato le sue risposte :)</div></div><hr />
+
+
+<div id="copyright">vBulletin&reg; v3.6.4, Copyright &copy;2000-2007, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

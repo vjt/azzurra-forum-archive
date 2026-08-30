@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Nuovo trojan in giro per la rete: Guida alla rimozione, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] Nuovo trojan in giro per la rete: Guida alla rimozione Comunicazioni ufficiali di Azzurra" />
+	
+	<title>Nuovo trojan in giro per la rete: Guida alla rimozione [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-6.html">Network Central</a> &gt; <a href="f-19.html">Comunicazioni ufficiali di Azzurra</a> &gt; Nuovo trojan in giro per la rete: Guida alla rimozione</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=1472">Nuovo trojan in giro per la rete: Guida alla rimozione</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Gastaman</div><div class="date">06-01-2003, 16:05</div></div><div class="posttext">Da qualche giorno si e' sparso per la rete (ma non solo) un nuovo trojan, che permette ad utenti estranei di controllare il vostro mIRC per spammare e floodare in vari canali. Ieri notte sono stati messi in autokill molti utenti, e oggi abbiamo fatto luce sull'accaduto e siamo risaliti al problema.<br />
+<br />
+Nota: Se il vostro username e' ]Z[-XXXXX o se siete stati mandati qui e non trovate nessuno dei files o delle chiavi descritte in questo post, leggete quello piu' sotto.<br />
+<br />
+Il nome del trojan e' Win-Trojan/MircPack.597504 e le persone infette sono facilmente identificabili in quanto questo trojan imposta lo username (&quot;ident&quot;) di mIRC ad un valore fisso, ovvero:  ]I[-XXXXX , dove XXXXX sono 5 numeri a caso. Chiunque abbia uno username di questo tipo e' infetto: se vedete qualcuno che lo ha non esitate a fargli leggere questo post o mandarlo su #IRCHelp per ricevere assistenza.<br />
+<br />
+Esempio di utente infetto (dati ricavati tramite un /WHOIS nick ):<br />
+<br />
+Derk is ]I[-70729@AzzurraNET=C5DA533.pool62211.interbusiness.i t<br />
+Derk is «anima distrutta con giocattoli intelligenti»<br />
+Derk on cheapnet.azzurra.org «Cheapnet S.r.l. IRC Server (testlink)»<br />
+Derk has identified for this nick<br />
+Derk on @#DIP<br />
+<br />
+Come vedete lo username (la parte nella prima riga del whois precedente il carattere '@' ) e' del tipo ]I[-XXXXX, quindi questo utente e' infetto.<br />
+<br />
+Ecco come fare per rimuovere il trojan. Per chi e' poco esperto sara' un po' complicato, ma vi preghiamo di avere pazienza e perderci questa mezz'ora, perche' presto saremo costretti ad impedire l'accesso a tutti gli utenti infetti.<br />
+<br />
+1. Per Windows 95/98/ME: Premete CTRL+ALT+CANC. Vi si dovrebbe aprire un menu' con una serie di processi attivi. Andate al punto 2.<br />
+<br />
+Per Windows 2000/XP: Clickate su Start, e poi su Esegui. Nello spazio bianco scrivete taskmgr.exe e poi premete invio. Si dovrebbe aprire Windows Task Manager. Se non si e' aperto, premete CTRL+ALT+CANC. Nel menù che si apre c'e' un bottone con scritto Task Manager. Clickate su quello per aprirlo.<br />
+Una volta aperto Task Manager, clickate sulla linguetta &quot;Processi&quot; (delle 3 e' quella centrale, fra &quot;Applicazioni&quot; e &quot;Performance&quot;). Appare una lista di processi attivi al momento sul vostro PC.<br />
+<br />
+2. Cercate nella colonna di sinistra un processo chiamato win32load.exe. Se non c'e', saltate al punto 3. Se c'e', selezionatelo clickandoci una volta sopra (una volta selezionato diventa blu) e clickate il bottone in basso a destra (&quot;Termina processo&quot;). Il processo dovrebbe sparire dalla lista.<br />
+<br />
+3. Ora cercate un processo chiamato explorer.exe minuscolo (attenzione: &quot;Explorer.exe&quot; maiuscolo e' un processo di windows, non terminate quello!). Ripetete l'operazione del punto 2: selezionatelo e terminatelo premendo il bottone in basso a destra.<br />
+<br />
+4. N.B.: In Windows XP anche il processo di windows chiamato &quot;Explorer&quot; e' minuscolo, quindi chi ha Windows XP dovrebbe avere due &quot;explorer.exe&quot; minuscoli. Provate a terminarne uno seguendo le istruzioni del punto precedente. Se vi sparisce la barra delle applicazioni, vuol dire che avete terminato quello sbagliato. Se non vi succede niente avete terminato quello giusto, quindi potete passare al punto 5. Se invece vi e' sparita la barra delle applicazioni (o se avete terminato per sbaglio &quot;Explorer.exe&quot; maiuscolo) per rimetterla a posto e' sufficiente digitare da dentro mIRC /run explorer.exe oppure in Task Manager clickare in alto su File, quindi su Esegui e digitare explorer.exe li' dentro.<br />
+<br />
+5. Ok, dopo aver killato i processi siamo a meta' strada. Ora bisogna cancellare i due files. Chiudete Task Manager che non serve piu', e clickate su Start, poi su Trova, e quindi su &quot;File o cartelle&quot;. Nel primo spazio bianco in alto a sinistra della nuova finestra (dove sta gia' il cursore) digitate win32load.exe e poi clickate sul bottone in basso. Sulla destra apparira' il nome del file e la sua posizione. Selezionate il file e cancellatelo (premendo il tasto CANC o DEL oppure clickandoci sopra col tasto destro del mouse e selezionando &quot;Cancella&quot;).<br />
+Ripetete l'operazione per explorer.exe, facendo particolare attenzione a non cancellare il file Explorer.exe di windows!<br />
+Il vero explorer.exe si trova in c:\windows (o in c:\winnt ).<br />
+Se avete un file explorer.exe in una di queste due directory, allora si tratta del trojan:<br />
+<br />
+c:\windows\web\printers\images\<br />
+c:\windows\system32\<br />
+<br />
+oppure:<br />
+<br />
+c:\winnt\web\printers\images\<br />
+c:\winnt\system32\<br />
+<br />
+a seconda di dove avete installato windows.<br />
+<br />
+Se c'e' un file explorer.exe in entrambe le directory, cancellateli tutti e due.<br />
+<br />
+NON CANCELLATE c:\windows\explorer.exe o c:\winnt\explorer.exe !!!<br />
+<br />
+RIPETO: NON CANCELLATE UN FILE explorer.exe A CASO! SE CANCELLATE QUELLO SBAGLIATO NON PARTIRA' PIU' WINDOWS. SE IL FILE explorer.exe NON SI TROVA IN UNA DI QUESTE DUE DIRECTORY NON LO CANCELLATE!<br />
+<br />
+6. Bene, ora rimane da rimuovere il caricamento automatico di questi due files dal registro. Clickate su Start, poi su Esegui, e digitate regedit, quindi premete invio. Si aprira' l'editor del registro di configurazione. E' molto simile ad &quot;esplora risorse&quot;.<br />
+Nella parte sinistra, clickate due volte su HKEY_LOCAL_MACHINE (si dovrebbe aprire un sottomenu'), poi nel sottomenu' clickate due volte su Software, poi nel sottomenu' di Software clickate su Microsoft, poi sotto Microsoft clickate su Windows, poi ancora sotto su CurrentVersion e poi ancora su Run.<br />
+Ora nel pannello di destra dovrebbe apparire una lista di chiavi. Cercatene una che abbia al suo interno win32load.exe e cancellatela.<br />
+Sempre sulla destra ci dovrebbe essere anche una chiave contenente explorer.exe, cancellate anche quella.<br />
+<br />
+7. Ok, se siete arrivati fin qui avete finito. A questo punto riavviate il vostro PC e ricollegatevi ad Azzurra. Se il vostro username e' ancora  ]I[-XXXXX  allora avete sbagliato qualcosa. Altrimenti siete puliti. Consigliamo comunque una scansione completa del sistema con un buon AntiVirus aggiornato.<br />
+<br />
+VI RICORDIAMO DI NON CLICKARE MAI SU INDIRIZZI CHE VI SPAMMANO IN QUERY O SU SITI CHE NON CONOSCETE.<br />
+Al giorno d'oggi per essere infettati basta aprire un sito web o ascoltare un MP3. Tenete SEMPRE un AntiVirus aggiornato in esecuzione, e visitate solo siti che conoscete, e soprattutto MAI siti porno spammati in query, al 99% si tratta di trojan o virus.<br />
+<br />
+Per chi avesse problemi con la rimozione di questo trojan o a seguire alcuni passi di questo articolo e' disponibile assistenza sul canale #IRCHelp.<br />
+<br />
+Grazie per aver scelto Azzurra.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gastaman</div><div class="date">10-01-2003, 17:36</div></div><div class="posttext">A quanto pare non c'e' solo il Win-Trojan/MircPack.597504 in giro in questo periodo... un altro trojan che si sta diffondendo largamente e' il WORM_AGOBOT.C. I due trojan sono molto simili: infatti mentre il MircPack.597504 e' facilmente riconoscibile dallo username dell'utente, impostato a ]I[-XXXXX, il WORM_AGOBOT.C e' altrettanto facilmente riconoscibile in quanto lo username e' questa volta impostato a ]Z[-XXXXX, dove XXXXX sono 5 numeri casuali.<br />
+<br />
+Ecco come rimuovere anche quest'altro trojan:<br />
+<br />
+1. Per Windows 95/98/ME: Premete CTRL+ALT+CANC. Vi si dovrebbe aprire un menu' con una serie di processi attivi. Andate al punto 2. <br />
+<br />
+Per Windows 2000/XP: Clickate su Start, e poi su Esegui. Nello spazio bianco scrivete taskmgr.exe e poi premete invio. Si dovrebbe aprire Windows Task Manager. Se non si e' aperto, premete CTRL+ALT+CANC. Nel menù che si apre c'e' un bottone con scritto Task Manager. Clickate su quello per aprirlo. <br />
+Una volta aperto Task Manager, clickate sulla linguetta &quot;Processi&quot; (delle 3 e' quella centrale, fra &quot;Applicazioni&quot; e &quot;Performance&quot;). Appare una lista di processi attivi al momento sul vostro PC. <br />
+<br />
+2. Cercate nella colonna di sinistra un processo chiamato sysmgr.exe (maiuscolo o minuscolo). Selezionatelo clickandoci una volta sopra (una volta selezionato diventa blu) e clickate il bottone in basso a destra (&quot;Termina processo&quot;). Il processo dovrebbe sparire dalla lista. <br />
+<br />
+3. Chiudete Task Manager che non serve piu', e clickate su Start, poi su Trova, e quindi su &quot;File o cartelle&quot;. Nel primo spazio bianco in alto a sinistra della nuova finestra (dove sta gia' il cursore) digitate sysmgr.exe e poi clickate sul bottone in basso. Sulla destra apparira' il nome del file e la sua posizione. Selezionate il file e cancellatelo (premendo il tasto CANC o DEL oppure clickandoci sopra col tasto destro del mouse e selezionando &quot;Cancella&quot;). Se ce n'e' piu' di uno, cancellateli tutti.<br />
+<br />
+4. Bene, ora rimane da rimuovere il caricamento automatico di questi due files dal registro. Clickate su Start, poi su Esegui, e digitate regedit, quindi premete invio. Si aprira' l'editor del registro di configurazione. E' molto simile ad &quot;esplora risorse&quot;. <br />
+Nella parte sinistra, clickate due volte su HKEY_LOCAL_MACHINE (si dovrebbe aprire un sottomenu'), poi nel sottomenu' clickate due volte su Software. Nel sottomenu' di Software (quindi sempre nella parte sinistra della finestra) dovrebbe esserci una cartella chiamata MSSQLServer. Se c'e', cancellatela.<br />
+Sempre nel sottomenu' di Software clickate ora su Microsoft.<br />
+Anche qui, nel sottomenu' di Microsoft, se c'e' una cartella chiamata MSSQLServer cancellate anche questa.<br />
+Sempre nel sottomenu' di Microsoft clickate questa volta su Windows, poi ancora sotto su CurrentVersion e poi ancora su Run. <br />
+Ora nella parte destra del  pannello dovrebbe apparire una lista di chiavi. Cercatene una che abbia al suo interno sysmgr.exe e cancellatela. <br />
+Poi tornate nella colonna di sinistra dove c'era Run e poche righe sotto dovrebbe esserci una cartella chiamata RunServices. Se non c'e', saltate al punto 5. Se c'e' selezionatela, e nella parte di destra ci dovrebbe essere una nuova lista di chiavi. Come prima, se trovate una riga contenente un riferimento a sysmgr.exe cancellatela.<br />
+<br />
+5. Ok, se siete arrivati fin qui avete finito. A questo punto riavviate il vostro PC e ricollegatevi ad Azzurra. Se il vostro username e' ancora ]Z[-XXXXX allora avete sbagliato qualcosa. Altrimenti siete puliti. Consigliamo comunque una scansione completa del sistema con un buon AntiVirus aggiornato. <br />
+<br />
+Per chi avesse problemi con la rimozione di questo trojan o a seguire alcuni passi di questo articolo e' disponibile assistenza sul canale #IRCHelp.<br />
+<br />
+Per maggiori informazioni su questo virus, andate qui: http://www.trendmicro.com/vinfo/virusencyclo/default5.asp?VName=WORM_AGOBOT.C</div></div><hr />
+
+
+<div id="copyright">vBulletin&reg; v3.6.5, Copyright &copy;2000-2007, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

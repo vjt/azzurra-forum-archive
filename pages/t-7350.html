@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="NickServ NeverOP bug?, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] NickServ NeverOP bug? Services - I servizi IRC di Azzurra" />
+	
+	<title>NickServ NeverOP bug? [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-6.html">Network Central</a> &gt; <a href="f-30.html">Services - I servizi IRC di Azzurra</a> &gt; NickServ NeverOP bug?</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=7350">NickServ NeverOP bug?</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">MeshedP</div><div class="date">11-02-2005, 12:54</div></div><div class="posttext">Non so se è un bug, però ho verificato questo:<br />
+ <br />
+tizio è AOP di #canale<br />
+ <br />
+#canale è settato con autovoice on join (e magari moderato, ma non importa)<br />
+ <br />
+tizio ha settato l'opzione NEVEROP (NEVEROP - Fa in modo che ChanServ non ti oppi automaticamente quando entri in un canale in cui sei registrato su una delle liste. Verrai inoltre deoppato da ChanServ ogniqualvolta un altro utente provi ad opparti. L'unico modo per avere l'op quando NEVEROP è attivo è usare il comando OP (http://mk:@msitstore:C:Documents%20and%20SettingsAdminist ratorImpostazioni%20localiTemporary%20Internet%20F ilesContent.IE5W1EJ8P2RAzzurra_Help[1].chm::/ChanServ%20OP.htm) di ChanServ.)<br />
+<br />
+tizio entra in #canale e resta normal user.<br />
+<br />
+Perchè?? Tizio non vuole avere l'op, non il voice (e se il canale è moderato non può chattare se non dandosi da solo il +v)<br />
+<br />
+Invece se tizio è HOP di #canale e ha settato l'opzione NEVEROP quando entra riceve la sua % e tutto apposto.<br />
+<br />
+Vi chiedo lumi :)<br />
+<br />
+Ciao MeshedP.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Raynk</div><div class="date">11-02-2005, 20:06</div></div><div class="posttext">Non è un bug, è proprio una caratteristica dei servizi attuali. In pratica, quando entri in un canale, viene eseguito un controllo per vedere se devi essere voiciato/oppato/halfoppato su tale canale e, in caso positivo, salvo particolari impostazioni come il NeverOp appunto, ti viene conferito lo stato dovuto. Ora, i controlli sulle liste di accesso (vop, aop, sop ecc), hanno una priorità maggiore rispetto all'opzione AutoVoice del canale; di conseguenza, se un utente entra su un canale dov'è AOP ed in cui c'è l'AutoVoice attivo, viene oppato ma non voiciato.<br />
+Detto ciò, se un utente AOP di un canale ha impostato la modalità NeverOP sul suo nick, al momento del join ChanServ non lo opperà poichè è presente tale opzione, tuttavia non verrà nemmeno voiciato in quanto AOP del canale stesso, per i motivi di prima. Viceversa, se HalfOp, verrà halfoppato in quanto l'opzione NeverOP influisce solo sullo status di operatore, non di half@.<br />
+ <br />
+In conclusione, se l'utente AOP vuole parlare, può sempre opparsi/halfopparsi/voiciarsi tramite i rispettivi comandi di ChanServ ( /cs HELP ).<br />
+Spero di aver risposto in modo esauriente :-)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">MeshedP</div><div class="date">11-02-2005, 23:55</div></div><div class="posttext">Certo che sei stato chiaro Rayank.<br />
+<br />
+Però, secondo me, è un controsenso... come emerge anche da quanto dici tu:<br />
+ <br />
+ Viceversa, se HalfOp, verrà halfoppato in quanto l'opzione NeverOP influisce solo sullo status di operatore, non di half@.  <br />
+ <br />
+Se appunto agisce sullo stato di operatore NON dovrebbe influire sul voice, sennò si dovrebbe chiamare qualcosa come &quot;neverstatus&quot;.<br />
+ <br />
+Tra l'altro poi ChanServ interviene solo se io provo ad oppare tizio, togliendoli il +o.<br />
+Mentre invece posso tranquillamente attribuirgli lo stato di +v o +h<br />
+ <br />
+Quindi in sostanza io credo che ChanServ dovrebbe non oppare chi ha settato neverop ma attribuirgli il voice se il canale è settato in autovoice.<br />
+ <br />
+Poi, è ovvio che sto esprimendo una idea personale e so bene che non sono poi grossi problemi!! ;)<br />
+ <br />
+Cmq grazie della tua risposta, a presto. :okay:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mav</div><div class="date">12-02-2005, 00:29</div></div><div class="posttext">Certo che sei stato chiaro Rayank.<br />
+<br />
+Però, secondo me, è un controsenso... come emerge anche da quanto dici tu:<br />
+ <br />
+Se appunto agisce sullo stato di operatore NON dovrebbe influire sul voice, sennò si dovrebbe chiamare qualcosa come &quot;neverstatus&quot;.<br />
+ <br />
+Tra l'altro poi ChanServ interviene solo se io provo ad oppare tizio, togliendoli il +o.<br />
+Mentre invece posso tranquillamente attribuirgli lo stato di +v o +h<br />
+ <br />
+<br />
+Infatti tecnicamente l'opzione NEVEROP non influisce assolutamente sul voice. Come ha detto giustamente Raynk la priorità è data alla lista AOP: se un utente è AOP i servizi non gli danno il +v in un canale settato AUTOVOICE, senza controllare minimamente che l'utente sia settato NEVEROP o meno. In sostanza i servizi danno in automatico solamente il +o a chi sta nella lista AOP, se poi l'utente in questione non vuole l'op automatico e si setta NEVEROP non avrà nessun mode al momento del join, ma potrà in ogni momento usare i soliti /CS VOICE/HALFOP/OP come ritiene opportuno. <br />
+<br />
+Resta poi da chiarire come mai un utente che non gradisce per qualche motivo l'op automatico preferisca invece avere il +v al join, oppure quale sia l'utilità di avere un canale moderato settato AUTOVOICE, visto che comunque i seccatori possono essere messi a tacere con un semplice ban (senza kick). :-)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">MeshedP</div><div class="date">12-02-2005, 02:33</div></div><div class="posttext">Ora ho capito meglio (non che prima non fosse chiaro!)<br />
+ <br />
+ Resta poi da chiarire come mai un utente che non gradisce per qualche motivo l'op automatico preferisca invece avere il +v al join, oppure quale sia l'utilità di avere un canale moderato settato AUTOVOICE, visto che comunque i seccatori possono essere messi a tacere con un semplice ban (senza kick).  <br />
+ <br />
+ah beh... questo me lo chiedo anche io ^__^<br />
+ <br />
+ma tant'è... ;)<br />
+ <br />
+Bye MeshedP</div></div><hr />
+
+
+<div id="copyright">vBulletin&reg; v3.6.4, Copyright &copy;2000-2007, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

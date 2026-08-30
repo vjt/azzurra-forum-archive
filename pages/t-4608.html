@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Access List &amp; SET IDENT, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] Access List &amp; SET IDENT Services - I servizi IRC di Azzurra" />
+	
+	<title>Access List &amp; SET IDENT [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-6.html">Network Central</a> &gt; <a href="f-30.html">Services - I servizi IRC di Azzurra</a> &gt; Access List &amp; SET IDENT</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=4608">Access List &amp; SET IDENT</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Dracoo</div><div class="date">26-04-2004, 17:30</div></div><div class="posttext">Salve, oggi ho chiesto un po' di delucidazioni sulla questione dell'accoppiata Access List e SET IDENT di ChanServ.<br />
+Come sospettavo, se io sono Aop su #Chan, il quale ha l'opzione IDENT disattivata, e nella mia Access List ho (ipoteticamente) la voce *@*libero.it, qualsiasi utente entri in #Chan, che abbia come isp libero, verrebbe oppato.<br />
+La mia proposta è: non si può far modo che venga oppato solo l'utente che sta &quot;Usando&quot; il nick presente in Aop, e che venga riconosciuto come tale solo quando sta usando il nick in questione (ovvero se cambia nick, non viene più riconosciuto Aop)?<br />
+IMHO è più &quot;sicuro&quot;!<br />
+In alternativa si potrebbe fare (ma penso sia più pesante), un sistema che:<br />
+Quando entri nel canale con il nick in Aop identificato via Access List vieni considerato un Aop, e se cambi nick vieni comunque considerato Aop (per poter usare comandi come Invite ecc), ma qualsiasi altro utente che usa libero, non venga considerato Aop.<br />
+<br />
+Lo so che sono stato contorto, ma confido nella capacità di interpretazione di voi tutti :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">26-04-2004, 20:01</div></div><div class="posttext">Si', sei contorto :D<br />
+<br />
+Venendo al caso che segnali, sia l'ident disattivato su #Chan che l'access list sul nick non sono ovviamente settaggi standard che i servizi danno a canali e nickname. Entrambi possono dare problemi sul lato sicurezza, sono perfettamente d'accordo: la soluzione e' attivare l'ident e/o modificare l'access list in qualcosa di piu' facilmente gestibile. Il problema di sicurezza si risolverebbe anche identificandosi al nick presente nell'AOP list, dando cioe' una sola riga di comando.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dracoo</div><div class="date">26-04-2004, 21:53</div></div><div class="posttext">Concordo, solo che generalmente l'access list viene usata proprio per evitare (per vari motivi) di usare il comando NS IDENTIFY.<br />
+Questi motivi possono essere (me in primis), il fatto di usare un BNC, il quale se si disconnette e riconnette da solo, non può lanciare il comando identify (e se lo sa fare, io non so come settarlo :E), ma sfruttando l'Access List, si evita di venire ghostati (al KILL, non si rinuncia! :P)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">26-04-2004, 22:01</div></div><div class="posttext">il fatto di usare un BNC, il quale se si disconnette e riconnette da solo, non può lanciare il comando identify<br />
+<br />
+Identificati manualmente al nick che usi come away del bnc, prima di disconnetterti.<br />
+Oppure, proprio per il fatto che usi un BNC, mi aspetto che user@host siano noti con maggior precisione di *@*.libero.it , quindi la Access List puoi settarla meglio.<br />
+In ogni caso, identificarsi al nick e' una riga di comando... bisogna per forza suggerire modifiche ai servizi per soddisfare la pigrizia di dare un comando? :P</div></div><hr />
+
+
+<div id="copyright">vBulletin&reg; v3.6.4, Copyright &copy;2000-2007, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

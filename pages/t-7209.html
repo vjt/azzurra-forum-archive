@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<title>Azzurra IRC Network Forum - Problema installazione IRCD su BSD</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="Azzurra IRC Network Forum" />
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-28.html">Discussioni Linux</a> &gt; Problema installazione IRCD su BSD</div>
+<hr />
+<div class="pda"><a href="?pda=1">PDA</a></div>
+<p class="largefont">Mostra versione intera : <a href="http://forum.azzurra.org/showthread.php?t=7209">Problema installazione IRCD su BSD</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">gob</div><div class="date">04-02-2005, 03:16</div></div><div class="posttext">Ciao a tutti ho un grosso problema, nn riesco ad installare ircd eggdrop o bnc sul mio server con os freeBSD. Qualcuno sa cosa possa essere ?<br />
+Il problema e il seguente:<br />
+<br />
+$ make<br />
+Building src gcc -I../include -I/usr/home/fluid/Unreal3.2/extras/regexp/include -pipe -g -O2 -funsigned-char -export-dynamic -c auth.c<br />
+In file included from auth.c:21:<br />
+../include/struct.h:68:23: tre/regex.h: No such file or directory<br />
+In file included from auth.c:21:<br />
+../include/struct.h:804: error: syntax error before &quot;regex_t&quot;<br />
+In file included from auth.c:21:<br />
+../include/struct.h:1210: error: syntax error before &quot;regex_t&quot;<br />
+../include/struct.h:1292: error: syntax error before &quot;regex_t&quot;<br />
+*** Error code 1<br />
+<br />
+Stop in /usr/home/fluid/Unreal3.2/src.<br />
+*** Error code 1<br />
+<br />
+Stop in /usr/home/fluid/Unreal3.2.<br />
+$<br />
+<br />
+Grazie</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">04-02-2005, 09:41</div></div><div class="posttext">Ciao a tutti ho un grosso problema, nn riesco ad installare ircd eggdrop o bnc sul mio server con os freeBSD. Qualcuno sa cosa possa essere ?<br />
+<br />
+Io avevo provato ad installare Bahamut in locale sul mio PC tempo fa ed avevo trovato incompatibilita' con la versione di gcc che usavo. Non volendo downgradare gcc per questo, ho banalmente lasciato perdere.<br />
+Questo per dire che potresti avere problemi simili anche tu, verifica magari sulle FAQ in rete.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blaze</div><div class="date">04-02-2005, 10:34</div></div><div class="posttext">prova a reinstallare gmake:<br />
+<br />
+pkg_delete -f /var/db/pkg/gmake-*<br />
+cd /usr/ports/devel/gmake<br />
+make clean &amp;&amp; make all install clean</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">gob</div><div class="date">04-02-2005, 12:23</div></div><div class="posttext">Ho scoperto di nn avere il gmake.<br />
+Come lo installo ?<br />
+Grazie</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blaze</div><div class="date">04-02-2005, 12:42</div></div><div class="posttext">...<br />
+<br />
+cd /usr/ports/devel/gmake<br />
+make clean &amp;&amp; make all install clean</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Takeda</div><div class="date">04-02-2005, 13:34</div></div><div class="posttext">Puo essere che non sia compatibile..</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blaze</div><div class="date">04-02-2005, 13:53</div></div><div class="posttext">tralaltro scusa un secondo... che BSD stai usando ?<br />
+se stai usando free, installa unreal dai ports.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">gob</div><div class="date">06-02-2005, 14:57</div></div><div class="posttext">ok raga ho risolto il problema installando dei pacchetti.<br />
+Ora vanno sia Unreal che gli eggdrop.<br />
+Rimangono i bouncer che ancora danno quell'errore.<br />
+Qualcuno sa dirmi che pacchetto devo installare per farli funzioonare ?<br />
+Grazie :-)</div></div><hr />
+
+<div id="copyright">vBulletin Versione 3.0.7, Copyright &copy;2000-2005, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

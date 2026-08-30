@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="PHP: FPDF, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] PHP: FPDF Programmazione e dintorni" />
+		<title>PHP: FPDF [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-23.html">Programmazione e dintorni</a> &gt; PHP: FPDF</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=5283">PHP: FPDF</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Progeny</div><div class="date">28-07-2004, 20:32</div></div><div class="posttext">Qualcuno ha idee..?<br />
+<br />
+&amp;lt;?php<br />
+include&#40;&amp;quot;dbhead.php&amp;quot;&#41;;<br />
+define&#40;'FPDF_FONTPATH','font/'&#41;;<br />
+require&#40;&amp;quot;fpdf.php&amp;quot;&#41;;<br />
+<br />
+class PDF extends FPDF &#123;<br />
+<br />
+function BasicTable &#40;$header,$data&#41; &#123;<br />
+echo &amp;quot;head&#58; $header&amp;lt;br&amp;gt;data&#58; $data&amp;lt;br&amp;gt;&amp;quot;;<br />
+    //Header<br />
+    foreach&#40;$header as $col&#41;<br />
+        $this-&amp;gt;Cell&#40;40,7,$col,1&#41;;<br />
+    $this-&amp;gt;Ln&#40;&#41;;<br />
+    //Data<br />
+    foreach&#40;$data as $row&#41;<br />
+    &#123;<br />
+        foreach&#40;$row as $col&#41;<br />
+            $this-&amp;gt;Cell&#40;40,6,$col,1&#41;;<br />
+        $this-&amp;gt;Ln&#40;&#41;;<br />
+    &#125;<br />
+&#125;<br />
+<br />
+&#125;<br />
+<br />
+function pdf_asd &#40;&#41; &#123;<br />
+<br />
+$pdf=new PDF&#40;&#41;;<br />
+$pdf-&amp;gt;AddPage&#40;&#41;;<br />
+$pdf-&amp;gt;SetFont&#40;'Arial','B',16&#41;;<br />
+$pdf-&amp;gt;Cell&#40;40,10,'ELENCO RACCOMANDATE'&#41;;<br />
+$header = array&#40;'Num', 'COGNOME', 'NOME', 'INDIRIZZO', 'CAP', 'CITTA`', 'PR', 'COD'&#41;;<br />
+$data = array&#40;'asd1', 'asd2', 'asd3', 'asd4', 'asd5', 'asd6', 'asd7', 'asd8'&#41;;<br />
+<br />
+$pdf-&amp;gt;BasicTable&#40;$header,$data&#41;;<br />
+$file=basename&#40;tempnam&#40;getcwd&#40;&#41;,'tmp'&#41;&#41;;<br />
+rename&#40;$file,$file.'.pdf'&#41;;<br />
+$file.='.pdf';<br />
+$pdf-&amp;gt;Output&#40;$file&#41;;<br />
+&#125;<br />
+<br />
+?&amp;gt;<br />
+<br />
+Warning: Invalid argument supplied for foreach() in pdf_funcs.php on line 17<br />
+<br />
+Warning: Invalid argument supplied for foreach() in pdf_funcs.php on line 17<br />
+<br />
+Warning: Invalid argument supplied for foreach() in pdf_funcs.php on line 17<br />
+<br />
+Warning: Invalid argument supplied for foreach() in pdf_funcs.php on line 17<br />
+<br />
+Warning: Invalid argument supplied for foreach() in pdf_funcs.php on line 17<br />
+<br />
+Warning: Invalid argument supplied for foreach() in pdf_funcs.php on line 17<br />
+<br />
+Warning: Invalid argument supplied for foreach() in pdf_funcs.php on line 17<br />
+<br />
+Warning: Invalid argument supplied for foreach() in pdf_funcs.php on line 17</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Progeny</div><div class="date">28-07-2004, 22:07</div></div><div class="posttext">mmm risolto :wink:</div></div><hr />
+
+
+<div id="copyright">vBulletin v3.5.3, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

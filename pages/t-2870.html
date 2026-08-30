@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="IPv6 e utenti net24.it, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] IPv6 e utenti net24.it Angolo tecnico" />
+	
+	<title>IPv6 e utenti net24.it [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php/">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-13.html">Angolo tecnico</a> &gt; IPv6 e utenti net24.it</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=2870">IPv6 e utenti net24.it</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">City_Hunter</div><div class="date">29-08-2003, 19:03</div></div><div class="posttext">Da un paio di mesi a questa parte, su un pc che utilizzo per vari test con ipv6 e che si collega ad internet tramite net24.it (un abbonamento adsl libero light), non sono più riuscito ad usare tale protocollo, apparentemente senza una valida ragione.<br />
+<br />
+Lì per lì non ci ho pensato più di tanto, complice l'inizio delle vacanze estive. Tuttavia una volta tornato in città ho avuto il tempo di fare più controlli, con diversi tunnel broker e sia da windows che da linux.<br />
+Tutti i risultati hanno dato esito negativo, pur avendo dato tutte le impostazioni del caso; su win, ho provato sia tramite la vecchia interfaccia ipv6.exe che mediante netsh di win 2003, disponibile su xp nell'&quot;advanced networking pack&quot; o come cavolo si chiama.<br />
+<br />
+Visto che tra l'altro nulla era stato modificato rispetto alle configurazioni di regolare funzionamento, ho cominciato a chiedermi se non fosse un problema legato all'ISP.<br />
+<br />
+E ho formulato questa umile ipotesi:<br />
+di recente libero ha offerto in promozione gratuita alcuni nuovi servizi a pagamento e tra questi figura un servizio di firewall che può filtrare i pacchetti direttamente a monte, facendo si che l'utente non debba necessariamente disporre di un proprio firewall sul pc per avere un minimo di protezione.<br />
+Se, al di là che si abbia scelto di usufruire di questo firewall, tutte le connessioni vi passano attraverso, è possibile che sia stato filtrato qualcosa di troppo?<br />
+In particolare i pacchetti ipv6 &quot;tunnelizzati&quot; su ipv4 hanno un campo di protocollo con valore 41 e alcuni routers li bloccano non sapendo di cosa si tratti.<br />
+<br />
+Su IRC ho domandato un pò in giro e sembra che anche altre persone con net24.it non riescano più ad utilizzare ipv6 (per controllarlo basta un semplice ping6 su 6bone.net dopo aver configurato il proprio stack ipv6 e relativo tunnel).<br />
+Con la speranza di avere torto, perchè preferirei mille volte avere un problema in locale visto che almeno potrei cercare di correggerlo da me, chiedo ad altri utenti, che usino net24.it e che abbiano usato senza problemi ipv6, se in questo periodo siano incorsi nello stesso problema.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xin</div><div class="date">30-08-2003, 13:18</div></div><div class="posttext">confermo, ho una flat (tempozero) con libero/infostrada/wind (quello che preferite) e mi connetto al 1055411055, una settimana fa circa riprovai ipv6 sia su win che su linux e non fungeva, oggi stessa cosa. Non è un problema solo di net24.it ma di tutto libero credo...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Drizzt</div><div class="date">30-08-2003, 13:23</div></div><div class="posttext">Ho chieso un po' in giro e ho notato che NESSUN libero con cui ho parlato riesce a connettersi in ipv6.<br />
+Cmq farò prove più precise (6to4) e vi farò sapere.<br />
+<br />
+Libero sUx  :evil:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">31-08-2003, 01:07</div></div><div class="posttext">my 2 cents: qualcuno ha gia' contattato l'assistenza tecnica a questo (http://www.libero.it/contattaci/index.html) indirizzo? ^^;;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">City_Hunter</div><div class="date">31-08-2003, 11:59</div></div><div class="posttext">Sicuramente una mail prima o poi gliela manderò, ma per mia natura diffido di qualsiasi servizio di assistenza tecnica che non sia il motto &quot;RTFM e  sperimenta con gli altri&quot;.<br />
+<br />
+Prima di mandare una mail che potrebbe benissimo rimanere senza risposta preferisco costruirmi già una risposta valida sulla situazione in oggetto, in base alla concreta esperienza di altri utenti libero con IPv6.<br />
+<br />
+Ne approfitto per rimarcare che l'isp è proprietario delle sue macchine e se decide di filtrare questo, quello e quell'altro è liberissimo di farlo senza dover chiedere autorizzazioni a nessuno. Come cliente però (pago cash $$$) avrei semplicemente gradito essere avvisato di questa nuova limitazione per poter decidere con maggiore cognizione di causa il rinnovo dell'abbonamento l'anno successivo.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Raynk</div><div class="date">01-09-2003, 15:08</div></div><div class="posttext">In merito al discorso sull'ipv6 e libero, ho provato a scrivere una e-mail al provider, e-mail che ovviamente è rimasta senza risposta. Consapevole già del fatto che la mia email sarebbe stata del tutto ignorata, ho provato anche a chiamare al centro assistenza clienti Wind (155). Dopo aver aspettato in linea circa 10 minuti ha risposto un'operatrice, la quale OVVIAMENTE non ha saputo dirmi nulla, invitandomi inoltre a chiamare il centro Assistenza Tecnica Adsl. Chiamato quello, dopo un'attesa di 15 minuti, il centralino mi ha terminato la chiamata senza farmi parlare con nessuno. <br />
+Oggi riprovo a chiamare, sperando in qualche risposta...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xin</div><div class="date">01-09-2003, 15:12</div></div><div class="posttext">In merito al discorso sull'ipv6 e libero, ho provato a scrivere una e-mail al provider, e-mail che ovviamente è rimasta senza risposta. Consapevole già del fatto che la mia email sarebbe stata del tutto ignorata, ho provato anche a chiamare al centro assistenza clienti Wind (155). Dopo aver aspettato in linea circa 10 minuti ha risposto un'operatrice, la quale OVVIAMENTE non ha saputo dirmi nulla, invitandomi inoltre a chiamare il centro Assistenza Tecnica Adsl. Chiamato quello, dopo un'attesa di 15 minuti, il centralino mi ha terminato la chiamata senza farmi parlare con nessuno. <br />
+Oggi riprovo a chiamare, sperando in qualche risposta...<br />
+<br />
+ovvio... ci saranno 3 operatori in tutta l'azienda veramente competenti, del resto è cosi in tutte le aziende...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Raynk</div><div class="date">01-09-2003, 15:24</div></div><div class="posttext">Si effettivamente hai ragione, comunque ti confesso che se dovessi tornare in dietro sceglierei un altro provider per farmi l'adsl...ho dovuto aspettare ben 3 mesi e mezzo perchè mi arrivasse, mentre mi avevano detto che la media era sui 20 giorni...<br />
+Come se non bastasse, quando mi è arrivato il modem, la linea non funzionava, nel senso che il modem non si sincronizzava con la linea portante. Ho dovuto, per fare le prove che mi han chiesto di fare, portare tutta la scrivania in sala da pranzo, vicino alla presa telefonica dell'entrata, con tutti i disagi del caso, visto e considerato che, classico, la scrivania non passava attraverso la porta dello studio per i soliti 2 centimetri.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ZiP</div><div class="date">06-09-2003, 10:03</div></div><div class="posttext">Neanche io riesco più ad utilizzare ipv6 (Adsl libero light), mentre fino a qualche mese fa aveva sempre funzionato senza problemi. Temo che sia qualcosa che riguardi davvero l'intero ISP.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">thesaint</div><div class="date">07-09-2003, 10:03</div></div><div class="posttext">bè almeno wind ne ha 3 di persone competenti, telecoma ne ha 1 solo (per essere buoni). Cmq ipv6 su libero non va, ho chiesto in giro anche io niente da fare.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">City_Hunter</div><div class="date">16-09-2003, 15:12</div></div><div class="posttext">Ho fatto qualche giorno fa alcune prove con 6to4, interfaccia ipv6 che non necessita di tunnel broker ma converte il proprio indirizzo v4 in v6 demandando poi un eventuale accesso in 6bone ad un apposito gateway.<br />
+<br />
+I pacchetti protocollo 41 passano senza problemi, ed è stato possibile per esempio pingare un'altra interfaccia 6to4 (grazie mille a Drizzt per l'aiuto nel test) e ricevere ping da essa.<br />
+<br />
+Dunque liberowind non ha davvero colpe (semmai pare stia filtrando qualcos'altro, vedi qui (http://www.azzurra.org/forum/viewtopic.php?t=4214)), sono gli stessi tunnel brokers che filtrano libero e non permettono ai suoi abbonati di usare il servizio.<br />
+<br />
+Immagino che questo sia dovuto all'uso scorretto che molti, troppi abbonati liberowind devono averne fatto, sfruttandolo come giochetto per camuffare il proprio IP (cosa che 6to4 NON fa, è sempre possibile risalire ad un ipv4 dall'ipv6 relativo di 6to4) e per chissà quali altre cazzate.<br />
+Stendiamo un velo pietoso.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Raynk</div><div class="date">16-09-2003, 15:23</div></div><div class="posttext">Capisco, quindi tutto è finito così...<br />
+Come al solito quelli che ci rimettono sono gli utenti che vorrebbero usare normalmente un servizio e che invece, per colpa di qualche lamer, si ritrovato in queste pessime situazioni.<br />
+<br />
+A questo...che dire...fanculo ai lamer</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">uomotalpa</div><div class="date">23-09-2003, 17:58</div></div><div class="posttext">ok.....ma per quanto riguarda tiscali adsl? pare impossibile ma la connessione non va a buon fine...tunnel freenet6 e bouncer asybov ma niente.<br />
+aiuto<br />
+<br />
+UoMoTaLpA</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">doublestak</div><div class="date">24-09-2003, 00:56</div></div><div class="posttext">Telecoma ne avrà uno si...... però se lo becchi stai sicuro di trovare una soluzione!  :D <br />
+E indovina un pò chi è!?  :P</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">thesaint</div><div class="date">24-09-2003, 14:13</div></div><div class="posttext">doublestak, bene allora so a chi rivolgermi quando avrò problemi :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xin</div><div class="date">05-10-2003, 13:00</div></div><div class="posttext">a volte il 56k è utile... mi sono connesso con NGI e tutto funziona (tb freenet6) con libero non va na mazza.</div></div><hr />
+
+
+<div id="copyright">vBulletin&reg; v3.6.7, Copyright &copy;2000-2007, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

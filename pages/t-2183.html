@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Mirc e RAW x il whois, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] Mirc e RAW x il whois Programmazione e dintorni" />
+		<title>Mirc e RAW x il whois [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-23.html">Programmazione e dintorni</a> &gt; Mirc e RAW x il whois</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=2183">Mirc e RAW x il whois</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Kid</div><div class="date">10-05-2003, 15:25</div></div><div class="posttext">Ciao a tutti :) <br />
+<br />
+nel mio personalissimo script bastato su mirc 6.03 (ingl) ho inserito dei raw x modifcare la visualizzazione del whois<br />
+<br />
+raw 311:*: { echo -a $2 è $3 $+ @ $+ $4 $6- | halt }<br />
+e via via gli altri raw x i canali aperti, il server, l'identificazione al nick,  eccetera<br />
+<br />
+il mio problema è il dove visualizzarlo<br />
+<br />
+&quot;/echo -a&quot; me lo visualizza nella finestra attiva , ma così se mi quera qualcuno mi vedo il suo whios nella finestra attiva (e potrebbe non essere il suo pvt, e io vorrei avere il suo whois all'apertura del pvt) ; se faccio il whois e cambio subirto finestra, il risultato del whois mi segue sulla nuova finestra .... insomma posso modificare a mio piacimento la visualizzazione &quot;scritta&quot; del whois, ma non riesco a domare dove averene il risultato<br />
+<br />
+ho notato che il raw (magari sono io che sono niubbino (e pootrebbe anche essere :D  )) non rispetta il &quot;dove&quot; impostato nelle impostazioni del mirc (forse a causa del mio echo ... bò)<br />
+<br />
+non so più cosa fare, aiuto!  :( <br />
+<br />
+grazie :) ciau</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Odin_Eidolon</div><div class="date">10-05-2003, 19:05</div></div><div class="posttext">Setta una variabile che sia uguale a $active all'interno dell'evento raw 311 e unsettala all'interno del 318.<br />
+Nel frattempo la userai nell'echo, trasformandolo in &quot;echo %variabile blabla...&quot;.<br />
+Potrebbe essere una soluzione. :-)<br />
+<br />
+<br />
+Saluti.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kid</div><div class="date">11-05-2003, 19:56</div></div><div class="posttext">[quote=&quot;Odin_Eidolon&quot;]Setta una variabile che sia uguale a $active all'interno dell'evento raw 311 e unsettala all'interno del 318.<br />
+Nel frattempo la userai nell'echo, trasformandolo in &quot;echo %variabile blabla...&quot;.[quote]<br />
+<br />
+grazie x la risposta (6 sempre 1 grande  :wink:  ) ma in tutta verità non ho capito molto :(<br />
+<br />
+ho provato e ho fatto 1 cosa così:<br />
+<br />
+raw 311:*: { /set %active $active | echo %active $2 è $3 $+ @ $+ $4 $6- | halt }<br />
+.....altri RAW del whois ....<br />
+raw 318:*: { echo -a Fine del Whois su $2 | /unset %active | halt }<br />
+<br />
+ma non raggiungo il mio scopo ... mi rimane il whois nella finestra attiva e non come volevo io. cioè se mi querano vorrei il whois alla query, se lo faccio da 1 canale o status vorrei che rimanesse li anche se io cambio subito finestra<br />
+<br />
+non è che me la rispieghi in modo MOLTO più semplice? te ne sarei molto grato :) chissà che non sia di aiuto per i posteri  :D <br />
+<br />
+prima di passare ad 1 mirc in italiano verrei vedere se ce la faccio :P <br />
+<br />
+graSSie mille, ciau</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">P|xeL</div><div class="date">03-06-2003, 20:55</div></div><div class="posttext">Usa un on open. Se non ci riesci, cercami su Azzurra quando non sono off che ti do una mano.<br />
+Ciao,<br />
+P|xeL</div></div><hr />
+
+
+<div id="copyright">vBulletin v3.5.3, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

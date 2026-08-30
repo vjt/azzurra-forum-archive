@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="mmmmmmmm aiuto diciamo sempre con mysql, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] mmmmmmmm aiuto diciamo sempre con mysql Programmazione e dintorni" />
+		<title>mmmmmmmm aiuto diciamo sempre con mysql [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-23.html">Programmazione e dintorni</a> &gt; mmmmmmmm aiuto diciamo sempre con mysql</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=280">mmmmmmmm aiuto diciamo sempre con mysql</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">T3rminat0r</div><div class="date">26-11-2001, 19:15</div></div><div class="posttext">Allora ho installato phpbb in un server che supporta mysql.Pero quando sono andato ad aprire la pagina vedo che il file php me lo legge come un file di testo, nelle faq ho trovato questo che non mi aiuta molto The security concerns with CGI scripts are much greater than normal HTML. Also, more importantly, CGI scripts can overwhelm servers because, by their very nature, they use up many more resources. This way, if scripts go wild, they affect only the CGI-BIN server -- and not the other servers with 35, 000 users.E' da sottolineare che tutti i file php li legge come testo e il sito non mi sembra che si debba attivare mysql a parte come per esempio f2s.(www.spaceports.com)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">T3rminat0r</div><div class="date">26-11-2001, 19:27</div></div><div class="posttext">Anche gli script in php li legge come file di testo</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">T3rminat0r</div><div class="date">26-11-2001, 20:27</div></div><div class="posttext">In un altra faq ho trovato scritto che non si possono creare connessioni remote con mysql ma solo connessioni locali cosa che non capisco...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">_theone_</div><div class="date">26-11-2001, 22:03</div></div><div class="posttext">Se gli script .php te li legge come file di testo, posso consigliarti 2 cose:<br />
+<br />
+- prova a cambiare l'estensione in .php3 e vedi se almeno così te li prende<br />
+- l'host che stai usando *NON* supporta php, al che non ci puoi fare molto<br />
+<br />
+Per quanto riguarda mySQL forse non hai ben chiaro di cosa si tratti.<br />
+Ti rimando a http://www.mysql.com.<br />
+<br />
+Bye,</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">T3rminat0r</div><div class="date">26-11-2001, 22:25</div></div><div class="posttext">Ora che ho risolto come per non cambiare sorge un altro problema.Le faq del sito mi dicono di mettere $dbhost = localhost pero quando vado poi a collegarmi al mio sito mi dice <br />
+An Error Occured<br />
+--------------------------------------------------------------------------------<br />
+phpBB was unable to find the database on your MySQL server. <br />
+Please make sure you ran the phpBB installation script.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">_theone_</div><div class="date">26-11-2001, 22:29</div></div><div class="posttext">Il database su mySQL esiste ?<br />
+Il tuo phpBB è impostato con dbname, username e password corretti ?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">T3rminat0r</div><div class="date">26-11-2001, 22:54</div></div><div class="posttext">Ora che ho risolto quando vado a fare l'installazzione install.php mi da quest'errore <br />
+Testing DB Connection...DB Connection Good!<br />
+Selected database phpBB...Database could not be found<br />
+Attempting to create database phpBB...Error, count not select or create database phpBB, please create it manually or have your system administrator do it for you and try again.<br />
+<br />
+&lt;font size=-1&gt;[ Questo messaggio &amp;egrave; stato modificato da: T3rminat0r il 2001-11-26 22:14 ]&lt;/font&gt;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">T3rminat0r</div><div class="date">27-11-2001, 00:03</div></div><div class="posttext">How do I get a MySQL database? <br />
+To get a MySQL database you need to have a CGI-BIN account. (You can sign up for a CGI-BIN accoutn by logging into the members section.) Then all you need to do is login to the members section (config) with your CGI-BIN information, and it'll create the database for you. <br />
+<br />
+azz e come faccio a crearmelo da solo?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">_theone_</div><div class="date">27-11-2001, 00:24</div></div><div class="posttext">In data 2001-11-26 23:03, T3rminat0r scrive:<br />
+<br />
+To get a MySQL database you need to have a CGI-BIN account. (You can sign up for a CGI-BIN accoutn by logging into the members section.) Then all you need to do is login to the members section (config) with your CGI-BIN information, and it'll create the database for you. <br />
+<br />
+<br />
+E' scritto proprio qui come fare...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">T3rminat0r</div><div class="date">27-11-2001, 19:10</div></div><div class="posttext">E allora perke mi da quell'errore e non mi crea il database?Scusa ma poi se io faccio il login non c'è nessuna sezione che mi crea il database.<br />
+<br />
+&lt;font size=-1&gt;[ Questo messaggio &amp;egrave; stato modificato da: T3rminat0r il 2001-11-27 18:20 ]&lt;/font&gt;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">T3rminat0r</div><div class="date">27-11-2001, 19:39</div></div><div class="posttext">azz mi da pure questa notizia per poi darmi quell'errore <br />
+You currently have a MySQL database for your account (questa me la da nel login della sezione membri)<br />
+<br />
+&lt;font size=-1&gt;[ Questo messaggio &amp;egrave; stato modificato da: T3rminat0r il 2001-11-27 18:57 ]&lt;/font&gt;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">T3rminat0r</div><div class="date">27-11-2001, 20:45</div></div><div class="posttext">Ho risolto!Ora ho piccoli problemi che cercherò di risolvere.Vi farò sapere<br />
+<br />
+&lt;font size=-1&gt;[ Questo messaggio &amp;egrave; stato modificato da: T3rminat0r il 2001-11-27 20:05 ]&lt;/font&gt;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">T3rminat0r</div><div class="date">27-11-2001, 23:13</div></div><div class="posttext">Non è che qualcuno sa come cancellare un vecchio database mysql?Ora mi spiego meglio.In pratica ho fatto l'installazzione di phpbb però mi sono accorto di aver sbagliato delle cose ed ho riuppato config.php ma dopo quando sono andato a rifare l'installazzione mi è uscito un messaggio con scritto che il database mysql esiste gia e non se ne puo creare un altro</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Progeny</div><div class="date">27-11-2001, 23:28</div></div><div class="posttext">lo ripeto, di mysql non so una cippa, ma cmq hai provato a cancellarlo via ftp il database? :smile:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">T3rminat0r</div><div class="date">27-11-2001, 23:47</div></div><div class="posttext">Il database non si forma in forma di cartella o cosa del genere</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Progeny</div><div class="date">27-11-2001, 23:49</div></div><div class="posttext">su aruba, se avessi un problema del generei posterei sul forum e ci penserebbe l'admin a crearmi un nuovo database, magari prova a contattare il tuo admin, non si sa mai :razz:</div></div><hr />
+
+
+<div id="copyright">vBulletin v3.5.3, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

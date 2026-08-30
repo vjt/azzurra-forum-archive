@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Configurazione Firewall Norton 2004, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] Configurazione Firewall Norton 2004 Angolo tecnico" />
+	
+	<title>Configurazione Firewall Norton 2004 [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-13.html">Angolo tecnico</a> &gt; Configurazione Firewall Norton 2004</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=4011">Configurazione Firewall Norton 2004</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">FrankBlack</div><div class="date">08-02-2004, 15:58</div></div><div class="posttext">Questa guida è stata scritta per permettere la connessione ad azzurra usando un firewall norton. Questo fw di default blocca l'accesso perche' vede, erroneamente, il controllo di open proxy e socks come un portscan nocivo. Quindi se utilizzate un firewall norton e se dopo pochi istanti dalla connessione avvenuta, immediatamente prima del controllo portscan da parte di azzurra si blocca, è molto probabile che questa guida possa fare al caso vostro. <br />
+<br />
+Nota: questa procedura puo' facilmente venir adattata ad altre versioni in quanto la locazione dei pulsanti e' pressoche' identica, cambia solamente la descrizione o eventualmente la lingua se e' una versione non italiana <br />
+<br />
+Ora iniziamo con la configurazione:<br />
+<br />
+Dalle impostazioni del Norton Personal Firewall 2004 selezioniamo la voce &quot;Rilevamento delle intrusioni&quot; e entriamo nella &quot;configurazione&quot; .<br />
+<br />
+Se fossero presenti degli indirizzi ip in &quot;Computer correttamente bloccati dalla funzione di blocco automatico&quot;, selezioniamo il pulsante &quot;Sblocca Tutti&quot;. In questo modo eliminiamo eventuali ip di server di azzurra bloccati prima della configurazione. <br />
+<br />
+Ora Selezioniamo il pulsante &quot;Eccezioni&quot;  (in alcune versioni viene indicato &quot;indirizzo IP&quot;). <br />
+Nel pannello successivo troveremo due riquadri bianchi a questo punto selezioniamo il pulsante &quot;Aggiungi&quot; e nel pannello che apparira' dovremo attivare la prima voce &quot;solo il computer indicato&quot; e inserire nello spazio i nomi degli indirizzi ai quali consentire l'accesso ovvero : irc.azzurra.org cybcop.azzurra.org proxy-check.azzurra.org (mettere un spazio tra gli indirizzi) <br />
+<br />
+Ora non resta che lasciare attivo il Firewall e connettersi nel solito modo.<br />
+<br />
+Ciao</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mark74</div><div class="date">14-03-2004, 22:22</div></div><div class="posttext">Il firewall mi blocca la connessione con Azzurra,purtroppo Sygate Personal Firewall Pro. nn mi consente (o io nn trovo dove si mette) di inserire un indirizzo tra le regole consenti/blocca devo per forza usare un IP,per ora ho risolto inserendo 213.198.155.79 ke era l'IP bloccato dal firewall.<br />
+Può bastare oppure ne devo inserire altri,dato ke i servizi (irc.azzurra.org cybcop.azzurra.org proxy-check.azzurra.org )sono + d'uno.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">15-03-2004, 09:07</div></div><div class="posttext">Può bastare oppure ne devo inserire altri,dato ke i servizi (irc.azzurra.org cybcop.azzurra.org proxy-check.azzurra.org )sono + d'uno.<br />
+<br />
+Non sono espertissimo in fatto di firewall, comunque ho due consigli generici da darti:<br />
+<br />
+1) gli indirizzi *.azzurra.org sono sicuri, puoi abilitare tranquillamente quali/quanti vuoi<br />
+2) irc.azzurra.org e' un round robin che cambia regolarmente IP per bilanciare gli accessi ai vari server di Azzurra, quindi se hai problemi puoi scegliere un server preciso (ad esempio: sbrize.azzurra.org - IP 213.203.143.52) e connetterti direttamente su quello senza usare il robin.<br />
+<br />
+In ogni caso, comunque tu ti connetta non cambiano cybcop.azzurra.org e proxy-check.azzurra.org .<br />
+<br />
+Ciao,</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mark74</div><div class="date">30-03-2004, 00:03</div></div><div class="posttext">Qualke tecnico  :D  nn avrebbe voglia di provare a far funzionare Sygate (http://smb.sygate.com/buy/download_buy.htm) con Azzurra?<br />
+Così anke ki nn usa Norton,ke è un macigno,può collegarsi senza impazzire....<br />
+<br />
+Grrrazie! 8)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kid</div><div class="date">12-04-2004, 13:08</div></div><div class="posttext">Qualke tecnico  :D  nn avrebbe voglia di provare a far funzionare Sygate (http://smb.sygate.com/buy/download_buy.htm) con Azzurra?<br />
+Così anke ki nn usa Norton,ke è un macigno,può collegarsi senza impazzire....<br />
+<br />
+Grrrazie! 8)<br />
+<br />
+ciao, io uso il sygate personal firewall , ma nn ho il minimo problema... magari sono solo fortunato  :P  <br />
+<br />
+mi è bastato abilitare l'accesso ad internet a mirc la prima volta ke l'ho avviato e basta ^^</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mark74</div><div class="date">12-04-2004, 13:30</div></div><div class="posttext">hum...fortuna? nn credo :lol:  ci deve essere qualcosa nelle impostazioni,a te il proxy scan di Azzurra nn ti attiva l'active r. del Sygate?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kid</div><div class="date">12-04-2004, 19:15</div></div><div class="posttext">il proxy scan di Azzurra nn ti attiva l'active r. del Sygate?<br />
+<br />
+uso spesso 2 mirc contemporaneamente su azzurra e non &quot;avverto&quot; nessuna &quot;scansione&quot; da parte di azzurra, ne adesso, ne appena dopo formattato/reinstallato tutto  :)<br />
+<br />
+ma... &quot;active r.&quot; sta per?? magari nella personal edition non c'è questo modulo  :-?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mark74</div><div class="date">12-04-2004, 19:52</div></div><div class="posttext">Active response,in pratica quando ricevi una scansione il firewall ti blocca subito l'IP ke origina la cosa e lo tiene bloccato per un certo tempo.<br />
+Nel mio caso mi blocca l'IP del server e nn mi lascia entrare,anke se metto L'IP nella lista consentiti,nada.<br />
+Io uso la versione pro del Sygate.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kid</div><div class="date">12-04-2004, 20:16</div></div><div class="posttext">Active response,in pratica quando ricevi una scansione il firewall ti blocca subito l'IP ke origina la cosa e lo tiene bloccato per un certo tempo.<br />
+Nel mio caso mi blocca l'IP del server e nn mi lascia entrare,anke se metto L'IP nella lista consentiti,nada.<br />
+Io uso la versione pro del Sygate.<br />
+<br />
+se hai già creato 1 &quot;advanced rule&quot; ho finito le idee  :(</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mark74</div><div class="date">12-04-2004, 20:32</div></div><div class="posttext">Infatti in &quot;Advanced rules&quot; ho messo in modo ke il Mirc possa fare tutto quello ke vuole,ma con la scansione di Azzurra niente da fare.<br />
+Poi tra l'altro nn posso inserire un DNS consentito,ma solo un IP,così ho usato quello del server di Libero (Usando sempre quello per il collegamento)ma lo blocca ugualmente.<br />
+Mi rompe un casino dover usare il Norton,senza Azzurra nn posso stare,ma Sygate mi rende la cosa impossibile.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kid</div><div class="date">12-04-2004, 20:43</div></div><div class="posttext">Infatti in &quot;Advanced rules&quot; ho messo in modo ke il Mirc possa fare tutto quello ke vuole,ma con la scansione di Azzurra niente da fare.<br />
+Poi tra l'altro nn posso inserire un DNS consentito,ma solo un IP,così ho usato quello del server di Libero (Usando sempre quello per il collegamento)ma lo blocca ugualmente.<br />
+Mi rompe un casino dover usare il Norton,senza Azzurra nn posso stare,ma Sygate mi rende la cosa impossibile.<br />
+<br />
+come server di libero intendi libero.azzurra.org ?<br />
+<br />
+cmq io credo tu debba inserire gli ip dei server di &quot;controllo&quot; di azzurra, cioè dei vari <br />
+irc.azzurra.org cybcop.azzurra.org proxy-check.azzurra.org<br />
+oltre (o al posto?) a quello di libero<br />
+<br />
+<br />
+purtroppo non conosco gli ip di questi server, e non te li posso passare<br />
+<br />
+in caso tu riesca a recuperarli prova ad inserirli, magari facendo 1 regola x ogni ip (e di conseguenza x ogni server)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mark74</div><div class="date">12-04-2004, 21:04</div></div><div class="posttext">Già fatto  V_V  per avere gli IP è sufficente fare un ping dalla finestra DOS,ma anke creando una regola per ognuno il risultato nn cambia.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">typedef_c</div><div class="date">13-04-2004, 09:25</div></div><div class="posttext">Non conosco molto bene sygate ma mi pare di capire che tu possa aggiungere solo ip e non dns quindi prova in questo modo...<br />
+<br />
+-aggiungi questi due ip e dagli piena liberta':     195.78.193.35 e 213.203.143.50<br />
+<br />
+-collegati con /server 2night.azzurra.org<br />
+<br />
+vediamo se cosi puo funzionare ciauz :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mark74</div><div class="date">13-04-2004, 11:32</div></div><div class="posttext">In questo momento ho il Norton installato,ma a fine settimana provo.<br />
+Sono gli IP del proxy-monitor?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">typedef_c</div><div class="date">13-04-2004, 11:38</div></div><div class="posttext">sono gli ip di 2night.azzurra.org (il primo) e dei proxy-monitor (il secondo) :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">trekfan1</div><div class="date">01-01-2005, 13:22</div></div><div class="posttext">Una piccola aggiunta:<br />
+ <br />
+ Su Norton 2005 tra gli indirizzi da escludere bisogna aggiungere: irc.azzurranet.org<br />
+ <br />
+ così mi ha detto uno che conosco, finora non ho ancora provato il 2005</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">typedef_c</div><div class="date">01-01-2005, 14:48</div></div><div class="posttext">Una piccola aggiunta:<br />
+ <br />
+ Su Norton 2005 tra gli indirizzi da escludere bisogna aggiungere: irc.azzurranet.org<br />
+ <br />
+ così mi ha detto uno che conosco, finora non ho ancora provato il 2005<br />
+<br />
+Mi spiace contraddirti ma azzurranet.org è un host molto vecchio che è stato sostituito da azzurra.org, quindi quell'ulteriore regola non è necessaria per accedere ad Azzurra.<br />
+<br />
+Ciao,<br />
+type</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">trekfan1</div><div class="date">02-01-2005, 15:31</div></div><div class="posttext">sarà anche un host molto vecchio, ma a quanto sembra il Norton 2005 lo considera ancora, ripeto: NON ho ancora provato il Norton 2005 personalmente, riporto quanto mi ha detto uno in chat!<br />
+  <br />
+ Se uno che usa Norton 2005 volesse confermare o smentire questa cosa gliene sarei grato e penso non solo io, ma tutti coloro che useranno Norton 2005<br />
+ <br />
+ Lui dice che gli appare quando si collega, forse in qualche oscuro meandro è rimasto quel vecchio HOST, non saprei, quindi dovrebbe essere chi si occupa dei services a occuparsene.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">08-01-2005, 21:06</div></div><div class="posttext">Lui dice che gli appare quando si collega, forse in qualche oscuro meandro è rimasto quel vecchio HOST, non saprei, quindi dovrebbe essere chi si occupa dei services a occuparsene.<br />
+ <br />
+ Non conosco Norton (nessun prodotto, nessuna versione), ma non colgo il senso di questo tuo richiamo a &quot;chi si occupa dei services&quot;.<br />
+ Semplicemente c'e' stato un tempo in cui azzurranet.org era adeguato per chattare, ed ora e' il tempo in cui tutte le connessioni devono puntare a azzurra.org . Che poi ancor oggi irc.azzurranet.org sia utilizzabile per connettersi ad Azzurra e' dovuto al fatto che quel dominio non e' stato dismesso proprio per venire incontro a quegli utenti che lo usano ancora, vuoi per pigrizia o per dimenticanza nella configurazione del proprio PC. Ma e' proprio quest'ultima (ovvero: la configurazione del PC) a dover essere personalizzata in modo corretto, e i services di Azzurra non hanno proprio niente a che vedere con tutto cio'. Tutt'al piu' potremmo discutere dei DNS della rete e relative configurazioni, ma la realta' dei fatti e' che gli indirizzi sono risolti correttamente e non ci sono problemi a chattare anche usando il vecchio e obsoleto irc.azzurranet.org (che, va sottolineato, andrebbe in ogni caso aggiornato ad irc.azzurra.org ).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gastaman</div><div class="date">09-01-2005, 14:48</div></div><div class="posttext">Comunque da parecchio tempo a questa parte ogni server si occupa della scansione dei propri client (in aggiunta al proxy monitor generale), quindi gli indirizzi IP da mettere nelle exception dei firewall, oltre a 213.203.143.50 (che sarebbe proxy-check.azzurra.org e cybcop.azzurra.org) sono gli IP dei vari server, che si possono ottenere facilmente dando un /LINKS una volta connessi e digitando: /DNS nomeserver.azzurra.org per ogni server della lista (se il risultato è 127.0.0.1 non va aggiunto).<br />
+Per essere sicuri di non avere più avvisi bisognerebbe quindi inserire gli IP di tutti i server della rete, mentre se il software permette l'introduzione di host e gestisce bene i round robin teoricamente bastano solo irc.azzurra.org e cybcop.azzurra.org (ma ci credo poco).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">trekfan1</div><div class="date">13-02-2005, 17:37</div></div><div class="posttext">Installato il Norton 2005 e configurato come il 2004 e confermo che non ci sono problemi :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Whole</div><div class="date">01-05-2005, 18:43</div></div><div class="posttext">Piccola puntualizzazione per i newbie:<br />
+<br />
+Nel caso utilizzate Norton Antivirus 2005 il procedimento da seguire e':<br />
+Opzioni -&gt; nel menu' a destra [Protezione da worm internet] -&gt; selezionate [ Regole Generali ] -&gt; Premete il pulsante [ Aggiungi ] :<br />
+Selezionare CONSENTI -&gt; Solo computer e siti elencati di seguito, aggiungi e inserite cybcop.azzurra.org irc.azzurra.org proxy-check.azzurra.org (sempre separati da uno spazio) AVANTI. Protocolli TCP\UPD e i tipi di comunicazione selezionare TUTTI. Come nome ci potete mettere Azzurra IRC Network.<br />
+<br />
+Saluti Whole 8)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">EvolutionCrazy</div><div class="date">14-05-2005, 23:37</div></div><div class="posttext">mi permetto di replicare a questo vecchio thread per spiegare come entrare in azzurra con sygate (riferito alla versione PRO... non mi risulta che la free abbia questo tipo di protezione aggiuntiva..)...<br />
+<br />
+aprite sygate =&gt; tools =&gt; options =&gt; security<br />
+<br />
+alla voce &quot;Automatically block attackers ip address for X second(s)&quot;<br />
+<br />
+mettete un valore basso... tipo 5 secondi...<br />
+<br />
+i 600secondi di default sono improponibili per l'uso su irc :prrr:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">oblack</div><div class="date">18-09-2005, 08:57</div></div><div class="posttext">Confermo la soluzione del problema di sygate. E' bastato sostituire i 600 sec con 5 sec e entro in azzurra come un treno. Non è che i 5 sec possono però creare problemi di sicurezza di altro tipo?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">riga</div><div class="date">13-12-2005, 15:18</div></div><div class="posttext">ragazzi, le ho provate tutte ormai ma non riesco a risolvere..<br />
+<br />
+potete insegnarmi a configurare zone alarm security suite?<br />
+avevo fatto anche un altro post qui (http://forum.azzurra.org/showthread.php?p=338022#post338022)<br />
+ma e ho seguito ciò che mi è stato detto, ma non ci sono riuscito..</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gioxx</div><div class="date">13-12-2005, 19:53</div></div><div class="posttext">riga, evita di fare cross posting perfavore. ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Takeda</div><div class="date">29-12-2006, 23:58</div></div><div class="posttext">Io ho il norton 2005.<br />
+Ahime quando provo a connettermi a Crypto non mi va, non mi trova la connessione perchè NORTON la blocca.<br />
+Ho provato a vedere la guida qua ma cambia tantissimo rispetto al 2005.<br />
+Help please.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Whole</div><div class="date">26-01-2007, 09:26</div></div><div class="posttext">Io ho il norton 2005.<br />
+Ahime quando provo a connettermi a Crypto non mi va,<br />
+[.......]<br />
+ Ho provato a vedere la guida qua ma cambia tantissimo rispetto al 2005.<br />
+Help please.<br />
+eeeeeeeeeeeeeeeeeeeehhhhh????</div></div><hr />
+
+
+<div id="copyright">vBulletin&reg; v3.6.4, Copyright &copy;2000-2007, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

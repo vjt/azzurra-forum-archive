@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="LAG su ngnet, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] LAG su ngnet Angolo tecnico" />
+	
+	<title>LAG su ngnet [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php/">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-13.html">Angolo tecnico</a> &gt; LAG su ngnet</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=1719">LAG su ngnet</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Omino.Bianco</div><div class="date">26-02-2003, 19:49</div></div><div class="posttext">Ciao<br />
+Avrei un problemino leggermente fastidioso...ho sempre un lag assurdo su ngnet.azzurra.org<br />
+Perchè?<br />
+Mi conneto e per i primi 2 minuti ho dai 3 ai 20 secondi, poi superati i 2 minuti il lag aumenta fino a che ovviamente cado!!<br />
+C'è un motivo particolare?<br />
+Dipende da me, dal tunnel, dal server...<br />
+Grazie   :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Evann</div><div class="date">26-02-2003, 20:00</div></div><div class="posttext">Salve, per non aprire un altro topic, posto qua una cosa simile che mi succede da un po' se posso ^^''<br />
+<br />
+Uso da ormai un po' di tempo SSL, e ho notato che, una volta connesso, il lag aumenta vertiginosamente, fino a raggiungere addirittura 33 minuti di lag. -_-'<br />
+Dopo qualche minuto inizia invece a calare altrettanto vertiginosamente :)<br />
+<br />
+Dipende dal fatto che uso SSL o è un problema a parte?<br />
+<br />
+Byez!<br />
+<br />
+P.S.<br />
+Mi scuso con Omino.Bianco per aver fatto un'altra domanda oltre alla sua, ma questo fatto mi incuriosiva ^^'</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">City_Hunter</div><div class="date">26-02-2003, 20:40</div></div><div class="posttext">Il server IRC di ngnet mi risponde bello prestante ai segnali inviati, quindi dubito abbia problemi propri di lag.<br />
+Piuttosto non mi hai detto quale tunnel broker usi ma se (come immagino) si tratta proprio del tunnel broker di ngnet, beh quello sembra avere qualche problema.<br />
+Infatti ora come ora non sono riuscito neanche ad accedere alla pagina per l'aggiornamento del tunnel:<br />
+https://tb.ngnet.it/cgi-bin/tb.pl<br />
+<br />
+Per quel che riguarda la faccenda SSL, intanto devi rispondere alla domanda che tu stesso hai posto: &quot;Dipende dal fatto che uso SSL o è un problema a parte? &quot;<br />
+Per controllare, collegati senza SSL allo stesso server (ovviamente non alla porta 9999) e verifica la situazione.<br />
+E' possibile che si formi un &quot;collo di bottiglia&quot; nella connessione SSL sul wrapper (stunnel se usi windows) se hai molte azioni che vengono fatte in automatico al momento della connessione.<br />
+Ovverosia autojoin a diversi canali, saluti automatici ed in particolar modo, elevato numero di nicknames in notify list. C'era gente che collassava in auto on connect usando SSL e avendo 60+ nicknames in notify list.<br />
+Fammi sapere. :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Evann</div><div class="date">26-02-2003, 20:45</div></div><div class="posttext">Ho provato a svuotare la notify list (avevo una decina di nicknames), e il problema sembra scomparso, infatti non vengo più assalito da quel lag assurdo.<br />
+Ti ringrazio per l'aiuto e la disponibilità. :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Omino.Bianco</div><div class="date">26-02-2003, 20:50</div></div><div class="posttext">Si infatti ho il tunnel di ngnet e anche a me in questo momento non mi da la possibilità di aggiornare il tunnel.<br />
+Magari è un problema di tunnel, vedremo quando la situazione sarà migliorata, se camberà qualcosa.<br />
+Grazie...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Omino.Bianco</div><div class="date">26-02-2003, 21:22</div></div><div class="posttext">Niente da fare, anche adesso ho lag un po meno forse ma comunque tanto lag.<br />
+Ho provato sia da moonlight.azzurra.org sia da ngnet.azzurra.org, il risultato è sempre lo stesso.<br />
+Se qualcuno gentilmente mi puo aiutare...<br />
+Grazie</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">City_Hunter</div><div class="date">26-02-2003, 21:25</div></div><div class="posttext">Hai cambiato tunnel broker o hai cambiato solo server IRC?<br />
+<br />
+Cmq ho fatto adesso una prova collengandomi a ngnet.azzurra.org da tunnel broker di ngnet, relay6 3.0 e con stack IPV6 di windows XP SP1 (che è diverso dallo stack esistente per win 2000 o XP senza SP).<br />
+[C|ty_IPv6 PING reply]: 406ms<br />
+Sembra tutto nella norma, lo lascio collegato così controllo a lungo termine cosa accade.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Omino.Bianco</div><div class="date">26-02-2003, 21:34</div></div><div class="posttext">Ho provato a cambiare il server irc, prima ngnet.azzurra.org e avevo un lag che oscillava da 16 a 55 sec, e poi con moonlight.azzurra.org e il lag oscillava da 4 a 32 sec.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">City_Hunter</div><div class="date">27-02-2003, 00:56</div></div><div class="posttext">All right, ho tenuto un client su server IPv6 (ngnet.azzurra.org) per tutta la serata, e poi ho fatto esperimenti con altri tunnel brokers (freenet6, he.net, btExact).<br />
+Confermo (anche un amico con esperimenti analoghi ha ottenuto gli stessi risultati) che il lag, presentatosi dopo un pò e rimasto tristemente costante lungo l'arco della serata, è dovuto al tunnel broker di ngnet, e non al server di Azzurra.<br />
+Forse questo deriva dal fatto che il tb di ngnet è usatissimo dalla gente.<br />
+Non ho avuto lag usando altri tunnel brokers, come per esempio quello di btExact ( https://tb.ipv6.btexact.com/ ).<br />
+Adesso non ti resta che scegliere un tb diverso da ngnet e dovresti risolvere una volta per tutte il problema della lentezza.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Omino.Bianco</div><div class="date">27-02-2003, 20:03</div></div><div class="posttext">Adesso provo, ti ringrazio per la disponibilità.<br />
+Ti farò sapere.<br />
+Ciao e grazie :-)</div></div><hr />
+
+
+<div id="copyright">vBulletin&reg; v3.6.7, Copyright &copy;2000-2007, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

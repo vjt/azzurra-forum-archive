@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="problemino di identificazione nick..., azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] problemino di identificazione nick... IRCHelp - Aiuto su IRC e Servizi di Azzurra" />
+	
+	<title>problemino di identificazione nick... [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php/">Azzurra IRC Network Forum</a> &gt; <a href="f-6.html">Network Central</a> &gt; <a href="f-11.html">IRCHelp - Aiuto su IRC e Servizi di Azzurra</a> &gt; problemino di identificazione nick...</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=2535">problemino di identificazione nick...</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">lost</div><div class="date">22-06-2003, 19:25</div></div><div class="posttext">Salve ^__^<br />
+mi dispiace fare il primo post proprio qui, ma ho un problemino che non riesco a risolvere... <br />
+In chat cambio spesso nick, e ne ho 3 registrati... ora, siccome uso il mirc il + delle volte, un amico mi ha detto che posso evitare di scrivere sembre /ns identify per &quot;loggarmi&quot;... e tutto ha funzionato bene finchè ho scritto 2 nick... al terzo... mi va in palla tutto! Mi dice che le pass non sono valide... e mi ''killa''... questo perchè quando identifico automaticamente un nick, mi dà due volte la pass sbagliata...<br />
+Vi faccio un esempio copiando ciò che mi dice quando mi loggo con il mio nick abituale...<br />
+<br />
+* L--- sets mode: +ix<br />
+-<br />
+-NickServ- Questo nick e' stato registrato da un altro utente. Per favore scegline un altro.<br />
+-<br />
+-NickServ- Se e' tuo, identificati digitando /ns IDENTIFY password<br />
+-<br />
+-NickServ- La password inserita per il nick L--- e' sbagliata.<br />
+-<br />
+* L--- sets mode: +r<br />
+-<br />
+-NickServ- Password accettata per il nick L---. Da questo momento risulti identificato.<br />
+-<br />
+-MemoServ- Ci sono nuove NEWS da Azzurra! Per leggerle, digita: /ms NEWS.<br />
+-<br />
+-NickServ- La password inserita per il nick L--- e' sbagliata.<br />
+<br />
+Ora, questo va bene per 2 nick, nel senso che la 3^ possibilità me la dà buona... ma se volessi mettere il riconoscimento automatico anche al terzo nick? non posso farlo?<br />
+Francamente la cosa mi sembra stranissima... ^__^''<br />
+Thankyou  :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">FrankBlack</div><div class="date">22-06-2003, 21:41</div></div><div class="posttext">ciao<br />
+<br />
+da come immagino hai messo nel perform tre comandi di identificazione<br />
+per altrettanti nick, il comportamento di NickServ e' corretto in quanto<br />
+intercetta tre identificazioni ad un nick con tre pass differenti io ti consiglio<br />
+di usare il comando piu' diretto verso il nick, cioe' inserire nel perform<br />
+questo comando :<br />
+<br />
+/ns IDENTIFY nick password<br />
+<br />
+riportandolo per i tre nick , in questo modo NickServ non andra'<br />
+piu' in errore perche' ogni nick avra' la sua pass esatta<br />
+<br />
+ciao</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">lost</div><div class="date">01-07-2003, 15:33</div></div><div class="posttext">Grazie mille! Ora funziona tutto alla perfezione  :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">^pioggia^</div><div class="date">03-07-2003, 08:25</div></div><div class="posttext">a proposito di nick<br />
+<br />
+Your host: ^pioggia^!kris7Q@host186-107.pool80182.interbusiness.it<br />
+<br />
+sono due giorni che al posto del mio ident anto, mi appaiono nomignoli strani, ma succede solo su azzurra...<br />
+qualcuno puo' spiegarmi come ovviare a questa cosa?<br />
+Grazie</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">^pioggia^</div><div class="date">03-07-2003, 10:38</div></div><div class="posttext">allora, grazie all'aiuto di Maio (irchelper) ho risolto tutto e colgo l'occasione, per mettere in guardia anche voi da un trojan che si piazza in  C:\WINNT\system32\sys files\data memory e si kiama klsys.exe<br />
+<br />
+A me cambiava l'ident ogni volta che mi collegavo, probabilmente l'ho preso da winmx :-(  ma, oltre a quello dell'ident, non so che altri danni possa fare...<br />
+<br />
+Grazie ancora Maio, hai avuto una pazienza incredibile!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">EvilMaio</div><div class="date">03-07-2003, 12:56</div></div><div class="posttext">Ciao di nuovo, <br />
+<br />
+è molto probabile che il trojan consentisse il controllo remoto sul pc del malcapitato (a giudicare dalle generose dimensioni dell'eseguibile è il minimo).<br />
+<br />
+Il consiglio è sempre lo stesso: non eseguire mai programmi di provenienza dubbia, e utilizzare sempre un antivirus aggiornato ;)<br />
+<br />
+Ciau.<br />
+EvilMaio</div></div><hr />
+
+
+<div id="copyright">vBulletin&reg; v3.6.8, Copyright &copy;2000-2007, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

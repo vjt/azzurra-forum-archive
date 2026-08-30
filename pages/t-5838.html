@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Quittare da tutti i server, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] Quittare da tutti i server Angolo tecnico" />
+	
+	<title>Quittare da tutti i server [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php/">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-13.html">Angolo tecnico</a> &gt; Quittare da tutti i server</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=5838">Quittare da tutti i server</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Tana</div><div class="date">11-10-2004, 09:17</div></div><div class="posttext">Uno dei vantaggi delle ultime versioni del mIRC è proprio il multiserver... però eseguendo il comando /quit il mIRC quitta da 1 solo server... esiste un comando (o uno script...) per quittare da tutti i server contemporaneamente?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">11-10-2004, 09:43</div></div><div class="posttext">Su due piedi mi viene in mente /exit ... chiude mIRC, quindi per forza ti disconnetti da tutti i server  :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Tana</div><div class="date">11-10-2004, 10:48</div></div><div class="posttext">Su due piedi mi viene in mente /exit ... chiude mIRC, quindi per forza ti disconnetti da tutti i server  :)<br />
+Eh no... qualcosa che quitta e basta... :) <br />
+cmq grazie lo stesso della risposta!  :wink:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Tecnicodaniele</div><div class="date">11-10-2004, 18:41</div></div><div class="posttext">non esiste nulla che faccia il quit da tutti i server (exit comunque lo fa , dato che esegue sempre un quit) , ho pure provato a sfogliare l'help di mirc ma senza risultati buoni :) , il multiserver permette di connettersi a più server , ma poi per chiuderli , devi quittare tu stessa manualmente , oppure chiudendo direttamente il mirc.<br />
+<br />
+Saluti Tecnicodaniele<br />
+Email: Tecnicodaniele@azzurra.org</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">11-10-2004, 19:47</div></div><div class="posttext">devi quittare tu stessa manualmente<br />
+<br />
+-ChanServ- Info sul canale #Calabria&#58;<br />
+-ChanServ- Founder&#58; IL-Tan<br />
+<br />
+Secondo me, e' un masculo... poi vabbe', viva internet! :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dracoo</div><div class="date">11-10-2004, 21:38</div></div><div class="posttext">Cercando un po' nell'help, si trova:<br />
+<br />
+/scid &amp;lt;-rsatM | N&amp;gt; [command]<br />
+Changes the active connection for a script to connection id N, where N is a $cid value.<br />
+The /scon command works in exactly the same way, except that N represents the Nth connection, not a connection id value.<br />
+<br />
+Questi due comandi (di cui non mi è ancora molto chiara la differenza) fanno si che si possa scegliere in quale connessione mandare il comando.<br />
+Esempio:<br />
+/scid 2 ame va<br />
+<br />
+Questo comando fa un /ame in tutti i canale del secondo server cui si è connessi.<br />
+Per mandare un comando in tutti i server contemporanemanete, si può usare il flag -a, perciò, nel tuo caso diventa:<br />
+<br />
+/scid -a quit messaggio<br />
+<br />
+Spero di esserti stato utile :)<br />
+bye ;)</div></div><hr />
+
+
+<div id="copyright">vBulletin&reg; v3.6.7, Copyright &copy;2000-2007, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

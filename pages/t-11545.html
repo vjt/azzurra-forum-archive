@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="services 2.2.0 patch2, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] services 2.2.0 patch2 Services - I servizi IRC di Azzurra" />
+	
+	<title>services 2.2.0 patch2 [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-6.html">Network Central</a> &gt; <a href="f-30.html">Services - I servizi IRC di Azzurra</a> &gt; services 2.2.0 patch2</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=11545">services 2.2.0 patch2</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">snagg</div><div class="date">08-11-2005, 20:38</div></div><div class="posttext">Salve, <br />
+come richiesto da alcuni utenti sono state implementate alcune funzioni in chanserv:<br />
+1) la possibilità di vedere la lista dei nick expired <br />
+2) la possibilità di trovare dei nick nelle liste tramite mask del formato nick!user@host<br />
+<br />
+Rinnovo l'invito a chiunque trovasse dei bug di postare su devel@azzurra.org. Grazie.<br />
+<br />
+Snagg</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">GUENDA</div><div class="date">08-11-2005, 20:51</div></div><div class="posttext">Scusa Snagg,<br />
+2) la possibilità di trovare dei nick nelle liste tramite mask del formato nick!user@host<br />
+ <br />
+Cosa intendi per liste? Liste ban/akick nei canali? Liste utenti?<br />
+E soprattutto, quali sono i comandi per queste nuove features?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">snagg</div><div class="date">08-11-2005, 21:08</div></div><div class="posttext">puoi guardare nelle liste vop/aop/sop/cf . I comandi sono: <br />
+/msg chanserv lista #canale explist per la lista dei nick expired <br />
+/msg chanserv lista #canale find mask per il find<br />
+<br />
+Snagg</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Superfre`</div><div class="date">08-11-2005, 21:20</div></div><div class="posttext">funzionano!!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">morpheus</div><div class="date">08-11-2005, 22:43</div></div><div class="posttext">Due sole domande:<br />
+a) è disponibile un diff tra i sorgenti della versione di produzione e quelli rilasciati su devel?<br />
+b) (abbastanza OT) verrà in futuro reso possibile l'accesso anonymous al CVS (in sola lettura) in modo da poter seguire lo sviluppo?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">trekfan1</div><div class="date">08-11-2005, 23:11</div></div><div class="posttext">Usando lo script PNP però la richiesta dei nick scaduti nelle liste AOP/SOP non funziona mentre funziona per quanto riguarda vop/hop, qualcuno può dirmi come modificare eventualmente lo script?<br />
+<br />
+Grazie :-)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Whole</div><div class="date">09-11-2005, 12:54</div></div><div class="posttext">Usando lo script PNP però la richiesta dei nick scaduti nelle liste AOP/SOP non funziona mentre funziona per quanto riguarda vop/hop, qualcuno può dirmi come modificare eventualmente lo script?<br />
+<br />
+<br />
+Il modo per risolvere e' modificare lo script, ti conviene chiedere in qualche canale di scripting ( /list *script* ) robabilmente qualcuno che utilizza il pnp avra' corretto questo errore.<br />
+<br />
+Il modo per ovviare a tutto cio e' sostituire /cs con /msg Chanserv aop #canale explist<br />
+Penso che dipenda dal supporto che si installa per ChanServ ( e per Nickserv anche ) al primo avvio dello script.<br />
+<br />
+Per altre informazioni puoi contattarmi in query<br />
+<br />
+Saluti Whole 8)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gipi</div><div class="date">01-12-2005, 11:38</div></div><div class="posttext">Esiste una prassi da seguire per l'installazione dei sorgenti?<br />
+Pare che il Makefile non sia il suo..<br />
+Grazie :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">snagg</div><div class="date">01-12-2005, 19:15</div></div><div class="posttext">uhm che intendi per &quot;pare non sia il suo&quot; ? <br />
+<br />
+Snagg</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gipi</div><div class="date">01-12-2005, 21:57</div></div><div class="posttext">Se guardi bene vedrai che alla opzione &quot;install&quot; risulta uguale a quello del demone, richiamando a se files e directories (giustamente) inesistenti :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Sonic88</div><div class="date">02-12-2005, 17:06</div></div><div class="posttext">Se guardi bene vedrai che alla opzione &quot;install&quot; risulta uguale a quello del demone, richiamando a se files e directories (giustamente) inesistenti :)<br />
+il make install non funge.<br />
+Una volta compilati copia il file src/services in run/<br />
+metti in run/ il file di configurazione correttamente modificato e lanciali :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gipi</div><div class="date">09-12-2005, 01:12</div></div><div class="posttext">Thanks 1000! veramente ottimi :)<br />
+[O.T.]<br />
+Avete mai pensato di ridistribuire anche &quot;Chanstats&quot; magari con una licenza Creative Commons (o simile)?<br />
+Non nego di essere sempre stato affascinato da quei sorgenti (logger, interazione IRCstats, rrdtools e grafici)...<br />
+<br />
+Saluti :)</div></div><hr />
+
+
+<div id="copyright">vBulletin&reg; v3.6.4, Copyright &copy;2000-2007, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

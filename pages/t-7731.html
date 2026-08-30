@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Mirc scripting - variabili... variabili?, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] Mirc scripting - variabili... variabili? Programmazione e dintorni" />
+		<title>Mirc scripting - variabili... variabili? [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-23.html">Programmazione e dintorni</a> &gt; Mirc scripting - variabili... variabili?</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=7731">Mirc scripting - variabili... variabili?</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">}gu|do[z]{®©</div><div class="date">06-03-2005, 20:00</div></div><div class="posttext">Spero sia la sezione giusta per chiedere qualcosa sul mirc scripting.. conosco solo il minimo indispensabile e temo che prossimamente vi romperò un po' le scatoline :D<br />
+<br />
+Il problema attuale è presto spiegato:<br />
+<br />
+vorrei includere il valore di una variabile nella definizione di un'altra variabile... esempio:<br />
+<br />
+%version 2.4<br />
+%testo mioscript version %version scritta da }gu|do[z]{<br />
+<br />
+<br />
+chiaramente così non funziona.... non so se può funzionare in qualche modo.. chiedo a voi :D<br />
+<br />
+-----<br />
+<br />
+Un altro problema simile... nei remote vorrei lanciare un comando run su una url, appendendo la versione in querystring.. non ci riesco... <br />
+spiego:<br />
+<br />
+Verifica aggiornamenti:/run http://www.miosito.it/checkupdt.php?v=%version<br />
+<br />
+l'url risultante nel browser è esattamente<br />
+http://www.miosito.it/checkupdt.php?v=%version<br />
+ma io vorrei che in querystring venisse i valore di %version...esempio:<br />
+http://www.miosito.it/checkupdt.php?v=2.4 <br />
+<br />
+anche per questo... è possibile?<br />
+<br />
+danke</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Progeny</div><div class="date">06-03-2005, 20:21</div></div><div class="posttext">non ricordo nulla di mirc scripting, sono anni che non ci metto mani!<br />
+comunque puoi provare a concatenare delle stringhe usando $+ (se non ricordo male..)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">}gu|do[z]{®©</div><div class="date">06-03-2005, 21:09</div></div><div class="posttext">Hum... <br />
+<br />
+ %version 2.4<br />
+ %testo mioscript version $+%version scritta da }gu|do[z]{<br />
+<br />
+non funge lo stesso :D<br />
+<br />
+non è un problema di concatenzaione.. ma di valutazione della variabile.. non esiste un modo tipo la funzione eval() di php per forzare l'interpretazione della variabile?<br />
+<br />
+Grazie mille :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Progeny</div><div class="date">06-03-2005, 21:30</div></div><div class="posttext">/echo $var<br />
+ti printa: $var<br />
+//echo $var<br />
+ti printa il contenuto della variabile<br />
+<br />
+in mirc scripting ricordo che non c'è bisogno di mettere il // prima, ad esempio basta &quot;echo $var&quot;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Raynk</div><div class="date">06-03-2005, 21:42</div></div><div class="posttext">{®©']Spero sia la sezione giusta per chiedere qualcosa sul mirc scripting.. conosco solo il minimo indispensabile e temo che prossimamente vi romperò un po' le scatoline :D<br />
+<br />
+Il problema attuale è presto spiegato:<br />
+<br />
+vorrei includere il valore di una variabile nella definizione di un'altra variabile... esempio:<br />
+<br />
+%version 2.4<br />
+%testo mioscript version %version scritta da }gu|do[z]{<br />
+<br />
+<br />
+chiaramente così non funziona.... non so se può funzionare in qualche modo.. chiedo a voi :D<br />
+<br />
+-----<br />
+<br />
+Un altro problema simile... nei remote vorrei lanciare un comando run su una url, appendendo la versione in querystring.. non ci riesco... <br />
+spiego:<br />
+<br />
+Verifica aggiornamenti:/run http://www.miosito.it/checkupdt.php?v=%version<br />
+<br />
+l'url risultante nel browser è esattamente<br />
+http://www.miosito.it/checkupdt.php?v=%version<br />
+ma io vorrei che in querystring venisse i valore di %version...esempio:<br />
+http://www.miosito.it/checkupdt.php?v=2.4 <br />
+<br />
+anche per questo... è possibile?<br />
+<br />
+danke<br />
+<br />
+Mettiamo che hai la variabile %version .<br />
+L'url potresti lanciarlo con: //url http://www.google.it/ $+ %version<br />
+Riguardo invece alla definizione di una variabile includendone il valore di un'altra, da riga di comando di mIRC si può fare con:<br />
+//set %nuovaVar Descrizione della variabile %version ecc<br />
+Come detto anche da Progeny, se non usi la doppia barra ( // ), invece, verrà presa la stringa %version senza accedere al contenuto vero e proprio della variabile.<br />
+<br />
+Ciao,<br />
+Raynk</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">}gu|do[z]{®©</div><div class="date">06-03-2005, 23:47</div></div><div class="posttext">perfetto.. non avevo provato con set.. penso che funzionerà... riguardo l'altro problema sto cercando di cavarmela con le socket ^_^</div></div><hr />
+
+
+<div id="copyright">vBulletin v3.5.3, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

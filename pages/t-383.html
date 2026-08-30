@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="snprintf, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] snprintf Programmazione e dintorni" />
+		<title>snprintf [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-23.html">Programmazione e dintorni</a> &gt; snprintf</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=383">snprintf</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Progeny</div><div class="date">11-02-2002, 20:01</div></div><div class="posttext">#include &amp;lt;windows.h&amp;gt;<br />
+#include &amp;lt;stdio.h&amp;gt;<br />
+<br />
+int main(void){<br />
+<br />
+int *p;<br />
+char *path, *ic, *rfile;<br />
+char buffer[255+1];<br />
+<br />
+// qui non ho postato un pezzo di codice<br />
+<br />
+snprintf(rfile, sizeof(rfile), &amp;quot;n%d&amp;quot;, p);<br />
+if(GetPrivateProfileString(&amp;quot;rfiles&amp;quot;, &amp;quot;n0&amp;quot;, NULL, buffer, 255, path) != 0){<br />
+fprintf(stdout, &amp;quot;%s&amp;quot;, buffer);<br />
+} else {<br />
+fprintf(stderr, &amp;quot;Errore durante l'apertura del file: %s&amp;quot;, path);<br />
+}<br />
+p++;<br />
+}<br />
+<br />
+Durante la compilazione mi da questo errore:<br />
+undefined reference to `snprintf'<br />
+da cosa può dipendere?<br />
+<br />
+ciau<br />
+<br />
+&lt;font size=-1&gt;[ Questo messaggio &amp;egrave; stato modificato da: Progeny il 2002-02-11 19:04 ]&lt;/font&gt;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">silentman</div><div class="date">11-02-2002, 20:58</div></div><div class="posttext">Durante la compilazione mi da questo errore:<br />
+undefined reference to `snprintf'<br />
+da cosa può dipendere?<br />
+<br />
+<br />
+la snprintf non è una funzione di libreria. La trovi *anche* su: http://www.ijs.si/software/snprintf/</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Progeny</div><div class="date">11-02-2002, 22:14</div></div><div class="posttext">il gcc su linux me la dava per buona :smile:<br />
+grazie 1000 Silent<br />
+<br />
+anzi ora che ci penso, esiste qualcosa che possa sostituire la snprintf? giusto per non riempire il progetto di sta roba.<br />
+bye<br />
+<br />
+&lt;font size=-1&gt;[ Questo messaggio &amp;egrave; stato modificato da: Progeny il 2002-02-11 21:23 ]&lt;/font&gt;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">silentman</div><div class="date">12-02-2002, 17:29</div></div><div class="posttext">Non che io sappia, a meno di non scrivere una snprintf ex-novo. Posso dirti con un ragionevole margine di sicurezza che la snprintf che ti ho dato sia sufficientemente &quot;light&quot; da includerla in qualsiasi progetto tu voglia distribuire<br />
+<br />
+Saluti</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Shaka</div><div class="date">19-02-2002, 11:45</div></div><div class="posttext">Se usi il VC++ puoi usare _snprintf :<br />
+<br />
+int _snprintf( char *buffer, size_t count, const char *format [, argument] ... );<br />
+Ad eg:<br />
+<br />
+#include &lt;stdio.h&gt;<br />
+<br />
+int main(int argc, char* argv[]) {<br />
+<br />
+	char	sz[5];<br />
+<br />
+	if (_snprintf(sz, sizeof(sz), &quot;Hello World!&quot;) &lt; 0)<br />
+		sz[sizeof(sz) - 1] = 0;<br />
+<br />
+	printf(sz);<br />
+<br />
+	return 0;<br />
+}<br />
+<br />
+Shaka<br />
+<br />
+<br />
+<br />
+&lt;font size=-1&gt;[ Questo messaggio &amp;egrave; stato modificato da: Shaka il 2002-02-19 10:48 ]&lt;/font&gt;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Progeny</div><div class="date">19-02-2002, 20:16</div></div><div class="posttext">Non ho vc++ installato, 400mb son troppi :smile:<br />
+Sulle MSDN ho trovato cmq qualcosa di interessante:<br />
+<br />
+The sprintf function formats and stores a series of characters and values in buffer. Each argument (if any) is converted and output according to the corresponding format specification in format. <br />
+<br />
+int sprintf( char *buffer, const char *format [, argument] ... );<br />
+<br />
+Example<br />
+<br />
+/* SPRINTF.C: This program uses sprintf to format various<br />
+ * data and place them in the string named buffer.<br />
+ */<br />
+<br />
+#include &amp;lt;stdio.h&amp;gt;<br />
+<br />
+void main( void )<br />
+{<br />
+   char  buffer[200], s[] = &amp;quot;computer&amp;quot;, c = 'l';<br />
+   int   i = 35, j;<br />
+   float fp = 1.7320534f;<br />
+<br />
+   /* Format and print various data: */<br />
+   j  = sprintf( buffer,     &amp;quot;tString:    %sn&amp;quot;, s );<br />
+   j += sprintf( buffer + j, &amp;quot;tCharacter: %cn&amp;quot;, c );<br />
+   j += sprintf( buffer + j, &amp;quot;tInteger:   %dn&amp;quot;, i );<br />
+   j += sprintf( buffer + j, &amp;quot;tReal:      %fn&amp;quot;, fp );<br />
+<br />
+   printf( &amp;quot;Output:n%sncharacter count = %dn&amp;quot;, buffer, j );<br />
+}<br />
+<br />
+<br />
+Output<br />
+<br />
+Output:<br />
+   String:    computer<br />
+   Character: l<br />
+   Integer:   35<br />
+   Real:      1.732053<br />
+<br />
+character count = 71<br />
+<br />
+Usando sprinft me lo compila bene, solo che mi va in crash l'eseguibile durante l'esecuzione.<br />
+<br />
+#include &amp;lt;windows.h&amp;gt;<br />
+#include &amp;lt;stdio.h&amp;gt;<br />
+<br />
+int main(void){<br />
+<br />
+int p, sp;<br />
+char *path, *ic;<br />
+char buffer[255+1], rfile[255+1];<br />
+<br />
+scanf(&amp;quot;%s&amp;quot;, path);<br />
+sp = sprintf(rfile, &amp;quot;n%d&amp;quot;, p);<br />
+printf(&amp;quot;%s&amp;quot;, rfile);<br />
+if(GetPrivateProfileString(&amp;quot;rfiles&amp;quot;, rfile, NULL, buffer, 255, path) != 0){<br />
+fprintf(stdout, &amp;quot;%s&amp;quot;, buffer);<br />
+} else {<br />
+fprintf(stderr, &amp;quot;Errore durante l'apertura del file: %s&amp;quot;, path);<br />
+}<br />
+p++;<br />
+}</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Shaka</div><div class="date">19-02-2002, 22:43</div></div><div class="posttext">--------------------Configuration: xxxxxxx - Win32 Debug--------------------<br />
+Compiling...<br />
+xxxxxxx.cpp<br />
+D:Tempxxxxxxxxxxxxxx.cpp(24) : warning C4508: 'main' : function should return a value; 'void' return type assumed<br />
+D:Tempxxxxxxxxxxxxxx.cpp(12) : warning C4101: 'ic' : unreferenced local variable<br />
+D:Tempxxxxxxxxxxxxxx.cpp(15) : warning C4700: local variable 'path' used without having been initialized &lt;-- direi che il problema sta qua :smile:<br />
+D:Tempxxxxxxxxxxxxxx.cpp(16) : warning C4700: local variable 'p' used without having been initialized<br />
+<br />
+xxxxxxx.obj - 0 error(s), 4 warning(s)</div></div><hr />
+
+
+<div id="copyright">vBulletin v3.5.3, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content=" Sicurezza e mIRC, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio]  Sicurezza e mIRC IRCHelp - Aiuto su IRC e Servizi di Azzurra" />
+	
+	<title> Sicurezza e mIRC [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="http://forum.azzurra.org/archive/index.php">Azzurra IRC Network Forum</a> &gt; <a href="http://forum.azzurra.org/archive/index.php/f-6.html">Network Central</a> &gt; <a href="http://forum.azzurra.org/archive/index.php/f-11.html">IRCHelp - Aiuto su IRC e Servizi di Azzurra</a> &gt;  Sicurezza e mIRC</div>
+<hr />
+<div class="pda"><a href="http://forum.azzurra.org/archive/index.php/t-1420.html?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=1420">Sicurezza e mIRC</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">My.Sabry</div><div class="date">23-12-2002, 00:43</div></div><div class="posttext">Salve, volevo sapere il nome di uno script di mIRC buono (carino e stuffy) da usare. Io usavo IRCSimpsons, poi ho provato BlackDevil e BloodScript, ma sinceramente mi sembra piú carino il primo, anche se meno sicuro. Infatti so che con script come Venom esiste la possibilitá di conoscere l'inidirizzo IP di un utente (me lo hanno fatto :( ), e vorrei quindi trovarne uno che mi protegga a sufficenza.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Taker</div><div class="date">23-12-2002, 09:37</div></div><div class="posttext">Premetto che su Azzurra non si può decriptare l'ip, quindi non è possibile scoprirlo. Tornando al discorso del client, ti consiglierei di utilizzare mIRC semplice (lo puoi scaricare cliccando QUI (http://mirc.azzurra.org/mirc/mirc603.exe) ), l'AzzurraScript (che trovi QUI (http://www.azzurra.org/script.php) ) e in più utilizzare SSL (per una guida controlla  QUI (http://www.azzurra.org/documents.php?section=irchelp&amp;amp;display=ssl) )<br />
+Spero di essere stato abbastanza chiaro<br />
+<br />
+Ciao   :wink:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">23-12-2002, 16:35</div></div><div class="posttext">Premetto che su Azzurra non si può decriptare l'ip, quindi non è possibile scoprirlo. Tornando al discorso del client, ti consiglierei di utilizzare mIRC semplice<br />
+<br />
+Confermo la mia preferenza per il mIRC &quot;liscio&quot;, ma se esistesse una backdoor di uno script che potesse rendere noto l'IP dell'utente, credo che non ci sarebbe +x che tenga, basterebbe usare un comando specifico e sicuramente non referenziato nell'help dello script stesso. Con questo non intendo dire che tale backdoor esista effettivamente su questo o quello script per IRC, ma che risulta facilmente implementabile pressoche' ovunque.<br />
+<br />
+Ciao,</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Echelon</div><div class="date">25-01-2003, 01:34</div></div><div class="posttext">Confermo la mia preferenza per il mIRC &quot;liscio&quot;, ma se esistesse una backdoor di uno script che potesse rendere noto l'IP dell'utente, credo che non ci sarebbe +x che tenga, basterebbe usare un comando specifico e sicuramente non referenziato nell'help dello script stesso.<br />
+<br />
+Esistono script con backdoors che rendono noto l'IP dell'utente utilizzando un semplice comando attraverso /ctcp (l'utente vittima deve avere nel suo Remote un apposita stringa che ovviamente non pubblico per motivi di sicurezza). <br />
+<br />
+Non esistono per ora backdoors in grado di decriptare l'IP di Azzurra (per fortuna). <br />
+Sono due cose diverse &quot;decriptare&quot; e &quot;rendere noto&quot;<br />
+<br />
+Distinti Saluti.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Shaka</div><div class="date">25-01-2003, 10:53</div></div><div class="posttext">Giusto un pò di chiarezza.<br />
+<br />
+L'user mode +x cripta l'IP degli utenti e lo rende non utilizzabile agli altri che lo &quot;ottengono&quot; tramite il server (/whois, /who #canale, ecc ecc)<br />
+Non è quindi possibile per un utente ottenere l'IP di un altro utente tramite il/i server di Azzurra.<br />
+<br />
+L'unico modo possibile è farselo dire dall'utente in questione. E qui veniamo ai casi del DCC (chat o send che sia), in cui, per il funzionamento corretto del DCC stesso, i client (eg Mirc) si scambiano gli IP. Quelli in &quot;chiaro&quot; ovviamente, sia perchè il client non sa nulla dell' IP criptato, sia perchè non è possibile altrimenti volendo portare a buon fine la DCC stessa.<br />
+Lo stesso discorso vale per una evantuale backdoor di uno script. Lo script in questione conosce l' IP di chi lo utilizza (perchè lo conosce il client su cui quello script gira) e fornirlo a chi ne fa richiesta (tramite la backdoor) è cosa banale.<br />
+<br />
+Per questi motivi è importante che non si accettino DCC (chat o send) da utenti sconosciuti o comunque non richieste e allo stesso modo non utilizzare script di dubbia fama o di cui non si conoscono perfettamente le caratteristiche e il funzionamento. Ricordatevi che, stando alla logica, si utilizza uno script perchè serve non perchè &quot;fa figo&quot; o &quot;ce l'hanno tutti&quot; correndo il rischio di utilizzare una cosa che potrebbe nascondere brutte sorprese. In caso vi piaccia la vita spericolata toglietevi il +x che fate prima :D</div></div><hr />
+
+
+<div id="copyright">vBulletin&reg; v3.8.1, Copyright &copy;2000-2009, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Proposta per Nickserv - Chanserv, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] Proposta per Nickserv - Chanserv Services - I servizi IRC di Azzurra" />
+	
+	<title>Proposta per Nickserv - Chanserv [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-6.html">Network Central</a> &gt; <a href="f-30.html">Services - I servizi IRC di Azzurra</a> &gt; Proposta per Nickserv - Chanserv</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=5180">Proposta per Nickserv - Chanserv</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Dragonite</div><div class="date">16-07-2004, 14:36</div></div><div class="posttext">Salve!<br />
+Avrei una proposta da fare.<br />
+Alle volte vengo sulla net con un nick non registrato.<br />
+Allora mi identifico al nick che registrato che uso abitualmente e col quale sono nelle liste e poi però, per farmi dare l'op devo effettuare un part/join su tutti i chan.<br />
+<br />
+<br />
+Non si potrebbe fare che all'identificazione del nick chanserv dia l'op o il voice nei chan in cui siamo nelle liste ?<br />
+<br />
+<br />
+Spero di essere stato chiaro!<br />
+;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">16-07-2004, 14:54</div></div><div class="posttext">Allora mi identifico al nick che registrato che uso abitualmente e col quale sono nelle liste e poi però, per farmi dare l'op devo effettuare un part/join su tutti i chan.<br />
+<br />
+Invece di uscire/rientrare, usa il comando /msg ChanServ OP #tuocanale tuonick :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Superfre`</div><div class="date">16-07-2004, 15:03</div></div><div class="posttext">credo che volesse suggerire una cosa piu automatica che all'identificazione dell'utente forzasse l'op nei canali dove si e' in lista. Steve, Scusa se mi permetto ma a volte la tua conoscenza di cio che c'e su azzurra non ti permette di capire al volo quello che ci potrebbe essere e che si potrebbe, volendo, implementare se esiste la possibilita' di apportare modifiche ai servizi offerti. L'ho notato piu di una volta questa cosa.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dragonite</div><div class="date">16-07-2004, 15:13</div></div><div class="posttext">credo che volesse suggerire una cosa piu automatica che all'identificazione dell'utente forzasse l'op nei canali dove si e' in lista. Steve, Scusa se mi permetto ma a volte la tua conoscenza di cio che c'e su azzurra non ti permette di capire al volo quello che ci potrebbe essere e che si potrebbe, volendo, implementare se esiste la possibilita' di apportare modifiche ai servizi offerti. L'ho notato piu di una volta questa cosa.<br />
+<br />
+Si free, intendevo una cosa più automatica....</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">16-07-2004, 15:37</div></div><div class="posttext">credo che volesse suggerire una cosa piu automatica che all'identificazione dell'utente forzasse l'op nei canali dove si e' in lista.<br />
+<br />
+Se una persona decide di non identificarsi ad un nick prima di entrare nei canali a cui ha accesso, trovo che non diventi particolarmente scomodo dare un paio di /cs OP o /join/part ... eventualmente senza opparsi in certi canali, se per vari motivi si preferisce (o si deve) stare senza @.<br />
+<br />
+Quanto alla seconda osservazione, altre volte in questo forum (ad esempio qui (http://www.azzurra.org/forum/viewtopic.php?p=61310#61310)) ci e' stato indicato di sfruttare i comandi che sono gia' a nostra disposizione, e per eventuali &quot;aggiunte&quot; facciamoci avanti solo per cio' che serve davvero e non esiste ancora sui services.<br />
+Questo era il senso della mia risposta a Dragonite (che avevo comunque compreso, sia chiaro), pensavo che fosse abbastanza chiaro nel mio post precedente. Tutto qui.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Superfre`</div><div class="date">16-07-2004, 15:39</div></div><div class="posttext">Colonnello implementato come servizio sarebbe una figata ma volendo ti puoi fare un comandino sul tuo script che esegue le seguenti istruzioni:<br />
+<br />
+- raccogli la lista dei chan dove ti trovi<br />
+- ti identifichi per il nick che hai<br />
+- per ciascun chan dove ti trovi esegui l'op da chanserv suggerito da steve<br />
+<br />
+<br />
+Se la lista dei chan e' fissa so fartelo persino io che non ho mai giocato a fare lo scripters quindi magari stasera contattami se invece trovi qualcuno che sa come si fa a farlo in maniera seria tanto meglio. Lo svantaggio e' che lato client probabilmente ti lagga un pochettino questa serie di operazioni.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dracoo</div><div class="date">16-07-2004, 15:42</div></div><div class="posttext">Non mi sono mai azzardato a chiederlo, però ne ho sentito più volte il bisogno anch'io...<br />
+Perchè quando mi connetto al bnc, e questo è precedentemente caduto, per ottenere l'op, devo usare il citato da Steve su ogni canale, usando un apposito alias:<br />
+<br />
+/ao &#123;<br />
+  set %TChan $chan&#40;0&#41;<br />
+  &#58;oppiamo<br />
+  inc %inc<br />
+  if &#40;%inc &amp;lt;= %TChan&#41; &#123;<br />
+    if &#40;$me isreg $chan&#40;%inc&#41;&#41; &#123; .timer 1 1 cs op $chan&#40;%inc&#41; $me | goto oppiamo &#125;<br />
+    else &#123; goto oppiamo &#125;<br />
+  &#125;<br />
+  elseif &#40;%inc &amp;gt; %TChan&#41; &#123; unset %inc | unset %TChan &#125;<br />
+&#125;<br />
+Però usandolo, spesso OperServ mi avvisa che sto floodando i services...<br />
+Un sistema come quello proposto da Colonnello, esiste sui services Anope.<br />
+(O al limite si potrebbe creare un comando di CS che oppi in tutti i canali in cui si è in lista)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">16-07-2004, 15:43</div></div><div class="posttext">lato client probabilmente ti lagga un pochettino questa serie di operazioni.<br />
+<br />
+...lato server, moltiplicando questo per i 30mila nick registrati, probabilmente sarebbe anche peggio...<br />
+<br />
+(O al limite si potrebbe creare un comando di CS che oppi in tutti i canali in cui si è in lista)<br />
+<br />
+Secondo me e' meglio che ChanServ e' bene che si dedichi alle attivita' di un canale alla volta... quale che sia la versione dei Services in uso :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">trekfan1</div><div class="date">16-07-2004, 16:52</div></div><div class="posttext">Basterebbe anche mettere nel perform: /ns identify nickregistrato passworddelnickregistrato</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Superfre`</div><div class="date">16-07-2004, 16:59</div></div><div class="posttext">quello gia ce l'ho :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dragonite</div><div class="date">16-07-2004, 17:56</div></div><div class="posttext">Non mi sono mai azzardato a chiederlo, però ne ho sentito più volte il bisogno anch'io...<br />
+Perchè quando mi connetto al bnc, e questo è precedentemente caduto, per ottenere l'op, devo usare il citato da Steve su ogni canale, usando un apposito alias:<br />
+<br />
+/ao &#123;<br />
+  set %TChan $chan&#40;0&#41;<br />
+  &#58;oppiamo<br />
+  inc %inc<br />
+  if &#40;%inc &amp;lt;= %TChan&#41; &#123;<br />
+    if &#40;$me isreg $chan&#40;%inc&#41;&#41; &#123; .timer 1 1 cs op $chan&#40;%inc&#41; $me | goto oppiamo &#125;<br />
+    else &#123; goto oppiamo &#125;<br />
+  &#125;<br />
+  elseif &#40;%inc &amp;gt; %TChan&#41; &#123; unset %inc | unset %TChan &#125;<br />
+&#125;<br />
+Però usandolo, spesso OperServ mi avvisa che sto floodando i services...<br />
+Un sistema come quello proposto da Colonnello, esiste sui services Anope.<br />
+(O al limite si potrebbe creare un comando di CS che oppi in tutti i canali in cui si è in lista)<br />
+<br />
+Per l'apputno Dracoo, mi hai colto sul segno.<br />
+Quando mi connetto al bnc e questo è caduto (preciso, sto su 14 chan diventa scomodo) devo riopparmi da tutte le parti.<br />
+Non ho mai voluto usare uno script del genere perchè ho paura di floddare i services.<br />
+<br />
+P.S Appunto per questo l'ho detto, ho notato questa opzione sugli anope</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gastaman</div><div class="date">25-07-2004, 01:15</div></div><div class="posttext">L'utilità di una cosa del genere sarebbe alquanto limitata, e come hanno già fatto notare è già possibile ovviare al problema in svariati modi. In ogni caso una opzione su NickServ che se attivata conferisce l'op in tutti i canali dove si è in lista al momento non è un grosso problema da fare... ne discuteremo e in caso la implementeremo. Non so com'è fatta sugli Anope, ma di sicuro anche se dovesse essere messa non ci sarà la possibilità di scegliere in quali canali avere l'op, sarà tutti o nessuno.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">niko</div><div class="date">25-07-2004, 11:23</div></div><div class="posttext">Cosa ne dite circa la modifica del comando OP di ChanServ ? Un'idea sarebbe renderlo simile a quello degli Anope, dove in assenza di altri input controlla i canali dove l'utente ha joinato e conferisce il chanmode +o dove ha accesso. Quindi con un /cs OP non si flooderebbero i servizi e con un solo comando si farebbe quanto richiesto.<br />
+<br />
+Inoltre si farebbero felici tutti gli utenti, chi preferisce può opparsi solo dove vuole come si fa ora e gli altri si opperebbero con una sola riga di testo.<br />
+<br />
+Saluti</div></div><hr />
+
+
+<div id="copyright">vBulletin&reg; v3.6.4, Copyright &copy;2000-2007, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

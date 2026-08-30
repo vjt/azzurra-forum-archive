@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="porting Gtk+/Glib Unix -&gt; Windows, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] porting Gtk+/Glib Unix -&gt; Windows Programmazione e dintorni" />
+		<title>porting Gtk+/Glib Unix -&gt; Windows [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-23.html">Programmazione e dintorni</a> &gt; porting Gtk+/Glib Unix -&gt; Windows</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=3397">porting Gtk+/Glib Unix -&gt; Windows</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">_gatto_morto</div><div class="date">12-11-2003, 13:28</div></div><div class="posttext">Salve a tutti,<br />
+<br />
+ho realizzato per lavoro un programma per la gestione e archiviazione ad hoc di documenti di vario genere inerenti la sicurezza aziendale; il codice in C e' stato sviluppato su FreeBSD e Linux utilizzando le librerie grafiche Gtk+/Glib versione 1.2 (al momento mi pento di non aver usato le 2.0.. pigrizia e retaggi del passato).<br />
+<br />
+Dopo una prima fase di bug-finding-fixing svolta su Linux e la presentazione del lavoro, mi e' stato chiesto di effettuare un porting su Windows.<br />
+<br />
+Ora, memore del fatto che alcune app anche complesse Gtk+ sono state portate in ambiente Ms (vedi Gimp) ho effettuato una compilazione con successo in ambiente cygwin utilizzando Gtk+ precompilate nativamente su Windows. Come ogni programmatore sa, compilazione !!!! (! arbitrari) != programma funzionante ed essendo a me (per fortuna?) estraneo il mondo Windows volevo chiedere se qualcuno ha avuto una esperienza simile e sa suggerirmi un approccio costruttivo al problema.<br />
+<br />
+Grazie a tutti.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">City_Hunter</div><div class="date">12-11-2003, 15:19</div></div><div class="posttext">Premetto che per la scrittura di programmi ho usato solo gtk 2 su UNIX-like e non gtk 1.2.<br />
+Tuttavia nell'api reference di gtk 2 c'è una parte dedicata alla portabilità su windows e ho trovato la stessa sezione anche nell'api ref. di glib per gtk 1.2<br />
+<br />
+Non è molto, lo so. Ma se ti può essere utile, puoi assicurarti di aver utilizzato laddove necessario macro e funzioni elencate qui:<br />
+http://developer.gnome.org/doc/API/glib/glib-windows-compatability-functions.html</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">_gatto_morto</div><div class="date">12-11-2003, 21:36</div></div><div class="posttext">grazie 1000 del link, evidentemente mi era sfuggito...<br />
+cerchero' di rimpiazzare le syscall incriminate sperando che mi eliminino un po' di problemi (tipo la gestione dei percorsi con le \)!<br />
+<br />
+ciao!</div></div><hr />
+
+
+<div id="copyright">vBulletin v3.5.3, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

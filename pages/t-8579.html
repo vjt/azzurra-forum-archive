@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Dove sbaglio?, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] Dove sbaglio? Programmazione e dintorni" />
+		<title>Dove sbaglio? [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-23.html">Programmazione e dintorni</a> &gt; Dove sbaglio?</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=8579">Dove sbaglio?</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">xin</div><div class="date">10-05-2005, 13:18</div></div><div class="posttext">&lt;!DOCTYPE html PUBLIC &amp;quot;-//W3C//DTD XHTML 1.0 Transitional//EN&amp;quot; &amp;quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&amp;quot;&gt;<br />
+&lt;html xmlns=&amp;quot;http://www.w3.org/1999/xhtml&amp;quot;&gt;<br />
+&lt;head&gt;<br />
+&lt;meta http-equiv=&amp;quot;Content-Type&amp;quot; content=&amp;quot;text/html; charset=utf-8&amp;quot; /&gt;<br />
+&lt;title&gt;News&lt;/title&gt;<br />
+&lt;/head&gt;<br />
+&lt;body&gt;<br />
+&lt;?php<br />
+if(isset($_POST['username']) &amp;&amp; isset($_POST['password'])) {<br />
+	$passwd = file(&amp;quot;etc/passwd&amp;quot;);<br />
+	for($i = 0; $i &lt; count($passwd); $i++) {<br />
+			$line = explode(&amp;quot;:&amp;quot;, $passwd[i]);<br />
+			if($line[0] == $_POST['username']) {<br />
+				// User found !<br />
+				if(md5($_POST['password']) == $line[1]) {<br />
+					// Password correct, logged in!<br />
+					// Show what has to be showed.<br />
+					echo(&amp;quot;Logged in!&amp;quot;);<br />
+					break;<br />
+				} else {<br />
+					echo(&amp;quot;Password errata.\n&amp;quot;);<br />
+		    		echo(&amp;quot;	&lt;form action=\&amp;quot;index.php\&amp;quot; method=\&amp;quot;post\&amp;quot; enctype=\&amp;quot;text/plain\&amp;quot;&gt;<br />
+		    		    		Username: &lt;input size=\&amp;quot;20\&amp;quot; maxlength=\&amp;quot;20\&amp;quot; type=\&amp;quot;text\&amp;quot; name=\&amp;quot;username\&amp;quot; /&gt;&lt;br /&gt;<br />
+		    		    		Password: &lt;input size=\&amp;quot;20\&amp;quot; maxlength=\&amp;quot;20\&amp;quot; type=\&amp;quot;password\&amp;quot; name=\&amp;quot;password\&amp;quot;  /&gt;&lt;br /&gt;<br />
+		    		    		&lt;input type=\&amp;quot;submit\&amp;quot; name=\&amp;quot;submit\&amp;quot; value=\&amp;quot;OK!\&amp;quot; /&gt;<br />
+		    		    	&lt;/form&gt;&amp;quot;);<br />
+					break;<br />
+				}<br />
+			}<br />
+			if(feof($passwd)) {<br />
+				// User not found !<br />
+				echo(&amp;quot;Nome utente errato o utente inesistente.\n&amp;quot;);<br />
+		    	echo(&amp;quot;	&lt;form action=\&amp;quot;index.php\&amp;quot; method=\&amp;quot;post\&amp;quot; enctype=\&amp;quot;text/plain\&amp;quot;&gt;<br />
+		    		    	Username: &lt;input size=\&amp;quot;20\&amp;quot; maxlength=\&amp;quot;20\&amp;quot; type=\&amp;quot;text\&amp;quot; name=\&amp;quot;username\&amp;quot; /&gt;&lt;br /&gt;<br />
+		    		    	Password: &lt;input size=\&amp;quot;20\&amp;quot; maxlength=\&amp;quot;20\&amp;quot; type=\&amp;quot;password\&amp;quot; name=\&amp;quot;password\&amp;quot;  /&gt;&lt;br /&gt;<br />
+		    		    	&lt;input type=\&amp;quot;submit\&amp;quot; name=\&amp;quot;submit\&amp;quot; value=\&amp;quot;OK!\&amp;quot; /&gt;<br />
+		    		    &lt;/form&gt;&amp;quot;);<br />
+			}<br />
+	}<br />
+} else {<br />
+	echo(&amp;quot;	&lt;form action=\&amp;quot;index.php\&amp;quot; method=\&amp;quot;post\&amp;quot; enctype=\&amp;quot;text/plain\&amp;quot;&gt;<br />
+		    	Username: &lt;input size=\&amp;quot;20\&amp;quot; maxlength=\&amp;quot;20\&amp;quot; type=\&amp;quot;text\&amp;quot; name=\&amp;quot;username\&amp;quot; /&gt;&lt;br /&gt;<br />
+		    	Password: &lt;input size=\&amp;quot;20\&amp;quot; maxlength=\&amp;quot;20\&amp;quot; type=\&amp;quot;password\&amp;quot; name=\&amp;quot;password\&amp;quot;  /&gt;&lt;br /&gt;<br />
+		    	&lt;input type=\&amp;quot;submit\&amp;quot; name=\&amp;quot;submit\&amp;quot; value=\&amp;quot;OK!\&amp;quot; /&gt;<br />
+			&lt;/form&gt;&amp;quot;);<br />
+}<br />
+?&gt;<br />
+&lt;/body&gt;<br />
+&lt;/html&gt;<br />
+<br />
+il formato di etc/passwd è:<br />
+ utente:md5-della-password:Nome Cognome:email<br />
+<br />
+il problema è: se pigio su OK! ritorna sempre e cmq alla pagina coi form senza fare quello dopo il primo if(), non da ne errori e ne niente... :cart10:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xin</div><div class="date">10-05-2005, 13:20</div></div><div class="posttext">uff pure vBulletin con le sue &quot; &quot; ... gh<br />
+<br />
+qui il codice non parsato da vBulletin.. http://members.ferrara.linux.it/xin/test/gh.txt</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">}gu|do[z]{®©</div><div class="date">11-05-2005, 12:17</div></div><div class="posttext">andiamo per gradi.. dobbiamo prima di tutto capire se il form viene inviato o no... prova così:<br />
+<br />
+<br />
+&lt;?php<br />
+error_reporting(E_ALL);<br />
+print_r($_POST);<br />
+if(isset($_POST['username']) &amp;&amp; isset($_POST['password'])) {<br />
+     echo 'inviato';<br />
+    }<br />
+} else {<br />
+    echo(&quot;    &lt;form action=\&quot;index.php\&quot; method=\&quot;post\&quot; enctype=\&quot;text/plain\&quot;&gt;<br />
+                Username: &lt;input size=\&quot;20\&quot; maxlength=\&quot;20\&quot; type=\&quot;text\&quot; name=\&quot;username\&quot; /&gt;&lt;br /&gt;<br />
+                Password: &lt;input size=\&quot;20\&quot; maxlength=\&quot;20\&quot; type=\&quot;password\&quot; name=\&quot;password\&quot; /&gt;&lt;br /&gt;<br />
+                &lt;input type=\&quot;submit\&quot; name=\&quot;submit\&quot; value=\&quot;OK!\&quot; /&gt;<br />
+            &lt;/form&gt;&quot;);<br />
+}<br />
+?&gt;<br />
+&lt;/body&gt;<br />
+&lt;/html&gt; <br />
+<br />
+vedi se hai errori e che valori ci stanno dentro £$_POST<br />
+<br />
+ciauz</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xin</div><div class="date">11-05-2005, 15:39</div></div><div class="posttext">il problema era enctype=&quot;text/plain&quot; in &lt;form .....&gt;<br />
+se mi avanza tempo cerco anche il perchè... gh<br />
+<br />
+cmq tnx :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xin</div><div class="date">11-05-2005, 16:00</div></div><div class="posttext">be aware that when using an [x]html form, if you set the encoding type of the content to something else than 'application/x-www-form-urlencoded' (the default) or 'multipart/form-data', your script will fail on some (most?) browsers. i tried setting this to text/plain, and actually ns4.7 and ie5.x did not pass them to php for processing at all, and no form variables were defined. <br />
+using mozilla (m15), though, there were no problems using enctype='text/plain&quot;.</div></div><hr />
+
+
+<div id="copyright">vBulletin v3.5.3, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

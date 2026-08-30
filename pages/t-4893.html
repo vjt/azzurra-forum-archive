@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Come realizzare un creatore di statistiche canali irc?, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] Come realizzare un creatore di statistiche canali irc? Programmazione e dintorni" />
+		<title>Come realizzare un creatore di statistiche canali irc? [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-23.html">Programmazione e dintorni</a> &gt; Come realizzare un creatore di statistiche canali irc?</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=4893">Come realizzare un creatore di statistiche canali irc?</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Shardick</div><div class="date">03-06-2004, 22:16</div></div><div class="posttext">Salve ragazzi,<br />
+per un progetto mio personale sto cercando di realizzare un chanstats tipo quello di azzurra e molti altri irc network in giro per il mondo, ma ho avuto molta difficoltà a implementare la cosa, soprattuto perchè non ci sono documenti per cose del genere da seguire come guida o dei tutorial ben fatti.<br />
+<br />
+A quanto ho capito cè bisogno di:<br />
+- ircstats<br />
+- eggdrop<br />
+- logger per eggdrop<br />
+<br />
+ora mi manca il resto. A quanto ho capito ci sarebbe anke da usare una tcl per far generare le statistike ogni tot e una tcl per uppare sull'ftp.<br />
+<br />
+Qualcuno mi sa dare una mano dandomi link e documenti?<br />
+<br />
+Grazie in anticipo per l'attenzione.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Shardick</div><div class="date">06-06-2004, 02:14</div></div><div class="posttext">Alla fine ce l'ho fatta da solo, o meglio con l'aiuto di un grande conoscitore delle tcl ke finalmente ho trovato online.<br />
+<br />
+Grazie Scorpion, questo topic è anke per te.<br />
+<br />
+Per creare un bot ke genera statistike automatike cè bisogno di:<br />
+- un account shell (se volte ke questo sia sempre online)<br />
+- eggdrop1.5.x e superiore ( http://www.eggheads.org/downloads/ )<br />
+- ircstats-1.0 ( http://humdi.net/ircstats/download.html )<br />
+<br />
+e due tcl:<br />
+- creatore di log in formato mirc ( http://www.egghelp.org/cgi-bin/tcl_archive.tcl?mode=download&amp;amp;id=200 )<br />
+- ircstats.tcl ( per automatizzare il meccanismo - http://www.egghelp.org/cgi-bin/tcl_archive.tcl?mode=download&amp;amp;id=163 )<br />
+<br />
+Installare l'ircstats-1.0 è molto facile e intuitivo e la guida fornita aiuta molto.<br />
+Installare e configurare il Logger è anche molto semplice e intuitivo. L'help fornito è ottimo e facile da usare.<br />
+<br />
+L'ircstats tcl presenta però dei problemi.<br />
+Innanzitutto il nome del file da far girare riguardo all'ircstats-1.0 è sbagliato.<br />
+Nelle due procedure per creare l'html delle statistiche è riportato ircstats_rxc5 (ke non so da dove sia stato preso questo arcano nome)<br />
+basta cambiarlo in ircstats. Lo trovate in due righe come questa:<br />
+exec ${path}ircstats_rxc5 ${logpath}${chan}.log ${path}${chan}.cfg<br />
+cambiatelo in<br />
+exec ${path}ircstats ${logpath}${chan}.log ${path}${chan}.cfg<br />
+<br />
+Un altro accorgimento da avere è tenere conto della procedura bind time riportata alla fine della tcl<br />
+<br />
+bind time - &quot;20 * * * *&quot; do_stats<br />
+<br />
+Ci sono due righe con questo bind time. Commentarne una con un bell # e lasciarne solo una. In questo mio esempio quotato ho impostato ke le statistike siano aggiornate ogni ora a :20 minuti (14:20, 15:20, 15:20 ecc ecc) e questo è più ke adeguato.<br />
+<br />
+Come nelle parti commentate all'inizio del ircstats.tcl dare i percorsi assoluti della path dei log e dell'ircstats-1.0<br />
+<br />
+Ora bisogna creare il file di configurazione per l'ircstats (ircstats.cfg).<br />
+Fondamentalmente può essere lasciato così a parte modificare quattro o cinque piccole righe che fanno la differenza. Queste sono essenziali xkè l'ircstats.tcl lavora con percorsi assoluti.<br />
+<br />
+Nel file cfg cercate i parametri:<br />
+- htmlFileName<br />
+- languageFilename<br />
+- nickjoinFilename<br />
+- colorsFilename<br />
+<br />
+e al posto dei percorsi indicati lì, indicate i percorsi assoluti (questo è il mio cfg)<br />
+<br />
+htmlFilename: /var/www/stats/canale.htm<br />
+languageFilename: /root/IRCStats-1.0/languages/italian.lang<br />
+nickjoinFilename: /root/IRCStats-1.0/nickjoin.txt<br />
+colorsFilename: /root/IRCStats-1.0/colors/shadesOfGrey.cfg<br />
+<br />
+Nel mio caso il file html indicato dal parametro htmlFileName viene creato nella directory del mio server web.<br />
+<br />
+Creare un file cfg per ogni canale interessato dal logging (#canale1.cfg) per esempio e un file log per ogni canale (#canale1.log). E' importante questo accorgimento xkè la sintassi con cui l'ircstats.tcl farà partire l'ircstats-1.0 è <br />
+<br />
+./ircstats #canale.log #canale.cfg<br />
+<br />
+Inutile dire ke per tutte quelle azioni l'utente dell'eggdrop deve avere i diritti di scrittura, creazione file e modifica nella directory interessate (chmod 777).<br />
+<br />
+Ora inserite le tcl nel conf dell'eggdrop, fate partire l'eggdrop.<br />
+Fate entrare l'eggdrop, in un canale, abilitate il logging generale ( .mel on ), abilitate il loggin per quel canale ( .mel +chan #canale ) e fate una prova di update delle statistike manualmente per vedere se tutto funzia ( .updatestats #canale ). Se tutto andrà bene vedrete un semplicissimo messaggio &quot;Updatine statistics for #canale&quot;. Altrimenti vi verrà dato un messaggio di errore abbastanza eloquente (di solito ke non può aprire un determinato file - controllate i percorsi - o non può scrivere sul file - controllate i permessi - ).<br />
+<br />
+A questo punto aspettate un pò e andate a riguardarvi le statistike :)<br />
+<br />
+Se ci sono dubbi postate pure.<br />
+<br />
+Saluti</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kid</div><div class="date">08-12-2004, 21:05</div></div><div class="posttext">Per creare un bot ke genera statistike automatike cè bisogno di:<br />
+...<br />
+[cut]<br />
+...<br />
+A questo punto aspettate un pò e andate a riguardarvi le statistike :)<br />
+ <br />
+Se ci sono dubbi postate pure.<br />
+ <br />
+ <br />
+prima di tutto complimenti per il post. mi è stato veramente prezioso!<br />
+ <br />
+funziona tutto, ma mi manca 1 parte che proprio non riesco a risolvere, e cioè l'upload della pagina sul mio sito<br />
+ <br />
+ho provato la sendftp.tcl ma proprio non ho capito come usarla :-? :-? :-? <br />
+ <br />
+tu come hai risolto l'upload ?<br />
+ <br />
+ <br />
+grazie mille :D</div></div><hr />
+
+
+<div id="copyright">vBulletin v3.5.3, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

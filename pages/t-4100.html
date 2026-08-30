@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="DCC &amp; CTCP: questi misteriosi (e corrotti), azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] DCC &amp; CTCP: questi misteriosi (e corrotti) Services - I servizi IRC di Azzurra" />
+	
+	<title>DCC &amp; CTCP: questi misteriosi (e corrotti) [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-6.html">Network Central</a> &gt; <a href="f-30.html">Services - I servizi IRC di Azzurra</a> &gt; DCC &amp; CTCP: questi misteriosi (e corrotti)</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=4100">DCC &amp; CTCP: questi misteriosi (e corrotti)</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">LordRaptor</div><div class="date">21-02-2004, 15:15</div></div><div class="posttext">Salve salvino.<br />
+Vi chiedo il vostro aiuto riguardo un bizzarro problema che ho in azzurra che non sono mai riuscito a risolvere.<br />
+Più precisamente si tratta di un problema di send e chat, ma non si tratta di una questione di configurazione (ho un router) quanto un problema della rete azzurra.<br />
+Si perchè infatti le mie dcc funziona perfettamente su qualsiasi altra rete, come ircnet dalnet etc.. tranne su azzurra e qualche rete molto simile (tipo TNI3, se qualcuno c'è mai passato.) e il mio router è correttamente configurato per accettare connessioni su un range che ho stabilito.<br />
+<br />
+Dopo lunghe e esasperanti indagini sono riuscito infatti a trovare il punto del problema e ve lo ripongo qui nudo e crudo come mi è apparso.<br />
+<br />
+Questo quello che invio: (controllato con un network sniffer)<br />
+----------------------------<br />
+&amp;lt;LordRaptor&amp;gt; -&amp;gt; libero.azzurra.org NOTICE Mila76 :DCC Send girlkiss.jpg (80.180.xxx.xxx) &amp;gt;&amp;gt; le xxx le ho messe io prima di postare, l'ip è quello giusto &amp;lt;&amp;lt;<br />
+&amp;lt;LordRaptor&amp;gt; -&amp;gt; libero.azzurra.org PRIVMSG Mila76 :DCC SEND girlkiss.jpg 1354001595 1025 20625<br />
+<br />
+Questo quello che arriva:<br />
+-----------------------------<br />
+&amp;lt;Mila76&amp;gt; &amp;lt;- :LordRaptor!LordRaptor@Azzurra-78D2C950.pool80180.interbusiness.it NOTICE Mila76 :DCC Send girlkiss.jpg (80.180.xxx.xxx)<br />
+&amp;lt;Mila76&amp;gt; &amp;lt;- :LordRaptor!LordRaptor@Azzurra-78D2C950.pool80180.interbusiness.it PRIVMSG Mila76 :DCC SEND girlkiss.jpg zðz 20625<br />
+<br />
+Prima realtà sconvolgente:<br />
+notate quello che resta della porta e di quello credo sia un sequence number dei pacchetti. Incredibile vero? questo non avviene sulla stragrande maggioranza delle reti irc e nemmeno con un client bigotto che ho trovato tra tutti quelli che ho provato (trillian un client che mette insieme ICQ AOL IRC MSN e YAHOO) su azzurra. (Normalmente uso MIRC)<br />
+<br />
+Seconda realtà sconvolgente: beh che pensate se vi dico che se mando file con nel nome spazi e tolgo l'opzione di mirc (Fill spaces) i send vanno bene? Per le chat invece non c'è verso.<br />
+<br />
+Terza realta ancora più sconvolgente. O controllato i virus, ho formattato, ho cambiato tutto ciò che poteva dar problemi, ho usato il router come modem, ma nulla cambia.<br />
+<br />
+Insomma non vorrei dire stronzate ma sembra sia qualche tipo di baco di azzurra. Anche perchè vagando per azzurra in cerca di soluzioni ho beccato un tipo che mi ha fatto provare un server, per, a sua detta, controllare i pacchetti prima che arrivino nella rete di azzurra, e mi ha confermato che i pacchetti erano ancora integri.<br />
+<br />
+Insomma che fo' mi posso buttar di sotto?<br />
+<br />
+Vi ringrazio tutti per aver letto fino a qui, e se qualcuno riesce a risolvere questo mio problema gli faccio na statua. Ciao a tutti.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">21-02-2004, 16:22</div></div><div class="posttext">Problema risolto in privato: Nessun baco di sorta, solo un errato settaggio dell'IP nelle local  info (cosa che puo' succedere, mentre si tenta di tutto con modem, router, proxy, client IRC, ecc.... )<br />
+<br />
+Mi sfugge il problema delle CTCP che e' nel soggetto, ma penso sia un typo. :)<br />
+<br />
+Ciao,<br />
+Steve</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">LordRaptor</div><div class="date">24-02-2004, 13:25</div></div><div class="posttext">Continuo ad avere lo stesso problema, senza aver modificato nulla, ho usato dinuovo la procedura che mi hai dato l'altro giorno è che ha funzionato per nemmeno un giorno, senza esiti.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">24-02-2004, 13:33</div></div><div class="posttext">Continuo ad avere lo stesso problema, senza aver modificato nulla, ho usato dinuovo la procedura che mi hai dato l'altro giorno è che ha funzionato per nemmeno un giorno, senza esiti.<br />
+<br />
+C'e' stato un tempo che ho dovuto aggiornare quel campo di mIRC in modo manuale.... poi ho formattato!! :D<br />
+Adesso sono al lavoro e vado a memoria, ma quella finestra (ALT+O -&amp;gt; Connect -&amp;gt; Local Info) dovrebbe avere:<br />
+<br />
+* Local Info: vuoto<br />
+* IP : il tuo IP pubblico<br />
+* On connect always get: Local Host<br />
+* Lookup method: Server<br />
+<br />
+Per le altre necessita', dai innanzitutto un'occhiata alla guida alle DCC (http://www.azzurra.org/documents.php?document_id=14&amp;amp;referer=/irchelp.php&amp;amp;section=irchelp&amp;amp;section_name=IRCHelp) che trovi tra gli Help Files (http://www.azzurra.org/irchelp.php) di Azzurra.<br />
+Eventualmente, dato che hai visionato numerosi client IRC, proxy, ecc. ti consiglio di partire da un client installato ex novo... occhio anche alla mappatura delle porte (hai un router, giusto?), ma quello c'entra piu' con la ricezione che con l'invio dei files.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">LordRaptor</div><div class="date">24-02-2004, 15:59</div></div><div class="posttext">Ho risolto cambiando server.<br />
+<br />
+&amp;gt;occhio anche alla mappatura delle porte (hai un router, giusto?), ma &amp;gt;quello c'entra piu' con la ricezione che con l'invio dei files.<br />
+<br />
+Mi spiace contraddirti ma è il contrario. I send funzionano cosi.<br />
+Il client contatta il server con un pacchetto ctcp in cui specifica il socket aperto nomefile e dimensione.<br />
+Quindi il server si connette al client ed avviene la trasmissione client.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">24-02-2004, 17:05</div></div><div class="posttext">Ho risolto cambiando server.<br />
+<br />
+Per curiosita', mi spieghi che modifica hai fatto? :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">LordRaptor</div><div class="date">24-02-2004, 22:55</div></div><div class="posttext">Ho cambiato server.<br />
+Prima mi connettevo a cheapnet.azzurra.org</div></div><hr />
+
+
+<div id="copyright">vBulletin&reg; v3.6.4, Copyright &copy;2000-2007, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

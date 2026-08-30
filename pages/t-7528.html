@@ -1,0 +1,307 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Partizioni per Linux, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] Partizioni per Linux Discussioni Linux" />
+	
+	<title>Partizioni per Linux [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php/">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-28.html">Discussioni Linux</a> &gt; Partizioni per Linux</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=7528">Partizioni per Linux</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Thunder</div><div class="date">23-02-2005, 14:41</div></div><div class="posttext">Salve<br />
+Io devo installare Fedora Core 3 e devo creare la partizione principale e le altre che sono /boot /var /home e /tmp.<br />
+Solo che mi chiedo una cosa... quali sono i file system che devo utilizzare per ogni partizione? Oltre a swap non so quali...<br />
+E inoltre, quanto spazio devo arrecare allo SWAP?<br />
+Grazie<br />
+Thunder</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">niko</div><div class="date">23-02-2005, 18:16</div></div><div class="posttext">Rispondo partendo dalla fine, visto che per quanto riguarda la dimensione dello swap non c'e' un vero coefficiente fisso rispetto alla memoria fisica che hai.<br />
+<br />
+Verosimilmente se hai molta RAM potresti direttamente evitare lo swap ma se la tu esaurissi completamente, a causa di qualche applicazione od altro, non sarebbe assolutamente una bella cosa ;).<br />
+<br />
+Personalmente con sistemi con meno o 256 MB di RAM faccio una partizione di swap almeno doppia, per 512 MB di RAM uguale alla memoria fisica e in caso di quantitativi abbastanza grandi (1GB e superiore) creo una partizione di circa la metà.<br />
+<br />
+Quest'ultima osservazione e' ovviamente da adottarsi solo in caso di sistemi casalinghi; in ambienti piu' importanti e' consigliabile abbondare su quanto potrebbe evitare un blocco totale del sistema, che in caso di utilizzo di filesystem particolari, provocherebbe perdita di dati.<br />
+<br />
+Per quanto riguarda la partizione di /boot, se l'installer di Fedora Core 3 non ti ha consigliato una dimensione, ti consiglio di crearla di circa 100Mb.<br />
+<br />
+Tieni conto che questa partizione contiene tutti i kernels installati, il bootsector, eventuali bitmaps da associare come sfondo al tuo bootloader, la System map ed eventualmente la configurazione dei kernel.<br />
+<br />
+Per questo e' consigliato usare un filesystem stabile, anche se magari meno prestante di ReiserFS od altri, una buona scelta puo' essere adottare EXT2 o EXT3 visto l'importanza di tale partizione.<br />
+<br />
+Per /var ed /home personalmente uso ReiserFS, che fino ad adesso (e spero per sempre :-)) non mi ha provocato nessun problema anche in caso di reset.<br />
+<br />
+Su questo magari alcuni non saranno concordi e ti consiglieranno EXT3 e in effetti puo' essere considerata un'ottima alternativa.<br />
+<br />
+Per quanto riguarda /tmp sei sicuro che tu non possa evitare la creazione di questa partizione? Sinceramente non ne vedo molta utilita'.<br />
+<br />
+In caso tu non possa evitare di crearla, valgono gli stessi consigli di /var e /home.<br />
+<br />
+Per le dimensioni di queste ultime partizioni, considera /home come la cartella Documents and Settings di Windows 2000/XP, che conterra' le impostazioni dei programmi e i dati.<br />
+<br />
+A seconda della dimensione totale dell'hard-disk mi aggirerei su circa 5-10 GB.<br />
+<br />
+Per /var invece mi attesterei su meno, considera che contiene logfiles (che comunque, se gestiti male, potrebbero arrivare a Gigabytes), raramente alcuni binari e poco altro.<br />
+<br />
+Per /tmp, come ho gia' detto, se e' proprio necessario non ci sprecherei piu' di 2 GB.<br />
+<br />
+Ciao</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Thunder</div><div class="date">23-02-2005, 20:26</div></div><div class="posttext">Ciao niko, grazie mille per le tue risposte che come sempre sono complete e chiare :)<br />
+L'installazione dovrebbe essere andata tutto bene, tranne una cosa che e' la più importante...<br />
+Non trovo più il bootloader e non so come fare.. la partizione e' su /dev/hdb1<br />
+Ho provato ad utilizzare il bootloader del cd live di knoppix che ho, ho provato in tutti i modi ma non ci sono riuscito.<br />
+Sai come posso fare per caso?<br />
+Grazie mille ancora :)<br />
+Thunder</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">niko</div><div class="date">24-02-2005, 13:15</div></div><div class="posttext">Il bootloader di solito viene installato nei primi 512 bytes (il Master Boot Record) del disco che nel BIOS e' configurato come periferica di boot (non necessariamente la prima, visto che e' usuale una configurazione del tipo CD, Floppy, HD).<br />
+<br />
+Quando hai installato Fedora, hai scelto di installare un bootloader (di default dovrebbe usare GRUB, ma potrebbe essere previsto anche LILO), e sopratutto che posizione gli hai indicato?<br />
+<br />
+Dal tuo post vedo /dev/hdb1, questo significa che ti stai riferendo ad una periferica installata come Primary Slave.<br />
+<br />
+Se hai un solo HD non ci sono problemi, se ne hai più di uno potresti aver selezionato quello sbagliato.<br />
+<br />
+In caso ogni caso, visto che hai un LiveCD di Knoppix potresti effettuare il mount della partizione ed entrarci virtualmente usando chroot.<br />
+<br />
+Infine potresti vedere se ci sono bootloaders installati come binari ma non presenti nell'MBR.<br />
+<br />
+Per fare questo avvia Knoppix e lancia un terminale. Se ricordo bene dovrebbe usare come utente di default &quot;knoppix&quot;, che e' abilitato all'uso di sudo.<br />
+<br />
+Diventa root con sudo su - ed esegui questi comandi:<br />
+<br />
+<br />
+mkdir /mnt/fedora<br />
+mount -t ext3 /dev/hdb1 /mnt/fedora<br />
+chroot /mnt/fedora<br />
+<br />
+<br />
+Con il primo crei la directory su cui mountare la partizione, con il secondo effettui il mount vero e proprio.<br />
+<br />
+Attento ai valori ext3 e /dev/hdb1.<br />
+<br />
+Il primo si riferisce al filesystem della partizione, che puoi controllare con cfdisk /dev/hdb, il secondo alla partizione.<br />
+<br />
+Per entrare nel sistema che hai installato devi effettuare il mount di / di Fedora, generalmente non e' la prima partizione, se hai scelto di creare anche /boot.<br />
+<br />
+Con lo stesso cfdisk di prima controlla la tabella delle partizioni e controlla quale sia effettivamente la /, di solito e' quella di dimensioni maggiori.<br />
+<br />
+Inoltre, non e' raro trovare associate alle partizioni delle labels relative al mountpoint che facilitano il lavoro.<br />
+<br />
+Se per caso fai il mountpoint della partizione sbagliata puoi rimediare con umount /mnt/fedora e ripetere il mount.<br />
+<br />
+Una volta effettuato il mount e il chroot della partizione esatta digita questi comandi:<br />
+<br />
+<br />
+rpm -aq | grep lilo<br />
+rpm -aq | grep grub<br />
+<br />
+<br />
+Almeno uno dei due dovrebbe riportare una riga, che indica che il software elencato e' installato.<br />
+<br />
+Se e' presente LILO digita:<br />
+<br />
+<br />
+grep root /etc/lilo.conf<br />
+<br />
+<br />
+Tra le altre cose, dovrebbe riportarti la partizione su cui e' installato il Bootloader.<br />
+<br />
+Invece, se e' presente GRUB esegui questo comando:<br />
+<br />
+<br />
+grep root /boot/grub/grub.conf<br />
+<br />
+<br />
+Che dovrebbe riportarti quanto ho detto sopra, pero' usando i numeri anche per indicare la posizione del device e partendo da 0 per entrambi.<br />
+<br />
+Una volta che si hanno queste informazioni si puo' capire come e' stato configurato (se lo e' stato) ed eventualmente rimediare ad errori.<br />
+<br />
+Magari, aiutandoti con Konqueror copia il file di configurazione su un floppy, così da poterlo analizzare anche da Windows.<br />
+<br />
+Ciao<br />
+<br />
+P.S.:<br />
+<br />
+Ho evitato di spiegare come far avviare Fedora usando un bootloader (e kernel presente nel CD dove sta lo stesso) perché probabilmente usano versioni di kernels completamente differenti, con conseguente mancanza di moduli necessari e con versione di modutils non compatibile.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Thunder</div><div class="date">24-02-2005, 13:36</div></div><div class="posttext">Non mi sembra vero che hai tutta questa pazienza... ^^&quot;<br />
+Ho 4 porte IDE tutte occupate:<br />
+<br />
+Primary Master: HD 40 GB (Windows 2000 Professional NT)<br />
+Primary Slave: HD 160 GB (Partizionato per Fedora)<br />
+Secondary Master: Lettore DVD<br />
+Secondary Slave: Masterizzatore DVD<br />
+<br />
+Ora sto da Windows (Fedora non sono riuscito ad avviarlo)... ho sbagliato qualcosa? ^^&quot;<br />
+<br />
+Ora mi stampo il tuo post e faccio quello che hai detto... e poi ti faccio sapere com'è andata.<br />
+<br />
+Un grazie per la tua disponibilità e pazienza, ti devo tutto :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">24-02-2005, 13:46</div></div><div class="posttext">Per fare questo avvia Knoppix e lancia un terminale. Se ricordo bene dovrebbe usare come utente di default &quot;knoppix&quot;, che e' abilitato all'uso di sudo.<br />
+<br />
+Se ha la stessa versione di Knoppix che ho io (3.4), basta un su - senza nemmeno bisogno di password, e da utente knoppix si passa ad utente root. :)<br />
+Ottimi post comunque, l'uso del chroot mi e' apparso evidente solo quando ho installato gentoo di recente, prima mi chiedevo persino perche' esistesse ^^;;<br />
+<br />
+Primary Master: HD 40 GB (Windows 2000 Professional NT)<br />
+<br />
+Ma che bestia e'? :D O e' Windows 2000, o e' Windows NT ;)<br />
+Comunque, io mi terrei una partizione in FAT32 (magari sul Primary Slave) che possa essere vista indipendentemente da entrambi i sistemi operativi. Primo, perche' Linux non scrive su filesystem NTFS (che e' lo standard da Win2K in su); secondo, perche' 160Gb ad un sistema operativo qualsiasi sono ampiamente sprecati (per il solo OS, 20Gb bastano ed avanzano); terzo, perche' e' bene partizionare i dischi fissi, specie quelli di grande dimensione, in modo da poter riutilizzare lo spazio a seconda delle esigenze che dovessero manifestarsi.<br />
+Io ad esempio, con i dischi che hai tu, avrei fatto cosi':<br />
+* Primary Master: 20Gb a Windows, 20Gb ai dati<br />
+* primary Slave: 19Gb a Linux, 1Gb a Linux swap, e i restanti 140Gb divisi in due-tre partizioni per i dati (di cui la piu' grande in FAT32).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Thunder</div><div class="date">24-02-2005, 14:09</div></div><div class="posttext">Se ha la stessa versione di Knoppix che ho io (3.4), basta un su - senza nemmeno bisogno di password, e da utente knoppix si passa ad utente root. :)<br />
+<br />
+Ma che bestia e'? :D O e' Windows 2000, o e' Windows NT ;)<br />
+<br />
+Di Knoppix ho la versione 3.6, di Windows ho il 2000 sviluppato con tecnologia NT :)<br />
+<br />
+Comunque, io mi terrei una partizione in FAT32 (magari sul Primary Slave) che possa essere vista indipendentemente da entrambi i sistemi operativi. Primo, perche' Linux non scrive su filesystem NTFS (che e' lo standard da Win2K in su)<br />
+E' per questo che da Windows la partizione per Linux risulta sconosciuta?<br />
+Sto iniziando adesso a lavorare un po' con le partizioni... prima di prendere l'hd da 160 non ci lavoravo.. <br />
+Quindi mi converrebbe creare una partizione con file system FAT32 per leggere i dati da entrambi gli os, e anche una partizione per lo swap visto che ho solo 256mb di memoria, che dite?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">24-02-2005, 14:17</div></div><div class="posttext">Di Knoppix ho la versione 3.6, di Windows ho il 2000 sviluppato con tecnologia NT :)<br />
+<br />
+Quindi e' Windows 2000 semplice :)<br />
+<br />
+E' per questo che da Windows la partizione per Linux risulta sconosciuta?<br />
+<br />
+Generalmente Windows (intendo la versione 2000 o XP) si installa su filesystem NTFS, che a Linux piace poco per due motivi: uno, va abilitato nel kernel il supporto di lettura (che e' abbastanza stabille, da quel che so); due, va abilitato nel kernel il supporto in scrittura (che e' sperimentale ed instabile, in particolare mi sembra che si possano solo sovrascrivere files esistenti e non creare o cancellare un file).<br />
+<br />
+Quindi mi converrebbe creare una partizione con file system FAT32 per leggere i dati da entrambi gli os, e anche una partizione per lo swap visto che ho solo 256mb di memoria, che dite?<br />
+<br />
+La FAT32 e' supportata ottimamente da entrambi e puoi quindi utilizzarla su partizioni che puoi far vedere ad entrambi.<br />
+La partizione di swap e' obbligatoria per un sistema Linux (correggetemi se sbaglio!), io consiglio di metterla con dimensione pari al doppio della RAM - quindi, nel tuo caso, 512Mb. Io personalmente sono stato largo e ho fatto una swap di 2Gb cosi' se mi gira di aumentare la RAM del mio pc almeno non ho problemi. Pero' adesso che sono a 512Mb di RAM ammetto che ho banalmente dello spazio sprecato per una swap che non uso :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">niko</div><div class="date">24-02-2005, 14:58</div></div><div class="posttext">Ciao,<br />
+<br />
+<br />
+Primary Master: HD 40 GB (Windows 2000 Professional NT)<br />
+Primary Slave: HD 160 GB (Partizionato per Fedora)<br />
+Secondary Master: Lettore DVD<br />
+Secondary Slave: Masterizzatore DVD<br />
+<br />
+<br />
+hdb1 dovrebbe essere quindi la prima partizione del disco da 160GB, dove hai piazzato LILO o GRUB.<br />
+<br />
+E' normale quindi che parta Windows e tu non veda né LILO né GRUB, visto che di solito il BIOS e' configurato per far eseguire l'MBR del Primary Master.<br />
+<br />
+IMHO la soluzione migliore e' mettere LILO o GRUB su /dev/hda (MBR del primo disco) aggiungendo una sezione relativa a Windows.<br />
+<br />
+Quando hai trovato informazioni sul bootloader installato facci sapere eventualmente allegando il file di configurazione, in modo da adeguarlo alla configurazione che serve.<br />
+<br />
+Una volta modificato, a seconda che tu abbia GRUB o LILO, basta effettuare un comando, dopo aver usato chroot, e al riavvio ti apparira' una maschera dove scegliere tra Linux e Windows.<br />
+<br />
+Per quanto riguarda le partizioni, concordo con Steve: 160GB sono veramenti tanti e sono mal gestibili senza l'utilizzo di partizioni. Inoltre una partizione di scambio FAT32 e' praticamente indispensabile considerato che usi NTFS.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Thunder</div><div class="date">24-02-2005, 16:48</div></div><div class="posttext">Il problema stava nella configurazione del bootloader..<br />
+Ho reinstallato Fedora e l'ho impostato bene, quindi nella command line del boot ho messo boot=/dev/hdb2 (che sarebbe la root directory).<br />
+Ora il bootloader parte, però c'è un problema.<br />
+Dopo che ho fatto partire Fedora viene scritta qualche riga di controllo tipo &quot;Inizializzazione Hardware in Corso    [ OK ]&quot; ed una decina o ventina di righe di questo tipo.<br />
+Dopo che ha finito un po' di questi controlli mi appare una schermata nera, e non si schioda più di lì neanche dopo 10 minuti, quindi in pratica non avvia Fedora.<br />
+Voi avete problemi di questo tipo? Sapete come posso fare?<br />
+Grazie :)<br />
+<br />
+-<br />
+<br />
+Sto editando il messaggio, mi hanno detto che e' un problema relativo alla risoluzione, ma visto che chi me l'ha detto non usa Fedora, sapete come cambiarla? Grazie</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">niko</div><div class="date">24-02-2005, 19:16</div></div><div class="posttext">Prova a partire in Single User Mode, aggiungendo init 1 o init=/bin/sh al bootloader. <br />
+<br />
+Poi tail -f /var/log/messages e leggi eventuali messaggi di errori. <br />
+<br />
+Per quanto riguarda il blocco, se non trovi informazioni utili in messages, prova a premere CTRL+C, e' probabile che sia qualche servizio che si blocca per qualche stupido motivo.<br />
+<br />
+Se invece e' proprio X, prova a switchare su un'altra consolle con CTRL+ALT+F2 poi fai il login e apri con un editor testuale come nano, /etc/inittab e cerca una linea, tra le prime, simile a questa:<br />
+<br />
+<br />
+id:2:initdefault:<br />
+<br />
+<br />
+Se invece di 2 c'e' 5, significa che l'ipotesi della risoluzione e' probabilmente giusta.<br />
+<br />
+Aggiusta la configurazione di Xorg con xorgconfig, oppure cambia quel 5 in 2 come nell'esempio, poi riavvia.<br />
+<br />
+In questo modo non partira' automaticamente un gestore come KDM o GDM, ma potrai sistemare con calma la configurazione del server X.<br />
+<br />
+<br />
+Buona fortuna :okay:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">City_Hunter</div><div class="date">25-02-2005, 12:15</div></div><div class="posttext">Fa sempre piacere vedere qualcuno così disponibile in questo angolo di forum.<br />
+Niko posso chiederti con quale distro lavori solitamente?<br />
+(beh, l'ho appena fatto)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">niko</div><div class="date">26-02-2005, 12:57</div></div><div class="posttext">Niko posso chiederti con quale distro lavori solitamente?<br />
+<br />
+<br />
+Generalmente sul mio PC Debian Unstable, ma ho in dualboot Slackware.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">26-02-2005, 13:39</div></div><div class="posttext">Generalmente sul mio PC Debian Unstable, ma ho in dualboot Slackware.<br />
+<br />
+Non avevo mai visto uno con dualboot Linux/Linux :D<br />
+Ho sempre associato il dualboot a OS completamente diversi, come appunto Windows/Linux ^^</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Thunder</div><div class="date">27-02-2005, 18:46</div></div><div class="posttext">id:2:initdefault:<br />
+<br />
+<br />
+Se invece di 2 c'e' 5, significa che l'ipotesi della risoluzione e' probabilmente giusta.<br />
+<br />
+Aggiusta la configurazione di Xorg con xorgconfig, oppure cambia quel 5 in 2 come nell'esempio, poi riavvia.<br />
+<br />
+In questo modo non partira' automaticamente un gestore come KDM o GDM, ma potrai sistemare con calma la configurazione del server X.<br />
+<br />
+<br />
+Buona fortuna :okay:<br />
+<br />
+Nè 2 nè 5, c'è 3, che vuol dire ciò?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">niko</div><div class="date">28-02-2005, 13:59</div></div><div class="posttext">Il runlevel 3 su Fedora, prevede il Multiuser con il networking e con NFS, quindi non dovrebbe partire in automatico il server X.<br />
+<br />
+All'avvio, quando vedi che il servizio di inizializzazione hardware impiega molto tempo passa direttamente alla seconda consolle e dai:<br />
+<br />
+<br />
+tail -f /var/log/messages<br />
+<br />
+<br />
+oppure interrompilo dando CTRL+C, quindi continua con il login e ridai tail.<br />
+<br />
+Dovrebbe indicarti il perché del blocco, in caso non ci fosse nessuna informazione relativa incolla anche il risultato di un:<br />
+<br />
+<br />
+/sbin/chkconfig --list | grep 3:on<br />
+<br />
+<br />
+in modo da poter analizzare i demoni che partono all'avvio, individuare quale si blocca e disabilitarlo (oppure evitare che si blocchi).</div></div><hr />
+
+
+<div id="copyright">vBulletin&reg; v3.6.7, Copyright &copy;2000-2007, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Protezione pagine in php, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] Protezione pagine in php Programmazione e dintorni" />
+		<title>Protezione pagine in php [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-23.html">Programmazione e dintorni</a> &gt; Protezione pagine in php</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=1802">Protezione pagine in php</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">arcom17</div><div class="date">12-03-2003, 00:19</div></div><div class="posttext">Ciao volevo chiedervi un parere su questo codice che ho scritto in php per proteggere delle pagine (il codice si trova prima dell'&amp;lt;html&amp;gt; del file php)<br />
+<br />
+<br />
+&amp;lt;?php<br />
+ob_start&#40;&#41;;<br />
+include &#40;&amp;quot;../connect.inc.php&amp;quot;&#41;;<br />
+session_start&#40;&#41;;<br />
+$sql= &amp;quot;SELECT * FROM gest_auth WHERE user = '&amp;quot;.$_SESSION&#91;'user'&#93;.&amp;quot;' AND pass = '&amp;quot;.$_SESSION&#91;'pass'&#93;.&amp;quot;'&amp;quot;;<br />
+$result = mysql_query&#40;$sql&#41; or die&#40;&amp;quot;Invalid query&amp;quot;&#41;;<br />
+$num_rows = mysql_num_rows&#40;$result&#41;;<br />
+if &#40;$num_rows != 1 &#41;<br />
+&#123;<br />
+	header&#40;&amp;quot;Location&#58; ./net_gest.htm&amp;quot;&#41;; <br />
+	exit&#40;&#41;;<br />
+&#125;<br />
+else if &#40;$num_rows = 1&#41;<br />
+&#123;<br />
+&#125;<br />
+mysql_query&#40;&amp;quot;INSERT INTO ip_access &#40;ip, time&#41; VALUES&#40;'$_SERVER&#91;REMOTE_ADDR&#93;', '&amp;quot; . date&#40;&amp;quot;dmyHi&amp;quot;, time&#40;&#41;&#41; . &amp;quot;'&#41;&amp;quot;&#41;; <br />
+?&amp;gt;<br />
+<br />
+<br />
+La sessione viene creata da un file che controlla che i dati immessi nei campi user e password del pannello di accesso siano corretti. Il codice è il seguente:<br />
+<br />
+&amp;lt;?php<br />
+ob_start&#40;&#41;;<br />
+include &#40;&amp;quot;../connect.inc.php&amp;quot;&#41;;<br />
+$sql=&amp;quot;SELECT * FROM gest_auth WHERE user = '&amp;quot;.$_POST&#91;'user'&#93;.&amp;quot;' AND pass = '&amp;quot;.$_POST&#91;'pass'&#93;.&amp;quot;'&amp;quot;;<br />
+$result = mysql_query&#40;$sql&#41; or die&#40;&amp;quot;Invalid query&amp;quot;&#41;;<br />
+$num_rows = mysql_num_rows&#40;$result&#41;;<br />
+<br />
+if &#40;$num_rows != 1 &#41;<br />
+&#123;<br />
+	header&#40;&amp;quot;Location&#58; ./net_gest.htm&amp;quot;&#41;; <br />
+	exit;<br />
+&#125;<br />
+else if &#40;$num_rows = 1&#41;<br />
+&#123;<br />
+	session_start&#40;&#41;;<br />
+	$_SESSION&#91;'user'&#93; = $_POST&#91;'user'&#93;;<br />
+	$_SESSION&#91;'pass'&#93; = $_POST&#91;'pass'&#93;;<br />
+	header&#40;&amp;quot;Location&#58; ./net_gest_ok.php&amp;quot;&#41;; <br />
+	exit;<br />
+&#125;<br />
+mysql_close;<br />
+?&amp;gt;<br />
+<br />
+Mi è stato detto di aggiungere le superglobals.. o qualcosa del genere.. ma non ho ben capito cosa vuol dire  V_V <br />
+Grazie mille<br />
+ciaooo<br />
+Marco</div></div><hr />
+
+
+<div id="copyright">vBulletin v3.5.3, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

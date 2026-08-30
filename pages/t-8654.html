@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="integrare forum phpBB, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] integrare forum phpBB Programmazione e dintorni" />
+		<title>integrare forum phpBB [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-23.html">Programmazione e dintorni</a> &gt; integrare forum phpBB</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=8654">integrare forum phpBB</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Progeny</div><div class="date">18-05-2005, 12:40</div></div><div class="posttext">Salve, ho smanettato un pochetto per integrare il phpBB col mio portale. <br />
+Però ora ho un problema con il login http://forum.html.it/forum/images/smilies/dho.gif <br />
+<br />
+Questo è il codice della pagina per il login:<br />
+<br />
+  &lt;?php <br />
+if((isset($_POST['Login'])) &amp;&amp; (isset($_GET['mod']))) { <br />
+	if($_GET['mod'] == 'login') { <br />
+	$username = $_POST['r_username']; <br />
+	$password = md5($_POST['r_password']); <br />
+	$query = &quot;SELECT users.id AS id, users.username AS username, users.password AS password, users.state, staff.level AS level FROM users, staff WHERE users.username='$username'&quot;; <br />
+	$result = mysql_query($query, $db); <br />
+	$sql_data = mysql_fetch_object($result); <br />
+		if(($sql_data-&gt;password == $password) &amp;&amp; ($sql_data-&gt;state)) { <br />
+		$_SESSION['username'] = $sql_data-&gt;username; <br />
+		$_SESSION['id'] = $sql_data-&gt;id; <br />
+		$c_bb = 'a:2:{s:11:&quot;autologinid&quot;;s:32:&quot;'.$sql_data-&gt;password.'&quot;;s:6:&quot;userid&quot;;s:1:&quot;'.$sql_data-&gt;id.'&quot;;}'; <br />
+		setcookie('phpbb2mysql_data', urlencode($c_bb)); <br />
+		} else { <br />
+		/* Boh.. */ <br />
+		} <br />
+	} <br />
+} <br />
+?&gt;   <br />
+<br />
+ Il cookie dovrebbe essere settato correttamente.. perchè ora quando accedo nella pagina del forum non risulto loggato? <br />
+<br />
+http://forum.html.it/forum/images/smilies/scalata.gif</div></div><hr />
+
+
+<div id="copyright">vBulletin v3.5.3, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

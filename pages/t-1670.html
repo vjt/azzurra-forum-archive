@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content=" Upgrade Network - Mercoledi 19 Febbraio., azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio]  Upgrade Network - Mercoledi 19 Febbraio. Comunicazioni ufficiali di Azzurra" />
+	
+	<title> Upgrade Network - Mercoledi 19 Febbraio. [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="http://forum.azzurra.org/archive/index.php">Azzurra IRC Network Forum</a> &gt; <a href="http://forum.azzurra.org/archive/index.php/f-6.html">Network Central</a> &gt; <a href="http://forum.azzurra.org/archive/index.php/f-19.html">Comunicazioni ufficiali di Azzurra</a> &gt;  Upgrade Network - Mercoledi 19 Febbraio.</div>
+<hr />
+<div class="pda"><a href="http://forum.azzurra.org/archive/index.php/t-1670.html?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=1670">Upgrade Network - Mercoledi 19 Febbraio.</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">debiAn</div><div class="date">17-02-2003, 10:16</div></div><div class="posttext">Salve,<br />
+Mercoledi prossimo, salvo imprevisti dell'ultima ora, è schedulato un aggiornameto di tutti gli ircd di Azzurra alla versione 1.4.34+Azzurra(4.0). Questo aggiornamento consiste principalmente numerosi bug fix, qui di seguito il changelog completo:<br />
+<br />
+<br />
+Changelog Azzurra patch 4.0<br />
+<br />
+- Fixata la match sui ban, adesso è possibile settare *!?@* e *!*@* in ban list (prima se era presente *!?@* non era possibile settare *!*@* di conseguenza i masskick non funzionavano)<br />
+- Un ban sull'host cryptato adesso colpisce anche l'host in chiaro (se il bannato si toglie il +x non rientra)<br />
+- Fixato possibile desynch al netburst, tra due canali con nome uguale e TS uguale, uno +ps e l'altro -ps, quello senza i modes si ritrova solo +s e non +ps<br />
+- Fixato il comando kill, precedentemente /KILL user reason, con reason &amp;gt; 500 char faceva crashare il demone<br />
+- Pieno supporto per ircd interno MAN Fastweb (adesso le akill funzionano anche sull'host interno)<br />
+- La lista dei canali in cui è un client +z viene nascosta al whois ai client non oper<br />
+- Ai client +z vengono mostrati i chan +s nel /list <br />
+- Usermode +I, permette di non mostrare l'idle (Oper only)<br />
+- /silence ora funziona anche con gli host cryptati <br />
+- Fix sulla propagazione del Mode +O al merge<br />
+- Fix sulla propagazione del +k al merge<br />
+- Usermode +h settabile solo via Ulined<br />
+- /userhost fatto su se stessi ritorna l'ip reale e non criptato<br />
+- Target Limit adesso abilitabile/disabilitabile via AdminServ<br />
+- Cambio del Network Name da AzzurraNET ad Azzurra<br />
+- Cambio prefisso di crypt da AzzurraNET ad Azzurra<br />
+- Usermode +g adesso settabile solo agli oper<br />
+- Stats l accessibile solo agli oper<br />
+- Modifica del whois (is Oper &amp;amp;&amp;amp; is Helper alla fine)<br />
+- Minor fix vari al source tree<br />
+<br />
+<br />
+Fix CVS DALNet:<br />
+- Fix SVSMODE (bug abbastanza grave, segnalato da noi a DALNet)<br />
+- Fix su /rheash GC (blalloc.c 1.5)<br />
+- Fix sul join in un canale +i (non dire che serve un invite ecc se l'user e' gia' dentro) (channel.c 1.97)<br />
+- Fix sulla M:line (ircd.c 1.54)<br />
+- Fix sul recvq (s_bsd.c 1.65)<br />
+- Fix per non killare client U:Lined (s_user.c 1.179/1.180)<br />
+- Fix per freebsd (ircd.c)<br />
+- Fix su su source connect localhost (s_bsd.c 1.59)<br />
+- Fix per speedup del synch (s_bsd.c 1.67, send.c 1.70)<br />
+- Fix sugli IP nel /trace (s_serv.c 1.157)<br />
+- Nuove opzioni per il who (+c @#canale / +#canale, +t idletime, +l Y-class) (m_who 1.8+ &amp;amp;&amp;amp; s_user.c 1.182/1.183)<br />
+- Forward di /help a HelpServ per i non oper <br />
+<br />
+E' ovviamente prevedibile che Mercoledi ci saranno numerosi split dovuti all'aggiornamento, per quanto possibile cercheremo di upgradare tutta la rete entro le prime ore della mattinata. <br />
+<br />
+E' tutto,</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">debiAn</div><div class="date">18-02-2003, 13:04</div></div><div class="posttext">Mi sono accorto che nel changelog erroneamente non c'è traccia di una feature che abbiamo implementato nella patch 4.0 Azzurra. Questa feature non è altro che una protezione contro il flood e lo spam di massa da parte di droni/spambot. <br />
+<br />
+Nel dettaglio se abilitata funziona in questo modo:<br />
+<br />
+L'ircd controlla tutti i privmsg/notice alla ricerca di un testo che interpreta come *spam* o *flood*, nel caso il privmsg/notice contenga il testo specificato l'ircd provvede a bloccare il messaggio. Questo sistema non è molto differente dal controllo delle badwords di Unreal e del ConferenceRoom, di default non sarà abilitata verrà fatto solo in casi di emergenza perchè come potete ben immaginare la funzione consuma una notevole quantità di CPU.<br />
+<br />
+Per ovvi motivi non sarà possibile sapere quali saranno le parole controllate. <br />
+<br />
+E' tutto,</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">debiAn</div><div class="date">19-02-2003, 13:00</div></div><div class="posttext">Aggiornamento effettuato con successo, non ci sono stati problemi particolari. Ringrazio tutti gli admin per la disponibilità.<br />
+<br />
+Saluti,</div></div><hr />
+
+
+<div id="copyright">vBulletin&reg; v3.7.1, Copyright &copy;2000-2008, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

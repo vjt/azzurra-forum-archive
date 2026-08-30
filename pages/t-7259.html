@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Una piccola idea, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] Una piccola idea Services - I servizi IRC di Azzurra" />
+	
+	<title>Una piccola idea [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-6.html">Network Central</a> &gt; <a href="f-30.html">Services - I servizi IRC di Azzurra</a> &gt; Una piccola idea</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=7259">Una piccola idea</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Gioxx</div><div class="date">06-02-2005, 17:58</div></div><div class="posttext">Frequentando più server IRC (ne ho 3 costantemente aperti + altri 2 sui quali vado raramente) ho notato un piccolo servizio che potrebbe davvero essere utile e bello per questo ottimo network.<br />
+<br />
+Quando un utente joina nella net e il suo nick non è ancora stato identificato, il Chanserv ovviamente non gli da lo stato di operatore (nei canali dove questo ovviamente è settato). Una volta identificato posso a dare il comando /cs op #canale mionick per essere oppato dal Chanserv.<br />
+<br />
+In altri net ho invece notato che, non appena l'utente si identifica al Chanserv, questo lo oppa/vocia/halfoppa automaticamente in tutti i canali settati, evitando così una miriade di richieste al CS. Reputo tale cosa molto utile e mi chiedevo se non fosse possibile anche qui (la net nella quale ho più canali rispetto alle altre).<br />
+<br />
+Io personalmente ho lo script automatico che mi oppa (da Chanserv) se sono identificato e non ho ancora la @ o il %, ma in molti non lo hanno o non ci pensano. Spero di non avervi annoiato e di non aver fatto una richiesta stupida.<br />
+<br />
+Grazie mille! :okay:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">06-02-2005, 18:22</div></div><div class="posttext">In altri net ho invece notato che, non appena l'utente si identifica al Chanserv, questo lo oppa/vocia/halfoppa automaticamente in tutti i canali settati, evitando così una miriade di richieste al CS. Reputo tale cosa molto utile e mi chiedevo se non fosse possibile anche qui<br />
+<br />
+Non e' una richiesta stupida, ma personalmente la credo poco utile rispetto alle operazioni che i servizi devono compiere... attualmente ChanServ agisce onjoin in due casi: quando ci sono autovoice/autohalfop/autoop settati in canale o quando l'utente e' identificato ad un nick nelle liste del canale. Il tutto ovviamente salvo neverop vari ed eventuali.<br />
+Nella tua ipotesi, quando io mi identifico a NickServ, quest'ultimo deve andare da ChanServ e farmi oppare su tutti i canali in cui sono presente, che tra l'altro e' un concetto diverso da &quot;tutti i canali in cui sono xOP&quot;. Quindi c'e' da vedere il whois dell'utente piu' eventuali neverop. sia sul nick che su ciascun canale. Inoltre penso anche a quei casi in cui ci si identifica ad un nick in via remota (/ns identify nick password) e quindi NickServ dovrebbe pensare al nick in uso dall'utente ed a quello a cui si e' identificato, che in questo caso sono differenti.<br />
+Marginalmente, ci potrebbero anche essere canali in cui e' stabilito che non si possa/non si voglia essere op/halfop/voice in determinate condizioni (#IRCHelp ad esempio).<br />
+<br />
+Tirando le somme della mia personalissima opinione, non so quanto siano grandi le reti che frequenti ma su Azzurra ci sarebbe un discreto carico sui servizi per tutti quei controlli incrociati che mi sono venuti in mente, ed alla fine e' meglio fare come fai tu: un check in locale e via, non e' nemmeno un flood su ChanServ dal momento che penso tu faccia ben piu' operazioni mettendo quell'automatismo. :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Actarus</div><div class="date">06-02-2005, 19:32</div></div><div class="posttext">Quando un utente joina nella net e il suo nick non è ancora stato identificato, il Chanserv ovviamente non gli da lo stato di operatore (nei canali dove questo ovviamente è settato). Una volta identificato posso a dare il comando /cs op #canale mionick per essere oppato dal Chanserv.<br />
+ <br />
+ <br />
+Scusa ma non fai prima ad aggiungere il comando &quot;/ns IDENTIFY nick Password&quot; nel perform del Mirc o del tuo script in modo che appena tu ti connetti vieni identificato in automatico?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gioxx</div><div class="date">06-02-2005, 19:47</div></div><div class="posttext">Non esiste solo mIRC, c'è anche Xchat, BitchX, irssi e tanti altri ancora, ma non è quello il punto. Dopo un NetSplit, dopo che il BNC ti cade o in qualunque altra occasione che non sia un JOIN nella net, ti ritrovi con nick non identificato. Tocca fare un ghost e poi un identify, seguito a ruota da una massiccia richiesta di CS OP.<br />
+<br />
+La risposta di Steve l'ho discussa direttamente in IRC ed effettivamente bisognerebbe valutare bene se i Services subiscono o meno un carico di lavoro eccessivo per loro...<br />
+<br />
+Saluti.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xin</div><div class="date">06-02-2005, 20:48</div></div><div class="posttext">bella idea, me piase</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dracoo</div><div class="date">07-02-2005, 13:34</div></div><div class="posttext">Rendo oltretutto noto che, almeno nel mio caso, usare tante volte il /cs OP porta la segnalazione da parte di OperServ di flood :E</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">typedef_c</div><div class="date">07-02-2005, 13:46</div></div><div class="posttext">Rendo oltretutto noto che, almeno nel mio caso, usare tante volte il /cs OP porta la segnalazione da parte di OperServ di flood :E<br />
+<br />
+bhe se usi uno script che ti oppa in tutti in canali nello stesso momento (e ne hai 10 aperti per esempio) è normale che operserv ti avverta che stai flooddando i servizi :)<br />
+<br />
+Una soluzione potrebbe essere farne uno che ti identifica il nick, e fa il rejoin su tutti i canali almeno non fai flood.<br />
+<br />
+Per quanto riguarda l'idea di gioxx la penso con Steve, credo sarebbe un bel peso per i servizi (soprattutto in caso di netsplit).<br />
+<br />
+ciau</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xin</div><div class="date">07-02-2005, 13:47</div></div><div class="posttext">pensavo... magari metterlo di default come un opzione disattivata, da attivare a mano dall'utente, almeno uno lo usa se ne ha effettivamente bisogno e si sovraccaricano di meno i servizi</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">07-02-2005, 14:30</div></div><div class="posttext">magari metterlo di default come un opzione disattivata, da attivare a mano dall'utente, almeno uno lo usa se ne ha effettivamente bisogno e si sovraccaricano di meno i servizi<br />
+<br />
+Quanto scommetti che se la settano tutti quanti anche se non ne hanno effettivamente bisogno? :)<br />
+Seriamente: secondo me questa idea e' piu' un danno per i servizi che un aiuto per gli utenti.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xin</div><div class="date">07-02-2005, 19:34</div></div><div class="posttext">mettere un controllo su /ns listchans che permette l'attivazione solo se sono presenti x &gt; y (tipo 10 ?) canali ?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">07-02-2005, 21:26</div></div><div class="posttext">mettere un controllo su /ns listchans che permette l'attivazione solo se sono presenti x &gt; y (tipo 10 ?) canali ?<br />
+<br />
+Non sono un coder eh... ma secondo me cosi' aggiungi un'ulteriore variabile di controllo ed incasini le cose ancora un pochino ^^</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dracoo</div><div class="date">07-02-2005, 21:30</div></div><div class="posttext">Un buon sistema sarebbe far mettere a ChanServ il +o (o +v o +h) in tutti i canali cui il nick è addato (indipendentemente che questo vi sia presente o meno. Qualora non fosse presente nel canale il comando andrebbe a vuoto e nessuno verrebbe oppato (o voiciato o halfoppato)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">07-02-2005, 21:39</div></div><div class="posttext">Un buon sistema sarebbe far mettere a ChanServ il +o (o +v o +h) in tutti i canali cui il nick è addato (indipendentemente che questo vi sia presente o meno. Qualora non fosse presente nel canale il comando andrebbe a vuoto e nessuno verrebbe oppato (o voiciato o halfoppato)<br />
+<br />
+In che senso e' un &quot;buon sistema&quot; ?<br />
+Cioe', ci si preoccupa del carico dei servizi e tu proponi di fargli lanciare comandi a vuoto? ^_^</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gastaman</div><div class="date">07-02-2005, 23:15</div></div><div class="posttext">A titolo di cronaca, i servizi stanno sotto l'1% di utilizzo CPU anche con 10000+ utenti connessi... un ircd con 1000 utenti sopra fa molto di più.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dracoo</div><div class="date">07-02-2005, 23:33</div></div><div class="posttext">In che senso e' un &quot;buon sistema&quot; ?<br />
+Cioe', ci si preoccupa del carico dei servizi e tu proponi di fargli lanciare comandi a vuoto? ^_^<br />
+<br />
+Mi sembra che in questo modo ci siano meno controlli da fare!<br />
+E comunque, stando dal post di Gastaman, sembra che problemi di &quot;carico&quot; non ve ne siano!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gioxx</div><div class="date">07-02-2005, 23:37</div></div><div class="posttext">Non so quanto sia vero (anche se mi fido) quanto detto da Gastaman, ma a mio modesto parere la mia potrebbe essere una buona idea (qualche volta capita che l'OperServ mi dica che sto floodando i servizi, ho svariati canali aperti) e fare lo script che fa /hop (mIRC) o /cycle (XChat) su tutti i canali potrebbe diventare estremamente pesante per il proprio Client (Lag alto, è un sistema che avevo già provato).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">08-02-2005, 09:47</div></div><div class="posttext">Mi sembra che in questo modo ci siano meno controlli da fare!<br />
+E comunque, stando dal post di Gastaman, sembra che problemi di &quot;carico&quot; non ve ne siano!<br />
+<br />
+Non era al carico-macchina che io mi riferivo: e' che sono per natura contrario a controlli annidati all'interno delle linee di codice: se ci sono troppe condizioni da verificare affinche' il determinato comando venga lanciato, per me ha senso mettere tutto il papocchio nel codice solo se il comando in questione e' veramente importante. E non mi sembra questo il caso, di qui il mio parere negativo.<br />
+<br />
+fare lo script che fa /hop (mIRC) o /cycle (XChat) su tutti i canali potrebbe diventare estremamente pesante per il proprio Client (Lag alto, è un sistema che avevo già provato).<br />
+<br />
+Lag si', ma non certo nell'accezione classica di &quot;lentezza di rete&quot;: che io sappia (e sul mio pc succede questo), XChat si fa un bel /who +a quando entra in un canale, per individuare subito gli utenti away e marcarli diversamente nella nicklist. Mi accorgo anche io che c'e' lentezza mentre entro nei miei soliti 6-8 canali, ma e' il mio client (quindi: me stesso) che sta floodando l'ircd a suon di who, mica e' la rete che e' laggata: porti pazienza i tuoi N secondi, e poi chatti come al solito.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gioxx</div><div class="date">08-02-2005, 14:38</div></div><div class="posttext">Lag si', ma non certo nell'accezione classica di &quot;lentezza di rete&quot;: che io sappia (e sul mio pc succede questo), XChat si fa un bel /who +a quando entra in un canale, per individuare subito gli utenti away e marcarli diversamente nella nicklist. Mi accorgo anche io che c'e' lentezza mentre entro nei miei soliti 6-8 canali, ma e' il mio client (quindi: me stesso) che sta floodando l'ircd a suon di who, mica e' la rete che e' laggata: porti pazienza i tuoi N secondi, e poi chatti come al solito.<br />
+Infatti mi riferivo al lag &quot;personale&quot;, non di certo a quello della net :D:-)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xin</div><div class="date">08-02-2005, 15:37</div></div><div class="posttext">A titolo di cronaca, i servizi stanno sotto l'1% di utilizzo CPU anche con 10000+ utenti connessi... un ircd con 1000 utenti sopra fa molto di più.<br />
+<br />
+infatti me pareva strano che fossero cosi assetati *Serv...</div></div><hr />
+
+
+<div id="copyright">vBulletin&reg; v3.6.4, Copyright &copy;2000-2007, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

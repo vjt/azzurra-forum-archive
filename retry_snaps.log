@@ -1,0 +1,6 @@
+snaps.tsv: 5844 urls with at least one snapshot
+round 1: queued=2380 pages 4270 -> 4286
+round 2: queued=15 pages 4286 -> 4287
+round 3: queued=2 pages 4287 -> 4287
+round 4: queued=0 pages 4287 -> 4287
+DONE pages=4287

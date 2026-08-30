@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Personalizzazione JAVIRC, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] Personalizzazione JAVIRC Javirc" />
+		<title>Personalizzazione JAVIRC [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-6.html">Network Central</a> &gt; <a href="f-36.html">Javirc</a> &gt; Personalizzazione JAVIRC</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=4773">Personalizzazione JAVIRC</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">newmedia</div><div class="date">17-05-2004, 22:11</div></div><div class="posttext">Salve a tutti...<br />
+e' da quando ho installato JAVIRC sul mio sito, che ho pensato di 'personalizzarlo' dotandolo di funzioni accessorie...<br />
+Non sono molto esperto di programmazione ma molto TESTARDO.<br />
+<br />
+Sono riuscito ad implementare gli avatars (scelti dagli utenti) e la lista dei connessi sull'home page!<br />
+<br />
+Qualcuno puo' provare quanto ho realizzato e magari darmi una mano a migliorare il tutto?<br />
+<br />
+Il file e' scaricabile all'indirizzo:<br />
+<br />
+http://www.ilgiornalediostia.it/javachat/avatars.zip<br />
+<br />
+Fatevi vivi !!!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">sky</div><div class="date">19-05-2004, 14:04</div></div><div class="posttext">Ciao, complimenti per il lavoro svolto! ho scaricato i tuoi codici ed appena ho 2 minuti di tempo libero ci butto un'occhio per vedere in cosa si possono migliorare.<br />
+<br />
+Buona giornata!.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">newmedia</div><div class="date">19-05-2004, 15:22</div></div><div class="posttext">Nel frattempo ho aggiunto la visualizzazione dell'indirizzo IP sul nick, solo che da ieri sera ho un problemone... la gente non riesce piu' ad entrare!! Io entro tranquillamente... mentre agli altri dice 'sei disconnesso'..<br />
+cosa sara' successo?<br />
+<br />
+Metto on line (sempre www.ilgiornalediostia.it/javachat/avatar.zip) la versione aggiornata...<br />
+<br />
+Sto cercando di implementare la funzione di logout automatico dopo un certo tempo di inattivita' in quanto capita che se un utente esce in maniera 'non ortodossa' mi rimane in lista.<br />
+<br />
+Stavo pensando di delegare il controllo al codice userlist.php (che viene fatto 'girare' da TUTTI i visitatori del sito, essendo nell'home page) confrontando l'ora attuale con quella di ultima attivita' degli utenti (inizializzata dal loro logon e aggiornata da loro stessi durante la sessione di chat), ma adesso il problema maggiore e' l'impossibilita' di ENTRATA .. sembra nel canale. AIUTO !!!!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">newmedia</div><div class="date">21-05-2004, 10:28</div></div><div class="posttext">Ho risolto il bug alcuni bugs che mi affliggevano, compresa il riconoscimento della disconnessione 'anomala' da parte degli utenti, che ora viene correttamente rilevata, grazie ad un file che si trova nell'home page del sito, che oltre a visualizzare la lista degli utenti connessi in chat (con tanto di avatars..) effettua un 'controllo' sull'attivita' degli stessi, eventualmente rimuovendoli dalla lista.<br />
+<br />
+Avevo provato anche a fare in modo che fosse visualizzato (sul nick dell'utente, sfruttando il parametro IRCName, l'indirizzo IP dell'utente stesso, ma la cosa stranamente non funziona.<br />
+<br />
+Un appello.... il mio lavoro si appoggia su un file di testo, so che la cosa non e' molto efficiente, qualcuno puo' darmi una mano per usare MySQL?<br />
+<br />
+Alla prossima...<br />
+<br />
+P.S. Troverete la versione sempre piu' aggiornata al solito indirizzo: <br />
+<br />
+www.ilgiornalediostia.it/javachat/avatars.zip<br />
+<br />
+(Gli script sono in continua evoluzione!)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">newmedia</div><div class="date">21-05-2004, 12:33</div></div><div class="posttext">Una domandina.... ma i files audio inviati con il comando <br />
+/playsound n<br />
+<br />
+sono sentiti da tutti o solo dall'utente che li manda? ho fatto delle prove e a me pare che gli altri non li 'sentano' e quindi non ne capisco l'utilita'. Sapete darmi indicazioni?<br />
+<br />
+Questo perche' ho delle idee....  :wink:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">newmedia</div><div class="date">22-05-2004, 20:27</div></div><div class="posttext">Ho corretto un bug che non teneva conto del cambio di ora nella routine che verifica la presenza dell'utente per toglierlo eventualmente dall'userlist.<br />
+<br />
+Ho anche aggiunto 2 suoni, secondo me piu' appropriati da usare all'arrivo e all'uscita di un utente.<br />
+<br />
+Ehi... ma nessuno mi da una mano ???  V_V <br />
+<br />
+<br />
+Sempre su: <br />
+<br />
+www.ilgiornalediostia.it/javachat/avatars.zip<br />
+<br />
+(Se volete provare il tutto... venite a visitare la mia chat su:<br />
+<br />
+www.ilgiornalediostia.it</div></div><hr />
+
+
+<div id="copyright">vBulletin v3.5.3, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

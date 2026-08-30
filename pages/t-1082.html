@@ -1,0 +1,246 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Aggiornamento Servizi, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] Aggiornamento Servizi Services - I servizi IRC di Azzurra" />
+	
+	<title>Aggiornamento Servizi [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-6.html">Network Central</a> &gt; <a href="f-30.html">Services - I servizi IRC di Azzurra</a> &gt; Aggiornamento Servizi</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=1082">Aggiornamento Servizi</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Gastaman</div><div class="date">29-09-2002, 01:32</div></div><div class="posttext">Ecco il changelog abbastanza dettagliato delle modifiche avvenute con l'introduzione dei nuovi servizi. Vi preghiamo di segnalarci qualsiasi bug o problema riscontrato quanto prima su #Services e/o via E-Mail all'indirizzo services@azzurra.org e di leggere attentamente gli helpfiles prima di venire su #IRCHelp a fare domande sui nuovi comandi.<br />
+<br />
+<br />
+<br />
+Modifiche varie:<br />
+<br />
+- Supporto multilingua. Per ora disponibili solo Italiano e Inglese, previste nuove lingue in futuro. Chi fosse interessato a collaborare alla traduzione in lingue non disponibili ci contatti a services@azzurra.org<br />
+- La lunghezza massima per un memo e' ora 400 caratteri.<br />
+- I nick vanno autorizzati entro 24 ore. Chi non risulta autorizzato dopo 24 ore vedra' il proprio nick droppato (Vale solo per chi registrera' il nick da oggi in poi; chi lo ha gia' registrato potra' tenerlo senza problemi, anche se e' incoraggiato a inserire una E-Mail corretta in caso di perdita password)<br />
+- I nick non autorizzati non possono essere aggiunti a nessuna lista e non possono registrare canali o inviare memo.<br />
+- Ogni nick puo' essere aggiunto alle liste di un massimo di 25 canali (founder compreso).<br />
+- Puo' essere richiesto un solo cambio di E-Mail di un nick e/o un solo Drop di un nick o un canale al giorno.<br />
+- Al join se si e' identificati ad un nick con accesso al canale (anche non in uso) si viene sempre messi +v/+o a seconda del caso.<br />
+- Aggiunto &quot;Messaggio di benvenuto di #canale:&quot; prima del welcome message per evitare abusi dello stesso.<br />
+- Se l'opzione Verbose e' &amp;gt; 1 e un utente in akick entra nel canale, viene notificata la akick per la quale e' stato bannato.<br />
+- Corretto un bug che in alcuni casi cancellava i memo sbagliati all'expire.<br />
+- Identificandosi a un altro nick, se esso ha memo, verra' notificato.<br />
+- Non vengono piu' mostrati topic e key modelockata a chi entra in un canale restricted, a chi entra per primo, e a chi e' in akick.<br />
+- Al join in un canale vuoto con l'opzione OpGuard on i mode vengono ora impostati correttamente (+v se si e' VOP, ecc).<br />
+- Modificata la mask con cui viene bannato un utente in seguito ad una akick o a un restrict. E' ora sempre *!*@host<br />
+- Corretti tutti i numeric sbagliati (MOTD, VERSION, etc).<br />
+- L'opzione SECURE per un nick ora ha solo la funzione di non tener conto della Access List.<br />
+- L'identificazione al nick in uso non si perde in caso di riavvio dei servizi. Questo significa che non si verra' piu' &quot;guestati&quot; in seguito ad un riavvio, ma si verra' automaticamente identificati al nick in uso, ammesso che lo si fosse prima del riavvio.<br />
+- Eliminati tutti i possibili SVSNICK Collide.<br />
+- Corretto un bug per cui un utente poteva essere identificato ad un nick ma risultare non identificato ai servizi.<br />
+- Non e' piu' possibile interagire con un canale se e' stato masskickato, finche' ChanServ non ne esce.<br />
+  Non e' quindi possibile usare i comandi DEOP, DROP, INVITE, MDEOP, MDEVOICE, MKICK, MODE, OP, UNBAN, SET TOPIC, VOICE durante un masskick.<br />
+- Tutti i comandi oper e non atti a modificare il database portano sempre il nick tramite il quale e' stato possibile utilizzare il comando. Ad esempio, se io sono Co-Founder su #IRCHelp con il nick Gastaman, se mi collego con il nick Gasta[Zzz] e mi identifico a Gastaman tramite password, e poi aggiungo Wolf7 alla lista AOP del canale, ad un /cs AOP #IRCHelp LIST il nick Wolf7 risultera' aggiunto da Gastaman e non da Gasta[Zzz].<br />
+- Corretto un bug che permetteva agli AOP di aggiungere VOP ad alcuni canali. Bisogna ora essere almeno SOP per poter aggiungere VOP.<br />
+<br />
+Comandi aggiunti:<br />
+<br />
+ChanServ:<br />
+SET AUTOOP [Imposta +o chiunque entri, nessuna modifica alle liste]<br />
+SET AUTOVOICE [Imposta +v chiunque entri, nessuna modifica alle liste]<br />
+SET LANG [Imposta la lingua del canale usata dal Verbose.]<br />
+SET NOMKICK [Blocca il comando MKICK per il canale, impostabile solo dal Founder]<br />
+SET SUCCESSOR [Imposta il Successor di un canale. Se il nick del Founder scade, il Successor passa a Founder.]<br />
+<br />
+MemoServ:<br />
+IGNORE [Permette di ignorare memo inviati da altri utenti.]<br />
+SET IGNORETYPE [Permette di scegliere se ignorare solo gli utenti nella lista o tutti tranne quelli.]<br />
+<br />
+NickServ:<br />
+SET LANG [Imposta la lingua dei servizi, utilizzabile anche da chi non e' registrato.]<br />
+<br />
+<br />
+Comandi modificati:<br />
+<br />
+ChanServ:<br />
+DROP [Tutte le restrizioni d'accesso ora funzionano correttamente. Limitato ad un solo utilizzo giornaliero per canale.]<br />
+REGISTER [La password non ammette piu' control codes o ASCII 255 (spazio in mIRC).]<br />
+SET [E' ora utilizzabile anche se il nick attuale non e' registrato, purche' si abbia accesso al comando.]<br />
+SET MLOCK [Corretto il parser, rimosso il chanmode +r dall'output (resta comunque fisso internamente).]<br />
+SET PASSWD [La password non ammette piu' control codes o ASCII 255 (spazio in mIRC). Al momento del cambio, viene rimossa<br />
+           l'identificazione a tutti tranne a chi da il comando.]<br />
+SET VERBOSE [Ampliato notevolmente, invia ora un opnotice ad ogni comando di ChanServ inerente il canale, comprensivo del nick tramite il quale e' stato possibile utilizzare il comando. Offre un completo controllo del canale.]<br />
+INFO [Se il canale e' +s o ha +s nel modelock, il topic non verra' mostrato.]<br />
+MDEOP [Ora deoppa tutti tranne chi invia il comando.]<br />
+MDEVOICE [Ora toglie il voice a tutti tranne a chi invia il comando.]<br />
+MKICK [Ora kicka tutti, compreso chi invia il comando. Il canale e' inagibile per due minuti. Si puo' specificare il motivo.]<br />
+MODE [Maggior controllo sui parametri. Il -k non necessita di chiave, se c'e' verra' sempre tolta quella giusta.]<br />
+OP/VOICE [Non si blocca piu' al primo nick che risulta gia' op/voice.]<br />
+XOP [Il nick di chi ha aggiunto un nick o mask a una lista e' sempre quello tramite il quale e' stato possibile dare il comando. Eventuali cambi di lista aggiornano ora correttamente la data e il nick di chi lo ha spostato. DEL &amp;lt;numero&amp;gt; funziona ora correttamente.]<br />
+<br />
+MemoServ:<br />
+SENDTO [I memo non vengono piu' inviati gia' flaggati da cancellare.]<br />
+SEND [I memo non vengono piu' inviati gia' flaggati da cancellare.]<br />
+UNSEND [Cancella ora l'ultimo memo e non il primo, ed e' utilizzabile anche per memo inviati ai canali.]<br />
+SET NOTIFY [Non notifica piu' quando si torna dall'away, per contro le opzioni NEW e OFF ora funzionano.]<br />
+<br />
+NickServ:<br />
+RECOVER [Ora cambia automaticamente il nick in quello recoverato.]<br />
+REGISTER [La password non ammette piu' control codes o ASCII 255 (spazio in mIRC). Chi inserisce il nick nel comando viene ora avvisato dell'errore.]<br />
+IDENTIFY [Non imposta +r chi si identifica ad altri nick. E' ora di nuovo possibile identificarsi ad un nick gia' in uso.]<br />
+DROP [Tutte le restrizioni d'accesso ora funzionano correttamente. Limitato ad un solo utilizzo giornaliero per nick.]<br />
+SET [E' ora utilizzabile anche se il nick attuale non e' registrato, purche' si abbia accesso al comando.]<br />
+SET PASSWD [La password non ammette piu' control codes o ASCII 255 (spazio in mIRC). Al momento del cambio, viene rimossa l'identificazione a tutti tranne a chi da il comando. E' ora richiesta anche la vecchia password.]<br />
+SET EMAIL [Questa e' ora l'unica E-Mail di un nick. Di default e' nascosta, ed e' quella inserita alla registrazione. Per modificarla e' necessario inserire un codice inviato al vecchio indirizzo. Nel caso in cui sia gia' scaduto il cambio avverra' automaticamente dopo 7 giorni dalla richiesta, a patto che non venga bloccata.]</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">debiAn</div><div class="date">01-10-2002, 15:01</div></div><div class="posttext">- Ogni nick puo' essere aggiunto alle liste di un massimo di 25 canali (founder compreso).<br />
+<br />
+<br />
+Questo limite è stato portato da 25 a 40 canali in considerazione del fatto che sono tantissimi gli utenti con accessi &amp;gt; di 25. Ci siamo resi conto che 40 è un limite piu' adatto alle nostre esigenze.<br />
+<br />
+Saluti</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gastaman</div><div class="date">24-11-2002, 02:27</div></div><div class="posttext">[Aggiornamento del 18/11]<br />
+<br />
+Questa mattina, dopo oltre 36 giorni di uptime consecutivi, sono stati riavviati i servizi per applicare alcuni bugfix. <br />
+Fra le altre cose: <br />
+<br />
+- Rimosse race conditions su topic e op (non e' piu' possibile entrare in un canale e cambiare topic o farsi oppare da un clone prima che ChanServ rimetta il topic/deoppi) <br />
+<br />
+- Corretto un bug che permetteva a chi era identificato sia a un canale che al suo founder di modificare le liste comparendo col nick attuale invece che con quello del founder se diverso <br />
+<br />
+- Rifatto il WHY, che prima dava informazioni imprecise <br />
+<br />
+- Corretti un po' di bug del channelcount (numero massimo di accessi permessi ad un utente) <br />
+<br />
+- Aggiunta opnotice al canale al tentato masskick se NoMasskick e Verbose sono on <br />
+<br />
+- Corretto un bug nella UNBAN ALL che lasciava alcuni ban nel canale <br />
+<br />
+- Dopo l'expire di uno o piu' memo, la lista dei memo rimanenti viene ora riordinata (niente piu' buchi fra i numeri) <br />
+<br />
+- Aggiunta una funzione per controllare la validita' (presunta) di un indirizzo E-Mail, e relativa notifica dell'auto-expire dopo 24 ore nel caso sia palesemente fasullo <br />
+<br />
+- L'expire delle mail (autoimpostazione dopo 7gg dalla richiesta di cambio) ora dovrebbe funzionare <br />
+<br />
+- Corretti alcuni help sbagliati</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gastaman</div><div class="date">24-11-2002, 02:28</div></div><div class="posttext">[Aggiornamento del 20/11]<br />
+<br />
+Bugfix nel riavvio di stamattina: <br />
+<br />
+- ChanServ non forza piu' il topic in un canale -t per non op; <br />
+<br />
+- LISTCHANS non taglia piu' i canali se la riga e' troppo lunga; <br />
+<br />
+- SET TOPICLOCK non manda piu' la notice agli @ del canale se non si ha accesso al comando; <br />
+<br />
+- Chi cambia pass ad un canale rimane ora identificato allo stesso; <br />
+<br />
+- Il WHY da ora la precedenza allo status di identificato piuttosto che a quello tramite access list; <br />
+<br />
+- Corretto l'indirizzo di iscrizione alla ML nella mail al register, e rimossa una notice di ns alla registrazione.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gastaman</div><div class="date">24-11-2002, 02:31</div></div><div class="posttext">[Aggiornamento del 24/11] <br />
+<br />
+Bugfix del riavvio di stanotte: <br />
+<br />
+- Il founder ha di nuovo accesso al canale se e' nella access list e il canale ha IDENT off. Dovra' tuttavia identificarsi per poter usare il comando SET. <br />
+<br />
+- Le mail vengono ora inviate nella lingua di chi le riceve e non di chi le manda (sendpass, ecc) <br />
+<br />
+- Corretto l'indice di XOP DEL numero in caso &quot;numero&quot; non esista in lista (era aumentato di 1) <br />
+<br />
+- Non e' piu' possibile inviare memo a canali chiusi/bloccati/ecc <br />
+<br />
+- Modificate le notice alla registrazione per rendere piu' chiara l'importanza dell'autorizzazione del nick <br />
+<br />
+- Chi e' senza mail puo' ora usare SET EMAIL per impostarne una nuova <br />
+<br />
+- Corretto un errore nella mail inviata per i sendpass ai canali <br />
+<br />
+- I messaggi di kick da parte dei servizi sono ora nella lingua di chi viene kickato e non di chi kicka (via masskick, suspend, close, ecc)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">^Raiden^</div><div class="date">28-11-2002, 22:44</div></div><div class="posttext">- Chi cambia pass ad un canale rimane ora identificato allo stesso; <br />
+<br />
+<br />
+Non ditemi che se qualcuno sa la password di qualsiasi chan ora può pure modificarla anche se non sa la pass del fondatore?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Shaka</div><div class="date">29-11-2002, 10:44</div></div><div class="posttext">- Chi cambia pass ad un canale rimane ora identificato allo stesso; <br />
+<br />
+<br />
+Non ditemi che se qualcuno sa la password di qualsiasi chan ora può pure modificarla anche se non sa la pass del fondatore?<br />
+<br />
+Non mi pare si sia detto ciò :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gastaman</div><div class="date">30-11-2002, 11:53</div></div><div class="posttext">[Aggiornamento del 30/11]<br />
+<br />
+Bugs corretti:<br />
+<br />
+- XOP LOCK ora e' di nuovo funzionante;<br />
+<br />
+- Non e' piu' possibile oppare utenti che hanno il NEVEROP impostato tramite il comando OP di ChanServ a meno che non siano essi a darlo su loro stessi;<br />
+<br />
+- Corretti alcuni bug nell'OP di ChanServ che desyncavano la lista operatori di un canale fra servizi e ircd;<br />
+<br />
+- Migliorato il SET EMAIL per chi e' senza indirizzo (quindi registrazione vecchia);<br />
+<br />
+- Non e' piu' possibile inoltrare memo a nick non autorizzati.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">30-11-2002, 18:58</div></div><div class="posttext">- Non e' piu' possibile oppare utenti che hanno il NEVEROP impostato tramite il comando OP di ChanServ a meno che non siano essi a darlo su loro stessi;<br />
+<br />
+ALLELUJA!! :D<br />
+A quando il NeverVoice? :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gastaman</div><div class="date">06-01-2003, 19:02</div></div><div class="posttext">Aggiornamento del 6/1/03:<br />
+<br />
+- Corretti un po' di messaggi inviati dall'agent sbagliati (usando MemoServ rispondeva ChanServ, ecc.).<br />
+<br />
+- Se un utente cambia nick in uno a cui e' gia' identificato viene ora rimosso un eventuale timer in corso che ne richiedeva l'identificazione.<br />
+<br />
+- Corretto un bug nel listchans che permetteva a tutti di leggere il listchans di altre persone in determinate condizioni.<br />
+<br />
+- L'impostazione dell'URL e' ora piu' permissiva. <br />
+<br />
+- La notifica di nuovi memo non viene piu' inviata a chi e' in Access List. <br />
+<br />
+- Anche i memo ai canali sono ora ignorati.<br />
+<br />
+- I nick non autorizzati non possono piu' inviare ne' ricevere memo, ne' usare il forward.<br />
+<br />
+- E' possibile ora rimuovere gli ignore specificandone il numero.<br />
+<br />
+- Il modelock non invia piu' di 11 mode per riga.<br />
+<br />
+- Oppando un utente in un canale con opguard non si ricevono piu' due notice in risposta.<br />
+<br />
+- Il topic via /cs SET TOPIC viene ora impostato col nick con accesso piu' alto (i.e. se sono identificato a Pippo, AOP di #pippo, e cambio nick in fsdfdsjfksd, viene scritto &quot;Topic impostato da Pippo&quot;)<br />
+<br />
+- Non si possono piu' usare control codes nelle reason degli akick.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dracoo</div><div class="date">14-03-2003, 22:06</div></div><div class="posttext">- Non si possono piu' usare control codes nelle reason degli akick.<br />
+Come mai? Non riesco a capire il motivo... forse perchè la parte di notice che veniva dopo il why, veniva modificata se il control codes non viene chiuso? non si può mettere di default un Control+O in fondo ad ogni why degli akick?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gastaman</div><div class="date">16-03-2003, 14:01</div></div><div class="posttext">Si' il problema e' principalmente quello, tuttavia la sua soluzione non e' cosi' semplice, in quanto il CTRL+O di mIRC (ASCII 15) non e' gestito allo stesso modo da tutti i client. Certi non lo considerano proprio, altri rimuovono l'effetto solo dell'ultimo control code messo e non tutti quanti (nel senso mettendo underline + bold + CTRL+O e scrivendo &quot;ciao&quot;, in mIRC appare come &quot;ciao&quot;, in altri client appare come &quot;ciao&quot;) come per esempio nel caso dell'applet java JavIRC.<br />
+<br />
+Comunque nella prossima versione dovrebbe essere di nuovo possibile inserirli e verranno chiusi uno per uno dai servizi stessi in caso di bisogno.</div></div><hr />
+
+
+<div id="copyright">vBulletin&reg; v3.6.4, Copyright &copy;2000-2007, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

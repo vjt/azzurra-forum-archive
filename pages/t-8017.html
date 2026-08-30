@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="JavaScript: window.open(), azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] JavaScript: window.open() Programmazione e dintorni" />
+		<title>JavaScript: window.open() [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-23.html">Programmazione e dintorni</a> &gt; JavaScript: window.open()</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=8017">JavaScript: window.open()</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Progeny</div><div class="date">29-03-2005, 23:21</div></div><div class="posttext">echo &quot;&lt;td&gt;&lt;font face=\&quot;Arial\&quot; size=\&quot;-2\&quot;&gt;&lt;a href=\&quot;#\&quot; onClick=\&quot;MyWindow=window.open('popup-clientdata.php?c=$t_codice','MyWindow','toolbar=no  ,location=no,directories=no,status=no,menubar=no,s  crollbars=yes,resizable=yes,width=400,height=400')  ; return false;\&quot;&gt;$t_codice&lt;/a&gt;&lt;/font&gt;&lt;/td&gt;&quot;;<br />
+<br />
+così facendo, cliccando su più link della tabella (la funziona JS è sempre la stessa, cambia solo il valore della variabile $t_codice) i popup si aprono sempre nella stessa finestra..<br />
+<br />
+i tizi in azienda (FIA) vogliono che si aprano piu' popup..<br />
+non conosco nulla di JS, avete una funzione bella e pronta da usare? :D<br />
+<br />
+ps: FIA non e' il nome dell'azienda ma e' l'acronimo di altro..</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Superfre`</div><div class="date">29-03-2005, 23:44</div></div><div class="posttext">sull'onclick richiami una funzione in javascript che fa piu windows.open</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Progeny</div><div class="date">30-03-2005, 15:10</div></div><div class="posttext">*purtroppo* a me non serve aprire piu' finestre contemporaneamente cliccando sullo stesso link, a me serve aprire più finestre popup cliccando su link diversi.<br />
+ora come ora, con quella funzione che ho riportarto, cliccando su più link diversi, la pagina viene caricata sempre nella stessa finestra popup (perdendo quindi il contenuto della pagina precedentemente richiamata)<br />
+a me serve che vengano aperte più finestre, una per ogni popup..<br />
+<br />
+spero di essermi spiegato stavolta!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Superfre`</div><div class="date">30-03-2005, 16:27</div></div><div class="posttext">uhm, la gestione del target sul window.open praticamente.<br />
+<br />
+Guarda, prova a dare un nome diverso ad ogni finestra che apri nella parte del codice evidenziata in grassetto<br />
+<br />
+echo &quot;&lt;td&gt;&lt;font face=\&quot;Arial\&quot; size=\&quot;-2\&quot;&gt;&lt;a href=\&quot;#\&quot; onClick=\&quot;MyWindow=window.open('popup-clientdata.php?c=$t_codice','MyWindow','toolbar=no   ,location=no,directories=no,status=no,menubar=no,s   crollbars=yes,resizable=yes,width=400,height=400')   ; return false;\&quot;&gt;$t_codice&lt;/a&gt;&lt;/font&gt;&lt;/td&gt;&quot;;<br />
+<br />
+Dovrebbe funzionare se una la chiami Mywindow e l'altra mywindow2<br />
+Per fare una cosa piu pulita prova anche a scriverci _blank.<br />
+<br />
+Non garantisco perche non l'ho mai fatto<br />
+Fammi sapere</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Progeny</div><div class="date">31-03-2005, 18:16</div></div><div class="posttext">ho googlato e ho visto che funziona cambiando il nome della finestra, quindi:<br />
+<br />
+function draw_table($t_id, $t_codice, $t_nome, $t_cognome, $t_citta, $t_prov, $t_regione, $t_tel) {<br />
+/* Disegna una tabella per i clienti.. */<br />
+echo &quot;&lt;tr&gt;&quot;;<br />
+echo &quot;&lt;td&gt;&lt;font face=\&quot;Arial\&quot; size=\&quot;-2\&quot;&gt;&lt;a href=\&quot;#\&quot; onClick=\&quot;MW$t_codice=window.open('popup-clientdata.php?c=$t_codice', '$t_codice','toolbar=no,location=no,directories=no  ,status=no,menubar=no,scrollbars=yes,resizable=yes  ,width=400,height=400'); return false;\&quot;&gt;$t_codice&lt;/a&gt;&lt;/font&gt;&lt;/td&gt;&quot;;<br />
+echo &quot;&lt;td&gt;&lt;font face=\&quot;Arial\&quot; size=\&quot;-2\&quot;&gt;$t_nome&lt;/font&gt;&lt;/td&gt;&quot;;<br />
+echo &quot;&lt;td&gt;&lt;font face=\&quot;Arial\&quot; size=\&quot;-2\&quot;&gt;$t_cognome&lt;/font&gt;&lt;/td&gt;&quot;;<br />
+echo &quot;&lt;td&gt;&lt;font face=\&quot;Arial\&quot; size=\&quot;-2\&quot;&gt;$t_citta&lt;/font&gt;&lt;/td&gt;&quot;;<br />
+echo &quot;&lt;td&gt;&lt;font face=\&quot;Arial\&quot; size=\&quot;-2\&quot;&gt;$t_prov&lt;/font&gt;&lt;/td&gt;&quot;;<br />
+echo &quot;&lt;td&gt;&lt;font face=\&quot;Arial\&quot; size=\&quot;-2\&quot;&gt;$t_regione&lt;/font&gt;&lt;/td&gt;&quot;;<br />
+echo &quot;&lt;td&gt;&lt;font face=\&quot;Arial\&quot; size=\&quot;-2\&quot;&gt;$t_tel&lt;/font&gt;&lt;/td&gt;&quot;;<br />
+echo &quot;&lt;td&gt;&lt;a href=\&quot;agenteclienti.php?act=drop&amp;id=$t_id\&quot;&gt;&lt;font face=\&quot;Arial\&quot; size=\&quot;-1\&quot;&gt;Elimina&lt;/font&gt;&lt;/a&gt;&lt;/td&gt;&quot;;<br />
+echo &quot;&lt;/tr&gt;&quot;;<br />
+}</div></div><hr />
+
+
+<div id="copyright">vBulletin v3.5.3, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="ext3 vs. reiserfs , quale usare per file multimediali ?, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] ext3 vs. reiserfs , quale usare per file multimediali ? Discussioni Linux" />
+		<title>ext3 vs. reiserfs , quale usare per file multimediali ? [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-28.html">Discussioni Linux</a> &gt; ext3 vs. reiserfs , quale usare per file multimediali ?</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=8701">ext3 vs. reiserfs , quale usare per file multimediali ?</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Kid</div><div class="date">21-05-2005, 16:29</div></div><div class="posttext">ho installato un hd da 200gb per &quot;condivisione file casalinga&quot; e sono in dubbio tra il file sistem ext3 e il reiserfs. <br />
+su questo disco verranno parcheggiati file di ogni tipo, da foto fatte con la digitale (max 1mb l'una) a mp3 (quindi dai 5 a 10mb l'uno circa) a filmati vari (da 0 a 700/1400mb)<br />
+per la condivisione uso samba e come distribuzione ho debian sarge.<br />
+(sono le prime prove di condivisione da linux, di solito condividevo sempre da pc win ;)  )<br />
+ <br />
+Grazie @ all :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mav</div><div class="date">21-05-2005, 21:58</div></div><div class="posttext">Probabilmente suonerà come parere partigiano e non oggettivo, ma dopo esser rimasto fregato da Reiser4 (partizione di root andata e sistema inusabile dopo un reboot forzato... ma Reiser4 che se ne fa del journal?) e aver letto di alcuni commenti di Hans Reiser (il creatore di ReiserFS e Reiser4) credo che sarebbe meglio evitare qualsiasi cosa esca dal suo cervello. :-)<br />
+<br />
+Le posizioni di Hans Reiser riguardo ai suoi filesystem mi sono sembrate molto presuntuose. In particolare il suo totale disinteresse al lavoro della comunità per la definizione di uno standard POSIX per l'implementazione degli extended attributes seguito dalla sua affermazione che quello standard fa schifo e che quanto lui ha implementato in Reiser4 è migliore. Non è questo l'atteggiamento giusto nel campo dell'Open Source. A questo poi si aggiunge la sua teoria secondo cui Reiser4 è &quot;il meglio&quot; e dovrebbe sostituire il layer VFS di Linux, in modo tale che tutti gli altri filesystem vengano implementati come plug-in di Reiser4.<br />
+<br />
+Morale della favola: usa Ext3, o al limite XFS o JFS, ma stai lontano da Reiser*.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">City_Hunter</div><div class="date">22-05-2005, 01:29</div></div><div class="posttext">Le posizioni di Hans Reiser riguardo ai suoi filesystem mi sono sembrate molto presuntuose. In particolare il suo totale disinteresse al lavoro della comunità per la definizione di uno standard POSIX per l'implementazione degli extended attributes seguito dalla sua affermazione che quello standard fa schifo e che quanto lui ha implementato in Reiser4 è migliore. Non è questo l'atteggiamento giusto nel campo dell'Open Source. A questo poi si aggiunge la sua teoria secondo cui Reiser4 è &quot;il meglio&quot; e dovrebbe sostituire il layer VFS di Linux, in modo tale che tutti gli altri filesystem vengano implementati come plug-in di Reiser4.<br />
+Sembra interessante :)<br />
+Hai un link dove possa leggere qualcosa a riguardo?<br />
+<br />
+Devo dire che reiserfs4 prima o poi mi piacerebbe provarlo, magari sul secondo disco in una partizione dati (per non rischiare!)... giusto per vedere se quei benchmark così eclatanti, disponibili sul sito di namesys, trovano riscontro.<br />
+<br />
+In merito alla domanda posta nel thread... Kid, se prevedi di maneggiare spesso file di notevoli dimensioni (come dati video o raw audio), XFS è di gran lunga il migliore.<br />
+Magari mantenendo Ext3 (data la sua solidità) per la partizione di root.<br />
+<br />
+Qualche link utile per XFS:<br />
+http://www-106.ibm.com/developerworks/linux/library/l-fs9.html<br />
+http://www-106.ibm.com/developerworks/linux/library/l-fs10.html<br />
+http://oss.sgi.com/projects/xfs/</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kid</div><div class="date">22-05-2005, 07:44</div></div><div class="posttext">ok, direi che i miei dubbi sono stati ampiamente fugati!<br />
+<br />
+Per pura fortuna ho fatto tutto in ext3 (root / home / partizione condivisa) quindi tengo tutto così! magari un domani converto in XFS qualcosa ...... l'importante è che sto cominciando a capirci!! :okay:<br />
+<br />
+Unica cosa .... mi sembra che XFS sia in fase di sviluppo .... che non sia in versione &quot;definitiva&quot;, sbaglio? :-?<br />
+<br />
+<br />
+<br />
+GraSSie ad entrambi! :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">City_Hunter</div><div class="date">22-05-2005, 10:48</div></div><div class="posttext">Unica cosa .... mi sembra che XFS sia in fase di sviluppo .... che non sia in versione &quot;definitiva&quot;, sbaglio? :-?<br />
+No, è stabile.<br />
+Nel kernel 2.6.11.10 (l'ultimo al momento in cui scrivo) l'unica parte di XFS denominata &quot;sperimentale&quot; è quella per il subvolume realtime (ma non è un'opzione indispensabile, è solo un'extra per scopi specifici).<br />
+Per il resto XFS è presente nel kernel di Linux da un bel pò e le distribuzioni di Linux includono da tempo i programmi necessari alla sua manipolazione (per esempio in Slackware Linux il pacchetto si chiama xfsprogs).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mav</div><div class="date">22-05-2005, 10:59</div></div><div class="posttext">Per cominciare:<br />
+<br />
+http://lwn.net/Articles/82461/ - Alcune note su Reiser4<br />
+http://marc.theaimsgroup.com/?l=reiserfs&amp;m=109884834430347&amp;w=2 - Il repacker non sarà free<br />
+http://lwn.net/Articles/100148/ - Altre note su Reiser4<br />
+<br />
+Notare che se non si usa il repacker a quanto ne so Reiser4 è molto soggetto alla frammentazione dei log del journal, e le prestazioni decadono.</div></div><hr />
+
+
+<div id="copyright">vBulletin v3.5.3, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

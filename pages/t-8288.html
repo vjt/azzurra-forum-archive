@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="layout con tabelle, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] layout con tabelle Programmazione e dintorni" />
+		<title>layout con tabelle [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-23.html">Programmazione e dintorni</a> &gt; layout con tabelle</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=8288">layout con tabelle</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Progeny</div><div class="date">18-04-2005, 01:29</div></div><div class="posttext">Salve, <br />
+uso delle tabelle per fare il layout del sito in PHP. <br />
+Purtroppo qualcosa ogni tanto va storto, leggete i codici delle pagine <br />
+index.php -&gt; http://phpfi.com/56863 <br />
+intro.php -&gt; http://phpfi.com/56864 <br />
+<br />
+se in riga 108 della pagina index.php: <br />
+&lt;TD vAlign=top&gt;&lt;?php include('blocks/intro.php'); ?&gt;&lt;/TD&gt; <br />
+<br />
+metto un controllo che include il file intro.php solo se l'utente ha fatto il login, tutte le volte che non viene eseguito il login e quindi non viene caricata la pagina intro.php, tutto il layout del sito va a farsi benedire, tutte le tabelle vengono sballate.. <br />
+<br />
+qualcuno ha idea del perchè? magari qualche tag omesso o qualcosa del genere :|</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blaze</div><div class="date">18-04-2005, 09:48</div></div><div class="posttext">fondamentalmente è perche' chiui due volte &lt;/td&gt; e &lt;/tr&gt; e &lt;/tbody&gt; credo :) (sega le chiusure da intro.php)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Progeny</div><div class="date">18-04-2005, 11:49</div></div><div class="posttext">purtroppo non va.. :(<br />
+è oltre una settimana che provo, ghgh</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blaze</div><div class="date">18-04-2005, 12:05</div></div><div class="posttext">prova ad aggiungere uno &lt;/table&gt; alla fine di intro.php</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Progeny</div><div class="date">18-04-2005, 12:42</div></div><div class="posttext">il problema è che quando NON includo intro.php va a puttane tutto il layout :|<br />
+quando la includo va tutto per bene</div></div><hr />
+
+
+<div id="copyright">vBulletin v3.5.3, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

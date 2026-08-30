@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="JavaScript: Poll Module, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] JavaScript: Poll Module Programmazione e dintorni" />
+		<title>JavaScript: Poll Module [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-23.html">Programmazione e dintorni</a> &gt; JavaScript: Poll Module</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=8103">JavaScript: Poll Module</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Progeny</div><div class="date">04-04-2005, 12:17</div></div><div class="posttext">tutto il codice lo trovate su: http://phpfi.com/56555<br />
+<br />
+non capisco perchè alla pressione del bottone per inviare il voto, è come se la funzione javascript non fosse chiamata.. :| boh.. purtroppo qui non ho neanche un debugger per javascript..</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blaze</div><div class="date">04-04-2005, 16:32</div></div><div class="posttext">uhm prima in chat quando mi hai chiesto non ci avevo fatto caso....<br />
+<br />
+vero che il tag &lt;script&gt; l'hai messo dentro &lt;head&gt; ?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Progeny</div><div class="date">04-04-2005, 16:50</div></div><div class="posttext">ehm no, non conoscendo il JS l'ho preso da qualche parte e non mi pare di averlo visto in &lt;head&gt; :perplex1:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blaze</div><div class="date">04-04-2005, 17:10</div></div><div class="posttext">ecco mettilo in head bravo :P :*</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Progeny</div><div class="date">04-04-2005, 17:15</div></div><div class="posttext">però così è sux che devo fare la query per fetchare i dati del sondaggio dal database all'inizio della pagina index che poi richiamerà quella del sondaggio, ghgh.. vabbè proverò</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Progeny</div><div class="date">04-04-2005, 17:22</div></div><div class="posttext">non funziona manco mettendolo in &lt;head&gt; :(</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blaze</div><div class="date">04-04-2005, 17:24</div></div><div class="posttext">ri-incolla il codice</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Progeny</div><div class="date">04-04-2005, 17:29</div></div><div class="posttext">risolto, non serviva metterlo negli &lt;head&gt;<br />
+ho chiesto a qualcuno con IE vedere se dava errori JS, ed in effetti..<br />
+<br />
+avevo combinato un casino con la window.open<br />
+<br />
+funziona perfettamente così:<br />
+<br />
+&lt;SCRIPT LANGUAGE=&quot;JavaScript&quot;&gt;<br />
+function sendPollValue() {<br />
+var selectedOption;<br />
+for (var i = 0; i &lt; document.poll_&lt;?=$poll_id?&gt;.voteID_&lt;?=$poll_id?&gt;.length; i++) {<br />
+ if (document.poll_&lt;?=$poll_id?&gt;.voteID_&lt;?=$poll_id?&gt;[i].checked==&quot;1&quot;) {<br />
+  selectedOption=(i+1);<br />
+  selectedOption=document.poll_&lt;?=$poll_id?&gt;.voteID_&lt;?=$poll_id?&gt;[i].value;<br />
+ }<br />
+}<br />
+window.open('vote.php?act=vote&amp;id=&lt;?=$poll_id?&gt;&amp;optid='+selectedOption, 'Sondaggio','toolbar=no,location=no,directories=no  ,status=no,menubar=no,scrollbars=yes,resizable=yes  ,width=320,height=240');<br />
+}<br />
+&lt;/SCRIPT&gt;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blaze</div><div class="date">04-04-2005, 17:56</div></div><div class="posttext">boh non ho voglia di guardare le differenze :)<br />
+non sapevo che non c'era bisogno di mettere dentro head :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Progeny</div><div class="date">04-04-2005, 20:00</div></div><div class="posttext">beh, anche io ero rimasto che gli scripts si mettessero in &lt;head&gt;<br />
+misteri..</div></div><hr />
+
+
+<div id="copyright">vBulletin v3.5.3, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

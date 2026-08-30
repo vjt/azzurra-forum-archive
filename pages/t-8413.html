@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="PHP: regexp, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] PHP: regexp Programmazione e dintorni" />
+		<title>PHP: regexp [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-23.html">Programmazione e dintorni</a> &gt; PHP: regexp</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=8413">PHP: regexp</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Progeny</div><div class="date">25-04-2005, 02:36</div></div><div class="posttext">/* Controllo sull'username */<br />
+    if (!preg_match(&quot;/[A-Z0-9]/i&quot;, $username)) {<br />
+    $reg = 0;<br />
+    echo &quot;&lt;b&gt;Errore:&lt;/b&gt;&lt;br&gt;Sono permessi nel campo username, solamente caratteri alfanumerici (lettere e numeri), senza spazi o punteggiatura varia.&lt;br&gt;&lt;br&gt;Tornare indietro e compilare correttamente tutti i campi.&lt;br&gt;&quot;;<br />
+    }<br />
+<br />
+perchè non va questa regexp? :/<br />
+vorrei che fossero consetiti solo caratteri alfanumerici e al massimo il &quot;trattino basso&quot; _ invece sembra che vada qualsiasi carattere...<br />
+<br />
+idee?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">}gu|do[z]{®©</div><div class="date">25-04-2005, 10:21</div></div><div class="posttext">ma che percaso sei orebla del forum di html.it? O_o ha chiesto la stessa cosa :D<br />
+<br />
+cmq io non uso mai le PCRE, am le POSIX..... quindi al volo ti posso dire:<br />
+<br />
+ if(!eregi(&quot;^[A-Z0-9_]{5,15}$&quot;,$username))<br />
+<br />
+dove 5 e 15 ho supposto essere il minimo e il massimo numero di caratteri.. vedi tu se metterceli e quali metterci ^_^<br />
+<br />
+DOVREBBE andare.. ma non ho provato..<br />
+<br />
+ciauz</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Progeny</div><div class="date">25-04-2005, 11:01</div></div><div class="posttext">mhmm avrò eliminato per sbaglio la mail che comunica nuova risposte per il thred di la :D<br />
+non avevo visto che mi è stato risposto :neutral:</div></div><hr />
+
+
+<div id="copyright">vBulletin v3.5.3, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="/who, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] /who Angolo tecnico" />
+	
+	<title>/who [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php/">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-13.html">Angolo tecnico</a> &gt; /who</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=234">/who</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">City_Hunter</div><div class="date">27-10-2001, 10:08</div></div><div class="posttext">Pur avendo consultato la documentazione del bahamut per capire il comportamento del comando /who su questo ircD, ho ancora perplessità di tipo pratico.<br />
+Mi è capitato spesso di ricevere segnalazioni (e in effetti l'ho sperimentato in prima persona stamane) riguardo al malfunzionamento del comando /who (in modo sporadico e su più servers) che di fatto non forniva informazioni su nick presenti nei canali dove mi trovavo e neanche sul canale stesso.<br />
+Una conseguenza banale è stata ritrovarmi con l'IAL di mIRC vuota perchè il /who #canale on join non aveva inserito voci nella lista.<br />
+Da cosa può dipendere questo? Un saltuario bug di bahamut?<br />
+ciao :smile:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">debiAn</div><div class="date">28-10-2001, 19:20</div></div><div class="posttext">Ufficialmente DALNet ci ha comunicato che non è un bug ma bensi' una flood protection.<br />
+<br />
+Basta mettere un piccolo delay al connect sui join nei canali.<br />
+<br />
+Il comando /who è tra quelli che mettono maggiormente sotto sforzo la CPU, questa protezione è stata concepita contro eventuali DOS che potevano essere generati mandando molti /who in chan molto grossi.<br />
+<br />
+Il fatto che non mandi una notice di avviso e che successivamente non c'è modo di mandare altri who è una cosa molto discutibile ma IMHO è un problema che deve risolvere DALNet, non noi.<br />
+<br />
+Maggiori informazioni sul problema le puo dare vejeta, che ha seguito meglio di me l'evolversi della discussione con i coder di bahamut.<br />
+<br />
+saluti<br />
+<br />
+debiAn</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">void`</div><div class="date">15-01-2002, 13:43</div></div><div class="posttext">si .. inoltre nella nuova patch che sto preparando,<br />
+una riscrittura riveduta e corretta della vecchia,<br />
+ed inoltre fatta su bahamut-1.4.30, il /who<br />
+non sara` piu` limitato a /who #canale, ma sara`<br />
+l`equivalente di quello di DALnet, ovviamente<br />
+mostrando gli host mascherati.<br />
+il problema e` nato quando decidemmo di tagliarlo<br />
+per evitare bug come quello che c`era sull`AR:<br />
+un `bruteforce' col /who e si riusciva ad avere l`ip<br />
+di un utente. ho implementato una protezione per questo<br />
+e quindi nelle nuove versioni il /who sara`<br />
+strettamente rfc compliant, e non si avranno +<br />
+di questi problemi.</div></div><hr />
+
+
+<div id="copyright">vBulletin&reg; v3.6.7, Copyright &copy;2000-2007, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

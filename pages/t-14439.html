@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content=" dcc e Fastweb, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio]  dcc e Fastweb IRCHelp - Aiuto su IRC e Servizi di Azzurra" />
+	
+	<title> dcc e Fastweb [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="http://forum.azzurra.org/archive/index.php">Azzurra IRC Network Forum</a> &gt; <a href="http://forum.azzurra.org/archive/index.php/f-6.html">Network Central</a> &gt; <a href="http://forum.azzurra.org/archive/index.php/f-11.html">IRCHelp - Aiuto su IRC e Servizi di Azzurra</a> &gt;  dcc e Fastweb</div>
+<hr />
+<div class="pda"><a href="http://forum.azzurra.org/archive/index.php/t-14439.html?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=14439">dcc e Fastweb</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">erede</div><div class="date">20-04-2007, 15:27</div></div><div class="posttext">Ciao a tutti...ho un problema...non riesco ad inviare nè a ricevere file su mirc...ho seguito questa guida qui  http://www.azzurra.org/index.php?option=com_content&amp;task=view&amp;id=74&amp;Itemid=104 ma con nessuna di queste riesco a far funzionare le dcc...l'errore che mi da è il seguente Firewall: Impossibile connettersi al firewall <br />
+Connessione fallita qualcuno saprebbe aiutarmi?Vi ringrazio!:okay:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Alex1</div><div class="date">20-04-2007, 15:45</div></div><div class="posttext">se segui la guida correttamente non avrai problemi<br />
+riesegui tutto passo passo</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">erede</div><div class="date">20-04-2007, 15:47</div></div><div class="posttext">Già provato mille volte ma da sempre lo stesso errore</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Alex1</div><div class="date">20-04-2007, 16:52</div></div><div class="posttext">fa uno stamp della configurazione di analog</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">erede</div><div class="date">20-04-2007, 21:40</div></div><div class="posttext">è esattamente identico a come lo si vede in questo link http://www.azzurra.org/index.php?option=com_content&amp;task=view&amp;id=74&amp;Itemid=104 e mi da questo errore Firewall: Connessione respinta Connessione fallita poi mi han detto di provare con socks 4 ma da questo errore  Firewall: general SOCKS server failure Connessione fallita :-?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Alex1</div><div class="date">21-04-2007, 07:44</div></div><div class="posttext">hai attivato correttamente l'alias?<br />
+se vuoi mandare a un utente non fastweb devi:<br />
+<br />
+1) aprire analogx<br />
+2) scrivere sul tuo mirc /fwdcc off</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">erede</div><div class="date">21-04-2007, 10:26</div></div><div class="posttext">quando digito il comando mi dice così:FWDCC Unknown command<br />
+<br />
+Ora ho riprovato mi attiva le dcc verso altri utenti non fastweb ma quando provo a sendare mi da questo errore Firewall: general SOCKS server failure Connessione fallita</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Justarius</div><div class="date">21-04-2007, 10:41</div></div><div class="posttext">Ma hai copiato l'alias che trovi nella guida ? <br />
+Se lo hai fatto non dovrebbe darti &quot; fwdcc unknow command &quot;<br />
+<br />
+L'alias è questo <br />
+<br />
+/fwdcc {<br />
+ if ($$1 == on) {<br />
+  localinfo -h<br />
+  .firewall -d off<br />
+  echo -at 2* Ora puoi usare le DCC verso abbonati Fastweb<br />
+ }<br />
+ if ($$1 == off) {<br />
+  localinfo -h<br />
+  .firewall -cm5+d on 127.0.0.1 1080<br />
+  .firewall +d off<br />
+  echo -at 2* Ora puoi usare le DCC verso abbonati di altri provider<br />
+ }<br />
+}</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">erede</div><div class="date">21-04-2007, 10:56</div></div><div class="posttext">Si l'ho messo l'alias e mi esce 2* Ora puoi usare le DCC verso abbonati di altri provider ma quando sendo da questo errore Firewall: general SOCKS server failure Connessione fallita</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Alex1</div><div class="date">21-04-2007, 13:21</div></div><div class="posttext">Si l'ho messo l'alias e mi esce 2* Ora puoi usare le DCC verso abbonati di altri provider ma quando sendo da questo errore Firewall: general SOCKS server failure Connessione fallita<br />
+il programma AnalogX è aperto?<br />
+mIRC è configurato come nella guida?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">erede</div><div class="date">21-04-2007, 13:29</div></div><div class="posttext">Si è aperto e mirc è configurato pari pari alla guida</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">trekfan1</div><div class="date">22-04-2007, 17:05</div></div><div class="posttext">Scusate se mi intrometto, da mIRC 6.1x in poi è presente l'opzione Passive DCC in options/dcc/options così non serve analogx</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">erede</div><div class="date">23-04-2007, 10:11</div></div><div class="posttext">Io ho mirc 6.21</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">trekfan1</div><div class="date">23-04-2007, 13:56</div></div><div class="posttext">Allora vai in options/dcc/options e abilita Passive DCC e la scheda firewall di mirc lasciala come se lo avessi appena installato, cioè:<br />
+<br />
+Firewall Support: NONE<br />
+Hostname e gli altri rettangoli vuoti, cioè bianchi</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">erede</div><div class="date">23-04-2007, 14:15</div></div><div class="posttext">Attesta di una risposta<br />
+Connessione fallita<br />
+<br />
+Mi da questo errore...</div></div><hr />
+
+
+<div id="copyright">vBulletin&reg; v3.8.2, Copyright &copy;2000-2012, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

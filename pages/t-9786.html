@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content=" Completa parole per mirc, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio]  Completa parole per mirc L'angolo del piccolo menomato informatico" />
+	
+	<title> Completa parole per mirc [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="http://forum.azzurra.org/archive/index.php">Azzurra IRC Network Forum</a> &gt; <a href="http://forum.azzurra.org/archive/index.php/f-4.html">Happy Hour</a> &gt; <a href="http://forum.azzurra.org/archive/index.php/f-25.html">L'angolo del piccolo menomato informatico</a> &gt;  Completa parole per mirc</div>
+<hr />
+<div class="pda"><a href="http://forum.azzurra.org/archive/index.php/t-9786.html?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=9786">Completa parole per mirc</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">^Norad^</div><div class="date">27-07-2005, 06:48</div></div><div class="posttext">Vi siete trovati anche voi a tentare di completare le parole lunghe con il tasto TAB?<br />
+Allora questo mini script fa per voi!<br />
+ <br />
+Lo script va inserito nei remote.<br />
+ <br />
+Per utillizzarlo vanno aggiungente le parole che più usate ad un file dizionario.txt (che viene creato nella directory di mIRC) semplicemente con CTRL F7 dopo aver scritto la parola nell'editbox di qualunque finestra.<br />
+ <br />
+In seguito basterà scrivere le prime lettere della parola e poi premere F7 per averne il completamento.<br />
+ <br />
+(Prima versione, fase molto beta)<br />
+ <br />
+ <br />
+alias f7 {<br />
+set %WRCfraseinput $editbox( $active )<br />
+if ((( $left(%WRCPfraseout ,1) == $chr(32) ) &amp;&amp; ( %WRCfraseinput != $right( %WRCPfraseout ,-1))) || (( $left(%WRCPfraseout ,1) != $chr(32) ) &amp;&amp; ( %WRCfraseinput != %WRCPfraseout ))) {<br />
+	unset %WRCP*<br />
+	if ( $len(%WRCfraseinput) &lt; 1 ) halt<br />
+	else {<br />
+	 set %WRCPspazi $pos(%WRCfraseinput, $chr(32) , 0)<br />
+	 if ( %WRCPspazi != 0 ) {<br />
+		set %WRCPultimo_spazio $pos(%WRCfraseinput, $chr(32) , %WRCPspazi )<br />
+		set %WRCPinizioparola $right(%WRCfraseinput,- $+ %WRCPultimo_spazio)<br />
+	 }<br />
+	 else { set %WRCPinizioparola %WRCfraseinput }<br />
+	 set %WRCPiniziofrase $left(%WRCfraseinput,%WRCPultimo_spazio)<br />
+	}<br />
+}<br />
+set %WRCPlineadiz %WRCPlineadiz + 1<br />
+set %WRCPparolaintera $read( dizionario.txt, w, %WRCPinizioparola $+ *, %WRCPlineadiz )<br />
+set %WRCPlineadiz $readn<br />
+if ( %WRCPparolaintera != $null ) set %WRCPfraseout %WRCPiniziofrase $+ $chr(32) $+ %WRCPparolaintera<br />
+else set %WRCPfraseout %WRCPiniziofrase $+ $chr(32) $+ %WRCPinizioparola<br />
+editbox -a %WRCPfraseout<br />
+}<br />
+ <br />
+ <br />
+alias cf7 {<br />
+set %WRCAfraseinput $editbox( $active )<br />
+if ( $len(%WRCAfraseinput) &lt; 3 ) halt<br />
+else {<br />
+	set %WRCAspazi $pos(%WRCAfraseinput, $chr(32) , 0)<br />
+	if ( %WRCAspazi != 0 ) {<br />
+	 set %WRCAultimo_spazio $pos(%WRCAfraseinput, $chr(32)

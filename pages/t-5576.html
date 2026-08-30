@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="PHP: backup database mysql, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] PHP: backup database mysql Programmazione e dintorni" />
+		<title>PHP: backup database mysql [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-23.html">Programmazione e dintorni</a> &gt; PHP: backup database mysql</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=5576">PHP: backup database mysql</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Progeny</div><div class="date">13-09-2004, 12:55</div></div><div class="posttext">Qualcuno ha idea del perchè questa pagina non funziona come dovrebbe?<br />
+<br />
+<br />
+&amp;lt;?<br />
+include&#40;&amp;quot;GlobalChecks.inc.php&amp;quot;&#41;;<br />
+<br />
+$Oggi = date&#40;&amp;quot;d-m-Y&amp;quot;&#41;;<br />
+$Ora = date&#40;&amp;quot;H&#58;m&#58;s&amp;quot;&#41;;<br />
+<br />
+$Backup = &amp;quot;backup/BackupInfoScadenze_$Oggi.sql&amp;quot;;<br />
+$fp = @fopen&#40;$Backup, &amp;quot;w&amp;quot;&#41;;<br />
+if &#40;!$fp&#41; PrintError&#40;&amp;quot;La directory non è scrivibile.&amp;lt;br&amp;gt;Impossibile creare il file temporaneo.&amp;lt;br&amp;gt;&amp;quot;&#41;;<br />
+ <br />
+<br />
+fwrite&#40;$fp,<br />
+&amp;quot;#\n&amp;quot;.<br />
+&amp;quot;# File&#58; SQL&amp;quot;. basename&#40;$Backup&#41; .&amp;quot;\n&amp;quot;.<br />
+&amp;quot;# Description&#58; Backup tabella 'InfoScadenze'\n&amp;quot;.<br />
+&amp;quot;# Data&#58; &amp;quot;. $Oggi .&amp;quot;\n&amp;quot;.<br />
+&amp;quot;# Ora&#58; &amp;quot;. $Ora . &amp;quot;\n&amp;quot;.<br />
+&amp;quot;#\n\n&amp;quot;&#41;;<br />
+   <br />
+$MysqlQuery = &amp;quot;SELECT * FROM InfoScadenze;&amp;quot;;<br />
+$QueryExecuted = @mysql_query&#40;$MysqlQuery, $MySQL&#41;;<br />
+if &#40;!$QueryExecuted&#41;<br />
+&#123;<br />
+   $ThisError = urlencode&#40;mysql_error&#40;&#41;&#41;;<br />
+   MysqlError&#40;$ThisError, 1&#41;;<br />
+&#125;<br />
+<br />
+$ListaCA   = array&#40;&#41;;<br />
+$ListaG1   = array&#40;&#41;;<br />
+$ListaG2   = array&#40;&#41;;<br />
+$ListaG3   = array&#40;&#41;;<br />
+$ListaG4   = array&#40;&#41;;<br />
+$ListaG5   = array&#40;&#41;;<br />
+$ListaG6   = array&#40;&#41;;<br />
+$ListaG7   = array&#40;&#41;;<br />
+$ListaG8   = array&#40;&#41;;<br />
+$ListaG9   = array&#40;&#41;;<br />
+$ListaG10  = array&#40;&#41;;<br />
+$ListaG11  = array&#40;&#41;;<br />
+$ListaG12  = array&#40;&#41;;<br />
+$ListaHC1  = array&#40;&#41;;<br />
+$ListaHC2  = array&#40;&#41;;<br />
+$ListaHC3  = array&#40;&#41;;<br />
+$ListaHC4  = array&#40;&#41;;<br />
+$ListaES1  = array&#40;&#41;;<br />
+$ListaES2  = array&#40;&#41;;<br />
+$ListaES3  = array&#40;&#41;;<br />
+$ListaES4  = array&#40;&#41;;<br />
+$ListaPT1  = array&#40;&#41;;<br />
+$ListaPT2  = array&#40;&#41;;<br />
+$ListaPT3  = array&#40;&#41;;<br />
+$ListaPT4  = array&#40;&#41;;<br />
+<br />
+while &#40; $data = mysql_fetch_array&#40;$QueryExecuted, MYSQL_ASSOC&#41; &#41;<br />
+&#123;<br />
+   $ListaCA&#91;&#93;   = $data&#91;'CodiceAzienda'&#93;;<br />
+   $ListaG1&#91;&#93;   = $data&#91;'Gruppo1'&#93;;<br />
+   $ListaG2&#91;&#93;   = $data&#91;'Gruppo2'&#93;;<br />
+   $ListaG3&#91;&#93;   = $data&#91;'Gruppo3'&#93;;<br />
+   $ListaG4&#91;&#93;   = $data&#91;'Gruppo4'&#93;;<br />
+   $ListaG5&#91;&#93;   = $data&#91;'Gruppo5'&#93;;<br />
+   $ListaG6&#91;&#93;   = $data&#91;'Gruppo6'&#93;;<br />
+   $ListaG7&#91;&#93;   = $data&#91;'Gruppo7'&#93;;<br />
+   $ListaG8&#91;&#93;   = $data&#91;'Gruppo8'&#93;;<br />
+   $ListaG9&#91;&#93;   = $data&#91;'Gruppo9'&#93;;<br />
+   $ListaG10&#91;&#93;  = $data&#91;'Gruppo10'&#93;;<br />
+   $ListaG11&#91;&#93;  = $data&#91;'Gruppo11'&#93;;<br />
+   $ListaG12&#91;&#93;  = $data&#91;'Gruppo12'&#93;;<br />
+   $ListaHC1&#91;&#93;  = $data&#91;'Hccp1'&#93;;<br />
+   $ListaHC2&#91;&#93;  = $data&#91;'Hccp2'&#93;;<br />
+   $ListaHC3&#91;&#93;  = $data&#91;'Hccp3'&#93;;<br />
+   $ListaHC4&#91;&#93;  = $data&#91;'Hccp4'&#93;;<br />
+   $ListaES1&#91;&#93;  = $data&#91;'Est1'&#93;;<br />
+   $ListaES2&#91;&#93;  = $data&#91;'Est2'&#93;;<br />
+   $ListaES3&#91;&#93;  = $data&#91;'Est3'&#93;;<br />
+   $ListaES4&#91;&#93;  = $data&#91;'Est4'&#93;;<br />
+   $ListaPT1&#91;&#93;  = $data&#91;'Ptec1'&#93;;<br />
+   $ListaPT2&#91;&#93;  = $data&#91;'Ptec2'&#93;;<br />
+   $ListaPT3&#91;&#93;  = $data&#91;'Ptec3'&#93;;<br />
+   $ListaPT4&#91;&#93;  = $data&#91;'Ptec4'&#93;;<br />
+&#125;<br />
+<br />
+$Items = count&#40;$ListaCA&#41;;<br />
+<br />
+if &#40;$Items == '0'&#41;<br />
+&#123;  <br />
+   die&#40;&amp;quot;&amp;lt;script language='javascript'&amp;gt;\n&amp;quot;.<br />
+       &amp;quot; alert&#40;'La tabella selezionata risulta vuota.'&#41;;\n&amp;quot;.<br />
+       &amp;quot;&amp;lt;/script&amp;gt;&amp;quot;.<br />
+       &amp;quot;&amp;lt;meta http-equiv='refresh' content='1; URL=InserisciAzienda.php'&amp;gt;&amp;quot;&#41;;<br />
+&#125;          <br />
+<br />
+for&#40;$i=0;$i&amp;lt;$Items;$i++&#41;<br />
+&#123;<br />
+   $Line = 'INSERT INTO InfoScadenze VALUES &#40;&amp;quot;'.<br />
+           $ListaCA&#91;$i&#93; .'&amp;quot;,&amp;quot;'. $ListaG1&#91;$i&#93; .'&amp;quot;,&amp;quot;'. $ListaG2&#91;$i&#93; .'&amp;quot;,&amp;quot;'.  $ListaG3&#91;$i&#93; .'&amp;quot;,&amp;quot;'. $ListaG4&#91;$i&#93; .'&amp;quot;,&amp;quot;'. $ListaG5&#91;$i&#93; .'&amp;quot;,&amp;quot;'. $ListaG6&#91;$i&#93; .'&amp;quot;,&amp;quot;'. $ListaG7&#91;$i&#93; .'&amp;quot;,&amp;quot;'. $ListaG8&#91;$i&#93; .'&amp;quot;,&amp;quot;'. $ListaG9&#91;$i&#93; .'&amp;quot;,&amp;quot;'. $ListaG10&#91;$i&#93; .'&amp;quot;,&amp;quot;'. $ListaG11&#91;$i&#93; .'&amp;quot;,&amp;quot;'. $ListaG12&#91;$i&#93; .'&amp;quot;,&amp;quot;'.<br />
+           $ListaHC1&#91;$i&#93; .'&amp;quot;,&amp;quot;'. $ListaHC2&#91;$i&#93; .'&amp;quot;,&amp;quot;'. $ListaHC3&#91;$i&#93; .'&amp;quot;,&amp;quot;'. $ListaHC4&#91;$i&#93; .'&amp;quot;,&amp;quot;'.<br />
+           $ListaES1&#91;$i&#93; .'&amp;quot;,&amp;quot;'. $ListaES2&#91;$i&#93; .'&amp;quot;,&amp;quot;'. $ListaES3&#91;$i&#93; .'&amp;quot;,&amp;quot;'. $ListaES4&#91;$i&#93; .'&amp;quot;,&amp;quot;'.<br />
+           $ListaPT1&#91;$i&#93; .'&amp;quot;,&amp;quot;'. $ListaPT2&#91;$i&#93; .'&amp;quot;,&amp;quot;'. $ListaPT3&#91;$i&#93; .'&amp;quot;,&amp;quot;'. $ListaPT4&#91;$i&#93; .'&amp;quot;&#41;'.&amp;quot;\n&amp;quot;;<br />
+<br />
+   @fwrite&#40;$fp,$Line&#41;;<br />
+   @fclose&#40;$fp&#41;;<br />
+   header&#40;&amp;quot;Expires&#58; Mon, 26 Jul 1997 05&#58;00&#58;00 GMT&amp;quot;&#41;;    // Data passata<br />
+   header&#40;&amp;quot;Last-Modified&#58; &amp;quot; . gmdate&#40;&amp;quot;D, d M Y H&#58;i&#58;s&amp;quot;&#41; . &amp;quot; GMT&amp;quot;&#41;;<br />
+   header&#40;&amp;quot;Cache-Control&#58; no-store, no-cache, must-revalidate&amp;quot;&#41;;  // HTTP/1.1<br />
+   header&#40;&amp;quot;Cache-Control&#58; post-check=0, pre-check=0&amp;quot;, false&#41;;<br />
+   header&#40;&amp;quot;Pragma&#58; no-cache&amp;quot;&#41;;                          // HTTP/1.0<br />
+   header&#40;&amp;quot;Content-type&#58; application/octetstream&amp;quot;&#41;;<br />
+   header&#40;&amp;quot;Content-Disposition&#58; filename=&amp;quot;.basename&#40;$Backup&#41;&#41;;<br />
+   @readfile&#40;$Backup&#41;;<br />
+<br />
+&#125;<br />
+?&amp;gt;<br />
+<br />
+<br />
+#<br />
+# File: SQLBackupInfoScadenze_13-09-2004.sql<br />
+# Description: Backup tabella 'InfoScadenze'<br />
+# Data: 13-09-2004<br />
+# Ora: 10:09:02<br />
+#<br />
+<br />
+INSERT INTO InfoScadenze VALUES (&quot;0000028538&quot;,&quot;Visita 1 - 02 - 2004 - Biennale - BA (Bari) - 5&quot;,&quot;Visita 2 - 04 - 2004 - Biennale - Tutte - 0&quot;,&quot;Visita 1 - 01 - 2004 - Biennale - Tutte - 0&quot;,&quot;Visita 1 - 01 - 2004 - Biennale - Tutte - 0&quot;,&quot;Visita 1 - 01 - 2004 - Biennale - Tutte - 0&quot;,&quot;Visita 1 - 01 - 2004 - Biennale - Tutte - 0&quot;,&quot;Visita 1 - 01 - 2004 - Biennale - Tutte - 0&quot;,&quot;Visita 1 - 01 - 2004 - Biennale - Tutte - 0&quot;,&quot;Visita 1 - 01 - 2004 - Biennale - Tutte - 0&quot;,&quot;Visita 1 - 01 - 2004 - Biennale - Tutte - 0&quot;,&quot;Visita 1 - 01 - 2004 - Biennale - Tutte - 0&quot;,&quot;Visita 1 - 01 - 2004 - Biennale - Tutte - 0&quot;,&quot;Hccp 1 - 02 - 2004 - Biennale - Tutte - 0&quot;,&quot;Hccp 1 - 01 - 2004 - Biennale - Tutte - 0&quot;,&quot;Hccp 1 - 01 - 2004 - Biennale - Tutte - 0&quot;,&quot;Hccp 1 - 01 - 2004 - Biennale - Tutte - 0&quot;,&quot;Estintori 1 - 04 - 2004 - Biennale - Tutte - 0&quot;,&quot;Estintori 1 - 01 - 2004 - Biennale - Tutte - 0&quot;,&quot;Estintori 1 - 06 - 2004 - Biennale - BZ (Bolzano) - 100&quot;,&quot;Estintori 1 - 05 - 2004 - Biennale - Tutte - 200&quot;,&quot;Parte Tecnica 2 - 01 - 2004 - Biennale - Tutte - 0&quot;,&quot;Parte Tecnica 3 - 08 - 2004 - Biennale - Tutte - 0&quot;,&quot;Parte Tecnica 1 - 01 - 2004 - Biennale - Tutte - 100&quot;,&quot;Parte Tecnica 1 - 01 - 2004 - Biennale - Tutte - 100&quot;)<br />
+&amp;lt;br /&amp;gt;<br />
+&amp;lt;b&amp;gt;Warning&amp;lt;/b&amp;gt;:  Cannot modify header information - headers already sent by (output started at /home/med8/www/www.meleam.it/intranet/admin/BackupScadenze.php:111) in &amp;lt;b&amp;gt;/home/med8/www/www.meleam.it/intranet/admin/BackupScadenze.php&amp;lt;/b&amp;gt; on line &amp;lt;b&amp;gt;104&amp;lt;/b&amp;gt;&amp;lt;br /&amp;gt;<br />
+&amp;lt;br /&amp;gt;<br />
+&amp;lt;b&amp;gt;Warning&amp;lt;/b&amp;gt;:  Cannot modify header information - headers already sent by (output started at /home/med8/www/www.meleam.it/intranet/admin/BackupScadenze.php:111) in &amp;lt;b&amp;gt;/home/med8/www/www.meleam.it/intranet/admin/BackupScadenze.php&amp;lt;/b&amp;gt; on line &amp;lt;b&amp;gt;105&amp;lt;/b&amp;gt;&amp;lt;br /&amp;gt;<br />
+&amp;lt;br /&amp;gt;<br />
+&amp;lt;b&amp;gt;Warning&amp;lt;/b&amp;gt;:  Cannot modify header information - headers already sent by (output started at /home/med8/www/www.meleam.it/intranet/admin/BackupScadenze.php:111) in &amp;lt;b&amp;gt;/home/med8/www/www.meleam.it/intranet/admin/BackupScadenze.php&amp;lt;/b&amp;gt; on line &amp;lt;b&amp;gt;106&amp;lt;/b&amp;gt;&amp;lt;br /&amp;gt;<br />
+&amp;lt;br /&amp;gt;<br />
+&amp;lt;b&amp;gt;Warning&amp;lt;/b&amp;gt;:  Cannot modify header information - headers already sent by (output started at /home/med8/www/www.meleam.it/intranet/admin/BackupScadenze.php:111) in &amp;lt;b&amp;gt;/home/med8/www/www.meleam.it/intranet/admin/BackupScadenze.php&amp;lt;/b&amp;gt; on line &amp;lt;b&amp;gt;107&amp;lt;/b&amp;gt;&amp;lt;br /&amp;gt;<br />
+&amp;lt;br /&amp;gt;<br />
+&amp;lt;b&amp;gt;Warning&amp;lt;/b&amp;gt;:  Cannot modify header information - headers already sent by (output started at /home/med8/www/www.meleam.it/intranet/admin/BackupScadenze.php:111) in &amp;lt;b&amp;gt;/home/med8/www/www.meleam.it/intranet/admin/BackupScadenze.php&amp;lt;/b&amp;gt; on line &amp;lt;b&amp;gt;108&amp;lt;/b&amp;gt;&amp;lt;br /&amp;gt;<br />
+&amp;lt;br /&amp;gt;<br />
+&amp;lt;b&amp;gt;Warning&amp;lt;/b&amp;gt;:  Cannot modify header information - headers already sent by (output started at /home/med8/www/www.meleam.it/intranet/admin/BackupScadenze.php:111) in &amp;lt;b&amp;gt;/home/med8/www/www.meleam.it/intranet/admin/BackupScadenze.php&amp;lt;/b&amp;gt; on line &amp;lt;b&amp;gt;109&amp;lt;/b&amp;gt;&amp;lt;br /&amp;gt;<br />
+&amp;lt;br /&amp;gt;<br />
+&amp;lt;b&amp;gt;Warning&amp;lt;/b&amp;gt;:  Cannot modify header information - headers already sent by (output started at /home/med8/www/www.meleam.it/intranet/admin/BackupScadenze.php:111) in &amp;lt;b&amp;gt;/home/med8/www/www.meleam.it/intranet/admin/BackupScadenze.php&amp;lt;/b&amp;gt; on line &amp;lt;b&amp;gt;110&amp;lt;/b&amp;gt;&amp;lt;br /&amp;gt;<br />
+<br />
+in riga 111 c'è il @readfile, che header potrebbe mandare |) <br />
+<br />
+byeZ</div></div><hr />
+
+
+<div id="copyright">vBulletin v3.5.3, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

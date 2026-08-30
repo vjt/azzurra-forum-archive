@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Linux, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] Linux Programmazione e dintorni" />
+		<title>Linux [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-23.html">Programmazione e dintorni</a> &gt; Linux</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=491">Linux</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">overruns</div><div class="date">12-04-2002, 18:34</div></div><div class="posttext">Salve, premetto che io non sò nulla del C e C++, infatti a scuola mi insegnano Pascal.<br />
+Oltre questo certe volte mi piace programmare con la bash di unix.<br />
+E allora voi vi chiederete, che azz vuoi?<br />
+Semplice...c'è qualcuno che sà farmi un programma che esegua comandi da bash di unix.<br />
+Esempio:<br />
+#!/bin/sh<br />
+echo &quot;Hai scritto $1&quot;<br />
+# Fine<br />
+ecco..c'è un modo per portarlo in linguaggio c/c++?<br />
+Grazie</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">void`</div><div class="date">13-04-2002, 23:27</div></div><div class="posttext">#!/bin/sh<br />
+echo &quot;Hai scritto $1&quot;<br />
+# Fine<br />
+ecco..c'e un modo per portarlo in linguaggio c/c++?<br />
+Grazie<br />
+<br />
+portarlo no, riscriverlo si:<br />
+<br />
+#include &lt;stdio.h&gt;<br />
+<br />
+int main(int ac, char **av)<br />
+{<br />
+    char *s = av[1] ? av[1] : &quot;&quot;;<br />
+    printf(&quot;hai scritto %sn&quot;, s);<br />
+    <br />
+    return 0;<br />
+}<br />
+<br />
+avrai capito che non hanno molto a che fare i 2 prog, quindi se vuoi dovresti imparare il linguaggio.<br />
+<br />
+consiglio: the C programming language, II edition, brian kernighan &amp; dennis ritchie. cercalo in libreria e mettilo al posto della bibbia che hai in casa :wink:.<br />
+<br />
+c`e` anche la traduzione in italiano, ma non rende come quella in inglese.<br />
+<br />
+se vuoi invece un libro sia su C che C++, ti consiglio C++ la guida completa (ii edizione) di herbert schiltd.<br />
+<br />
+saluti.<br />
+<br />
+_________________<br />
+--vejeta &lt;vejeta@azzurra.org&gt;<br />
+<br />
+&lt;font size=-1&gt;[ Questo messaggio &amp;egrave; stato modificato da: vejeta il 2002-04-13 23:29 ]&lt;/font&gt;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">T3rminat0r</div><div class="date">17-04-2002, 18:41</div></div><div class="posttext">e qualche libro in italiano?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">silentman</div><div class="date">18-04-2002, 08:02</div></div><div class="posttext">(Kernighan-Ritchie) + (Dizionario EN-&amp;gt;IT) = Il miglior libro sul C in Italiano.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Progeny</div><div class="date">18-04-2002, 14:53</div></div><div class="posttext">In data 2002-04-17 18:41, T3rminat0r scrive:<br />
+e qualche libro in italiano?<br />
+<br />
+<br />
+The C Programming Language, Second Edition<br />
+by Brian W. Kernighan and Dennis M. Ritchie. <br />
+<br />
+l'hanno tradotto in ita :smile:<br />
+<br />
+Italian: Linguaggio C, Gruppo Editoriale Jackson, ISBN 88-7056-443-6 <br />
+<br />
+_________________<br />
+Progeny<br />
+progeny@azzurra.org<br />
+<br />
+&lt;font size=-1&gt;[ Questo messaggio &amp;egrave; stato modificato da: Progeny il 2002-04-18 14:54 ]&lt;/font&gt;</div></div><hr />
+
+
+<div id="copyright">vBulletin v3.5.3, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Chanserv Set Protect, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] Chanserv Set Protect Services - I servizi IRC di Azzurra" />
+	
+	<title>Chanserv Set Protect [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-6.html">Network Central</a> &gt; <a href="f-30.html">Services - I servizi IRC di Azzurra</a> &gt; Chanserv Set Protect</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=6188">Chanserv Set Protect</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">MeshedP</div><div class="date">17-11-2004, 11:01</div></div><div class="posttext">Ciao. Mi chiedevo se era possibile aggiungere un cambiamento ai services:<br />
+ <br />
+da /cs set #canale protect [ON/OFF] <br />
+che protegge tutti gli operatori di un canale<br />
+ <br />
+a /cs set #canale protect [aop/sop/.....] <br />
+che protegge tutti gli utenti da... aop in su/sop in su etc etc.<br />
+ <br />
+Ciao e grazie.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">PiNe</div><div class="date">17-11-2004, 14:05</div></div><div class="posttext">E questo &quot;PROTECT&quot; fattibilmente che funzioni dovrebbe avere?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">MeshedP</div><div class="date">17-11-2004, 15:16</div></div><div class="posttext">il protect esiste già e se attivato, permette che un nick registrato nelle liste venga automaticamente ri-oppato da chanserv in caso di deop.<br />
+ <br />
+Proponevo di fare in modo di poterlo settare a seconda delle liste: ovvero chanserv rioppa tutti da aop in su, oppure tutti da sop in su etc etc.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">17-11-2004, 15:22</div></div><div class="posttext">Proponevo di fare in modo di poterlo settare a seconda delle liste: ovvero chanserv rioppa tutti da aop in su, oppure tutti da sop in su etc etc. <br />
+ Adesso la funzione mi e' chiara, ma mi sfugge quale sia l'utilita' pratica.<br />
+ Se un nick e' AOP di un canale, a che proposito escluderlo dal PROTECT di ChanServ? In ogni caso si potrebbe oppare manualmente con un OP, ma questo vale anche per SOP e superiori.<br />
+ Sono dell'idea che il PROTECT debba difendere chi e' in lista e non intervenire su chi non e' in lista... in sostanza, credo che la configurazione attuale vada bene cosi' come e' :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Superfre`</div><div class="date">17-11-2004, 15:30</div></div><div class="posttext">Sono d'accordo con steve.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">MeshedP</div><div class="date">17-11-2004, 23:54</div></div><div class="posttext">io no invece :P<br />
+ <br />
+Vorrei avere degli utenti in canale che mai e poi mai per nessuna ragione vengano deoppati. E questi utenti li metterei nella lista che voglio io (diciamo sop?).<br />
+Gli op invece possono anche essere deoppati...<br />
+ <br />
+Non mi sembra che sia una cosa tanto strana o rivoluzionaria visto che in altre net è implementata e funziona secondo il principio della gerarchia.<br />
+ <br />
+Poi capisco che magari a Steve una funzione del genere non servirebbe... in tal caso a lui basterebbe mettere il protect da aop in su (magari potrebbe essere così di default) e tutto sarebbe come ora. <br />
+ <br />
+<br />
+Sono dell'idea che il PROTECT debba difendere chi e' in lista e non intervenire su chi non e' in lista...  <br />
+Scusa ma che cosa c'entrano quelli che non sono in lista??<br />
+ <br />
+ciao! :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">18-11-2004, 08:45</div></div><div class="posttext">Vorrei avere degli utenti in canale che mai e poi mai per nessuna ragione vengano deoppati. E questi utenti li metterei nella lista che voglio io (diciamo sop?).<br />
+ Gli op invece possono anche essere deoppati... <br />
+ Il PROTECT attuale ti permette di proteggere tutti gli utenti che sono in lista su ChanServ; se ci sono op che possono essere deoppati, oppali temporaneamente e mettili in lista come VOP.<br />
+ Io almeno la vedo cosi' :)<br />
+ <br />
+  Scusa ma che cosa c'entrano quelli che non sono in lista?? <br />
+ Intendevo che il PROTECT non interviene in difesa di chi e' operatore temporaneo, ovvero non e' in lista come AOP del canale (o superiore).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">MeshedP</div><div class="date">18-11-2004, 11:13</div></div><div class="posttext">se ci sono op che possono essere deoppati, oppali temporaneamente e mettili in lista come VOP.E non ti sembra più farraginosa come soluzione?<br />
+ <br />
+Ciao!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">18-11-2004, 11:24</div></div><div class="posttext">E non ti sembra più farraginosa come soluzione? <br />
+ No, perche' il PROTECT serve a non far deoppare chi ha il pieno diritto a restare operatore.<br />
+ Quindi, se pensi che qualcuno puo' essere legittimamente deoppato senza problemi, per me e' una persona che e' al massimo VOP.<br />
+ Ti ricordo comunque che Founder e CoFounder dovrebbero poter comunque deoppare AOP e SOP con il comando /cs DEOP #canale nickname , pure in presenza del PROTECT in canale. :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">MeshedP</div><div class="date">18-11-2004, 12:01</div></div><div class="posttext">Ok... il problema è che chi può restare operatore vorrei sceglierlo io :P<br />
+ <br />
+Puoi non condividerlo (e non lo condividi): questo l'ho capito :) <br />
+ <br />
+Poi tu lo interpreti come un &quot;torto&quot; verso un operatore. Io invece la vedo come una garanzia da dare esclusivamente a certe persone. Non sempre sono in canale Founder e CoFounder ad esempio.<br />
+ <br />
+Oltre alla mia e tua opinione ce ne sono altre? :okay:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">City_Hunter</div><div class="date">18-11-2004, 17:06</div></div><div class="posttext">/cs set #canale protect [aop/sop/.....] <br />
+che protegge tutti gli utenti da... aop in su/sop in su etc etc.<br />
+E' inutile.<br />
+Questo perchè l'effetto del protect è emulabile da chiunque sia almeno AOP tramite un semplice scriptino sul proprio client, una cosa simile a questa concettualmente: &quot;on DEOP, esegui automaticamente /cs op #CANALE MIONICK&quot;.<br />
+Quindi se anche tu settassi un ipotetico /cs set #canale protect cf, i sop e gli aop potrebbero continuare ad imitare il protect sfruttando /cs op (oppure uscendo e rientrando sul canale)<br />
+<br />
+Ok... il problema è che chi può restare operatore vorrei sceglierlo io<br />
+Nel momento in cui imposti una persona come AOP (o superiore), non puoi più controllare la libertà di opparsi di questa persona. L'unico modo per impedirle di impostarsi operatore a quel punto diventa la rimozione dalle liste.</div></div><hr />
+
+
+<div id="copyright">vBulletin&reg; v3.6.4, Copyright &copy;2000-2007, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

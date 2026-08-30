@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="DCC e modem/router AETHRA STARBRIDGE EU, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] DCC e modem/router AETHRA STARBRIDGE EU Angolo tecnico" />
+	
+	<title>DCC e modem/router AETHRA STARBRIDGE EU [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-13.html">Angolo tecnico</a> &gt; DCC e modem/router AETHRA STARBRIDGE EU</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=8081">DCC e modem/router AETHRA STARBRIDGE EU</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Malak|an</div><div class="date">02-04-2005, 15:27</div></div><div class="posttext">salve a tutti,ho questo maledettissimo modem che mi costrinfge ogni volta a fare il port forwarding...fin qui è sempre andato ok,però con il mirc (6.1) sto avendo dei problemi.Ho settato le porte dcc dalla 1024 ala 1026 e ho fatto lo stesso sul BIOS del modem...risultato:niente resume,come sempre.Riesco a scaricare files,ma il resume non mi funziona.C'è qualcuno che utilizza questo modem e può darmi una mano?Per caso oltre alle porte TCP devo settare anche le UDP?Come si fa a settare un range di porte(per ora sto riuscendo a settare solo porta per porta).<br />
+Grazie!<br />
+ <br />
+P.S.ho sentito parlare del DMZ,ma sinceramente non so cosa sia.COme posso usarlo?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">02-04-2005, 20:06</div></div><div class="posttext">Prima di tutto, lascia che ti dica che e' inutile mandarmi un'email sollecitando una risposta al tuo problema. Nessuno qui dentro conosce tutti i modem/router/tostapane esistenti sul mercato, e hai gia' due armi in mano: il manuale d'uso di Aethra (http://www.aethra.it/italia/proddoc.asp?IDProd=30&amp;IDT=3&amp;M=190) piu' Google (http://www.google.it) e similari.<br />
+Li hai usati entrambi? Te lo chiedo perche' per fare questa risposta io sto facendo esattamente questo.<br />
+<br />
+Premesso che non me ne intendo granche' di DCC, il resume e' un problema del tuo sistema operativo e/o programma IRC piuttosto che del modem che usi per connetterti.<br />
+In ogni caso, le porte da mappare sono esclusivamente TCP, ci sono router che ammettono una mappatura con un range A-B e quelli che ammettono solo mappature di singole porte A, B, C, ...<br />
+La DMZ e' una DeMilitary Zone, ovvero una zona insicura che sta appena al di fuori di una zona sicura, dove con &quot;sicuro&quot; si intende un ambiente protetto da un firewall. Quindi, mettere un elaboratore in DMZ significa lasciarlo connesso in rete senza una protezione firewall a monitorarne la connessione.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">MaxFrames</div><div class="date">19-04-2005, 20:26</div></div><div class="posttext">Mi unisco alla discussione perche' ho un problema simile, con lo stesso modello di router, ossia l'Aethra Starbridge EU (dato in comodato con Libero ADSL). Purtroppo il manuale del router è più che stringato e in pratica spiega unicamente come collegare l'apparecchio. Libero dal canto suo non da' assistenza sulle problematiche di configurazione; intervengono solo se ci sono problemi di connessione. Per finire, ho trovato in Internet diversi documenti rilevanti ma nessuna delle procedure suggerite ha avuto successo.<br />
+Il problema e' che il DCC send non riesce (anche se il destinatario accetta, il download non parte).<br />
+Per risolvere il problema ho dapprima impostato il mio client IRC perche' usi un certo range di porte per il DCC (ne ho provati diversi, ma facciamo l'esempio di 5000-5010).<br />
+Poi nella configurazione del router ho attivato i seguenti port forwarding:<br />
+- connessioni provenienti da qualsiasi indirizzo su una porta compresa tra 5000 e 5010: forward sull'IP privato del mio PC (192.168.1.2), porta 5000<br />
+- connessioni provenienti da qualsiasi indirizzo sulla porta 113: forward sull'IP privato del mio PC (192.168.1.2), porta 113<br />
+Non c'e' nulla da fare, il DCC send (che presuppone che l'altro utente si colleghi al mio PC usandolo come file server) non parte.<br />
+Ho provato altri range di porte, p.es. 1024-1030, ma senza esito.<br />
+Siccome questo è il modem fornito da Libero, sicuramente non sono l'unico ad avere questo problema quindi confido in una soluzione che non sia la DMZ che se non erro apre tutte le porte a tutto il mondo.<br />
+Attendo fiducioso...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">19-04-2005, 22:31</div></div><div class="posttext">Per risolvere il problema ho dapprima impostato il mio client IRC perche' usi un certo range di porte per il DCC (ne ho provati diversi, ma facciamo l'esempio di 5000-5010).<br />
+Poi nella configurazione del router ho attivato i seguenti port forwarding:<br />
+- connessioni provenienti da qualsiasi indirizzo su una porta compresa tra 5000 e 5010: forward sull'IP privato del mio PC (192.168.1.2), porta 5000<br />
+<br />
+La 113 non e' di per se' necessaria per chattare, e' solo questione di avere una ~ in piu' o in meno nell'ident. Quanto al resto, hai anche impostato quel range di porte (5000-5010) nel tuo client IRC? O ti sei solo limitato a fare le modifiche sul router?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">MaxFrames</div><div class="date">20-04-2005, 07:41</div></div><div class="posttext">In effetti sì: cito dal mio precedente messaggio: &quot;Per risolvere il problema ho dapprima impostato il mio client IRC perche' usi un certo range di porte per il DCC (ne ho provati diversi, ma facciamo l'esempio di 5000-5010)&quot;.<br />
+Il problema è proprio che ho fatto tutto cio' che c'era da fare &quot;sulla carta&quot;, quindi è probabile che si tratti di un problema specifico di questo router da aggirare in qualche modo meno ortodosso.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">20-04-2005, 08:13</div></div><div class="posttext">In effetti sì: cito dal mio precedente messaggio: &quot;Per risolvere il problema ho dapprima impostato il mio client IRC perche' usi un certo range di porte per il DCC (ne ho provati diversi, ma facciamo l'esempio di 5000-5010)&quot;.<br />
+<br />
+Giusto, sto invecchiando e non avevo notato quel passo... scusami :)<br />
+Comunque io non so come aiutarti, possiedo un mio router ma non ho avuto problemi nell'abilitare il port forwarding ed al limite uso il send passivo di XChat come seconda possibilita' di invio dei files. E quando tutto cio' non e' possibile, metto il file in una zona del mio sito e gestisco la situazione in modo differente, del resto IRC e' Chat e non scambio files... no? :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">MaxFrames</div><div class="date">20-04-2005, 09:34</div></div><div class="posttext">Purtroppo la cosa non riguarda solo il DCC send ma anche la DCC chat, quando io agisco come server della connessione. Cosi' tra l'altro non posso aprire sessioni DCC con il mio bot eggdrop, e devo usare telnet. Speriamo che qualcuno nei prossimi giorni, qualcuno che ha questo stesso router, mi legga!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">20-04-2005, 09:43</div></div><div class="posttext">Purtroppo la cosa non riguarda solo il DCC send ma anche la DCC chat, quando io agisco come server della connessione. Cosi' tra l'altro non posso aprire sessioni DCC con il mio bot eggdrop, e devo usare telnet.<br />
+<br />
+Stiamo parlando di DCC in generale, quindi non c'e' differenza fra &quot;chat&quot; e &quot;send&quot;.<br />
+Attenzione solo al fatto che qui non si da' supporto per eggdrop o per fileserver in generale, anzi dal mio punto di vista faresti meglio ad utilizzare un ftp.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">malefica</div><div class="date">21-04-2005, 14:31</div></div><div class="posttext">anche io ho lo stesso problema,niente da fare con la dcc non funziona proprio...se scoprire come fare fatemi sapere x piacere</div></div><hr />
+
+
+<div id="copyright">vBulletin v3.6.2, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

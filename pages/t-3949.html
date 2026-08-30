@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="mirc+resume+router, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] mirc+resume+router Angolo tecnico" />
+	
+	<title>mirc+resume+router [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-13.html">Angolo tecnico</a> &gt; mirc+resume+router</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=3949">mirc+resume+router</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">matrig</div><div class="date">30-01-2004, 10:27</div></div><div class="posttext">Ciao a tutti!<br />
+Sono in possesso di una linea ADSL Alice flat e ho da poco acquistato un router Trust 445a con chipset conexant, con il quale non riesco a fare un DCC send o a resumare un file in mirc...<br />
+Ho letto di altri utenti con il mio stesso problema, ma utilizzando le soluzioni proposte non l'ho risolto...<br />
+<br />
+Premetto che ho mappato le porte del router dalla 1024 alla 1030 e lo stesso lo ho fatto impostandole in mirc...<br />
+Ho abilitato la DMZ indicando l'ip del mio pc...<br />
+Ho provato ad utilizzare una versione di mirc senza script...<br />
+Ovviamente ho disabilitato il firewall di windows xp...<br />
+Ho impostato in local info di mirc il mio ip pubblico...<br />
+Tutti questi tentativi sono risultati senza successo...<br />
+<br />
+Se qualcuno ha un router uguale al mio o magari con lo stesso chipset mi aiuti perfavore... sono 3 giorni che sto cercando di risolvere il problema...<br />
+Grazie in anticipo.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">30-01-2004, 11:02</div></div><div class="posttext">Ciao a tutti!<br />
+<br />
+Ciao e benvenuto sul forum! :)<br />
+<br />
+Sono in possesso di una linea ADSL Alice flat e ho da poco acquistato un router Trust 445a con chipset conexant, con il quale non riesco a fare un DCC send o a resumare un file in mirc...<br />
+Ho letto di altri utenti con il mio stesso problema, ma utilizzando le soluzioni proposte non l'ho risolto...<br />
+<br />
+Anche io ho un router e mi son divertito (!) a mappar porte, ma non ho mai avuto alcun problema a spedire files via DCC Send verso altri utenti, mentre il resume solitamente e' una feature del client IRC che si usa e quindi dovresti guardare la manualistica del programma client che usi (cioe' mIRC, se non leggo male).<br />
+Il problema, semmai, e' quello di ricevere files via DCC, per i quali sono stati dati appunto i suggerimenti che hai gia' letto: ottima la disabilitazione del firewall di WinXP, ma non comprendo perche' mappare porte e contemporaneamente mettere l'IP in DMZ (e' un controsenso, perche' la DMZ riceve tutto il traffico non regolato dalle regole apposite). Prediligo il mIRC &quot;liscio&quot; a quelli con script assortiti, ma qui e' questione di gusti e soprattutto non e' di rilevanza per la ricezione delle DCC (a meno di settare qualche ignore restrittivo... ma non e' un settaggio di default per mIRC, da quel che mi risulta).<br />
+<br />
+Detto questo, proviamo ad approfondire il discorso: ti viene dato un messaggio di errore o semplicemente &quot;non funziona&quot; ? Hai anche letto questa documentazione (http://www.azzurra.org/documents.php?document_id=14&amp;amp;referer=/irchelp.php&amp;amp;section=irchelp&amp;amp;section_name=IRCHelp) sul sito di Azzurra?<br />
+<br />
+Se qualcuno ha un router uguale al mio o magari con lo stesso chipset mi aiuti perfavore... sono 3 giorni che sto cercando di risolvere il problema...<br />
+Grazie in anticipo.<br />
+<br />
+Non credo sia un problema di chipset... basta che il tuo router supporti il port forwarding, a me non e' servito altro che quello. E del resto dalla  documentazione online (http://www.trust.com/home/default.htm?viewpage=products/product.htm%3Fartnr%3D13521) non si ricava niente di particolarmente utile sul modello di router che usi...<br />
+<br />
+Ciao!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">matrig</div><div class="date">30-01-2004, 12:07</div></div><div class="posttext">Ciao Steve, grazie per la tempestività!<br />
+ottima la disabilitazione del firewall di WinXP, ma non comprendo perche' mappare porte e contemporaneamente mettere l'IP in DMZ (e' un controsenso, perche' la DMZ riceve tutto il traffico non regolato dalle regole apposite).<br />
+Scusa mi sono spiegato male, erano due tentativi differenti...<br />
+Per quanto riguarda il mirc ne ho provati di diversi tra cui anche quello &quot;liscio&quot; ma senza risultati...<br />
+<br />
+<br />
+Detto questo, proviamo ad approfondire il discorso: ti viene dato un messaggio di errore o semplicemente &quot;non funziona&quot; ? Hai anche letto questa documentazione sul sito di Azzurra?<br />
+Tengo a precisare che la ricezione di file avviene senza problemi, ma nel momento in cui per qualsiasi motivo la trasmissione viene interrotta poi non mi è più possibile fare il resume... <br />
+Quando faccio un dcc send mi viene scritto &quot;Sending request, Awaiting reply&quot; , ma non trasmette niente, mentre al ricevente viene immediatamente scritto &quot;Successfully received (nome file) [n/a] from matrig at 0 cps at (ora)&quot; anche se in realtà non gli è arrivato niente...<br />
+Quando faccio una dcc chat mi viene scritto &quot;Acknowledging chat request...&quot; e non fa nulla...<br />
+Invece se si tratta di ricevere un dcc send o chat lo faccio senza problemi... la cosa è veramente strana...<br />
+La documentazione sul sito di azzurra l'ho letta... l'unica cosa che non ho provato è il suggerimento riguardo al socks in quanto non credo che il mio router implementi questa funzione (o almeno io non l'ho vista tra le tante).<br />
+Spero che qualcuno abbia qualche altro suggerimento, grazie comunque.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">30-01-2004, 12:29</div></div><div class="posttext">Ciao Steve, grazie per la tempestività!<br />
+<br />
+Piu' che altro devi ringraziare se dico qualcosa di sensato, non e' una cosa che accade sempre! ;)<br />
+Nessun problema, comunque c'e' ancora qualche conto che non mi torna...<br />
+<br />
+Tengo a precisare che la ricezione di file avviene senza problemi, ma nel momento in cui per qualsiasi motivo la trasmissione viene interrotta poi non mi è più possibile fare il resume...<br />
+<br />
+Ok, quindi non puoi imputare questo problema alla linea ADSL che usi.<br />
+Provero' a consultare google piu' tardi, perche' fra poco vado a pranzo ;)<br />
+ <br />
+se si tratta di ricevere un dcc send o chat lo faccio senza problemi... la cosa è veramente strana...<br />
+<br />
+Leggendo queste parole mi vien da pensare che le porte forwardano correttamente, perche' in effetti le hai mappate apposta per ricevere e non certo per spedire.<br />
+Potresti anche ipotizzare problemi a carico dell'utente a cui invii la DCC (occhio ai fastweb!), ma sembrerebbe piuttosto che tu abbia problemi a comunicare all'esterno il tuo IP pubblico... hai gia' provato a dare /localinfo -h ?<br />
+<br />
+La documentazione sul sito di azzurra l'ho letta... l'unica cosa che non ho provato è il suggerimento riguardo al socks in quanto non credo che il mio router implementi questa funzione (o almeno io non l'ho vista tra le tante).<br />
+<br />
+Non ne ho avuto bisogno e quindi non so aiutarti in questo, comunque non mi sembra aver visto un supporto per i socks nel manuale del tuo router... perlomeno nella sua versione online, meglio per te se guardi quella cartacea che e' senz'altro piu' corposa di quelle quattro paginette in pdf.<br />
+<br />
+Spero che qualcuno abbia qualche altro suggerimento, grazie comunque.<br />
+<br />
+Lo spero anche io per te, intanto ho aggiunto i miei 2 cents :)<br />
+<br />
+Ciao!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">matrig</div><div class="date">30-01-2004, 12:46</div></div><div class="posttext">Potresti anche ipotizzare problemi a carico dell'utente a cui invii la DCC (occhio ai fastweb!), ma sembrerebbe piuttosto che tu abbia problemi a comunicare all'esterno il tuo IP pubblico... hai gia' provato a dare /localinfo -h ?<br />
+Le prove le ho fatte con un mio amico che ha anche lui adsl... quindi fastweb ahimè non centra...<br />
+Ho provato ad usare quel comando e mi imposta in local info nelle opzioni di mirc, nel campo host il nome del mio computer, mentre in quello ip address, l'ip del mio pc... è giusto così o dovrebbe esserci il mio ip dinamico che mi assegna alice... o cos'altro?<br />
+Ho riguardato più volte il manuale ma tratta il tutto in modo molto generico...<br />
+Grazie per l'aiuto.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">30-01-2004, 14:10</div></div><div class="posttext">Ho provato ad usare quel comando e mi imposta in local info nelle opzioni di mirc, nel campo host il nome del mio computer, mentre in quello ip address, l'ip del mio pc... è giusto così o dovrebbe esserci il mio ip dinamico che mi assegna alice... o cos'altro?<br />
+<br />
+E' giusto avere l'IP pubblico di di Alice, of course.<br />
+Gugolando ho scoperto http://www.mirc.org/dcc.html : mi riservero' di leggermela in futuro, intanto prova a vedere se trovi qualche soluzione...<br />
+<br />
+Grazie per l'aiuto.<br />
+<br />
+Non ho fatto nulla, davvero.<br />
+E adesso e' meglio che lavoro, prima che la stessa frase me la dica il capo! :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">sarpe</div><div class="date">11-03-2005, 15:03</div></div><div class="posttext">ciao a tutti!!:D  sono nuovissimo di questo forum....<br />
+<br />
+dopo aver letto un po di discussioni ho deciso di intromettermi in questa perchè ho un problema molto similare.....<br />
+anch'io possiedo il router della trust /445a) e anch'io non riesco a fare il resume solo che mi appare il messaggio TIME OUT....<br />
+ho seguito scrupolosamente le vostre istruzioni ma niente da fare....<br />
+avete qualche altro consiglio da darmi? premetto che ho aperto le porte 59 113 dalla 6667 alla 6670 e dalla 1024 alla 1026....<br />
+ <br />
+ <br />
+ <br />
+ciao</div></div><hr />
+
+
+<div id="copyright">vBulletin&reg; v3.6.4, Copyright &copy;2000-2007, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

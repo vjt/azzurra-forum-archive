@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="php in locale su Linux Debian, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] php in locale su Linux Debian Programmazione e dintorni" />
+		<title>php in locale su Linux Debian [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-23.html">Programmazione e dintorni</a> &gt; php in locale su Linux Debian</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=9628">php in locale su Linux Debian</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Kid</div><div class="date">16-07-2005, 09:03</div></div><div class="posttext">Salve,<br />
+vorrei installare un portale php in locale, e per farlo ho seguito la procedura qui descritta (http://www.ubuntuguide.org/#installphpapache) . Quindi ho eseguito da shell le seguenti operazioni (da utente root):<br />
+ <br />
+ <br />
+apt-get install mysql-server<br />
+apt-get install apache2<br />
+apt-get install php4<br />
+apt-get install libapache2-mod-auth-mysql<br />
+apt-get install php4-mysql<br />
+/etc/init.d/apache2 restart<br />
+ <br />
+ <br />
+creo il file &quot;testphp.php&quot; con dentro<br />
+ &lt;?php phpinfo(); ?&gt;  <br />
+eseguendo dal browser http://localhost/testphp.php non lo avvia ma lo apre come testo, caricandolo sul mio sito web ovviamente funziona a dovere. Deduco mi manchi qualche passaggio ma non capisco come fare a risolvere il problema :mad: <br />
+ <br />
+ <br />
+ <br />
+L'unica cosa nella quale sono dubbioso è questa:<br />
+ mysqladmin -u root password db_user_password  <br />
+quante password devo specificare?<br />
+dovrei forse fare<br />
+ mysqladmin -u root PasswordRootLinux PasswordAdminMysql  <br />
+:-? <br />
+ <br />
+sono in crisi!! aiuto :sad1:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Alex1</div><div class="date">16-07-2005, 10:21</div></div><div class="posttext">mysqladmin -u root password PIPPO<br />
+<br />
+questo prima di tutto<br />
+poi prova ad attivare le estensioni per le pagine .php su apache2.conf dovrebbe esser lì il problema</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kid</div><div class="date">16-07-2005, 10:38</div></div><div class="posttext">ok, la pass sul mysqladmin adesso l'ho messa :okay: <br />
+ <br />
+poi sempre da utente root e tramite shell edito il file apache2.conf<br />
+ gedit /etc/apache2/apache2.conf  <br />
+ <br />
+e ho individuato un paio di righe che forse sono quelle che consigliavi tu<br />
+ <br />
+#AddType application/x-httpd-php .php<br />
+#AddType application/x-httpd-php-source .phps<br />
+ <br />
+credo sian da &quot;un&quot;commentare, sbaglio? mo provo :D <br />
+ <br />
+GraSSie :okay:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kid</div><div class="date">16-07-2005, 10:43</div></div><div class="posttext">no, nnostante le abbia attivate non funziona ancora :mad: <br />
+ <br />
+ho un dubbio, quando riavvio apache con<br />
+/etc/init.d/apache2 restart<br />
+ <br />
+mi dice<br />
+ <br />
+Forcing reload of web server: Apache2apache2: Could not determine the server's fully qualified domani name, using &lt;ip_in_lan&gt; for ServerName<br />
+apache2: Could not determine the server's fully qualified domani name, using &lt;ip_in_lan&gt; for ServerName<br />
+ <br />
+ <br />
+che sia l'apache a darmi problemi :-? :-? :-?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">giuseppe_dj</div><div class="date">16-07-2005, 11:06</div></div><div class="posttext">eseguendo dal browser http://localhost/testphp.php non lo avvia ma lo apre come testo, caricandolo sul mio sito web ovviamente funziona a dovere. Deduco mi manchi qualche passaggio ma non capisco come fare a risolvere il problema :mad: <br />
+ <br />
+<br />
+a2enmod php4<br />
+<br />
+man a2enmod</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kid</div><div class="date">16-07-2005, 11:44</div></div><div class="posttext">grazie Giuseppe :okay: però ho ancora difficoltà :mad: <br />
+ <br />
+andiamo con ordine, ho digitato<br />
+a2enmod php4 <br />
+ <br />
+ma un messaggio di errore avvisava che il modulo non era installato, quindi con un<br />
+ apt-get install libapache2-mod-php4  <br />
+mi dice che il modulo ora è abilitato<br />
+ <br />
+ho restartato apache sia con<br />
+ <br />
+#AddType application/x-httpd-php .php<br />
+#AddType application/x-httpd-php-source .phps<br />
+ <br />
+ <br />
+abilitati che disabilitati ma no n funziona :sad1:<br />
+ <br />
+al famoso file testphp.php non ho dato particolari permessi, l'ho uppato sul mio spazio web di aruba e li funziona, ma qui in locale lo vede sempre come testo, dov'è che sbaglio :-?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">giuseppe_dj</div><div class="date">16-07-2005, 12:01</div></div><div class="posttext">dopo il<br />
+apt-get install libapache2-mod-php4 <br />
+hai provato di nuovo con:<br />
+<br />
+a2enmod php4 <br />
+e restartato apache2 ?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Alex1</div><div class="date">16-07-2005, 12:11</div></div><div class="posttext">Forcing reload of web server: Apache2apache2: Could not determine the server's fully qualified domani name, using &lt;ip_in_lan&gt; for ServerName<br />
+apache2: Could not determine the server's fully qualified domani name, using &lt;ip_in_lan&gt; for ServerName<br />
+  <br />
+  <br />
+  <br />
+<br />
+<br />
+vi /etc/apache2/sites-available/default<br />
+<br />
+e inseriscici i dati del webserver che ti servono e poi restarta :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kid</div><div class="date">16-07-2005, 12:16</div></div><div class="posttext">sìsì Giuseppe, l'ho fatto :sospiro: <br />
+ <br />
+però non ho capito una cosa ....... dopo aver installato e abilitato il libapache2-mod-php4 io aprivo http://localhost/testphp.php e me lo apriva come testo. ho provato giusto adesso in lan da 1 altro pc http://IpDelPcConApacheEPhp/testphp.php e funziona! mistero!!! <br />
+ <br />
+cmq ora dovrei essere a posto, graSSie ad entrambi :okay: <br />
+ <br />
+Alex, adesso vedo x lo strano messaggio durante il restart :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">giuseppe_dj</div><div class="date">16-07-2005, 12:20</div></div><div class="posttext">sìsì Giuseppe, l'ho fatto :sospiro: <br />
+ <br />
+però non ho capito una cosa ....... dopo aver installato e abilitato il libapache2-mod-php4 io aprivo http://localhost/testphp.php e me lo apriva come testo. ho provato giusto adesso in lan da 1 altro pc http://IpDelPcConApacheEPhp/testphp.php e funziona! mistero!!! <br />
+ <br />
+<br />
+Nessun mistero :) Avevi la pagina nella cache del browser</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kid</div><div class="date">16-07-2005, 19:06</div></div><div class="posttext">Ho smanettato ancora :D ma ho avuto altri problemi :mad: <br />
+ <br />
+Allora, io volevo installare un portale php in locale, per la precisione Xoops. Il problema è la connessione con il database MySQL. Durante l'installazione, nel momento della connessione al database mi restituisce una pagina bianca.<br />
+ <br />
+Per la creazione del database ho installato phpmyadmin e ho creato il database. Ho provato anche ad utilizzare, in alternativa, i dati del database fornitimi da Aruba alla sottoscrizione di un mio dominio, ma niente.<br />
+ <br />
+Convinto che il problema fosse nel portale Xoops ho provato ad installare phpbb (qui non posso fare errori, l'ho già installato sul mio sito). Dopo aver impostato i parametri avvio l'installazione di phpbb e mi dice<br />
+ <br />
+ <br />
+An error has occurred during installation<br />
+The PHP configuration on your server doesn't support the database type that you chose<br />
+ <br />
+ <br />
+deduco mi manchi ancora qualcosa, ovviamente non so cosa :-? <br />
+il tipo di database usato è MySQL 3.x (e anche 4.x, stesso errore)<br />
+ <br />
+ho buttato li un<br />
+ apt-cache search mysql  <br />
+ <br />
+e mi sono letto tutte le voci 3 volte, nulla che solletichi la mia attenzione (a parte il MySQL client .......)<br />
+ <br />
+Portate pazienza :sospiro:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">giuseppe_dj</div><div class="date">17-07-2005, 02:22</div></div><div class="posttext">apt-cache show php4-mysql</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kid</div><div class="date">17-07-2005, 07:26</div></div><div class="posttext">apt-cache show php4-mysql<br />
+<br />
+questo è il risultato:<br />
+ <br />
+UaZ:/home/andrea# apt-cache show php4-mysql<br />
+Package: php4-mysql<br />
+Priority: optional<br />
+Section: web<br />
+Installed-Size: 67<br />
+Maintainer: Adam Conrad &lt;adconrad@0c3.net&gt;<br />
+Architecture: i386<br />
+Source: php4<br />
+Version: 4:4.3.10-15<br />
+Replaces: php4-cgi-mysql<br />
+Depends: libc6 (&gt;= 2.3.2.ds1-21), libmysqlclient12, debconf (&gt;= 0.5) | debconf-2 .0, phpapi-20020918, php4-common (= 4:4.3.10-15)<br />
+Filename: pool/main/p/php4/php4-mysql_4.3.10-15_i386.deb<br />
+Size: 21216<br />
+MD5sum: 96779e90626c88894ad5c125cd1e77ec<br />
+Description: MySQL module for php4<br />
+ This package provides a module for MySQL database connections directly from<br />
+ PHP scripts.<br />
+ .<br />
+ PHP4 is an HTML-embedded scripting language. Much of its syntax is borrowed<br />
+ from C, Java and Perl with a couple of unique PHP-specific features thrown<br />
+ in. The goal of the language is to allow web developers to write<br />
+ dynamically generated pages quickly.<br />
+Tag: devel::library, langdevel::php<br />
+ <br />
+<br />
+ma non capisco cosa fare :-?<br />
+<br />
+mi vengono in mente 2 cose:<br />
+- l'installazione del &quot;mysql-server&quot; l'ho fatta x ultima, dopo aver installato apache,php4, ecc<br />
+- volevo installare il &quot;mysql center&quot; ma &quot;mysqlcc&quot; non esiste nei reposities che uso io (ma questo non è un problema, se fosse di vitale importanza lo installo lo stesso :D)<br />
+<br />
+GraSSie :-)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">giuseppe_dj</div><div class="date">17-07-2005, 11:04</div></div><div class="posttext">devi installare php4-mysql e assicurarti che su /etc/php4/apache2/php.ini sia presente: extension=mysql.so<br />
+<br />
+<br />
+P.S. ma seguire uno dei milioni di howto disponibili in rete no? :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kid</div><div class="date">17-07-2005, 18:44</div></div><div class="posttext">GraSSie caro, non ci crederai ma how-to che spieghi come installare da apt-get ho trovato solo quello del sito di Ubuntu :sospiro: <br />
+ <br />
+Cmq mo' provo :D</div></div><hr />
+
+
+<div id="copyright">vBulletin v3.5.3, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

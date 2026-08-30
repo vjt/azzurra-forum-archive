@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Proposta &quot;service&quot;, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] Proposta &quot;service&quot; Services - I servizi IRC di Azzurra" />
+	
+	<title>Proposta &quot;service&quot; [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-6.html">Network Central</a> &gt; <a href="f-30.html">Services - I servizi IRC di Azzurra</a> &gt; Proposta &quot;service&quot;</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=6888">Proposta &quot;service&quot;</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Gufastian</div><div class="date">14-01-2005, 14:04</div></div><div class="posttext">Salve a tutti...<br />
+Potrà sembrare una cosìdetta lamerata agli occhi dei molti che si definiscono parte dell'underground italiano...<br />
+L'altro giorno scorrazzavo in un'altra piccola rete italiana, quando mi sono imbattuto in un bot in un chan (#vhost) tramite il quale, per cambiare host bastava aver nick registrato ed usare il comando in chan !vhost nome.vhost ...<br />
+Un &quot;servizio&quot; del genere potrebbe essere messo in una fase di betatesting.<br />
+Credo sia possibile fare ciò pure su azzurra, tramite un normalissimo eggdrop ircop globale e una tcl...<br />
+Correggetemi se sbaglio... :)<br />
+P.S.: se volete il nome della rete contattatemi su Azzurra, non mi è parso il caso di spammarlo qui :P<br />
+Grazie per l'attenzione. <br />
+Saluti.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">14-01-2005, 14:14</div></div><div class="posttext">Beh, non e' che serva il nome della rete... ci sono ircd che implementano quella funzionalita', UnrealIRCD e' il primo che mi viene in mente (e forse anche il piu' usato). Propriamente non e' un service, perche' e' una caratteristica legata maggiormente all'ircd, ma credo che in giro ci sia qualche HostServ che faccia qualcosa del genere.<br />
+<br />
+Io non sento il bisogno di un vhost personalizzato per ogni utente registrato, al Bahamut originale e' aggiunta la patch di Azzurra per l'implementazione dello usermode +x che permette di criptare l'IP e quindi viene meno con esso ogni problema di sicurezza. Certo si potrebbe obiettare che basta una DCC per rivelare un indirizzo IP, pero' questo non cambierebbe in caso di vhost.<br />
+Il vhost puo' semmai essere gradito per un altro motivo: perche' fa figo averlo. E io credo che un buon software (il demone irc in questo caso) debba essere funzionale prima che bello: meglio avere un programma veramente utile piuttosto che abbellirlo con funzioni marginali o comunque non necessarie alla vita di chat.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">City_Hunter</div><div class="date">14-01-2005, 14:23</div></div><div class="posttext">Argomento già discusso parecchio tempo fa:<br />
+http://forum.azzurra.org/showthread.php?t=1258<br />
+<br />
+Dato che il +x (crypt dell'hostname/indirizzo ip) copre il lato veramente importante della faccenda (la sicurezza), non credo che un servizio di vhost verrà mai attivato su Azzurra.<br />
+<br />
+Un parere strettamente personale: su IRC non ci dovrebbero essere neanche gli hostname. Solo ed esclusivamente indirizzi IP :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gufastian</div><div class="date">14-01-2005, 14:28</div></div><div class="posttext">Ero a conoscenza della possibilità di creare vhosts con l'unreal, comunque grazie per le risposte.<br />
+Ciao</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gioxx</div><div class="date">17-01-2005, 21:51</div></div><div class="posttext">Giusto per dire la mia a riguardo. Avere un VHOST casomai dedicato agli amministratori di un canale &quot;X&quot;, tipo: Gioxx!thegioxx@XXX.staff o simile, è davvero molto bello IMHO, non credo sia questione di &quot;fare figo&quot; ma sarebbe ancora una volta un punto a favore di questo splendido network.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">17-01-2005, 22:06</div></div><div class="posttext">Giusto per dire la mia a riguardo. Avere un VHOST casomai dedicato agli amministratori di un canale &quot;X&quot;, tipo: Gioxx!thegioxx@XXX.staff o simile, è davvero molto bello IMHO, non credo sia questione di &quot;fare figo&quot; ma sarebbe ancora una volta un punto a favore di questo splendido network.<br />
+<br />
+Continuo a non vederci l'utilita' pratica, considera anche che puoi avere accessi a piu' canali e piu' nickname nello stesso momento. Se poi penso a certi vhost che ho visto utilizzati da certi smanettoni dell'IPv6, allora credo che l'idea di City (solo IP e pedalare) sia la migliore in assoluto.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gioxx</div><div class="date">17-01-2005, 22:11</div></div><div class="posttext">Ma alla fine dei conti sto bene anche senza e non ho nulla da ridire. Ho solo esposto la mia opinione per una possibile feature della net che piacerebbe a tanti :)<br />
+ <br />
+ Volendo si fa in IPv6 (o BNC con V4 personalizzato), molti però non sanno come fare ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">City_Hunter</div><div class="date">17-01-2005, 22:40</div></div><div class="posttext">vere un VHOST casomai dedicato agli amministratori di un canale &quot;X&quot;, tipo: Gioxx!thegioxx@XXX.staff o simile, è davvero molto bello IMHO, non credo sia questione di &quot;fare figo&quot;<br />
+Si, usare il vhost in questo modo potrebbe anche essere carino.<br />
+Però, anche nell'ipotesi di fare una cosa del genere,<br />
+avresti più di qualche problema da risolvere:<br />
+<br />
+- la gente con il vhost del canale, avrebbe lo stesso vhost quando va negli altri canali e qualcuno potrebbe anche considerarlo spam;<br />
+- se registro il canale #&quot;assodibastoni&quot; (facciamo a capirci :)) poi vado in giro per tutta la rete con un bellissimo assodibastoni.staff e penso che l'idea faccia impazzire i lamer;<br />
+- se faccio un hostname lookup al vhost e ottengo l'ip dell'utente, si pone un problema di sicurezza per chi usa questi vhost;<br />
+- se faccio un hostname lookup al vhost e ottengo un ip del server, allora chi li usa può rendersi anonimo e lamerare;<br />
+- se faccio un hostname lookup al vhost e ottengo l'ip dell'utente criptato (la migliore delle ipotesi), costringo l'ircd a tenere traccia (peggiorandone le prestazioni) di una vasta serie aggiuntiva di associazioni hostname fasulli &lt;-&gt; ip (o hostname reale) da controllare perchè i ban nei canali continuino a funzionare contro la gente munita di vhost.<br />
+<br />
+Queste sono solo alcune delle problematiche che mi sono venute in mente su due piedi.<br />
+Alla fine, se la volontà è quella di identificare gli operatori del canale come una squadra, credo che la famosa &quot;chiocciolina&quot; vicino al nick, accompagnata da un bel tag identificativo impostato nel campo real name (e quindi visibile al whois) dell'utente, faccia già la sua figura.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gioxx</div><div class="date">19-01-2005, 12:08</div></div><div class="posttext">Mi trovi assolutamente daccordo sulle problematiche, i miei interventi volevano solo far presente il mio punto di vista in merito, nulla di che. Sono felicissimo di stare su questa net che ormai è come una seconda casa e i tanti servizi offerti sono già ottimi (spero che non termini mai il continuo aggiornarsi).<br />
+ <br />
+ Grazie ovviamente per la risposta data, Saluti.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Thunder</div><div class="date">19-01-2005, 16:37</div></div><div class="posttext">Sull'altro topic segnalato da City_Hunter ho trovato questo<br />
+<br />
+Fra l'altro un servizio del genere renderebbe i ban inutili (come lo sono d'altronde su quasi tutti i network che offrono questo servizio) poiche' basta cambiare vhost per saltare un ban. Non credo che gli operatori dei canali apprezzerebbero...<br />
+<br />
+IMHO secondo me e' questo il motivo principale per cui i vHost non farebbero di Azzurra un servizio migliore di quello attuale :)</div></div><hr />
+
+
+<div id="copyright">vBulletin&reg; v3.6.4, Copyright &copy;2000-2007, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

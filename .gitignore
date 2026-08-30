@@ -1,0 +1,7 @@
+# Regenerated from pages/ by forum_import.py in ~30 seconds, and 169 MB — over
+# GitHub's 100 MB per-file limit. The pages are the archaeology; the DB is a build
+# artifact.
+forum.db
+forum.db-wal
+forum.db-shm
+__pycache__/

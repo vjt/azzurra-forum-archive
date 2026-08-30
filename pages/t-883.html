@@ -1,0 +1,514 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Aggiornamento Services e richiesta nuove features, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] Aggiornamento Services e richiesta nuove features Services - I servizi IRC di Azzurra" />
+	
+	<title>Aggiornamento Services e richiesta nuove features [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-6.html">Network Central</a> &gt; <a href="f-30.html">Services - I servizi IRC di Azzurra</a> &gt; Aggiornamento Services e richiesta nuove features</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=883">Aggiornamento Services e richiesta nuove features</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Gastaman</div><div class="date">21-08-2002, 11:51</div></div><div class="posttext">Con l'aggiornamento dei servizi di questa mattina, oltre alla reimpostazione delle date di registrazione (vedi post nel forum Annunci)  sono stati corretti i seguenti bugs:<br />
+<br />
+- Mask di ban dei servizi in formato *!*@host (niente piu'  *!pippo@*.213.abc )<br />
+- Non e' piu' possibile saltare il codice inviato via mail al drop di nick/canali<br />
+- Aggiungere un nick a una lista di un canale se era gia' presente in un'altra ora aggiorna chi lo ha messo e quando<br />
+- Aggiunti verbose ad AKICK, MODE, e UNBAN<br />
+- Il topic dei canali nel /cs info ora viene visualizzato correttamene (i.e. se il canale non e' +s/+p)<br />
+- /cs MODE non permette piu' +o e +v<br />
+- Le NEWS non dovrebbero piu' rispuntare ogni giorno<br />
+- La lunghezza massima dei memo e' stata alzata a 400 caratteri, e non ci dovrebbero piu' essere memo che si cancellano da soli<br />
+<br />
+<br />
+Poiche' nella prima meta' di Settembre verranno messi online dei nuovi servizi con nuove funzioni e maggiore stabilita', invito chiunque abbia qualche idea o richiesta particolare per qualsiasi funzione o opzione mancante a postarla qui, ne discutiamo, e se e' attuabile verra' inserita nei nuovi servizi.<br />
+<br />
+Ricordo che nei nuovi servizi ci saranno gia':<br />
+<br />
+- /ms IGNORE<br />
+- I Successor<br />
+- Multilingua<br />
+- Opzione AutoOp/AutoVoice per oppare/dare il voice a tutti quelli che entrano nel canale, senza bisogno di togliere l'opzione Ident o altro<br />
+<br />
+Vi prego inoltre di non chiedere un servizio BotServ, che di sicuro non verra' introdotto coi nuovi servizi. Stiamo valutando se inserirlo in futuro.<br />
+<br />
+Aspetto vostre richieste (scrivetele QUI, non mi querate su IRC o altro). :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">21-08-2002, 16:18</div></div><div class="posttext">Gastaman ha scritto:<br />
+<br />
+&amp;gt; - Non e' piu' possibile saltare il codice inviato<br />
+&amp;gt; via mail al drop di nick/canali<br />
+<br />
+Non ho capito: cosa intendi per &quot;saltare&quot; ? Mi sembrava di aver capito che quell'AUTH fosse un passo obbligatorio e non bypassabile.<br />
+<br />
+&amp;gt; - Aggiunti verbose ad AKICK, MODE, e UNBAN<br />
+<br />
+A che livello di verbose sono stati aggiunti?<br />
+<br />
+&amp;gt; - /cs MODE non permette piu' +o e +v<br />
+<br />
+Spero davvero di non aver capito bene, senno' temo di dovermi opporre con buona ragione: io sono NeverOp (su #debian si ricorderanno di me...), e come tale richiedo di potermi oppare solo dietro mia specifica richiesta a ChanServ. Se il /cs MODE non me lo permette, mi spiegate come posso continuare la mia vita da NeverOp CFounder?<br />
+Ad ogni modo, anche per chi non fosse NeverOp, mi sembra stupido forzare l' /hop per riguadagnare il +o o +v : forse puo' essere una buona idea quella di abilitare il /cs MODE +o/+v solo ai nick nelle liste di un canale? In subordine, direi che e' indispensabile, come minimo, permettere che tale comando sia attivo sul proprio nick (previa identificazione del nick e presenza nelle liste del canale, ovvio).<br />
+<br />
+&amp;gt; - La lunghezza massima dei memo e' stata alzata<br />
+&amp;gt; a 400 caratteri, e non ci dovrebbero piu' essere<br />
+&amp;gt; memo che si cancellano da soli<br />
+<br />
+Wolf7 mi aveva parlato di un expiry time di 40 giorni sui memo... e' stato forse eliminato?<br />
+<br />
+&amp;gt; invito chiunque abbia qualche idea o richiesta particolare<br />
+&amp;gt; per qualsiasi funzione o opzione mancante a postarla qui,<br />
+&amp;gt; ne discutiamo, e se e' attuabile verra' inserita nei nuovi servizi.<br />
+<br />
+Io suggerirei innanzitutto di estendere il NeverOp al +v , ovvero che non e' possibile dare il voice ad un nick con NeverOp (sempre che, come da osservazione precedente, la funzione di NeverOp non sia stata direttamente cancellata)<br />
+<br />
+&amp;gt; Ricordo che nei nuovi servizi ci saranno gia':<br />
+<br />
+&amp;gt; - /ms IGNORE<br />
+&amp;gt; - I Successor<br />
+&amp;gt; - Multilingua<br />
+&amp;gt; - Opzione AutoOp/AutoVoice per oppare/dare il voice<br />
+&amp;gt; a tutti quelli che entrano nel canale, senza bisogno di<br />
+&amp;gt; togliere l'opzione Ident o altro<br />
+<br />
+Ci sara' certamente un tempo migliore per spiegare queste features, ma ho due domande che balzano al volo:<br />
+A) Il Successor e' uno dei CFounder? Se si', che succede ai canali con piu' CFounder?<br />
+B) l'AutoOp/AutoVoice impattera' tutti, NeverOp compresi?<br />
+<br />
+&amp;gt; Aspetto vostre richieste (scrivetele QUI, non mi<br />
+&amp;gt; querate su IRC o altro). :)<br />
+<br />
+uhm.... cosi' va bene? :)<br />
+<br />
+Ciao, e ancora grazie per il lavoro del forum!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gastaman</div><div class="date">21-08-2002, 16:42</div></div><div class="posttext">Non ho capito: cosa intendi per &quot;saltare&quot; ? Mi sembrava di aver capito che quell'AUTH fosse un passo obbligatorio e non bypassabile.<br />
+<br />
+Infatti ora e' cosi'; prima c'era un modo per saltarlo, cioe' droppare il nick senza dover inserire il codice della E-Mail, fortunatamente non facile da scoprire. :)<br />
+<br />
+A che livello di verbose sono stati aggiunti?<br />
+1 per MODE e UNBAN, 2 per AKICK.<br />
+<br />
+Spero davvero di non aver capito bene, senno' temo di dovermi opporre con buona ragione: io sono NeverOp (su #debian si ricorderanno di me...), e come tale richiedo di potermi oppare solo dietro mia specifica richiesta a ChanServ. Se il /cs MODE non me lo permette, mi spiegate come posso continuare la mia vita da NeverOp CFounder?<br />
+<br />
+Usa /cs OP #canale tuonick (che ti permette peraltro di opparti in canali in cui sei anche solo AOP, cosa che non potevi fare con /cs MODE).<br />
+<br />
+Wolf7 mi aveva parlato di un expiry time di 40 giorni sui memo... e' stato forse eliminato?<br />
+<br />
+No, c'e' ancora (ed e' a 21 giorni per i Memo, non 40). Quello a cui mi riferivo era un bug che inviava dei memo gia' segnati da cancellare (circa uno ogni 1000-1500) e che potevano essere non letti dal destinatario in determinate circostanze.<br />
+<br />
+Io suggerirei innanzitutto di estendere il NeverOp al +v , ovvero che non e' possibile dare il voice ad un nick con NeverOp (sempre che, come da osservazione precedente, la funzione di NeverOp non sia stata direttamente cancellata)<br />
+<br />
+La funzione c'e' e ci sara', ma non so se quello che cheidi puo' essere inserito... voglio dire, ci sara' chi usa il NeverOp come fai tu e non vorrebbe avere il voice automatico e chi invece vuole il voice ma non l'op... soprattutto se un canale e' mlockato +m. Aggiungeremo casomai una opzione NeverVoice se gli altri coder lo riterranno opportuno.<br />
+<br />
+Ci sara' certamente un tempo migliore per spiegare queste features, ma ho due domande che balzano al volo:<br />
+A) Il Successor e' uno dei CFounder? Se si', che succede ai canali con piu' CFounder?<br />
+<br />
+Il Successor nel momento in cui verra' registrato un canale non ci sara'. Sara' possibile aggiungerlo (solo al founder) e deve per forza essere uno dei CF. Non ho capito qual e' il problema per canali con piu' di un CF...<br />
+<br />
+B) l'AutoOp/AutoVoice impattera' tutti, NeverOp compresi?<br />
+<br />
+Il controllo per il NeverOp e' interno a questo settaggio, quindi un utente col NeverOp non sara' oppato su un canale con l'AutoOp impostato.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Shaka</div><div class="date">25-08-2002, 15:21</div></div><div class="posttext">Io suggerirei innanzitutto di estendere il NeverOp al +v , ovvero che non e' possibile dare il voice ad un nick con NeverOp (sempre che, come da osservazione precedente, la funzione di NeverOp non sia stata direttamente cancellata)<br />
+<br />
+<br />
+Uhm non so quanto sia logica la cosa. Essenzialmente il +v serve a qualcosa nei chan moderati e in questi casi probabilmente l'utente finirebbe per usare /cs voice nel 90% dei casi.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">25-08-2002, 15:44</div></div><div class="posttext">Gastaman ha scritto:<br />
+<br />
+&gt; Aggiungeremo casomai una opzione NeverVoice se<br />
+&gt; gli altri coder lo riterranno opportuno.<br />
+<br />
+Io appoggerei la cosa... :)<br />
+Del resto suppongo che si possa usare lo stesso codice del NeverOp, con qualche modifica minima (nome ed umode), il che non dovrebbe essere un gran peso per il coder.<br />
+<br />
+&gt; Il Successor nel momento in cui verra' registrato un<br />
+&gt; canale non ci sara'. Sara' possibile aggiungerlo (solo<br />
+&gt; al founder) e deve per forza essere uno dei CF.<br />
+&gt; Non ho capito qual e' il problema per canali con<br />
+&gt; piu' di un CF...<br />
+<br />
+Quando c'era CR, uno era il Founder ed uno era il Successor.<br />
+Io mi chiedevo solo se, in caso di nomina del Successor, si dovesse provvedere a declassare qualche CFounder.<br />
+<br />
+<br />
+Shaka ha scritto:<br />
+<br />
+&gt;&gt; Io suggerirei innanzitutto di estendere il NeverOp al +v ,<br />
+&gt;&gt; ovvero che non e' possibile dare il voice ad un nick con NeverOp<br />
+<br />
+&gt; Uhm non so quanto sia logica la cosa. Essenzialmente il +v serve<br />
+&gt; a qualcosa nei chan moderati e in questi casi probabilmente<br />
+&gt; l'utente finirebbe per usare /cs voice nel 90% dei casi.<br />
+<br />
+Non credo che uno si dichiari NeverVoice per poi entrare in chan moderati, ne' abitualmente ne' casualmente.<br />
+Comunque, se l'utente non puo' evitare di essere vociato, almeno non e' possibile permettere di eseguire un -v ? Gli operatori si deoppano, ma i voice devono per forza fare /hop ...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Shaka</div><div class="date">25-08-2002, 17:06</div></div><div class="posttext">Comunque, se l'utente non puo' evitare di essere vociato, almeno non e' possibile permettere di eseguire un -v ? Gli operatori si deoppano, ma i voice devono per forza fare /hop ...<br />
+<br />
+Per questo scopo esiste già /cs devoice #chan nick</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">25-08-2002, 17:25</div></div><div class="posttext">Shaka ha scritto:<br />
+<br />
+&gt; Per questo scopo esiste già /cs devoice #chan nick<br />
+<br />
+Certo, ma questo vale solo se hai un nick registrato ed inserito nelle liste del canale.<br />
+Sul mio canale ho provveduto a far assegnare +v al mio bel Koichi`test e non c'e' stato verso di fare -v :<br />
+<br />
+&#91;18&#58;20&#58;08&#93; * Your nick is now Koichi`test<br />
+-<br />
+&#91;18&#58;20&#58;23&#93; -&amp;gt; *Chanserv* devoice #jojofc Koichi`test<br />
+-<br />
+&#91;18&#58;20&#58;24&#93; -ChanServ- Accesso negato.<br />
+<br />
+Tanto per scrupolo, ho pensato di fare lo stesso test con un mio nick registrato ma non inserito nelle liste, e non e' cambiato nulla.<br />
+Solo un operatore, poi, puo' fare /mode #chan -v nick <br />
+<br />
+Ne consegue che l'utente vociato puo' togliersi la +v solo uscendo e rientrando nel canale. Niente di nuovo sotto il sole: mi pare fosse cosi' anche quando Azzurra aveva CR, ovvero che il +v non e' per nulla gestibile dall'utente che se lo riceve.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Shaka</div><div class="date">25-08-2002, 18:45</div></div><div class="posttext">&#91;19&#58;38&#58;57&#93; *** Tacchan sets mode&#58; +r<br />
+#shaka Tacchan @Shaka <br />
+#shaka End of /NAMES list.<br />
+&#91;19&#58;40&#58;33&#93; *** Now talking in #shaka<br />
+&#91;19&#58;40&#58;33&#93; *** Topic is 'Zero no ryouiki &#40;ChanServ&#41;'<br />
+&#91;19&#58;40&#58;33&#93; *** Set by ChanServ on Sun Dec 23 15&#58;59&#58;12<br />
+&#91;19&#58;40&#58;33&#93; *** ChanServ sets mode&#58; +v Tacchan<br />
+&#91;19&#58;40&#58;44&#93; -&amp;gt; *chanserv* devoice #shaka Tacchan<br />
+&#91;19&#58;40&#58;44&#93; *** ChanServ sets mode&#58; -v Tacchan<br />
+&#91;19&#58;41&#58;03&#93; -&amp;gt; *chanserv* why #shaka Tacchan<br />
+&#91;19&#58;41&#58;03&#93; -ChanServ- Tacchan e' un VOP di #Shaka. Motivo&#58; Si e' identificato al nick Tacchan tramite password.<br />
+<br />
+<br />
+Non è che hai fatto confusione con le liste magari ?<br />
+<br />
+[/code]</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">25-08-2002, 18:58</div></div><div class="posttext">Shaka ha scritto:<br />
+<br />
+&gt; Non è che hai fatto confusione con le liste magari ?<br />
+<br />
+no, e difatti ripeto che &quot;questo vale solo se hai un nick registrato ed inserito nelle liste del canale&quot; : un nick non registrato non e' in nessuna lista, mi pare ovvio... E, non essendo in nessuna lista, non puo' togliersi il voice. :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Shaka</div><div class="date">25-08-2002, 23:59</div></div><div class="posttext">Shaka ha scritto:<br />
+<br />
+&gt; Non è che hai fatto confusione con le liste magari ?<br />
+<br />
+no, e difatti ripeto che &quot;questo vale solo se hai un nick registrato ed inserito nelle liste del canale&quot; : un nick non registrato non e' in nessuna lista, mi pare ovvio... E, non essendo in nessuna lista, non puo' togliersi il voice. :)<br />
+<br />
+Certo che deve essere nelle liste (almeno VOP), altrimenti che senso avrebbe nel discorso del no-voice di cui sopra ? Se non è VOP non viene messo +v da ChanServ al join quindi non avrebbe nemmeno la necessità che questo non accada no ?<br />
+<br />
+Se vuoi estendere il discorso ai +v non VOP bhe, non essendo nelle liste di ChanServ, direi che non hanno e non debbano avere alcun accesso a CS no ? Se mi hanno dato il +v in un chan si suppone che ci sia un motivo. Se non lo voglio più o lo chiedo semplicemente ad un op o magari esco (anche perchè magari è finita la mia necessità di essere in quel canale).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Niox</div><div class="date">26-08-2002, 14:30</div></div><div class="posttext">[ Messaggio non riguardante il discorso di Shaka e Koichi ]<br />
+<br />
+So che questa proposta serà già stata fatta comunque ve la faccio:<br />
+secondo me sarebbe bene estendere il kick e/o ban a ChanServ onde evitare che qualcuno che fa un takeover che magari è AOp continui a opparsi se tu lo deoppi nel canale ed appena rientri ti banna subito. <br />
+Questo servirebbe soprattutto per utenti meno esperti che non hanno ancora piena conoscenza di irc e dei suoi comandi.<br />
+<br />
+Altra proposta che sarà bocciata di sicuro:<br />
+so per certo che le richieste di BotServ sono state fatte a migliaia ma io voglio richiedervelo :P <br />
+BotServ non lagga ed è anche più facile da usare. So che ci sono già i bot ufficiali, ma molti cadono e/o sono in continuo rifacimento (vedi in questo momento roBOTic che nn è presente).<br />
+<br />
+                 Saluto in attesa di risposta,<br />
+                                                 Niox</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">debiAn</div><div class="date">26-08-2002, 14:38</div></div><div class="posttext">[ Messaggio non riguardante il discorso di Shaka e Koichi ]<br />
+<br />
+So che questa proposta serà già stata fatta comunque ve la faccio:<br />
+secondo me sarebbe bene estendere il kick e/o ban a ChanServ onde evitare che qualcuno che fa un takeover che magari è AOp continui a opparsi se tu lo deoppi nel canale ed appena rientri ti banna subito. <br />
+Questo servirebbe soprattutto per utenti meno esperti che non hanno ancora piena conoscenza di irc e dei suoi comandi.<br />
+<br />
+Altra proposta che sarà bocciata di sicuro:<br />
+so per certo che le richieste di BotServ sono state fatte a migliaia ma io voglio richiedervelo :P <br />
+BotServ non lagga ed è anche più facile da usare. So che ci sono già i bot ufficiali, ma molti cadono e/o sono in continuo rifacimento (vedi in questo momento roBOTic che nn è presente).<br />
+<br />
+                 Saluto in attesa di risposta,<br />
+                                                 Niox<br />
+<br />
+Per quanto riguarda roBOTic, purtroppo la connettività interbusiness di jnet è out, interbusiness dovrebbe risolvere il problema a breve (si spera). <br />
+<br />
+In ogni caso seguiremo il tuo suggerimento, robotic sarà spostato su un server piu' stabile quanto prima.<br />
+<br />
+Ciao</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Shaka</div><div class="date">26-08-2002, 16:18</div></div><div class="posttext">So che questa proposta serà già stata fatta comunque ve la faccio:<br />
+secondo me sarebbe bene estendere il kick e/o ban a ChanServ onde evitare che qualcuno che fa un takeover che magari è AOp continui a opparsi se tu lo deoppi nel canale ed appena rientri ti banna subito. <br />
+Questo servirebbe soprattutto per utenti meno esperti che non hanno ancora piena conoscenza di irc e dei suoi comandi.<br />
+<br />
+Un kick e/o ban via ChanServ non risolverebbe il problema. Se il tizio è xOP del chan si può inviatare e scavalcare il ban senza alcun problema rendendolo quindi inutile.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Niox</div><div class="date">26-08-2002, 17:32</div></div><div class="posttext">Per quanto riguarda roBOTic, purtroppo la connettività interbusiness di jnet è out, interbusiness dovrebbe risolvere il problema a breve (si spera). <br />
+<br />
+In ogni caso seguiremo il tuo suggerimento, robotic sarà spostato su un server piu' stabile quanto prima.<br />
+<br />
+Ciao<br />
+<br />
+Ottimo, grazie per l'informazione. Speriamo bene ^^</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Niox</div><div class="date">26-08-2002, 20:16</div></div><div class="posttext">Altre proposte(oggi fioccano) :P<br />
+<br />
+un comando che possa trasferire tutte le liste AKick/VOp/AOp/SOp/Cf ad un altro chan. <br />
+<br />
+Butto lì un altra proposta: trasferire tutti gli accessi di un nick ad un altro togliendoli però a chi ha usato il comando.<br />
+So che questo probabilmente nn sarà fattibile perchè per esempio a un founder potrebbe nn andare a genio qualcosa sull'accesso del nuovonick al canale anche se è la stessa persona e/o altri motivi che per ora io nn riesco a intuire.<br />
+Terza e credo ultima proposta: mostrare nel seenserv in cosa cambia nick. Adesso viene fuori &quot;Ho visto pippo cambiare nick 1minuti fa.&quot; Magari potreste fare in modo che scriva anche il nuovo nick.<br />
+<br />
+Cordiali saluti e complimenti per il lavoro fino ad oggi svolto con i servizi,<br />
+Niox</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gastaman</div><div class="date">28-08-2002, 22:37</div></div><div class="posttext">un comando che possa trasferire tutte le liste AKick/VOp/AOp/SOp/Cf ad un altro chan.<br />
+<br />
+Un comando del genere servirebbe unicamente a farti risparmiare 3 minuti della tua vita, per contro si andrebbe ad aumentare il codice dei servizi inutilmente visto che sono tutte cose che gia' fanno.<br />
+<br />
+Butto lì un altra proposta: trasferire tutti gli accessi di un nick ad un altro togliendoli però a chi ha usato il comando.<br />
+<br />
+Ti sei risposto da solo.<br />
+<br />
+Terza e credo ultima proposta: mostrare nel seenserv in cosa cambia nick. Adesso viene fuori &quot;Ho visto pippo cambiare nick 1minuti fa.&quot; Magari potreste fare in modo che scriva anche il nuovo nick.<br />
+<br />
+Non e' scritto di proposito, per rispettare la privacy degli utenti.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Niox</div><div class="date">29-08-2002, 00:16</div></div><div class="posttext">ok. tnx gasta per la risposta</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Soul_Rebel</div><div class="date">30-08-2002, 14:03</div></div><div class="posttext">Salve, mi permetto di proporre un nuovo comando anch'io:<br />
+il comando consisterebbe in una specie di restrizione di accesso ad un canale da parte di utenti che frequentano altri canali dove la loro presenza non è desiderata; si può dire in parole povere, un Akick sulle liste (o semplicemente utenti) dei canali. Esempio (se c'è nè fosse bisogno) GuestXXX del #canale verra bannato e kickato nel canele #chan. Il problema è se limitare la restrizione solo a coloro che sono nelle liste (cosa che il ChanServ potrebbe fare senza problemi...n.b.lo immagino io che sia senza problema...) o ampliarla a tutti gli uteni. Da qui uno potrebbe affermare: ma sei io sono un (minimo) VOP di #canale e di #chan perchè dovrei essere costretto ad invitrmi? Si potrebbe pensare in sistema che se l'utente fa farte delle liste di entrambi i canali, tale comando non lo subirà. Altra obbiezione: ma se io invece sono un buon utente di entrambi i canali, ma haimè, non faccio parte di nessuna lista di #chan (riprendo l'esempio di prima) perchè mi togliete questa possibilità di chattare? Risposta: si potrà finalmente dare un pò di importanza al Voice (il quale è poco considerato).<br />
+Tale comando potrà anche evitare fastidiosi utenti che entrano nei chan in questo modo:<br />
+GuestXXX has joined #chan<br />
+&amp;lt;GuestXXX&amp;gt;!list<br />
+GuestXXX has left #chan<br />
+Non penso ci siano bisogno di spiegare il perchè di ciò che ho scritto... (si potrebbe anche inserire il carattere * ... non spiego neanche a quale parola possa venire accompagnato).<br />
+Nome del comando &quot;nochan&quot;.<br />
+Grazie, ciao a tutti</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Shaka</div><div class="date">31-08-2002, 12:21</div></div><div class="posttext">Salve, mi permetto di proporre un nuovo comando anch'io:<br />
+[CUT]<br />
+<br />
+Francamente non ho ben capito cosa dovrebbe fare questo comando.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Alex1</div><div class="date">31-08-2002, 14:56</div></div><div class="posttext">Credo che il post di Soul_Rebel rispecchi una situazione nella quale io stesso mi sono imbattuto. Lo scopo di tale comando dovrebbe impedire l'accesso a #canale1 agli utenti inseriti delle liste del #canale2 a meno che essi non siano presenti anche nelle liste del 1° chan. So che la risposta + logica a questa domanda sarebbe: e se l'utente del canale2 nn si identificasse al nick allora tale comando non avrebbe senso. Purtroppo non esiste per quel che ne so un tipo di comando che inibisca l'accesso ad un chan in modo definitivo; lo stesso akick per quanto ben messo è facilmente saltabile da un ip dinamico. Un comando del genere andrebbe ad implementare quello dell'akick costringendo, per lo meno, i disturbatori a dover compiere qualche operazione in + per poter lamerare.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Soul_Rebel</div><div class="date">01-09-2002, 16:57</div></div><div class="posttext">Esatto alex.<br />
+Shaka:<br />
+il comando consisterebbe in una specie di restrizione di accesso ad un canale da parte di utenti che frequentano altri canali dove la loro presenza non è desiderata<br />
+<br />
+<br />
+Founder-Cofounder-SOP-AOP-VOP del #canale1 in Akick nel #canale2.<br />
+Meglio?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gastaman</div><div class="date">02-09-2002, 08:58</div></div><div class="posttext">Founder-Cofounder-SOP-AOP-VOP del #canale1 in Akick nel #canale2.<br />
+Meglio?<br />
+<br />
+Cosi' poi basta registrarsi un canale a caso da droppare subito dopo e usare questo comando per sapere tutte le liste di un altro canale?<br />
+Temo non sia fattibile... se ci sono canali che creano cosi' tanti problemi basta entrarci, prendere la lista degli operatori e mettere tutti in akick... lavoro di 2 minuti o meno.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Alex1</div><div class="date">02-09-2002, 14:25</div></div><div class="posttext">se ci sono canali che creano cosi' tanti problemi basta entrarci, prendere la lista degli operatori e mettere tutti in akick<br />
+akickare un utente che si connette con ip dinamico e cambiando nick e mask non è così semplice</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Koper</div><div class="date">02-09-2002, 14:44</div></div><div class="posttext">se ci sono canali che creano cosi' tanti problemi basta entrarci, prendere la lista degli operatori e mettere tutti in akick<br />
+akickare un utente che si connette con ip dinamico e cambiando nick e mask non è così semplice<br />
+<br />
+E che c'entra? Anche con il comando che hai proposto tu c'è lo stesso problema..</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Alex1</div><div class="date">02-09-2002, 15:08</div></div><div class="posttext">beh il comando che ho proposto funziona se un utente è oppato nel chan2. Ovviamente non è un comando che può definirsi perfetto però almeno è qualcosa di più che può andare ad integrare l'akick</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Koper</div><div class="date">02-09-2002, 16:24</div></div><div class="posttext">beh il comando che ho proposto funziona se un utente è oppato nel chan2. Ovviamente non è un comando che può definirsi perfetto però almeno è qualcosa di più che può andare ad integrare l'akick<br />
+<br />
+Così un utente di chan2 oppa un altro utente presente di chan2 che poi si ritroverebbe in akick senza motivo?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Soul_Rebel</div><div class="date">02-09-2002, 22:17</div></div><div class="posttext">Gastaman:<br />
+<br />
+Cosi' poi basta registrarsi un canale a caso da droppare subito dopo e usare questo comando per sapere tutte le liste di un altro canale? <br />
+<br />
+<br />
+<br />
+Non ci avevo pensato, ma se non è fattibile per questo motivo, si potrebbe rendere impossibile la visione delle liste ma semplicemente solo il chan.<br />
+<br />
+Koper:<br />
+<br />
+<br />
+Così un utente di chan2 oppa un altro utente presente di chan2 che poi si ritroverebbe in akick senza motivo?<br />
+<br />
+Giusta osservazione, ma tale comando comunque sarebbe usato in casi, diciamo &quot;insopportabili&quot;, e per l'appunto mi ricollego a ciò che ha detto alex, perchè la situazione è la stessa. (comunque sia si metterebbe un utente in akick che evidentemente non è desiderato nell'altro canale a priori).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">03-09-2002, 00:21</div></div><div class="posttext">ah, scusate, mi e' venuta in mente una feature che c'era nel CR... era il chanmode +O , per gestire i join sui chan +l che raggiungessero il limite previsto. Che fine ha fatto questo chanmode? ^^</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Shaka</div><div class="date">03-09-2002, 09:41</div></div><div class="posttext">ah, scusate, mi e' venuta in mente una feature che c'era nel CR... era il chanmode +O , per gestire i join sui chan +l che raggiungessero il limite previsto. Che fine ha fatto questo chanmode? ^^<br />
+<br />
+Ti rimando a  http://www.azzurra.org/forum/viewtopic.php?t=1371</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">03-09-2002, 11:43</div></div><div class="posttext">Ti rimando a  http://www.azzurra.org/forum/viewtopic.php?t=1371<br />
+<br />
+Grazie Shaka... ti (vi) chiedo scusa per non averlo notato prima, perche' sono stato in ferie e ho controllato solo i topic di cui avevo richiesto notifica.<br />
+<br />
+Sorry ^^;;;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gastaman</div><div class="date">04-09-2002, 00:08</div></div><div class="posttext">Non ci avevo pensato, ma se non è fattibile per questo motivo, si potrebbe rendere impossibile la visione delle liste ma semplicemente solo il chan.<br />
+<br />
+Non ho capito cosa vuoi dire...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Niox</div><div class="date">05-09-2002, 01:03</div></div><div class="posttext">Scusa Shaka ma in molti casi il voice viene usato per distinguere l'utente dagli altri e raramente viene usato per i canali moderati (vedi ChanStats per esempio), percui a mio modesto parere il neverVoice ci potrebbe stare nei nuovi servizi, ma siete voi che avete il diritto/potere di decidere sui servizi, percui in caso di mancata aggiunta di questo servizio rispetterei le vostre decisioni.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Soul_Rebel</div><div class="date">05-09-2002, 21:56</div></div><div class="posttext">Non ho capito cosa vuoi dire...<br />
+<br />
+ :-?<br />
+Praticamente il chanserv non ti dà la possibilità di vedere uno ad uno gli utenti che fanno parte delle liste del canale da mettere in akick, ma ti fà vedere solo il canale messo in &quot;akick&quot;.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gastaman</div><div class="date">05-09-2002, 22:56</div></div><div class="posttext">Praticamente il chanserv non ti dà la possibilità di vedere uno ad uno gli utenti che fanno parte delle liste del canale da mettere in akick, ma ti fà vedere solo il canale messo in &quot;akick&quot;.<br />
+<br />
+A quel punto basta cancellare la lista AKick e sai che chiunque entri e venga akickato e' nelle liste di quel canale... :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Soul_Rebel</div><div class="date">06-09-2002, 15:05</div></div><div class="posttext">Gastaman... tu vai alla ricerca di eventi sopranaturali...sarebbe un comportamento da serial killer; comunque scherzi a parte, non era una proposta ridicola la mia :)<br />
+Ciao a tutti</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gastaman</div><div class="date">06-09-2002, 19:05</div></div><div class="posttext">Gastaman... tu vai alla ricerca di eventi sopranaturali...sarebbe un comportamento da serial killer<br />
+<br />
+Allora su IRC e' pieno di serial killers... :)<br />
+A parte gli scherzi, ti assicuro che ci sono persone che non aspettano altro che delle &quot;porte aperte&quot; tipo questa per lamerare... e' per questo che e' necessario assicurarsi che non ce ne siano.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Niox</div><div class="date">08-09-2002, 00:54</div></div><div class="posttext">Gasta un &quot;/cs set #canale kickprotect level&quot; non sarebbe possibile? oppure anche estendere il protect al kick, ma secondo me meglio due comandi diversi. Possibile che venga applicato?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Shaka</div><div class="date">08-09-2002, 08:39</div></div><div class="posttext">Gasta un &quot;/cs set #canale kickprotect level&quot; non sarebbe possibile? oppure anche estendere il protect al kick, ma secondo me meglio due comandi diversi. Possibile che venga applicato?<br />
+<br />
+No, non è possibile. /kick è un comando gestioto direttamente dall' ircd che non ha alcuna interazione con i servizi. Quindi non è possibile, al momento del kick, andare a vedere se l'utente kickato è in qualche lista di ChanServ. Introdurre un simile controllo (l'ircd chiede a ChanServ l' autorizzazione a kickkare un utende del dato canale) comporterebbe un overhead non accettabile sia per il demone stesso sia per i servizi.<br />
+<br />
+Eventuali varianti come &quot;non kikkare tizio e se op&quot; direi che non sono applicabili per ovvi motivi :)<br />
+<br />
+Aggiungerei inoltre che se tu (in questo caso) oppi qualcuno che non conosci e quello ti kicka e/o banna direi che la sei cercata  :D <br />
+<br />
+saluti</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Niox</div><div class="date">22-09-2002, 13:19</div></div><div class="posttext">Un /ns set verbose off non si potrebbe mettere? Questo comando in pratica non fa ricevere le Opnotice del verbose a chi l'ha settato off.<br />
+Può andare?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gastaman</div><div class="date">22-09-2002, 15:15</div></div><div class="posttext">Un /ns set verbose off non si potrebbe mettere? Questo comando in pratica non fa ricevere le Opnotice del verbose a chi l'ha settato off.<br />
+<br />
+Non si puo', poiche' si tratta di una opnotice (/notice @#canale messaggio) e viene inviata a tutti gli operatori dall'ircd e non dai servizi.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gastaman</div><div class="date">23-05-2003, 10:20</div></div><div class="posttext">Questa mattina sono stati aggiornati sia i Servizi sia l'ircd. Le modifiche sono state le seguenti:<br />
+<br />
+IRCd:<br />
+<br />
+* Inseriti due nuovi Channel Modes:<br />
+   - +u : non mostra eventuali commenti presenti in QUIT e PART inviati al canale;<br />
+   - +C : non permette di inviare CTCP al canale.<br />
+<br />
+* Corretti alcuni problemi inerenti i ban;<br />
+<br />
+* Inserito un delay che non permette di cambiare nick per i 10 secondi seguenti un SVSNICK (quindi ad esempio subito dopo essere stati &quot;guestati&quot; dai servizi).<br />
+<br />
+<br />
+Servizi:<br />
+<br />
+* Inserito supporto per i due nuovi channel modes;<br />
+<br />
+* Corretto un bug sul SET VERBOSE (leggeva &quot;1843423&quot; come &quot;1&quot;);<br />
+<br />
+* Corretti alcuni problemi sui codici di autorizzazione, che ogni tanto erano sbagliati;<br />
+<br />
+* Corretto un bug sul FORWARD di MemoServ per chi aveva l'opzione NoMemo attiva.<br />
+<br />
+<br />
+[N.B.: Nel momento in cui scrivo ci sono ancora due server non aggiornati, su di essi i nuovi channel modes non funzionano ovviamente.]</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Sting1</div><div class="date">23-05-2003, 12:53</div></div><div class="posttext">Ecco cosa leggo nella versione inglese di HelpServ<br />
+-HelpServ-   c  - Blocks all messages containing colors sent to the channel.<br />
+-HelpServ-   c  - Blocks all CTCPs sent to the channel.<br />
+Quest'ultimo dovrebbe essere C e non c :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">rave</div><div class="date">23-05-2003, 13:55</div></div><div class="posttext">Ottimo raga!  :wink:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">24-05-2003, 22:35</div></div><div class="posttext">- +u : non mostra eventuali commenti presenti in QUIT e PART inviati al canale;<br />
+<br />
+Il mio primo contatto con questo chanmode e' stato di vedermi spostare tutti i /quit nello Status: se guardo il log del canale non esce nessuno, mentre lo Status e' pieno zeppo di segnalazioni, ovviamente prive dei commenti che seguono il /quit .<br />
+Non oso pensare che succederebbe se questo accadesse su tutti e dieci i canali che frequento, penso che il mio Status diventerebbe inservibile...<br />
+E' possibile correggere questa situazione?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">debiAn</div><div class="date">25-05-2003, 01:10</div></div><div class="posttext">Stiamo sistemando questo problema e un altro paio proprio in questo momento.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dracoo</div><div class="date">03-06-2003, 22:23</div></div><div class="posttext">Vorrei dare un piccolo aiuto per quelli che vorrebbero un comando per akikkare l'intero chan:<br />
+mette un bel bot che faccio un whois on join agli utenti, e se si trova nel canale indesiderato (a meno che non sia +s o +p, cosa però che porterebbe svantaggi al canale &quot;akikkato&quot;) viene kickbannato... a me è capitato, e non è neanche difficile da fare... ma non vorrei andare troppo off topic :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Shaka</div><div class="date">04-06-2003, 15:27</div></div><div class="posttext">Vorrei dare un piccolo aiuto per quelli che vorrebbero un comando per akikkare l'intero chan:<br />
+mette un bel bot che faccio un whois on join agli utenti, e se si trova nel canale indesiderato <br />
+<br />
+Aggiungere una persona alla AKICK list solo perchè frequenta un tal canale ...<br />
+E' alquanto infantile sapete ...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dracoo</div><div class="date">05-06-2003, 18:34</div></div><div class="posttext">Aggiungere una persona alla AKICK list solo perchè frequenta un tal canale ... <br />
+E' alquanto infantile sapete ...<br />
+condivido, il mio era solo un consiglio...<br />
+comunque, vorrei porre una domanda di altro genere: se un canale ha nei mlock i mode +s o +p non si vede nel /cs info #chan nè il topic nè chi l'ha settato. Io vorrei chiedere che fosse possibile vedere almeno chi l'ha settato (ho anche il topic stesso) SOLO per le persone vop+, dato che se una persona entra nel suddetto canale, e questo è vuoto, vede solo ChanServ che impota il topic, ma non può sapere chi è stato a settarlo l'ultima volta!<br />
+<br />
+[ps, la parte in italico l'ho corretta solo ora... ora capisco cosa voleva dire ^Faust^...!]</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">^Faust^</div><div class="date">05-06-2003, 20:39</div></div><div class="posttext">Sbagliato: al join del canale il server invia al client i raws 332 (il topic), il 333 (autore e data di creazione del topic), il 324 (i channel modes) ed il 329 (data di creazione del canale), per cui coloro che non riescono a vedere l'echo del 333 hanno problemi nello script/client.<br />
+<br />
+&#91;21°29'54&amp;quot;&#93; * Now talking in #*********<br />
+&#91;21°29'54&amp;quot;&#93; * Topic is '=^= Dispositivo inutile, non sarà sufficiente. Vogliamo un nuovo gioco da giocare quando ce ne saremo andati. Non passerà molto tempo, prima che vi disturbi dall'oscurità. =^='<br />
+&#91;21°29'54&amp;quot;&#93; * Set by ^Faust^Out on Thu May 22 21&#58;11&#58;08</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dracoo</div><div class="date">05-06-2003, 20:48</div></div><div class="posttext">Faust, forse non hai capito bene il problema... lo so benissimo che al join di un canale appare la raw 333 che indica chi ha modificato il topic, ma suddetta raw appare solamente se c'è qualcuno nel canale, e non quando ChanServ cambia il topic in un canale appena un user entra in un canale vuoto e registrato... per questo vorrei che apparisse il corrispettivo della raw 333 nel /cs info #chan anche per i canali con mlock +s o +p (ovviamente limitandoci agli utenti vop+)<br />
+spero di esser stato sufficentemente chiaro (e grammaticalmente corretto nello scrivere :) )</div></div><hr />
+
+
+<div id="copyright">vBulletin&reg; v3.6.4, Copyright &copy;2000-2007, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

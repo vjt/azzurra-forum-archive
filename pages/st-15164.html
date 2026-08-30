@@ -1,0 +1,3039 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="generator" content="vBulletin 3.8.2" />
+
+<meta name="keywords" content=" IRCD basato su Bahamut di Azzurra.org, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+<meta name="description" content=" IRCD basato su Bahamut di Azzurra.org Angolo tecnico" />
+
+
+<!-- CSS Stylesheet -->
+<style type="text/css" id="vbulletin_css">
+/**
+* vBulletin 3.8.2 CSS
+* Style: 'Azzurra3.0'; Style ID: 6
+*/
+body
+{
+	background: #efefef;
+	color: #000000;
+	font: 10pt "Lucida Grande", "Lucida Sans Unicode", Sans-Serif;
+	margin: 5px 10px 10px 10px;
+	padding: 0px;
+}
+a:link, body_alink
+{
+	color: #11518F;
+}
+a:visited, body_avisited
+{
+	color: #11518F;
+}
+a:hover, a:active, body_ahover
+{
+	color: #FF4400;
+}
+.page
+{
+	background: #ffffff;
+	color: #000000;
+}
+td, th, p, li
+{
+	font: 10pt "Lucida Grande", "Lucida Sans Unicode", Sans-Serif;
+}
+.tborder
+{
+	background: #cccccc;
+	color: #333333;
+}
+.tcat
+{
+	background: #97d2ec url(azzurra3.0/sfondotb.png) repeat-x top left;;
+	color: #11518F;
+	font: bold 10pt "Lucida Grande", "Lucida Sans Unicode", Sans-Serif;
+}
+.tcat a:link, .tcat_alink
+{
+	color: #51778B;
+	text-decoration: none;
+}
+.tcat a:visited, .tcat_avisited
+{
+	color: #51778B;
+	text-decoration: none;
+}
+.tcat a:hover, .tcat a:active, .tcat_ahover
+{
+	color: #FF4400;
+	text-decoration: none;
+}
+.thead
+{
+	background: #efefef;
+	color: #333333;
+	font: bold 11px "Lucida Grande", "Lucida Sans Unicode", Sans-Serif;
+}
+.thead a:link, .thead_alink
+{
+	color: #11518F;
+}
+.thead a:visited, .thead_avisited
+{
+	color: #11518F;
+}
+.thead a:hover, .thead a:active, .thead_ahover
+{
+	color: #FF4400;
+}
+.tfoot
+{
+	background: #ffffff;
+	color: #000000;
+}
+.tfoot a:link, .tfoot_alink
+{
+	color: #11518F;
+}
+.tfoot a:visited, .tfoot_avisited
+{
+	color: #11518F;
+}
+.tfoot a:hover, .tfoot a:active, .tfoot_ahover
+{
+	color: #FF4400;
+}
+.alt1, .alt1Active
+{
+	background: #F3F3FF;
+	color: #000000;
+}
+.alt2, .alt2Active
+{
+	background: #FDFDFD;
+	color: #000000;
+}
+.inlinemod
+{
+	background: #FFFFCC;
+	color: #000000;
+}
+.wysiwyg
+{
+	background: #FDFDFD;
+	color: #000000;
+	font: 10pt "Lucida Grande", "Lucida Sans Unicode", Sans-Serif;
+}
+textarea, .bginput
+{
+	font: 10pt "Lucida Grande", "Lucida Sans Unicode", Sans-Serif;
+}
+.bginput option, .bginput optgroup
+{
+	font-size: 10pt;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", Sans-Serif;
+}
+.button
+{
+	font: 11px "Lucida Grande", "Lucida Sans Unicode", Sans-Serif;
+}
+select
+{
+	font: 11px "Lucida Grande", "Lucida Sans Unicode", Sans-Serif;
+}
+option, optgroup
+{
+	font-size: 11px;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", Sans-Serif;
+}
+.smallfont
+{
+	font: 11px "Lucida Grande", "Lucida Sans Unicode", Sans-Serif;
+}
+.time
+{
+	color: #000000;
+}
+.navbar
+{
+	font: 11px "Lucida Grande", "Lucida Sans Unicode", Sans-Serif;
+}
+.highlight
+{
+	color: #FF0000;
+	font-weight: bold;
+}
+.fjsel
+{
+	background: #9FCFF4;
+	color: #000000;
+}
+.fjdpth0
+{
+	background: #F7F7F7;
+	color: #000000;
+}
+.panel
+{
+	background: #E4E7F5 url(images/gradients/gradient_panel.gif) repeat-x top left;
+	color: #000000;
+	padding: 10px;
+	border: 2px outset;
+}
+.panelsurround
+{
+	background: #D1D4E0 url(images/gradients/gradient_panelsurround.gif) repeat-x top left;
+	color: #000000;
+}
+legend
+{
+	color: #11518F;
+	font: 11px "Lucida Grande", "Lucida Sans Unicode", Sans-Serif;
+}
+.vbmenu_control
+{
+	background: url(azzurra3.0/misc/cat_back.png) repeat-x bottom left;
+	color: #f0f0f0;
+	font: bold 11px "Lucida Grande", "Lucida Sans Unicode", Sans-Serif;
+	padding: 3px 6px 3px 6px;
+	white-space: nowrap;
+	height:25px;
+}
+.vbmenu_control a:link, .vbmenu_control_alink
+{
+	color: #f0f0f0;
+	text-decoration: none;
+}
+.vbmenu_control a:visited, .vbmenu_control_avisited
+{
+	color: #f0f0f0;
+	text-decoration: none;
+}
+.vbmenu_control a:hover, .vbmenu_control a:active, .vbmenu_control_ahover
+{
+	color: #5CBDE7;
+	text-decoration: none;
+}
+.vbmenu_popup
+{
+	background: #FFFFFF;
+	color: #000000;
+	border: 1px solid #999999;
+}
+.vbmenu_option
+{
+	background: #DEE6ED;
+	color: #000000;
+	font: 11px "Lucida Grande", "Lucida Sans Unicode", Sans-Serif;
+	white-space: nowrap;
+	cursor: pointer;
+}
+.vbmenu_option a:link, .vbmenu_option_alink
+{
+	color: #11518F;
+	text-decoration: none;
+}
+.vbmenu_option a:visited, .vbmenu_option_avisited
+{
+	color: #11518F;
+	text-decoration: none;
+}
+.vbmenu_option a:hover, .vbmenu_option a:active, .vbmenu_option_ahover
+{
+	color: #FF4400;
+	text-decoration: none;
+}
+.vbmenu_hilite
+{
+	background: #8A949E;
+	color: #FFFFFF;
+	font: 11px "Lucida Grande", "Lucida Sans Unicode", Sans-Serif;
+	white-space: nowrap;
+	cursor: pointer;
+}
+.vbmenu_hilite a:link, .vbmenu_hilite_alink
+{
+	color: #11518F;
+	text-decoration: none;
+}
+.vbmenu_hilite a:visited, .vbmenu_hilite_avisited
+{
+	color: #11518F;
+	text-decoration: none;
+}
+.vbmenu_hilite a:hover, .vbmenu_hilite a:active, .vbmenu_hilite_ahover
+{
+	color: #FF4400;
+	text-decoration: none;
+}
+.wg_menu
+{
+	background-color: #EDF0FF;
+	color: #000000;
+	font-size: 12px;
+         font-family: Lucida Grande", "Lucida Sans Unicode", Sans-Serif;
+}
+.wg_gbalt1
+{
+	background-color: #FFFFFF;
+	color: #000000;
+}
+.wg_gbalt2
+{
+	background-color: #EDF0FF;
+	color: #000000;
+}
+.wg_form
+{
+	background-color: #EDF0FF;
+	color: #000000;
+}
+/* ***** styling for 'big' usernames on postbit etc. ***** */
+.bigusername { font-size: 14pt; }
+
+/* ***** small padding on 'thead' elements ***** */
+td.thead, div.thead { padding: 4px; }
+
+/* ***** basic styles for multi-page nav elements */
+.pagenav a { text-decoration: none; }
+.pagenav td { padding: 2px 4px 2px 4px; }
+
+/* ***** define margin and font-size for elements inside panels ***** */
+.fieldset { margin-bottom: 6px; }
+.fieldset, .fieldset td, .fieldset p, .fieldset li { font-size: 11px; }
+
+/* ***** don't change the following ***** */
+form { display: inline; }
+label { cursor: default; }
+.normal { font-weight: normal; }
+.inlineimg { vertical-align: middle; }
+</style>
+<link rel="stylesheet" type="text/css" href="clientscript/vbulletin_important.css?v=382" />
+
+
+<!-- / CSS Stylesheet -->
+
+<script type="text/javascript" src="clientscript/yui/yahoo-dom-event/yahoo-dom-event.js?v=382"></script>
+<script type="text/javascript" src="clientscript/yui/connection/connection-min.js?v=382"></script>
+<script type="text/javascript">
+<!--
+var SESSIONURL = "s=1701b05c24bcd03cf0bcd844f0dc6b62&";
+var SECURITYTOKEN = "guest";
+var IMGDIR_MISC = "azzurra3.0/misc";
+var vb_disable_ajax = parseInt("0", 10);
+// -->
+</script>
+<script type="text/javascript" src="clientscript/vbulletin_global.js?v=382"></script>
+
+
+
+	<link rel="alternate" type="application/rss+xml" title="Azzurra IRC Network Forum RSS Feed" href="external.php?type=RSS2" />
+	
+		<link rel="alternate" type="application/rss+xml" title="Azzurra IRC Network Forum - Angolo tecnico - RSS Feed" href="external.php?type=RSS2&amp;forumids=13" />
+	
+
+	<title> IRCD basato su Bahamut di Azzurra.org - Azzurra IRC Network Forum</title>
+	<script type="text/javascript" src="clientscript/vbulletin_post_loader.js?v=382"></script>
+	<style type="text/css" id="vbulletin_showthread_css">
+	<!--
+	
+	#links div { white-space: nowrap; }
+	#links img { vertical-align: middle; }
+	-->
+	</style>
+</head>
+<body onload="">
+<!-- logo -->
+<a name="top"></a>
+<table border="0" width="98%" cellpadding="0" cellspacing="0" align="center">
+<tr>
+	<td align="left"><a href="index.php?s=1701b05c24bcd03cf0bcd844f0dc6b62"><img src="http://forum.azzurra.org/azzurra3.0/logoforum.png" border="0" alt="Azzurra IRC Network Forum" /></a></td>
+	<td align="right" id="header_right_cell">
+		&nbsp;
+	</td>
+</tr>
+</table>
+<!-- /logo -->
+
+<!-- content table -->
+<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width:98%; text-align:left">
+		<div style="padding:0px 10px 0px 10px" align="left">
+
+
+
+
+
+<br />
+
+<!-- breadcrumb, login, pm info -->
+<table class="tborder" cellpadding="6" cellspacing="1" border="0" width="100%" align="center">
+<tr>
+	<td class="alt1" width="100%">
+		
+			<table cellpadding="0" cellspacing="0" border="0">
+			<tr valign="bottom">
+				<td><a href="#" onclick="history.back(1); return false;"><img src="azzurra3.0/misc/navbits_start.gif" alt="Torna indietro" border="0" /></a></td>
+				<td>&nbsp;</td>
+				<td width="100%"><span class="navbar"><a href="index.php?s=1701b05c24bcd03cf0bcd844f0dc6b62" accesskey="1">Azzurra IRC Network Forum</a></span> 
+	<span class="navbar">&gt; <a href="forumdisplay.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;f=8">Azzurra - Tech Center</a></span>
+
+
+	<span class="navbar">&gt; <a href="forumdisplay.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;f=13">Angolo tecnico</a></span>
+
+</td>
+			</tr>
+			<tr>
+				<td class="navbar" style="font-size:10pt; padding-top:1px" colspan="3"><a href="/showthread.php?s=a592ea1baeed91912adea4da88d5ea29&amp;t=15164"><img class="inlineimg" src="azzurra3.0/misc/navbits_finallink_ltr.gif" alt="Ricarica questa pagina" border="0" /></a> <strong>
+	 IRCD basato su Bahamut di Azzurra.org
+
+</strong></td>
+			</tr>
+			</table>
+		
+	</td>
+
+	<td class="alt2" nowrap="nowrap" style="padding:0px">
+		<!-- login form -->
+		<form action="login.php?do=login" method="post" onsubmit="md5hash(vb_login_password, vb_login_md5password, vb_login_md5password_utf, 0)">
+		<script type="text/javascript" src="clientscript/vbulletin_md5.js?v=382"></script>
+		<table cellpadding="0" cellspacing="3" border="0">
+		<tr>
+			<td class="smallfont" style="white-space: nowrap;"><label for="navbar_username">User Name</label></td>
+			<td><input type="text" class="bginput" style="font-size: 11px" name="vb_login_username" id="navbar_username" size="10" accesskey="u" tabindex="101" value="User Name" onfocus="if (this.value == 'User Name') this.value = '';" /></td>
+			<td class="smallfont" nowrap="nowrap"><label for="cb_cookieuser_navbar"><input type="checkbox" name="cookieuser" value="1" tabindex="103" id="cb_cookieuser_navbar" accesskey="c" />Ricordami?</label></td>
+		</tr>
+		<tr>
+			<td class="smallfont"><label for="navbar_password">Password</label></td>
+			<td><input type="password" class="bginput" style="font-size: 11px" name="vb_login_password" id="navbar_password" size="10" tabindex="102" /></td>
+			<td><input type="submit" class="button" value="Accedi" tabindex="104" title="Inserisci la tua username e la password nelle caselle a disposizione per accedere, oppure clicca sul bottone 'registrati' per crearti un profilo." accesskey="s" /></td>
+		</tr>
+		</table>
+		<input type="hidden" name="s" value="1701b05c24bcd03cf0bcd844f0dc6b62" />
+		<input type="hidden" name="securitytoken" value="guest" />
+		<input type="hidden" name="do" value="login" />
+		<input type="hidden" name="vb_login_md5password" />
+		<input type="hidden" name="vb_login_md5password_utf" />
+		</form>
+		<!-- / login form -->
+	</td>
+
+</tr>
+</table>
+<!-- / breadcrumb, login, pm info -->
+
+<!-- nav buttons bar -->
+<div class="tborder" style="padding:1px; border-top-width:0px">
+	<table cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
+	<tr align="center">
+		
+		
+		
+		<td class="vbmenu_control"><a rel="help" href="faq.php?s=1701b05c24bcd03cf0bcd844f0dc6b62" accesskey="5">FAQ</a></td>
+		
+			
+				<td class="vbmenu_control"><a href="memberlist.php?s=1701b05c24bcd03cf0bcd844f0dc6b62">Lista utenti</a></td>
+			
+			
+				<td class="vbmenu_control"><a href="group.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;">Social Groups</a></td>
+			
+		
+		<td class="vbmenu_control"><a href="calendar.php?s=1701b05c24bcd03cf0bcd844f0dc6b62">Calendario</a></td>
+		
+			
+				<td class="vbmenu_control"><a href="search.php?s=1701b05c24bcd03cf0bcd844f0dc6b62" accesskey="4">Cerca</a></td>
+				
+				<td class="vbmenu_control"><a href="search.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;do=getdaily" accesskey="2">I messaggi di oggi</a></td>
+				
+			
+			<td class="vbmenu_control"><a href="forumdisplay.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;do=markread" rel="nofollow">Segna i forums come letti</a></td>
+			
+		
+		
+		
+		</tr>
+	</table>
+</div>
+<!-- / nav buttons bar -->
+
+<br />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a name="poststop" id="poststop"></a>
+
+<!-- controls above postbits -->
+<table cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:3px">
+<tr valign="bottom">
+	
+		<td class="smallfont"><a href="newreply.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;do=newreply&amp;noquote=1&amp;p=477442" rel="nofollow"><img src="azzurra3.0/buttons/reply.gif" alt="rispondi" border="0" /></a></td>
+	
+	<td align="right"><div class="pagenav" align="right">
+<table class="tborder" cellpadding="3" cellspacing="1" border="0">
+<tr>
+	<td class="vbmenu_control" style="font-weight:normal">Pagina 1 di 2</td>
+	
+	
+		<td class="alt2"><span class="smallfont" title="Visualizzazione risultati 1 fino 10 di 12"><strong>1</strong></span></td>
+ <td class="alt1"><a class="smallfont" href="showthread.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;t=15164&amp;page=2" title="Mostra risultati 11 fino 12 di 12">2</a></td>
+	<td class="alt1"><a rel="next" class="smallfont" href="showthread.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;t=15164&amp;page=2" title="Prossima pagina - Risultati 11 fino 12 di 12">&gt;</a></td>
+	
+	
+</tr>
+</table>
+</div></td>
+</tr>
+</table>
+<!-- / controls above postbits -->
+
+<!-- toolbar -->
+<table class="tborder" cellpadding="6" cellspacing="1" border="0" width="100%" align="center" style="border-bottom-width:0px">
+<tr>
+	<td class="tcat" width="100%">
+		<div class="smallfont">
+		
+		&nbsp;
+		</div>
+	</td>
+	<td class="vbmenu_control" id="threadtools" nowrap="nowrap">
+		<a href="#goto_threadtools">Strumenti discussione</a>
+		
+	</td>
+	
+	
+	
+	<td class="vbmenu_control" id="displaymodes" nowrap="nowrap">
+		<a href="#goto_displaymodes">Modalità di visualizzazione</a>
+		
+	</td>
+	
+
+	
+
+</tr>
+</table>
+<!-- / toolbar -->
+
+
+
+<!-- end content table -->
+
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- / end content table -->
+
+
+
+
+
+<div id="posts"><!-- post #477442 -->
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width:98%; text-align:left">
+		<div style="padding:0px 10px 0px 10px" align="left">
+
+	<div id="edit477442" style="padding:0px 0px 6px 0px">
+	<!-- this is not the last post shown on the page -->
+
+
+
+<table id="post477442" class="tborder" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">
+<tr>
+	
+		<td class="thead" style="font-weight:normal; border: 1px solid #cccccc; border-right: 0px" >
+			<!-- status icon and date -->
+			<a name="post477442"><img class="inlineimg" src="azzurra3.0/statusicon/post_old.gif" alt="Vecchio" border="0" /></a>
+			04-02-2012, 13:22
+			
+			<!-- / status icon and date -->
+		</td>
+		<td class="thead" style="font-weight:normal; border: 1px solid #cccccc; border-left: 0px" align="right">
+			&nbsp;
+			#<a href="showpost.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;p=477442&amp;postcount=1" target="new" rel="nofollow" id="postcount477442" name="1"><strong>1</strong></a>
+			
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt2" width="175" style="border: 1px solid #cccccc; border-top: 0px; border-bottom: 0px">
+
+			<div id="postmenu_477442">
+				
+				<a class="bigusername" href="member.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;u=48680">Peppinos^</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_477442", true); </script>
+				
+			</div>
+
+			<div class="smallfont">New User</div>
+			
+			
+
+			
+
+			<div class="smallfont">
+				&nbsp;<br />
+				<div>Data Iscrizione: 02-02-2012</div>
+				
+				
+				<div>
+					Messaggi: 6
+				</div>
+				
+				
+				Potenza Reputazione: <span id="reppower_477442_48680">0</span> <div><span id="repdisplay_477442_48680"><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="Peppinos^ è sulla buona strada" border="0" /></span></div>
+				
+				<div>    </div>
+			</div>
+
+	</td>
+	
+	<td class="alt1" id="td_post_477442" style="border-right: 1px solid #cccccc">
+	
+		
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				<img class="inlineimg" src="images/icons/icon4.gif" alt="Exclamation" border="0" />
+				<strong>IRCD basato su Bahamut di Azzurra.org</strong>
+			</div>
+			<hr size="1" style="color:#cccccc; background-color:#cccccc" />
+			<!-- / icon and title -->
+		
+
+		<!-- message -->
+		<div id="post_message_477442">
+			
+			Salve a tutti,<br />
+ho provato ad installare bahamut di azzurra, sul mio server domestico che gira su Ubuntu Linux 11.10.<br />
+dopo aver eseguito le istruzioni riportate su devel.azzurra.org/bahamut/install<br />
+effettuando make install, praticamente il sistema non riesce a trovare il file ircd da andare a posizionare. Esso è importante per l'avvio del demone/applicazione dell'IRCD.<br />
+<br />
+Cosa potrebbe essere successo? perchè non riesce a trovare questo file?<img src="images/smilies/dubbio.gif" border="0" alt="" title="Dubbio" class="inlineimg" />
+		</div>
+		<!-- / message -->
+
+		
+
+		
+		
+
+		
+
+		
+
+		
+
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="border: 1px solid #cccccc; border-top: 0px">
+		<img class="inlineimg" src="azzurra3.0/statusicon/user_offline.gif" alt="Peppinos^ non è collegato" border="0" />
+
+
+		
+		
+		
+		
+		&nbsp;
+	</td>
+	
+	<td class="alt1" align="right" style="border: 1px solid #cccccc; border-left: 0px; border-top: 0px">
+	
+		<!-- controls -->
+		
+		
+		
+			<a href="newreply.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;do=newreply&amp;p=477442" rel="nofollow"><img src="azzurra3.0/buttons/quote.gif" alt="Rispondi Citando" border="0" /></a>
+		
+		
+		
+		
+		
+		
+		
+			
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</table>
+
+
+<!-- post 477442 popup menu -->
+<div class="vbmenu_popup" id="postmenu_477442_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tr>
+		<td class="thead">Peppinos^</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="member.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;u=48680">Vedi Profilo Pubblico</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="private.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;do=newpm&amp;u=48680" rel="nofollow">Invia un messaggio privato a Peppinos^</a></td></tr>
+	
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="search.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;do=finduser&amp;u=48680" rel="nofollow">Trova altri messaggi di Peppinos^</a></td></tr>
+	
+	
+	
+	</table>
+</div>
+<!-- / post 477442 popup menu -->
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #477442 --><!-- post #477443 -->
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width:98%; text-align:left">
+		<div style="padding:0px 10px 0px 10px" align="left">
+
+	<div id="edit477443" style="padding:0px 0px 6px 0px">
+	<!-- this is not the last post shown on the page -->
+
+
+
+<table id="post477443" class="tborder" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">
+<tr>
+	
+		<td class="thead" style="font-weight:normal; border: 1px solid #cccccc; border-right: 0px" >
+			<!-- status icon and date -->
+			<a name="post477443"><img class="inlineimg" src="azzurra3.0/statusicon/post_old.gif" alt="Vecchio" border="0" /></a>
+			04-02-2012, 13:26
+			
+			<!-- / status icon and date -->
+		</td>
+		<td class="thead" style="font-weight:normal; border: 1px solid #cccccc; border-left: 0px" align="right">
+			&nbsp;
+			#<a href="showpost.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;p=477443&amp;postcount=2" target="new" rel="nofollow" id="postcount477443" name="2"><strong>2</strong></a>
+			
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt2" width="175" style="border: 1px solid #cccccc; border-top: 0px; border-bottom: 0px">
+
+			<div id="postmenu_477443">
+				
+				<a class="bigusername" href="member.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;u=4068"><span style="color: black;">morpheus</span></a>
+				<script type="text/javascript"> vbmenu_register("postmenu_477443", true); </script>
+				
+			</div>
+
+			<div class="smallfont">Genio del Male</div>
+			<div class="smallfont"><img src="rankimg/scoder2.gif" alt="" border="" /></div>
+			
+
+			
+				<div class="smallfont">
+					&nbsp;<br /><a href="member.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;u=4068"><img src="customavatars/avatar4068_38.gif" width="150" height="150" alt="L'Avatar di morpheus" border="0" /></a>
+				</div>
+			
+
+			<div class="smallfont">
+				&nbsp;<br />
+				<div>Data Iscrizione: 18-07-2004</div>
+				<div>Residenza: L'Aquila</div>
+				
+				<div>
+					Messaggi: 1.406
+				</div>
+				
+				
+				Potenza Reputazione: <span id="reppower_477443_4068">14</span> <div><span id="repdisplay_477443_4068"><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="morpheus ha fan che lo seguono ovunque" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="morpheus ha fan che lo seguono ovunque" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="morpheus ha fan che lo seguono ovunque" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="morpheus ha fan che lo seguono ovunque" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="morpheus ha fan che lo seguono ovunque" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_highpos.gif" alt="morpheus ha fan che lo seguono ovunque" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_highpos.gif" alt="morpheus ha fan che lo seguono ovunque" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_highpos.gif" alt="morpheus ha fan che lo seguono ovunque" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_highpos.gif" alt="morpheus ha fan che lo seguono ovunque" border="0" /></span></div>
+				
+				<div>    </div>
+			</div>
+
+	</td>
+	
+	<td class="alt1" id="td_post_477443" style="border-right: 1px solid #cccccc">
+	
+		
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				<img class="inlineimg" src="images/icons/icon1.gif" alt="Base" border="0" />
+				<strong>Re: IRCD basato su Bahamut di Azzurra.org</strong>
+			</div>
+			<hr size="1" style="color:#cccccc; background-color:#cccccc" />
+			<!-- / icon and title -->
+		
+
+		<!-- message -->
+		<div id="post_message_477443">
+			
+			Ciao,<br />
+potresti gentilmente postare l'output di <font face="Courier New">configure</font>, <font face="Courier New">make</font> e <font face="Courier New">make install</font> e fornire qualche dettaglio in più rispetto alla configurazione di sistema (OS a 32 o 64 bit, versione di gcc, ecc.)?
+		</div>
+		<!-- / message -->
+
+		
+
+		
+		
+
+		
+		<!-- sig -->
+			<div>
+				__________________<br />
+				<font face="Verdana">morph<br />
+Azzurra IRC Network - Network Root</font>
+			</div>
+		<!-- / sig -->
+		
+
+		
+
+		
+
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="border: 1px solid #cccccc; border-top: 0px">
+		<img class="inlineimg" src="azzurra3.0/statusicon/user_offline.gif" alt="morpheus non è collegato" border="0" />
+
+
+		
+		
+		
+		
+		&nbsp;
+	</td>
+	
+	<td class="alt1" align="right" style="border: 1px solid #cccccc; border-left: 0px; border-top: 0px">
+	
+		<!-- controls -->
+		
+		
+		
+			<a href="newreply.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;do=newreply&amp;p=477443" rel="nofollow"><img src="azzurra3.0/buttons/quote.gif" alt="Rispondi Citando" border="0" /></a>
+		
+		
+		
+		
+		
+		
+		
+			
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</table>
+
+
+<!-- post 477443 popup menu -->
+<div class="vbmenu_popup" id="postmenu_477443_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tr>
+		<td class="thead">morpheus</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="member.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;u=4068">Vedi Profilo Pubblico</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="private.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;do=newpm&amp;u=4068" rel="nofollow">Invia un messaggio privato a morpheus</a></td></tr>
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://morpheus.level28.org/">Visita la homepage di morpheus!</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="search.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;do=finduser&amp;u=4068" rel="nofollow">Trova altri messaggi di morpheus</a></td></tr>
+	
+	
+	
+	</table>
+</div>
+<!-- / post 477443 popup menu -->
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #477443 --><!-- post #477444 -->
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width:98%; text-align:left">
+		<div style="padding:0px 10px 0px 10px" align="left">
+
+	<div id="edit477444" style="padding:0px 0px 6px 0px">
+	<!-- this is not the last post shown on the page -->
+
+
+
+<table id="post477444" class="tborder" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">
+<tr>
+	
+		<td class="thead" style="font-weight:normal; border: 1px solid #cccccc; border-right: 0px" >
+			<!-- status icon and date -->
+			<a name="post477444"><img class="inlineimg" src="azzurra3.0/statusicon/post_old.gif" alt="Vecchio" border="0" /></a>
+			04-02-2012, 14:08
+			
+			<!-- / status icon and date -->
+		</td>
+		<td class="thead" style="font-weight:normal; border: 1px solid #cccccc; border-left: 0px" align="right">
+			&nbsp;
+			#<a href="showpost.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;p=477444&amp;postcount=3" target="new" rel="nofollow" id="postcount477444" name="3"><strong>3</strong></a>
+			
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt2" width="175" style="border: 1px solid #cccccc; border-top: 0px; border-bottom: 0px">
+
+			<div id="postmenu_477444">
+				
+				<a class="bigusername" href="member.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;u=48680">Peppinos^</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_477444", true); </script>
+				
+			</div>
+
+			<div class="smallfont">New User</div>
+			
+			
+
+			
+
+			<div class="smallfont">
+				&nbsp;<br />
+				<div>Data Iscrizione: 02-02-2012</div>
+				
+				
+				<div>
+					Messaggi: 6
+				</div>
+				
+				
+				Potenza Reputazione: <span id="reppower_477444_48680">0</span> <div><span id="repdisplay_477444_48680"><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="Peppinos^ è sulla buona strada" border="0" /></span></div>
+				
+				<div>    </div>
+			</div>
+
+	</td>
+	
+	<td class="alt1" id="td_post_477444" style="border-right: 1px solid #cccccc">
+	
+		
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				<img class="inlineimg" src="images/icons/icon1.gif" alt="Base" border="0" />
+				<strong>Re: IRCD basato su Bahamut di Azzurra.org</strong>
+			</div>
+			<hr size="1" style="color:#cccccc; background-color:#cccccc" />
+			<!-- / icon and title -->
+		
+
+		<!-- message -->
+		<div id="post_message_477444">
+			
+			Il sistema è questo:<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+	<div class="smallfont" style="margin-bottom:2px">Cita:</div>
+	<table cellpadding="6" cellspacing="0" border="0" width="100%">
+	<tr>
+		<td class="alt2" style="border:1px inset">
+			
+				info sistema:<br />
+Operating system     Ubuntu Linux 11.10<br />
+Kernel and CPU     Linux 3.0.0-15-generic-pae on i686<br />
+Processor information     AMD Athlon(tm) processor, 1 cores<br />
+gcc versione 4.6<br />
+openssl 1.0.0e
+			
+		</td>
+	</tr>
+	</table>
+</div>ora posto il ./configure
+		</div>
+		<!-- / message -->
+
+		
+
+		
+		
+
+		
+
+		
+
+		
+
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="border: 1px solid #cccccc; border-top: 0px">
+		<img class="inlineimg" src="azzurra3.0/statusicon/user_offline.gif" alt="Peppinos^ non è collegato" border="0" />
+
+
+		
+		
+		
+		
+		&nbsp;
+	</td>
+	
+	<td class="alt1" align="right" style="border: 1px solid #cccccc; border-left: 0px; border-top: 0px">
+	
+		<!-- controls -->
+		
+		
+		
+			<a href="newreply.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;do=newreply&amp;p=477444" rel="nofollow"><img src="azzurra3.0/buttons/quote.gif" alt="Rispondi Citando" border="0" /></a>
+		
+		
+		
+		
+		
+		
+		
+			
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</table>
+
+
+<!-- post 477444 popup menu -->
+<div class="vbmenu_popup" id="postmenu_477444_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tr>
+		<td class="thead">Peppinos^</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="member.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;u=48680">Vedi Profilo Pubblico</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="private.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;do=newpm&amp;u=48680" rel="nofollow">Invia un messaggio privato a Peppinos^</a></td></tr>
+	
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="search.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;do=finduser&amp;u=48680" rel="nofollow">Trova altri messaggi di Peppinos^</a></td></tr>
+	
+	
+	
+	</table>
+</div>
+<!-- / post 477444 popup menu -->
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #477444 --><!-- post #477445 -->
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width:98%; text-align:left">
+		<div style="padding:0px 10px 0px 10px" align="left">
+
+	<div id="edit477445" style="padding:0px 0px 6px 0px">
+	<!-- this is not the last post shown on the page -->
+
+
+
+<table id="post477445" class="tborder" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">
+<tr>
+	
+		<td class="thead" style="font-weight:normal; border: 1px solid #cccccc; border-right: 0px" >
+			<!-- status icon and date -->
+			<a name="post477445"><img class="inlineimg" src="azzurra3.0/statusicon/post_old.gif" alt="Vecchio" border="0" /></a>
+			04-02-2012, 14:10
+			
+			<!-- / status icon and date -->
+		</td>
+		<td class="thead" style="font-weight:normal; border: 1px solid #cccccc; border-left: 0px" align="right">
+			&nbsp;
+			#<a href="showpost.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;p=477445&amp;postcount=4" target="new" rel="nofollow" id="postcount477445" name="4"><strong>4</strong></a>
+			
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt2" width="175" style="border: 1px solid #cccccc; border-top: 0px; border-bottom: 0px">
+
+			<div id="postmenu_477445">
+				
+				<a class="bigusername" href="member.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;u=48680">Peppinos^</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_477445", true); </script>
+				
+			</div>
+
+			<div class="smallfont">New User</div>
+			
+			
+
+			
+
+			<div class="smallfont">
+				&nbsp;<br />
+				<div>Data Iscrizione: 02-02-2012</div>
+				
+				
+				<div>
+					Messaggi: 6
+				</div>
+				
+				
+				Potenza Reputazione: <span id="reppower_477445_48680">0</span> <div><span id="repdisplay_477445_48680"><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="Peppinos^ è sulla buona strada" border="0" /></span></div>
+				
+				<div>    </div>
+			</div>
+
+	</td>
+	
+	<td class="alt1" id="td_post_477445" style="border-right: 1px solid #cccccc">
+	
+		
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				<img class="inlineimg" src="images/icons/icon1.gif" alt="Base" border="0" />
+				<strong>Re: IRCD basato su Bahamut di Azzurra.org</strong>
+			</div>
+			<hr size="1" style="color:#cccccc; background-color:#cccccc" />
+			<!-- / icon and title -->
+		
+
+		<!-- message -->
+		<div id="post_message_477445">
+			
+			Questo mi esce quando effettuo ./configure<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+	<div class="smallfont" style="margin-bottom:2px">Cita:</div>
+	<table cellpadding="6" cellspacing="0" border="0" width="100%">
+	<tr>
+		<td class="alt2" style="border:1px inset">
+			
+				root@ServerUbuntu:/home/marins82/bahamut-4.6d# ./configure<br />
+checking build system type... i686-pc-linux-gnu<br />
+checking host system type... i686-pc-linux-gnu<br />
+checking target system type... i686-pc-linux-gnu<br />
+checking for gcc... gcc<br />
+checking for C compiler default output file name... a.out<br />
+checking whether the C compiler works... yes<br />
+checking whether we are cross compiling... no<br />
+checking for suffix of executables...<br />
+checking for suffix of object files... o<br />
+checking whether we are using the GNU C compiler... yes<br />
+checking whether gcc accepts -g... yes<br />
+checking for gcc option to accept ANSI C... none needed<br />
+checking for library containing strerror... none required<br />
+checking how to run the C preprocessor... gcc -E<br />
+checking for egrep... grep -E<br />
+checking for AIX... no<br />
+checking whether make sets $(MAKE)... yes<br />
+checking for rm... /bin/rm<br />
+checking for cp... /bin/cp<br />
+checking for a BSD-compatible install... /usr/bin/install -c<br />
+checking for gethostbyname in -lnsl... yes<br />
+checking for crypt... no<br />
+checking for crypt in -lcrypt... yes<br />
+checking for res_mkquery... no<br />
+checking for res_mkquery in -lresolv... yes<br />
+checking for socket... yes<br />
+checking for ANSI C header files... yes<br />
+checking for sys/types.h... yes<br />
+checking for sys/stat.h... yes<br />
+checking for stdlib.h... yes<br />
+checking for string.h... yes<br />
+checking for memory.h... yes<br />
+checking for strings.h... yes<br />
+checking for inttypes.h... yes<br />
+checking for stdint.h... yes<br />
+checking for unistd.h... yes<br />
+checking sys/param.h usability... yes<br />
+checking sys/param.h presence... yes<br />
+checking for sys/param.h... yes<br />
+checking for unistd.h... (cached) yes<br />
+checking for string.h... (cached) yes<br />
+checking for strings.h... (cached) yes<br />
+checking sys/syslog.h usability... yes<br />
+checking sys/syslog.h presence... yes<br />
+checking for sys/syslog.h... yes<br />
+checking sys/uio.h usability... yes<br />
+checking sys/uio.h presence... yes<br />
+checking for sys/uio.h... yes<br />
+checking for stdlib.h... (cached) yes<br />
+checking stddef.h usability... yes<br />
+checking stddef.h presence... yes<br />
+checking for stddef.h... yes<br />
+checking stropts.h usability... yes<br />
+checking stropts.h presence... yes<br />
+checking for stropts.h... yes<br />
+checking limits.h usability... yes<br />
+checking limits.h presence... yes<br />
+checking for limits.h... yes<br />
+checking malloc.h usability... yes<br />
+checking malloc.h presence... yes<br />
+checking for malloc.h... yes<br />
+checking MIN and MAX definition... yes<br />
+checking for stdint.h... (cached) yes<br />
+checking for sys/types.h... (cached) yes<br />
+checking sys/limits.h usability... no<br />
+checking sys/limits.h presence... no<br />
+checking for sys/limits.h... no<br />
+checking for inttypes.h... (cached) yes<br />
+checking for int8_t... yes<br />
+checking size of int8_t... 1<br />
+checking for int16_t... yes<br />
+checking size of int16_t... 2<br />
+checking for int32_t... yes<br />
+checking size of int32_t... 4<br />
+checking for int64_t... yes<br />
+checking size of int64_t... 8<br />
+checking for uint8_t... yes<br />
+checking size of uint8_t... 1<br />
+checking for uint16_t... yes<br />
+checking size of uint16_t... 2<br />
+checking for uint32_t... yes<br />
+checking size of uint32_t... 4<br />
+checking for uint64_t... yes<br />
+checking size of uint64_t... 8<br />
+checking for intptr_t... yes<br />
+checking size of intptr_t... 4<br />
+checking for uintptr_t... yes<br />
+checking size of uintptr_t... 4<br />
+checking for char... yes<br />
+checking size of char... 1<br />
+checking for short... yes<br />
+checking size of short... 2<br />
+checking for int... yes<br />
+checking size of int... 4<br />
+checking for long... yes<br />
+checking size of long... 4<br />
+checking for long long... yes<br />
+checking size of long long... 8<br />
+checking for __int64... no<br />
+checking size of __int64... 0<br />
+checking for void *... yes<br />
+checking size of void *... 4<br />
+checking for time_t... yes<br />
+checking size of time_t... 4<br />
+checking for size_t... yes<br />
+checking size of size_t... 4<br />
+checking for uint... yes<br />
+checking for u_char... yes<br />
+checking for u_short... yes<br />
+checking for u_long... yes<br />
+checking for u_int... yes<br />
+checking for ssize_t... yes<br />
+checking whether gcc needs -traditional... no<br />
+checking for index... yes<br />
+checking for strerror... yes<br />
+checking for strtoken... no<br />
+checking for strtok... yes<br />
+checking for inet_addr... yes<br />
+checking for inet_ntoa... yes<br />
+checking for inet_netof... yes<br />
+checking for inet_aton... yes<br />
+checking for gettimeofday... yes<br />
+checking for lrand48... yes<br />
+checking for sigaction... yes<br />
+checking for bzero... yes<br />
+checking for bcmp... yes<br />
+checking for bcopy... yes<br />
+checking for dn_expand... yes<br />
+checking for __dn_expand... yes<br />
+checking for poll... yes<br />
+checking for writev... yes<br />
+checking for mkstemp... yes<br />
+checking for dn_skipname... no<br />
+checking for __dn_skipname... yes<br />
+checking for POSIX (O_NONBLOCK) nonblocking sockets... O_NONBLOCK<br />
+checking signal implementation... POSIX<br />
+checking for sys_errlist declaration... yes<br />
+checking to see if we should enable fast FD_ISSET code... no<br />
+checking to see if FD_SETSIZE is broken... YES<br />
+configure: WARNING: FD_SETSIZE is hard set by your operating system<br />
+configure: WARNING: MAXCONNECTIONS must be no higher than the hardwired FD_SETSIZE<br />
+configure: WARNING: If you're using a system that supports it use the poll call instead of select.<br />
+checking whether we are living in a 2s-complement world... yes<br />
+checking whether byte ordering is bigendian... no<br />
+checking for zlib path... /usr<br />
+checking for inflateEnd in -lz... yes<br />
+checking zlib.h usability... yes<br />
+checking zlib.h presence... yes<br />
+checking for zlib.h... yes<br />
+checking zlib in /usr... ok<br />
+encryption enabled, looking for openssl library...<br />
+ - openssl library version: OpenSSL 1.0.0e 6 Sep 2011<br />
+ - openssl header version : OpenSSL 1.0.0e 6 Sep 2011<br />
+checking operating system... nothing special required<br />
+configure: creating ./config.status<br />
+config.status: creating Makefile<br />
+config.status: creating src/Makefile<br />
+config.status: creating tools/Makefile<br />
+config.status: creating include/setup.h<br />
+running ./config...<br />
+Welcome to Config for Azzurra IRCD, Version: bahamut(enterprise)-1.4(34)-inet6(1.0a)-azzurra(4.6d)-ssl(1.1)-webirc(1.2)-haproxy(1.0).<br />
+<br />
+<br />
+What are the maximum File Descriptors that the IRCD can use?<br />
+[1024] -&gt;<br />
+<br />
+What are the maximum number of Users you<br />
+intend to allow on your IRC server?<br />
+Note that you can now change this number<br />
+on the fly with with /set command.<br />
+[1000] -&gt;<br />
+<br />
+What is the maximum connection buffer amount?<br />
+Note, this CANNOT exceed the number of file descriptors<br />
+minus the maximum clients.<br />
+[24] -&gt;<br />
+<br />
+Do you want an IPv6 Server ?<br />
+[No] -&gt;<br />
+<br />
+Do you want an SSL Server ? (needs OpenSSL 0.9.6 installed)<br />
+[Yes] -&gt;<br />
+<br />
+What directory are all the server configuration files in ?<br />
+[/home/marins82/bahamut-4.6d/] -&gt; /home/marins82/irc/<br />
+<br />
+Would you like to compile as a HUB?<br />
+[No] -&gt; yes<br />
+<br />
+Would you like to encrypt oper passwords in O:lines?<br />
+[No] -&gt; yes<br />
+<br />
+Cannot find the OpenSSL installation or one of its components !<br />
+SSL support for this build disabled.<br />
+<br />
+<br />
+Thats all folks..<br />
+Writing include/options.h...Done.<br />
+<br />
+<br />
+Would you like me to generate a random cloak key (1024 bits) ?<br />
+[Yes] -&gt;<br />
+make: Entering directory `/home/marins82/bahamut-4.6d/tools'<br />
+gcc  -I../include -c mkcloak.c<br />
+gcc -o mkcloak mkcloak.o<br />
+make: Leaving directory `/home/marins82/bahamut-4.6d/tools'<br />
+<br />
+caugth /dev/urandom, 0 bytes large (special file), goodness: 256<br />
+caugth /dev/random, 0 bytes large (special file), goodness: 64<br />
+caugth /vmlinuz, 4789376 bytes large, goodness: 2<br />
+caugth /bin/ls, 96284 bytes large, goodness: 1<br />
+caugth /bin/cp, 100220 bytes large, goodness: 1<br />
+Notice: /dev/random caugth. if key generation freezes,<br />
+type random strokes on the keyboard to speed it up.<br />
+Got 128 bits of random data . .<br />
+Got 256 bits of random data . .<br />
+Got 384 bits of random data . .<br />
+Got 512 bits of random data . .<br />
+Got 640 bits of random data . .<br />
+Got 768 bits of random data . .<br />
+Got 896 bits of random data . .<br />
+Got 1024 bits of random data . .<br />
+<br />
+hex output of the key:<br />
+------------------------- ---- --- --- -- -- - -  -  -<br />
+0x00000010 53 64 54 3e 56 66 55 72 6a 75 30 66 74 7d 3b 64<br />
+0x00000020 42 79 56 5b 31 48 33 59 33 2d 5e 25 27 59 53 5b<br />
+0x00000030 44 42 7d 6a 58 26 5e 3c 4d 37 7d 65 2d 23 59 26<br />
+0x00000040 77 6e 3a 67 4a 5c 54 21 51 68 43 32 7a 58 3d 5e<br />
+0x00000050 21 6f 70 58 2a 56 4c 54 41 60 7d 3e 59 4f 5f 31<br />
+0x00000060 59 4b 53 3c 5d 2f 35 75 25 6b 47 52 24 67 4e 65<br />
+0x00000070 49 7b 22 57 6d 59 68 2f 5f 2d 3f 43 52 29 60 70<br />
+0x00000080 37 47 54 56 31 48 37 52 7e 62 22 2f 6f 67 32 33<br />
+------------------------- ---- --- --- -- -- - -  -  -<br />
+<br />
+Done.<br />
+To rebuild a random cloak key, you can use tools/mkcloak &lt;bits&gt;<br />
+<br />
+Now your include/options.h is configured.  Please look over<br />
+include/config.h for more server specific options.<br />
+To compile your server, type 'make'.<br />
+root@ServerUbuntu:/home/marins82/bahamut-4.6d#<br />
+			
+		</td>
+	</tr>
+	</table>
+</div>
+		</div>
+		<!-- / message -->
+
+		
+
+		
+		
+
+		
+
+		
+
+		
+
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="border: 1px solid #cccccc; border-top: 0px">
+		<img class="inlineimg" src="azzurra3.0/statusicon/user_offline.gif" alt="Peppinos^ non è collegato" border="0" />
+
+
+		
+		
+		
+		
+		&nbsp;
+	</td>
+	
+	<td class="alt1" align="right" style="border: 1px solid #cccccc; border-left: 0px; border-top: 0px">
+	
+		<!-- controls -->
+		
+		
+		
+			<a href="newreply.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;do=newreply&amp;p=477445" rel="nofollow"><img src="azzurra3.0/buttons/quote.gif" alt="Rispondi Citando" border="0" /></a>
+		
+		
+		
+		
+		
+		
+		
+			
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</table>
+
+
+<!-- post 477445 popup menu -->
+<div class="vbmenu_popup" id="postmenu_477445_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tr>
+		<td class="thead">Peppinos^</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="member.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;u=48680">Vedi Profilo Pubblico</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="private.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;do=newpm&amp;u=48680" rel="nofollow">Invia un messaggio privato a Peppinos^</a></td></tr>
+	
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="search.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;do=finduser&amp;u=48680" rel="nofollow">Trova altri messaggi di Peppinos^</a></td></tr>
+	
+	
+	
+	</table>
+</div>
+<!-- / post 477445 popup menu -->
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #477445 --><!-- post #477446 -->
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width:98%; text-align:left">
+		<div style="padding:0px 10px 0px 10px" align="left">
+
+	<div id="edit477446" style="padding:0px 0px 6px 0px">
+	<!-- this is not the last post shown on the page -->
+
+
+
+<table id="post477446" class="tborder" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">
+<tr>
+	
+		<td class="thead" style="font-weight:normal; border: 1px solid #cccccc; border-right: 0px" >
+			<!-- status icon and date -->
+			<a name="post477446"><img class="inlineimg" src="azzurra3.0/statusicon/post_old.gif" alt="Vecchio" border="0" /></a>
+			04-02-2012, 14:11
+			
+			<!-- / status icon and date -->
+		</td>
+		<td class="thead" style="font-weight:normal; border: 1px solid #cccccc; border-left: 0px" align="right">
+			&nbsp;
+			#<a href="showpost.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;p=477446&amp;postcount=5" target="new" rel="nofollow" id="postcount477446" name="5"><strong>5</strong></a>
+			
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt2" width="175" style="border: 1px solid #cccccc; border-top: 0px; border-bottom: 0px">
+
+			<div id="postmenu_477446">
+				
+				<a class="bigusername" href="member.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;u=48680">Peppinos^</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_477446", true); </script>
+				
+			</div>
+
+			<div class="smallfont">New User</div>
+			
+			
+
+			
+
+			<div class="smallfont">
+				&nbsp;<br />
+				<div>Data Iscrizione: 02-02-2012</div>
+				
+				
+				<div>
+					Messaggi: 6
+				</div>
+				
+				
+				Potenza Reputazione: <span id="reppower_477446_48680">0</span> <div><span id="repdisplay_477446_48680"><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="Peppinos^ è sulla buona strada" border="0" /></span></div>
+				
+				<div>    </div>
+			</div>
+
+	</td>
+	
+	<td class="alt1" id="td_post_477446" style="border-right: 1px solid #cccccc">
+	
+		
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				<img class="inlineimg" src="images/icons/icon1.gif" alt="Base" border="0" />
+				<strong>Re: IRCD basato su Bahamut di Azzurra.org</strong>
+			</div>
+			<hr size="1" style="color:#cccccc; background-color:#cccccc" />
+			<!-- / icon and title -->
+		
+
+		<!-- message -->
+		<div id="post_message_477446">
+			
+			qua quando si compila &quot;make&quot;<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+	<div class="smallfont" style="margin-bottom:2px">Cita:</div>
+	<table cellpadding="6" cellspacing="0" border="0" width="100%">
+	<tr>
+		<td class="alt2" style="border:1px inset">
+			
+				root@ServerUbuntu:/home/marins82/bahamut-4.6d# make<br />
+Building src<br />
+make[1]: ingresso nella directory &quot;/home/marins82/bahamut-4.6d/src&quot;<br />
+gcc -I../include -Wall -Werror -g -O2    -c blalloc.c<br />
+gcc -I../include -Wall -Werror -g -O2    -c bsd.c<br />
+gcc -I../include -Wall -Werror -g -O2    -c channel.c<br />
+channel.c: In function âm_sjoinâ:<br />
+channel.c:3413:2: error: variable âdoesopâ set but not used [-Werror=unused-but-set-variable]<br />
+channel.c: In function âm_samodeâ:<br />
+channel.c:4096:9: error: variable âsendtsâ set but not used [-Werror=unused-but-set-variable]<br />
+cc1: all warnings being treated as errors<br />
+<br />
+make[1]: *** [channel.o] Errore 1<br />
+make[1]: uscita dalla directory &quot;/home/marins82/bahamut-4.6d/src&quot;<br />
+Building tools<br />
+make[1]: ingresso nella directory &quot;/home/marins82/bahamut-4.6d/tools&quot;<br />
+gcc -Wall -Werror -g -O2    -I../include -c viconf.c<br />
+viconf.c: In function âmainâ:<br />
+viconf.c:27:10: error: variable ârvâ set but not used [-Werror=unused-but-set-variable]<br />
+cc1: all warnings being treated as errors<br />
+<br />
+make[1]: *** [viconf.o] Errore 1<br />
+make[1]: uscita dalla directory &quot;/home/marins82/bahamut-4.6d/tools&quot;<br />
+**************************************************  ****************************<br />
+* Note: Please do not send bug reports or feature inquiries to the mailing   *<br />
+* lists or to the Bahamut coders. Instead, go to                             *<br />
+* <a href="http://www.bahamut.net/contact.html" target="_blank">http://www.bahamut.net/contact.html</a> and FOLLOW the                         *<br />
+* directions there. If you don't follow those simple instructions, your      *<br />
+* requests will most likely be ignored.                                      *<br />
+**************************************************  ****************************<br />
+root@ServerUbuntu:/home/marins82/bahamut-4.6d#
+			
+		</td>
+	</tr>
+	</table>
+</div>
+		</div>
+		<!-- / message -->
+
+		
+
+		
+		
+
+		
+
+		
+
+		
+
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="border: 1px solid #cccccc; border-top: 0px">
+		<img class="inlineimg" src="azzurra3.0/statusicon/user_offline.gif" alt="Peppinos^ non è collegato" border="0" />
+
+
+		
+		
+		
+		
+		&nbsp;
+	</td>
+	
+	<td class="alt1" align="right" style="border: 1px solid #cccccc; border-left: 0px; border-top: 0px">
+	
+		<!-- controls -->
+		
+		
+		
+			<a href="newreply.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;do=newreply&amp;p=477446" rel="nofollow"><img src="azzurra3.0/buttons/quote.gif" alt="Rispondi Citando" border="0" /></a>
+		
+		
+		
+		
+		
+		
+		
+			
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</table>
+
+
+<!-- post 477446 popup menu -->
+<div class="vbmenu_popup" id="postmenu_477446_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tr>
+		<td class="thead">Peppinos^</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="member.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;u=48680">Vedi Profilo Pubblico</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="private.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;do=newpm&amp;u=48680" rel="nofollow">Invia un messaggio privato a Peppinos^</a></td></tr>
+	
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="search.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;do=finduser&amp;u=48680" rel="nofollow">Trova altri messaggi di Peppinos^</a></td></tr>
+	
+	
+	
+	</table>
+</div>
+<!-- / post 477446 popup menu -->
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #477446 --><!-- post #477447 -->
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width:98%; text-align:left">
+		<div style="padding:0px 10px 0px 10px" align="left">
+
+	<div id="edit477447" style="padding:0px 0px 6px 0px">
+	<!-- this is not the last post shown on the page -->
+
+
+
+<table id="post477447" class="tborder" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">
+<tr>
+	
+		<td class="thead" style="font-weight:normal; border: 1px solid #cccccc; border-right: 0px" >
+			<!-- status icon and date -->
+			<a name="post477447"><img class="inlineimg" src="azzurra3.0/statusicon/post_old.gif" alt="Vecchio" border="0" /></a>
+			04-02-2012, 14:12
+			
+			<!-- / status icon and date -->
+		</td>
+		<td class="thead" style="font-weight:normal; border: 1px solid #cccccc; border-left: 0px" align="right">
+			&nbsp;
+			#<a href="showpost.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;p=477447&amp;postcount=6" target="new" rel="nofollow" id="postcount477447" name="6"><strong>6</strong></a>
+			
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt2" width="175" style="border: 1px solid #cccccc; border-top: 0px; border-bottom: 0px">
+
+			<div id="postmenu_477447">
+				
+				<a class="bigusername" href="member.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;u=48680">Peppinos^</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_477447", true); </script>
+				
+			</div>
+
+			<div class="smallfont">New User</div>
+			
+			
+
+			
+
+			<div class="smallfont">
+				&nbsp;<br />
+				<div>Data Iscrizione: 02-02-2012</div>
+				
+				
+				<div>
+					Messaggi: 6
+				</div>
+				
+				
+				Potenza Reputazione: <span id="reppower_477447_48680">0</span> <div><span id="repdisplay_477447_48680"><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="Peppinos^ è sulla buona strada" border="0" /></span></div>
+				
+				<div>    </div>
+			</div>
+
+	</td>
+	
+	<td class="alt1" id="td_post_477447" style="border-right: 1px solid #cccccc">
+	
+		
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				<img class="inlineimg" src="images/icons/icon1.gif" alt="Base" border="0" />
+				<strong>Re: IRCD basato su Bahamut di Azzurra.org</strong>
+			</div>
+			<hr size="1" style="color:#cccccc; background-color:#cccccc" />
+			<!-- / icon and title -->
+		
+
+		<!-- message -->
+		<div id="post_message_477447">
+			
+			qua make install<br />
+<br />
+<div style="margin:20px; margin-top:5px; ">
+	<div class="smallfont" style="margin-bottom:2px">Cita:</div>
+	<table cellpadding="6" cellspacing="0" border="0" width="100%">
+	<tr>
+		<td class="alt2" style="border:1px inset">
+			
+				root@ServerUbuntu:/home/marins82/bahamut-4.6d# make install<br />
+Building src<br />
+make[1]: ingresso nella directory &quot;/home/marins82/bahamut-4.6d/src&quot;<br />
+gcc -I../include -Wall -Werror -g -O2    -c channel.c<br />
+channel.c: In function âm_sjoinâ:<br />
+channel.c:3413:2: error: variable âdoesopâ set but not used [-Werror=unused-but-set-variable]<br />
+channel.c: In function âm_samodeâ:<br />
+channel.c:4096:9: error: variable âsendtsâ set but not used [-Werror=unused-but-set-variable]<br />
+cc1: all warnings being treated as errors<br />
+<br />
+make[1]: *** [channel.o] Errore 1<br />
+make[1]: uscita dalla directory &quot;/home/marins82/bahamut-4.6d/src&quot;<br />
+Building tools<br />
+make[1]: ingresso nella directory &quot;/home/marins82/bahamut-4.6d/tools&quot;<br />
+gcc -Wall -Werror -g -O2    -I../include -c viconf.c<br />
+viconf.c: In function âmainâ:<br />
+viconf.c:27:10: error: variable ârvâ set but not used [-Werror=unused-but-set-variable]<br />
+cc1: all warnings being treated as errors<br />
+<br />
+make[1]: *** [viconf.o] Errore 1<br />
+make[1]: uscita dalla directory &quot;/home/marins82/bahamut-4.6d/tools&quot;<br />
+**************************************************  ****************************<br />
+* Note: Please do not send bug reports or feature inquiries to the mailing   *<br />
+* lists or to the Bahamut coders. Instead, go to                             *<br />
+* <a href="http://www.bahamut.net/contact.html" target="_blank">http://www.bahamut.net/contact.html</a> and FOLLOW the                         *<br />
+* directions there. If you don't follow those simple instructions, your      *<br />
+* requests will most likely be ignored.                                      *<br />
+**************************************************  ****************************<br />
+installing ircd as /home/marins82/irc/ircd<br />
+install:  src/ircd does not exist<br />
+installing example.conf as your /home/marins82/irc/ircd.conf<br />
+installing a sample /home/marins82/irc/ircd.motd<br />
+touching /home/marins82/irc/azzurra.conf<br />
+installing opers.txt as /home/marins82/irc/opers.txt<br />
+root@ServerUbuntu:/home/marins82/bahamut-4.6d#
+			
+		</td>
+	</tr>
+	</table>
+</div>non va a creare ircd perchè non lo trova.
+		</div>
+		<!-- / message -->
+
+		
+
+		
+		
+
+		
+
+		
+
+		
+
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="border: 1px solid #cccccc; border-top: 0px">
+		<img class="inlineimg" src="azzurra3.0/statusicon/user_offline.gif" alt="Peppinos^ non è collegato" border="0" />
+
+
+		
+		
+		
+		
+		&nbsp;
+	</td>
+	
+	<td class="alt1" align="right" style="border: 1px solid #cccccc; border-left: 0px; border-top: 0px">
+	
+		<!-- controls -->
+		
+		
+		
+			<a href="newreply.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;do=newreply&amp;p=477447" rel="nofollow"><img src="azzurra3.0/buttons/quote.gif" alt="Rispondi Citando" border="0" /></a>
+		
+		
+		
+		
+		
+		
+		
+			
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</table>
+
+
+<!-- post 477447 popup menu -->
+<div class="vbmenu_popup" id="postmenu_477447_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tr>
+		<td class="thead">Peppinos^</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="member.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;u=48680">Vedi Profilo Pubblico</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="private.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;do=newpm&amp;u=48680" rel="nofollow">Invia un messaggio privato a Peppinos^</a></td></tr>
+	
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="search.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;do=finduser&amp;u=48680" rel="nofollow">Trova altri messaggi di Peppinos^</a></td></tr>
+	
+	
+	
+	</table>
+</div>
+<!-- / post 477447 popup menu -->
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #477447 --><!-- post #477448 -->
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width:98%; text-align:left">
+		<div style="padding:0px 10px 0px 10px" align="left">
+
+	<div id="edit477448" style="padding:0px 0px 6px 0px">
+	<!-- this is not the last post shown on the page -->
+
+
+
+<table id="post477448" class="tborder" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">
+<tr>
+	
+		<td class="thead" style="font-weight:normal; border: 1px solid #cccccc; border-right: 0px" >
+			<!-- status icon and date -->
+			<a name="post477448"><img class="inlineimg" src="azzurra3.0/statusicon/post_old.gif" alt="Vecchio" border="0" /></a>
+			04-02-2012, 15:25
+			
+			<!-- / status icon and date -->
+		</td>
+		<td class="thead" style="font-weight:normal; border: 1px solid #cccccc; border-left: 0px" align="right">
+			&nbsp;
+			#<a href="showpost.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;p=477448&amp;postcount=7" target="new" rel="nofollow" id="postcount477448" name="7"><strong>7</strong></a>
+			
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt2" width="175" style="border: 1px solid #cccccc; border-top: 0px; border-bottom: 0px">
+
+			<div id="postmenu_477448">
+				
+				<a class="bigusername" href="member.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;u=4068"><span style="color: black;">morpheus</span></a>
+				<script type="text/javascript"> vbmenu_register("postmenu_477448", true); </script>
+				
+			</div>
+
+			<div class="smallfont">Genio del Male</div>
+			<div class="smallfont"><img src="rankimg/scoder2.gif" alt="" border="" /></div>
+			
+
+			
+				<div class="smallfont">
+					&nbsp;<br /><a href="member.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;u=4068"><img src="customavatars/avatar4068_38.gif" width="150" height="150" alt="L'Avatar di morpheus" border="0" /></a>
+				</div>
+			
+
+			<div class="smallfont">
+				&nbsp;<br />
+				<div>Data Iscrizione: 18-07-2004</div>
+				<div>Residenza: L'Aquila</div>
+				
+				<div>
+					Messaggi: 1.406
+				</div>
+				
+				
+				Potenza Reputazione: <span id="reppower_477448_4068">14</span> <div><span id="repdisplay_477448_4068"><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="morpheus ha fan che lo seguono ovunque" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="morpheus ha fan che lo seguono ovunque" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="morpheus ha fan che lo seguono ovunque" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="morpheus ha fan che lo seguono ovunque" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="morpheus ha fan che lo seguono ovunque" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_highpos.gif" alt="morpheus ha fan che lo seguono ovunque" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_highpos.gif" alt="morpheus ha fan che lo seguono ovunque" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_highpos.gif" alt="morpheus ha fan che lo seguono ovunque" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_highpos.gif" alt="morpheus ha fan che lo seguono ovunque" border="0" /></span></div>
+				
+				<div>    </div>
+			</div>
+
+	</td>
+	
+	<td class="alt1" id="td_post_477448" style="border-right: 1px solid #cccccc">
+	
+		
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				<img class="inlineimg" src="images/icons/icon1.gif" alt="Base" border="0" />
+				<strong>Re: IRCD basato su Bahamut di Azzurra.org</strong>
+			</div>
+			<hr size="1" style="color:#cccccc; background-color:#cccccc" />
+			<!-- / icon and title -->
+		
+
+		<!-- message -->
+		<div id="post_message_477448">
+			
+			<div style="margin:20px; margin-top:5px">
+	<div class="smallfont" style="margin-bottom:2px">Codice:</div>
+	<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px inset;
+		width: 640px;
+		height: 114px;
+		text-align: left;
+		overflow: auto">gcc -I../include -Wall -Werror -g -O2 -c channel.c
+channel.c: In function &quot;m_sjoin&quot;:
+channel.c:3413:2: error: variable &quot;doesop&quot; set but not used [-Werror=unused-but-set-variable]
+channel.c: In function &quot;m_samode&quot;:
+channel.c:4096:9: error: variable &quot;sendts&quot; set but not used [-Werror=unused-but-set-variable]
+cc1: all warnings being treated as errors</pre>
+</div>Ubuntu 11.10 non è una piattaforma ufficialmente supportata. Purtroppo, la codebase del server è molto vecchia e causa non pochi problemi con versioni recenti di gcc.<br />
+Prova ad utilizzare una chroot con Debian Squeeze.<br />
+<br />
+Ciao,<br />
+M.
+		</div>
+		<!-- / message -->
+
+		
+
+		
+		
+
+		
+		<!-- sig -->
+			<div>
+				__________________<br />
+				<font face="Verdana">morph<br />
+Azzurra IRC Network - Network Root</font>
+			</div>
+		<!-- / sig -->
+		
+
+		
+
+		
+
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="border: 1px solid #cccccc; border-top: 0px">
+		<img class="inlineimg" src="azzurra3.0/statusicon/user_offline.gif" alt="morpheus non è collegato" border="0" />
+
+
+		
+		
+		
+		
+		&nbsp;
+	</td>
+	
+	<td class="alt1" align="right" style="border: 1px solid #cccccc; border-left: 0px; border-top: 0px">
+	
+		<!-- controls -->
+		
+		
+		
+			<a href="newreply.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;do=newreply&amp;p=477448" rel="nofollow"><img src="azzurra3.0/buttons/quote.gif" alt="Rispondi Citando" border="0" /></a>
+		
+		
+		
+		
+		
+		
+		
+			
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</table>
+
+
+<!-- post 477448 popup menu -->
+<div class="vbmenu_popup" id="postmenu_477448_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tr>
+		<td class="thead">morpheus</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="member.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;u=4068">Vedi Profilo Pubblico</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="private.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;do=newpm&amp;u=4068" rel="nofollow">Invia un messaggio privato a morpheus</a></td></tr>
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://morpheus.level28.org/">Visita la homepage di morpheus!</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="search.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;do=finduser&amp;u=4068" rel="nofollow">Trova altri messaggi di morpheus</a></td></tr>
+	
+	
+	
+	</table>
+</div>
+<!-- / post 477448 popup menu -->
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #477448 --><!-- post #477541 -->
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width:98%; text-align:left">
+		<div style="padding:0px 10px 0px 10px" align="left">
+
+	<div id="edit477541" style="padding:0px 0px 6px 0px">
+	<!-- this is not the last post shown on the page -->
+
+
+
+<table id="post477541" class="tborder" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">
+<tr>
+	
+		<td class="thead" style="font-weight:normal; border: 1px solid #cccccc; border-right: 0px" >
+			<!-- status icon and date -->
+			<a name="post477541"><img class="inlineimg" src="azzurra3.0/statusicon/post_old.gif" alt="Vecchio" border="0" /></a>
+			23-04-2012, 10:27
+			
+			<!-- / status icon and date -->
+		</td>
+		<td class="thead" style="font-weight:normal; border: 1px solid #cccccc; border-left: 0px" align="right">
+			&nbsp;
+			#<a href="showpost.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;p=477541&amp;postcount=8" target="new" rel="nofollow" id="postcount477541" name="8"><strong>8</strong></a>
+			
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt2" width="175" style="border: 1px solid #cccccc; border-top: 0px; border-bottom: 0px">
+
+			<div id="postmenu_477541">
+				
+				<a class="bigusername" href="member.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;u=3641">Gogetassj5</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_477541", true); </script>
+				
+			</div>
+
+			<div class="smallfont">New User</div>
+			
+			
+
+			
+				<div class="smallfont">
+					&nbsp;<br /><a href="member.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;u=3641"><img src="customavatars/avatar3641_0.gif"   alt="L'Avatar di Gogetassj5" border="0" /></a>
+				</div>
+			
+
+			<div class="smallfont">
+				&nbsp;<br />
+				<div>Data Iscrizione: 19-04-2004</div>
+				<div>Residenza: Roma</div>
+				
+				<div>
+					Messaggi: 34
+				</div>
+				
+				
+				Potenza Reputazione: <span id="reppower_477541_3641">13</span> <div><span id="repdisplay_477541_3641"><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="Gogetassj5 è sulla buona strada" border="0" /></span></div>
+				
+				<div>    </div>
+			</div>
+
+	</td>
+	
+	<td class="alt1" id="td_post_477541" style="border-right: 1px solid #cccccc">
+	
+		
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				<img class="inlineimg" src="images/icons/icon1.gif" alt="Base" border="0" />
+				<strong>Re: IRCD basato su Bahamut di Azzurra.org</strong>
+			</div>
+			<hr size="1" style="color:#cccccc; background-color:#cccccc" />
+			<!-- / icon and title -->
+		
+
+		<!-- message -->
+		<div id="post_message_477541">
+			
+			Salve visto che è stato aperto un thread su quest'argomento vorrei inserirmi io per qualche supportino e spero di non essere OT.<br />
+<br />
+Per passatempo sto installando il vostro software sia bahamut che i core services e il ./configure make e make install è andato a buon fine dire sensa errori di compilazione o di altro. Ho modificato l'ircd.conf ( una configurazione blanda per ora ) sensa editare nessun'altro file provo a fare ./ircd e mi esce cosi<br />
+<br />
+<div style="margin:20px; margin-top:5px">
+	<div class="smallfont" style="margin-bottom:2px">Codice:</div>
+	<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px inset;
+		width: 640px;
+		height: 210px;
+		text-align: left;
+		overflow: auto">
+Importing prime...
+Prime imported.
+Generating random state...
+1024 bytes of entropy loaded.
+Random state successful.
+Cloaking subsystem succesfully initialized (1024 bits key).
+SSL: Trying to intialize SSL support . . .
+SSL: success.
+Value of FD_SETSIZE is 1024
+Value of NOFILE is 256
+Ircd is now becoming a daemon.</pre>
+</div>Non mi pare che dice errore anzi addirittura mi dice che è ready per essere loaddato come ircd...pero quando vado a fare <div style="margin:20px; margin-top:5px">
+	<div class="smallfont" style="margin-bottom:2px">Codice:</div>
+	<pre class="alt2" dir="ltr" style="
+		margin: 0px;
+		padding: 6px;
+		border: 1px inset;
+		width: 640px;
+		height: 34px;
+		text-align: left;
+		overflow: auto">ps x</pre>
+</div> non vedo il processo in run...nella configurazione ircd ho visto che non è messo il parametro &quot;set&quot; come l'unreal, devo crearla io oppure è un problema di configurazione *:Line?<br />
+<br />
+Grazie in anticipo <img src="images/smilies/classic/icon_smile.gif" border="0" alt="" title="Icon Smile" class="inlineimg" />
+		</div>
+		<!-- / message -->
+
+		
+
+		
+		
+
+		
+		<!-- sig -->
+			<div>
+				__________________<br />
+				The Legend of XelNaga
+			</div>
+		<!-- / sig -->
+		
+
+		
+
+		
+
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="border: 1px solid #cccccc; border-top: 0px">
+		<img class="inlineimg" src="azzurra3.0/statusicon/user_offline.gif" alt="Gogetassj5 non è collegato" border="0" />
+
+
+		
+		
+		
+		
+		&nbsp;
+	</td>
+	
+	<td class="alt1" align="right" style="border: 1px solid #cccccc; border-left: 0px; border-top: 0px">
+	
+		<!-- controls -->
+		
+		
+		
+			<a href="newreply.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;do=newreply&amp;p=477541" rel="nofollow"><img src="azzurra3.0/buttons/quote.gif" alt="Rispondi Citando" border="0" /></a>
+		
+		
+		
+		
+		
+		
+		
+			
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</table>
+
+
+<!-- post 477541 popup menu -->
+<div class="vbmenu_popup" id="postmenu_477541_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tr>
+		<td class="thead">Gogetassj5</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="member.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;u=3641">Vedi Profilo Pubblico</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="private.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;do=newpm&amp;u=3641" rel="nofollow">Invia un messaggio privato a Gogetassj5</a></td></tr>
+	
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="search.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;do=finduser&amp;u=3641" rel="nofollow">Trova altri messaggi di Gogetassj5</a></td></tr>
+	
+	
+	
+	</table>
+</div>
+<!-- / post 477541 popup menu -->
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #477541 --><!-- post #477542 -->
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width:98%; text-align:left">
+		<div style="padding:0px 10px 0px 10px" align="left">
+
+	<div id="edit477542" style="padding:0px 0px 6px 0px">
+	<!-- this is not the last post shown on the page -->
+
+
+
+<table id="post477542" class="tborder" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">
+<tr>
+	
+		<td class="thead" style="font-weight:normal; border: 1px solid #cccccc; border-right: 0px" >
+			<!-- status icon and date -->
+			<a name="post477542"><img class="inlineimg" src="azzurra3.0/statusicon/post_old.gif" alt="Vecchio" border="0" /></a>
+			24-04-2012, 22:21
+			
+			<!-- / status icon and date -->
+		</td>
+		<td class="thead" style="font-weight:normal; border: 1px solid #cccccc; border-left: 0px" align="right">
+			&nbsp;
+			#<a href="showpost.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;p=477542&amp;postcount=9" target="new" rel="nofollow" id="postcount477542" name="9"><strong>9</strong></a>
+			
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt2" width="175" style="border: 1px solid #cccccc; border-top: 0px; border-bottom: 0px">
+
+			<div id="postmenu_477542">
+				
+				<a class="bigusername" href="member.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;u=5027"><span style="color: red;">Sonic</span></a>
+				<script type="text/javascript"> vbmenu_register("postmenu_477542", true); </script>
+				
+			</div>
+
+			<div class="smallfont">Azzurra Network Root</div>
+			<div class="smallfont"><img src="rankimg/netroot.gif" alt="" border="" /></div>
+			
+
+			
+				<div class="smallfont">
+					&nbsp;<br /><a href="member.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;u=5027"><img src="customavatars/avatar5027_3.gif" width="114" height="150" alt="L'Avatar di Sonic" border="0" /></a>
+				</div>
+			
+
+			<div class="smallfont">
+				&nbsp;<br />
+				<div>Data Iscrizione: 03-02-2005</div>
+				<div>Residenza: Bari</div>
+				
+				<div>
+					Messaggi: 107
+				</div>
+				
+				
+				Potenza Reputazione: <span id="reppower_477542_5027">12</span> <div><span id="repdisplay_477542_5027"><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="Sonic è sulla buona strada" border="0" /></span></div>
+				
+				<div>    </div>
+			</div>
+
+	</td>
+	
+	<td class="alt1" id="td_post_477542" style="border-right: 1px solid #cccccc">
+	
+		
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				<img class="inlineimg" src="images/icons/icon1.gif" alt="Base" border="0" />
+				<strong>Re: IRCD basato su Bahamut di Azzurra.org</strong>
+			</div>
+			<hr size="1" style="color:#cccccc; background-color:#cccccc" />
+			<!-- / icon and title -->
+		
+
+		<!-- message -->
+		<div id="post_message_477542">
+			
+			Cancella la P: sulla porta 7000. L'ircd apre quella porta di default (se non viene specificata una porta nella M:Line) quindi con la P tenta di mettersi 2 volte in ascolto sulla stessa porta.
+		</div>
+		<!-- / message -->
+
+		
+
+		
+		
+
+		
+		<!-- sig -->
+			<div>
+				__________________<br />
+				<font face="verdana, arial, helvetica"><font size="2"><font size="2"> &quot;La teoria è quando si sa tutto e niente funziona. La pratica è quando tutto funziona e nessuno sa il perché. In questo caso, abbiamo messo insieme la teoria e la pratica: non c'è niente che funziona... e nessuno sa il perché!&quot; (Albert Einstein)</font><br />
+</font></font>
+			</div>
+		<!-- / sig -->
+		
+
+		
+
+		
+
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="border: 1px solid #cccccc; border-top: 0px">
+		<img class="inlineimg" src="azzurra3.0/statusicon/user_offline.gif" alt="Sonic non è collegato" border="0" />
+
+
+		
+		
+		
+		
+		&nbsp;
+	</td>
+	
+	<td class="alt1" align="right" style="border: 1px solid #cccccc; border-left: 0px; border-top: 0px">
+	
+		<!-- controls -->
+		
+		
+		
+			<a href="newreply.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;do=newreply&amp;p=477542" rel="nofollow"><img src="azzurra3.0/buttons/quote.gif" alt="Rispondi Citando" border="0" /></a>
+		
+		
+		
+		
+		
+		
+		
+			
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</table>
+
+
+<!-- post 477542 popup menu -->
+<div class="vbmenu_popup" id="postmenu_477542_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tr>
+		<td class="thead">Sonic</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="member.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;u=5027">Vedi Profilo Pubblico</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="private.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;do=newpm&amp;u=5027" rel="nofollow">Invia un messaggio privato a Sonic</a></td></tr>
+	
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="search.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;do=finduser&amp;u=5027" rel="nofollow">Trova altri messaggi di Sonic</a></td></tr>
+	
+	
+	
+	</table>
+</div>
+<!-- / post 477542 popup menu -->
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #477542 --><!-- post #477543 -->
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width:98%; text-align:left">
+		<div style="padding:0px 10px 0px 10px" align="left">
+
+	<div id="edit477543" style="padding:0px 0px 6px 0px">
+	
+
+
+
+<table id="post477543" class="tborder" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">
+<tr>
+	
+		<td class="thead" style="font-weight:normal; border: 1px solid #cccccc; border-right: 0px" >
+			<!-- status icon and date -->
+			<a name="post477543"><img class="inlineimg" src="azzurra3.0/statusicon/post_old.gif" alt="Vecchio" border="0" /></a>
+			25-04-2012, 18:14
+			
+			<!-- / status icon and date -->
+		</td>
+		<td class="thead" style="font-weight:normal; border: 1px solid #cccccc; border-left: 0px" align="right">
+			&nbsp;
+			#<a href="showpost.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;p=477543&amp;postcount=10" target="new" rel="nofollow" id="postcount477543" name="10"><strong>10</strong></a>
+			
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt2" width="175" style="border: 1px solid #cccccc; border-top: 0px; border-bottom: 0px">
+
+			<div id="postmenu_477543">
+				
+				<a class="bigusername" href="member.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;u=3641">Gogetassj5</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_477543", true); </script>
+				
+			</div>
+
+			<div class="smallfont">New User</div>
+			
+			
+
+			
+				<div class="smallfont">
+					&nbsp;<br /><a href="member.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;u=3641"><img src="customavatars/avatar3641_0.gif"   alt="L'Avatar di Gogetassj5" border="0" /></a>
+				</div>
+			
+
+			<div class="smallfont">
+				&nbsp;<br />
+				<div>Data Iscrizione: 19-04-2004</div>
+				<div>Residenza: Roma</div>
+				
+				<div>
+					Messaggi: 34
+				</div>
+				
+				
+				Potenza Reputazione: <span id="reppower_477543_3641">13</span> <div><span id="repdisplay_477543_3641"><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="Gogetassj5 è sulla buona strada" border="0" /></span></div>
+				
+				<div>    </div>
+			</div>
+
+	</td>
+	
+	<td class="alt1" id="td_post_477543" style="border-right: 1px solid #cccccc">
+	
+		
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				<img class="inlineimg" src="images/icons/icon1.gif" alt="Base" border="0" />
+				<strong>Re: IRCD basato su Bahamut di Azzurra.org</strong>
+			</div>
+			<hr size="1" style="color:#cccccc; background-color:#cccccc" />
+			<!-- / icon and title -->
+		
+
+		<!-- message -->
+		<div id="post_message_477543">
+			
+			ciao Sonic grazie per aver risposto ma avevo gia risolto e avevo dimenticato di replicare qui per via del poco tempo che avevo..rispetto all'unreal è proprio un'altra cosa e complimenti ancora..pero mi chiedo come mai essendo un ircd modificato proprio da voi aveve lasciato i sorgenti in lingua ENG anziche ita? <br />
+<br />
+Cordiali saluti
+		</div>
+		<!-- / message -->
+
+		
+
+		
+		
+
+		
+		<!-- sig -->
+			<div>
+				__________________<br />
+				The Legend of XelNaga
+			</div>
+		<!-- / sig -->
+		
+
+		
+
+		
+
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="border: 1px solid #cccccc; border-top: 0px">
+		<img class="inlineimg" src="azzurra3.0/statusicon/user_offline.gif" alt="Gogetassj5 non è collegato" border="0" />
+
+
+		
+		
+		
+		
+		&nbsp;
+	</td>
+	
+	<td class="alt1" align="right" style="border: 1px solid #cccccc; border-left: 0px; border-top: 0px">
+	
+		<!-- controls -->
+		
+		
+		
+			<a href="newreply.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;do=newreply&amp;p=477543" rel="nofollow"><img src="azzurra3.0/buttons/quote.gif" alt="Rispondi Citando" border="0" /></a>
+		
+		
+		
+		
+		
+		
+		
+			
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</table>
+
+
+<!-- post 477543 popup menu -->
+<div class="vbmenu_popup" id="postmenu_477543_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tr>
+		<td class="thead">Gogetassj5</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="member.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;u=3641">Vedi Profilo Pubblico</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="private.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;do=newpm&amp;u=3641" rel="nofollow">Invia un messaggio privato a Gogetassj5</a></td></tr>
+	
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="search.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;do=finduser&amp;u=3641" rel="nofollow">Trova altri messaggi di Gogetassj5</a></td></tr>
+	
+	
+	
+	</table>
+</div>
+<!-- / post 477543 popup menu -->
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #477543 --><div id="lastpost"></div></div>
+
+<!-- start content table -->
+<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width:98%; text-align:left">
+		<div style="padding:0px 10px 0px 10px" align="left">
+
+<!-- / start content table -->
+
+<!-- controls below postbits -->
+<table cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top:-3px">
+<tr valign="top">
+	
+		<td class="smallfont"><a href="newreply.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;do=newreply&amp;noquote=1&amp;p=477543" rel="nofollow"><img src="azzurra3.0/buttons/reply.gif" alt="rispondi" border="0" /></a></td>
+	
+	
+		<td align="right"><div class="pagenav" align="right">
+<table class="tborder" cellpadding="3" cellspacing="1" border="0">
+<tr>
+	<td class="vbmenu_control" style="font-weight:normal">Pagina 1 di 2</td>
+	
+	
+		<td class="alt2"><span class="smallfont" title="Visualizzazione risultati 1 fino 10 di 12"><strong>1</strong></span></td>
+ <td class="alt1"><a class="smallfont" href="showthread.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;t=15164&amp;page=2" title="Mostra risultati 11 fino 12 di 12">2</a></td>
+	<td class="alt1"><a rel="next" class="smallfont" href="showthread.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;t=15164&amp;page=2" title="Prossima pagina - Risultati 11 fino 12 di 12">&gt;</a></td>
+	
+	
+</tr>
+</table>
+</div>
+		
+		</td>
+	
+</tr>
+</table>
+<!-- / controls below postbits -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- next / previous links -->
+	<br />
+	<div class="smallfont" align="center">
+		<strong>&laquo;</strong>
+			<a href="showthread.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;t=15164&amp;goto=nextoldest" rel="nofollow">Discussione precedente</a>
+			|
+			<a href="showthread.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;t=15164&amp;goto=nextnewest" rel="nofollow">Discussione successiva</a>
+		<strong>&raquo;</strong>
+	</div>
+<!-- / next / previous links -->
+
+
+
+<!-- currently active users -->
+	<br />
+	<table class="tborder" cellpadding="6" cellspacing="1" border="0" width="100%" align="center">
+	<tr>
+		<td class="tcat" colspan="2">
+			Utenti attualmente attivi che stanno leggendo questa discussione: 1 <span class="normal">(0 membri e 1 ospiti)</span>
+		</td>
+	</tr>
+	<tr>
+		<td class="alt1" colspan="2">
+			<span class="smallfont">&nbsp;</span>
+		</td>
+	</tr>
+	</table>
+<!-- end currently active users -->
+
+
+
+
+
+<!-- controls for non-popup browsers -->
+
+
+<table class="tborder" cellpadding="6" cellspacing="1" border="0" width="100%" align="center" style="border-top-width:0px">
+<tr>
+	<td class="thead" colspan="2">Strumenti discussione<a name="goto_threadtools"></a></td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt1" colspan="2">
+
+	<!-- thread tools -->
+	<div class="smallfont">
+		
+
+			<div><img class="inlineimg" src="azzurra3.0/buttons/printer.gif" alt="Mostra versione Stampabile" vspace="1" /> <a href="printthread.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;t=15164" rel="nofollow">Mostra versione Stampabile</a></div>
+			<div><img class="inlineimg" src="azzurra3.0/buttons/sendtofriend.gif" alt="Invia questa Pagina via Email" vspace="1" /> <a href="sendmessage.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;do=sendtofriend&amp;t=15164" rel="nofollow">Invia questa Pagina via Email</a></div>
+		
+		
+		
+	</div>
+	<!-- / thread tools -->
+
+	</td>
+	
+</tr>
+
+<tr>
+	<td class="thead" colspan="2">Modalità di visualizzazione<a name="goto_displaymodes"></a></td>
+	
+</tr>
+<tr valign="top">
+	
+	<td class="alt2" colspan="2">
+
+	<!-- thread display modes -->
+
+	<div class="smallfont">
+		<div><img class="inlineimg" src="azzurra3.0/buttons/mode_linear.gif" alt="Modalità Lineare" vspace="1" /> <strong>Modalità Lineare</strong></div>
+		<div><img class="inlineimg" src="azzurra3.0/buttons/mode_hybrid.gif" alt="Modalità Ibrida" vspace="1" /> <a href="showthread.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;mode=hybrid&amp;t=15164">Vai in Modalità Ibrida</a></div>
+		<div><img class="inlineimg" src="azzurra3.0/buttons/mode_threaded.gif" alt="Modalità Elencata" vspace="1" /> <a href="showthread.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;p=477442&amp;mode=threaded#post477442">Vai in Modalità Elencata</a></div>
+	</div>
+
+	<!-- / thread display modes -->
+
+	</td>
+	
+	
+</tr>
+
+</table>
+<br />
+
+
+<!-- / controls for non-popup browsers -->
+
+
+<!-- forum rules and admin links -->
+<table cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
+<tr valign="bottom">
+	<td width="100%" valign="top">
+		<table class="tborder" cellpadding="6" cellspacing="1" border="0" width="210">
+<thead>
+<tr>
+	<td class="thead">
+		<a style="float:right" href="#top" onclick="return toggle_collapse('forumrules')"><img id="collapseimg_forumrules" src="azzurra3.0/buttons/collapse_thead.gif" alt="" border="0" /></a>
+		Regole di scrittura
+	</td>
+</tr>
+</thead>
+<tbody id="collapseobj_forumrules" style="">
+<tr>
+	<td class="alt1" nowrap="nowrap"><div class="smallfont">
+		
+		<div>You <strong>may not</strong> post new threads</div>
+		<div>You <strong>may not</strong> post replies</div>
+		<div>You <strong>may not</strong> post attachments</div>
+		<div>You <strong>may not</strong> edit your posts</div>
+		<hr />
+		
+		<div><a href="misc.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;do=bbcode" target="_blank">BB code</a> is <strong>On</strong></div>
+		<div><a href="misc.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;do=showsmilies" target="_blank">Gli smilies</a> sono <strong>On</strong></div>
+		<div>Il codice <a href="misc.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;do=bbcode#imgcode" target="_blank">[IMG]</a> è <strong>On</strong></div>
+		<div>Il codice HTML è <strong>Off</strong></div>
+		<hr />
+		<div><a href="misc.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;do=showrules" target="_blank">Forum Rules</a></div>
+	</div></td>
+</tr>
+</tbody>
+</table>
+	</td>
+	<td class="smallfont" align="right">
+		<table cellpadding="0" cellspacing="0" border="0">
+		
+		<tr>
+			<td>
+			<div class="smallfont" style="text-align:left; white-space:nowrap">
+	<form action="forumdisplay.php" method="get">
+	<input type="hidden" name="s" value="1701b05c24bcd03cf0bcd844f0dc6b62" />
+	<input type="hidden" name="daysprune" value="" />
+	<strong>Vai al forum</strong><br />
+	<select name="f" onchange="this.form.submit();">
+		<optgroup label="Aree sito">
+			<option value="cp" >Pannello di controllo utente</option>
+			<option value="pm" >Messaggi Privati</option>
+			<option value="subs" >Iscrizioni</option>
+			<option value="wol" >Chi c'è online</option>
+			<option value="search" >Cerca nei forums</option>
+			<option value="home" >Home dei Forum</option>
+		</optgroup>
+		
+		<optgroup label="Forums">
+		<option value="3" class="fjdpth0" > Azzurra IRC Network Forum</option>
+<option value="15" class="fjdpth1" >&nbsp; &nbsp;  Canali - i vostri canali su Azzurra.</option>
+<option value="10" class="fjdpth1" >&nbsp; &nbsp;  Discussioni e commenti su Azzurra</option>
+<option value="39" class="fjdpth1" >&nbsp; &nbsp;  Il Porto Spaziale di Mos Eisley</option>
+<option value="41" class="fjdpth1" >&nbsp; &nbsp;  Azzurra Gamers OnLine</option>
+<option value="6" class="fjdpth0" > Network Central</option>
+<option value="137" class="fjdpth1" >&nbsp; &nbsp;  #Azzurra - Il canale ufficiale della rete</option>
+<option value="19" class="fjdpth1" >&nbsp; &nbsp;  Comunicazioni ufficiali di Azzurra</option>
+<option value="18" class="fjdpth1" >&nbsp; &nbsp;  Forum Help Area</option>
+<option value="11" class="fjdpth1" >&nbsp; &nbsp;  IRCHelp - Aiuto su IRC e Servizi di Azzurra</option>
+<option value="63" class="fjdpth1" >&nbsp; &nbsp;  La Chat #Italia di Azzurra IRC Network</option>
+<option value="30" class="fjdpth1" >&nbsp; &nbsp;  Services - I servizi IRC di Azzurra</option>
+<option value="36" class="fjdpth1" >&nbsp; &nbsp;  Javirc</option>
+<option value="138" class="fjdpth0" > Apple</option>
+<option value="139" class="fjdpth1" >&nbsp; &nbsp;  Mac</option>
+<option value="140" class="fjdpth1" >&nbsp; &nbsp;  OS X</option>
+<option value="141" class="fjdpth1" >&nbsp; &nbsp;  iPod &amp; iPhone</option>
+<option value="142" class="fjdpth1" >&nbsp; &nbsp;  Devel</option>
+<option value="8" class="fjdpth0" > Azzurra - Tech Center</option>
+<option value="13" class="fjsel" selected="selected">&nbsp; &nbsp;  Angolo tecnico</option>
+<option value="28" class="fjdpth1" >&nbsp; &nbsp;  Discussioni Linux</option>
+<option value="60" class="fjdpth1" >&nbsp; &nbsp;  Quantum leap</option>
+<option value="23" class="fjdpth1" >&nbsp; &nbsp;  Programmazione e dintorni</option>
+<option value="4" class="fjdpth0" > Happy Hour</option>
+<option value="17" class="fjdpth1" >&nbsp; &nbsp;  Cazzeggiando qua e la...</option>
+<option value="20" class="fjdpth1" >&nbsp; &nbsp;  Ditelo con il Forum</option>
+<option value="25" class="fjdpth1" >&nbsp; &nbsp;  L'angolo del piccolo menomato informatico</option>
+<option value="16" class="fjdpth1" >&nbsp; &nbsp;  Questi mitici log!</option>
+<option value="7" class="fjdpth0" > I Vostri Forum</option>
+<option value="21" class="fjdpth1" >&nbsp; &nbsp;  #debiAn</option>
+<option value="24" class="fjdpth1" >&nbsp; &nbsp;  #altrove</option>
+<option value="42" class="fjdpth1" >&nbsp; &nbsp;  #italia_area</option>
+<option value="131" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  hattrick</option>
+<option value="136" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Giochi</option>
+<option value="44" class="fjdpth1" >&nbsp; &nbsp;  #amicimiei</option>
+<option value="58" class="fjdpth1" >&nbsp; &nbsp;  #bodomlake</option>
+<option value="72" class="fjdpth1" >&nbsp; &nbsp;  #roma</option>
+<option value="48" class="fjdpth1" >&nbsp; &nbsp;  #quizzer</option>
+<option value="45" class="fjdpth1" >&nbsp; &nbsp;  #desideri&amp;sogni</option>
+<option value="68" class="fjdpth1" >&nbsp; &nbsp;  #lamerandia</option>
+<option value="35" class="fjdpth1" >&nbsp; &nbsp;  #cuori</option>
+<option value="112" class="fjdpth1" >&nbsp; &nbsp;  #carlotta</option>
+<option value="116" class="fjdpth1" >&nbsp; &nbsp;  #pelo</option>
+<option value="31" class="fjdpth1" >&nbsp; &nbsp;  #LiberoZone</option>
+<option value="117" class="fjdpth1" >&nbsp; &nbsp;  #buduscript</option>
+<option value="27" class="fjdpth1" >&nbsp; &nbsp;  #fonzie</option>
+<option value="122" class="fjdpth1" >&nbsp; &nbsp;  #MiglioVerde</option>
+<option value="129" class="fjdpth1" >&nbsp; &nbsp;  #casteddu</option>
+<option value="65" class="fjdpth1" >&nbsp; &nbsp;  #piemonte.it</option>
+<option value="69" class="fjdpth1" >&nbsp; &nbsp;  #friuli.it</option>
+<option value="71" class="fjdpth1" >&nbsp; &nbsp;  #blues and #cibo</option>
+<option value="127" class="fjdpth1" >&nbsp; &nbsp;  #mtv</option>
+<option value="130" class="fjdpth1" >&nbsp; &nbsp;  #lunapark</option>
+<option value="79" class="fjdpth1" >&nbsp; &nbsp;  #templary</option>
+<option value="74" class="fjdpth1" >&nbsp; &nbsp;  #ircgirls</option>
+<option value="81" class="fjdpth1" >&nbsp; &nbsp;  #pub</option>
+<option value="83" class="fjdpth1" >&nbsp; &nbsp;  #NightAngels</option>
+<option value="135" class="fjdpth1" >&nbsp; &nbsp;  #StayinAlive</option>
+<option value="144" class="fjdpth1" >&nbsp; &nbsp;  #lord_shinva</option>
+<option value="5" class="fjdpth0" > Test Area</option>
+<option value="14" class="fjdpth1" >&nbsp; &nbsp;  Test - Forum dedicato ai messaggi di prova</option>
+<option value="75" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Sottoforum di prova</option>
+<option value="76" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Cugino del sottoforum di prova</option>
+
+		</optgroup>
+		
+	</select><input type="submit" class="button" value="Vai"  />
+	</form>
+</div>
+			</td>
+		</tr>
+		</table>
+	</td>
+</tr>
+</table>
+<!-- /forum rules and admin links -->
+
+<br />
+
+
+
+
+
+<br />
+<div class="smallfont" align="center">Tutti gli orari sono GMT +1. Ora sono le <span class="time">03:31</span>.</div>
+<br />
+
+
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- /content area table -->
+
+<form action="index.php" method="get" style="clear:left">
+
+<table cellpadding="6" cellspacing="0" border="0" width="98%" class="page" align="center">
+<tr>
+	
+	
+		<td class="tfoot">
+			<select name="langid" onchange="switch_id(this, 'lang')">
+				<optgroup label="Scelta veloce linguaggio">
+					<option value="1" class="" >-- English (US)</option>
+<option value="4" class="" selected="selected">-- Italiano</option>
+
+				</optgroup>
+			</select>
+		</td>
+	
+	<td class="tfoot" align="right" width="100%">
+		<div class="smallfont">
+			<strong>
+				<a href="sendmessage.php?s=1701b05c24bcd03cf0bcd844f0dc6b62" rel="nofollow" accesskey="9">Contattaci</a> -
+				<a href="http://www.azzurra.org">Azzurra IRC Network</a> -
+				
+				
+				<a href="archive/index.php">Archivio</a> -
+				
+				
+				
+				<a href="#top" onclick="self.scrollTo(0, 0); return false;">Vai in cima</a>
+			</strong>
+		</div>
+	</td>
+</tr>
+</table>
+
+<br />
+
+<div align="center">
+	<div class="smallfont" align="center">
+	<!-- Do not remove this copyright notice -->
+	Sviluppato da: vBulletin Version 3.8.2<br />Copyright &copy;2000 - 2016, Jelsoft Enterprises Ltd.
+<br />
+Traduzione Italiana a cura dello Staff di Azzurra &copy; 2016
+	<!-- Do not remove this copyright notice -->
+	</div>
+
+	<div class="smallfont" align="center">
+	<!-- Do not remove cronimage or your scheduled tasks will cease to function -->
+	<img src="http://forum.azzurra.org/cron.php?s=1701b05c24bcd03cf0bcd844f0dc6b62&amp;rand=1471487495" alt="" width="1" height="1" border="0" />
+	<!-- Do not remove cronimage or your scheduled tasks will cease to function -->
+
+	Copyright Azzurra IRC Network © 1997-2007
+	</div>
+</div>
+
+</form>
+
+
+
+
+<script type="text/javascript">
+<!--
+	// Main vBulletin Javascript Initialization
+	vBulletin_init();
+//-->
+</script>
+
+<!-- temp -->
+<div style="display:none">
+	<!-- thread rate -->
+	
+		
+	
+	<!-- / thread rate -->
+</div>
+
+</body>
+</html>

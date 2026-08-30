@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<title>Azzurra IRC Network Forum - Due suggerimenti sul NeverOp</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="Azzurra IRC Network Forum" />
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-6.html">Network Central</a> &gt; <a href="f-30.html">Services - I servizi IRC di Azzurra</a> &gt; Due suggerimenti sul NeverOp</div>
+<hr />
+<div class="pda"><a href="?pda=1">PDA</a></div>
+<p class="largefont">Mostra versione intera : <a href="http://forum.azzurra.org/showthread.php?t=1439">Due suggerimenti sul NeverOp</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">29-12-2002, 22:19</div></div><div class="posttext">Avrei un paio di suggerimenti da proporre, se mi e' permesso ^^;;<br />
+<br />
+1) Implementare il NeverVoice. Parto dal presupposto che sia possibile copiare il codice relativo al NeverOp e modificarlo con un +v anziche' un +o, e che quindi si possa trattare di un'implementazione nel complesso rapida ed indolore<br />
+<br />
+2) Modificare il NeverOp. Suggerisco di portare il NeverOp ad essere un umode liberamente impostabile, e non una feature accessibile solo via ChanServ da utenti registrati. In questo modo la caratteristica risulta ereditabile anche quando il nick con NeverOp ON si sposta su nicknames non registrati e quindi non impostati, seguendo una filosofia parallela a quella che consente di accedere alle liste di un canale dopo essersi identificati ad un nick presente nelle liste stesse anche dopo aver cambiato il proprio nick.<br />
+<br />
+Naturalmente so benissimo che il discorso del copia/incolla del punto 1 non e' applicabile se si implementano le modifiche suggerite al punto 2, ma comunque e' un'idea che volevo esprimere. ^^;<br />
+Inoltre, mi rendo conto che l'ereditarieta' del NeverOp puo' essere garantita anche in altri modi, ma credo che la scelta dell'umode sia la piu' semplice (&quot;semplice&quot; dal punto di vista dell'utente, of course).<br />
+<br />
+Ciao a tutti, :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gastaman</div><div class="date">29-12-2002, 23:20</div></div><div class="posttext">[quote=Steve]1) Implementare il NeverVoice. Parto dal presupposto che sia possibile copiare il codice relativo al NeverOp e modificarlo con un +v anziche' un +o, e che quindi si possa trattare di un'implementazione nel complesso rapida ed indolore[/quote]<br />
+<br />
+Certamente, si tratta solo di copiare il codice.<br />
+E allora, tu dirai, perche' non lo fate?<br />
+Il motivo e' il seguente. Ad ogni singolo mode +o (e -o) si deve vedere se il canale e' registrato, cercare la struttura User relativa a chi da il comando e a chi lo riceve, poi si deve controllare che accesso hanno l'uno e l'altro al canale, controllare se chi da il comando e' realmente operatore nel canale, controllare se chi da il comando e chi lo riceve non sono la stessa persona (o il SAMODE non funzionerebbe piu'), e infine se il confronto fra gli accessi e le impostazioni del canale permettono di impostare quel determinato mode oppure richiedono un intervento dei servizi (NeverOp, Protect).<br />
+Tutto questo per i modes +v/-v non viene fatto, perche' la pesantezza di tutte quelle funzioni non giustifica un eventuale utente +v fuori posto, e non giustifica neanche una opzione NeverVoice. E' importante che i servizi intervengano se un utente non deve avere l'op (o deve riaverlo) perche' un operatore fuori posto puo' creare grossi problemi al canale, ma per un utente +v il massimo che puo' succedere e' che parli in un canale moderato quando non deve, e nel caso qualsiasi operatore puo' intervenire per risolvere il problema.<br />
+Questo e' il motivo per cui non c'e' un'opzione NeverVoice, e anche se non escludo che prima o poi venga inserita, per il momento (e per il prossimo futuro) non c'e' l'intenzione di inserirla.<br />
+<br />
+[quote=Steve]2) Modificare il NeverOp. Suggerisco di portare il NeverOp ad essere un umode liberamente impostabile, e non una feature accessibile solo via ChanServ da utenti registrati. In questo modo la caratteristica risulta ereditabile anche quando il nick con NeverOp ON si sposta su nicknames non registrati e quindi non impostati, seguendo una filosofia parallela a quella che consente di accedere alle liste di un canale dopo essersi identificati ad un nick presente nelle liste stesse anche dopo aver cambiato il proprio nick.[/quote]<br />
+<br />
+<br />
+I servizi e l'ircd (il &quot;proprietario&quot; degli usermode) non hanno questo tipo di integrazione. E in ogni caso non si puo' inserire un usermode per ogni funzione, senno' diventiamo peggio del CR...<br />
+Quello che dici tu e' fattibile se ad ogni controllo del NeverOp vengono controllati tutti i nick a cui sei identificato, per vedere se ce n'e' almeno uno col NeverOp, e anche in quel caso, oltre ad appesantire notevolmente i servizi, ci sarebbero persone che si lamenterebbero del fatto che sono NeverOp con un nick ma non con gli altri, e non vogliono che esso venga &quot;propagato&quot;.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">29-12-2002, 23:41</div></div><div class="posttext">[quote=Gastaman]I servizi e l'ircd (il &quot;proprietario&quot; degli usermode) non hanno questo tipo di integrazione. E in ogni caso non si puo' inserire un usermode per ogni funzione, senno' diventiamo peggio del CR...<br />
+Quello che dici tu e' fattibile se ad ogni controllo del NeverOp vengono controllati tutti i nick a cui sei identificato, per vedere se ce n'e' almeno uno col NeverOp, e anche in quel caso, oltre ad appesantire notevolmente i servizi, ci sarebbero persone che si lamenterebbero del fatto che sono NeverOp con un nick ma non con gli altri, e non vogliono che esso venga &quot;propagato&quot;.[/quote]<br />
+<br />
+Ho capito la spiegazione sul NeverVoice (grazie), mi resta pero' il dubbio su come *togliersi* un +v, dato che l'ircd non lo permette e dato che esiste un AutoVoice che da' il +v a chicchessia.<br />
+relativamente al NeverOp, aggiungo un paio di righe a corredo del mio discorso. Ovviamente non so i dettagli, ma gli ultimi aggiornamenti permettono che i privilegi di accesso del mio nick registrato vengano ereditati anche quando faccio un /nick , consentendomi cosi' di eseguire operazioni su un canale anche se ho un nick che non e' inserito nelle liste. Ebbene, troverei utile che anche il NeverOp venga propagato a sua volta, e proprio perche' non conosco i dettagli dei servizi io ho (stupidamente?) pensato che creare un umode fosse la cosa piu' facile per avere l'ereditarieta' del NeverOp, e forse persino del NeverVoice. Ti capisco quando dici che non bisogna esagerare con gli umode, ma se mi hai risposto credo che perlomeno non consideri queste cose come delle idiozie senza senso... :)<br />
+<br />
+Ciao e grazie ancora :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gastaman</div><div class="date">30-12-2002, 01:25</div></div><div class="posttext">[quote=Steve]Ho capito la spiegazione sul NeverVoice (grazie), mi resta pero' il dubbio su come *togliersi* un +v, dato che l'ircd non lo permette e dato che esiste un AutoVoice che da' il +v a chicchessia.[/quote]<br />
+<br />
+L'unico modo per fugare questo dubbio e' porre la domanda a chi ha scritto la RFC1459. :)<br />
+<br />
+[quote=Steve]Ebbene, troverei utile che anche il NeverOp venga propagato a sua volta, e proprio perche' non conosco i dettagli dei servizi io ho (stupidamente?) pensato che creare un umode fosse la cosa piu' facile per avere l'ereditarieta' del NeverOp, e forse persino del NeverVoice.[/quote]<br />
+<br />
+Come ho gia' detto l'utilita' della propagazione del NeverOp e' soggettiva, mentre invece tutti (penso) concordano sul fatto che e' utile avere accesso ad un canale se ho identificato un nick in lista ma ne sto usando un altro. Ci potrebbero essere (e sono quasi certo che ci siano) utenti che troverebbero questa propagazione fastidiosa: la differenza e' che lasciando cosi' loro sono contenti e tu sei &quot;costretto&quot; a usare solo determinati nick se vuoi che il NeverOp funzioni, mentre mettendo come dici tu, tu saresti contento ma loro sarebbero costretti a non identificarsi ad un nick (perdendone quindi i relativi accessi) o a ricollegarsi. Fra le due, preferiamo la prima... spero tu non ce ne voglia. :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">30-12-2002, 13:24</div></div><div class="posttext">[quote=Gastaman][quote=Steve]Ho capito la spiegazione sul NeverVoice (grazie), mi resta pero' il dubbio su come *togliersi* un +v, dato che l'ircd non lo permette e dato che esiste un AutoVoice che da' il +v a chicchessia.[/quote]<br />
+<br />
+L'unico modo per fugare questo dubbio e' porre la domanda a chi ha scritto la RFC1459. :)[/quote]<br />
+<br />
+La RFC1459 dichiara che solo un operatore del canale puo' modificare cmode ed umode interni al canale stesso (paragrafo 4.2.3.1 della RFC), ma sei proprio sicuro che pure l'AutoVoice e l'AutoOp siano referenziati li' dentro? ;-)<br />
+<br />
+[quote=Gastaman]Ci potrebbero essere (e sono quasi certo che ci siano) utenti che troverebbero questa propagazione fastidiosa: la differenza e' che lasciando cosi' loro sono contenti e tu sei &quot;costretto&quot; a usare solo determinati nick se vuoi che il NeverOp funzioni, mentre mettendo come dici tu, tu saresti contento ma loro sarebbero costretti a non identificarsi ad un nick (perdendone quindi i relativi accessi) o a ricollegarsi. Fra le due, preferiamo la prima... spero tu non ce ne voglia. :)[/quote]<br />
+<br />
+Ok, questa e' una risposta come si deve :)<br />
+Potrei anche obiettare pensando che sono ben pochi gli utenti con NeverOp (bot a parte, ho incontrato solo Huma_Dragonbane che lo usa, oltre a me), ma penso che la cosa migliore a questo punto sia di costruire qualche script client-side che mi deoppi automaticamente al posto di ChanServ e che mi faccia fare un /hop in caso di voice, qualunque sia il mio nick. Se qualcuno ha suggerimenti, li posti pure qui... senno' vedo di stressare qualche canale di scripting, su Azzurra o altrove :D<br />
+<br />
+Ciao,</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mav</div><div class="date">30-12-2002, 14:19</div></div><div class="posttext">[quote=Steve]<br />
+La RFC1459 dichiara che solo un operatore del canale puo' modificare cmode ed umode interni al canale stesso (paragrafo 4.2.3.1 della RFC), ma sei proprio sicuro che pure l'AutoVoice e l'AutoOp siano referenziati li' dentro? ;-)<br />
+[/quote]<br />
+<br />
+AutoVoice e AutoOp non fanno parte del protocollo IRC, quindi non sono referenziate nella RFC1459: sono funzionalità ottenute tramite l'utilizzo di software esterni (come i Servizi). Per questo motivo AutoVoice e AutoOp non violano nessuna RFC come invece farebbe un ircd che permettesse ai voice di togliersi il +v.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">30-12-2002, 22:02</div></div><div class="posttext">[quote=Mav]AutoVoice e AutoOp non fanno parte del protocollo IRC, quindi non sono referenziate nella RFC1459: sono funzionalità ottenute tramite l'utilizzo di software esterni (come i Servizi). Per questo motivo AutoVoice e AutoOp non violano nessuna RFC come invece farebbe un ircd che permettesse ai voice di togliersi il +v.[/quote]<br />
+<br />
+La mia era una domanda retorica, ma proseguiamo pure con il ragionamento e vediamo come mi valutate la prossima proposta: dato che i Servizi implementano funzionalita' esterne alla RFC1459, e' almeno sensato abilitare per tutti gli utenti registrati l'esecuzione del comando /msg ChanServ DEVOICE #channel $me, con $me pari al nick di chi lancia il comando stesso?<br />
+Invece non e' sensato (e me ne accorgo da solo! :P) svincolare il DEOP, dato che esiste un comodissimo /mode #channel -o $me :-)<br />
+<br />
+EDIT: con &quot;utenti registrati&quot; intendevo anche che la registrazione viene ereditata anche dopo il /nick, come gia' accade con le liste di accesso ai canali.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gastaman</div><div class="date">06-01-2003, 00:17</div></div><div class="posttext">[quote=Steve]La mia era una domanda retorica, ma proseguiamo pure con il ragionamento e vediamo come mi valutate la prossima proposta: dato che i Servizi implementano funzionalita' esterne alla RFC1459, e' almeno sensato abilitare per tutti gli utenti registrati l'esecuzione del comando /msg ChanServ DEVOICE #channel $me, con $me pari al nick di chi lancia il comando stesso?[/quote]<br />
+<br />
+I VOP possono gia' farlo... farlo fare a chiunque sia voice di un canale non e' possibile in quanto sarebbe in diretta violazione della RFC (mentre opzioni quali AutoVoice o AutoOp aggiungono solo funzionalita', sono solamente una forma automatizzata di una cosa che si puo' fare anche a mano), inoltre non credo che molti operatori o founder sarebbero contenti di ritrovarsi utenti normali in grado di cambiare mode del canale da soli...<br />
+<br />
+E' nel nostro interesse inserire piu' opzioni e funzionalita' possibile nei nostri servizi, e se non ce ne sono altre per quanto riguarda NeverOp e soci, ti assicuro che c'e' un buon motivo dietro. :)<br />
+<br />
+P.S. Se il kanji e' quello di Ya (freccia) e' scritto parecchio male :P</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">06-01-2003, 00:58</div></div><div class="posttext">[quote=Gastaman]I VOP possono gia' farlo... farlo fare a chiunque sia voice di un canale non e' possibile in quanto sarebbe in diretta violazione della RFC (mentre opzioni quali AutoVoice o AutoOp aggiungono solo funzionalita', sono solamente una forma automatizzata di una cosa che si puo' fare anche a mano), inoltre non credo che molti operatori o founder sarebbero contenti di ritrovarsi utenti normali in grado di cambiare mode del canale da soli...[/quote]<br />
+<br />
+scusa, ma un -v non mi sembra quel gran fastidio... ^^<br />
+Se un operatore mi omaggia di un +o io posso ribattere con un -o , mentre il +v me lo tengo e basta. Cmq e' gia' da qualche giorno che qualche angioletto mi ha aiutato ad implementare uno script ad hoc che ha anche i suoi bachi, ma almeno qualcosina lo fa :P<br />
+<br />
+[quote=Gastaman]P.S. Se il kanji e' quello di Ya (freccia) e' scritto parecchio male :P[/quote]<br />
+<br />
+Il significato del kanji e' scritto in firma, e cmq me lo ha passato un amico (che ti manda a dire che i kanji di freccia e risata sono simili... ^_^)</div></div><hr />
+
+<div id="copyright">vBulletin Versione 3.0.6, Copyright &copy;2000-2005, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

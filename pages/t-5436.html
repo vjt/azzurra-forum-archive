@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content=" Problemi dopo l'upgrade HW, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio]  Problemi dopo l'upgrade HW Discussioni Linux" />
+	
+	<title> Problemi dopo l'upgrade HW [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="http://forum.azzurra.org/archive/index.php">Azzurra IRC Network Forum</a> &gt; <a href="http://forum.azzurra.org/archive/index.php/f-8.html">Azzurra - Tech Center</a> &gt; <a href="http://forum.azzurra.org/archive/index.php/f-28.html">Discussioni Linux</a> &gt;  Problemi dopo l'upgrade HW</div>
+<hr />
+<div class="pda"><a href="http://forum.azzurra.org/archive/index.php/t-5436.html?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=5436">Problemi dopo l'upgrade HW</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">24-08-2004, 08:21</div></div><div class="posttext">Recentemente mi si e' fuso il processore (sic!) ed e' stata resa necessaria la sostituzione di scheda madre, processore, RAM (ed anche impianto di ventilazione, causa della fusione precedente...). Non avendo mai compilato il kernel specificamente per il mio vecchio Thunderbird, sostanzialmente Slackware e' partita senza batter ciglio anche con la nuova configurazione hardware (ho solo disabilitato la scheda audio integrata sulla MoBo, dato che avevo gia' una mia scheda configurata sul pinguino, e risistemato fstab dopo aver rimosso un lettore CD-ROM).<br />
+<br />
+Un problema che mi si sta presentando e' su VisualBoyAdvance: e' un emulatore per GameBoy Advance, disponibile a questo indirizzo (http://vba.ngemu.com/), che ho sempre usato senza particolari problemi, solo che dopo l'upgrade finisce randomicamente in crash e freeza il computer costringendomi ad un reset forzato. Ho anche provato a connettermi in ssh da un altro host, ma il freeze era tale da non dare risposta nemmeno da sshd.<br />
+Non ho idea se si tratti di un problema del software oppure delle configurazioni video, appena ho un po' di tempo libero mi metto a controllare ma intanto volevo buttare il sassolino qui sul forum e vedere se per caso potevano sorgere dei consigli in merito :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">City_Hunter</div><div class="date">24-08-2004, 11:21</div></div><div class="posttext">Ecco qualche hint:<br />
+<br />
+1) che scheda video usi? vba vi accede tramite sdl, immagino che tu abbia già la versione 1.2.7 dl sdl, controlla piuttosto i driver per linux della scheda video che usi<br />
+<br />
+2) anzichè usare una versione precompilata di vba, prendi la 1.7.2 e compilala dai sorgenti, magari attivando ottimizzazioni su misura del tuo nuovo processore (se mi dici qual è, posso anche scendere più nel dettaglio)<br />
+<br />
+Sicuro che con una delle due o tutte e due insieme risolvi il problema :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">24-08-2004, 11:41</div></div><div class="posttext">La scheda video e' la stessa che c'era prima, che suppongo quindi essere configurata a dovere in XFree. Comunque, una R

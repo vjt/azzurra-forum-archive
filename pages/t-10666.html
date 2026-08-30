@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Debian Testing e dipendenze, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] Debian Testing e dipendenze Discussioni Linux" />
+		<title>Debian Testing e dipendenze [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-28.html">Discussioni Linux</a> &gt; Debian Testing e dipendenze</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=10666">Debian Testing e dipendenze</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Kid</div><div class="date">18-09-2005, 10:13</div></div><div class="posttext">oggi ho pensato bene di fare un apt-get update  e apt-get upgrade e ho avuto un piccolo problema:<br />
+ andrea:/home/andrea# apt-get upgrade<br />
+Lettura della lista dei pacchetti in corso... Fatto<br />
+Generazione dell'albero delle dipendenze in corso... Fatto<br />
+ consigliabile eseguire `apt-get -f install' per correggere questi problemi.<br />
+I seguenti pacchetti hanno dipendenze non soddisfatte:<br />
+  hal: Dipende: udev (&gt;= 0.063) ma 0.056-3 è installato<br />
+E: Dipendenze non trovate. Riprovare usando -f. <br />
+<br />
+provo con apt-get -f install :<br />
+ andrea:/home/andrea# apt-get -f install<br />
+Lettura della lista dei pacchetti in corso... Fatto<br />
+Generazione dell'albero delle dipendenze in corso... Fatto<br />
+Correzione delle dipendenze in corso... Fatto<br />
+I seguenti pacchetti verranno inoltre installati:<br />
+  udev<br />
+I seguenti pacchetti saranno aggiornati:<br />
+  udev<br />
+1 aggiornati, 0 installati, 0 da rimuovere e 91 non aggiornati.<br />
+96 non completamente installati o rimossi.<br />
+È necessario prendere 0B/310kB di archivi.<br />
+Dopo l'estrazione, verranno occupati 270kB di spazio su disco.<br />
+Continuare? [S/n] S<br />
+(Lettura del database ... 114584 file e directory attualmente installati.)<br />
+Mi preparo a sostituire udev 0.056-3 (con .../archives/udev_0.068-2_i386.deb) .. .<br />
+udev requires a kernel &gt;= 2.6.12, upgrade aborted.<br />
+dpkg: errore processando /var/cache/apt/archives/udev_0.068-2_i386.deb (--unpack ):<br />
+ il sottoprocesso pre-installation script ha restituito un codice di errore 1<br />
+Sono occorsi degli errori processando:<br />
+ /var/cache/apt/archives/udev_0.068-2_i386.deb<br />
+E: Sub-process /usr/bin/dpkg returned an error code (1) <br />
+<br />
+grosso modo ho capito che mi serve obbligatoriamente un kernel 2.6.12, quindi provo ad installarlo<br />
+ andrea:/home/andrea# apt-cache search kernel 2.6.12 k7<br />
+linux-headers-2.6.12-1-k7 - Architecture-specific header files for Linux kernel 2.6.12 on AMD K7 machines<br />
+linux-headers-2.6.12-1-k7-smp - Architecture-specific header files for Linux kernel 2.6.12 on AMD K7 SMP machines<br />
+linux-image-2.6.12-1-k7 - Linux kernel 2.6.12 image on AMD K7 machines<br />
+linux-image-2.6.12-1-k7-smp - Linux kernel 2.6.12 image on AMD K7 SMP machines<br />
+<br />
+andrea:/home/andrea# apt-get install linux-image-2.6.12-1-k7<br />
+Lettura della lista dei pacchetti in corso... Fatto<br />
+Generazione dell'albero delle dipendenze in corso... Fatto<br />
+È consigliabile eseguire 'apt-get -f install' per correggere questi problemi:<br />
+I seguenti pacchetti hanno dipendenze non soddisfatte:<br />
+  hal: Dipende: udev (&gt;= 0.063) ma 0.056-3 sta per essere installato<br />
+E: Dipendenze non soddisfatte. Provare 'apt-get -f install' senza pacchetti (o specificare una soluzione).<br />
+andrea:/home/andrea# <br />
+<br />
+incorro nello stesso errore sia con gli header generici sia x la versione k7 (per il mio athlon xp)<br />
+<br />
+pensavo di disinstallare udev, mettere nel source.list i repository stable e riupgradare ma ho paura di far casino con tutti gli altri pacchetti ..... dopo questo casino non ho ancora riavviato, si sa mai ....... sinceramente non so come risolvere :mad:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kid</div><div class="date">18-09-2005, 19:50</div></div><div class="posttext">2a cavolata giornaliera (alla 3a vinco il pelouche tipo giostre), ho riavviato e ora non trovo più firefox nonostante da apt-get non me lo faccia installare perchè lo trova già installato, inoltre (seccatura maggiore) non mi funziona + l'lalt-gr (quindi niente chiocciola e/o parentesi quadre/graffe) nonostante il config di xfree sia okkey :mad:<br />
+<br />
+..... non voglio reinstallare, ci deve essere di sicuro la possibilità di aggiustare sto danno :mad: .......</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kid</div><div class="date">18-09-2005, 20:20</div></div><div class="posttext">ho trovato delle info su un forum, pare che la testing sia un po' problematica in questo periodo, comunque consigliavano di digitare<br />
+ dpkg --configure -a <br />
+e mi ha terminato l'update che era rimasto a metà<br />
+<br />
+mi ha dato solo un piccolo errore<br />
+ Sono occorsi degli errori processando:<br />
+ hal  <br />
+<br />
+cerco ancora! :D</div></div><hr />
+
+
+<div id="copyright">vBulletin v3.5.3, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

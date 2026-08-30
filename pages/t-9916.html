@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="[C]read e write con socket, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] [C]read e write con socket Programmazione e dintorni" />
+		<title>[C]read e write con socket [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-23.html">Programmazione e dintorni</a> &gt; [C]read e write con socket</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=9916">[C]read e write con socket</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">viridovix</div><div class="date">07-08-2005, 04:08</div></div><div class="posttext">Una volta che client e server sono collegati fra loro tramite socket con protocollo tcp(sotto linux),<br />
+il client offre all'utente ad esempio un menu di 3 scelte, da inserire tramite scanf o getchar,<br />
+l'utente puo inserire o il carattre a o il carattere b o il carattere c.(è un ciclo da cui si esce con questo carattere)<br />
+Se inserisce il carattere c allora con la write viene spedito al server che l olegge con la read e che di conseguenza invia al client u nmessagio tipo &quot;disconnessione in corso&quot;, poi chiude il socket e si mette in ascolto x un 'altra connessione .<br />
+Il client invece ricevuto il messaggio lo stampa a video e termina . <br />
+<br />
+<br />
+<br />
+questa è la parte di server interessata :<br />
+<br />
+while(1) <br />
+{ <br />
+while((ds_sock_acc=accept(ds_sock,&amp;client,&amp;lenght))==-1); <br />
+printf(&quot;client connesso!!\n\n&quot;); <br />
+if (fork()==0) <br />
+{ close(ds_sock); <br />
+do <br />
+{ <br />
+read(ds_sock_acc,buff,MAX_DIM); <br />
+printf(&quot;messaggi client: %s\n&quot;,buff); <br />
+} <br />
+while (strcmp(buff,&quot;c&quot;)!=0); <br />
+write (ds_sock_acc,&quot;\n\nfatto&quot;,10); <br />
+close(ds_sock_acc); <br />
+printf(&quot;\nclient disconnesso!!\n\n&quot;); <br />
+printf(&quot;\nin attesa di connessione da nuovo client!\n\n&quot;); <br />
+exit(0); <br />
+} <br />
+else close(ds_sock_acc); <br />
+}//while(1) <br />
+} <br />
+<br />
+questa è del client :<br />
+<br />
+do <br />
+{printf(&quot;\nscelta a/b, c x uscire :&quot;); <br />
+scanf(&quot;%s&quot;,scelta); <br />
+while(getchar()!='\n'); <br />
+if (strcmp(scelta,&quot;a&quot;)==0) <br />
+{ printf(&quot;prima opzione&quot;); <br />
+write(ds_sock,scelta[0],1); <br />
+} <br />
+else if (strcmp(scelta,&quot;b&quot;)==0) <br />
+{ printf(&quot;seconda opzione&quot;); <br />
+write(ds_sock,scelta[0],1); <br />
+} <br />
+} <br />
+while(strcmp(scelta,&quot;c&quot;)!=0); <br />
+read(ds_sock,buff,MAX_DIM); <br />
+printf(&quot;\nmessaggio dal server%s\n\n&quot;,buff); <br />
+close(ds_sock); <br />
+} <br />
+<br />
+in pratica nn so xchè ma i nquesto caso le read e write nn fanno il loro dovere, se inserisco ad esempio c , i lserver nn chiude la connessione e il client nn termina.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">viridovix</div><div class="date">08-08-2005, 19:38</div></div><div class="posttext">Risolto aggiustando il codice e soprattutto aggiungendo questa:<br />
+<br />
+in pratica dopo while(strcmp(scelta,&quot;c&quot;)!=0); <br />
+ci voleva write(ds_sock,scelta,MAX_DIM); nel codice del client.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">sottovento</div><div class="date">21-11-2005, 14:25</div></div><div class="posttext">Non basta ancora. Quando, per esempio, scrivi <br />
+write(ds_sock,scelta[0],1)<br />
+non spedisci alcun terminatore di stringa. Dall'altra parte riceverai una stringa non valida. Inoltre, quando ricevi dall'altra parte, non puoi dire quanto e' lunga una stringa.<br />
+<br />
+E' sempre andato, finora, poiche' probabilmente il vettore di ricezione era inizializzato a zero.<br />
+<br />
+ciao ciao<br />
+sottovento</div></div><hr />
+
+
+<div id="copyright">vBulletin v3.5.3, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

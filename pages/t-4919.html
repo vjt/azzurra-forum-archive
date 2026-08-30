@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Bnc akillata, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] Bnc akillata Angolo tecnico" />
+	
+	<title>Bnc akillata [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php/">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-13.html">Angolo tecnico</a> &gt; Bnc akillata</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=4919">Bnc akillata</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Feraligatr</div><div class="date">07-06-2004, 12:24</div></div><div class="posttext">Ieri sera stavo provando a portare la bnc su azzurra ma la bnc viene akillata<br />
+<br />
+&amp;lt;-psyBNC&amp;gt; Sun Jun  6 22:44:21 :User Feraligatr () trying irc.azzurra.org port 6667 ().<br />
+&amp;lt;-psyBNC&amp;gt; Sun Jun  6 22:44:21 :User Feraligatr () connected to irc.azzurra.org:6667 ()<br />
+&amp;lt;-psyBNC&amp;gt; Sun Jun  6 22:44:58 :User Feraligatr () got disconnected (from irc.azzurra.org) Reason: Closing Link: 0.0.0.0 (You are not authorized to use this server, visit www.azzurra.org/fastweb.html for more info)<br />
+<br />
+In seguito ho provato a collegarmi agli altri round di azzurra come ad esempio irc.eu.azzurra.org e irc.us.azzurra.org ma sempre con lo stesso risultato.Da cosa dipende tutto questo?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">silentman</div><div class="date">07-06-2004, 13:17</div></div><div class="posttext">&amp;lt;-psyBNC&amp;gt; Sun Jun  6 22:44:58 :User Feraligatr () got disconnected (from irc.azzurra.org) Reason: Closing Link: 0.0.0.0 (You are not authorized to use this server, visit www.azzurra.org/fastweb.html for more info)<br />
+<br />
+Beh, basta leggere l'url che tu stesso hai riportato: http://www.azzurra.org/fastweb.html, nel quale leggerai che il server da usare, se il tuo e'un ip fastweb, e' fastweb.azzurra.org. Quindi i comandi da impartire al tuo psybnc sono:<br />
+<br />
+/addserver fastweb.azzurra.org &#58;6667<br />
+/delserver &amp;lt;tuttiglialtriserver&amp;gt;<br />
+/jump<br />
+<br />
+(e un bel memo per ricordarti di leggere i messaggi di errore con attenzione, prima di chiedere aiuto :))</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Feraligatr</div><div class="date">07-06-2004, 14:03</div></div><div class="posttext">L'ip della bnc non centra con fastweb e non dipende neanke dalla mia connessione<br />
+<br />
+&amp;lt;-psyBNC&amp;gt; Sun Jun  6 22:46:06 :User Feraligatr () trying fastweb.azzurra.org port 6667 ().<br />
+&amp;lt;-psyBNC&amp;gt; Sun Jun  6 22:46:06 :User Feraligatr () connected to fastweb.azzurra.org:6667 ()<br />
+&amp;lt;-psyBNC&amp;gt; Sun Jun  6 22:46:38 :User Feraligatr () got disconnected (from fastweb.azzurra.org) Reason: Closing Link: 0.0.0.0 (You are not authorized to use this server, visit www.azzurra.org/fastweb.html for more info).<br />
+<br />
+Vabbè pazienza, mi connetterò ad azzurra normalmente...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">debiAn</div><div class="date">07-06-2004, 14:50</div></div><div class="posttext">evidenemente il server del tuo BNC usa dei DNS che sono all'interno della rete di fastweb.</div></div><hr />
+
+
+<div id="copyright">vBulletin&reg; v3.6.7, Copyright &copy;2000-2007, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

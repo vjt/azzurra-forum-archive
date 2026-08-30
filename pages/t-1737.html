@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Script: Uploader di Immagini in PHP, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] Script: Uploader di Immagini in PHP Programmazione e dintorni" />
+		<title>Script: Uploader di Immagini in PHP [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-23.html">Programmazione e dintorni</a> &gt; Script: Uploader di Immagini in PHP</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=1737">Script: Uploader di Immagini in PHP</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">fank</div><div class="date">01-03-2003, 23:45</div></div><div class="posttext">Uploader in PHP, di fanatiko.<br />
+Tool per salvare immagini da un PC al WEB mediante una form.<br />
+<br />
+2 Files:<br />
+(1) form.htm : la form da avviare<br />
+(2) uploader.php : il motore<br />
+<br />
+fanatiko</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">fank</div><div class="date">01-03-2003, 23:48</div></div><div class="posttext">(1) form.htm<br />
+<br />
+<br />
+&amp;lt;HTML&amp;gt;&amp;lt;BODY&amp;gt;&amp;lt;CENTER&amp;gt;<br />
+	&amp;lt;FORM NAME='ulform' METHOD='POST' ACTION='uploader.php' ENCTYPE='multipart/form-data'&amp;gt;<br />
+		&amp;lt;INPUT TYPE='hidden' NAME='MAX_FILE_SIZE' VALUE='51200'&amp;gt;<br />
+		&amp;lt;INPUT TYPE='file' NAME='ulfile' SIZE='40'&amp;gt;&amp;lt;BR&amp;gt;<br />
+		&amp;lt;TEXTAREA NAME='uldesc' ROWS='3' COLS='44'&amp;gt;descrivi...&amp;lt;/TEXTAREA&amp;gt;&amp;lt;BR&amp;gt;<br />
+		&amp;lt;INPUT TYPE='submit' VALUE='Invia'&amp;gt;<br />
+	&amp;lt;/FORM&amp;gt;<br />
+&amp;lt;/CENTER&amp;gt;&amp;lt;/BODY&amp;gt;&amp;lt;/HTML&amp;gt;<br />
+<br />
+<br />
+fanatiko</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">fank</div><div class="date">01-03-2003, 23:50</div></div><div class="posttext">(2) uploader.php<br />
+<br />
+<br />
+&amp;lt;?php<br />
+<br />
+##### CONFIGURAZIONE<br />
+<br />
+/* requisiti delle immagini&#58; tipo, max taglia &#40;Byte&#41;, max larghezza e altezza &#40;pixel&#41; */<br />
+$ftypes=array&#40;&amp;quot;image/gif&amp;quot;=&amp;gt;&amp;quot;.gif&amp;quot;,&amp;quot;image/pjpeg&amp;quot;=&amp;gt;&amp;quot;.jpg&amp;quot;,&amp;quot;image/bmp&amp;quot;=&amp;gt;&amp;quot;.bmp&amp;quot;,&amp;quot;image/x-png&amp;quot;=&amp;gt;&amp;quot;.png&amp;quot;&#41;;<br />
+$fmaxsize=51200;<br />
+$fmaxwidth=600;<br />
+$fmaxheight=600;<br />
+<br />
+/* cartella di memorizzazione */<br />
+$ulfolder=&amp;quot;ulfiles&amp;quot;;<br />
+<br />
+/* prefisso da associare ai file che verranno rinominati nella forma 'pic12345.ext' */<br />
+$ulprefix=&amp;quot;pic&amp;quot;;<br />
+<br />
+/* registro degli invìi */<br />
+$datafn=&amp;quot;uploader.dat&amp;quot;;<br />
+<br />
+<br />
+<br />
+##### DEFINIZIONE FUNZIONI DI SUPPORTO<br />
+<br />
+$errormsg=&amp;quot;&amp;quot;;<br />
+<br />
+/* verifica che i requisiti per le immagini siano rispettati */<br />
+function check_image&#40;&#41;&#123;<br />
+  global $HTTP_POST_FILES,$ulfile,$errormsg;<br />
+  global $ftypes,$fmaxsize,$fmaxwidth,$fmaxheight;<br />
+  if&#40;&#40;$imgprop=getimagesize&#40;$ulfile&#41;&#41;===FALSE&#41;<br />
+    $errormsg=&amp;quot;nessun file selezionato. &#40;err1&#41;&amp;quot;;<br />
+  elseif&#40;$HTTP_POST_FILES&#91;'ulfile'&#93;&#91;'name'&#93;==&amp;quot;&amp;quot;&#41;<br />
+    $errormsg=&amp;quot;nessun file selezionato. &#40;err2&#41;&amp;quot;;<br />
+  elseif&#40;$HTTP_POST_FILES&#91;'ulfile'&#93;&#91;'size'&#93;&amp;lt;=0&#41;<br />
+    $errormsg=&amp;quot;file o dimensione del file non validi. &#40;err3&#41;&amp;quot;;<br />
+  elseif&#40;$HTTP_POST_FILES&#91;'ulfile'&#93;&#91;'size'&#93;&amp;gt;$fmaxsiz  e&#41;<br />
+    $errormsg=&amp;quot;dimensione del file eccessiva. &#40;err4&#41;&amp;quot;;<br />
+  elseif&#40;!array_key_exists&#40;$HTTP_POST_FILES&#91;'ulfile'  &#93;&#91;'type'&#93;,$ftypes&#41;&#41;<br />
+    $errormsg=&amp;quot;tipo di file non supportato. &#40;err5&#41;&amp;quot;;<br />
+  elseif&#40;$imgprop&#91;0&#93;&amp;gt;$fmaxwidth&#41;<br />
+    $errormsg=&amp;quot;larghezza del file eccessiva. &#40;err6&#41;&amp;quot;;<br />
+  elseif&#40;$imgprop&#91;1&#93;&amp;gt;$fmaxheight&#41;<br />
+    $errormsg=&amp;quot;altezza del file eccessiva. &#40;err7&#41;&amp;quot;;<br />
+  return;<br />
+&#125;<br />
+<br />
+/* escape dei tag HTML e soppressione di caratteri non necessari o pericolosi */<br />
+function format_msg&#40;$text&#41;&#123;<br />
+  $text=trim&#40;$text&#41;;<br />
+  $text=ereg_replace&#40;&amp;quot;&#40;\x09|\x0A|\x0D&#41;&amp;quot;,&amp;quot; &amp;quot;,$text&#41;;<br />
+  $text=ereg_replace&#40;&amp;quot;&#91;\x01-\x1F&#93;&amp;quot;,&amp;quot;&amp;quot;,$text&#41;;<br />
+  $text=htmlentities&#40;$text,ENT_QUOTES&#41;;<br />
+  $text=ereg_replace&#40;&amp;quot;&#91;\x24&#93;&amp;quot;,&amp;quot;&amp;amp;#036;&amp;quot;,$text&#41;;<br />
+  $text=ereg_replace&#40;&amp;quot;&#91;\x5C&#93;&#123;2&#125;&amp;quot;,&amp;quot;&amp;amp;#092;&amp;quot;,$text&#41;;<br />
+  $text=ereg_replace&#40;&amp;quot;&#91;\x5C&#93;&amp;quot;,&amp;quot;&amp;quot;,$text&#41;;<br />
+  $text=ereg_replace&#40;&amp;quot;&#40;&#91;^ &#93;&#41;&#91; &#93;&#123;2,&#125;&#40;&#91;^ &#93;&#41;&amp;quot;,&amp;quot;\\1 \\2&amp;quot;,$text&#41;;<br />
+  return $text;<br />
+&#125;<br />
+<br />
+<br />
+<br />
+##### SEZIONE OPERATIVA<br />
+<br />
+error_reporting&#40;E_ERROR&#41;;<br />
+<br />
+check_image&#40;&#41;;<br />
+$uldesc=format_msg&#40;$uldesc&#41;;<br />
+<br />
+if&#40;$errormsg!=&amp;quot;&amp;quot;&#41;<br />
+  exit&#40;&amp;quot;ERRORE&#58; &amp;quot;.$errormsg&#41;;<br />
+elseif&#40;&#40;$fid=fopen&#40;$datafn,&amp;quot;a&amp;quot;&#41;&#41;===FALSE&#41;<br />
+  exit&#40;&amp;quot;ERRORE&#58; &amp;quot;.&amp;quot;errore di sistema inatteso. &#40;sys1&#41;&amp;quot;&#41;;<br />
+elseif&#40;flock&#40;$fid,LOCK_EX&#41;===FALSE&#41;<br />
+  exit&#40;&amp;quot;ERRORE&#58; &amp;quot;.&amp;quot;errore di sistema inatteso. &#40;sys2&#41;&amp;quot;&#41;;<br />
+else&#123;<br />
+  do<br />
+    $newfn=$ulprefix.rand&#40;10000,99999&#41;.$ftypes&#91;$HTTP_P  OST_FILES&#91;'ulfile'&#93;&#91;'type'&#93;&#93;;<br />
+  while&#40;file_exists&#40;$ulfolder.&amp;quot;//&amp;quot;.$newfn&#41;&#41;;<br />
+  if&#40;!is_dir&#40;$ulfolder&#41;&#41;mkdir&#40;$ulfolder,0700&#41;;<br />
+  if&#40;move_uploaded_file&#40;$ulfile,$ulfolder.&amp;quot;//&amp;quot;.$newfn&#41;===FALSE&#41;<br />
+    exit&#40;&amp;quot;ERRORE&#58; &amp;quot;.&amp;quot;errore di sistema inatteso. &#40;sys3&#41;&amp;quot;&#41;;<br />
+  else<br />
+    fputs&#40;$fid,$newfn.&amp;quot;,&amp;quot;.time&#40;&#41;.&amp;quot;,&amp;quot;.$REMOTE_ADDR.&amp;quot;,&amp;quot;.  $uldesc.&amp;quot;\n&amp;quot;&#41;;<br />
+  flock&#40;$fid,LOCK_UN&#41;;<br />
+  fclose&#40;$fid&#41;;<br />
+&#125;<br />
+<br />
+<br />
+<br />
+##### EPILOGO ESECUZIONE<br />
+<br />
+exit&#40;&amp;quot;File caricato.&amp;quot;&#41;;<br />
+<br />
+?&amp;gt;<br />
+<br />
+<br />
+fanatiko</div></div><hr />
+
+
+<div id="copyright">vBulletin v3.5.3, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

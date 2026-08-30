@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Un Findnick x il chanserv?, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] Un Findnick x il chanserv? Services - I servizi IRC di Azzurra" />
+	
+	<title>Un Findnick x il chanserv? [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-6.html">Network Central</a> &gt; <a href="f-30.html">Services - I servizi IRC di Azzurra</a> &gt; Un Findnick x il chanserv?</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=3600">Un Findnick x il chanserv?</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Hideki</div><div class="date">18-12-2003, 17:54</div></div><div class="posttext">Vorrei sapere dai coder di azzurra se è possibile implementare nel chanserv un comando del tipo findnick che direbbe la posizione di un nick nelle liste.<br />
+Sono a conoscenza del comando WHY, ma questo che propongo era inteso x i nick offline, perché spesso e volentieri mi capita di dover cercare un singolo nick fra tutte le liste ed è un po....noioso ^^'<br />
+Grazie per un'eventuale risposta</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">giuseppe_dj</div><div class="date">18-12-2003, 21:47</div></div><div class="posttext">/cs xop #canale list *nick*<br />
+<br />
+Con questo comando visualizzi i nick della lista xop del canale #canale che contengono &quot;nick&quot;<br />
+(per xop intendo cf aop sop vop e akick)<br />
+<br />
+Ciao</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">^Norad^</div><div class="date">19-12-2003, 08:45</div></div><div class="posttext">Il comando why funziona anche per i nick off-line, infatti:<br />
+<br />
+/cs why #irchelp ^Norad^<br />
+<br />
+risposta di chanserv:<br />
+-ChanServ- WHY ^Norad^@#irchelp: L'utente non e' online, ricerca diretta nelle liste...<br />
+-ChanServ- WHY ^Norad^@#irchelp: SOP</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">19-12-2003, 09:50</div></div><div class="posttext">Il comando why funziona anche per i nick off-line, infatti:<br />
+<br />
+/cs why #irchelp ^Norad^<br />
+<br />
+risposta di chanserv:<br />
+-ChanServ- WHY ^Norad^@#irchelp: L'utente non e' online, ricerca diretta nelle liste...<br />
+-ChanServ- WHY ^Norad^@#irchelp: SOP<br />
+<br />
+Ho fatto due prove ieri con un Helper, a lui risultava quello che hai incollato sopra, mentre la risposta per me e' diversa:<br />
+<br />
+-ChanServ- Il nick ^Norad^ non e' online.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">^Norad^</div><div class="date">19-12-2003, 20:58</div></div><div class="posttext">uhm...suggerirò ai coder di estenderne l'uso a tutti nelle liste :)<br />
+Mi era venuto il sospetto che fosse un comando disponibile da +h in su, ma stamattina non ho fatto in tempo a provare.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">20-12-2003, 02:21</div></div><div class="posttext">uhm...suggerirò ai coder di estenderne l'uso a tutti nelle liste :)<br />
+<br />
+Mi trovi d'accordo, ma solo per quei canali in cui il nick che esegue la richiesta e' gia' addato alle liste. :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dracoo</div><div class="date">20-12-2003, 10:52</div></div><div class="posttext">Mi trovi d'accordo, ma solo per quei canali in cui il nick che esegue la richiesta e' gia' addato alle liste. :)<br />
+<br />
+Non ho capito...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">^Norad^</div><div class="date">20-12-2003, 12:18</div></div><div class="posttext">con &quot;estenderne l'uso a tutti nelle liste&quot; intendevo appunto che solo chi è addato nelle liste del canale, cioè è vop, aop, sop eccetera, potrà usare quel comando.<br />
+D'altra parte sarebbe solo una semplificazione: per sapere che cosa è un nick con un solo comando anzichè dover consultare tutte le liste con /cs xop #canale list.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">21-12-2003, 01:21</div></div><div class="posttext">Non ho capito...<br />
+<br />
+Puoi ricavarne il significato dalla risposta di ^Norad^, a cui dico anche che supponevo avessi sottolineato questo punto, ma nel dubbio ho preferito postare il mio commento :)<br />
+<br />
+Ciao!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gastaman</div><div class="date">09-01-2004, 12:28</div></div><div class="posttext">Rispondo *leggermente* in ritardo, visto che ultimamente non ho avuto molto tempo di seguire il forum... nella prossima versione la funzionalità del WHY al momento accessibile solo da HelpOp e superiori sarà estesa a tutti, come proposto da ^Norad^.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Justarius</div><div class="date">10-01-2004, 14:14</div></div><div class="posttext">Rispondo *leggermente* in ritardo, visto che ultimamente non ho avuto molto tempo di seguire il forum... nella prossima versione la funzionalità del WHY al momento accessibile solo da HelpOp e superiori sarà estesa a tutti, come proposto da ^Norad^.<br />
+<br />
+Adesso farò probabilmente la figura del pirla ma vabbè :)<br />
+Scusami Gastaman ma nn credo di essere d'accordo con l'idea di implementare nei servizi a tutti gli utenti il comando Why di ChanServ e adesso ti spiego il motivo.<br />
+Finchè è un Helper o sup che si occupa di controllare a che livello compare in un canale un utente lo trovo più corretto,ma che tutti gli utenti possano avere questa possibilità non mi pare corretto,a me personalmente mi darebbe fastidio che un altro utente mi dicesse dove sono founder,cf ecc,;potrebbero &quot;scattare&quot; piccoli problemi di comune accordo del tipo &quot;se x è cf li #c lo voglio essere ankio&quot; e via dicendo,credo che sarebbe molto più problematico per ogni Founder di canale mantenere un controllo così specifico ed elevano nel proprio canale.Questo è ciò che penso,attendo delucidazioni/spiegazioni su questo nuovo implemento dei servizi.<br />
+Chiedo anticipatamente scusa se mi miei pensieri a riguardo possano essere scambiati come &quot;bacchettate&quot; verso coloro che hanno avuto l'idea,non è mia intenzione :)<br />
+<br />
+Bye</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gastaman</div><div class="date">10-01-2004, 15:03</div></div><div class="posttext">Finchè è un Helper o sup che si occupa di controllare a che livello compare in un canale un utente lo trovo più corretto,ma che tutti gli utenti possano avere questa possibilità non mi pare corretto<br />
+No, attenzione... quello che verrà esteso è la ricerca automatica nella lista del canale per sapere immediatamente se un nick è in una lista senza doversele scorrere tutte manualmente.<br />
+Non verranno cambiati i permessi del comando, che rimarrà utilizzabile solo da chi è almeno VOP in un canale.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dracoo</div><div class="date">29-02-2004, 12:23</div></div><div class="posttext">Update dei services effettuato, ed il Why è diventato come sopra descritto...<br />
+Ma dato che l'occhio vuole la sua parte, come mai la sintassi del notice di risposta, è così... strana? (almeno dal mio punto di vista...!)<br />
+<br />
+-ChanServ- WHY Justarius@#LocalChan: L'utente non e' online, ricerca diretta nelle liste...<br />
+-ChanServ- WHY Justarius@#LocalChan: Co-Founder<br />
+<br />
+Quello che non capisco è perchè debba apparire WHY Justarius@#LocalChan<br />
+<br />
+Non sarebbe più... carino mettere:<br />
+<br />
+-ChanServ- Justarius non è online: ricerca diretta nelle liste di #LocalChan<br />
+-ChanServ- Justarius è un Co-Founder di #LocalChan<br />
+<br />
+Consiglio mio  :wink:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hideki</div><div class="date">29-02-2004, 13:57</div></div><div class="posttext">Si sarebbe più carino a livello stilistico ma l'importante è che funzioni ;)</div></div><hr />
+
+
+<div id="copyright">vBulletin&reg; v3.6.4, Copyright &copy;2000-2007, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

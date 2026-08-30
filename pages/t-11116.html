@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Output, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] Output Programmazione e dintorni" />
+		<title>Output [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-23.html">Programmazione e dintorni</a> &gt; Output</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=11116">Output</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Luc</div><div class="date">08-10-2005, 18:01</div></div><div class="posttext">Ciao a tutti,<br />
+ <br />
+Scusate per quella che sarà una domanda stupida ma io non sono un programmatore, ho scritto questo piccolo codice in Devc++<br />
+#include&lt;iostream&gt;<br />
+using namespace std;<br />
+int main()<br />
+{<br />
+int a =10;<br />
+int b =20;<br />
+int c =3;<br />
+int risultato = a+b/c;<br />
+cout &lt;&lt; risultato&lt;&lt;endl;<br />
+system(&quot;PAUSE&quot;);<br />
+l'output sullo schermo è 16.<br />
+Vorrei sapere dove sbaglio,<br />
+grazie a tutti.<br />
+Ciao Luc.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gitan</div><div class="date">09-10-2005, 03:40</div></div><div class="posttext">Non sbagli da nessuna parte. L'operatore / ha precedenza rispetto al + .<br />
+Quindi se tu volevi come risultato 10 basterà mettere un paio di parentesi tonde:<br />
+<br />
+<br />
+int risultato = (a+b)/c;<br />
+<br />
+<br />
+Saluti gitan .</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Luc</div><div class="date">09-10-2005, 10:24</div></div><div class="posttext">Ciao Gitan, grazie mille per il tuo chiarimento.<br />
+<br />
+Luc.</div></div><hr />
+
+
+<div id="copyright">vBulletin v3.5.3, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

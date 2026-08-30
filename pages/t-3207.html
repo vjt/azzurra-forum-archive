@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Exploit mIRC 6.x, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] Exploit mIRC 6.x Comunicazioni ufficiali di Azzurra" />
+	
+	<title>Exploit mIRC 6.x [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-6.html">Network Central</a> &gt; <a href="f-19.html">Comunicazioni ufficiali di Azzurra</a> &gt; Exploit mIRC 6.x</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=3207">Exploit mIRC 6.x</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Mav</div><div class="date">13-10-2003, 20:43</div></div><div class="posttext">In data 12 ottobre 2003 è stato reso noto un exploit che è stato usato per far crashare il mIRC di molti utenti IRC. Tutte le versioni dalla 6.0 alla 6.11 (compresa) sono vulnerabili, le uniche escluse sembrano essere le versioni più vecchie di mIRC fino alla 5.91. La vulnerabilità riguarda un tipo di comando DCC che può essere inviato a qualsiasi utente/canale, indipendentemente da quelle che sono le vostre opzioni DCC. L'autore di mIRC è già stato avvisato del problema, e si presume che un fix dovrebbe essere pronto in tempi brevi.<br />
+<br />
+Nel frattempo l'unico modo di proteggersi da tale exploit è l'ignore completo di tutte le DCC. Per fare ciò è mecessario digitare il seguente comando in una qualsiasi finestra di mIRC:<br />
+/ignore -wd *<br />
+<br />
+Una volta digitato tale comando tutte le DCC dirette verso il vostro mIRC saranno ignorate. Se dovete ricevere delle DCC CHAT o SEND da qualche persona di cui vi fidate potete escluderla dall'ignore globale con il comando:<br />
+<br />
+/ignore -x nickname<br />
+<br />
+L'operazione di ignore può essere annullata tramite il comando:<br />
+<br />
+/ignore -rwd *<br />
+<br />
+Lo staff di Azzurra vi raccomanda di provvedere al più presto ad applicare tale contromisura.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mav</div><div class="date">13-10-2003, 22:01</div></div><div class="posttext">E' stata da poco rilasciata la versione 6.12 di mIRC. Tale versione risolve il bug riportato nel post precedente, pertanto ne consigliamo l'installazione.<br />
+<br />
+La nuova versione è disponibile all'indirizzo:<br />
+<br />
+http://mirc.azzurra.org/mirc/mirc612.exe<br />
+<br />
+Dopo aver installato la nuova versione sarà possibile rimuovere l'ignore delle DCC con il comando:<br />
+<br />
+/ignore -rwd *</div></div><hr />
+
+
+<div id="copyright">vBulletin&reg; v3.6.4, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

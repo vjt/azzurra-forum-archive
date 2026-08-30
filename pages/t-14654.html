@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content=" Sentinelle: Cosa sono e Come si creano, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio]  Sentinelle: Cosa sono e Come si creano #buduscript" />
+	
+	<title> Sentinelle: Cosa sono e Come si creano [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="http://forum.azzurra.org/archive/index.php">Azzurra IRC Network Forum</a> &gt; <a href="http://forum.azzurra.org/archive/index.php/f-7.html">I Vostri Forum</a> &gt; <a href="http://forum.azzurra.org/archive/index.php/f-117.html">#buduscript</a> &gt;  Sentinelle: Cosa sono e Come si creano</div>
+<hr />
+<div class="pda"><a href="http://forum.azzurra.org/archive/index.php/t-14654.html?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=14654">Sentinelle: Cosa sono e Come si creano</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">BuDuS</div><div class="date">15-08-2007, 23:38</div></div><div class="posttext">Proverò a spiegare nel modo più semplice e conciso possibile cosa sono e come si creano le Sentinelle.<br />
+<br />
+ Le sentinelle sono un sistema con il quale lo script consente all'utente di eseguire determinate operazioni al verificarsi di un determinato evento.<br />
+<br />
+ Ad esempio un evento può essere quando qualcuno entra in un canale, viene cambiata una modalità, qualcuno scrive una frase, si riceve un kick e così via, in sintesi: un evento rappresenta ciò che può succedere su IRC, in una chat.<br />
+<br />
+ Ogni evento porta con se quelli che potremmo definire come &quot;dati caratteristici&quot;, ad esempio immaginiamo un OP che esegue un KICK su un utente. Supponiamo che l'OP abbia nickname Budus e la &quot;vittima&quot; si chiami paperino. Budus digita un comando IRC come questo:<br />
+/KICK paperino togliti dai piedi !Con i privilegi adeguati, un comando come questo provoca il KICK di paperino dal canale con un il messaggio &quot;togliti dai piedi !&quot;.<br />
+Ecco quindi che, come &quot;dati caratteristici&quot;, abbiamo almeno questi:<br />
+ Il nickname dell'utente che ha eseguito il KICK<br />
+ Il nickname dell'utente che ha subito il KICK<br />
+ l'Hostname dell'utente che ha subito il KICK (è importante se di mezzo c'è un KICKBAN piuttosto che un semplice KICK)<br />
+ Il nome del canale<br />
+ il nome del server IRC<br />
+ il messaggio (eventuale) che spiega la ragione del KICKAd ognuno di questi dati potremmo, per comodità, dare un nome, un po' come si fa nei programmi con le variabili, cioè si da un nome ad un &quot;contenitore di dati&quot; che può assumere un valore.<br />
+ Per &quot;chiarezza&quot;, giusto per non confondere queste &quot;variabili&quot;, stabiliamo anche che il loro nome dovrà sempre iniziare con il carattere $ , così sappiamo distinguere quando sono variabili o quando invece effettivamente semplici parole.<br />
+ Ad esempio:<br />
+ $lu sarà il nickname di chi esegue il KICK<br />
+ $ru sarà il nickname di chi lo subisce<br />
+ $rhost l'Hostname dell'utente KICKATO<br />
+ $channel potrebbe essere il nome del canale<br />
+ $server lo associamo al nome del server IRC<br />
+ $data conterrà il testo con il motivo del KICKIl KICK è di per se un evento, cioè un'azione che si può compiere in chat.<br />
+ Supponiamo di voler creare una Sentinella che, quando ad essere &quot;KICKATO&quot; è l'utente locale, cioè noi stessi, lo script reagisca in un certo modo, non so, un re-join automatico del canale dal quale si è stati espulsi, tanto per iniziare.<br />
+ Potremmo quindi dire che vogliamo una sentinella come questa:<br />
+ogni volta che viene eseguito un KICK e $nick è uguale a $lu esegui un re-join<br />
+La variabile $nick non l'ho elencata sopra, ma rappresenta sempre il nickname dell'utente locale.<br />
+<br />
+Ecco, noi sappiamo che questa &quot;sentinella&quot; dovrà agire in suddette condizioni; per comodità, proviamo a scomporla in quelli che sono i suoi componenti principali:<br />
+ &quot;ogni volta&quot; rappresenta QUANTE volte la nostra sentinella dovrà intervenire; in questo caso abbiamo sostanzialmente &quot;sempre&quot;, ma potrebbero verificarsi situazioni dove ci torna comodo che agisca solo 2 o 3 volte o 1 sola. Sostanzialmente abbiamo definito il numero di ripetizioni.<br />
+ &quot;KICK&quot; rappresenta il nostro evento . La sentinella sarà presa in considerazione solo quando da qualche parte c'è almeno un KICK, qualsiasi altra operazione sarà ignorata.<br />
+ &quot;$nick è uguale a $lu&quot; è la nostra condizione, ovvero, ok che controlliamo tutti i KICK che vengono eseguiti, ma interveniamo esclusivamente solo quando questa condizione è soddisfatta. $nick abbiamo detto che è una variabile e rappresenta il &quot;nickname dell'utente locale&quot; mentre $ru è colui che lo subisce. Se coincidono, significa proprio che è l'utente localde ad aver subito l'azione !<br />
+ &quot;re-join&quot; è l'azione che vogliamo compiere quando la condizione viene soddisfatta.BuDuScRiPt fornisce il comando /event add per creare sentinelle e quest'ultimo accetta i parametri citati qui sopra nel seguente modo:<br />
+RIPETIZIONE EVENTO CONDIZIONE AZIONE<br />
+ La RIPETIZIONE possiamo definirla mettendo il numero 0 (zero) per identificare quando vogliamo che sia sempre valutata la condizione (ciò avviene solo se l'evento corrisponde a quello che si è effettivamente verificato), un numero superiore a 0 (da 1 in sù) per definire quante volte dovrà essere valutata (quindi mettendo 3 otteniamo che al massimo l'azione verrà eseguita al verificarsi di 3 evento+condizione soddisfatti) mentre inserendo il carattere '?' otterremo che nel momento in cui la sentinella verrà soddisfatta, dopo che l'azione sarà eseguita, si auto-eliminerà.<br />
+ L'EVENTO è una parola chiave associato ad una operazione IRC, e in BuDuScRiPt abbiamo:<br />
+ jserver quando si entra in un server<br />
+ jchannel quando si entra in un canale o lo fanno altri<br />
+ pchannel quando si esce da un canale o lo fanno altri<br />
+ pserver quando si esce da un server o lo fanno altri<br />
+<br />
+ kick quando viene eseguito un kick<br />
+ who quando viene eseguito un who<br />
+ chgnick quando si cambia nickname o lo fanno altri<br />
+ text quando altri scrivono qualcosa nel canale<br />
+ badword quando si scrive una parolaccia o lo fanno altri<br />
+<br />
+ query quando altri ci scrivono in query<br />
+ ctcp quando si riceve un CTCP<br />
+ mode quando viene eseguito un mode<br />
+<br />
+ flood quando altri superano l'anti-flood<br />
+ notify quando si riceve una NOTIFICA<br />
+ all qualsiasi evento gestito (tutti quelli precedenti) <br />
+ La CONDIZIONE va scomposta in &quot;costante=variabile&quot; oppure &quot;costante!variabile&quot; ('!' rappresenta il &quot;non uguale&quot;).<br />
+ L'AZIONE è sempre un comando IRC o BuDuScRiPt; nel nostro caso un &quot;/join #nomecanale&quot;.Ora, la RIPETIZIONE noi sappiamo che dev

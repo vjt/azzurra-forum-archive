@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="chat IRC con interfaccia Delphi, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] chat IRC con interfaccia Delphi Programmazione e dintorni" />
+	
+	<title>chat IRC con interfaccia Delphi [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php/">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-23.html">Programmazione e dintorni</a> &gt; chat IRC con interfaccia Delphi</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=12689">chat IRC con interfaccia Delphi</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">cioco87</div><div class="date">16-03-2006, 14:56</div></div><div class="posttext">Ciao sono uno studente all'ultimo anno di scuola superiore, è ho deciso di fare come tesina un programma simile al MSN Messenger o simili.<br />
+Per permettere agli utenti che dovranno utilizzare questo programma di chattare volevo utilizzare  una chat in IRC.<br />
+Pultroppo non sn molto informato su questa chat :D .<br />
+Io vorrei sapere se ciò che vorrei fare si può fare.<br />
+Il linguaggio che utilizzo per fare questo programma è il Delphi.<br />
+Il mio obbiettivo è quello di visualizzare sulla form del mio programma la chat,nn riesco a spiegarmi,vorrei fare una cosa simile mIRC, quindi l'utente si logga e poi chat con gli utenti di un preciso canale.Se siete riusciti a capire rispondetemi grazie.Se nn vi è chiaro risp. cmq vedrò di spiegarmi meglio.Risp.Ciao.:D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Delphino</div><div class="date">17-03-2006, 13:38</div></div><div class="posttext">è fattibilissima la cosa<br />
+se conosci un po' il protocollo IRC (RFC 1459 2280 e successive) puoi inviare le tue istruzioni manualmente usando i socket<br />
+<br />
+altrimenti se usi un delphi &lt; 8.0 puoi sfruttare i controlli indy, in particolare l'IdIRC che consente con pochi comandi di effettuare quasi tutte le operazioni convenzionali, già preimpostate nei metodi<br />
+<br />
+ciau</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">cioco87</div><div class="date">17-03-2006, 15:32</div></div><div class="posttext">Ti ringrazio Delphino della risposta,ma pultroppo non sono molto informato sul protocollo IRC (RFC 1459 2280 e successive), su come posso inviare le istruzioni manualmente usando i socket, e soprattutto che istruzioni.<br />
+Sapresti spiegarmi come fare, ho cmq dove reperire queste informazioni. Grazie mille ancora :-) ;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Delphino</div><div class="date">17-03-2006, 16:42</div></div><div class="posttext">trovi la RFC 1459 in italiano qui http://www.tuttoirc.it/rfc1459.php<br />
+di esempi sull'uso dei socket per IRC sul web &#232; pieno, prova a vedere questo:<br />
+http://www.planet-source-code.com/vb/scripts/ShowCode.asp?txtCodeId=1157&amp;lngWId=7<br />
+<br />
+bau</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">cioco87</div><div class="date">18-03-2006, 12:53</div></div><div class="posttext">Grazie mille sei stato un grande. :okay:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">cioco87</div><div class="date">18-03-2006, 14:20</div></div><div class="posttext">Ciao Delphino,o chiunque altro mi sapesse rispondere, come si utilizza l'IdIRC?<br />
+Serve anche qualche altro componente per interfacciarlo al server IRC è soprattutto l'output e l'input delle informazioni che ci da il server su che oggetto lo mettiamo(basta una Memo?).<br />
+Ciao.Grazie.:D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">cioco87</div><div class="date">25-03-2006, 13:17</div></div><div class="posttext">infatti il mio obbierrivo era usare il componente (indy) idIRC , per&#242; ho dei problemi ad utilizzarlo per primo nn riesco a connetterlo e mi esce un messaggio d' errore con scritto : &quot;socket error #10061 connection refused.&quot;<br />
+vi allego un' immagine in cui si vede tramite l' object ispector le propriet&#224; del componente con cui provo a effettuare la connessione (idIRC).<br />
+<br />
+http://img137.imageshack.us/img137/2627/immagine6h d.jpg<br />
+<br />
+ <br />
+ps. ho gi&#224; provato a disattivare il mio firewall.<br />
+<br />
+nn so come fare.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Delphino</div><div class="date">29-03-2006, 09:34</div></div><div class="posttext">e a quale server deve connettersi? :sospiro: <br />
+imposta la proprietà Host con l'indirizzo irc.azzurra.org<br />
+<br />
+ciau</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Delphino</div><div class="date">29-03-2006, 09:39</div></div><div class="posttext">aggiungo un brevissimo esempio:procedure TForm1.btnConnetti(Sender: TObject);<br />
+begin<br />
+  IdIRC1.Host := 'irc.azzurra.org';<br />
+  IdIRC1.Port := 6667;<br />
+  IdIRC1.Username := 'quokka';<br />
+  IdIRC1.Realname := 'Delphino';<br />
+  IdIRC1.Nick := 'Delphino';<br />
+  IdIRC1.Connect(-1);<br />
+end;<br />
+<br />
+procedure TForm1.btnDisconnetti(Sender: TObject);<br />
+begin<br />
+  IdIRC1.Disconnect;<br />
+end;<br />
+<br />
+gli altri comandi devi darli una volta connesso, analizzando gli eventi OnMessage</div></div><hr />
+
+
+<div id="copyright">vBulletin&reg; v3.6.8, Copyright &copy;2000-2007, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

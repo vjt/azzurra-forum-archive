@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Poter usare NickServ usando un nick differente, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] Poter usare NickServ usando un nick differente Services - I servizi IRC di Azzurra" />
+	
+	<title>Poter usare NickServ usando un nick differente [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-6.html">Network Central</a> &gt; <a href="f-30.html">Services - I servizi IRC di Azzurra</a> &gt; Poter usare NickServ usando un nick differente</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=5959">Poter usare NickServ usando un nick differente</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Dracoo</div><div class="date">27-10-2004, 13:38</div></div><div class="posttext">Salve!<br />
+Volevo proporre di poter permettere ad un utente con il nick X, identificato anche al nick Y, di modificare le impostazione del nick Y senza doverlo &quot;indossare&quot;, usando ad esempio <br />
+<br />
+ /ns set Y noop on<br />
+ /ns listchans Y<br />
+ /ns remove Y #chan<br />
+ /ns access Y add|del|list|wipe [mask]<br />
+É fattibile?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">27-10-2004, 14:02</div></div><div class="posttext">Salve!<br />
+Volevo proporre di poter permettere ad un utente con il nick X, identificato anche al nick Y, di modificare le impostazione del nick Y senza doverlo &quot;indossare&quot;, usando ad esempio <br />
+<br />
+ /ns set Y noop on<br />
+ /ns listchans Y<br />
+ /ns remove Y #chan<br />
+ /ns access Y add|del|list|wipe [mask]<br />
+É fattibile?<br />
+<br />
+Per un Help Operator e' gia' disponibile /ns listchans nickname, per controllare in quali canali abbia accesso un dato nickname.<br />
+Inoltre, il REMOVE e' un comando di ChanServ :P<br />
+<br />
+Per gli altri casi, la terza parola completa il comando da lanciare per conto del nick utilizzato, quindi credo proprio che l'unica modifica proponibile e' di forzare l'inserimento del nick in quella parte di comando, cosa che quindi andrebbe fatta anche a nick utilizzato. Tutto sommato, mi sembra una soluzione peggiore del male...<br />
+Per questa ragione, nonche' per un mio parere personale, credo che sia meglio lasciar le cose come stanno.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dracoo</div><div class="date">27-10-2004, 18:16</div></div><div class="posttext">Mmm... effettivamente per il SET, il REMOVE e l'ACCESS (ma anche il REMOVE di ChanServ :P) la parola cui precedono è una parola chiave (per esempio se uno avesse il nick DEL oppure ADD ci sarebbero dei casini!), perciò si potrebbe far si che il nick possa venire specificato come ultima parola ^_^<br />
+Ovvero:<br />
+<br />
+/ns set parametro on|off|email|url|ecc [Nick]<br />
+/ns access add|del|wipe mask [Nick]<br />
+/ns access list [Mask] [Nick] (questo caso è un po' strano, però il nick non può venire confuso con la mask in quanto la mask deve avere per forza il @, carattere non permesso nei nick!)<br />
+/CS remove #canale [Nick]<br />
+<br />
+Uh?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">27-10-2004, 19:12</div></div><div class="posttext">A parte il fatto che non devi essere obbligato a proporre una modifica su tutti i comandi esistenti... :)<br />
+Io comunque resto della mia idea: se hai un secondo nick e ti identifichi ad esso, non e' un grande problema fare /nick quelnick e settarsi quel che serve. Puo' essere un grande problema invece fare quel che chiedi, specie per NickServ che deve farsi un po' di controllini per capire se ti sei identificato o no.<br />
+Nel complesso direi che il male minore e' restare come siamo adesso.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dracoo</div><div class="date">12-11-2004, 21:52</div></div><div class="posttext">A parte il fatto che non devi essere obbligato a proporre una modifica su tutti i comandi esistenti... :)<br />
+Io comunque resto della mia idea: se hai un secondo nick e ti identifichi ad esso, non e' un grande problema fare /nick quelnick e settarsi quel che serve. Puo' essere un grande problema invece fare quel che chiedi, specie per NickServ che deve farsi un po' di controllini per capire se ti sei identificato o no.<br />
+Nel complesso direi che il male minore e' restare come siamo adesso.I controllini NickServ li fa già per altri comandi (fai /ns info Nick ti un nick diverso da quello che stai usando, ma a cui sei identificato, ti va vedere l'indirizzo email di autorizzazione), perciò la funzione non serve crearla, in quanto già esistente.<br />
+Perciò, una soluzione possibile è (ad es per il comando SET NOWELCOME)<br />
+<br />
+SE ($1 == &quot;SET&quot;) {<br />
+SE ($2 == &quot;NOWELCOME&quot;) {<br />
+	 SE ($3 == &quot;ON&quot;) {<br />
+		 SE ($4 != &quot;NULL&quot; &amp;&amp; $autorizzato($nic,$4) == 1)<br />
+			attiva($4,NOWELCOME)<br />
+		 ALTRIMENTI<br />
+			attiva($nick,NOWELCOME)<br />
+	 }<br />
+	 ALTRIMENTI {<br />
+		 SE ($4 != &quot;NULL&quot; &amp;&amp; $autorizzato($nick,$4) == 1)<br />
+			disattiva($4,NOWELCOME)<br />
+		 ALTRIMENTI<br />
+			disattiva($nick,NOWELCOME)<br />
+	 }<br />
+[...]<br />
+}<br />
+}<br />
+Dove $autorizzato è una funzione che controlla se il nick è autorizzato al nick a cui chiede di settare il NOWELCOME (funzione evidentemente già esistente).<br />
+Di sicuro ci sono altri controlli (tipo per capire se il nick, in caso voglia lanciare il comando su sè stesso, se è autorizzato o meno, se il nick è registrato ecc ecc ecc)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Koper</div><div class="date">03-12-2004, 18:33</div></div><div class="posttext">Mettendo da parte che i servizi non sono scritti in mircscript fortunatamente e che quindi e' una roba diversa.. Io non uso /ns set da quando sono stati aggiornati i servizi includendo l'opzione nochanmemo.. Quindi non vedo tutta questa utilità. Piuttosto sarebbe bello aggiungere /ms read numero nick, /ms list nick, and so on.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dracoo</div><div class="date">03-12-2004, 21:36</div></div><div class="posttext">Mettendo da parte che i servizi non sono scritti in mircscript fortunatamente e che quindi e' una roba diversa.. Io non uso /ns set da quando sono stati aggiornati i servizi includendo l'opzione nochanmemo.. Quindi non vedo tutta questa utilità. Piuttosto sarebbe bello aggiungere /ms read numero nick, /ms list nick, and so on. <br />
+Mai detto che i services sono scritti in MircScripting (ovviamente sono scritti in un linguaggio di programmazione, penso C/C++).<br />
+Non avevo pensato a MemoServ, ma devo dire che sarebbe utile anche quello!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Raynk</div><div class="date">23-12-2004, 23:27</div></div><div class="posttext">Io sinceramente sarei favorevole all'introduzione del parametro &quot;nick&quot; nel listchans di NickServ, in quanto spesso può capitare di non voler cambiare nick, ma allo stesso tempo di voler visualizzare i canali cui si ha accesso. Prendendo spunto dal fatto che, come ha detto sopra Steve, per gli HelpOp è già disponibile, è chiaro che NickServ effettui un controllo su colui che esegue il comando, in quanto se non si ha accesso a sufficienza ritorna &quot;Accesso Negato&quot;... un controllo per vedere se l'utente è o meno identificato al nick sul quale esegue il listchans tutto sommato non è che sia una catastrofe :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">24-12-2004, 09:31</div></div><div class="posttext">Io sinceramente sarei favorevole all'introduzione del parametro &quot;nick&quot; nel listchans di NickServ, in quanto spesso può capitare di non voler cambiare nick, ma allo stesso tempo di voler visualizzare i canali cui si ha accesso. Prendendo spunto dal fatto che, come ha detto sopra Steve, per gli HelpOp è già disponibile, è chiaro che NickServ effettui un controllo su colui che esegue il comando, in quanto se non si ha accesso a sufficienza ritorna &quot;Accesso Negato&quot;... <br />
+ Non posso affermarlo con precisione, ma nell'esecuzione del listchans non si va a verificare l'identificazione ad un nickname specifico, ma si verifica la presenza dell'accesso a livello di servizi (lo usermode +h per intenderci).<br />
+ In ogni caso, essendo gia' possibile un'identificazione ad un nick senza doverlo per forza cambiare, aggiungere ulteriori funzionalita' di - chiamiamola cosi' - gestione remota di un nick, secondo me non e' positivo ed alla lunga puo' portare all'abuso di registrazione per determinati nick che non verrebbero invece effettivamente utilizzati.<br />
+ Esiste poi un limite preciso al numero di canali presenti nel proprio listchans, cioe' 40, a fronte di &quot;soli&quot; 15 canali joinabili contemporaneamente: raggruppare in qualche modo gli accessi di piu' nick puo' portare all'invalidazione del primo limite, e se anche ci si volesse clonare per avere la possibilita' di seguire altri 15 canali, in ogni caso bisognerebbe usare un secondo nick, magari registrato e quindi con le sue specifiche caratteristiche ed accessi.</div></div><hr />
+
+
+<div id="copyright">vBulletin&reg; v3.6.4, Copyright &copy;2000-2007, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

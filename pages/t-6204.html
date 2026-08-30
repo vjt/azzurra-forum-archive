@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="portfw, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] portfw Discussioni Linux" />
+		<title>portfw [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-28.html">Discussioni Linux</a> &gt; portfw</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=6204">portfw</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">onosendai</div><div class="date">18-11-2004, 04:04</div></div><div class="posttext">avrei una domandina veloceveloce per voi ...<br />
+ <br />
+cerco di utilizzare queste tre regole di iptables per forwardare una porta di una macchina fastweb, in modo che sia visibile dall'esterno, pero' ci dev'essere qualche problema.<br />
+ <br />
+iptables -t nat -A PREROUTING -j DNAT -p tcp --dport 80 -d 10.3.0.2 --to-destination 82.84.243.117:80<br />
+iptables -t nat -A POSTROUTING -j SNAT -p tcp --dport 80 -d 82.84.243.117 --to-source 10.3.0.1<br />
+iptables -t nat -A POSTROUTING -j SNAT -p tcp --sport 80 -s 82.84.243.117 --to-source 10.3.0.2<br />
+ <br />
+82.84.243.117, e' l'ip pubblico;<br />
+10.3.0.1, e' l'ip interno della macchina fastweb;<br />
+10.3.0.2, e' l'ip interno della macchina con ip pubblico.<br />
+ <br />
+qual e' l'errore che io non capisco ? http://azzurra.org/forum/images/smilies/piangoo.gif</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">City_Hunter</div><div class="date">18-11-2004, 18:37</div></div><div class="posttext">Se vuoi usare SNAT anzichè MASQUERADE (SNAT va bene per gli ip statici):<br />
+<br />
+iptables -t nat -A PREROUTING -j DNAT -i eth0 -p tcp --dport 80 -d 82.84.243.117 --to-destination 10.3.0.1:80<br />
+iptables -t nat -A POSTROUTING -j SNAT -o eth0 -p tcp --sport 80 -s 10.3.0.1 --to-source 82.84.243.117<br />
+<br />
+(assumendo eth0 l'interfaccia con indirizzo 82.84.243.117).<br />
+Spero di non aver sbagliato nulla :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">onosendai</div><div class="date">18-11-2004, 22:32</div></div><div class="posttext">purtroppo non funziona neanche cosi'.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">City_Hunter</div><div class="date">19-11-2004, 15:06</div></div><div class="posttext">Le mie regole dovrebbero essere corrette, quindi il problema è di altro genere. Ho una mezza idea, ma perchè abbia senso dovresti confermarmi queste due assunzioni:<br />
+<br />
+1) la macchina fastweb ha accesso proprio ad Internet (ma senza ip pubblico)<br />
+2) di conseguenza, la macchina fastweb non usa la macchina con ip pubblico come default gateway<br />
+<br />
+E' così?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">onosendai</div><div class="date">19-11-2004, 15:42</div></div><div class="posttext">esattamente.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">City_Hunter</div><div class="date">19-11-2004, 16:23</div></div><div class="posttext">Bene, allora temo di aver capito perchè non funziona.<br />
+Visto che volevi capire l'errore, provo a spiegartelo concettualmente.<br />
+<br />
+La macchina fastweb ha accesso diretto ad internet, anche se non dispone di IP pubblico... supponiamo che l'IP di NAT (quello condiviso con altri utenti) con cui la macchina fastweb esce su internet sia 100.100.100.100.<br />
+<br />
+Un ipotetico utente con indirizzo IP 222.222.222.222 (esempio) è nel mondo esterno, vuole collegarsi al tuo webserver. Per farlo usa l'indirizzo ip pubblico che tu hai a disposizione, 82.84.243.117 porta 80.<br />
+Alla macchina con indirizzo pubblico arriva un pacchetto destinato a 82.84.243.117. In fase di prerouting, in base alla prima regola che ti ho dato, al pacchetto (identificato dalla porta di destinazione 80) viene assegnato l'indirizzo 10.3.0.1 (porta 80), per farlo arrivare alla macchina dove c'è il webserver. Fin qui tutto bene. Il pacchetto viene instradato sulla rete interna, verso il webserver.<br />
+Il pacchetto arriva alla macchina dove c'è il webserver con destinazione 10.3.0.1 e mittente 222.222.222.222 (l'utente di internet). A quel punto il webserver vorrà mandare il pacchetto di ack (in termini profani, di risposta) all'indirizzo ip 222.222.222.222 dell'utente.<br />
+Il problema è che nel farlo, se 10.3.0.1 non è il default gateway di 10.3.0.2, segue un percorso sbagliato.<br />
+<br />
+Infatti, dal momento che la macchina fastweb ha accesso diretto ad internet, il default gateway porterà il pacchetto di risposta ad uscire direttamente su internet verso 222.222.222.222 (senza ripassare per 10.3.0.2) e l'indirizzo sorgente del pacchetto sarà quello dell'IP di NAT, cioè 100.100.100.100.<br />
+Il pacchetto quindi tornerà all'utente che voleva collegarsi al webserver con un indirizzo IP diverso da quello cui l'utente si era connesso (lui cerca di connettersi a 82.84.243.117 e il pacchetto gli torna da 100.100.100.100), e quindi verrà scartato. La connessione quindi non riesce.<br />
+<br />
+Non volendo impostare 10.3.0.2 come default gateway per la macchina fastweb, ci sono comunque altre strade.<br />
+Purtroppo non si può semplicemente prendere il pacchetto di risposta del webserver e reindirizzarlo alla macchina con ip pubblico modificando l'indirizzo di destinazione (mettendo 10.3.0.2), perchè nel farlo si perderebbe l'indirizzo del vero destinatario (l'ip 222.222.222.222 dell'utente di internet).<br />
+<br />
+Una soluzione interessante potrebbe essere quella di manipolare il pacchetto di risposta in postrouting, sulla macchina fastweb, e impostargli come indirizzo di provenienza 82.84.243.117. E poi facendolo uscire su internet direttamente dalla macchina fastweb. L'unico dubbio che ho a riguardo è la possibilità del pacchetto di uscire con quell'indirizzo sorgente, visto che c'è la MAN fastweb di mezzo.<br />
+<br />
+Una soluzione che invece funzionerebbe di sicuro (anche se un pò laboriosa) è quella di costringere il pacchetto di risposta a ritornare su 10.3.0.2 prima di uscire su Internet, senza però cambiargli l'indirizzo di destinazione. Possiamo ottenere questo &quot;routing personalizzato&quot; per i pacchetti con porta sorgente 80 (quelli legati alle connessioni al webserver) usando MARK nella catena OUTPUT, tabella mangle di iptables. In pratica contrassegniamo i pacchetti (per esempio --set-mark 1).<br />
+Il resto va fatto con iproute2, impostando un'apposita tabella di routing (avente come default gateway 10.3.0.2) che verrà seguita solo dai pacchetti che hanno mark 1 (per esempio).<br />
+<br />
+I pacchetti instradati in questo modo, tornati su 10.3.0.2, verrebbero poi instradati normalmente (il loro indirizzo di destinazione è sempre 222.222.222.222, non l'abbiamo modificato) e a far comparire il giusto indirizzo sorgente penserebbe la seconda regola che ti ho scritto nel post precedente.<br />
+<br />
+Per quel che riguarda la regola sulla macchina fastweb, questa dovrebbe andare:<br />
+iptables -t mangle -A OUTPUT -j MARK -p tcp --sport 80 --set-mark 1<br />
+Per quel che riguarda iproute2, purtroppo mi è difficile fornirti in questa sede tutti i comandi &quot;pronti all'uso&quot;, visto che non ho compilato le funzioni di advanced router nel mio kernel (richieste da iproute2 per usare ip rule).<br />
+Indicativamente, in /etc/iproute2/rt_tables dovresti aggiungere la tabella di routing personalizzata, ad esempio:<br />
+5        websroute<br />
+e poi indicare quali pacchetti seguiranno questa tabella di routing (nell'ipotesi di aver usato 1 come mark):<br />
+ip rule add fwmark 1 table websroute<br />
+e qual è il default gateway per questi pacchetti (supponendo eth1 l'interfaccia della macchina fastweb verso la macchina 10.3.0.2):<br />
+ip route add default via 10.3.0.2 dev eth1 table websroute</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">onosendai</div><div class="date">19-11-2004, 16:38</div></div><div class="posttext">ti ringrazio molto per la spiegazione.<br />
+ <br />
+ <br />
+ciauz :okay:</div></div><hr />
+
+
+<div id="copyright">vBulletin v3.5.3, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

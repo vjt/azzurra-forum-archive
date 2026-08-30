@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Debian-Problemi con installazione di Mysql, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] Debian-Problemi con installazione di Mysql Discussioni Linux" />
+	
+	<title>Debian-Problemi con installazione di Mysql [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-28.html">Discussioni Linux</a> &gt; Debian-Problemi con installazione di Mysql</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=9928">Debian-Problemi con installazione di Mysql</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">linux</div><div class="date">10-08-2005, 10:29</div></div><div class="posttext">Ciao a tutti,<br />
+<br />
+ho installato la debian e dopo aver scaricato mysql-server 4.0.24-10 tramite apt, ho riscontrato il seguente errore :<br />
+<br />
+ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2)<br />
+<br />
+<br />
+Ho cercato un po in rete ma non ho trovato soluzioni risolutive.<br />
+<br />
+Grazie</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mav</div><div class="date">20-08-2005, 10:53</div></div><div class="posttext">Sicuro che il server sia avviato? :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Thunder</div><div class="date">23-08-2005, 16:01</div></div><div class="posttext">Io ho lo stesso identico problema, ed il problema sta proprio nell'avviarlo:<br />
+<br />
+ root@bvs24:/etc/mysql# /etc/init.d/mysql start<br />
+Starting MySQL database server: mysqld...failed.<br />
+		Please take a look at the syslog.<br />
+/usr/bin/mysqladmin: connect to server at 'localhost' failed<br />
+error: 'Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2)'<br />
+Check that mysqld is running and that the socket: '/var/run/mysqld/mysqld.sock' exists!<br />
+root@bvs24:/etc/mysql#</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">niko</div><div class="date">24-08-2005, 18:30</div></div><div class="posttext">Ciao,<br />
+<br />
+per quanto riguarda l'errore di Thunder, come descritto, consiglio di dare un occhio ai logs (particolarmente al syslog) che dovrebbero spiegare la natura del problema.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Thunder</div><div class="date">30-08-2005, 15:14</div></div><div class="posttext">Il syslog dice questo:<br />
+<br />
+Aug 25 15:23:03 bvs24 mysqld_safe[15375]: started<br />
+Aug 25 15:23:04 bvs24 mysqld[15379]: 050825 15:23:04 Can't start server : Bind on unix socket: No such file or directory<br />
+Aug 25 15:23:04 bvs24 mysqld[15379]: 050825 15:23:04 Do you already have another mysqld server running on socket: /var/run/mysql/mysql.sock ?<br />
+Aug 25 15:23:04 bvs24 mysqld[15379]: 050825 15:23:04 Aborting<br />
+Aug 25 15:23:04 bvs24 mysqld[15379]:<br />
+Aug 25 15:23:04 bvs24 mysqld[15379]: 050825 15:23:04 /usr/sbin/mysqld: Shutdown Complete<br />
+Aug 25 15:23:04 bvs24 mysqld[15379]:<br />
+Aug 25 15:23:04 bvs24 mysqld_safe[15381]: ended<br />
+Aug 25 15:23:10 bvs24 /etc/init.d/mysql[15444]: 0 processes alive and '/usr/bin/mysqladmin --defaults-file=/etc/mysql/debian.cnf ping' resulted in<br />
+Aug 25 15:23:10 bvs24 /etc/init.d/mysql[15444]: ^G/usr/bin/mysqladmin: connect to server at 'localhost' failed<br />
+Aug 25 15:23:10 bvs24 /etc/init.d/mysql[15444]: error: 'Can't connect to local MySQL server through socket '/var/run/mysql/mysql.sock' (2)'<br />
+Aug 25 15:23:10 bvs24 /etc/init.d/mysql[15444]: Check that mysqld is running and that the socket: '/var/run/mysql/mysql.sock' exists!<br />
+Aug 25 15:23:10 bvs24 /etc/init.d/mysql[15444]:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">tmunix</div><div class="date">04-09-2005, 23:50</div></div><div class="posttext">Ciao,<br />
+avevo lo stesso problema, l'errore era causato da questa variabile 'old_passwords  = 1' in my.cnf.<br />
+Prova a commentarla, poi avvia mysqld e dovrebbe funzionare.<br />
+Controlla syslog...<br />
+<br />
+Tmunix</div></div><hr />
+
+
+<div id="copyright">vBulletin v3.6.0, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

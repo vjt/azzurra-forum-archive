@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="services 2.2.0 patch1, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] services 2.2.0 patch1 Services - I servizi IRC di Azzurra" />
+	
+	<title>services 2.2.0 patch1 [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-6.html">Network Central</a> &gt; <a href="f-30.html">Services - I servizi IRC di Azzurra</a> &gt; services 2.2.0 patch1</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=11505">services 2.2.0 patch1</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">snagg</div><div class="date">04-11-2005, 19:24</div></div><div class="posttext">Salve oggi sono stati upgradati i servizi con una nuova patch che poneva rimedio a due problemi:<br />
+1)Errore di visualizzazione dei cloni v6<br />
+2)Alta predicibilità degli auth code generati dai services (Es: il codice di autorizzazione per registrare i nick)<br />
+<br />
+Presto verranno apportate nuove modifiche ai servizi, invito chiunque trovi dei bug (magari fornendo anche delle patch) a segnalarli a devel@azzurra.org<br />
+<br />
+Snagg</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mav</div><div class="date">04-11-2005, 19:42</div></div><div class="posttext">inc/macros.h:#define getrandom(min, max) ((rand() % (unsigned long int)(((max)+1) - (min))) + (min))<br />
+src/nickserv.c:callerUser-&gt;ni-&gt;auth = callerUser-&gt;ni-&gt;time_registered + (getrandom(1, 99999) * getrandom(1, 9999));<br />
+<br />
+Confrontiamoci liberamente... è il bello dell'open source...<br />
+<br />
+Uhm... diciamo che uno ha circa 99.999*9.999 = 999.890.001 tentativi... insomma... circa un miliardo di tentativi... provandone uno al secondo fanno grossomodo 31 anni (approssimando per difetto, 31 anni = 31*365*24*60*60 = 977.616.000 secondi) per provarli tutti. Se poi consideriamo che i servizi killano per flood... forse l'unico che poteva guessare gli auth-code era... uhm... Giucas Casella o il mago Silvan?<br />
+<br />
+Insomma... su quale base hai (o avete) ritenuto che gli AUTH code erano facilmente guessabili?<br />
+<br />
+ Mi rispondo da solo: sul srand(NOW) che viene usato per seedare il rand().<br />
+<br />
+(Tralasciando le disquisizioni sulla pericolosità di autorizzare un nick con un'email inesistente, che è il massimo danno che è possibile fare guessando un AUTH code...)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">snagg</div><div class="date">04-11-2005, 20:01</div></div><div class="posttext">Ora se il seed e` sempre lo stesso io posso predire sempre e comunque il codice che ne viene fuori. Concordiamo su questo?<br />
+<br />
+<br />
+Se tu avessi letto la modifica al mio post invece di replare a cannone avresti visto che concordiamo su questo. O no? Se poi vuoi vedere flame ovunque... dimenticavo che sei infallibile, faccio umilmente ammenda. :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mav</div><div class="date">04-11-2005, 20:17</div></div><div class="posttext">Ok... forse oltre al rank di services coder dovevate togliermi anche lo status di moderatore di quest'area... :sospiro:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">snagg</div><div class="date">04-11-2005, 20:18</div></div><div class="posttext">Se tu avessi letto la modifica al mio post invece di replare a cannone avresti visto che concordiamo su questo. O no? Se poi vuoi vedere flame ovunque... dimenticavo che sei infallibile, faccio umilmente ammenda. :)<br />
+<br />
+Se tu evitassi di cambiarmi i post poi te ne sarei tanto grato. Comunque riposto giusto per correttezza:<br />
+<br />
+L'opensource è bello quando si evita di flammare e si sa quello che si dice evitando di sputare sentenze. Comunque:<br />
+#include &lt;stdio.h&gt;<br />
+#define getrandom(min, max) ((rand() % (unsigned long int)(((max)+1) - (min))) + (min))<br />
+int main()<br />
+{<br />
+ int i;<br />
+ <br />
+ for(i = 0 ;i &lt; 10; i++)<br />
+ {<br />
+  srand(i);<br />
+  <br />
+  printf(&quot;%d\n&quot;, getrandom(1, 99999) * getrandom(1, 99999));<br />
+ }<br />
+ <br />
+ return 0;<br />
+} <br />
+Ora se il seed e` sempre lo stesso io posso predire sempre e comunque il codice che ne viene fuori. Concordiamo su questo?<br />
+hesiod:~ snagg$ ./a.out <br />
+990915340<br />
+1312267792<br />
+1887415020<br />
+1725541684<br />
+826647784<br />
+-995685308<br />
+57765892<br />
+821071567<br />
+670862802<br />
+705523334<br />
+hesiod:~ snagg$ ./a.out <br />
+990915340<br />
+1312267792<br />
+1887415020<br />
+1725541684<br />
+826647784<br />
+-995685308<br />
+57765892<br />
+821071567<br />
+670862802<br />
+705523334<br />
+hesiod:~ snagg$ <br />
+Semplicemente il srand() non e` stato inizializzato con time() ma con una funzione che prende un numero pseudo-random da /dev/urandom<br />
+<br />
+Quanto credi che riuscirà a rimanere così il mio post Mav?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Azzurra</div><div class="date">04-11-2005, 20:18</div></div><div class="posttext">Leggo sul post di snagg:<br />
+Ultima modifica di Mav Oggi alle ore 20:06. <br />
+ <br />
+Sarebbe opportuno modificare i propri post e non quelli degli altri utenti sfruttando una dimenticanza dell'admin del forum. La dimenticanza sta appunto nel non aver tolto Mav moderatore di questa sezione.<br />
+ <br />
+Errore corretto e thread chiuso.<br />
+Saluti.</div></div><hr />
+
+
+<div id="copyright">vBulletin&reg; v3.6.4, Copyright &copy;2000-2007, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

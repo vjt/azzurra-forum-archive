@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="fedora core 3 e modem adsl, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] fedora core 3 e modem adsl Discussioni Linux" />
+	
+	<title>fedora core 3 e modem adsl [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-28.html">Discussioni Linux</a> &gt; fedora core 3 e modem adsl</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=8481">fedora core 3 e modem adsl</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">bislo</div><div class="date">28-04-2005, 20:54</div></div><div class="posttext">ciao a tutti sono nuovo nuovo del forum e mi sto' affacciando adesso a questo sistema operativo quindi non lo conosco affatto e mi scuso magari x le banalita' che scrivero' adesso e + avanti <br />
+il mio problema è questo<br />
+ho installato fedora core 3 ora vorrei una mano x fargli riconoscere il mio modem adsl nd 220 telindus <br />
+non riesco a trovare niente neanche i driver x linux<br />
+in + mi farebbe piacere avere una mini guida x installare il driver che penso voi mi darete indicazione dove trovare<br />
+ciao a tutto il forum:-)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">City_Hunter</div><div class="date">28-04-2005, 22:36</div></div><div class="posttext">A quanto pare il modem in questione funziona con i driver eagle-usb, tra i migliori che esistano sulla piazza (e che uso felicemente anche per il mio modem U.S.Robotics).<br />
+<br />
+La pagina dei driver è questa:<br />
+http://eagle-usb.ath.cx/pub/<br />
+<br />
+Mentre questo è il link esatto all'ultima versione (al momento in cui scrivo):<br />
+http://baud123.free.fr/eagle-usb/eagle-usb-2.3/eagle-usb-2.3.1.tar.bz2<br />
+<br />
+La compilazione e la configurazione del modem sono di una facilità estrema.<br />
+Posto che tu abbia i sorgenti del kernel di Linux* (qualsiasi modulo esterno li richiede), decomprimi l'archivio e poi dai<br />
+./configure --prefix=/usr --sysconfdir=/etc<br />
+dopodichè compila con make<br />
+e poi make install (quest'ultima operazione necessariamente da utente root).<br />
+<br />
+Per la configurazione, dopo l'installazione, basterà che tu lanci il comando eagleconfig .<br />
+Ti verranno presentate una serie di opzioni abbastanza semplici:<br />
+la scelta del provider (ci sono anche i principali italiani), cui codice corrispondente dovrai digitare, la password di accesso ad internet e infine dovrai selezionare se lanciare automaticamente la connessione al boot oppure no.<br />
+<br />
+Fatto questo, ti basterà lanciare da root la connessione con il comando startadsl .<br />
+Potrai successivamente terminare la stessa con stopadsl .<br />
+<br />
+*Se hai appena messo fedora, probabilmente troverai i sorgenti del kernel di Linux usato da fedora sotto forma di pacchetto RPM.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">thecrow159</div><div class="date">17-06-2005, 08:18</div></div><div class="posttext">Ciao, anche io ho problemi con l'installazione di questo modem su Fedora 4. Qualcuno può spiegarmi come installare i sorgenti del kernel e il modem?? grazie</div></div><hr />
+
+
+<div id="copyright">vBulletin&reg; v3.6.4, Copyright &copy;2000-2007, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

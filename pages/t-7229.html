@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content=" Newbie, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio]  Newbie Discussioni Linux" />
+	
+	<title> Newbie [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="http://forum.azzurra.org/archive/index.php">Azzurra IRC Network Forum</a> &gt; <a href="http://forum.azzurra.org/archive/index.php/f-8.html">Azzurra - Tech Center</a> &gt; <a href="http://forum.azzurra.org/archive/index.php/f-28.html">Discussioni Linux</a> &gt;  Newbie</div>
+<hr />
+<div class="pda"><a href="http://forum.azzurra.org/archive/index.php/t-7229.html?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=7229">Newbie</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Dracoo</div><div class="date">04-02-2005, 23:21</div></div><div class="posttext">Ebbene si, anch'io mi sono intrufolato (per l'ennesima volta) nel molto Linux... e (per l'ennesima volta) non ho avuto risultati brillanti...<br />
+Vi spiego un po' la situazione mia...<br />
+Ho installato Linux Slackware 9.1 sulla 2° partizione del mio HD in slave (hdb2)<br />
+Su hdb1 ho installato WinXP (che sto usando ora)<br />
+Sul HD Master (hda1) ho sempre WinXP (quello che uso di solito)<br />
+Installato la slack, ho fatto si che il Boot Loader (LILO) venisse installato nel MBR (sul primo HD).<br />
+L'avessi mai fatto! Quando accendo il computer, LILO mi riconosce solo Linux come OS e non Windows (nè quello del primo HD nè quello del secondo!)<br />
+Ho provato allora a mettere come primo dispositivo di boot nel Bios il secondo HD, e, così facendo, mi parte il WinXP che sto usando tutt'ora (su cui non vi è  installato alcunchè, ho già presto il Sasser o suo cugino, ma non c'ho voglia di levarlo perciò faccio sempre &lt;i&gt;shutdown -a&lt;/i&gt; :D )<br />
+<br />
+Quello che chiedo a voi è di aiutarmi a far sì che all'avvio del PC LILO mi faccia scegliere tra WinXP (sul primo HD) e Linux (sul secondo).<br />
+Credete che sia possibile?<br />
+<br />
+Di priorità maggiore è trovare il modo di levare LILO installato sul MBR, perchè non riesco più ad avviare il mio XP solito *_*!<br />
+<br />
+Aiutatemi voi, ve prego *_*</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">City_Hunter</div><div class="date">04-02-2005, 23:39</div></div><div class="posttext">Di priorità maggiore è trovare il modo di levare LILO installato sul MDR, perchè non riesco più ad avviare il mio XP solito *_*!<br />
+Cominciamo dalla priorità maggiore: loggati con l'utente root su Linux e digita<br />
+lilo -u<br />
+quest

@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content=" Rimozione del Worm BKDR_NETDEVIL.12, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio]  Rimozione del Worm BKDR_NETDEVIL.12 Comunicazioni ufficiali di Azzurra" />
+	
+	<title> Rimozione del Worm BKDR_NETDEVIL.12 [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="http://forum.azzurra.org/archive/index.php">Azzurra IRC Network Forum</a> &gt; <a href="http://forum.azzurra.org/archive/index.php/f-6.html">Network Central</a> &gt; <a href="http://forum.azzurra.org/archive/index.php/f-19.html">Comunicazioni ufficiali di Azzurra</a> &gt;  Rimozione del Worm BKDR_NETDEVIL.12</div>
+<hr />
+<div class="pda"><a href="http://forum.azzurra.org/archive/index.php/t-3723.html?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=3723">Rimozione del Worm BKDR_NETDEVIL.12</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">silentman</div><div class="date">02-01-2004, 15:21</div></div><div class="posttext">Se un utente su IRC vi ha consigliato di scaricare un file, spacciandolo per una fix di mIRC, dal sito XXX, questo vi ha infettato il sistema con un worm/trojan che oltre a spammare a vostra insaputa lo stesso url, dà totale accesso alla vostra macchina a un utente malintenzionato.<br />
+<br />
+Per rimuovere il worm, è necessario eliminare la riga contenente l'url sopra citato dai &quot;remote&quot; di mIRC (premere ALT+R per visualizzarli).<br />
+<br />
+La riga da eliminare è<br />
+1&#58;join&#58;#&#58;&#123; .msg $nick  IMPORTANT&#58; It has recently been reported that there is a major bug in -mIRC6.12, allowing malicous users to execute commands remotely, update your mIRC with a patch file you can get it from http&#58;//xxxxxxxxxxxxxxx.tld/mirc6.13.exe and help us eradicate this threat, ENJOY &amp;amp; Happy New Year! - Network Security Team &#125;<br />
+<br />
+Una volta eliminata la riga dai remote, premete OK per rendere effettiva la modifica.<br />
+<br />
+Poi è necessario localizzare il file ADVAPI.EXE in C.\WINDOWS oppure C:\WINNT oppure C:\WINDOWS\SYSTEM o SYSTEM32, e cancellarlo.<br />
+<br />
+Qualora non si riuscisse a cancellarlo provvedere in questo modo:<br />
+- terminare il processo dal Task manager<br />
+- cancellare la Key di registry relativa, (start-&amp;gt;run-&amp;gt;regedit-&amp;gt;invio, cercare la chiave HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\Curr entVersion\Run, advapi = C:\&amp;lt;directory&amp;gt;\ADVAPI.EXE e cancellarla)<br />
+- cancellare il file ADVAPI.EXE<br />
+- riavviare il sistema.<br />
+<br />
+Se riscontrate ancora difficoltà nel rimuovere il worm, fate riferimento a questo sito (http://www.trendmicro.com/vinfo/virusencyclo/default5.asp?VName=BKDR_NETDEVIL.12&amp;amp;VSect=T).<br />
+<br />
+Nonostante sia stato ripetuto centinaia milioni di volte in questa e in altre sedi, ci troviamo ancora una volta costretti a ricordarvi di NON APRIRE URL proposti da persone sconosciute o non fidate, ne' su IRC ne' altrove.</div></div><hr />
+
+
+<div id="copyright">vBulletin&reg; v3.7.1, Copyright &copy;2000-2008, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

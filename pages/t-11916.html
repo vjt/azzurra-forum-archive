@@ -1,0 +1,1149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="[c] compilazione tesina urgente!, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] [c] compilazione tesina urgente! Programmazione e dintorni" />
+	
+	<title>[c] compilazione tesina urgente! [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-23.html">Programmazione e dintorni</a> &gt; [c] compilazione tesina urgente!</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=11916">[c] compilazione tesina urgente!</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">soundsgood</div><div class="date">10-12-2005, 13:19</div></div><div class="posttext">ciao chiedo un aiuto urgente a tutti voi. è importante! <br />
+la tesina va consegnata lunedi! <br />
+<br />
+devo compilare in linux una tesina di sistemi operativi e mi da errori innanzitutto sulla creazione dei thread. la specifica della tesina è la seguente: <br />
+<br />
+creazione di una bacheca elettronica che permette ad un utente di <br />
+1 leggere tutti i messaggi nella bacheca <br />
+2 deposito di un un nuovo messaggio <br />
+3 rimozione di un qualsiasi messaggio <br />
+<br />
+la comunicazione tra client e server deve sfruttare le code di messaggi inoltre vengono adoperati i semafori del sistema unix/linux <br />
+<br />
+potete controllare a voi che errori da e darmi eventuali suggerimenti? <br />
+che versioni di linux consigliate per compilare? che supporti i thread ecc <br />
+<br />
+se mi date il vostro indirizzo email vi invio i file client e server <br />
+<br />
+intanto li posto qui <br />
+<br />
+grazie davvero a chi mi aiuta. un saluto a tutti <br />
+<br />
+<br />
+<br />
+CLIENT <br />
+<br />
+#include &lt;sys/types.h&gt; <br />
+#include &lt;sys/ipc.h&gt; <br />
+#include &lt;sys/sem.h&gt; <br />
+#include &lt;stdio.h&gt; <br />
+#include &lt;pthread.h&gt; <br />
+#include &lt;time.h&gt; <br />
+#include &lt;unistd.h&gt; <br />
+#include &lt;fcntl.h&gt; <br />
+#define TAGLIA 512 <br />
+#define KEY_SERVER 40 <br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+//---------------------------------------------------------------------------------------------- <br />
+<br />
+<br />
+typedef struct { // STRUTTURA CONTENENTE LA RICHIESTA INIZIALE <br />
+long mtype; // TIPO DI RICHIESTA <br />
+int canale_risposta; <br />
+long pid_client; // PID DEL CLIENT CHE EFFETTUA LA RICHIESTA <br />
+} ric_servizio; <br />
+<br />
+<br />
+//---------------------------------------------------------------------------------------------- <br />
+<br />
+typedef struct { // STRUTTURA CONTENENTE INFORMAZIONI DI UN MESSAGGIO CHE SERVE PER STAMPARE L'INDICE GENERALE DEI MESSAGGI <br />
+int mess_id; /* ID MESS = NUMERO CRESCENTE*/ <br />
+char file_txt[20]; /* NOME DEL FILE CHE CONTIENE EFFETTIVAMENTE IL MESSAGGIO*/ <br />
+<br />
+char user[20]; /* CHI HA SCRITTO IL MESSAGGIO MAX 20 CARATTERI*/ <br />
+char oggetto[100]; /* OGGETTO MAX 100 CARATTERI */ <br />
+<br />
+} indice; <br />
+<br />
+//-------------------------------------------------------------------------------------------------- <br />
+<br />
+typedef struct { /* STRUTTURA CONTENENTE IL MESSAGGIO INVIATO DAL SERVER (DA LEGGERE) */ <br />
+<br />
+int mess_id; /* ID MESS = NUMERO CRESCENTE*/ <br />
+char user[20]; /* CHI HA SCRITTO IL MESSAGGIO MAX 20 CARATTERI*/ <br />
+char oggetto[100]; /* OGGETTO MAX 100 CARATTERI */ <br />
+char messaggio[514]; // MESSAGGIO VERO E PROPRIO <br />
+<br />
+} mes_leggere; /* MESSAGGIO DAL SERVER DA STAMPARE*/ <br />
+<br />
+<br />
+<br />
+//---------------------------------------------------------------------------------------------- <br />
+<br />
+<br />
+<br />
+typedef struct { // MESSAGGIO DA INVIARE AL SERVER <br />
+long mtype; <br />
+<br />
+char user[20]; /* CHI HA SCRITTO IL MESSAGGIO MAX 20 CARATTERI*/ <br />
+char oggetto[100]; /* OGGETTO MAX 100 CARATTERI */ <br />
+char messaggio[512]; // MESSAGGIO SCRITTO VERO E PROPRIO <br />
+} mes_inviato; <br />
+<br />
+<br />
+//----------------------------------------------------------------------------------------------- <br />
+<br />
+<br />
+typedef struct { // STRUTTURA DI INVIO DELL'INDICE DI SELEZIONE <br />
+long mtype; <br />
+int canale_risposta; <br />
+int n_mess; // numero del messaggio selezionato <br />
+} ind_inviato; <br />
+<br />
+<br />
+//---------------------------------------------------------------------------------------------- <br />
+<br />
+typedef struct { // STRUTTURA PER ACCOGLIERE il numero di messaggi sul server <br />
+long mtype; <br />
+int num_mes // numero di messaggi in bacheca <br />
+} n_messaggi; <br />
+<br />
+//---------------------------------------------------------------------------------------------- <br />
+<br />
+typedef struct { // STRUTTURA PER RICEVERE LA CONFERMA DI POTER INVIARE UN MESSAGGIO <br />
+long mtype; <br />
+} conf; <br />
+<br />
+//---------------------------------------------------------------------------------------------- <br />
+<br />
+int id_coda_client, id_coda_server, ret, status; <br />
+<br />
+long key; <br />
+<br />
+ind_inviato indice_inviato; <br />
+<br />
+conf conferma; <br />
+<br />
+ric_servizio richiesta_servizio; <br />
+<br />
+indice indice_ricevuto; <br />
+<br />
+mes_inviato messaggio_inviato; <br />
+<br />
+mes_leggere messaggio_leggere; <br />
+<br />
+n_messaggi numero_messaggi; <br />
+<br />
+<br />
+<br />
+<br />
+//----------------------------------------------------------------------------------------------- <br />
+<br />
+main(int argc, char *argv[]) { <br />
+<br />
+// CREAZIONE CODA SERVER <br />
+id_coda_server = msgget(KEY_SERVER, IPC_CREAT | 0666); <br />
+if(id_coda_server == -1) { <br />
+printf(&quot;Errore nell’apertura della server queue \n&quot;); <br />
+exit(-1); <br />
+} <br />
+<br />
+<br />
+key = getpid(); // CHIAVE CODA CLIENT <br />
+<br />
+// CREAZIONE CODA CLIENT <br />
+id_coda_client = msgget(key, IPC_CREAT | IPC_EXCL | 0666); <br />
+if(id_coda_client == -1) { <br />
+id_coda_client = msgget(key, IPC_CREAT | 0666); <br />
+ret = msgctl(id_coda_client, IPC_RMID, 0); <br />
+id_coda_client = msgget(key, IPC_CREAT | IPC_EXCL | 0666); <br />
+if ( id_coda_client == -1 ) { <br />
+printf(&quot;Errore nell’installazione della client queue&quot;); <br />
+exit(-1); <br />
+} <br />
+} <br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+printf(&quot;********* Benvenuto nella Bacheca Elettronica! *********\n\n&quot;); <br />
+<br />
+<br />
+<br />
+<br />
+//---------------------------------------------------------------------------- <br />
+<br />
+do { <br />
+<br />
+printf(&quot;\n \n \n \n <br />
+Selezionare l’operazione che si desidera: \n \n <br />
+<br />
+1.Lettura di un messaggio \n <br />
+2.Deposito di un nuovo messaggio \n <br />
+3.Rimozione di un messaggio \n <br />
+4.Esci \n\n &quot;); <br />
+<br />
+<br />
+scanf(&quot;%ld&quot;, richiesta_servizio.mtype); <br />
+richiesta_servizio.canale_risposta = id_coda_client; <br />
+<br />
+<br />
+<br />
+<br />
+<br />
+// DISTINGUIAMO LE RICHIESTE <br />
+<br />
+//------------------------------------------------------------------------------------------------------------- <br />
+<br />
+<br />
+<br />
+if(richiesta_servizio.mtype == 1) { <br />
+<br />
+<br />
+<br />
+if ( msgsnd(id_coda_Server, &amp;richiesta_servizio, sizeof(ric), 0) == -1 ) { <br />
+printf(&quot;Errore nell’invio della richiesta al server&quot;); <br />
+exit(-1); <br />
+} <br />
+<br />
+<br />
+<br />
+// RICEZIONE DEL NUMERO MESSAGGI RESIDENTI SULLA BACHECA DAL SERVER <br />
+if( msgrcv(id_coda_client, &amp;numero_messaggi, TAGLIA, 0, 0) == -1) { <br />
+printf(&quot;Errore nella ricezione dell’indice dal server&quot;); <br />
+exit(-1); <br />
+} <br />
+<br />
+<br />
+if(numero_messaggi.num_mes) { // SE LA BACHECA CONTIENE ALMENO UN MESSAGGIO <br />
+<br />
+// RICEZIONE E STAMPA DELL'INDICE GENERALE DEI MESSAGGI RESIDENTI SULLA BACHECA <br />
+int count = 0; <br />
+do { <br />
+if( msgrcv(id_coda_client, &amp;indice_ricevuto, TAGLIA, 0, 0) == -1) { <br />
+printf(&quot;Errore nella ricezione dell’indice dal server&quot;); <br />
+exit(-1); <br />
+} <br />
+printf(&quot;Messaggio numero: %s, User: %s, Oggetto: %s, .\n&quot; , indice_ricevuto.mes_id, indice_ricevuto.user, indice_ricevuto.oggetto); <br />
+cont++; <br />
+} while(count != numero_messaggi.num_mes); <br />
+<br />
+<br />
+<br />
+printf(&quot;Selezionare il numero del messaggio che si desidera leggere\n&quot;); <br />
+scanf(&quot;%d&quot;, indice_inviato.n_mess); <br />
+<br />
+while((indice_inviato.n_mess &gt; indice_ricevuto.num_mes) || (indice_inviato.n_mess &lt; 1)) { <br />
+printf(&quot;Errore nell'indice selezionato. Selezionare il numero corretto del messaggio che si desidera leggere\n&quot;); <br />
+scanf(&quot;%d&quot;, indice_inviato.n_mess); <br />
+} <br />
+<br />
+indice_inviato.canale_risposta = id_coda_client; <br />
+indice_inviato.mtype = 11; // TIPO STABILITO PER LA FUNZIONE LEGGI <br />
+<br />
+// INVIO DELL'INDICE DEL MESSAGGIO CHE SI VUOLE LEGGERE <br />
+if( msgsnd(id_coda_server, &amp;indice_inviato, sizeof(indice_inviato), 0) == -1) { <br />
+printf(&quot;Errore nell’invio al server del numero del messaggio da leggere\n&quot;); <br />
+exit(-1); <br />
+} <br />
+<br />
+//RICEZIONE DEL MESSAGGIO DA LEGGERE E STAMPA <br />
+if( msgrcv(id_coda_client, &amp;messaggio_leggere, TAGLIA, 0 , 0) == -1 ) { <br />
+print(&quot;Errore nella ricezione del messaggio da leggere\n&quot;); <br />
+exit(-1); <br />
+} <br />
+<br />
+printf(&quot;Messaggio numero: %s, User: %s, Oggetto: %s, \n\n Messaggio: %s \n\n&quot;, messaggio_leggere.mes_id, messaggio_leggere.user, messaggio_leggere.oggetto, messaggio_leggere.messaggio); <br />
+<br />
+} <br />
+<br />
+<br />
+<br />
+// SE NON CI SONO MESSAGGI IN BACHECA <br />
+else { <br />
+printf(&quot;Non ci sono messaggi nella bacheca\n&quot;); <br />
+} <br />
+<br />
+} <br />
+<br />
+<br />
+//-------------------------------------------------------------------------------------------------------- <br />
+<br />
+<br />
+if(richiesta_servizio.mtype == 2) { <br />
+<br />
+<br />
+if ( msgsnd(id_coda_Server, &amp;richiesta_servizio, sizeof(ric), 0) == -1 ) { <br />
+printf(&quot;Errore nell’invio della richiesta al server&quot;); <br />
+exit(-1); <br />
+} <br />
+<br />
+messaggio_inviato.mtype = 12; // TIPO STABILITO PER LA FUNZIONE SCRIVI <br />
+<br />
+// fgets() http://www.lilik.it/~mirko/gapil/gapilsu107.html#x249-1390007.2.5 (http://www.lilik.it/~mirko/gapil/gapilsu107.html#x249-1390007.2.5) <br />
+// il numero di caratteri passato alla fgets() deve essere n-2 di quelli dichiarati perche vi va aggiunto il newline (\n) e lo zero) <br />
+<br />
+printf(&quot;Digitare il nome del mittente del messaggio (max 20 caratteri)\n&quot;); <br />
+scanf(&quot;%s&quot;, messaggio_inviato.user); <br />
+<br />
+printf(&quot;Digitare l'oggetto del messaggio (max 100 caratteri)\n&quot;); <br />
+scanf(&quot;%s&quot;, messaggio_inviato.oggetto); <br />
+<br />
+printf(&quot;Digitare il messaggio (max 500 caratteri)\n&quot;); <br />
+scanf(&quot;%s&quot; , messaggio_inviato.messaggio); <br />
+<br />
+<br />
+if( msgrcv(id_coda_client, &amp;conferma, TAGLIA, 0 , 0) == -1 ) { <br />
+print(&quot;Errore nella ricezione della conferma di invio del messaggio\n&quot;); <br />
+exit(-1); <br />
+} <br />
+<br />
+<br />
+if( msgsnd(id_coda_server, &amp;messaggio_inviato, sizeof(messaggio_inviato), 0) == -1) { <br />
+printf(&quot;Errore nell’invio al server del messaggio da scrivere in bacheca\n&quot;); <br />
+exit(-1); <br />
+} <br />
+<br />
+printf(&quot;Messaggio correttamente inviato al server&quot;); <br />
+} <br />
+<br />
+--------------------------------------------------------------------------------------------------------- <br />
+<br />
+if(richiesta_servizio.mtype == 3) { <br />
+<br />
+<br />
+if ( msgsnd(id_coda_Server, &amp;richiesta_servizio, sizeof(ric), 0) == -1 ) { <br />
+printf(&quot;Errore nell’invio della richiesta al server&quot;); <br />
+exit(-1); <br />
+} <br />
+<br />
+<br />
+<br />
+// RICEZIONE DEL NUMERO DI MESSAGGI IN BACHECA <br />
+if( msgrcv(id_coda_client, &amp;numero_messaggi, TAGLIA, 0, 0) == -1) { <br />
+printf(&quot;Errore nella ricezione dell’indice dal server&quot;); <br />
+exit(-1); <br />
+} <br />
+<br />
+if(numero_messaggi.num_mes) { // SE LA BACHECA CONTIENE ALMENO UN MESSAGGIO <br />
+<br />
+// RICEZIONE DELL'INDICE <br />
+int count = 0; <br />
+do { <br />
+if( msgrcv(id_coda_client, &amp;indice_ricevuto, TAGLIA, 0, 0) == -1) { <br />
+printf(“Errore nella ricezione dell’indice dal server”); <br />
+exit(-1); <br />
+} <br />
+printf(&quot;Messaggio numero: %s, User: %s, Oggetto: %s.\n&quot; , indice_ricevuto.mes_id, indice_ricevuto.user, indice_ricevuto.oggetto); <br />
+cont++; <br />
+<br />
+} while(count != numero_messaggi.num_mes); <br />
+<br />
+<br />
+<br />
+<br />
+printf(&quot;Selezionare il numero del messaggio che si desidera eliminare\n&quot;); <br />
+scanf(&quot;%d&quot;, indice_inviato.n_mess); <br />
+<br />
+while((indice_inviato.n_mess &gt; indice_ricevuto.num_mes) || (indice_inviato.n_mess &lt; 1)) { <br />
+printf(&quot;Errore nell'indice selezionato. Selezionare il numero corretto del messaggio che si desidera eliminare\n&quot;); <br />
+scanf(&quot;%d&quot;, indice_inviato.n_mess); <br />
+} <br />
+<br />
+indice_inviato.canale_risposta = id_coda_client; <br />
+indice_inviato.mtype = 13; // TIPO STABILITO PER LA FUNZIONE ELIMINA <br />
+<br />
+<br />
+if( msgsnd(id_coda_server, &amp;indice_inviato, sizeof(indice_inviato), 0) == -1) { <br />
+printf(&quot;Errore nell’invio al server del numero del messaggio da eliminare\n&quot;); <br />
+exit(-1); <br />
+} <br />
+<br />
+} <br />
+<br />
+<br />
+else { <br />
+printf(&quot;Non ci sono messaggi nella bacheca\n&quot;); <br />
+} <br />
+} <br />
+<br />
+} while ( richiesta_servizio.type != 4); <br />
+<br />
+<br />
+<br />
+ret = msgctl(id_coda_client, IPC_RMID, NULL); <br />
+if(ret==-1) printf(&quot;Errore nella chiamata msgctl\n&quot;); <br />
+<br />
+printf(&quot;Grazie e arrivederci\n&quot;); <br />
+exit(0); <br />
+<br />
+} <br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+SERVER <br />
+<br />
+#include &lt;sys/types.h&gt; <br />
+#include &lt;sys/ipc.h&gt; <br />
+#include &lt;sys/sem.h&gt; <br />
+#include &lt;stdio.h&gt; <br />
+#include &lt;pthread.h&gt; <br />
+#include &lt;time.h&gt; <br />
+#include &lt;unistd.h&gt; <br />
+#include &lt;fcntl.h&gt; <br />
+#define Errore_(x) { puts(x); exit(1); } <br />
+#define KEY_SERVER 40 <br />
+#define mainfile &quot;mainfile&quot; <br />
+#define key_sem1 50 <br />
+#define key_sem2 51 <br />
+#define num_client 10 <br />
+<br />
+int ds_sem1; <br />
+int ds_sem2; <br />
+<br />
+typedef struct { //STRUTTURA CONTENENTE LA RICHIESTA INIZIALE <br />
+long mtype; // tipo di richiesta <br />
+int canale_risposta; <br />
+long pid_client; <br />
+} ric_servizio; <br />
+<br />
+typedef struct { <br />
+long mtype; // STRUTTURA CONTENENTE L'INDICE DI UN MESSAGGIO. SERVE PER STAMPARE INDICE CHE CREA IL CLIENT TRAMITE CICLO WHILE <br />
+int mess_id; /* ID MESS = NUMERO CRESCENTE*/ <br />
+char file_txt[20]; /* NOME DEL FILE CHE CONTIENE EFFETTIVAMENTE IL MESSAGGIO*/ <br />
+<br />
+char user[20]; /* CHI HA SCRITTO IL MESSAGGIO MAX 20 CARATTERI*/ <br />
+char oggetto[100]; /* OGGETTO MAX 100 CARATTERI */ <br />
+} indice; <br />
+<br />
+typedef struct { /* STRUTTURA CONTENENTE IL MESSAGGIO INVIATO DAL SERVER (DA LEGGERE) */ <br />
+long mtype; <br />
+int mess_id; /* ID MESS = NUMERO CRESCENTE*/ <br />
+char user[20]; /* CHI HA SCRITTO IL MESSAGGIO MAX 20 CARATTERI*/ <br />
+char oggetto[100]; /* OGGETTO MAX 100 CARATTERI */ <br />
+char messaggio[512]; // MESSAGGIO VERO E PROPRIO <br />
+<br />
+} mes_leggere; /*messaggio DA SERVER DA STAMPARE*/ <br />
+<br />
+<br />
+typedef struct { // MESSAGGIO DA INVIARE AL SERVER <br />
+long mtype; <br />
+<br />
+char user[20]; /* CHI HA SCRITTO IL MESSAGGIO MAX 20 CARATTERI*/ <br />
+char oggetto[100]; /* OGGETTO MAX 100 CARATTERI */ <br />
+char messaggio[512]; // MESSAGGIO SCRITTO VERO E PROPRIO <br />
+} mes_inviato; <br />
+<br />
+typedef struct { <br />
+long mtype; <br />
+int n_mess; <br />
+} n_messaggi; <br />
+<br />
+typedef struct { <br />
+long mtype; //struttura di conferma <br />
+} conf; <br />
+<br />
+typedef struct { // STRUTTURA DI INVIO DELL'INDICE DI SELEZIONE <br />
+long mtype; <br />
+int canale_risposta; <br />
+int n_mess; // numero del messaggio selezionato <br />
+} ind_inviato; <br />
+<br />
+<br />
+//------------------------------------------------------------------------------ <br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+int leggi(long pid_client, int j){ <br />
+<br />
+// blocco semaforo 1 lettura (il primo che trova a 1 lo decrementa) <br />
+struct sembuf oper; <br />
+<br />
+<br />
+<br />
+<br />
+<br />
+/* VARIABILI LOCALI */ <br />
+char* nome; <br />
+char* buffer; <br />
+char* dimensione; <br />
+int ds_main, des, size, inviato, num, codice, coda_client; <br />
+int* punt; <br />
+ind_inviato cod; // struct definita dal client <br />
+int offset = 4; <br />
+indice msg_info; <br />
+mes_leggere msg; <br />
+<br />
+int id_coda_server = msgget(KEY_SERVER, IPC_CREAT | 0666); //apre coda del sever <br />
+if(id_coda_server == -1) { <br />
+Errore_(&quot;Errore nell'apertura della coda di msg del server\n&quot;); <br />
+} <br />
+<br />
+// ricezione indice di selezione del messaggio che si vuole leggere <br />
+ris = msgrcv(id_coda_server, &amp;cod, sizeof(ind_inviato), pid_client, 0); <br />
+if(ris == -1){ <br />
+printf(&quot;impossibile aprire la coda del server&quot;); <br />
+exit(1); <br />
+} <br />
+<br />
+codice = cod.n_mess; <br />
+coda_client = cod.canale_risposta; <br />
+<br />
+/* APRO IL FILE INDICE*/ <br />
+ds_main = open(mainfile, O_RDONLY, 0660); <br />
+if(ds_main == -1){ <br />
+printf(&quot;impossibile aprire il file indice&quot;); <br />
+exit(1); <br />
+} <br />
+<br />
+// calcolo posizionamento file pointer <br />
+size = sizeof(indice); <br />
+int pos = cod.n_mess - 1; <br />
+offset = offset + (pos * size) + 1; //ora sappiamo dove andare a leggere nel file <br />
+<br />
+ris = lseek(ds_main, offset, 0);//posizioniamo il file pointer sulla struttura giusta <br />
+if (ris == -1) <br />
+Errore_(&quot;Errore nel posizionamento del file pointer\n&quot;); <br />
+<br />
+/*LEGGO IL NOME DEL FILE CHE CONTIENE IL MESSAGGIO*/ <br />
+ris = read(ds_main, &amp;msg_info, sizeof(indice)); <br />
+if(ris == -1){ <br />
+printf(&quot;impossibile leggere il nome del file del messaggio&quot;); <br />
+exit(3); <br />
+} <br />
+<br />
+strcpy(nome, msg_info.file_txt); <br />
+<br />
+/*APRO IL FILE DI TESTO*/ <br />
+des = open(nome, O_RDONLY, 0660); <br />
+if(des == -1){ <br />
+printf(&quot;impossibile aprire il messaggio&quot;); <br />
+exit(4); <br />
+} <br />
+<br />
+char testo_msg[512]; <br />
+<br />
+/*LEGGO TUTTO IL FILE DEL TESTO E LO COPIO NELL'AREA DI MEMORIA PUNTATA DA punt*/ <br />
+ris = read(des, &amp;testo_msg, 512); <br />
+if(ris == -1){ <br />
+printf(&quot;impossibile leggere il messaggio&quot;); <br />
+exit(6); <br />
+} <br />
+<br />
+strcpy(msg.messaggio, testo_msg); <br />
+strcpy(msg.user, msg_info.user); <br />
+strcpy(msg.oggetto, msg_info.oggetto); <br />
+msg.mess_id = msg_info.mess_id; <br />
+msg.mtype = 9; <br />
+<br />
+/*INVIO IL MESSAGGIO ALLA CODA DEL CLIENT */ <br />
+inviato= msgsnd(coda_client, &amp;msg, sizeof(mes_leggere),0); <br />
+if(ris == -1){ <br />
+printf(&quot;impossibile inviare il messaggio&quot;); <br />
+exit(-1); <br />
+} <br />
+<br />
+<br />
+close(ds_main); <br />
+close(des); <br />
+<br />
+//sblocco semaforo 1 lettura (incrementa di uno quello che aveva decrementato prima) <br />
+oper.sem_op = 1; <br />
+oper.sem_flg = 0; <br />
+oper.sem_num = j; <br />
+ris = semop ((int) ds_sem1, &amp;oper, 1); <br />
+if (ris == -1) <br />
+Errore_(&quot;Errore nella chiamata semop sul semaforo 1\n&quot;); <br />
+} <br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+//------------------------------------------------------------------------------ <br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+void * scrivi(void * richiesta) { <br />
+<br />
+int ris; <br />
+struct sembuf oper; <br />
+<br />
+ric_servizio ric_aux; <br />
+memcpy (&amp;ric_aux, &amp;richiesta, sizeof(ric_servizio)); <br />
+<br />
+// sblocco semaforo2 proteggeva da scritture la struttura richiesta di servizio nel main <br />
+oper.sem_op = 1; <br />
+oper.sem_num = 0; <br />
+oper.sem_flg = 0; <br />
+ris = semop ((int) ds_sem2, &amp;oper, 1); <br />
+if (ris == -1) <br />
+Errore_(&quot;Errore nella chiamata semop sul semaforo 2\n&quot;); <br />
+<br />
+<br />
+<br />
+indice messaggio; <br />
+int ds_nuovo, ds_file, rich_invio; <br />
+mes_inviato msg2write; <br />
+conf ok; <br />
+char user[20]; <br />
+char oggetto[100]; <br />
+char testo[512]; <br />
+int testo_dim; <br />
+int n_mess; <br />
+int coda_client = ric_aux.canale_risposta; <br />
+<br />
+ok.mtype= 9; <br />
+rich_invio= msgsnd(coda_client,&amp;ok,sizeof(conf)); <br />
+if(rich_invio==-1){ <br />
+printf(&quot;impossibile inviare conferma al client&quot;); <br />
+exit(1); <br />
+} <br />
+<br />
+int id_coda_server = msgget(KEY_SERVER, IPC_CREAT | 0666); //apre coda del sever <br />
+if(id_coda_server == -1) { <br />
+Errore_(&quot;Errore nell'apertura della coda di msg del server\n&quot;); <br />
+} <br />
+<br />
+ris = msgrcv(id_coda_server, &amp;msg2write, sizeof(mes_inviato),12, 0); <br />
+if(ris == -1){ <br />
+printf(&quot;Errore nella chiamata msgrcv sulla coda server\n&quot;); <br />
+exit(1); <br />
+} <br />
+<br />
+<br />
+strcpy(user, msg2write.user); <br />
+strcpy(oggetto, msg2write.oggetto); <br />
+strcpy(testo, msg2write.messaggio); <br />
+<br />
+<br />
+//ciclo che blocca tutti i semafori in lettura e in eliminazione <br />
+oper.sem_op = -1; <br />
+oper.sem_flg = 0; <br />
+int i; <br />
+for (i=0; i&lt;num_client; i++) { <br />
+oper.sem_num = i; <br />
+ris = semop ((int) ds_sem1, &amp;oper, 1); <br />
+if (ris == -1) <br />
+Errore_(&quot;Errore nella chiamata semop sul semaforo 1\n&quot;); <br />
+} <br />
+<br />
+<br />
+<br />
+<br />
+// apertura e lettura numero messaggi presenti <br />
+int ds_main = open(mainfile, O_RDWR, 0660); <br />
+if (ds_main == -1) <br />
+Errore_(&quot;Errore nell'apertura del file\n&quot;); <br />
+<br />
+ris = read(ds_main, &amp;n_mess, 4); <br />
+if (ris == -1) <br />
+Errore_(&quot;Errore nella lettura del file\n&quot;); <br />
+<br />
+<br />
+<br />
+char nome_mess[12]; <br />
+int num = n_mess + 1; <br />
+<br />
+// creazione nome del nuovo file <br />
+sprintf(nome_mess,&quot;messaggio%d&quot;,num); <br />
+<br />
+// creazione file contenente testo del messaggio ricevuto <br />
+ds_nuovo = open(nome_mess, O_WRONLY|O_TRUNC|O_CREAT, 0666); <br />
+if(ds_nuovo == -1){ <br />
+printf(&quot;impossibile creare il file di testo&quot;); <br />
+exit(1); <br />
+} <br />
+<br />
+/*SCRIVE IN QUESTO FILE IL TESTO char* testo PASSATO DAL SERVER*/ <br />
+ris = write(ds_nuovo,testo,512); <br />
+if(ris == -1){ <br />
+printf(&quot;impossibile scrivere il file di testo&quot;); <br />
+exit(1); <br />
+} <br />
+<br />
+/* riempio LA STRUTTURA INDICE*/ <br />
+messaggio.mess_id = num; <br />
+strcpy(messaggio.file_txt, nome_mess); <br />
+strcpy(messaggio.user, user); <br />
+strcpy(messaggio.oggetto, oggetto); <br />
+<br />
+//posizioniamo il file pointer sul punto giusto <br />
+ris = lseek(ds_main, 0, 2); <br />
+if (ris == -1) <br />
+Errore_(&quot;Errore nel posizionamento del file pointer\n&quot;); <br />
+<br />
+/*SCRIVO LA STRUTTURA NEL FILE*/ <br />
+ris = write(ds_main, &amp;messaggio, sizeof(indice)); <br />
+if(ris == -1){ <br />
+printf(&quot;impossibile scrivere nel file&quot;); <br />
+exit(1); <br />
+} <br />
+<br />
+<br />
+// riposizionamento del file pointer del file indice <br />
+ris = lseek(ds_main, 0, 0); <br />
+if (ris == -1) <br />
+Errore_(&quot;Errore nel posizionamento del file pointer\n&quot;); <br />
+<br />
+//scrittura nuovo numero di messaggi <br />
+n_mess++; <br />
+ris = write(ds_main, &amp;n_mess, 4); <br />
+if (ris == -1) <br />
+Errore_(&quot;Errore nella scrittura del file\n&quot;); <br />
+<br />
+/*CHIUDO I FILE APERTI */ <br />
+close(ds_nuovo); // file contenente il testo <br />
+close(ds_file); // file indice <br />
+<br />
+//sblocco dei semafori <br />
+oper.sem_op = 1; <br />
+for (i=0; i&lt;num_client; i++) { <br />
+oper.sem_num = i; <br />
+ris = semop ((int) ds_sem1, &amp;oper, 1); <br />
+if (ris == -1) <br />
+Errore_(&quot;Errore nella chiamata semop sul semaforo 1\n&quot;); <br />
+} <br />
+} <br />
+<br />
+<br />
+<br />
+<br />
+<br />
+//------------------------------------------------------------------------------ <br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+void * visualizza(void* richiesta) { <br />
+<br />
+int ris; <br />
+struct sembuf oper; <br />
+<br />
+ric_servizio ric_aux; <br />
+memcpy (&amp;ric_aux, &amp;richiesta, sizeof(ric_servizio)); <br />
+<br />
+// sblocco semaforo2 proteggeva da scritture la struttura richiesta di servizio nel main <br />
+oper.sem_op = 1; <br />
+oper.sem_num = 0; <br />
+oper.sem_flg = 0; <br />
+ris = semop ((int) ds_sem2, &amp;oper, 1); <br />
+if (ris == -1) <br />
+Errore_(&quot;Errore nella chiamata semop sul semaforo 2\n&quot;); <br />
+<br />
+// blocco semaforo 1 lettura (il primo che trova a 1 lo decrementa) <br />
+oper.sem_op = -1; <br />
+oper.sem_flg = IPC_NOWAIT; <br />
+int sbloccato = 0; <br />
+int j = 0; <br />
+<br />
+while(!sbloccato) { <br />
+if(j == num_client) <br />
+j=0; <br />
+oper.sem_num = j; <br />
+ris = semop ((int) ds_sem1, &amp;oper, 1); <br />
+if (ris == -1) { <br />
+j++; <br />
+} <br />
+else <br />
+sbloccato = 1; <br />
+} <br />
+<br />
+// apertura file indice <br />
+int ds_main = open(mainfile, O_RDWR, 0660); <br />
+if (ds_main == -1) <br />
+Errore_(&quot;Errore nell'apertura del file\n&quot;); <br />
+<br />
+<br />
+indice msg_info; <br />
+int n_mess; <br />
+<br />
+// lettura del numero di messaggi residenti in bacheca <br />
+ris = read(ds_main, &amp;n_mess, 4); <br />
+if (ris == -1) <br />
+Errore_(&quot;Errore nella lettura del file\n&quot;); <br />
+n_messaggi num; <br />
+num.n_mess = n_mess; <br />
+num.mtype = 9; <br />
+int ds_coda = ric_aux.canale_risposta; <br />
+<br />
+// invio del numero di messaggi <br />
+ris = msgsnd(ds_coda, &amp;num, sizeof(n_messaggi), 0); <br />
+if (ris == -1) <br />
+Errore_(&quot;Errore nella chiamata della msgsnd\n&quot;); <br />
+<br />
+int i = 0; <br />
+<br />
+// invio delle strutture per creare indice al client <br />
+while (i&lt;n_mess) { <br />
+memset(&amp;msg_info,0,sizeof(indice)); <br />
+msg_info.mtype = 9; <br />
+ris = read(ds_main, &amp;msg_info, sizeof(indice)); <br />
+if (ris == -1) <br />
+Errore_(&quot;Errore nella lettura del file\n&quot;); <br />
+ris = msgsnd(ds_coda, &amp;msg_info, sizeof(indice), 0); <br />
+if (ris == -1) <br />
+Errore_(&quot;Errore nella chiamata della msgsnd\n&quot;); <br />
+i++; <br />
+} <br />
+// chiusura file indice <br />
+close(ds_main); <br />
+<br />
+//sblocco semaforo 1 lettura (incrementa di uno quello che aveva decrementato prima) <br />
+oper.sem_op = 1; <br />
+oper.sem_flg = 0; <br />
+oper.sem_num = j; <br />
+ris = semop((int) ds_sem1, &amp;oper, 1); <br />
+if (ris == -1) <br />
+Errore_(&quot;Errore nella chiamata semop sul semaforo 1\n&quot;); <br />
+<br />
+long pid = ric_aux.pid_client; <br />
+long type = ric_aux.mtype; <br />
+<br />
+if (n_mess &gt; 0) { <br />
+if(type == 1) <br />
+leggi(pid); <br />
+else if (type == 3) <br />
+elimina(pid); <br />
+} <br />
+<br />
+} <br />
+<br />
+<br />
+<br />
+<br />
+//------------------------------------------------------------------------------ <br />
+<br />
+<br />
+<br />
+<br />
+int defrag(int ds_main) { <br />
+<br />
+int ris; <br />
+indice msg; <br />
+int n_mess; <br />
+/*creo un file ausilario dove andrò a mettere solo le strutture 'piene' cioè quelle non cancellate*/ <br />
+<br />
+int ds_aux = open(&quot;auxfile&quot;, O_WRONLY|O_TRUNC|O_CREAT, 0666); <br />
+if (ris == -1) <br />
+Errore_(&quot;Errore nella creazione del file\n&quot;); <br />
+<br />
+/*con questo ciclo while vado a copiare una per una le strutture 'piene' del file da riordinare nel file ausiliario*/ <br />
+<br />
+ris = read(ds_main, &amp;n_mess, 4); <br />
+if (ris == -1) <br />
+Errore_(&quot;Errore nella lettura del file\n&quot;); <br />
+<br />
+int n = n_mess -1; <br />
+<br />
+// scrittura nel nuovo file main del numero di messaggi presenti <br />
+ris = write(ds_aux, &amp;n, 4); <br />
+if (ris == -1) <br />
+Errore_(&quot;Errore nella scrittura del file\n&quot;); <br />
+<br />
+int i = 1; <br />
+int trovato = 0: <br />
+<br />
+// copia di tutte le strutture dal main file al file ausiliario <br />
+while(i&lt;=n_mess){ <br />
+i++; <br />
+memset(&amp;msg,0,sizeof(indice)); <br />
+ris = read(ds_main, &amp;msg, sizeof(indice)); <br />
+if (ris == -1) <br />
+Errore_(&quot;Errore nella lettura del file\n&quot;); <br />
+if(msg.mess_id == -1){ <br />
+trovato = 1; <br />
+continue; <br />
+} <br />
+if(trovato) <br />
+msg.mess_id -= 1; // aggiornamento id <br />
+ris = write(ds_aux, &amp;msg, sizeof(indice)); <br />
+if (ris == -1) <br />
+Errore_(&quot;Errore nella scrittura del file\n&quot;); <br />
+} <br />
+<br />
+/*adesso cancello il vecchio file main non ordinato */ <br />
+<br />
+ris = open(filename, O_TRUNC, 0666); <br />
+if (ris == -1) <br />
+Errore_(&quot;Errore nella modifica del file pointer\n&quot;); <br />
+<br />
+<br />
+<br />
+// rinomina del file ausiliario in main file <br />
+ris = rename(&quot;auxfile&quot;, mainfile); <br />
+if (ris == -1) <br />
+Errore_(&quot;Errore nella modifica del file pointer\n&quot;); <br />
+<br />
+<br />
+<br />
+return ds_aux; <br />
+} <br />
+<br />
+<br />
+<br />
+<br />
+<br />
+//------------------------------------------------------------------------------ <br />
+<br />
+<br />
+<br />
+<br />
+<br />
+int elimina (void * pid_client, int j) { <br />
+ind_inviato indice_sel; //struttura che contiene l'indice del msg da cancellare <br />
+indice msg_info; //struttura che deve contenere info sul messaggio da eliminare <br />
+long offset = 4; //serve x trovare la struttura nel file di indici <br />
+int ris; //verifica il &quot;ritorno&quot; di alcune funzioni <br />
+int ds_main; //descrittore del file di indici <br />
+int ds_text; //serve x mettere il nome del file da cancellare <br />
+indice auxmsg; //struttura ausiliaria <br />
+<br />
+struct sembuf oper; <br />
+<br />
+//sblocco semaforo j <br />
+oper.sem_op = 1; <br />
+oper.sem_flg = 0; <br />
+oper.sem_num = j; <br />
+<br />
+ris = semop ((int) ds_sem1, &amp;oper, 1); <br />
+if (ris == -1) <br />
+Errore_(&quot;Errore nella chiamata semop sul semaforo 1\n&quot;); <br />
+<br />
+<br />
+<br />
+<br />
+int id_coda_server = msgget(KEY_SERVER, IPC_CREAT | 0666); //apre coda del sever <br />
+if(id_coda_server == -1) { <br />
+Errore_(&quot;Errore nell'apertura della coda di msg del server\n&quot;); <br />
+} <br />
+<br />
+ris = msgrcv(id_coda_server, indice_sel, sizeof(ind_inviato), pid_client, 0); <br />
+if (ris == -1) <br />
+Errore_(&quot;Errore nella chiamata della msgrcv\n&quot;); <br />
+<br />
+<br />
+//ciclo che blocca tutti i semafori in lettura e in scrittura <br />
+oper.sem_op = -1; <br />
+oper.sem_flg = 0; <br />
+int i; <br />
+for (i=0; i&lt;num_client; i++) { <br />
+oper.sem_num = i; <br />
+ris = semop ((int) ds_sem1, &amp;oper, 1); <br />
+if (ris == -1) <br />
+Errore_(&quot;Errore nella chiamata semop sul semaforo 1\n&quot;); <br />
+} <br />
+<br />
+<br />
+<br />
+ds_main = open(mainfile, O_RDWR, 0660); <br />
+if (ds_main == -1) <br />
+Errore_(&quot;Errore nell'apertura del file\n&quot;); <br />
+<br />
+/*trova il file da cancellare nel 'file di indici'*/ <br />
+<br />
+int size = sizeof(indice); <br />
+int pos = indice_sel.n_mess - 1; <br />
+offset = offset + (pos * size) + 1; //ora sappiamo dove andare a leggere nel file <br />
+<br />
+ris = lseek(ds_main, offset, 0);//posizioniamo il file pointer sulla struttura giusta <br />
+if (ris == -1) <br />
+Errore_(&quot;Errore nel posizionamento del file pointer\n&quot;); <br />
+<br />
+ris = read(ds_main, &amp;msg_info, sizeof(indice));//mettiamo info del file da eliminare in <br />
+if (ris == -1) //una struttura <br />
+Errore_(&quot;Errore nella lettura del file\n&quot;); <br />
+<br />
+/*una volta trovato il file giusto, ne identifica il nome e lo cancella*/ <br />
+<br />
+ds_text = open(msg_info.file_txt, O_TRUNC, 0660); <br />
+if (ris == -1) <br />
+Errore_(&quot;Errore nell'eliminazione del file\n&quot;); <br />
+<br />
+/*ora bisogna rimuovere la struttura dal 'file di indici'...*/ <br />
+<br />
+<br />
+ris = lseek(ds_main, offset, 0); /*questa riposiziona l'indice di lett/scritt*/ <br />
+if (ris == -1) <br />
+Errore_(&quot;Errore nella modifica del file pointer\n&quot;); <br />
+<br />
+<br />
+/*...per farlo copio una struttura vuota dello stesso tipo con campo mess_id uguale a <br />
+-1 che indica una posizione vuota*/ <br />
+<br />
+auxmsg.mess_id = -1; <br />
+ris = write(ds_main, &amp;auxmsg, sizeof(indice)); <br />
+if (ris == -1) <br />
+Errore_(&quot;Errore nell'aggiornamento del file\n&quot;); <br />
+<br />
+ds_main = defrag(ds_main); <br />
+<br />
+close(ds_main); <br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+// sblocco dei semafori <br />
+oper.sem_op = 1; <br />
+for (i=0; i&lt;num_client; i++) { <br />
+oper.sem_num = i; <br />
+ris = semop ((int) ds_sem1, &amp;oper, 1); <br />
+if (ris == -1) <br />
+Errore_(&quot;Errore nella chiamata semop sul semaforo 1\n&quot;); <br />
+} <br />
+<br />
+} <br />
+<br />
+<br />
+<br />
+<br />
+//------------------------------------------------------------------------------ <br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+int main(int argc, char *argv[]) { <br />
+typedef struct{ /*serve per passare i parametri della funzione al thread*/ int n_mess; <br />
+} param; <br />
+param par_eli; <br />
+ric_servizio richiesta; <br />
+int ris; <br />
+pthread_t tid; <br />
+long type; //tipo di richiesta <br />
+long chiave_msgserv = 40; //chiave per creare coda di msg del server...un numero a caso <br />
+long ds_msgserv; //descrittore coda di messaggi del server <br />
+int n_mess; <br />
+int ds_file; <br />
+<br />
+<br />
+<br />
+ris = creat(mainfile, 0666); //crea il file di indici <br />
+if (ris == -1) <br />
+Errore_(&quot;Errore nella creazione del file di indici\n&quot;); <br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+// semaforo per sincronizzazione tra lettori, scrittori ed eliminatori <br />
+int ds_sem1 = semget (key_sem1, num_client, IPC_CREAT | 0666);//crea l'array di semafori <br />
+if (ds_sem1 == -1) <br />
+Errore_(&quot;Errore nella creazione del semaforo 1\n&quot;); <br />
+<br />
+int array[num_client]; <br />
+int i; <br />
+for(i=0; i&lt;num_client; i++) <br />
+array[i] = 1; <br />
+<br />
+ris = semctl(ds_sem1, 0, SETALL, array); <br />
+if (ris == -1) <br />
+Errore_(&quot;Errore nell'inizializzazione del semaforo 1\n&quot;); <br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+//il semaforo 2 serve per bloccare sovrascritture della struttura da passare alle funzioni <br />
+int ds_sem2 = semget(key_sem2, 1, IPC_CREAT | 0666); <br />
+if (ds_sem2 == -1) <br />
+Errore_(&quot;Errore nella creazione del semaforo 2\n&quot;); <br />
+<br />
+ris = semctl(ds_sem2, 0, SETVAL, 1); <br />
+if (ris == -1) <br />
+Errore_(&quot;Errore nell'inizializzazione del semaforo 2\n&quot;); <br />
+<br />
+struct sembuf oper; <br />
+oper.sem_op = -1; <br />
+oper.sem_num = 0; <br />
+oper.sem_flg = 0; <br />
+<br />
+<br />
+<br />
+// creazione coda server <br />
+ds_msgserv = msgget(chiave_msgserv, IPC_CREAT|IPC_EXCL|0666); <br />
+if (ds_msgserv == -1) { <br />
+ds_msgserv = msgget(chiave_msgserv, IPC_CREAT|0666); <br />
+msgctl(ds_msgserv, IPC_RMID, NULL); <br />
+ds_msgserv = msgget(chiave_msgserv, IPC_CREAT|IPC_EXCL|0666); <br />
+if(ds_msgserv == -1) Errore_(&quot;Errore nella chiamata msgget&quot;); <br />
+} <br />
+<br />
+while(1){ <br />
+<br />
+//attivazione di semaforo2 che blocca sovrascrittura di richiesta <br />
+ris = semop (ds_sem2, &amp;oper, 1); <br />
+if (ris == -1) <br />
+Errore_(&quot;Errore nella chiamata della semop sul semaforo 2\n&quot;); <br />
+<br />
+<br />
+<br />
+ris = msgrcv(ds_msgserv, &amp;richiesta, sizeof(ric_servizio), -3, 0); <br />
+if (ris == -1) <br />
+Errore_(&quot;Errore nella chiamata della msgrcv\n&quot;); <br />
+type = richiesta.mtype; <br />
+<br />
+if (type == 1 || type == 3) { <br />
+ris = pthread_create(&amp;tid, NULL, visualizza,(void*) &amp;richiesta); <br />
+if (ris != 0) <br />
+Errore_(&quot;Errore nella crezione del thread\n&quot;); <br />
+} <br />
+else if (type == 2) { <br />
+ris = pthread_create(&amp;tid, NULL, scrivi, (void*) &amp;richiesta); <br />
+if (ris != 0) <br />
+Errore_(&quot;Errore nella crezione del thread\n&quot;); <br />
+} <br />
+} <br />
+}</div></div><hr />
+
+
+<div id="copyright">vBulletin&reg; v3.6.4, Copyright &copy;2000-2007, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

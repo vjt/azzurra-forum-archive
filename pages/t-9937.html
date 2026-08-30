@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="[C]problema con struttuta di controllo if else, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] [C]problema con struttuta di controllo if else Programmazione e dintorni" />
+		<title>[C]problema con struttuta di controllo if else [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-23.html">Programmazione e dintorni</a> &gt; [C]problema con struttuta di controllo if else</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=9937">[C]problema con struttuta di controllo if else</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">viridovix</div><div class="date">11-08-2005, 13:58</div></div><div class="posttext">IL codice in C gira sotto Linux 9.2, compilatore gcc.<br />
+Si tratta sempre di un client e server connessi tra loro tramite socket, con protocollo tcp.<br />
+<br />
+qui riporto la parte del server con la struttura if:<br />
+<br />
+<br />
+<br />
+char x[1024],y[1024];<br />
+  unsigned char z,w;<br />
+  char buf[1024];<br />
+  char buf2[1024];<br />
+  do<br />
+	{<br />
+	  send(ds_sock_acc,&quot;\nInserisci fila :&quot;,20,0);<br />
+	  recv(ds_sock_acc,&amp;x,2,0);<br />
+	  printf(&quot;%s&quot;,&amp;x);<br />
+	  if ((strcmp(x,&quot;A&quot;)!=0)||(strcmp(x,&quot;B&quot;)!=0)||(strcmp(x,&quot;C&quot;)!=0)) <br />
+			{<br />
+				 send(ds_sock_acc,&quot;\nfila inesistente\n&quot;,30,0);<br />
+			 }<br />
+	   else (strcpy(buf,&quot;fatto&quot;));<br />
+	 }<br />
+	while (strcmp(buf,&quot;fatto&quot;)!=0);<br />
+<br />
+<br />
+purtroppo nn so perchè questo nn funziona :<br />
+if ((strcmp(x,&quot;A&quot;)!=0)||(strcmp(x,&quot;B&quot;)!=0)||(strcmp(x,&quot;C&quot;)!=0)) <br />
+<br />
+se inserisco dal client il carattere A o B o C comunque sia il sever spedisce il messaggio fila inesistente.<br />
+<br />
+modificando cosi' riconosce invece ol carattere A:<br />
+<br />
+if ((strcmp(x,&quot;A&quot;)!=0) <br />
+{<br />
+    send(ds_sock_acc,&quot;\nfila inesistente\n&quot;,30,0);<br />
+}<br />
+<br />
+ma ovviamente nn mi fa gli altri confronti<br />
+se modifico ulteriormente cosi<br />
+<br />
+if ((strcmp(x,&quot;A&quot;)!=0) <br />
+{<br />
+    send(ds_sock_acc,&quot;\nfila inesistente\n&quot;,30,0);<br />
+}<br />
+<br />
+else if (strcmp(x,&quot;B&quot;)!=0)<br />
+         {<br />
+    send(ds_sock_acc,&quot;\nfila inesistente\n&quot;,30,0);<br />
+   }<br />
+<br />
+ritorno al problema iniziale qualsiasi carattrere invio da client poi il server spedisce il messaggio fila inesistente.<br />
+<br />
+nn riesco a capire dove sia la magagna :(</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gastaman</div><div class="date">14-08-2005, 17:48</div></div><div class="posttext">Quell'if è sempre vero, per non esserlo x dovrebbe essere contemporaneamente &quot;A&quot;, &quot;B&quot; e &quot;C&quot;... devi usare &amp;&amp; al posto di ||.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">viridovix</div><div class="date">14-08-2005, 20:26</div></div><div class="posttext">if ((strcmp(x,&quot;A&quot;)==0)||(strcmp(x,&quot;B&quot;)==0)||(strcmp(x,&quot;C&quot;)==0)) <br />
+   {  	{<br />
+    strcpy(buf,&quot;fatto&quot;));<br />
+    }<br />
+	   else (strcpy(buf,&quot;fatto&quot;));<br />
+    send(ds_sock_acc,&quot;\nfila inesistente\n&quot;,30,0);<br />
+  }<br />
+	while (strcmp(buf,&quot;fatto&quot;)!=0);<br />
+ <br />
+ cosi funziona mettendo gli and nn svolgerebbe il suo compito, grazie x l'aiuto :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">sottovento</div><div class="date">21-11-2005, 10:35</div></div><div class="posttext">In effetti ha ragione Gastaman, devono essere degli AND (&amp;&amp;).<br />
+Ti sembra che non funzioni perche' hai problemi da altre parti:<br />
+recv(ds_sock_acc,&amp;x,2,0);<br />
+printf(&quot;%s&quot;,&amp;x);<br />
+<br />
+essendo x dichiarato come char x[1024], dovresti togliere gli &amp;. Vai a scrivere in una locazione inesistente che, per tua fortuna, era all'interno del tuo spazio di indirizzamento. Questo dunque ha impedito alla tua applicazione di andare in crash.<br />
+<br />
+Ricorda di controllare l'esito della send e recv!!!<br />
+<br />
+ciao<br />
+sottovento</div></div><hr />
+
+
+<div id="copyright">vBulletin v3.5.3, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

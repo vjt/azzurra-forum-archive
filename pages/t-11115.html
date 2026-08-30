@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Ssl, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] Ssl Angolo tecnico" />
+	
+	<title>Ssl [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php/">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-13.html">Angolo tecnico</a> &gt; Ssl</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=11115">Ssl</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">trekfan1</div><div class="date">08-10-2005, 16:09</div></div><div class="posttext">Da un pò di tempo volevo usare SSL ma il metodo descritto nell'apposita sezione del sito di azzurra non sembrava andare, ma dopo un pò non so come mi sono trovato il pulsante SSL in Options/connect/options e preciso che i file libeay32.dll e ssleay32.dll non sono presenti nelle cartelle dei vari mirc che ho su HD, oggi mentre chattavo con uno, mi ha detto che forse li avevo in C:\Windows\System32 e infatti erano li, ho provato a copiarli nella stessa posizione su un'altro dei miei pc e bingo! Pulsante SSL anche sul mirc aperto sull'altro pc<br />
+<br />
+Preciso che uso mIRC 6.16</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Delphino</div><div class="date">11-10-2005, 08:57</div></div><div class="posttext">le linee guida sul sito di Azzurra sono corrette<br />
+c'è però un problema di impacchettamento del set di librerie SSL da parte di stunnel<br />
+da una certa versione (credo 0.97.f) è stato deciso di cambiare nome ad una delle due DLL, semplicemente la libssl32.dll va rinominata in ssleay32.dll, tutto qui<br />
+<br />
+poi che le librerie siano nella cartella di mIRC o nella system32 o nella windows è uguale, l'ordine delle ricerca delle librerie include tutti quei percorsi<br />
+<br />
+ciao</div></div><hr />
+
+
+<div id="copyright">vBulletin&reg; v3.6.7, Copyright &copy;2000-2007, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

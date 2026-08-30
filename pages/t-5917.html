@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Preimpostare nick e password..?, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] Preimpostare nick e password..? Javirc" />
+		<title>Preimpostare nick e password..? [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-6.html">Network Central</a> &gt; <a href="f-36.html">Javirc</a> &gt; Preimpostare nick e password..?</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=5917">Preimpostare nick e password..?</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">}gu|do[z]{®©</div><div class="date">19-10-2004, 23:56</div></div><div class="posttext">Salve..  volevo sapere se era possibile far preimpostare agli utenti del mio sito il nick e la relativa password in un form...  come accade nella home page di azzurra.org<br />
+<br />
+o meglio ancora.. più che altro stavo pensando di integrare tutti i servizi del sito in modo che con un unico login gli utenti potessero accere a forum aree private e altri servizi.. e pensavo &quot;già che ci sono se mi memorizzo nel db i loro nick e password della chat.. basterà che siano loggati al sito per entrare in chat dall'applet direttamente autenticati&quot;.. è possibile questo? <br />
+<br />
+nel codice dell'applet ho visto un parametro relativo al nickname... chiaramente usando il php posso far sì che all'applet venga passato come parametro il reale nickname dell'utente (se loggato)...  ma per la password?<br />
+<br />
+c'è un parametro dell'applet (ed eventualmente in quale modello di javachat c'è?) che pemrette di inviare direttamente la password del nickserv?<br />
+<br />
+spero di sì.. sarebbe davvero una cosa fighissima ^_^<br />
+<br />
+grazie<br />
+<br />
+ciauz</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Alex1</div><div class="date">20-10-2004, 08:15</div></div><div class="posttext">in qualunque modello di applet puoi settare nick e passwd come variabili che il sito fornisce a seconda del login dell'utente; come ricavare la variabile dipende da come è stato però impostato il sito.<br />
+nel caso della javirc i parametri variabili sono<br />
+&amp;lt;PARAM NAME=&quot;UserName&quot; VALUE=&quot;XXXXXX&quot;&amp;gt;<br />
+&amp;lt;PARAM NAME=&quot;FirstCommand&quot; VALUE=&quot;ns identify XXXXX;MOTD;JOIN #canale;&quot;&amp;gt;<br />
+<br />
+dove le XXXX sono i valori variabili</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">}gu|do[z]{®©</div><div class="date">20-10-2004, 10:07</div></div><div class="posttext">perfetto, come già detto mi mancava il secondo parametro ^_^<br />
+<br />
+grazie :)</div></div><hr />
+
+
+<div id="copyright">vBulletin v3.5.3, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

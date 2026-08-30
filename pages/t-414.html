@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="compilare bahamut su win, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] compilare bahamut su win Programmazione e dintorni" />
+		<title>compilare bahamut su win [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-23.html">Programmazione e dintorni</a> &gt; compilare bahamut su win</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=414">compilare bahamut su win</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">PaDrino</div><div class="date">08-03-2002, 01:10</div></div><div class="posttext">Salve ultimamente ho installato su win2k cygwin con compilatore gcc e altri file che servono per la compilazione. Ora quando tento di compilare bahamut e lancio il comando make mi da sempre un'errore:<br />
+<br />
+make[1]: Entering directory `/home/bahamut-release-1.4.32/src'<br />
+gcc -Wall -g -O2 -DFD_SETSIZE=1024 -DUSE_POLL -I../include -I../zlib -c blalloc.<br />
+c<br />
+In file included from ../include/config.h:306,<br />
+                 from ../include/struct.h:28,<br />
+                 from blalloc.c:11:<br />
+../include/defs.h:33: #error Could not find dn_skipname() or __dn_skipname()<br />
+make[1]: *** [blalloc.o] Error 1<br />
+make[1]: Leaving directory `/home/bahamut-release-1.4.32/src'<br />
+Building tools<br />
+make[1]: Entering directory `/home/bahamut-release-1.4.32/tools'<br />
+gcc -Wall -g -O2 -DFD_SETSIZE=1024 -DUSE_POLL -I../include -c viconf.c<br />
+In file included from ../include/config.h:306,<br />
+                 from viconf.c:6:<br />
+../include/defs.h:33: #error Could not find dn_skipname() or __dn_skipname()<br />
+make[1]: *** [viconf.o] Error 1<br />
+<br />
+Cosa posso fare per risolvere questo errore?<br />
+P.S non ci capisco molto di c :razz:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Shaka</div><div class="date">08-03-2002, 14:02</div></div><div class="posttext">La distribuzione ufficiale di bahamut rilasciata da dal.net non è compilabile su Windows (ne mai lo sarà stando ai loro coders).<br />
+<br />
+Shaka</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Koper</div><div class="date">02-04-2002, 15:58</div></div><div class="posttext">Beh.. se stai installando la .30 anche a me con linux ha dato molti problemi di quel tipo.. prova con la .32 (che trovi non a dal.net ma ftp.bahamut.net)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Progeny</div><div class="date">02-04-2002, 20:25</div></div><div class="posttext">http://bahamut.dal.net<br />
+At the moment, there is no windows-compatible Bahamut. Don't ask, support is not planned.<br />
+bye</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ext</div><div class="date">21-05-2002, 21:36</div></div><div class="posttext">Fanno bene a non codare niente per win, se funziona una cosa con unix, perche` bisogna perdere tempo con Window$? (OT) :)<br />
+<br />
+--ext</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Shaka</div><div class="date">22-05-2002, 16:20</div></div><div class="posttext">forse perchè a qualcuno potrebbe servire?<br />
+<br />
+Al tempo del passaggio a bahamut una versione windows ci serviva e ce la siamo dovuta fare da noi per mantenere in rete l'unico server NT che era linkato al net. Fosse esistita un versione win già pronta avremmo risparmiato molto tempo :smile:<br />
+<br />
+<br />
+<br />
+_________________<br />
+&lt;font face=Tahoma&gt;Shaka&lt;div style=&quot;width:250px;text-align:center&quot;&gt;&lt;hr style=&quot;color:#333399&quot;size=3&gt;&lt;span&gt;Muore suo nonno, il pulcino<br />
+e pure Raul Giulia ...<br />
+ed è sempre tutta colpa mia&lt;/span&gt;&lt;hr style=&quot;color:#333399&quot;size=3&gt;&lt;/div&gt;&lt;/font&gt;<br />
+<br />
+&lt;font size=-1&gt;[ Questo messaggio &amp;egrave; stato modificato da: Shaka il 2002-05-22 16:21 ]&lt;/font&gt;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ext</div><div class="date">24-05-2002, 22:40</div></div><div class="posttext">scusa shaka, costava tanto mettere unix al posto di win2k? :<br />
+Penso che conveniva, risparmiavate tempo e fatiche ;)<br />
+PS: se quelli di DALNet non ahnno voluto codare niente per window$ ci dev'essere un motivo.<br />
+<br />
+<br />
+--ext<br />
+<br />
+&lt;font size=-1&gt;[ Questo messaggio &amp;egrave; stato modificato da: ext il 2002-05-24 22:44 ]&lt;/font&gt;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">_theone_</div><div class="date">25-05-2002, 00:09</div></div><div class="posttext">Chiedilo a chi ha macchine Windows di produzione stabili e che forniscono servizi a parecchia clientela, se costa tanto mettere unix o meno :smile:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ext</div><div class="date">25-05-2002, 08:35</div></div><div class="posttext">rotfl _theone_ :D<br />
+ <br />
+--ext</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ext</div><div class="date">25-05-2002, 08:39</div></div><div class="posttext">In data 2002-05-25 00:09, _theone_ scrive:<br />
+Chiedilo a chi ha macchine Windows di produzione stabili <br />
+<br />
+uhm stabili non direi proprio ghgh<br />
+<br />
+e che forniscono servizi a parecchia clientela, se costa tanto mettere unix o meno :smile:<br />
+<br />
+_theone_ non credo costa assai mettersi una piccola *bsd box o una debian, e` questione di filosofia &amp; cazzonaggine &amp; noia IMHO.<br />
+Avreste risparmiato solo tempo e fatiche, con maggiori vantaggi e minori costi, questo e` risaputo.<br />
+<br />
+ziao :smile:<br />
+<br />
+--ext</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Shaka</div><div class="date">25-05-2002, 11:48</div></div><div class="posttext">Ricordo a tutti che le assunzioni &quot;*nix è meglio di windows&quot;, &quot;windows è meglio di *nix&quot;, &quot;*nix è meglio di *&quot;, &quot;windows è meglio di *&quot; et simila sono solo il frutto di una mente chiusa che non valuta cosa è meglio x fare una certa cosa.<br />
+<br />
+Che un sistema bsd sia meglio di uno windows per supportare un ircd è vero ma in quel caso, per particolari esigenze (altri servizi che quella macchina ospitavano e che costituivano parte del business di quell'azienda che rendevano possibile l'offrire gratuitamente il servizio irc) non fu possibile sostituire NT, e di certo non potevamo fermarci davanti a questa cosa :smile:<br />
+<br />
+(cmq la macchina NT in questione che runnava il nostro bahawin reggeva 500/600 utenti senza particolari problemi)<br />
+<br />
+_________________<br />
+&lt;font face=Tahoma&gt;Shaka&lt;div style=&quot;width:250px;text-align:center&quot;&gt;&lt;hr style=&quot;color:#333399&quot;size=3&gt;&lt;span&gt;Muore suo nonno, il pulcino<br />
+e pure Raul Giulia ...<br />
+ed è sempre tutta colpa mia&lt;/span&gt;&lt;hr style=&quot;color:#333399&quot;size=3&gt;&lt;/div&gt;&lt;/font&gt;<br />
+<br />
+&lt;font size=-1&gt;[ Questo messaggio &amp;egrave; stato modificato da: Shaka il 2002-05-25 11:50 ]&lt;/font&gt;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ext</div><div class="date">25-05-2002, 12:14</div></div><div class="posttext">ok Shaka, ho capito quali erano le vostre esigenze. :smile:<br />
+<br />
+bye,<br />
+<br />
+--ext</div></div><hr />
+
+
+<div id="copyright">vBulletin v3.5.3, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

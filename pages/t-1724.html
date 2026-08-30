@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content=" Blocco sugli ident imposti da trojan, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio]  Blocco sugli ident imposti da trojan Comunicazioni ufficiali di Azzurra" />
+	
+	<title> Blocco sugli ident imposti da trojan [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="http://forum.azzurra.org/archive/index.php">Azzurra IRC Network Forum</a> &gt; <a href="http://forum.azzurra.org/archive/index.php/f-6.html">Network Central</a> &gt; <a href="http://forum.azzurra.org/archive/index.php/f-19.html">Comunicazioni ufficiali di Azzurra</a> &gt;  Blocco sugli ident imposti da trojan</div>
+<hr />
+<div class="pda"><a href="http://forum.azzurra.org/archive/index.php/t-1724.html?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=1724">Blocco sugli ident imposti da trojan</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">City_Hunter</div><div class="date">27-02-2003, 15:39</div></div><div class="posttext">A seguito di una rilevante diffusione di cloni ospitati su macchine infette, riconoscibili dall'ident name nelle forme * * , *]*[* o codice-numeri (ad esempio RiP-19438), abbiamo deciso di porre un blocco d'accesso per tali maschere.<br />
+<br />
+Chi si ritrovasse coinvolto nel provvedimento può provvedere a cambiare manualmente l'ident name dal proprio client o dall'ident server utilizzato.<br />
+Qualora i tentativi di cambio ident si rivelassero infruttuosi, probabilmente esiste un programma maligno (trojan) che impone il proprio ident ascoltando sulla porta 113 TCP al momento della connessione al server IRC.<br />
+Proprio per le modalità di funzionamento del trojan (il cui processo ha un nome estremamente variabile che non consente di dare indicazioni precise per ciascuna variante), è possibile scoprire il nome dell'eseguibile maligno usando un programma che controlla le porte.<br />
+<br />
+Ad esempio è possibile utilizzare TCPview ( informazioni su http://www.sysinternals.com/ntw2k/source/tcpview.shtml , scaricabile direttamente da http://www.sysinternals.com/files/tcpview.zip ). Purtroppo però questo programma rileva il nome dell'exe che apre la porta 113 protocollo TCP soltanto su Windows NT/2000/XP.<br />
+Al momento della connessione al server IRC, basta guardare la finestra di TCPview per notare quale programma apre la porta 113 in ascolto per imporre il proprio ident (l'ultima volta è capitato che il nome fosse expl0rer.exe).<br />
+Non resta che cancellare questo file dal sistema oltre ad eventuali voci che lo riguardano all'interno del registro di windows, facendo una ricerca col nome dell'eseguibile.<br />
+<br />
+Mi rendo conto che il sistema è un pò laborioso, speriamo che proprio per la sua notevole diffusione questo trojan venga individuato rapidamente dai principali programmi di rimozione (come tauscan e the cleaner) in modo che basti usare uno di questi per individuarlo e cancellarlo dal proprio sistema.</div></div><hr />
+
+
+<div id="copyright">vBulletin&reg; v3.8.2, Copyright &copy;2000-2009, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

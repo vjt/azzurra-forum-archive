@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content=" Moduli open source e moduli closed source, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio]  Moduli open source e moduli closed source Discussioni Linux" />
+	
+	<title> Moduli open source e moduli closed source [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="http://forum.azzurra.org/archive/index.php">Azzurra IRC Network Forum</a> &gt; <a href="http://forum.azzurra.org/archive/index.php/f-8.html">Azzurra - Tech Center</a> &gt; <a href="http://forum.azzurra.org/archive/index.php/f-28.html">Discussioni Linux</a> &gt;  Moduli open source e moduli closed source</div>
+<hr />
+<div class="pda"><a href="http://forum.azzurra.org/archive/index.php/t-4060.html?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=4060">Moduli open source e moduli closed source</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">City_Hunter</div><div class="date">15-02-2004, 21:22</div></div><div class="posttext">L'argomento non è certo storia nuova, ma è rimasto sconosciuto a tutti coloro che non si fossero addentrati negli ingranaggi di Linux o ritrovati nella situazione di dover far funzionare un componente hardware particolare.<br />
+<br />
+Nel corso degli anni, la prospettiva della sempre maggiore presenza di moduli closed source, rilasciati dalle case produttrici hardware, caricati dall'utente finale nel proprio kernel per far funzionare al meglio un componente, ha fatto storcere il naso non poco agli sviluppatori open source.<br />
+<br />
+Verso la fine del 2001 si decise di assegnare ai vari moduli un parametro relativo alla licenza con cui venivano rilasciati e di avvisare l'utente quando questi tentasse dii caricare nel kernel un modulo closed source (il famoso &quot;tainted kernel&quot;).<br />
+Oltre a questo, Linus Torvalds diede il permesso agli sviluppatori più fanatici e insistenti di rendere disponibili le interfacce da loro scritte (ed usate anche dai moduli closed source) soltanto ai moduli con licenza GPL o compatibile. Questo valse solo per le interfacce nuove, scritte da quel momento in poi.<br />
+<br />
+Non tutti gli sviluppatori di moduli si trovarono d'accordo con questa decisione di &quot;limitare&quot; in qualche modo i moduli closed source, come si può leggere in questa pagina:<br />
+http://www.smcc.demon.nl/webcam/tainting.html<br />
+la sua lettura è molto interessante per comprendere a fondo il problema.<br />
+<br />
+Volendo si può anche risalire alla discussione che ne scaturì nella mailing list del kernel di linux:<br />
+http://www.ussg.iu.edu/hypermail/linux/kernel/0110.2/0369.html<br />
+<br />
+A questo punto dò una mia opinione in proposito e invito chi fosse interessato a fare altrettanto.<br />
+A mio parere ogni forma di estremismo è sbagliata e questo vale anche per l'open source.<br />
+Al di là della facilissima aggirabilità delle verifiche di licenza del modulo nel kernel; per esempio basterebbe creare un modulo GPL che faccia da wrapper ad una libreria closed source... e il gioco è fatto. Senza contare che basta modificare parti del kernel di linux (module.h , insmod.c et similia), cosa che chiunque è libero di fare visto che si tratta di software GPL.<br />
+<br />
+Da un lato posso comprendere la volontà di evitare che i moduli closed source diventino un'abitudine troppo frequente.<br />
+Dall'altro mi riesce veramente difficile credere (sono anzi convinto del contrario) che limitando questi moduli, le case hardware cominceranno a rilasciare driver open source. E' molto più probabile che, se i moduli closed source smetteranno di funzionare (ipotesi comunque pessimistica), i produttori HW lascino del tutto il poco supporto offerto a Linux. E questo sarebbe un peccato perchè questi moduli rappresentano spesso e volentieri il modo migliore per utilizzare al meglio il proprio hardware. Chiedete a chi ha una scheda nvidia o ati se rinuncerebbe ai driver nvidia-glx o firegl.<br />
+<br />
+Le case hardware sono società a scopo di lucro, ben intenzionate a proteggere i propri segreti industriali, come è normalissimo che sia.<br />
+I moduli closed source hanno rappresentato fino a questo momento l'unica via di dialogo con i produttori hardware, che hanno fornito le specifiche necessarie per creare dei drivers a patto che parte del loro lavoro restasse segreto (NDA, Non Disclosure Agreement). Se per esempio philips collabora per far funzionare la sua webcam su linux, è ragionevole pensare che non voglia rendere comunque pubblico il proprio algoritmo di compressione e decompressione dell'immagine su cui ha lavorato per anni e che rappresenta una fonte di guadagno importante.</div></div><hr />
+
+
+<div class="post"><div

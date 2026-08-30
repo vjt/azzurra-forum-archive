@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="collegarsi tramite proxy, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] collegarsi tramite proxy Angolo tecnico" />
+		<title>collegarsi tramite proxy [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-13.html">Angolo tecnico</a> &gt; collegarsi tramite proxy</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=7185">collegarsi tramite proxy</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">tarini</div><div class="date">03-02-2005, 13:35</div></div><div class="posttext">ragazzi ho provato a collegarmi ad azzurra tramite alcuni proxy sulla 8080 perche' in universita c'è il router che rompre un po il ca**o bloccando le porte 666*...<br />
+ <br />
+Gli altri server irc che uso non danno problemi mentre azzurra (il mio preferito) mi rimanda ad un link sul forum dove viene spiegato che non e' possibile accedere tramite ip esteri...<br />
+ <br />
+Ora la mia domanda: non e' possibile connettersi tramite qualche proxy italiano? ne conoscete qualcuno? Per me e' totalmente indifferente quale sia basta solo che mi rigiri dalla 6667 alla 8080<br />
+ <br />
+grazie<br />
+ciao</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Azzurra</div><div class="date">03-02-2005, 13:56</div></div><div class="posttext">Usa il nostro CGI-IRC, lo trovi all'indirizzo<br />
+ <br />
+http://webchat.azzurra.org<br />
+ <br />
+Saluti.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">tarini</div><div class="date">03-02-2005, 14:04</div></div><div class="posttext">grazie non la sapevo sta cosa...<br />
+ma proxy accettati da azzurra non ce ne sono?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Azzurra</div><div class="date">03-02-2005, 14:25</div></div><div class="posttext">E' possibile si, a patto che il proxy sia chiuso verso internet.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">tarini</div><div class="date">03-02-2005, 14:27</div></div><div class="posttext">in che senso chiuso?? non potresti suggerirmene tu qualcuno?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Azzurra</div><div class="date">03-02-2005, 14:31</div></div><div class="posttext">LAN INSIDE (Ip privato) &lt;Macchina Proxy&gt; Interfaccia su Internet. (Ip pubblico) <br />
+ <br />
+Tutti i proxy che sono raggiungibili lato internet su Azzurra sono bannati in automatico italiani e non. Se invece nella tua lan c'è un proxy raggiungibile solo dalla tua lan e tramite questo proxy ti connetti ad Azzurra, nessun problema.<br />
+ <br />
+Spero di essere stato chiaro :)<br />
+ <br />
+Ciao,</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">tarini</div><div class="date">03-02-2005, 14:40</div></div><div class="posttext">si ok...<br />
+il problema che all'interno dell'universita non ce nessun proxy irc (credo) e quindi avrei bisogno di un server aperto.... da quanti mi dici pero' e' impossibile connettersi ad azzurra... per fortuna c'è sto scriptino CGI che funziona da dio!<br />
+ <br />
+grazie</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Takeda</div><div class="date">04-02-2005, 12:43</div></div><div class="posttext">Ma io non capisco perche collegarsi verso proxy.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">04-02-2005, 12:53</div></div><div class="posttext">Ma io non capisco perche collegarsi verso proxy.<br />
+<br />
+Perche' un IP privato non puo' connettersi direttamente in internet senza avere un IP pubblico con cui presentarsi al mondo :)<br />
+Gli IP privati, in quanto tali, sono utilizzati da una miriade di reti nel mondo, e non e' certo accettabile che ci siano una cinquantina di 192.168.0.1 connessi nello stesso istante... da qui la necessita' di avere un proxy che abbia un IP pubblico con cui uscire in rete, e che faccia appunto da &quot;ponte&quot; per le varie connessioni.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Takeda</div><div class="date">04-02-2005, 13:27</div></div><div class="posttext">Si, ma mettiamo caso, che un server abbia il PROXY SERVER, questo non entra? questo dico io... °° non ho capito.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Progeny</div><div class="date">04-02-2005, 14:43</div></div><div class="posttext">Se un server runna un proxy (come è stato già detto nei precedenti post) aperto a connessioni provenienti dall'esterno della rete locale, quando tenterà di collegarsi (*) qui su Azzurra, verrà automaticamente akillato.<br />
+<br />
+(*) L'akill scatta anche se collegandoti qui su Azzurra non passi per il server proxy, ma sul tuo computer/server viene rilevato un open proxy in esecuzione.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Takeda</div><div class="date">04-02-2005, 15:18</div></div><div class="posttext">Ah ok.. Tnx ;)</div></div><hr />
+
+
+<div id="copyright">vBulletin v3.5.3, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

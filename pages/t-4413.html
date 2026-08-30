@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<title>Azzurra IRC Network Forum - Q3 su Linux</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="Azzurra IRC Network Forum" />
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-3.html">Azzurra IRC Network Forum</a> &gt; <a href="f-41.html">Azzurra Gamers OnLine</a> &gt; Q3 su Linux</div>
+<hr />
+<div class="pda"><a href="?pda=1">PDA</a></div>
+<p class="largefont">Mostra versione intera : <a href="http://forum.azzurra.org/showthread.php?t=4413">Q3 su Linux</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Progeny</div><div class="date">02-04-2004, 14:20</div></div><div class="posttext">Ciao a tutti!<br />
+Finalmente q3 mi va alla perfezione anche su linux, però c'è un piccolo problemino col mouse, non riesco a saltare e sparare contemporaneamente, qualcuno ha avuto lo stesso problema o ha idee?<br />
+<br />
+byebye</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">liquid_snake</div><div class="date">12-07-2004, 15:09</div></div><div class="posttext">Non saprei darti risposta, in compenso posso aggiungere un problema che ho riscontrato io, ossia non mi funziona il suono. Ho dato i permessi per /dev/pts  ma comunque non mi funziona. Se qualcuno sapesse qualcosa ...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Progeny</div><div class="date">12-07-2004, 15:39</div></div><div class="posttext">Il mio problema era dovuto al fatto che avevo configurato XFree con l'emulazione del terzo bottone.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">liquid_snake</div><div class="date">12-07-2004, 18:43</div></div><div class="posttext">certo questo non aiuta il mio problema al suono !!!<br />
+:-[</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Progeny</div><div class="date">12-07-2004, 20:00</div></div><div class="posttext">Anche io avevo problemi con l'audio ma ho risolto tutto al suo tempo, sicuro che il device non sia occupato quando avvii Quake 3? Hai percaso qualche errore o roba varia? (Avvia Q3 in console e vedi se c'è qualcosa di utile..)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">liquid_snake</div><div class="date">12-07-2004, 20:10</div></div><div class="posttext">ti ho spedito il log via mail, visto che un po' lunghetto per essere postato in forum<br />
+spero tu mi sappia aiutare<br />
+ :evil:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">liquid_snake</div><div class="date">13-07-2004, 13:49</div></div><div class="posttext">Ecco il problema:<br />
+------- sound initialization -------<br />
+Could not mmap dma buffer PROT_WRITE|PROT_READ<br />
+trying mmap PROT_WRITE (with associated better compatibility / less performance<br />
+code)<br />
+/dev/dsp: Input/output error<br />
+Could not mmap /dev/dsp<br />
+------------------------------------<br />
+<br />
+parzialmente risolto con la riga di comando:<br />
+# echo &quot;quake3.x86 0 0 direct&quot; &amp;gt;/proc/asound/card0/pcm0p/oss<br />
+<br />
+e comunque si trova qualcosa sulla rete ma solo in lingue d'oltralpe. Io ho seguito questo:<br />
+http://lists.olug.org/pipermail/olug/2004-April/013146.html</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">F4BoLiK</div><div class="date">22-02-2005, 21:42</div></div><div class="posttext">ciao ragazzi <br />
+io sono un discreto giokatore di quake ma gioko sotto windows, sotto linux dicono sia molto bello ma nn ho avuto mai il piacere, vorrei sapere ke versioni giokate cosi potremmo organizzare un match =) io giokavo 1.16 e ho da un pò iniziato 1.32 partecipando a qlc torneo su clanbase.com =) fatemi sapere =)))))))<br />
+(io sono un railer nato nn gioko all weapons e amo freezerail e ctf) :P</div></div><hr />
+
+<div id="copyright">vBulletin Versione 3.0.6, Copyright &copy;2000-2005, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

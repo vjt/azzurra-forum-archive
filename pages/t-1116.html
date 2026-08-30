@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Query Sql, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] Query Sql Programmazione e dintorni" />
+		<title>Query Sql [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-23.html">Programmazione e dintorni</a> &gt; Query Sql</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=1116">Query Sql</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Alex1</div><div class="date">11-10-2002, 12:18</div></div><div class="posttext">mi trovo a dover dividere una query sql in file da 20 insert l'uno  per poterli reinserire (causa problemi col phpmyadmin del server). Ho un file da 12000 insert. esiste un prog che faccia la divisione o sono costretto a farla a mano?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">_theone_</div><div class="date">11-10-2002, 12:49</div></div><div class="posttext">Ipotizzando che il tuo file originale abbia una INSERT per riga, puoi usare questo:<br />
+<br />
+[php:1:4fd40aa87e]<br />
+&amp;lt;?<br />
+<br />
+$fin=fopen('./sqlfile.sql','r');<br />
+<br />
+$rowcounter=1;<br />
+$filecounter=0;<br />
+<br />
+while (!feof($fin)) {<br />
+ $data=fgets($fin, 2048);<br />
+ if ($rowcounter &amp;gt; 20) {<br />
+  $rowcounter=1;<br />
+  $filecounter++;<br />
+ }<br />
+ $fout=fopen(&quot;outfile$filecounter.sql&quot;,'a');<br />
+ if (($result=fwrite($fout,$data)) == -1) { <br />
+  die(&quot;Impossibile scrivere sul file outfile$filecounter.sql&quot;); <br />
+ }<br />
+ fclose($fout);<br />
+ $rowcounter++;<br />
+}<br />
+fclose($fin);<br />
+<br />
+?&amp;gt;<br />
+[/php:1:4fd40aa87e]<br />
+<br />
+Il file originario ho supposto che si chiami &quot;sqlfile.sql&quot; e in uscita i files saranno numerati come outfileN.sql.<br />
+<br />
+Modifica i path dei file a seconda delle tue esigenze e verifica che Apache abbia permessi di scrittura nella directory dove vuoi outputtare i files splittati.<br />
+<br />
+Bye,</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Alex1</div><div class="date">11-10-2002, 13:49</div></div><div class="posttext">grazie  :wink:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">fank</div><div class="date">11-10-2002, 22:46</div></div><div class="posttext">Puoi anche usare...<br />
+<br />
+$array=file(&quot;filename&quot;);<br />
+<br />
+che legge un intero file in un vettore, e poi...</div></div><hr />
+
+
+<div id="copyright">vBulletin v3.5.3, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

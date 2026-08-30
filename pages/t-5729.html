@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="PHP e  phpauction, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] PHP e  phpauction Programmazione e dintorni" />
+		<title>PHP e  phpauction [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-23.html">Programmazione e dintorni</a> &gt; PHP e  phpauction</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=5729">PHP e  phpauction</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">liquid_snake</div><div class="date">29-09-2004, 15:39</div></div><div class="posttext">Ho installato tramite il tool di altervista mysql sul mio sito<br />
+e tramite phpmyadmin sono riuscito a creare un db sql.<br />
+Io però avrei la necessità di gestire quel db con php auction ma non riesco ad accedervi, nonostante lo abbia configurato con i parametri giusti (penso).<br />
+<br />
+cmq<br />
+nei file  config.inc.php e password.inc.php  ho specificato le posizioni del db e il nome dello stesso<br />
+Ma non riesco ad accedere.<br />
+Qualcuno ne sa un po' di più<br />
+Avverto da subito che è da molto poco che uso questo linguaggio e me lo imparerei se non che mi serve in tempi brevissimi</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Progeny</div><div class="date">30-09-2004, 20:56</div></div><div class="posttext">Non ho mai usato phpauction comunque se ci dici l'errore magari possiamo provare ad aiutarti :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">liquid_snake</div><div class="date">01-10-2004, 12:28</div></div><div class="posttext">Parse error: parse error in /membri2/phpauction/includes/passwd.inc.php on line 25<br />
+<br />
+questo è l'errore che mi da alla scermata di login, alla quale posso accedere semplicemente premendo invio<br />
+<br />
+Però poi non posso gestire il DB che mi dice mancante o non selezionato<br />
+<br />
+questo è il mio passwd.inc.php:<br />
+<br />
+<br />
+&#91;...&#93;<br />
+$DbHost     = &amp;quot;http&#58;//*********/my_admin/&amp;quot; // The host where the MySQL server resides <br />
+$DbDatabase = &amp;quot;my_***********&amp;quot; // The database you are going to use<br />
+$DbUser     = &amp;quot;********&amp;quot;; // Username<br />
+<br />
+$DbPassword = &amp;quot;*********&amp;quot;; // Password<br />
+<br />
+ <br />
+$AdminPasswd = &amp;quot;*************&amp;quot;<br />
+<br />
+<br />
+la riga 25  è quella che inizia con $DbHost e come si può notare è senza il &quot;;&quot; finale, ma mettendolo non mi accede nemmeno alla schermata di login<br />
+<br />
+Il DB my_******** è stato creato e risiede nella cartella specificata in linea 25</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Progeny</div><div class="date">01-10-2004, 13:25</div></div><div class="posttext">il &quot;;&quot; finale ci vuole a $DbHost, $DbDatabase e $AdminPasswd.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Alex1</div><div class="date">01-10-2004, 15:27</div></div><div class="posttext">$DbHost = &quot;localhost&quot;<br />
+<br />
+e poi servono i vari ; (forse non indispensabili)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">liquid_snake</div><div class="date">01-10-2004, 16:58</div></div><div class="posttext">$DbHost     = &amp;quot;http&#58;//*******/_admin/&amp;quot;; // The host where the MySQL server resides <br />
+$DbDatabase = &amp;quot;my_***********&amp;quot;; // The database you are going to use<br />
+$DbUser     = &amp;quot;**********&amp;quot;; // Username<br />
+$DbPassword = &amp;quot;*******&amp;quot;; // Password<br />
+<br />
+//--Control Panel password<br />
+//This is the password you will have to use to access the admin program<br />
+ <br />
+$AdminPasswd = &amp;quot;********&amp;quot;;<br />
+<br />
+<br />
+Questo è  quello che ho adesso ma non mi da accesso<br />
+errore:       Database access error. Please contact the site administrator.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Alex1</div><div class="date">01-10-2004, 19:28</div></div><div class="posttext">$DbHost     = &amp;quot;http&#58;//*******/_admin/&amp;quot;; // The host where the MySQL server resides <br />
+$DbDatabase = &amp;quot;my_***********&amp;quot;; // The database you are going to use<br />
+$DbUser     = &amp;quot;**********&amp;quot;; // Username<br />
+$DbPassword = &amp;quot;*******&amp;quot;; // Password<br />
+<br />
+//--Control Panel password<br />
+//This is the password you will have to use to access the admin program<br />
+ <br />
+$AdminPasswd = &amp;quot;********&amp;quot;;<br />
+<br />
+<br />
+Questo è  quello che ho adesso ma non mi da accesso<br />
+errore:       Database access error. Please contact the site administrator.<br />
+<br />
+sostituisci<br />
+<br />
+$DbHost     = &amp;quot;http&#58;//*******/_admin/&amp;quot;; // The host where the MySQL <br />
+con<br />
+$DbHost     = &amp;quot;localhost&amp;quot;; // The host where the MySQL</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">liquid_snake</div><div class="date">01-10-2004, 19:33</div></div><div class="posttext">ah!<br />
+grazie<br />
+ adesso mi ci metto di fisso<br />
+cosi' magari ci guadagno qualche soldino :-)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">liquid_snake</div><div class="date">10-10-2004, 13:49</div></div><div class="posttext">mazza, ho problemi anche con postnuke<br />
+non riece a collegarsi al database. <br />
+E si che questa volta ho provato con localhost.<br />
+ l'errore è questo:<br />
+Nessun database creato.Error connecting to db<br />
+Program: /membri2/***************/install/db.php - Line N.: 45<br />
+Database: my_*****************<br />
+<br />
+ che si riferisce appunto a /install/db.php<br />
+<br />
+<br />
+* Connect to Database<br />
+ */<br />
+function dbconnect&#40;$dbhost, $dbuname, $dbpass, $dbname, $dbtype = 'mysql'&#41;<br />
+&#123;<br />
+    $connectString = &amp;quot;$dbtype&#58;//$dbuname&#58;$dbpass@$dbhost/$dbname&amp;quot;;<br />
+<br />
+    GLOBAL $ADODB_FETCH_MODE;<br />
+    $dbconn = &amp;amp;ADONewConnection&#40;$dbtype&#41;;<br />
+    $dbh = $dbconn-&amp;gt;Connect&#40;$dbhost, $dbuname, $dbpass, $dbname&#41;;<br />
+    $ADODB_FETCH_MODE = ADODB_FETCH_NUM; <br />
+    // if we get an error, log it and die<br />
+    if &#40;$dbh === false&#41; &#123;<br />
+        error_log &#40;&amp;quot;connect string&#58; $connectString&amp;quot;&#41;;<br />
+        error_log &#40;&amp;quot;error&#58; &amp;quot; . $dbconn-&amp;gt;ErrorMsg&#40;&#41;&#41;; <br />
+        // show error and die<br />
+        PN_DBMsgError&#40;$dbconn, __FILE__ , __LINE__, &amp;quot;Error connecting to db&amp;quot;&#41;;<br />
+    &#125; else &#123;<br />
+        return $dbconn;<br />
+    &#125; <br />
+&#125; <br />
+<br />
+<br />
+la linea 45 incriminata é  PN_DBMsgError&#40;$dbconn, __FILE__ , __LINE__, &amp;quot;Error connecting to db&amp;quot;&#41;;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Alex1</div><div class="date">10-10-2004, 15:29</div></div><div class="posttext">dovresti postare il config</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">liquid_snake</div><div class="date">10-10-2004, 15:34</div></div><div class="posttext">$pnconfig&#91;'dbtype'&#93; = 'mysql';<br />
+$pnconfig&#91;'dbtabletype'&#93; = 'MyISAM';<br />
+$pnconfig&#91;'dbhost'&#93; = 'localhost';<br />
+$pnconfig&#91;'dbuname'&#93; = 'my_*********';<br />
+$pnconfig&#91;'dbpass'&#93; = '**********';<br />
+$pnconfig&#91;'dbname'&#93; = 'Phoenix';<br />
+$pnconfig&#91;'system'&#93; = '0';<br />
+$pnconfig&#91;'prefix'&#93; = 'nuke';<br />
+$pnconfig&#91;'encoded'&#93; = '1';<br />
+$pnconfig&#91;'pconnect'&#93; = '0';<br />
+$pnconfig&#91;'temp'&#93; = 'pnTemp';<br />
+&#91;...&#93;<br />
+global $pndebug;<br />
+$pndebug&#91;'debug'&#93;          = 0;<br />
+$pndebug&#91;'debug_sql'&#93;      = 0;<br />
+$pndebug&#91;'pagerendertime'&#93; = 0;<br />
+&#91;...&#93;<br />
+if &#40;@file_exists&#40;&amp;quot;personal_config.php&amp;quot;&#41;&#41;<br />
+&#123; include&#40;&amp;quot;personal_config.php&amp;quot;&#41;; &#125;<br />
+&#91;...&#93;<br />
+extract&#40;$pnconfig, EXTR_OVERWRITE&#41;;<br />
+?&amp;gt;</div></div><hr />
+
+
+<div id="copyright">vBulletin v3.5.3, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

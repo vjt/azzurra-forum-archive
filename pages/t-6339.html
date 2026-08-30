@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<title>Azzurra IRC Network Forum - Problema connessione adsl PPPoE</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="Azzurra IRC Network Forum" />
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-28.html">Discussioni Linux</a> &gt; Problema connessione adsl PPPoE</div>
+<hr />
+<div class="pda"><a href="?pda=1">PDA</a></div>
+<p class="largefont">Mostra versione intera : <a href="http://forum.azzurra.org/showthread.php?t=6339">Problema connessione adsl PPPoE</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">THuNDeR</div><div class="date">28-11-2004, 17:26</div></div><div class="posttext">Salve, io ho Knoppix 3.6 e dopo averlo avviato ho provato a configurare la connessione PPPoE, ma poco dopo mi compare un errore che mi dice che non ha trovato un concentratore d'accesso. A questo punto non so che fare, ho un modem e una scheda di rete tutti e due Ethernet. Help!<br />
+Grazie, Thunder</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">29-11-2004, 10:36</div></div><div class="posttext">[QUOTE=THuNDeR]ho un modem e una scheda di rete tutti e due Ethernet.[/QUOTE] <br />
+ C'e' una cosa che non capisco: &quot;modem ethernet&quot; e' una cosa che non esiste, o hai un modem (seriale o USB) oppure hai una scheda di rete Ethernet (RJ45) a cui hai agganciato un router.<br />
+ Siccome dici che hai una scheda di rete ethernet, allora credo proprio che tu debba configurarti la eth0 come preferisci tu, e poi connetterti al router e far fare a lui la connessione. In pratica da una parte avrai una LAN con IP privati (e host con qualsiasi OS), e dall'altra l'IP pubblico del router connesso ad internet.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">giuseppe_dj</div><div class="date">29-11-2004, 13:23</div></div><div class="posttext">[QUOTE=Steve]C'e' una cosa che non capisco: &quot;modem ethernet&quot; e' una cosa che non esiste, o hai un modem (seriale o USB) oppure hai una scheda di rete Ethernet (RJ45) a cui hai agganciato un router.<br />
+ Siccome dici che hai una scheda di rete ethernet, allora credo proprio che tu debba configurarti la eth0 come preferisci tu, e poi connetterti al router e far fare a lui la connessione. In pratica da una parte avrai una LAN con IP privati (e host con qualsiasi OS), e dall'altra l'IP pubblico del router connesso ad internet.[/QUOTE] <br />
+ Modem ethernet esiste invece, il router adsl è un'altra cosa :)<br />
+ <br />
+ ciao</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steve</div><div class="date">29-11-2004, 13:30</div></div><div class="posttext">[QUOTE=giuseppe_dj]Modem ethernet esiste invece, il router adsl è un'altra cosa[/QUOTE] <br />
+ Ah, vedro' di istruirmi allora.<br />
+ Che cosa brutta pero' :-\</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">THuNDeR</div><div class="date">29-11-2004, 19:24</div></div><div class="posttext">Premetto che ho un solo modem con singola connessione :)<br />
+E' proprio la configurazione eth0 che non va... dalla root shell ho dato il comando &quot;ifconfig eth0 up&quot;, bene, se faccio ifconfig compare, poi vado in Network\Internet -&gt; Configurazione adsl\pppoe e poco dopo mi dice che non trova un concentratore d'accesso, e a questo punto io non so cosa fare :\<br />
+Scusate l'ignoranza, ma io da linux sto partendo da zero.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">giuseppe_dj</div><div class="date">29-11-2004, 20:46</div></div><div class="posttext">[QUOTE=THuNDeR]Premetto che ho un solo modem con singola connessione :)<br />
+ E' proprio la configurazione eth0 che non va... dalla root shell ho dato il comando &quot;ifconfig eth0 up&quot;, bene, se faccio ifconfig compare, poi vado in Network\Internet -&gt; Configurazione adsl\pppoe e poco dopo mi dice che non trova un concentratore d'accesso, e a questo punto io non so cosa fare :\<br />
+  Scusate l'ignoranza, ma io da linux sto partendo da zero.[/QUOTE]  <br />
+  Non basta mica ifconfig eth0 up... cerca su google una guida pppoe, una a caso: <br />
+  http://openskills.info/view/boxdetail.php?IDbox=979&amp;boxtype=description<br />
+  <br />
+ Cmq dovresti essere pure più preciso, che os usi, che modem ecc.<br />
+  Ciao</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">niko</div><div class="date">30-11-2004, 17:07</div></div><div class="posttext">Se il modem e' collegato correttamente alla linea telefonica e al PC e' probabile che il problema derivi dal DHCP attivo sull'interfaccia della scheda di rete, e questo molte volte impedisce il corretto probe di pppoeconf.<br />
+<br />
+Controlla con grep dhcp /etc/network/interfaces dato in un terminale se questo agisce sulla scheda di rete (eth0).<br />
+<br />
+Se cio' si avvera edita, come root, il file /etc/network/interfaces con un editor testuale (pico,vi,vim,joe,jed) o con uno grafico (kwrite,gedit) e cambia iface eth0 inet dhcp con iface eth0 inet up.<br />
+<br />
+Infine, riavvia il demone di gestione del networking con un /etc/init.d/networking restart da root.<br />
+<br />
+Poi, prova a rieseguire il pppoeconf sempre da root e dovrebbe funzionare :)<br />
+<br />
+Ciao</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">liquid_snake</div><div class="date">11-12-2004, 16:29</div></div><div class="posttext">Io avevo lo stesso problema, con il modem ethernet  telindus 1110 adsl ( by arescom)<br />
+ E il problema stava nella configurazione del modem stesso. Visto che è un modem ethernet prova a collegartici via telnet o anche http e controllare i settaggi. (Più che altro per vedere se hai creato una connessione con i relativi parametri ppoe,  lease line, login e password.</div></div><hr />
+
+<div id="copyright">vBulletin Versione 3.0.6, Copyright &copy;2000-2005, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Problema con invio mail tramite form in ASP, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] Problema con invio mail tramite form in ASP Programmazione e dintorni" />
+		<title>Problema con invio mail tramite form in ASP [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-23.html">Programmazione e dintorni</a> &gt; Problema con invio mail tramite form in ASP</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=943">Problema con invio mail tramite form in ASP</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Scen</div><div class="date">04-09-2002, 08:56</div></div><div class="posttext">Ciao, da qualche giorno sto vedendo qualche esempio di pagine ASP, per cercare di capire un pò come funzionano  8) . Ho installato nel mio pc con Windows ME il Personal Web Server (PSW) di Microsoft (c'era nel cd di installazione di Windows 98 ), per provare in locale le paginette.<br />
+Non ho trovato problemi di sorta, a parte in una form, che dovrebbe inviare una mail.<br />
+<br />
+Mi dà il seguente errore, al momento di elaborare i dati inseriti:<br />
+Oggetto Server errore &amp;quot;ASP 0177 &#58; 800401f3' <br />
+<br />
+Impossibile eseguire il metodo Server.CreateObject <br />
+<br />
+/prove/manda_feedback.asp, riga 69 <br />
+<br />
+800401f3 <br />
+<br />
+<br />
+La riga 69 è<br />
+<br />
+Set objMail = Server.CreateObject&#40;&amp;quot;CDONTS.NewMail&amp;quot;&#41;<br />
+<br />
+<br />
+Datemi almeno qualche dritta per capire dove risiede il problema, grazie in anticipo  :P</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">_theone_</div><div class="date">04-09-2002, 10:10</div></div><div class="posttext">Personal Web Server è un IIS in piccolo (molto in piccolo per la verità) il cui scopo è esattamente quello per cui tu lo usi, ovvero provare semplici pagine ASP in locale.<br />
+<br />
+Purtroppo però essendo una versione molto ridotta di un prodotto a mio avviso comunque per certi versi incompleto (ovvero IIS, Internet Information Server), non è in grado di supportare tutti gli oggetti e tutti i metodi &quot;standard&quot; (quelli descritti su MSDN per capirci).<br />
+<br />
+L'invio di email tramite l'oggetto CDONTS.NewMail è appunto tra queste feature mancanti e, in genere, tutto gli oggetti appartenenti alla librerie CDONTS non sono utilizzabili su PWS.<br />
+<br />
+L'unico consiglio (serio) che posso darti è passare a Windows 2000 Pro/Server che integra IIS 5.0 in versione completa e che ti permetterà di testare qualsiasi pagina ASP (lascia stare XP Pro, che contiene un IIS 5.1 pure questo ridotto al quale mancano in ogni caso delle funzioni, tra le quali proprio la CDONTS.NewMail).<br />
+<br />
+Come considerazione finale e personalissima, ti consiglio di spendere il tuo tempo nello studio di PHP, piuttosto che di ASP, visto che almeno questo non ti obbliga 1) ad utilizzare una sola piattaforma, 2) ad utilizzare costosissimo software che ha una resa abbastanza discutibile, 3) a dover lottare contro versioni apparentemente identiche dello stesso software, ma alle quali mamma Microsoft ha gioiosamente deciso di asportare qualche componente per il gusto di far impazzire l'utenza.<br />
+<br />
+Ciao ciao,</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Shaka</div><div class="date">04-09-2002, 10:20</div></div><div class="posttext">L'unico consiglio (serio) che posso darti è passare a Windows 2000 Pro/Server che integra IIS 5.0 in versione completa e che ti permetterà di testare qualsiasi pagina ASP (lascia stare XP Pro, che contiene un IIS 5.1 pure questo ridotto al quale mancano in ogni caso delle funzioni, tra le quali proprio la CDONTS.NewMail).<br />
+<br />
+Su, su, basta installarla e funziona perfettamente :P</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Scen</div><div class="date">04-09-2002, 10:47</div></div><div class="posttext">Thanx theo x le delucidazioni  :)<br />
+<br />
+Cmq sto provando ASP perchè ne sono &quot;costretto&quot;: purtroppo sto mettendo mano a un sito fatto da terzi (pagine asp e database Access ), e quindi, per mancanza anche di tempo e conoscenze, cerco la via + facile |) <br />
+<br />
+X Shaka<br />
+<br />
+Su, su, basta installarla e funziona perfettamente<br />
+<br />
+domanda niubba: ti riferisci alla funzione CDONTS.NewMail ? Se sì, mi prendi x il c**o?  :wink:<br />
+<br />
+Ultimo quesito: ho provato le pagine asp con questo form x inviare una mail direttamente sul server dov'è ospitato il sito; il risultato è il seguente:<br />
+Errore di run-time di Microsoft VBScript error '800a0046'<br />
+<br />
+Autorizzazione negata<br />
+<br />
+/prova/manda_feedback.asp, line 82<br />
+<br />
+La linea 82 è<br />
+objMail.Send<br />
+<br />
+Mi pare di capire che il problema risiede nel server, a questo punto (la funzione NewMail è supportata).<br />
+<br />
+Mi sono impantanato di nuovo, help!  :(</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">_theone_</div><div class="date">04-09-2002, 11:29</div></div><div class="posttext">Su, su, basta installarla e funziona perfettamente :P<br />
+<br />
+Non mettere in testa strane idee ai nostri giovani di buone intenzioni :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Shaka</div><div class="date">04-09-2002, 11:37</div></div><div class="posttext">domanda niubba: ti riferisci alla funzione CDONTS.NewMail ? Se sì, mi prendi x il c**o?  :wink:<br />
+<br />
+<br />
+No, come potrai notare dal mio messaggio, rispondevo a theo :)<br />
+<br />
+<br />
+<br />
+Ultimo quesito: ho provato le pagine asp con questo form x inviare una mail direttamente sul server dov'è ospitato il sito; il risultato è il seguente:<br />
+Errore di run-time di Microsoft VBScript error '800a0046'<br />
+<br />
+Autorizzazione negata<br />
+<br />
+/prova/manda_feedback.asp, line 82<br />
+<br />
+La linea 82 è<br />
+objMail.Send<br />
+<br />
+Mi pare di capire che il problema risiede nel server, a questo punto (la funzione NewMail è supportata).<br />
+<br />
+Mi sono impantanato di nuovo, help!  :(<br />
+<br />
+Al 90% l'account del user anonimo di IIS non ha i permessi di scrittura nelle cartelle dati del SMTP Service</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">_theone_</div><div class="date">04-09-2002, 11:39</div></div><div class="posttext">Ultimo quesito: ho provato le pagine asp con questo form x inviare una mail direttamente sul server dov'è ospitato il sito; il risultato è il seguente:<br />
+Errore di run-time di Microsoft VBScript error '800a0046'<br />
+<br />
+Autorizzazione negata<br />
+<br />
+/prova/manda_feedback.asp, line 82<br />
+<br />
+La linea 82 è<br />
+objMail.Send<br />
+<br />
+Mi pare di capire che il problema risiede nel server, a questo punto (la funzione NewMail è supportata).<br />
+<br />
+Mi sono impantanato di nuovo, help!  :(<br />
+<br />
+Quest'ultimo problema dipende esclusivamente dai permessi che disponi su quel Web Server, relativi all'utilizzo di CDONTS.NewMail.<br />
+L'unica soluzione che vedo è contattare l'amministratore del server.<br />
+<br />
+Maggiori informazioni sul tuo problema a questo indirizzo (http://support.microsoft.com/default.aspx?scid=kb;en-us;Q286301)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Shaka</div><div class="date">04-09-2002, 11:41</div></div><div class="posttext">Su, su, basta installarla e funziona perfettamente :P<br />
+<br />
+Non mettere in testa strane idee ai nostri giovani di buone intenzioni :D<br />
+<br />
+Ma infatti ! Parlavo con te vecchietto ! :P</div></div><hr />
+
+
+<div id="copyright">vBulletin v3.5.3, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

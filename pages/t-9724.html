@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="[C]problema con matrice, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] [C]problema con matrice Programmazione e dintorni" />
+		<title>[C]problema con matrice [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-8.html">Azzurra - Tech Center</a> &gt; <a href="f-23.html">Programmazione e dintorni</a> &gt; [C]problema con matrice</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=9724">[C]problema con matrice</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">viridovix</div><div class="date">23-07-2005, 02:23</div></div><div class="posttext">Aiutatemi a risolvere questo problema, ci ho sbattuto x ore http://www.hwupgrade.it/forum/images_hwu/smilies/icon_frown.gif <br />
+<br />
+Sotto linux suswe 9.2 ,linguaggio c, comilatore gcc <br />
+<br />
+ecco l'errore che mi da: è l'unico che il compilarote segnali, a parte il warnin newline after } di fine programma(che nn precluderebbe la compilazione cmq)<br />
+<br />
+matrice.c:15: error two or more data types in declaretion of 'inizializza_cinema' <br />
+<br />
+ora eccovi il codice della matrice, che rappresenta un cinema, con fila, numero poltrona ,e flag se occupato il <br />
+<br />
+posto. <br />
+<br />
+//matrice esempio <br />
+#include &lt;stdio.h&gt; <br />
+#include &lt;stdlib.h&gt; <br />
+// <br />
+struct posto <br />
+{ <br />
+char idPosto[3]; <br />
+int flag; <br />
+};<br />
+// <br />
+//nel vettore id_Posto memorizzo numero fila <br />
+//e poltrona corrispondente all'indice di matrice, tipo A1 x <br />
+// [0][0] <br />
+void inizializza_cinema(struct posto cine[3][3]) <br />
+{ <br />
+unsigned char i,j; <br />
+for(i='A';i&lt;='C';i++) <br />
+{ <br />
+for(j='1';j&lt;='3';j++) <br />
+{ <br />
+cine[i-'A'][j-'1'].flag=0; //segna il posto come libero <br />
+cine[i-'A'][j-'1'].idPosto[0]=i; <br />
+cine[i-'A'][j-'1'].idPosto[1]=]j; <br />
+cine[i-'A'][j-'1'].idPosto[2]='\0'; <br />
+} <br />
+} <br />
+<br />
+} <br />
+// <br />
+int main(int argc,char *argv[]) <br />
+{ <br />
+struct posto cinema[3][3]; <br />
+inizializza_cinema(cinema); <br />
+return 0; <br />
+}</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">City_Hunter</div><div class="date">23-07-2005, 12:34</div></div><div class="posttext">Il problema risiede nell'uso che hai fatto di struct.<br />
+Struct è un costruttore di tipi e può essere impiegato sia in dichiarazioni esplicite di tipo, che direttamente nella dichiarazione di variabili (il cui tipo viene quindi costruito in modo anonimo e implicito).<br />
+<br />
+Nel caso in oggetto è opportuno che tu proceda con la prima opzione.<br />
+Crea un tipo &quot;posto&quot; in questo modo:<br />
+<br />
+typedef struct<br />
+{<br />
+char idPosto[3];<br />
+int flag;<br />
+} posto;<br />
+<br />
+dopodichè potrai dichiarare tutte le variabili (o gli array) di tipo posto come segue:<br />
+posto cinema[3][3];<br />
+posto singolo;<br />
+<br />
+e analogamente nelle dichiarazioni di funzione userai direttamente il tipo &quot;posto&quot;:<br />
+void inizializza_cinema(posto cine[3][3])</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xin</div><div class="date">23-07-2005, 15:06</div></div><div class="posttext">e poi i commenti in c standard si fanno solo con /* */ :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">viridovix</div><div class="date">25-07-2005, 08:56</div></div><div class="posttext">Il problema risiede nell'uso che hai fatto di struct.<br />
+Struct è un costruttore di tipi e può essere impiegato sia in dichiarazioni esplicite di tipo, che direttamente nella dichiarazione di variabili (il cui tipo viene quindi costruito in modo anonimo e implicito).<br />
+ <br />
+Nel caso in oggetto è opportuno che tu proceda con la prima opzione.<br />
+Crea un tipo &quot;posto&quot; in questo modo:<br />
+ <br />
+typedef struct<br />
+{<br />
+char idPosto[3];<br />
+int flag;<br />
+} posto;<br />
+ <br />
+dopodichè potrai dichiarare tutte le variabili (o gli array) di tipo posto come segue:<br />
+posto cinema[3][3];<br />
+posto singolo;<br />
+ <br />
+e analogamente nelle dichiarazioni di funzione userai direttamente il tipo &quot;posto&quot;:<br />
+void inizializza_cinema(posto cine[3][3])<br />
+ <br />
+In realtà l'errore che mi dava il gcc era dovuto all'assenza del ; alla fine dello struct che io avev oomesso nel sorgente :)<br />
+Cmq provo a creare il tipo posto come hai suggerito cosi' mi pare che posso abbreviare nel passaggio alla funzione :)   Grazie :D</div></div><hr />
+
+
+<div id="copyright">vBulletin v3.5.3, Copyright &copy;2000-2006, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>

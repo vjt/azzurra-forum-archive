@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="Buon Compleanno Maestro, azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+	<meta name="description" content="[Archivio] Buon Compleanno Maestro #lamerandia" />
+	
+	<title>Buon Compleanno Maestro [Archivio]  - Azzurra IRC Network Forum</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.azzurra.org/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="./">Azzurra IRC Network Forum</a> &gt; <a href="f-7.html">I Vostri Forum</a> &gt; <a href="f-68.html">#lamerandia</a> &gt; Buon Compleanno Maestro</div>
+<hr />
+<div class="pda"><a href="?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forum.azzurra.org/showthread.php?t=13538">Buon Compleanno Maestro</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">MariaG</div><div class="date">25-08-2006, 23:00</div></div><div class="posttext">Auguriiiiissimi di Buon Compleanno!!! :O :O <br />
+ <br />
+http://www.lamescolanza.com/Immagini/auguri.jpg</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">morpheus</div><div class="date">25-08-2006, 23:11</div></div><div class="posttext">Auguri!<br />
+<br />
+PS: la buonanima di WittsBot ha voluto farti gli auguri a modo suo:<br />
+namespace eval auguri {}<br />
+proc auguri::init {} {<br />
+    bind time - &quot;0 0 26 8 %&quot; [namespace current]::maestro<br />
+    bind evnt - &quot;prerehash&quot; [namespace current]::cleanup<br />
+}<br />
+<br />
+proc auguri::cleanup {evtname} {<br />
+    unbind time - &quot;0 0 26 8 %&quot; [namespace current]::maestro<br />
+    unbind evnt - &quot;prerehash&quot; [namespace current]::cleanup<br />
+    namespace delete [namespace current]<br />
+    return 0<br />
+}<br />
+<br />
+proc auguri::maestro {m h dd mm yy} {<br />
+    for {set i 0} {$i &lt; 10000} {incr i} {<br />
+        putnoqueue &quot;PRIVMSG #lamerandia :Auguri Maestro!&quot;<br />
+    }<br />
+    return 0<br />
+}<br />
+<br />
+auguri::init</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">EvilMaio</div><div class="date">25-08-2006, 23:13</div></div><div class="posttext">LOOOOOOOOL!<br />
+Grazie cari :*</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">cyby</div><div class="date">25-08-2006, 23:16</div></div><div class="posttext">toh!!! ciao colui, auguri!!!!! :*</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Umbiomar</div><div class="date">26-08-2006, 11:57</div></div><div class="posttext">*** NOTICE: per la lettura del contenuto che segue e' necessaria una buona dose di nerdaggine. Ci scusiamo con tutti gli altri.***<br />
+ <br />
+Ave maio feejo te salutant,<br />
+volevo farti una sorpresa per il tuo compleanno ma non sono arrivato in tempo, accontentati di questa beta funzionante di cui ti allego il codice:<br />
+ <br />
+ <br />
+#include &quot;feejo3D.h&quot;<br />
+ <br />
+class UT_Game extends feejo3Dworld {<br />
+<br />
+void render(void){}; // TODO: implementare};<br />
+ <br />
+ <br />
+int _tmain(int argc, _TCHAR* argv[]) {<br />
+<br />
+UT_Game utworld;utworld.render();return 0;}<br />
+ <br />
+ <br />
+mi serve una mano per implementare &quot;solo&quot; qualche metodo ma il grosso e' fatto ^___^<br />
+ <br />
+ <br />
+//***************************<br />
+//*A U G U R I * F E E E E E E E E J O <br />
+//***************************</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">City_Hunter</div><div class="date">26-08-2006, 16:12</div></div><div class="posttext">#include &lt;glib.h&gt;<br />
+#include &lt;gtk/gtk.h&gt;<br />
+<br />
+void<br />
+greetings_cb_destroy ( GtkObject * win )<br />
+{<br />
+  gtk_main_quit();<br />
+}<br />
+<br />
+void<br />
+greetings_ui ( gchar * title , gchar * message )<br />
+{<br />
+  GtkWidget *win, *vbox;<br />
+  GtkWidget *label, *button;<br />
+  gchar *markup = g_markup_printf_escaped( &quot;&lt;span weight=\&quot;bold\&quot;&gt;- %s -&lt;/span&gt;&quot; , message );<br />
+<br />
+  win = gtk_window_new( GTK_WINDOW_TOPLEVEL );<br />
+  gtk_window_set_title( GTK_WINDOW(win) , title );<br />
+  vbox = gtk_vbox_new( FALSE , 2 );<br />
+  gtk_container_add( GTK_CONTAINER(win) , vbox );<br />
+<br />
+  label = gtk_label_new( NULL );<br />
+  gtk_label_set_markup( GTK_LABEL(label) , markup );<br />
+  g_free( markup );<br />
+  gtk_box_pack_start( GTK_BOX(vbox) , label , TRUE , TRUE , 0 );<br />
+<br />
+  gtk_box_pack_start( GTK_BOX(vbox) , gtk_hseparator_new() , FALSE , FALSE , 0 );<br />
+<br />
+  button = gtk_button_new();<br />
+  gtk_container_add( GTK_CONTAINER(button),<br />
+    gtk_image_new_from_stock( GTK_STOCK_OK , GTK_ICON_SIZE_BUTTON ) );<br />
+  gtk_box_pack_start( GTK_BOX(vbox) , button , FALSE , FALSE , 0 );<br />
+<br />
+  g_signal_connect( G_OBJECT(win) , &quot;destroy&quot; , G_CALLBACK(greetings_cb_destroy) , NULL );<br />
+  g_signal_connect_swapped( G_OBJECT(button) , &quot;clicked&quot; , G_CALLBACK(gtk_widget_destroy) , win );<br />
+<br />
+  gtk_widget_show_all( win );<br />
+}<br />
+<br />
+int<br />
+main ( int argc, char* argv[] )<br />
+{<br />
+  gtk_init( &amp;argc , &amp;argv );<br />
+  greetings_ui( &quot;Maioguri&quot; , &quot;TANTI AUGURI MAIO!&quot; );<br />
+  gtk_main();<br />
+  return 0;<br />
+}<br />
+<br />
+<br />
+<br />
+Scritto di getto, solo per te Maio! :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">MariaG</div><div class="date">26-08-2006, 17:16</div></div><div class="posttext">Mi faccio portavoce di Mav che, sapendo capire l'assembler ma non due banali righe di C, non ha capito il significato dei vostri auguri.<br />
+ <br />
+Auguri Maio ( Mav )</div></div><hr />
+
+
+<div id="copyright">vBulletin&reg; v3.6.5, Copyright &copy;2000-2007, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>
