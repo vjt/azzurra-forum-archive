@@ -1,0 +1,2523 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<title>Azzurra IRC Network Forum - Tigellata fra i colli bolognesi: il racconto del meeting</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="generator" content="vBulletin 3.0.7" />
+<meta name="keywords" content="azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+<meta name="description" content="Azzurra IRC Network Forum" />
+
+<!-- CSS Stylesheet -->
+<style type="text/css">
+<!--
+/* vBulletin 3 CSS For Style 'Azzurra' (styleid: 3) */
+body
+{
+	background-color: #FFFFFF;
+	color: #000000;
+	font: 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	margin: 5px 10px 10px 10px;
+	padding: 0px;
+}
+a:link
+{
+	color: #000066;
+}
+a:visited
+{
+	color: #000066;
+}
+a:hover, a:active
+{
+	color: #FF4400;
+}
+.page
+{
+	background-color: #FFFFFF;
+	color: #000000;
+}
+td, th, p, li
+{
+	font: 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.tborder
+{
+	background-color: #0F3178;
+	color: #000000;
+	border: 1px solid #0B198C;
+}
+.tcat
+{
+	background: #F9F9F9 url(azzurra/misc/cat_back.gif) repeat-x top left;
+	color: #000000;
+	font: bold 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.tcat a:link
+{
+	color: #000066;
+	text-decoration: none;
+}
+.tcat a:visited
+{
+	color: #000066;
+	text-decoration: none;
+}
+.tcat a:hover, .tcat a:active
+{
+	color: #FF4400;
+	text-decoration: underline;
+}
+.thead
+{
+	background-color: #B6D2E6;
+	color: #000000;
+	font: bold 11px tahoma, verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.thead a:link
+{
+	color: #000066;
+}
+.thead a:visited
+{
+	color: #000066;
+}
+.thead a:hover, .thead a:active
+{
+	color: #FF4400;
+}
+.tfoot
+{
+	background-color: #F7F7F7;
+	color: #000000;
+}
+.tfoot a:link
+{
+	color: #000066;
+}
+.tfoot a:visited
+{
+	color: #000066;
+}
+.tfoot a:hover, .tfoot a:active
+{
+	color: #FF4400;
+}
+.alt1, .alt1Active
+{
+	background-color: #F3F3FF;
+	color: #000000;
+}
+.alt2, .alt2Active
+{
+	background-color: #FDFDFD;
+	color: #000000;
+}
+.wysiwyg
+{
+	background-color: #FDFDFD;
+	color: #000000;
+	font: 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+textarea, .bginput
+{
+	font: 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.button
+{
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+select
+{
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+option, optgroup
+{
+	font-size: 11px;
+	font-family: verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.smallfont
+{
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.time
+{
+	color: #000000;
+}
+.navbar
+{
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.highlight
+{
+	color: #FF0000;
+	font-weight: bold;
+}
+.fjsel
+{
+	background-color: #3E5C92;
+	color: #E0E0F6;
+}
+.fjdpth0
+{
+	background-color: #F7F7F7;
+	color: #000000;
+}
+.panel
+{
+	background: #E4E7F5 url(images/gradients/gradient_panel.gif) repeat-x top left;
+	color: #000000;
+	padding: 10px;
+	border: 2px outset;
+}
+.panelsurround
+{
+	background: #D5D8E5 url(images/gradients/gradient_panelsurround.gif) repeat-x top left;
+	color: #000000;
+}
+legend
+{
+	color: #000066;
+	font: 11px tahoma, verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.vbmenu_control
+{
+	background-color: #166A97;
+	color: #FFFFFF;
+	font: bold 11px tahoma, verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	padding: 3px 6px 3px 6px;
+	white-space: nowrap;
+}
+.vbmenu_control a:link
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.vbmenu_control a:visited
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.vbmenu_control a:hover, .vbmenu_control a:active
+{
+	color: #FF4400;
+	text-decoration: underline;
+}
+.vbmenu_popup
+{
+	background-color: #FFFFFF;
+	color: #000000;
+	border: 1px solid #0B198C;
+}
+.vbmenu_option
+{
+	background-color: #DEE6ED;
+	color: #000000;
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	white-space: nowrap;
+	cursor: pointer;
+}
+.vbmenu_option a:link
+{
+	color: #000066;
+	text-decoration: none;
+}
+.vbmenu_option a:visited
+{
+	color: #000066;
+	text-decoration: none;
+}
+.vbmenu_option a:hover, .vbmenu_option a:active
+{
+	color: #FF4400;
+	text-decoration: none;
+}
+.vbmenu_hilite
+{
+	background-color: #8A949E;
+	color: #FFFFFF;
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	white-space: nowrap;
+	cursor: pointer;
+}
+.vbmenu_hilite a:link
+{
+	color: #000066;
+	text-decoration: none;
+}
+.vbmenu_hilite a:visited
+{
+	color: #000066;
+	text-decoration: none;
+}
+.vbmenu_hilite a:hover, .vbmenu_hilite a:active
+{
+	color: #FF4400;
+	text-decoration: none;
+}
+.wg_menu
+{
+	background-color: #EDF0FF;
+	color: #000000;
+	font-size: 10pt;
+         font-family: Verdana, Arial, Helvetica;
+}
+.wg_gbalt1
+{
+	background-color: #FFFFFF;
+	color: #000000;
+}
+.wg_gbalt2
+{
+	background-color: #EDF0FF;
+	color: #000000;
+}
+.wg_form
+{
+	background-color: #EDF0FF;
+	color: #000000;
+}
+/* ***** styling for 'big' usernames on postbit etc. ***** */
+.bigusername { font-size: 14pt; }
+
+/* ***** small padding on 'thead' elements ***** */
+td.thead, div.thead { padding: 4px; }
+
+/* ***** basic styles for multi-page nav elements */
+.pagenav a { text-decoration: none; }
+.pagenav td { padding: 2px 4px 2px 4px; }
+
+/* ***** define margin and font-size for elements inside panels ***** */
+.fieldset { margin-bottom: 6px; }
+.fieldset, .fieldset td, .fieldset p, .fieldset li { font-size: 11px; }
+
+/* ***** don't change the following ***** */
+form { display: inline; }
+label { cursor: default; }
+.normal { font-weight: normal; }
+.inlineimg { vertical-align: middle; }
+-->
+</style>
+
+<!-- / CSS Stylesheet -->
+
+<script type="text/javascript">
+<!--
+var SESSIONURL = "s=112ac9bea42c5c925c2764754a37973b&amp;";
+var IMGDIR_MISC = "azzurra/misc";
+// -->
+</script>
+
+<script type="text/javascript" src="clientscript/vbulletin_global.js"></script>
+
+
+</head>
+<body onload="">
+<!-- logo -->
+<a name="top"></a>
+<table border="0" width="98%" cellpadding="0" cellspacing="0" align="center">
+<tr>
+	<td align="left"><a href="index.php?s=112ac9bea42c5c925c2764754a37973b&amp;"><img src="images/misc/vbulletin3_logo_white.gif" border="0" alt="Azzurra IRC Network Forum" /></a></td>
+	<td align="right">
+		&nbsp;
+	</td>
+</tr>
+</table>
+<!-- /logo -->
+
+<!-- content table -->
+<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width:98%; text-align:left">
+			<div style="padding:0px 6px 0px 6px">
+
+
+
+
+<script type="text/javascript">
+<!--
+function log_out()
+{
+	ht = document.getElementsByTagName("html");
+	ht[0].style.filter = "progid:DXImageTransform.Microsoft.BasicImage(grayscale=1)";
+	if (confirm('Sei certo di voler uscire?'))
+	{
+		return true;
+	}
+	else
+	{
+		ht[0].style.filter = "";
+		return false;
+	}
+}
+//-->
+</script>
+
+<br />
+
+<!-- breadcrumb, login, pm info -->
+<table class="tborder" cellpadding="6" cellspacing="1" border="0" width="100%" align="center">
+<tr>
+	<td class="alt1" width="100%">
+		
+			<table cellpadding="0" cellspacing="0" border="0">
+			<tr valign="bottom">
+				<td><a href="#" onclick="history.back(1)"><img src="azzurra/misc/navbits_start.gif" alt="Indietro" border="0" /></a></td>
+				<td>&nbsp;</td>
+				<td width="100%"><span class="navbar"><a href="index.php?s=112ac9bea42c5c925c2764754a37973b&amp;" accesskey="1">Azzurra IRC Network Forum</a></span> 
+	<span class="navbar">&gt; <a href="forumdisplay.php?s=112ac9bea42c5c925c2764754a37973b&amp;f=7">I Vostri Forum</a></span>
+
+
+	<span class="navbar">&gt; <a href="forumdisplay.php?s=112ac9bea42c5c925c2764754a37973b&amp;f=42">#italia_area</a></span>
+
+</td>
+			</tr>
+			<tr>
+				<td class="navbar" style="font-size:10pt; padding-top:1px" colspan="3"><a href="/showthread.php?t=5720"><img class="inlineimg" src="azzurra/misc/navbits_finallink.gif" alt="Aggiorna questa pagina" border="0" /></a> <strong>
+	Tigellata fra i colli bolognesi: il racconto del meeting
+
+</strong></td>
+			</tr>
+			</table>			
+		
+	</td>	
+	
+	
+		
+		<td class="alt2" nowrap="nowrap" style="padding:0px">
+			
+		<!-- login form -->
+		<form action="login.php" method="post" onsubmit="md5hash(vb_login_password,vb_login_md5password,vb_login_md5password_utf)">
+		<script type="text/javascript" src="clientscript/vbulletin_md5.js"></script>
+		<table cellpadding="0" cellspacing="3" border="0">
+		<tr>
+			<td class="smallfont">Nome utente</td>
+			<td><input type="text" class="button" name="vb_login_username" id="navbar_username" size="10" accesskey="u" tabindex="1" value="Nome utente" onfocus="if (this.value == 'Nome utente') this.value = '';" /></td>
+			<td class="smallfont" colspan="2" nowrap="nowrap"><label for="cb_cookieuser_navbar"><input type="checkbox" name="cookieuser" value="1" tabindex="3" id="cb_cookieuser_navbar" accesskey="c" checked="checked" />Salva impostazioni?</label></td>
+		</tr>
+		<tr>
+			<td class="smallfont">Password</td>
+			<td><input type="password" class="button" name="vb_login_password" size="10" accesskey="p" tabindex="2" /></td>
+			<td><input type="submit" class="button" value="Accedi" tabindex="4" title="Digita il tuo nome utente e la password nelle caselle qui sotto per accedere, oppure clicca sul pulsante 'Registrazione' per creare un nuovo profilo." accesskey="s" /></td>
+		</tr>
+		</table>
+		<input type="hidden" name="s" value="112ac9bea42c5c925c2764754a37973b" />
+		<input type="hidden" name="do" value="login" />
+		<input type="hidden" name="forceredirect" value="1" />			
+		<input type="hidden" name="vb_login_md5password" />
+		<input type="hidden" name="vb_login_md5password_utf" />
+		</form>
+		<!-- / login form -->
+			
+		</td>
+		
+		
+	
+</tr>
+</table>
+<!-- / breadcrumb, login, pm info -->
+
+<!-- nav buttons bar -->
+<div align="center">
+	<table class="tborder" cellpadding="6" cellspacing="0" border="0" width="100%" align="center" style="border-top-width:0px">
+	<tr align="center">	
+		<!--<td class="vbmenu_control"><a href="index.php?s=112ac9bea42c5c925c2764754a37973b&amp;">Home</a></td>-->
+		
+		
+		
+			<td class="vbmenu_control"><a href="register.php?s=112ac9bea42c5c925c2764754a37973b&amp;">Registra</a></td>
+		
+		<td class="vbmenu_control"><a href="faq.php?s=112ac9bea42c5c925c2764754a37973b&amp;" accesskey="5">FAQ</a></td>
+		<td class="vbmenu_control"><a href="memberlist.php?s=112ac9bea42c5c925c2764754a37973b&amp;">Elenco membri</a></td>
+		<td class="vbmenu_control"><a href="calendar.php?s=112ac9bea42c5c925c2764754a37973b&amp;">Calendario</a></td>
+				
+			
+				<td class="vbmenu_control"><a href="search.php?s=112ac9bea42c5c925c2764754a37973b&amp;" accesskey="4">Cerca</a></td>
+				
+				<td class="vbmenu_control"><a href="search.php?s=112ac9bea42c5c925c2764754a37973b&amp;do=getdaily" accesskey="2">Messaggi di oggi</a></td>
+				
+			
+			<td class="vbmenu_control"><a href="forumdisplay.php?s=112ac9bea42c5c925c2764754a37973b&amp;do=markread">Segna tutti i forum visitati</a></td>
+						
+		
+		
+	</tr>
+	</table>
+</div>
+<!-- / nav buttons bar -->
+
+<br />
+<br />
+
+
+
+
+
+<a name="poststop" id="poststop"></a>
+
+<!-- controls above postbits -->
+<table cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:3px">
+<tr valign="bottom">
+	
+		<td class="smallfont"><a href="newreply.php?s=112ac9bea42c5c925c2764754a37973b&amp;do=newreply&amp;noquote=1&amp;p=92706"><img src="azzurra/buttons/reply.gif" alt="Rispondi" border="0" /></a></td>
+	
+	<td align="right"><div class="pagenav" align="right">
+<table class="tborder" cellpadding="3" cellspacing="1" border="0">
+<tr>
+	<td class="vbmenu_control" style="font-weight:normal"><!--<img src="azzurra/misc/multipage.gif" alt="Mostra risultati 1 a 10 di 85 (9 pagine)" /> -->Pagina 1 di 9</td>
+	
+	
+		<td class="alt2"><span class="smallfont" title="Mostra risultati 1 a 10 di 85"><strong>1</strong></span></td>
+ 	<td class="alt1"><a class="smallfont" href="showthread.php?s=112ac9bea42c5c925c2764754a37973b&amp;t=5720&amp;page=2&amp;pp=10" title="Mostra risultati 11 a 20 di 85">2</a></td>
+	<td class="alt1"><a class="smallfont" href="showthread.php?s=112ac9bea42c5c925c2764754a37973b&amp;t=5720&amp;page=3&amp;pp=10" title="Mostra risultati 21 a 30 di 85">3</a></td>
+	<td class="alt1"><a class="smallfont" href="showthread.php?s=112ac9bea42c5c925c2764754a37973b&amp;t=5720&amp;page=4&amp;pp=10" title="Mostra risultati 31 a 40 di 85">4</a></td>
+	<td class="alt1"><a class="smallfont" href="showthread.php?s=112ac9bea42c5c925c2764754a37973b&amp;t=5720&amp;page=5&amp;pp=10" title="Mostra risultati 41 a 50 di 85">5</a></td>
+
+	<td class="alt1"><a class="smallfont" href="showthread.php?s=112ac9bea42c5c925c2764754a37973b&amp;t=5720&amp;page=2&amp;pp=10" title="Prossima pagina - Risultati 11 a 20 di 85">&gt;</a></td>
+	<td class="alt1"><a class="smallfont" href="showthread.php?s=112ac9bea42c5c925c2764754a37973b&amp;t=5720&amp;page=9&amp;pp=10" title="Ultima pagina - Risultati 81 a 85 di 85">Ultimo <strong>&raquo;</strong></a></td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<!-- / controls above postbits -->
+
+<!-- toolbar -->
+<table class="tborder" cellpadding="6" cellspacing="1" border="0" width="100%" align="center" style="border-bottom-width:0px">
+<tr>
+	<td class="tcat" width="100%">
+		<div class="smallfont">
+		
+		&nbsp;
+		</div>
+	</td>
+	<td class="vbmenu_control" id="threadtools">
+		<a href="#goto_threadtools">Strumenti discussione</a>
+		
+	</td>
+	
+		<td class="vbmenu_control" id="threadsearch">
+			<a href="#goto_threadsearch">Cerca in questa discussione</a>
+			
+		</td>
+	
+	
+	
+	<td class="vbmenu_control" id="displaymodes">
+		<a href="#goto_displaymodes">Modalità di visualizzazione</a>
+		
+	</td>
+	
+</tr>
+</table>
+<!-- / toolbar -->
+
+<!-- end content table -->
+
+		</div>	
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- / end content table -->
+
+
+
+<div id="posts"><!-- post #92706 -->
+<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width:98%; text-align:left">
+			<div style="padding:0px 6px 0px 6px">
+<div style="padding:0px 0px 6px 0px">
+
+<table class="tborder" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">
+<tr>
+	
+		<td class="thead" style="font-weight:normal" >		
+			<!-- status icon and date -->
+			<a name="post92706"><img class="inlineimg" src="azzurra/statusicon/post_old.gif" alt="Vecchio" border="0" /></a>
+			29-09-2004, 11:08
+			
+			<!-- / status icon and date -->				
+		</td>
+		<td class="thead" style="font-weight:normal" align="right">
+			&nbsp;
+			#<a href="showpost.php?s=112ac9bea42c5c925c2764754a37973b&amp;p=92706&amp;postcount=1" target="new"><strong>1</strong></a>
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt2" width="175">
+			
+			<div id="postmenu_92706">
+				
+				<a class="bigusername" href="member.php?s=112ac9bea42c5c925c2764754a37973b&amp;u=1580">Superfre`</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_92706", true); </script>
+				
+			</div>
+			
+			<div class="smallfont">Forum Jedi Knight</div>
+			
+		
+			
+				<div class="smallfont">
+					&nbsp;<br /><a href="member.php?s=112ac9bea42c5c925c2764754a37973b&amp;u=1580"><img src="customavatars/avatar1580_3.gif" alt="Superfre` avatar" border="0" /></a>
+				</div>
+			
+			
+			<div class="smallfont">
+				&nbsp;<br />
+				<div>Data registrazione: 04-03-2003</div>
+				<div>Luogo: Torino</div>
+				
+				<div>
+					Messaggi: 31.707
+				</div>
+				<div>Potenza Rep.: 1 <img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="Superfre` è un tipo interessante" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="Superfre` è un tipo interessante" border="0" /></div>
+				<div><a href="#" onclick="return imwindow('icq', '1580', 500, 450)"><img src="azzurra/misc/im_icq.gif" alt="Invia un messaggio via ICQ a Superfre`" border="0" /></a>  <a href="#" onclick="return imwindow('msn', '1580', 400, 200)"><img src="azzurra/misc/im_msn.gif" alt="Invia un messaggio via MSN a Superfre`" border="0" /></a> </div>
+			</div>					
+		
+	</td>
+	<td class="alt1">
+	
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				<img class="inlineimg" src="images/icons/icon1.gif" alt="Predefinito" border="0" />
+				<strong>Tigellata fra i colli bolognesi: il racconto del meeting</strong>
+			</div>
+			<hr size="1" style="color:#0F3178" />
+			<!-- / icon and title -->
+		
+		
+		<!-- message -->
+		<div>Il topic di Anto e' andato perso a causa dei problemi del forum per cui lo riapro. Parliamo del meeting di domenica a bologna le cui foto sono finalmente disponibili a questo indirizzo: <a href="http://areamestruati.altervista.org/SanLorenzo.shtml" target="_blank">http://areamestruati.altervista.org/SanLorenzo.shtml</a></div>
+		<!-- / message -->
+	
+		
+		
+		
+		<!-- sig -->
+			<div>
+				__________________<br />
+				<font face="Comic Sans MS"><div align="center"><a href="http://www.areamestruati.com" target="_blank"><img src="http://img350.imageshack.us/img350/6043/giosue0ho.gif" border="0" alt="" /></a><br />
+<font size="2"><font face="Microsoft Sans Serif"><font color="Blue"><b>#ITALIA_AREA &amp; #MESTRUATI: VIENI A ROTOLARE CON GIOSUE'</b></font></font></font><br />
+<i><a href="http://www.areamestruati.altervista.org/ChattaConNoi.php?pagina=Italia_Area" target="_blank">Chatta su #Italia_area</a> - <a href="http://www.areamestruati.com" target="_blank">Sito Web</a> - <a href="http://www.areamestruati.altervista.org/ChattaConNoi.php?pagina=Mestruati" target="_blank">Chatta su #Mestruati </a><br />
+<a href="http://www.areamestruati.altervista.org/People/Superfre/" target="_blank">Le Mie Foto</a></i></div></font>
+			</div>
+		<!-- / sig -->
+		
+		
+		
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2">
+		
+<img class="inlineimg" src="azzurra/statusicon/user_online.gif" alt="Superfre` è connesso" border="0" />
+
+		
+		
+		
+		&nbsp;
+	</td>
+	<td class="alt1" align="right">
+		<!-- controls -->
+		
+		
+		
+			<a href="newreply.php?s=112ac9bea42c5c925c2764754a37973b&amp;do=newreply&amp;p=92706"><img src="azzurra/buttons/quote.gif" alt="Replica con citazione" border="0" /></a>
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</table>
+
+<!-- post 92706 popup menu -->
+<div class="vbmenu_popup" id="postmenu_92706_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tr>
+		<td class="thead">Superfre`</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="member.php?s=112ac9bea42c5c925c2764754a37973b&amp;userid=1580">Mostra profilo pubblico</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="private.php?s=112ac9bea42c5c925c2764754a37973b&amp;do=newpm&amp;userid=1580">Invia un messaggio privato a Superfre`</a></td></tr>
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://www.areamestruati.com">Visita la pagina principale di Superfre`!</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="search.php?s=112ac9bea42c5c925c2764754a37973b&amp;do=finduser&amp;userid=1580">Cerca altri messaggi di Superfre`</a></td></tr>
+	
+	
+	<tr><td class="vbmenu_option"><a href="profile.php?s=112ac9bea42c5c925c2764754a37973b&amp;do=addlist&amp;userlist=buddy&amp;u=1580">Aggiungi Superfre` all'elenco amici</a></td></tr>
+	
+	</table>
+</div>
+<!-- / post 92706 popup menu -->
+
+</div>
+		</div>	
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- / post #92706 --><!-- post #92707 -->
+<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width:98%; text-align:left">
+			<div style="padding:0px 6px 0px 6px">
+<div style="padding:0px 0px 6px 0px">
+
+<table class="tborder" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">
+<tr>
+	
+		<td class="thead" style="font-weight:normal" >		
+			<!-- status icon and date -->
+			<a name="post92707"><img class="inlineimg" src="azzurra/statusicon/post_old.gif" alt="Vecchio" border="0" /></a>
+			29-09-2004, 11:10
+			
+			<!-- / status icon and date -->				
+		</td>
+		<td class="thead" style="font-weight:normal" align="right">
+			&nbsp;
+			#<a href="showpost.php?s=112ac9bea42c5c925c2764754a37973b&amp;p=92707&amp;postcount=2" target="new"><strong>2</strong></a>
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt2" width="175">
+			
+			<div id="postmenu_92707">
+				
+				<a class="bigusername" href="member.php?s=112ac9bea42c5c925c2764754a37973b&amp;u=1580">Superfre`</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_92707", true); </script>
+				
+			</div>
+			
+			<div class="smallfont">Forum Jedi Knight</div>
+			
+		
+			
+				<div class="smallfont">
+					&nbsp;<br /><a href="member.php?s=112ac9bea42c5c925c2764754a37973b&amp;u=1580"><img src="customavatars/avatar1580_3.gif" alt="Superfre` avatar" border="0" /></a>
+				</div>
+			
+			
+			<div class="smallfont">
+				&nbsp;<br />
+				<div>Data registrazione: 04-03-2003</div>
+				<div>Luogo: Torino</div>
+				
+				<div>
+					Messaggi: 31.707
+				</div>
+				<div>Potenza Rep.: 1 <img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="Superfre` è un tipo interessante" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="Superfre` è un tipo interessante" border="0" /></div>
+				<div><a href="#" onclick="return imwindow('icq', '1580', 500, 450)"><img src="azzurra/misc/im_icq.gif" alt="Invia un messaggio via ICQ a Superfre`" border="0" /></a>  <a href="#" onclick="return imwindow('msn', '1580', 400, 200)"><img src="azzurra/misc/im_msn.gif" alt="Invia un messaggio via MSN a Superfre`" border="0" /></a> </div>
+			</div>					
+		
+	</td>
+	<td class="alt1">
+	
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				<img class="inlineimg" src="images/icons/icon1.gif" alt="Predefinito" border="0" />
+				
+			</div>
+			<hr size="1" style="color:#0F3178" />
+			<!-- / icon and title -->
+		
+		
+		<!-- message -->
+		<div>Domenica 26 Settembre 2004. Ore 6,20 del mattino, al primo squillo di sveglia mi alzo saltando giu' dal letto come un grillo. Vado in cucina e metto su l'acqua per il te'. Vado in bagno, spengo il te', mi vesto, faccio colazione, saluto mamma e papa che nel frattempo si sono alzati e alle 7 prendo il borsone ed esco di casa. Destinazione... Bologna!!!<br />
+Arrivare alla stazione e' stata una vera odissea perche' avevo con me un borsone contenente il mio vecchio pc da sbolognare a Lilliput. Nel tragitto tra casa mia e la fermata del pullman, paragonabile alla via crucis, mi sono fermato tre volte a riposare esattamente come le cadute di Gesu mentre trascinava la croce. Povera Ivana quante maledizioni le ho mandato ghghgh<br />
+Tralascio tutti i dettagli dei miei spostamenti all'interno di Torino vi dico solo che finalmente alle 7:45 il mio eurostar e' partito e che durante il viaggio da Voghera in giu' ho chiacchierato allegramente con una signora 50enne di Cento fino a Bologna.<br />
+Arrivo a Bologna centrale alle 11 meno 5 e col mio pc in spalla scendo le scale e cerco di trascinarmi fino in piazzale medaglie d'oro. Nel sottopassaggio ecco apparire Tata, Sniper, Gigi e il Principe. Tatina ha gli occhietti a forma di cuore per cui io da bastardo quale sono gli do tre bacetti e un piccolo freddo abbraccio. Poi schiocco le dita e lei afferra la borsa del pc e la trascina tutta eccitata fino a Piazzale Medaglie d'Oro. Praticamente l'ho schiavizzata!<br />
+Gli altri devono ancora arrivare e vorremmo andare a beccarli sul binario ma io faccio capire a chiare lettere che non mi posso muovere da qui anche perche la mia schiavetta non era ancora ben addomesticata e di trascinarmi ancora il pc non avevo alcuna intenzione. Alla spicciolata arrivano Ivana (sempre piu splendida), Maurizio (che e' alto esattamente il doppio di tata tant'e che io gli consiglio di appoggiare il gomito sulla testa di tata per stare piu comodo visto che lei gli arriva esattamente sotto l'ascella) coi suoi due amici, Antonellina (Sbav sbav), Sviat (lo facevo piu alto) e per ultimo Lorenzo (mitico). Cazzarola, 12... ne mancano due! Di Ingrid avevo gia saputo sul treno che per problemi familiari non era potuta partire (sigh sigh) ma BlackMagic che fine ha fatto? Il telefono spento ci fa capire che ci ha tirato un pacco clamoroso per cui ci togliamo dalle balle e ci rechiamo a prendere prima l'aperitivo e poi alle macchine.<br />
+Dopo una piccola discussione su chi doveva andare avanti a tirare il gruppo e dopo aver tentato di lasciare tata fuori dalla silenziosa Tipo di X-Paradise, siamo partiti con destinazione l'agriturismo sui colli scelto da Gigi.<br />
+Si esce da bologna e ci si avventura in direzione dei colli circostanti. Facciamo tappa per un secondo giro di aperitivi lungo la strada. Di nuovo un tentativo di abbandonare Tata mentre era in bagno ma anche questa volta fallisce clamorosamente. Decidiamo di portarcela appresso anche perche oltretutto mi servira' una schiavetta anche al ritorno.<br />
+Il sole illumina i colli e io tento di far gasare Gigi e di far prendere un colpo a Laura che ha paura della velocita': prima con la suoneria children di robert miles del mio cellulare poi con il coretto mio e di laura di 50 special dei lunapop (ma com'e' bello andare in giro per i colli bolognesi..) e infine con l'mp3 di sick &amp;amp; tired di anastacia. Tata se la fa sotto un paio di volte ma putroppo non ci sono le condizioni per sprintare in salita e quindi non riusciamo ad ammazzarla con questo sistema.<br />
+Eccoci finalmente a San Lorenzo in Collina (anche detto sant'Akeron in collina) ed eccoci all'agriturismo! Fichissimo, una cascina immersa nel verde con tutti gli animali e le vigne a pochissimi km dalla citta! Ci hanno riservato una bellissima saletta tutta per noi con il caminetto e le corna di non so cosa o di non so chi appese alla parete. Prendiamo un po' d'aria, poi ci sediamo a tavola e arrivano gli antipasti: bruschette al pomodoro, bruschette varie, frittata di basilico e altre robette gustose vengono avidamente saccheggiate dalle mani di tutti e io do' il mio giorgionesco contributo a svuotare i vassoi. L'atmosfera era gia' goliardica dalla stazione quindi a tavola ci siamo ancora piu scatenati senza pero' trascendere. La signora dell'agriturismo ci ha presi in simpatia. Arrivano le tigelle e gli affettati e io faccio una scorpacciata di tigelle col prosciutto e tra una pausa e l'altra mi spupazzo Ivana, Anto, e perfino Tata. Arrivano anche le crescentine e anche li giu a riempirle di affettato. Tornano ancora le tigelle e il mio occhio cade nella ciotola di cioccolata che sta davanti il naso di anto. Mi armo di cucchiaino e poi iniziamo uno show a base di imboccate maliziose di crescentine tigelle e cioccolata. Il vino scorre a fiumi, le cazzate si sprecano, le risate risuonano fragorose nell'allegra tavolata e io per un giorno ho colmato abbondantemente le mie carenze d'affetto e di affettato.<br />
+Finito di pranzare io e Anto usciamo fuori a farci un giretto per digerire e ci dirigiamo verso la grande vigna sotto la casa. Ci soffermiamo a guardare le papere e i pulcini ormai adulti e infine scopriamo che seminascosti fra le fila di viti ci sono due tenerissimi pony liberi che mangiano l'erba e vendemmiano di nascosto e subito vola la battuta: CAVALLO GOLOSO!<br />
+Io e Anto cerchiamo di richiamare l'attenzione di uno dei due pony che fa un paio di passi verso antonellina e poi si ferma. Dei ragazzini schiamazzano e noi consigliamo al pony di darsi alla macchia. L'atmosfera e' bellissima, c'e quel silenzio tipico della campagna rotto solamente da quei cazzo di gagni malefici e i pony fra le vigne nella suggestiva cornice dei verdissimi colli bolognesi; una cosa straordinariamente bucolica e che ha messo me e Antonella in pace col mondo intero.<br />
+Torniamo in casa e dopo un po' cominciano a fare dentro e fuori anche gli altri. Ad un certo punto si comincia a spettegolare a cominciare da me e Giorgio che pero' veniamo continuamente interrotti per cui decidiamo di appartarci fuori. Ci raggiungono Ivana, Antonella, Gigi e gli altri.<br />
+Consumato il dolce, il caffe e vari tipi di alcolici ci rendiamo conto che ridendo e scherzando sono gia piu delle 5. Alle 6 e qualcosa veniamo sollecitati da Lorenzo che doveva prendere il treno. Paghiamo il conto di 20 euro a testa, salutiamo la signora che soddisfatta del nostro allegro ma educato gruppetto ci invita a ritornare a trovarli. Torniamo in stazione e alle 7 e qualcosa io abbandono il gruppo praticamente per primo senza salutare molte delle persone e afferrando per la coda un eurostar diretto a torino in leggero ritardo.<br />
+La bella giornata bolognese era finita e dopo aver fatto un paio di telefonate e giocato col telefonino mi riguardo le foto sulla mia digitale e rido. Piu avanti noto che la ragazza seduta nella fila di sedili di fianco alla mia sembra fissarmi con insistenza. Era seduta davanti ad una coppia di ragazzi dell'est che si coccolavano amorevolmente e pensavo fosse con loro. Ad Asti mi alzo per andare in bagno e mi porto la digitale appresso. Quando torno vedo la ragazza che mi fissava seduta al mio posto. Lei in italiano (anche perche era italianissima) si scusa dicendo che voleva stendere i piedi e io mi siedo di fronte a lei. Iniziamo a parlare molto serenamente e a raccontarci vagamente i rispettivi viaggi. Purtroppo 30 minutini di tempo sono stati un po' pochini per piazzare una richiesta di numero di telefono ma c'era abbastanza feeling fra di noi tant'e' che da bravo ragazzo quale sono ho accompagnato questa ragazza dal fratello che l'aspettava in auto. Alle 22:30 di sera nella stazione di una citta come torino non faccio andare in giro da sola una giovane donna. A mezzanotte arrivo a casa ceno e rieccomi davanti ad uno stupido monitor <img src="images/smilies/classic/icon_smile.gif" border="0" alt="" title="Icon Smile" class="inlineimg" /><br />
+<br />
+Devo dire che gigi ha organizzato questo mini meeting in maniera superba e sono rimasto soddisfatto di tutto: della compagnia, del luogo e soprattutto del cibo eheh. Mi e' dispiaciuto molto che non ci fosse la splendida e adorabile Ingrid. Sono rimasto un po' deluso dal comportamento (che cmq ci aspettavamo) di Alessio. Ho conosciuto l'eclettico Sviat che ha il temperamento tipico del programmatore pazzo furioso, ho stretto amicizia con Sniper che e' davvero un santo a sopportare l'allegra e simpatica Tata. Ho passato moltissimo tempo in compagnia di Antonella e considerando l'adorazione che ho per quella donna potete solo immaginare quanto mi abbia fatto piacere. Ho stretto ulteriormente i legami con persone adorabili quali Ivana Maurizio Giorgio e Gigi e ho conosciuto un po' meglio Lorenzo. Davvero un meeting stupendo!</div>
+		<!-- / message -->
+	
+		
+		
+		
+		<!-- sig -->
+			<div>
+				__________________<br />
+				<font face="Comic Sans MS"><div align="center"><a href="http://www.areamestruati.com" target="_blank"><img src="http://img350.imageshack.us/img350/6043/giosue0ho.gif" border="0" alt="" /></a><br />
+<font size="2"><font face="Microsoft Sans Serif"><font color="Blue"><b>#ITALIA_AREA &amp; #MESTRUATI: VIENI A ROTOLARE CON GIOSUE'</b></font></font></font><br />
+<i><a href="http://www.areamestruati.altervista.org/ChattaConNoi.php?pagina=Italia_Area" target="_blank">Chatta su #Italia_area</a> - <a href="http://www.areamestruati.com" target="_blank">Sito Web</a> - <a href="http://www.areamestruati.altervista.org/ChattaConNoi.php?pagina=Mestruati" target="_blank">Chatta su #Mestruati </a><br />
+<a href="http://www.areamestruati.altervista.org/People/Superfre/" target="_blank">Le Mie Foto</a></i></div></font>
+			</div>
+		<!-- / sig -->
+		
+		
+		
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2">
+		
+<img class="inlineimg" src="azzurra/statusicon/user_online.gif" alt="Superfre` è connesso" border="0" />
+
+		
+		
+		
+		&nbsp;
+	</td>
+	<td class="alt1" align="right">
+		<!-- controls -->
+		
+		
+		
+			<a href="newreply.php?s=112ac9bea42c5c925c2764754a37973b&amp;do=newreply&amp;p=92707"><img src="azzurra/buttons/quote.gif" alt="Replica con citazione" border="0" /></a>
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</table>
+
+<!-- post 92707 popup menu -->
+<div class="vbmenu_popup" id="postmenu_92707_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tr>
+		<td class="thead">Superfre`</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="member.php?s=112ac9bea42c5c925c2764754a37973b&amp;userid=1580">Mostra profilo pubblico</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="private.php?s=112ac9bea42c5c925c2764754a37973b&amp;do=newpm&amp;userid=1580">Invia un messaggio privato a Superfre`</a></td></tr>
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://www.areamestruati.com">Visita la pagina principale di Superfre`!</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="search.php?s=112ac9bea42c5c925c2764754a37973b&amp;do=finduser&amp;userid=1580">Cerca altri messaggi di Superfre`</a></td></tr>
+	
+	
+	<tr><td class="vbmenu_option"><a href="profile.php?s=112ac9bea42c5c925c2764754a37973b&amp;do=addlist&amp;userlist=buddy&amp;u=1580">Aggiungi Superfre` all'elenco amici</a></td></tr>
+	
+	</table>
+</div>
+<!-- / post 92707 popup menu -->
+
+</div>
+		</div>	
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- / post #92707 --><!-- post #92708 -->
+<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width:98%; text-align:left">
+			<div style="padding:0px 6px 0px 6px">
+<div style="padding:0px 0px 6px 0px">
+
+<table class="tborder" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">
+<tr>
+	
+		<td class="thead" style="font-weight:normal" >		
+			<!-- status icon and date -->
+			<a name="post92708"><img class="inlineimg" src="azzurra/statusicon/post_old.gif" alt="Vecchio" border="0" /></a>
+			29-09-2004, 11:27
+			
+			<!-- / status icon and date -->				
+		</td>
+		<td class="thead" style="font-weight:normal" align="right">
+			&nbsp;
+			#<a href="showpost.php?s=112ac9bea42c5c925c2764754a37973b&amp;p=92708&amp;postcount=3" target="new"><strong>3</strong></a>
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt2" width="175">
+			
+			<div id="postmenu_92708">
+				
+				<a class="bigusername" href="member.php?s=112ac9bea42c5c925c2764754a37973b&amp;u=1136">mukkacamilla</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_92708", true); </script>
+				
+			</div>
+			
+			<div class="smallfont">Forum Jedi Knight</div>
+			
+		
+			
+				<div class="smallfont">
+					&nbsp;<br /><a href="member.php?s=112ac9bea42c5c925c2764754a37973b&amp;u=1136"><img src="customavatars/avatar1136_2.gif" alt="mukkacamilla avatar" border="0" /></a>
+				</div>
+			
+			
+			<div class="smallfont">
+				&nbsp;<br />
+				<div>Data registrazione: 30-11-2002</div>
+				<div>Luogo: Milano</div>
+				
+				<div>
+					Messaggi: 3.465
+				</div>
+				<div>Potenza Rep.: 1 <img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="mukkacamilla è sulla buona strada" border="0" /></div>
+				<div><a href="#" onclick="return imwindow('icq', '1136', 500, 450)"><img src="azzurra/misc/im_icq.gif" alt="Invia un messaggio via ICQ a mukkacamilla" border="0" /></a>  <a href="#" onclick="return imwindow('msn', '1136', 400, 200)"><img src="azzurra/misc/im_msn.gif" alt="Invia un messaggio via MSN a mukkacamilla" border="0" /></a> </div>
+			</div>					
+		
+	</td>
+	<td class="alt1">
+	
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				<img class="inlineimg" src="images/icons/icon1.gif" alt="Predefinito" border="0" />
+				
+			</div>
+			<hr size="1" style="color:#0F3178" />
+			<!-- / icon and title -->
+		
+		
+		<!-- message -->
+		<div>voglio provare le tigelle ... *_* :sbaaaaaaaav:</div>
+		<!-- / message -->
+	
+		
+		
+		
+		<!-- sig -->
+			<div>
+				__________________<br />
+				Climb your fatal apple tree<br />
+try to catch the sun, hide from your little brother's gun, dream yourself away.. <img src="images/smilies/sonno/sonno14.gif" border="0" alt="" title="Sonno14" class="inlineimg" /><br />
+<div align="center"><img src="http://mukkacamilla.altervista.org/th_x_mukka_3.jpg" border="0" alt="" /><br />
+<i>Richard</i>: Sei pazza!<br />
+<i>Ally</i>: E' naturale, tutte le vere donne lo sono.</div>
+			</div>
+		<!-- / sig -->
+		
+		
+		
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2">
+		<img class="inlineimg" src="azzurra/statusicon/user_offline.gif" alt="mukkacamilla non è connesso" border="0" />
+
+
+		
+		
+		
+		&nbsp;
+	</td>
+	<td class="alt1" align="right">
+		<!-- controls -->
+		
+		
+		
+			<a href="newreply.php?s=112ac9bea42c5c925c2764754a37973b&amp;do=newreply&amp;p=92708"><img src="azzurra/buttons/quote.gif" alt="Replica con citazione" border="0" /></a>
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</table>
+
+<!-- post 92708 popup menu -->
+<div class="vbmenu_popup" id="postmenu_92708_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tr>
+		<td class="thead">mukkacamilla</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="member.php?s=112ac9bea42c5c925c2764754a37973b&amp;userid=1136">Mostra profilo pubblico</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="private.php?s=112ac9bea42c5c925c2764754a37973b&amp;do=newpm&amp;userid=1136">Invia un messaggio privato a mukkacamilla</a></td></tr>
+	
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="search.php?s=112ac9bea42c5c925c2764754a37973b&amp;do=finduser&amp;userid=1136">Cerca altri messaggi di mukkacamilla</a></td></tr>
+	
+	
+	<tr><td class="vbmenu_option"><a href="profile.php?s=112ac9bea42c5c925c2764754a37973b&amp;do=addlist&amp;userlist=buddy&amp;u=1136">Aggiungi mukkacamilla all'elenco amici</a></td></tr>
+	
+	</table>
+</div>
+<!-- / post 92708 popup menu -->
+
+</div>
+		</div>	
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- / post #92708 --><!-- post #92712 -->
+<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width:98%; text-align:left">
+			<div style="padding:0px 6px 0px 6px">
+<div style="padding:0px 0px 6px 0px">
+
+<table class="tborder" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">
+<tr>
+	
+		<td class="thead" style="font-weight:normal" >		
+			<!-- status icon and date -->
+			<a name="post92712"><img class="inlineimg" src="azzurra/statusicon/post_old.gif" alt="Vecchio" border="0" /></a>
+			29-09-2004, 11:36
+			
+			<!-- / status icon and date -->				
+		</td>
+		<td class="thead" style="font-weight:normal" align="right">
+			&nbsp;
+			#<a href="showpost.php?s=112ac9bea42c5c925c2764754a37973b&amp;p=92712&amp;postcount=4" target="new"><strong>4</strong></a>
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt2" width="175">
+			
+			<div id="postmenu_92712">
+				
+				<a class="bigusername" href="member.php?s=112ac9bea42c5c925c2764754a37973b&amp;u=1580">Superfre`</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_92712", true); </script>
+				
+			</div>
+			
+			<div class="smallfont">Forum Jedi Knight</div>
+			
+		
+			
+				<div class="smallfont">
+					&nbsp;<br /><a href="member.php?s=112ac9bea42c5c925c2764754a37973b&amp;u=1580"><img src="customavatars/avatar1580_3.gif" alt="Superfre` avatar" border="0" /></a>
+				</div>
+			
+			
+			<div class="smallfont">
+				&nbsp;<br />
+				<div>Data registrazione: 04-03-2003</div>
+				<div>Luogo: Torino</div>
+				
+				<div>
+					Messaggi: 31.707
+				</div>
+				<div>Potenza Rep.: 1 <img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="Superfre` è un tipo interessante" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="Superfre` è un tipo interessante" border="0" /></div>
+				<div><a href="#" onclick="return imwindow('icq', '1580', 500, 450)"><img src="azzurra/misc/im_icq.gif" alt="Invia un messaggio via ICQ a Superfre`" border="0" /></a>  <a href="#" onclick="return imwindow('msn', '1580', 400, 200)"><img src="azzurra/misc/im_msn.gif" alt="Invia un messaggio via MSN a Superfre`" border="0" /></a> </div>
+			</div>					
+		
+	</td>
+	<td class="alt1">
+	
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				<img class="inlineimg" src="images/icons/icon1.gif" alt="Predefinito" border="0" />
+				
+			</div>
+			<hr size="1" style="color:#0F3178" />
+			<!-- / icon and title -->
+		
+		
+		<!-- message -->
+		<div>sono buonissime! W L'emilia romagna e la sua cucina!</div>
+		<!-- / message -->
+	
+		
+		
+		
+		<!-- sig -->
+			<div>
+				__________________<br />
+				<font face="Comic Sans MS"><div align="center"><a href="http://www.areamestruati.com" target="_blank"><img src="http://img350.imageshack.us/img350/6043/giosue0ho.gif" border="0" alt="" /></a><br />
+<font size="2"><font face="Microsoft Sans Serif"><font color="Blue"><b>#ITALIA_AREA &amp; #MESTRUATI: VIENI A ROTOLARE CON GIOSUE'</b></font></font></font><br />
+<i><a href="http://www.areamestruati.altervista.org/ChattaConNoi.php?pagina=Italia_Area" target="_blank">Chatta su #Italia_area</a> - <a href="http://www.areamestruati.com" target="_blank">Sito Web</a> - <a href="http://www.areamestruati.altervista.org/ChattaConNoi.php?pagina=Mestruati" target="_blank">Chatta su #Mestruati </a><br />
+<a href="http://www.areamestruati.altervista.org/People/Superfre/" target="_blank">Le Mie Foto</a></i></div></font>
+			</div>
+		<!-- / sig -->
+		
+		
+		
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2">
+		
+<img class="inlineimg" src="azzurra/statusicon/user_online.gif" alt="Superfre` è connesso" border="0" />
+
+		
+		
+		
+		&nbsp;
+	</td>
+	<td class="alt1" align="right">
+		<!-- controls -->
+		
+		
+		
+			<a href="newreply.php?s=112ac9bea42c5c925c2764754a37973b&amp;do=newreply&amp;p=92712"><img src="azzurra/buttons/quote.gif" alt="Replica con citazione" border="0" /></a>
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</table>
+
+<!-- post 92712 popup menu -->
+<div class="vbmenu_popup" id="postmenu_92712_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tr>
+		<td class="thead">Superfre`</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="member.php?s=112ac9bea42c5c925c2764754a37973b&amp;userid=1580">Mostra profilo pubblico</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="private.php?s=112ac9bea42c5c925c2764754a37973b&amp;do=newpm&amp;userid=1580">Invia un messaggio privato a Superfre`</a></td></tr>
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://www.areamestruati.com">Visita la pagina principale di Superfre`!</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="search.php?s=112ac9bea42c5c925c2764754a37973b&amp;do=finduser&amp;userid=1580">Cerca altri messaggi di Superfre`</a></td></tr>
+	
+	
+	<tr><td class="vbmenu_option"><a href="profile.php?s=112ac9bea42c5c925c2764754a37973b&amp;do=addlist&amp;userlist=buddy&amp;u=1580">Aggiungi Superfre` all'elenco amici</a></td></tr>
+	
+	</table>
+</div>
+<!-- / post 92712 popup menu -->
+
+</div>
+		</div>	
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- / post #92712 --><!-- post #92752 -->
+<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width:98%; text-align:left">
+			<div style="padding:0px 6px 0px 6px">
+<div style="padding:0px 0px 6px 0px">
+
+<table class="tborder" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">
+<tr>
+	
+		<td class="thead" style="font-weight:normal" >		
+			<!-- status icon and date -->
+			<a name="post92752"><img class="inlineimg" src="azzurra/statusicon/post_old.gif" alt="Vecchio" border="0" /></a>
+			29-09-2004, 12:49
+			
+			<!-- / status icon and date -->				
+		</td>
+		<td class="thead" style="font-weight:normal" align="right">
+			&nbsp;
+			#<a href="showpost.php?s=112ac9bea42c5c925c2764754a37973b&amp;p=92752&amp;postcount=5" target="new"><strong>5</strong></a>
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt2" width="175">
+			
+			<div id="postmenu_92752">
+				
+				<a class="bigusername" href="member.php?s=112ac9bea42c5c925c2764754a37973b&amp;u=1580">Superfre`</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_92752", true); </script>
+				
+			</div>
+			
+			<div class="smallfont">Forum Jedi Knight</div>
+			
+		
+			
+				<div class="smallfont">
+					&nbsp;<br /><a href="member.php?s=112ac9bea42c5c925c2764754a37973b&amp;u=1580"><img src="customavatars/avatar1580_3.gif" alt="Superfre` avatar" border="0" /></a>
+				</div>
+			
+			
+			<div class="smallfont">
+				&nbsp;<br />
+				<div>Data registrazione: 04-03-2003</div>
+				<div>Luogo: Torino</div>
+				
+				<div>
+					Messaggi: 31.707
+				</div>
+				<div>Potenza Rep.: 1 <img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="Superfre` è un tipo interessante" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="Superfre` è un tipo interessante" border="0" /></div>
+				<div><a href="#" onclick="return imwindow('icq', '1580', 500, 450)"><img src="azzurra/misc/im_icq.gif" alt="Invia un messaggio via ICQ a Superfre`" border="0" /></a>  <a href="#" onclick="return imwindow('msn', '1580', 400, 200)"><img src="azzurra/misc/im_msn.gif" alt="Invia un messaggio via MSN a Superfre`" border="0" /></a> </div>
+			</div>					
+		
+	</td>
+	<td class="alt1">
+	
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				<img class="inlineimg" src="images/icons/icon1.gif" alt="Predefinito" border="0" />
+				
+			</div>
+			<hr size="1" style="color:#0F3178" />
+			<!-- / icon and title -->
+		
+		
+		<!-- message -->
+		<div>questo e' il fantastico posto dove siamo stati:<br />
+<a href="http://www.malcantoneguidottivini.it/agriturismo/" target="_blank">http://www.malcantoneguidottivini.it/agriturismo/</a></div>
+		<!-- / message -->
+	
+		
+		
+		
+		<!-- sig -->
+			<div>
+				__________________<br />
+				<font face="Comic Sans MS"><div align="center"><a href="http://www.areamestruati.com" target="_blank"><img src="http://img350.imageshack.us/img350/6043/giosue0ho.gif" border="0" alt="" /></a><br />
+<font size="2"><font face="Microsoft Sans Serif"><font color="Blue"><b>#ITALIA_AREA &amp; #MESTRUATI: VIENI A ROTOLARE CON GIOSUE'</b></font></font></font><br />
+<i><a href="http://www.areamestruati.altervista.org/ChattaConNoi.php?pagina=Italia_Area" target="_blank">Chatta su #Italia_area</a> - <a href="http://www.areamestruati.com" target="_blank">Sito Web</a> - <a href="http://www.areamestruati.altervista.org/ChattaConNoi.php?pagina=Mestruati" target="_blank">Chatta su #Mestruati </a><br />
+<a href="http://www.areamestruati.altervista.org/People/Superfre/" target="_blank">Le Mie Foto</a></i></div></font>
+			</div>
+		<!-- / sig -->
+		
+		
+		
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2">
+		
+<img class="inlineimg" src="azzurra/statusicon/user_online.gif" alt="Superfre` è connesso" border="0" />
+
+		
+		
+		
+		&nbsp;
+	</td>
+	<td class="alt1" align="right">
+		<!-- controls -->
+		
+		
+		
+			<a href="newreply.php?s=112ac9bea42c5c925c2764754a37973b&amp;do=newreply&amp;p=92752"><img src="azzurra/buttons/quote.gif" alt="Replica con citazione" border="0" /></a>
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</table>
+
+<!-- post 92752 popup menu -->
+<div class="vbmenu_popup" id="postmenu_92752_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tr>
+		<td class="thead">Superfre`</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="member.php?s=112ac9bea42c5c925c2764754a37973b&amp;userid=1580">Mostra profilo pubblico</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="private.php?s=112ac9bea42c5c925c2764754a37973b&amp;do=newpm&amp;userid=1580">Invia un messaggio privato a Superfre`</a></td></tr>
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://www.areamestruati.com">Visita la pagina principale di Superfre`!</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="search.php?s=112ac9bea42c5c925c2764754a37973b&amp;do=finduser&amp;userid=1580">Cerca altri messaggi di Superfre`</a></td></tr>
+	
+	
+	<tr><td class="vbmenu_option"><a href="profile.php?s=112ac9bea42c5c925c2764754a37973b&amp;do=addlist&amp;userlist=buddy&amp;u=1580">Aggiungi Superfre` all'elenco amici</a></td></tr>
+	
+	</table>
+</div>
+<!-- / post 92752 popup menu -->
+
+</div>
+		</div>	
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- / post #92752 --><!-- post #92836 -->
+<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width:98%; text-align:left">
+			<div style="padding:0px 6px 0px 6px">
+<div style="padding:0px 0px 6px 0px">
+
+<table class="tborder" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">
+<tr>
+	
+		<td class="thead" style="font-weight:normal" >		
+			<!-- status icon and date -->
+			<a name="post92836"><img class="inlineimg" src="azzurra/statusicon/post_old.gif" alt="Vecchio" border="0" /></a>
+			29-09-2004, 15:42
+			
+			<!-- / status icon and date -->				
+		</td>
+		<td class="thead" style="font-weight:normal" align="right">
+			&nbsp;
+			#<a href="showpost.php?s=112ac9bea42c5c925c2764754a37973b&amp;p=92836&amp;postcount=6" target="new"><strong>6</strong></a>
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt2" width="175">
+			
+			<div id="postmenu_92836">
+				
+				<a class="bigusername" href="member.php?s=112ac9bea42c5c925c2764754a37973b&amp;u=1809">VANESSA-LA-LEONESSA</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_92836", true); </script>
+				
+			</div>
+			
+			<div class="smallfont">Forum Jedi Knight</div>
+			
+		
+			
+				<div class="smallfont">
+					&nbsp;<br /><a href="member.php?s=112ac9bea42c5c925c2764754a37973b&amp;u=1809"><img src="customavatars/avatar1809_0.gif" alt="VANESSA-LA-LEONESSA avatar" border="0" /></a>
+				</div>
+			
+			
+			<div class="smallfont">
+				&nbsp;<br />
+				<div>Data registrazione: 21-04-2003</div>
+				
+				
+				<div>
+					Messaggi: 9.185
+				</div>
+				<div>Potenza Rep.: 1 <img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="VANESSA-LA-LEONESSA è un tipo interessante" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="VANESSA-LA-LEONESSA è un tipo interessante" border="0" /></div>
+				<div>  <a href="#" onclick="return imwindow('msn', '1809', 400, 200)"><img src="azzurra/misc/im_msn.gif" alt="Invia un messaggio via MSN a VANESSA-LA-LEONESSA" border="0" /></a> </div>
+			</div>					
+		
+	</td>
+	<td class="alt1">
+	
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				<img class="inlineimg" src="images/icons/icon1.gif" alt="Predefinito" border="0" />
+				
+			</div>
+			<hr size="1" style="color:#0F3178" />
+			<!-- / icon and title -->
+		
+		
+		<!-- message -->
+		<div>Oi Fre, certo le corna in testa ti stanno proprio bene</div>
+		<!-- / message -->
+	
+		
+		
+		
+		<!-- sig -->
+			<div>
+				__________________<br />
+				<img src="http://www.specialgratis.it/gif_e_/horrorr002.gif" border="0" alt="" />
+			</div>
+		<!-- / sig -->
+		
+		
+		
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2">
+		<img class="inlineimg" src="azzurra/statusicon/user_offline.gif" alt="VANESSA-LA-LEONESSA non è connesso" border="0" />
+
+
+		
+		
+		
+		&nbsp;
+	</td>
+	<td class="alt1" align="right">
+		<!-- controls -->
+		
+		
+		
+			<a href="newreply.php?s=112ac9bea42c5c925c2764754a37973b&amp;do=newreply&amp;p=92836"><img src="azzurra/buttons/quote.gif" alt="Replica con citazione" border="0" /></a>
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</table>
+
+<!-- post 92836 popup menu -->
+<div class="vbmenu_popup" id="postmenu_92836_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tr>
+		<td class="thead">VANESSA-LA-LEONESSA</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="member.php?s=112ac9bea42c5c925c2764754a37973b&amp;userid=1809">Mostra profilo pubblico</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="private.php?s=112ac9bea42c5c925c2764754a37973b&amp;do=newpm&amp;userid=1809">Invia un messaggio privato a VANESSA-LA-LEONESSA</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="sendmessage.php?s=112ac9bea42c5c925c2764754a37973b&amp;do=mailmember&amp;u=1809">Manda E-Mail a VANESSA-LA-LEONESSA</a></td></tr>
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="search.php?s=112ac9bea42c5c925c2764754a37973b&amp;do=finduser&amp;userid=1809">Cerca altri messaggi di VANESSA-LA-LEONESSA</a></td></tr>
+	
+	
+	<tr><td class="vbmenu_option"><a href="profile.php?s=112ac9bea42c5c925c2764754a37973b&amp;do=addlist&amp;userlist=buddy&amp;u=1809">Aggiungi VANESSA-LA-LEONESSA all'elenco amici</a></td></tr>
+	
+	</table>
+</div>
+<!-- / post 92836 popup menu -->
+
+</div>
+		</div>	
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- / post #92836 --><!-- post #92848 -->
+<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width:98%; text-align:left">
+			<div style="padding:0px 6px 0px 6px">
+<div style="padding:0px 0px 6px 0px">
+
+<table class="tborder" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">
+<tr>
+	
+		<td class="thead" style="font-weight:normal" >		
+			<!-- status icon and date -->
+			<a name="post92848"><img class="inlineimg" src="azzurra/statusicon/post_old.gif" alt="Vecchio" border="0" /></a>
+			29-09-2004, 15:52
+			
+			<!-- / status icon and date -->				
+		</td>
+		<td class="thead" style="font-weight:normal" align="right">
+			&nbsp;
+			#<a href="showpost.php?s=112ac9bea42c5c925c2764754a37973b&amp;p=92848&amp;postcount=7" target="new"><strong>7</strong></a>
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt2" width="175">
+			
+			<div id="postmenu_92848">
+				
+				<a class="bigusername" href="member.php?s=112ac9bea42c5c925c2764754a37973b&amp;u=1580">Superfre`</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_92848", true); </script>
+				
+			</div>
+			
+			<div class="smallfont">Forum Jedi Knight</div>
+			
+		
+			
+				<div class="smallfont">
+					&nbsp;<br /><a href="member.php?s=112ac9bea42c5c925c2764754a37973b&amp;u=1580"><img src="customavatars/avatar1580_3.gif" alt="Superfre` avatar" border="0" /></a>
+				</div>
+			
+			
+			<div class="smallfont">
+				&nbsp;<br />
+				<div>Data registrazione: 04-03-2003</div>
+				<div>Luogo: Torino</div>
+				
+				<div>
+					Messaggi: 31.707
+				</div>
+				<div>Potenza Rep.: 1 <img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="Superfre` è un tipo interessante" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="Superfre` è un tipo interessante" border="0" /></div>
+				<div><a href="#" onclick="return imwindow('icq', '1580', 500, 450)"><img src="azzurra/misc/im_icq.gif" alt="Invia un messaggio via ICQ a Superfre`" border="0" /></a>  <a href="#" onclick="return imwindow('msn', '1580', 400, 200)"><img src="azzurra/misc/im_msn.gif" alt="Invia un messaggio via MSN a Superfre`" border="0" /></a> </div>
+			</div>					
+		
+	</td>
+	<td class="alt1">
+	
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				<img class="inlineimg" src="images/icons/icon1.gif" alt="Predefinito" border="0" />
+				
+			</div>
+			<hr size="1" style="color:#0F3178" />
+			<!-- / icon and title -->
+		
+		
+		<!-- message -->
+		<div>grazie, ma per colpa di chi quelle corna? Ingrid? Micia? Mukka? Nellina? Chi???<br />
+<br />
+Voi dite tutte quante? Puo essere</div>
+		<!-- / message -->
+	
+		
+		
+		
+		<!-- sig -->
+			<div>
+				__________________<br />
+				<font face="Comic Sans MS"><div align="center"><a href="http://www.areamestruati.com" target="_blank"><img src="http://img350.imageshack.us/img350/6043/giosue0ho.gif" border="0" alt="" /></a><br />
+<font size="2"><font face="Microsoft Sans Serif"><font color="Blue"><b>#ITALIA_AREA &amp; #MESTRUATI: VIENI A ROTOLARE CON GIOSUE'</b></font></font></font><br />
+<i><a href="http://www.areamestruati.altervista.org/ChattaConNoi.php?pagina=Italia_Area" target="_blank">Chatta su #Italia_area</a> - <a href="http://www.areamestruati.com" target="_blank">Sito Web</a> - <a href="http://www.areamestruati.altervista.org/ChattaConNoi.php?pagina=Mestruati" target="_blank">Chatta su #Mestruati </a><br />
+<a href="http://www.areamestruati.altervista.org/People/Superfre/" target="_blank">Le Mie Foto</a></i></div></font>
+			</div>
+		<!-- / sig -->
+		
+		
+		
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2">
+		
+<img class="inlineimg" src="azzurra/statusicon/user_online.gif" alt="Superfre` è connesso" border="0" />
+
+		
+		
+		
+		&nbsp;
+	</td>
+	<td class="alt1" align="right">
+		<!-- controls -->
+		
+		
+		
+			<a href="newreply.php?s=112ac9bea42c5c925c2764754a37973b&amp;do=newreply&amp;p=92848"><img src="azzurra/buttons/quote.gif" alt="Replica con citazione" border="0" /></a>
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</table>
+
+<!-- post 92848 popup menu -->
+<div class="vbmenu_popup" id="postmenu_92848_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tr>
+		<td class="thead">Superfre`</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="member.php?s=112ac9bea42c5c925c2764754a37973b&amp;userid=1580">Mostra profilo pubblico</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="private.php?s=112ac9bea42c5c925c2764754a37973b&amp;do=newpm&amp;userid=1580">Invia un messaggio privato a Superfre`</a></td></tr>
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://www.areamestruati.com">Visita la pagina principale di Superfre`!</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="search.php?s=112ac9bea42c5c925c2764754a37973b&amp;do=finduser&amp;userid=1580">Cerca altri messaggi di Superfre`</a></td></tr>
+	
+	
+	<tr><td class="vbmenu_option"><a href="profile.php?s=112ac9bea42c5c925c2764754a37973b&amp;do=addlist&amp;userlist=buddy&amp;u=1580">Aggiungi Superfre` all'elenco amici</a></td></tr>
+	
+	</table>
+</div>
+<!-- / post 92848 popup menu -->
+
+</div>
+		</div>	
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- / post #92848 --><!-- post #92852 -->
+<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width:98%; text-align:left">
+			<div style="padding:0px 6px 0px 6px">
+<div style="padding:0px 0px 6px 0px">
+
+<table class="tborder" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">
+<tr>
+	
+		<td class="thead" style="font-weight:normal" >		
+			<!-- status icon and date -->
+			<a name="post92852"><img class="inlineimg" src="azzurra/statusicon/post_old.gif" alt="Vecchio" border="0" /></a>
+			29-09-2004, 15:55
+			
+			<!-- / status icon and date -->				
+		</td>
+		<td class="thead" style="font-weight:normal" align="right">
+			&nbsp;
+			#<a href="showpost.php?s=112ac9bea42c5c925c2764754a37973b&amp;p=92852&amp;postcount=8" target="new"><strong>8</strong></a>
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt2" width="175">
+			
+			<div id="postmenu_92852">
+				
+				<a class="bigusername" href="member.php?s=112ac9bea42c5c925c2764754a37973b&amp;u=1809">VANESSA-LA-LEONESSA</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_92852", true); </script>
+				
+			</div>
+			
+			<div class="smallfont">Forum Jedi Knight</div>
+			
+		
+			
+				<div class="smallfont">
+					&nbsp;<br /><a href="member.php?s=112ac9bea42c5c925c2764754a37973b&amp;u=1809"><img src="customavatars/avatar1809_0.gif" alt="VANESSA-LA-LEONESSA avatar" border="0" /></a>
+				</div>
+			
+			
+			<div class="smallfont">
+				&nbsp;<br />
+				<div>Data registrazione: 21-04-2003</div>
+				
+				
+				<div>
+					Messaggi: 9.185
+				</div>
+				<div>Potenza Rep.: 1 <img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="VANESSA-LA-LEONESSA è un tipo interessante" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="VANESSA-LA-LEONESSA è un tipo interessante" border="0" /></div>
+				<div>  <a href="#" onclick="return imwindow('msn', '1809', 400, 200)"><img src="azzurra/misc/im_msn.gif" alt="Invia un messaggio via MSN a VANESSA-LA-LEONESSA" border="0" /></a> </div>
+			</div>					
+		
+	</td>
+	<td class="alt1">
+	
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				<img class="inlineimg" src="images/icons/icon1.gif" alt="Predefinito" border="0" />
+				
+			</div>
+			<hr size="1" style="color:#0F3178" />
+			<!-- / icon and title -->
+		
+		
+		<!-- message -->
+		<div>Senz'ombra di dubbio colpa di Ingrid  <img src="images/smilies/classic/icon_smile_tongue.gif" border="0" alt="" title="Icon Smile Tongue" class="inlineimg" />  <img src="images/smilies/classic/icon_smile_tongue.gif" border="0" alt="" title="Icon Smile Tongue" class="inlineimg" /></div>
+		<!-- / message -->
+	
+		
+		
+		
+		<!-- sig -->
+			<div>
+				__________________<br />
+				<img src="http://www.specialgratis.it/gif_e_/horrorr002.gif" border="0" alt="" />
+			</div>
+		<!-- / sig -->
+		
+		
+		
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2">
+		<img class="inlineimg" src="azzurra/statusicon/user_offline.gif" alt="VANESSA-LA-LEONESSA non è connesso" border="0" />
+
+
+		
+		
+		
+		&nbsp;
+	</td>
+	<td class="alt1" align="right">
+		<!-- controls -->
+		
+		
+		
+			<a href="newreply.php?s=112ac9bea42c5c925c2764754a37973b&amp;do=newreply&amp;p=92852"><img src="azzurra/buttons/quote.gif" alt="Replica con citazione" border="0" /></a>
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</table>
+
+<!-- post 92852 popup menu -->
+<div class="vbmenu_popup" id="postmenu_92852_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tr>
+		<td class="thead">VANESSA-LA-LEONESSA</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="member.php?s=112ac9bea42c5c925c2764754a37973b&amp;userid=1809">Mostra profilo pubblico</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="private.php?s=112ac9bea42c5c925c2764754a37973b&amp;do=newpm&amp;userid=1809">Invia un messaggio privato a VANESSA-LA-LEONESSA</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="sendmessage.php?s=112ac9bea42c5c925c2764754a37973b&amp;do=mailmember&amp;u=1809">Manda E-Mail a VANESSA-LA-LEONESSA</a></td></tr>
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="search.php?s=112ac9bea42c5c925c2764754a37973b&amp;do=finduser&amp;userid=1809">Cerca altri messaggi di VANESSA-LA-LEONESSA</a></td></tr>
+	
+	
+	<tr><td class="vbmenu_option"><a href="profile.php?s=112ac9bea42c5c925c2764754a37973b&amp;do=addlist&amp;userlist=buddy&amp;u=1809">Aggiungi VANESSA-LA-LEONESSA all'elenco amici</a></td></tr>
+	
+	</table>
+</div>
+<!-- / post 92852 popup menu -->
+
+</div>
+		</div>	
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- / post #92852 --><!-- post #92874 -->
+<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width:98%; text-align:left">
+			<div style="padding:0px 6px 0px 6px">
+<div style="padding:0px 0px 6px 0px">
+
+<table class="tborder" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">
+<tr>
+	
+		<td class="thead" style="font-weight:normal" >		
+			<!-- status icon and date -->
+			<a name="post92874"><img class="inlineimg" src="azzurra/statusicon/post_old.gif" alt="Vecchio" border="0" /></a>
+			29-09-2004, 17:51
+			
+			<!-- / status icon and date -->				
+		</td>
+		<td class="thead" style="font-weight:normal" align="right">
+			&nbsp;
+			#<a href="showpost.php?s=112ac9bea42c5c925c2764754a37973b&amp;p=92874&amp;postcount=9" target="new"><strong>9</strong></a>
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt2" width="175">
+			
+			<div id="postmenu_92874">
+				
+				<a class="bigusername" href="member.php?s=112ac9bea42c5c925c2764754a37973b&amp;u=3927">^TATA^_^</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_92874", true); </script>
+				
+			</div>
+			
+			<div class="smallfont">Forum Jedi Knight</div>
+			
+		
+			
+				<div class="smallfont">
+					&nbsp;<br /><a href="member.php?s=112ac9bea42c5c925c2764754a37973b&amp;u=3927"><img src="customavatars/avatar3927_1.gif" alt="^TATA^_^ avatar" border="0" /></a>
+				</div>
+			
+			
+			<div class="smallfont">
+				&nbsp;<br />
+				<div>Data registrazione: 25-06-2004</div>
+				<div>Luogo: Bergamo</div>
+				
+				<div>
+					Messaggi: 4.208
+				</div>
+				<div>Potenza Rep.: 1 <img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="^TATA^_^ è sulla buona strada" border="0" /></div>
+				<div>  <a href="#" onclick="return imwindow('msn', '3927', 400, 200)"><img src="azzurra/misc/im_msn.gif" alt="Invia un messaggio via MSN a ^TATA^_^" border="0" /></a> <a href="#" onclick="return imwindow('yahoo', '3927', 400, 200)"><img src="azzurra/misc/im_yahoo.gif" alt="Invia un messaggio via Yahoo a ^TATA^_^" border="0" /></a></div>
+			</div>					
+		
+	</td>
+	<td class="alt1">
+	
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				<img class="inlineimg" src="images/icons/icon1.gif" alt="Predefinito" border="0" />
+				
+			</div>
+			<hr size="1" style="color:#0F3178" />
+			<!-- / icon and title -->
+		
+		
+		<!-- message -->
+		<div>Tocca a me.....26 settebre 2004<br />
+<br />
+La sveglia del cel suona pochi minuti dopo le 5...yawnnn... il cel, ormai<br />
+acceso, squilla così forte da svegliare tutto il palazzo... progetto di<br />
+svegliare dolcemente Paolo (Sniper, il mio fidanzato) annullato... <img src="images/smilies/piangoo.gif" border="0" alt="" title="Cry" class="inlineimg" />°°<br />
+Lavaggio, vestimento, preparazione &quot;bagagli&quot; e alle 6 siamo in macchina<br />
+diretti alla stazione. Parcheggio no problem vista l'ora, eurostar<br />
+puntuale, evvai. Treno pulito e silenzioso, ci ascoltiamo qualche songs con<br />
+il nuovo lettore mp3 di Paolo (vinto con la birra-ma ke kulo!!!) a cui<br />
+grazie al mio sdoppino (ho detto SDOPPINO!!!) riusciamo a attaccare le<br />
+cuffie per entrambi. Viaggio nella normalità, tranne che ci si siedono in<br />
+parte 2 tipe piuttosto gnocche e temo per il mio uomo.. ghgh... ma non c'è<br />
+problema: una delle 2 giovani donzelle indossava un paio di pantaloni che<br />
+avrebbero bloccato all'istante qualsiasi istinto sessuale... ghgh. Scambio<br />
+di qualche sms con Giorgio (Principe del Foro) che è in viaggio come noi,<br />
+ma nella direzione opposta.<br />
+<br />
+Ore 9.20 circa arrivo a Bologna con una decina di minuti di ritardo, ma<br />
+tutto ok. Siamo i primi!!! Abbiamo vinto qualche cosa??? Ehm per sta cosa<br />
+della mancanza di un comitato di accoglienza sporgerò una lamentela...<br />
+ghgh..<br />
+<br />
+Aspettiamo Giorgio, la prima persona che sarebbe dovuta arrivare dopo di<br />
+noi. Ha un ritardo, ma alle 10 in punto arriva il suo treno. Mi telefona e<br />
+mi dice arrivo, vi ho visto passando, dal treno... Probabilmente ha visto<br />
+una gnocca da paura sul binario ma vabbè.. gksjdkgjsàkjsdf. Presentazioni e<br />
+bacini, combattuti se fare colazione o meno, decidiamo di aspettare Gigi<br />
+(X-Paradise) che aveva promesso di offrirla... ghgh. Andiamo all'esterno<br />
+della stazione ad aspettare, intanto il sole ci scalda le kiappe... me ne<br />
+torno all'ombra che sento un po' di caldo. Non arriva nessuno... Gigi e la<br />
+Anto (Pioggia) sono in ritardo, e vabbè... Gigi ci comunica che Franco<br />
+(Superfre) arriva alle 10.45 circa (veramente si era confuso e aveva detto<br />
+11.15, ma io sono troppo una ganza con il treno timetable!!). Andiamo ad<br />
+aspettarlo, binario 4. Nel frattempo dalle scale vedo arrivare Gigi..<br />
+ghgh.. gli volo incontro, bacini, bacetti e blabla.. sjgkòjdòkfgj. Ci<br />
+comunica che la Ingriduccia non può esserci per cause di forza maggiore<br />
+<img src="images/smilies/piangoo.gif" border="0" alt="" title="Cry" class="inlineimg" />°° Arriva il treno da Torino, si aprono le porte, cielo mio marito!!! Lo<br />
+vedo scendere dal treno praticamente davanti a noi! Che emossssione!!! Ma è<br />
+troppo preso da non so cosa, non ci vede e prende le scale dal lato<br />
+opposto... fk. Dal nostro lato delle scale io, Paolo, Giorgio e Gigi<br />
+sbirciamo nel sottopassaggio. Eccolo! Lo vedo e mi fiondo giù dalle scale<br />
+in una rincorsa da olimpiadi (lo spirito olimpico è in ognuno di noi<br />
+sdhjfkaò). Lo vedo da dietro, ma tipo ha un bagaglio, lo raggiungo, si è<br />
+lui.. ghgh colto di sorpresa. Presentazioni e blabla (non ve lo sto a dire,<br />
+cioè siamo marito e moglie!) Finalmente arrivano anche gli altri nel<br />
+sottopassaggio. Mi schiavizzo e mi incarico di portare la borsa perchè vedo<br />
+che il mio maritino è un po' provato.. come? cosa c'era nella borsa??? Un<br />
+pc! Ma non un pc portatile eh... un case.. Va be, saliamo in superficie<br />
+verso l'ingresso (ovviamente io con la borsa con sto caxxo di case) e ci<br />
+mettiamo a waittare e blablare all'ingresso della station. Iniziano a<br />
+arrivare gli altri. Akeron (Lorenzo), Lilliput (Ivana), bacini e blabla.<br />
+Gigi va all'altro ingresso a prendere Dare Davil (Maurizio) con i suoi<br />
+amici Danilo e Simona <img src="images/smilies/classic/icon_smile_big.gif" border="0" alt="" title="Icon Smile Big" class="inlineimg" /> Noi in stazione continuiamo a blablare. Vedo<br />
+ricomparire Gigi, e, cosciente che Maurizio lo avrebbe seguito<br />
+immediatamente, mi butto sull'ingresso della Station. Ecco il mio cicci!!!<br />
+Me lo spupazzo un po'. Ciao Danilo! Ciao Simona! Arrivano anche la Anto e<br />
+Sviat (Luigi)... evvai con il primo aperitivo in stazione.Ovviamente<br />
+c'abbiamo sempre il pc appresso, ma mio marito mi aiuta a portarlo in<br />
+giro.. ghgh. Dunque aperitivo. Io volevo un succo alla pesca, Maurizio me<br />
+lo ordina, che uomo! E Gigi, sentita la parola succo, mi dà il suo...<br />
+(penso abbia deciso di darsi all'alcool) bevo, ma non è alla pesca, è<br />
+all'albicocca... dice Gigi che è più buono, bho. Si gira Maurizio e mi<br />
+porge quello alla pesca, restituisco quello all'albicocca a Gigi e mi bevo<br />
+con Paolo quello alla pesca perchè è un po' tanto e un po' freddo... gh!<br />
+<br />
+Capendo che c'eravamo tutti, si parte!!!!<br />
+<br />
+No comment sul viaggio, penso di aver rischiato la vita 2 volte, ma ero<br />
+seduta in mezzo a Akeron e Frengo skjdhgshdhda. Mi hanno fatto le<br />
+coccoline! Gh!<br />
+<br />
+Sosta per l'aperitivo... ma non l'avevano già fatto? Bho... Ricchi premi e<br />
+cotillon (come si scrive?!) si riparte! Gigi vuole che io canti 50 special<br />
+visto che siamo sui colli bolognesi, ma mi rifiuto che sono stonata!<br />
+Arriviamo alla meta. Ma che bel posticino ghgh! Evvai che si mangia! Ci<br />
+portano le tiggelle (delle specie di piadine in miniatura ma più alte) e le<br />
+crescentine (ribattezzate da me sgonfiotti ghgh) ma mi sa che era<br />
+l'inverso.. bho, il risultato non cambia, ce semo fatti na magnata e loro,<br />
+ubiaconi ghgh, na bevuta!!! Pure 5 o 6 eh. Mio marito (Frengo) ha anche<br />
+avuto modo di conoscere le mie coccole pesanti ghghghgh... si lasciava pure<br />
+fare, vabbè. Giorgio si è lavato con la grappa e credo abbia rotto un<br />
+bicchiere, anzi ne sono sicura perchè a un certo punto ho visto la Anto<br />
+scopare... akòjhògkjkdhòaò. Io sarò inciampata 2903472975 volte... sarà<br />
+stata l'emossione... Luigi continuava a blablare... maniaco gh! Lorenzo non<br />
+si è smentito, blabla poco, solo l'indispensabile, ma ero molto fiera di<br />
+lui che è arrivato a Bologna da solo kkjgsdkha smack! Tiriamo le 18, ma il<br />
+tempo è volato... Sigh sob nuuuuuuuu... si scende verso la station dove<br />
+rischio la vita altre 3 volte, ma Gigi guida per lavoro eh! Sono ancora<br />
+seduta in mezzo a Akeron e Frengo che continuano a spupazzarmi... e io mi<br />
+lascio fare ghghghgh. Paolo, il mio boy, è seduto davanti e blabla con<br />
+Gigi.. skdjhfgksh<br />
+<br />
+Parcheggiamo, riprendiamo il pc sadljlgkjafòshsfdk e entriamo in stazione.<br />
+Accompagno mio marito (Frengo) a fare il biglietto... e poi io e il mio boy<br />
+Paolo lo accompagniamo al binario (sempre il 4) perchè gli altri non sono<br />
+ancora tutti arrivati. Bacini bacetti ghghgh ciao Frengolooooooooo!<br />
+<br />
+Raggiungiamo gli altri, pochi minuti di blabla, i saluti <img src="images/smilies/piangoo.gif" border="0" alt="" title="Cry" class="inlineimg" />° gli ultimi<br />
+abbracci e io e Paolo andiamo al nostro binario sigh... Il treno continua a<br />
+ritardare, quando vedo che sul binario di fianco annunciano il treno di<br />
+Giorgio. Poi arriva anche lui mentre noi continuiamo ad aspettare il<br />
+nostro, risaluti, ribaci e arrivano tutti e 2 i nostri treni (il nostro con<br />
+soli 45 min di ritardo sdfhlkjdhakds)<br />
+<br />
+Rientro nella norma, tranne un tipo seduto dal lato opposto del corridoio<br />
+che continua a tirare su con il naso... bleah! Lettore mp3 a canna per<br />
+evitare rumori molesti. Ma i ragazzi seduti di fronte a noi continuano a<br />
+ridere schifati da sta cosa.. ebbè ci credo, e ci dicono apertamente che ci<br />
+invidiano kajfkjhad... volevano una cuffia pure loro, ma c'avevo solo 1<br />
+sdoppino ghghghghgh.<br />
+<br />
+Arrivo a Bergamo con 90 minuti di ritardo, ma bene! Oggi vado a prendere il<br />
+rimborso gh. Alle 00.00 siamo a casa mia. Paolo decide che se la sente di<br />
+tornare a casa, sigh... bacini bacetti, amo. Ci telefoniamo un po' così non<br />
+si addormenta... ghgh. Tutto apposto, verso l'1 facciamo tutti la nanna.<br />
+<br />
+Grazie a tutti perchè è stata una giornata fantastica ed è stato davvero<br />
+bello conoscervi!!! Smack! Alla prossima</div>
+		<!-- / message -->
+	
+		
+		
+		
+		<!-- sig -->
+			<div>
+				__________________<br />
+				<div align="center"><img src="http://www.ilcannocchiale.it/blogs/bloggerimg/200412315336101849.jpg" border="0" alt="" /></div>
+<div align="center"><b></b> </div>
+<div align="center"><b></b> </div>
+<div align="center"><b><font color="red">TAKE IT EASY!</font></b></div>
+<div align="center"><a href="http://&lt;font%20size=/" target="_blank"></div>
+</a><font face="Comic Sans MS"><font color="royalblue"><b>Andateci piano col drammatizzare la vita! E se si trovassero attori migliori per i vostri ruoli?</b></font></font><br />
+<font size="2"><font face="Comic Sans MS"><font color="royalblue"><b>Stanislaw J. Lec</b></font></font><br />
+<font size="1"></font><br />
+</font>
+			</div>
+		<!-- / sig -->
+		
+		
+		
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2">
+		<img class="inlineimg" src="azzurra/statusicon/user_offline.gif" alt="^TATA^_^ non è connesso" border="0" />
+
+
+		
+		
+		
+		&nbsp;
+	</td>
+	<td class="alt1" align="right">
+		<!-- controls -->
+		
+		
+		
+			<a href="newreply.php?s=112ac9bea42c5c925c2764754a37973b&amp;do=newreply&amp;p=92874"><img src="azzurra/buttons/quote.gif" alt="Replica con citazione" border="0" /></a>
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</table>
+
+<!-- post 92874 popup menu -->
+<div class="vbmenu_popup" id="postmenu_92874_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tr>
+		<td class="thead">^TATA^_^</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="member.php?s=112ac9bea42c5c925c2764754a37973b&amp;userid=3927">Mostra profilo pubblico</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="private.php?s=112ac9bea42c5c925c2764754a37973b&amp;do=newpm&amp;userid=3927">Invia un messaggio privato a ^TATA^_^</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="sendmessage.php?s=112ac9bea42c5c925c2764754a37973b&amp;do=mailmember&amp;u=3927">Manda E-Mail a ^TATA^_^</a></td></tr>
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="search.php?s=112ac9bea42c5c925c2764754a37973b&amp;do=finduser&amp;userid=3927">Cerca altri messaggi di ^TATA^_^</a></td></tr>
+	
+	
+	<tr><td class="vbmenu_option"><a href="profile.php?s=112ac9bea42c5c925c2764754a37973b&amp;do=addlist&amp;userlist=buddy&amp;u=3927">Aggiungi ^TATA^_^ all'elenco amici</a></td></tr>
+	
+	</table>
+</div>
+<!-- / post 92874 popup menu -->
+
+</div>
+		</div>	
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- / post #92874 --><!-- post #92913 -->
+<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width:98%; text-align:left">
+			<div style="padding:0px 6px 0px 6px">
+
+
+<table class="tborder" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">
+<tr>
+	
+		<td class="thead" style="font-weight:normal" >		
+			<!-- status icon and date -->
+			<a name="post92913"><img class="inlineimg" src="azzurra/statusicon/post_old.gif" alt="Vecchio" border="0" /></a>
+			29-09-2004, 19:49
+			
+			<!-- / status icon and date -->				
+		</td>
+		<td class="thead" style="font-weight:normal" align="right">
+			&nbsp;
+			#<a href="showpost.php?s=112ac9bea42c5c925c2764754a37973b&amp;p=92913&amp;postcount=10" target="new"><strong>10</strong></a>
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt2" width="175">
+			
+			<div id="postmenu_92913">
+				
+				<a class="bigusername" href="member.php?s=112ac9bea42c5c925c2764754a37973b&amp;u=1136">mukkacamilla</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_92913", true); </script>
+				
+			</div>
+			
+			<div class="smallfont">Forum Jedi Knight</div>
+			
+		
+			
+				<div class="smallfont">
+					&nbsp;<br /><a href="member.php?s=112ac9bea42c5c925c2764754a37973b&amp;u=1136"><img src="customavatars/avatar1136_2.gif" alt="mukkacamilla avatar" border="0" /></a>
+				</div>
+			
+			
+			<div class="smallfont">
+				&nbsp;<br />
+				<div>Data registrazione: 30-11-2002</div>
+				<div>Luogo: Milano</div>
+				
+				<div>
+					Messaggi: 3.465
+				</div>
+				<div>Potenza Rep.: 1 <img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="mukkacamilla è sulla buona strada" border="0" /></div>
+				<div><a href="#" onclick="return imwindow('icq', '1136', 500, 450)"><img src="azzurra/misc/im_icq.gif" alt="Invia un messaggio via ICQ a mukkacamilla" border="0" /></a>  <a href="#" onclick="return imwindow('msn', '1136', 400, 200)"><img src="azzurra/misc/im_msn.gif" alt="Invia un messaggio via MSN a mukkacamilla" border="0" /></a> </div>
+			</div>					
+		
+	</td>
+	<td class="alt1">
+	
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				<img class="inlineimg" src="images/icons/icon1.gif" alt="Predefinito" border="0" />
+				
+			</div>
+			<hr size="1" style="color:#0F3178" />
+			<!-- / icon and title -->
+		
+		
+		<!-- message -->
+		<div><div style="margin:20px; margin-top:5px; ">
+	<div class="smallfont" style="margin-bottom:2px">Citazione:</div>
+	<table cellpadding="6" cellspacing="0" border="0" width="100%">
+	<tr>
+		<td class="alt2" style="border:1px inset">
+			
+				<div>Originale inviato da <strong>Superfre`</strong></div>
+				<div style="font-style:italic">grazie, ma per colpa di chi quelle corna? Ingrid? Micia? Mukka? Nellina? Chi???<br />
+<br />
+Voi dite tutte quante? Puo essere</div>
+			
+		</td>
+	</tr>
+	</table>
+</div><br />
+<br />
+le mie!! <img src="images/smilies/classic/icon_smile_cool.gif" border="0" alt="" title="Icon Smile Cool" class="inlineimg" /><br />
+anzi, io non ti posso conrnificare in quanto non stiamo insieme! <img src="images/smilies/classic/icon_smile_big.gif" border="0" alt="" title="Icon Smile Big" class="inlineimg" /> particolare piccolopiccolopiccolo</div>
+		<!-- / message -->
+	
+		
+		
+		
+		<!-- sig -->
+			<div>
+				__________________<br />
+				Climb your fatal apple tree<br />
+try to catch the sun, hide from your little brother's gun, dream yourself away.. <img src="images/smilies/sonno/sonno14.gif" border="0" alt="" title="Sonno14" class="inlineimg" /><br />
+<div align="center"><img src="http://mukkacamilla.altervista.org/th_x_mukka_3.jpg" border="0" alt="" /><br />
+<i>Richard</i>: Sei pazza!<br />
+<i>Ally</i>: E' naturale, tutte le vere donne lo sono.</div>
+			</div>
+		<!-- / sig -->
+		
+		
+		
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2">
+		<img class="inlineimg" src="azzurra/statusicon/user_offline.gif" alt="mukkacamilla non è connesso" border="0" />
+
+
+		
+		
+		
+		&nbsp;
+	</td>
+	<td class="alt1" align="right">
+		<!-- controls -->
+		
+		
+		
+			<a href="newreply.php?s=112ac9bea42c5c925c2764754a37973b&amp;do=newreply&amp;p=92913"><img src="azzurra/buttons/quote.gif" alt="Replica con citazione" border="0" /></a>
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</table>
+
+<!-- post 92913 popup menu -->
+<div class="vbmenu_popup" id="postmenu_92913_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tr>
+		<td class="thead">mukkacamilla</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="member.php?s=112ac9bea42c5c925c2764754a37973b&amp;userid=1136">Mostra profilo pubblico</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="private.php?s=112ac9bea42c5c925c2764754a37973b&amp;do=newpm&amp;userid=1136">Invia un messaggio privato a mukkacamilla</a></td></tr>
+	
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="search.php?s=112ac9bea42c5c925c2764754a37973b&amp;do=finduser&amp;userid=1136">Cerca altri messaggi di mukkacamilla</a></td></tr>
+	
+	
+	<tr><td class="vbmenu_option"><a href="profile.php?s=112ac9bea42c5c925c2764754a37973b&amp;do=addlist&amp;userlist=buddy&amp;u=1136">Aggiungi mukkacamilla all'elenco amici</a></td></tr>
+	
+	</table>
+</div>
+<!-- / post 92913 popup menu -->
+
+
+		</div>	
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- / post #92913 --></div>
+
+<!-- start content table -->
+<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width:98%; text-align:left">
+			<div style="padding:0px 6px 0px 6px">
+
+<!-- / start content table -->
+
+<!-- controls below postbits -->
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr valign="top">
+	
+		<td class="smallfont"><a href="newreply.php?s=112ac9bea42c5c925c2764754a37973b&amp;do=newreply&amp;noquote=1&amp;p=92913"><img src="azzurra/buttons/reply.gif" alt="Rispondi" border="0" /></a></td>
+		
+	<td align="right"><div class="pagenav" align="right">
+<table class="tborder" cellpadding="3" cellspacing="1" border="0">
+<tr>
+	<td class="vbmenu_control" style="font-weight:normal"><!--<img src="azzurra/misc/multipage.gif" alt="Mostra risultati 1 a 10 di 85 (9 pagine)" /> -->Pagina 1 di 9</td>
+	
+	
+		<td class="alt2"><span class="smallfont" title="Mostra risultati 1 a 10 di 85"><strong>1</strong></span></td>
+ 	<td class="alt1"><a class="smallfont" href="showthread.php?s=112ac9bea42c5c925c2764754a37973b&amp;t=5720&amp;page=2&amp;pp=10" title="Mostra risultati 11 a 20 di 85">2</a></td>
+	<td class="alt1"><a class="smallfont" href="showthread.php?s=112ac9bea42c5c925c2764754a37973b&amp;t=5720&amp;page=3&amp;pp=10" title="Mostra risultati 21 a 30 di 85">3</a></td>
+	<td class="alt1"><a class="smallfont" href="showthread.php?s=112ac9bea42c5c925c2764754a37973b&amp;t=5720&amp;page=4&amp;pp=10" title="Mostra risultati 31 a 40 di 85">4</a></td>
+	<td class="alt1"><a class="smallfont" href="showthread.php?s=112ac9bea42c5c925c2764754a37973b&amp;t=5720&amp;page=5&amp;pp=10" title="Mostra risultati 41 a 50 di 85">5</a></td>
+
+	<td class="alt1"><a class="smallfont" href="showthread.php?s=112ac9bea42c5c925c2764754a37973b&amp;t=5720&amp;page=2&amp;pp=10" title="Prossima pagina - Risultati 11 a 20 di 85">&gt;</a></td>
+	<td class="alt1"><a class="smallfont" href="showthread.php?s=112ac9bea42c5c925c2764754a37973b&amp;t=5720&amp;page=9&amp;pp=10" title="Ultima pagina - Risultati 81 a 85 di 85">Ultimo <strong>&raquo;</strong></a></td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<!-- / controls below postbits -->
+
+<br />
+
+<div class="smallfont" align="center">
+	<strong>&laquo;</strong>
+		<td width="100%"><span class="navbar"><a href="index.php?s=112ac9bea42c5c925c2764754a37973b&amp;" accesskey="1">Azzurra IRC Network Forum</a></span> 
+	<span class="navbar">&gt; <a href="forumdisplay.php?s=112ac9bea42c5c925c2764754a37973b&amp;f=7">I Vostri Forum</a></span>
+
+
+	<span class="navbar">&gt; <a href="forumdisplay.php?s=112ac9bea42c5c925c2764754a37973b&amp;f=42">#italia_area</a></span>
+
+</td>
+	<strong>&raquo;</strong>
+</div>
+
+<br />
+
+
+
+<!-- currently active users -->
+
+<!-- currently active users -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- controls for non-popup browsers -->
+
+
+<table class="tborder" cellpadding="6" cellspacing="1" border="0" width="100%" align="center" style="border-top-width:0px">
+<tr>
+	<td class="thead" >Strumenti discussione<a name="goto_threadtools"></a></td>
+	<td class="thead">Cerca in questa discussione<a name="goto_threadsearch"></a></td>
+</tr>
+<tr valign="top">
+	<td class="alt1" >
+	
+	<!-- thread tools -->
+	<div class="smallfont">
+		<div><img class="inlineimg" src="azzurra/buttons/printer.gif" alt="Mostra versione stampabile" vspace="1" /> <a href="printthread.php?s=112ac9bea42c5c925c2764754a37973b&amp;t=5720" accesskey="p">Mostra versione stampabile</a></div>
+		<div><img class="inlineimg" src="azzurra/buttons/sendtofriend.gif" alt="Invia questa pagina via E-Mail" vspace="1" /> <a href="sendmessage.php?s=112ac9bea42c5c925c2764754a37973b&amp;do=sendtofriend&amp;t=5720">Invia questa pagina via E-Mail</a></div>
+		
+		
+	</div>
+	<!-- / thread tools -->
+	
+	</td>
+	
+	<td class="alt1">
+	
+	<!-- search this thread -->
+	<form action="search.php" method="post">
+	<div class="smallfont">
+		<input type="hidden" name="s" value="112ac9bea42c5c925c2764754a37973b" />
+		<input type="hidden" name="do" value="process" />
+		<input type="hidden" name="searchthread" value="1" />
+		<input type="hidden" name="showposts" value="1" />
+		<input type="hidden" name="searchthreadid" value="5720" />
+		<strong>Cerca in questa discussione</strong>:<br />
+		<input type="text" class="bginput" name="query" size="20" style="width:175px" /><!-- go button -->
+<input type="submit" class="button" value="Vai"  /><br />
+		<a href="search.php?s=112ac9bea42c5c925c2764754a37973b&amp;">Ricerca avanzata</a>
+	</div>
+	</form>
+	<!-- /  search this thread -->
+	
+	</td>
+	
+</tr>
+
+<tr>
+	<td class="thead" colspan="2">Modalità di visualizzazione<a name="goto_displaymodes"></a></td>
+	
+</tr>
+<tr valign="top">
+	
+	<td class="alt2" colspan="2">
+	
+	<!-- thread display modes -->
+	
+	<div class="smallfont">
+		<div><img class="inlineimg" src="azzurra/buttons/mode_linear.gif" alt="Modalità lineare" vspace="1" /> <strong>Modalità lineare</strong></div>
+		<div><img class="inlineimg" src="azzurra/buttons/mode_hybrid.gif" alt="Modalità ibrida" vspace="1" /> <a href="showthread.php?s=112ac9bea42c5c925c2764754a37973b&amp;mode=hybrid&amp;t=5720">Passa alla modalità ibrida</a></div>
+		<div><img class="inlineimg" src="azzurra/buttons/mode_threaded.gif" alt="Modalità sequenziale" vspace="1" /> <a href="showthread.php?s=112ac9bea42c5c925c2764754a37973b&amp;p=92706&amp;mode=threaded#post92706">Passa alla modalità sequenziale</a></div>
+	</div>
+	
+	<!-- / thread display modes -->
+	
+	</td>
+	
+	
+</tr>
+
+</table>
+<br />
+
+
+<!-- / controls for non-popup browsers -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- forum rules and admin links -->
+<table cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
+<tr valign="bottom">
+	<td class="smallfont" align="left">
+		<table class="tborder" cellpadding="6" cellspacing="1" border="0" width="180">
+<thead>
+<tr>
+	<td class="thead">
+		<a style="float:right" href="#top" onclick="return toggle_collapse('forumrules')"><img id="collapseimg_forumrules" src="azzurra/buttons/collapse_thead.gif" alt="" border="0" /></a>
+		Regole messaggi
+	</td>
+</tr>
+</thead>
+<tbody id="collapseobj_forumrules" style="">
+<tr>
+	<td class="alt1" nowrap="nowrap"><div class="smallfont">
+		
+		<div><strong>Non Puoi </strong> creare nuove discussioni</div>
+		<div><strong>Non Puoi </strong> rispondere ai messaggi</div>
+		<div><strong>Non Puoi </strong> inviare allegati</div>
+		<div><strong>Non Puoi </strong> modificare i tuoi messaggi</div>
+		<hr />
+		
+		<div><a href="misc.php?s=112ac9bea42c5c925c2764754a37973b&amp;do=bbcode" target="_blank">Codice vB</a> è <strong>attivato</strong></div>
+		<div><a href="misc.php?s=112ac9bea42c5c925c2764754a37973b&amp;do=showsmilies" target="_blank">Emoticons</a> sono <strong>attivato</strong></div>
+		<div><a href="misc.php?s=112ac9bea42c5c925c2764754a37973b&amp;do=bbcode#imgcode" target="_blank">Codice [IMG]</a> è <strong>attivato</strong></div>
+		<div>Codice HTML è <strong>disattivato</strong></div>
+	</div></td>
+</tr>
+</tbody>
+</table>
+	</td>
+	<td class="smallfont" align="right">
+		<table cellpadding="0" cellspacing="0" border="0">
+		
+		<tr>
+			<td>
+			<div class="smallfont" style="text-align:left; white-space:nowrap">
+	<form action="forumdisplay.php" method="get">
+	<input type="hidden" name="s" value="112ac9bea42c5c925c2764754a37973b" />
+	<input type="hidden" name="daysprune" value="" />
+	<strong>Salta al forum</strong><br />
+	<select name="f" onchange="this.form.submit();">
+		<optgroup label="Aree sito">
+			<option value="-1" >Seleziona uno</option>
+			<option value="cp" >Pannello di controllo utente</option>
+			<option value="pm" >Messaggi privati</option>
+			<option value="subs" >Sottoscrizioni</option>
+			<option value="wol" >Chi è connesso</option>
+			<option value="search" >Cerca nei forum</option>
+			<option value="home" >Pagina principale</option>
+			<option value="-1">--------------------</option>
+		</optgroup>
+		<optgroup label="Forum">
+		<option value="3" class="fjdpth0" > Azzurra IRC Network Forum</option>
+<option value="15" class="fjdpth1" >&nbsp; &nbsp;  Canali - i vostri canali su Azzurra.</option>
+<option value="10" class="fjdpth1" >&nbsp; &nbsp;  Discussioni e commenti su Azzurra</option>
+<option value="39" class="fjdpth1" >&nbsp; &nbsp;  Il Porto Spaziale di Mos Eisley</option>
+<option value="41" class="fjdpth1" >&nbsp; &nbsp;  Azzurra Gamers OnLine</option>
+<option value="99" class="fjdpth1" >&nbsp; &nbsp;  Azzurra InRosa</option>
+<option value="107" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  News e Articoli di http://inrosa.azzurra.org</option>
+<option value="6" class="fjdpth0" > Network Central</option>
+<option value="19" class="fjdpth1" >&nbsp; &nbsp;  Comunicazioni ufficiali di Azzurra</option>
+<option value="18" class="fjdpth1" >&nbsp; &nbsp;  Forum Help Area</option>
+<option value="11" class="fjdpth1" >&nbsp; &nbsp;  IRCHelp - Aiuto su IRC e Servizi di Azzurra</option>
+<option value="63" class="fjdpth1" >&nbsp; &nbsp;  La Chat #Italia di Azzurra IRC Network</option>
+<option value="30" class="fjdpth1" >&nbsp; &nbsp;  Services - I servizi IRC di Azzurra</option>
+<option value="36" class="fjdpth1" >&nbsp; &nbsp;  Javirc</option>
+<option value="8" class="fjdpth0" > Azzurra - Tech Center</option>
+<option value="13" class="fjdpth1" >&nbsp; &nbsp;  Angolo tecnico</option>
+<option value="28" class="fjdpth1" >&nbsp; &nbsp;  Discussioni Linux</option>
+<option value="62" class="fjdpth1" >&nbsp; &nbsp;  Discussioni Mac</option>
+<option value="60" class="fjdpth1" >&nbsp; &nbsp;  Quantum leap</option>
+<option value="23" class="fjdpth1" >&nbsp; &nbsp;  Programmazione e dintorni</option>
+<option value="4" class="fjdpth0" > Happy Hour</option>
+<option value="17" class="fjdpth1" >&nbsp; &nbsp;  Cazzeggiando qua e la...</option>
+<option value="20" class="fjdpth1" >&nbsp; &nbsp;  Ditelo con il Forum</option>
+<option value="25" class="fjdpth1" >&nbsp; &nbsp;  L'angolo del piccolo menomato informatico</option>
+<option value="16" class="fjdpth1" >&nbsp; &nbsp;  Questi mitici log!</option>
+<option value="7" class="fjdpth0" > I Vostri Forum</option>
+<option value="21" class="fjdpth1" >&nbsp; &nbsp;  #debiAn</option>
+<option value="24" class="fjdpth1" >&nbsp; &nbsp;  #altrove</option>
+<option value="42" class="fjsel" selected="selected">&nbsp; &nbsp;  #italia_area</option>
+<option value="44" class="fjdpth1" >&nbsp; &nbsp;  #amicimiei</option>
+<option value="120" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  AmiciMiei OGame Alliance</option>
+<option value="77" class="fjdpth1" >&nbsp; &nbsp;  #number_one</option>
+<option value="58" class="fjdpth1" >&nbsp; &nbsp;  #bodomlake</option>
+<option value="72" class="fjdpth1" >&nbsp; &nbsp;  #roma</option>
+<option value="48" class="fjdpth1" >&nbsp; &nbsp;  #quizzer</option>
+<option value="45" class="fjdpth1" >&nbsp; &nbsp;  #desideri&amp;sogni</option>
+<option value="80" class="fjdpth1" >&nbsp; &nbsp;  #leiamalei</option>
+<option value="68" class="fjdpth1" >&nbsp; &nbsp;  #lamerandia</option>
+<option value="109" class="fjdpth1" >&nbsp; &nbsp;  #OGame</option>
+<option value="92" class="fjdpth1" >&nbsp; &nbsp;  #Modena</option>
+<option value="89" class="fjdpth1" >&nbsp; &nbsp;  #fisica</option>
+<option value="88" class="fjdpth1" >&nbsp; &nbsp;  #Amori</option>
+<option value="108" class="fjdpth1" >&nbsp; &nbsp;  #X-GeNeRaTiOn</option>
+<option value="110" class="fjdpth1" >&nbsp; &nbsp;  #40-60</option>
+<option value="35" class="fjdpth1" >&nbsp; &nbsp;  #cuori</option>
+<option value="85" class="fjdpth1" >&nbsp; &nbsp;  #blulandia</option>
+<option value="22" class="fjdpth1" >&nbsp; &nbsp;  #netparty</option>
+<option value="112" class="fjdpth1" >&nbsp; &nbsp;  #carlotta</option>
+<option value="111" class="fjdpth1" >&nbsp; &nbsp;  #il_palo</option>
+<option value="37" class="fjdpth1" >&nbsp; &nbsp;  #mangaring</option>
+<option value="116" class="fjdpth1" >&nbsp; &nbsp;  #pelo</option>
+<option value="115" class="fjdpth1" >&nbsp; &nbsp;  #gioiadelcolle</option>
+<option value="86" class="fjdpth1" >&nbsp; &nbsp;  #duran_duran</option>
+<option value="114" class="fjdpth1" >&nbsp; &nbsp;  #TheNet</option>
+<option value="31" class="fjdpth1" >&nbsp; &nbsp;  #LiberoZone</option>
+<option value="53" class="fjdpth1" >&nbsp; &nbsp;  #romaitalia</option>
+<option value="118" class="fjdpth1" >&nbsp; &nbsp;  #gladiatori</option>
+<option value="117" class="fjdpth1" >&nbsp; &nbsp;  #buduscript</option>
+<option value="87" class="fjdpth1" >&nbsp; &nbsp;  #Milan</option>
+<option value="49" class="fjdpth1" >&nbsp; &nbsp;  #motociclisti</option>
+<option value="119" class="fjdpth1" >&nbsp; &nbsp;  #DusK&amp;SeX</option>
+<option value="61" class="fjdpth1" >&nbsp; &nbsp;  #gaia</option>
+<option value="38" class="fjdpth1" >&nbsp; &nbsp;  #bari</option>
+<option value="65" class="fjdpth1" >&nbsp; &nbsp;  #piemonte.it</option>
+<option value="69" class="fjdpth1" >&nbsp; &nbsp;  #friuli.it</option>
+<option value="70" class="fjdpth1" >&nbsp; &nbsp;  #veneto.it</option>
+<option value="71" class="fjdpth1" >&nbsp; &nbsp;  #blues and #cibo</option>
+<option value="79" class="fjdpth1" >&nbsp; &nbsp;  #templary</option>
+<option value="52" class="fjdpth1" >&nbsp; &nbsp;  #tuning</option>
+<option value="59" class="fjdpth1" >&nbsp; &nbsp;  #chatsicilia</option>
+<option value="74" class="fjdpth1" >&nbsp; &nbsp;  #ircgirls</option>
+<option value="78" class="fjdpth1" >&nbsp; &nbsp;  #desideri</option>
+<option value="81" class="fjdpth1" >&nbsp; &nbsp;  #pub</option>
+<option value="82" class="fjdpth1" >&nbsp; &nbsp;  #palmari</option>
+<option value="83" class="fjdpth1" >&nbsp; &nbsp;  #NightAngels</option>
+<option value="50" class="fjdpth1" >&nbsp; &nbsp;  #targato-na</option>
+<option value="27" class="fjdpth1" >&nbsp; &nbsp;  #fonzie</option>
+<option value="64" class="fjdpth1" >&nbsp; &nbsp;  #romantici</option>
+<option value="32" class="fjdpth1" >&nbsp; &nbsp;  #radioitalia</option>
+<option value="26" class="fjdpth1" >&nbsp; &nbsp;  #punkazzurra</option>
+<option value="5" class="fjdpth0" > Test Area</option>
+<option value="14" class="fjdpth1" >&nbsp; &nbsp;  Test - Forum dedicato ai messaggi di prova</option>
+<option value="75" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Sottoforum di prova</option>
+<option value="76" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Cugino del sottoforum di prova</option>
+<option value="91" class="fjdpth0" > TROLL</option>
+
+		</optgroup>
+	</select><!-- go button -->
+<input type="submit" class="button" value="Vai"  />
+	</form>
+</div>
+			</td>
+		</tr>		
+		</table>
+	</td>
+</tr>
+</table>
+<!-- /forum rules and admin links -->
+
+<br />
+
+
+
+<br />
+
+<br />
+<div class="smallfont" align="center">Tutte le ore sono GMT +2. L'ora corrente è <span class="time">17:40</span>.</div>
+<br />
+
+
+		</div>	
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- /content area table -->
+
+<form action="index.php" method="get">
+	
+<table cellpadding="6" cellspacing="0" border="0" width="98%" class="page" align="center">
+<tr>
+	
+	<td class="tfoot" align="right">
+		<div class="smallfont">
+			<strong>
+				<a href="sendmessage.php">Contattaci</a> -
+				<a href="http://www.azzurra.org">Azzurra IRC Network</a> -
+				
+				
+				<a href="archive/index.php">Archivio</a> -
+				
+				<a href="#top" onclick="self.scrollTo(0, 0); return false;">Inizio pagina</a>
+			</strong>
+		</div>
+	</td>
+</tr>
+</table>
+
+<br />
+
+<div align="center">
+	<div class="smallfont" align="center">
+	<!-- Do not remove this copyright notice -->
+	vBulletin Copyright &copy;2000 - 2005, Jelsoft Enterprises Ltd.
+	<!-- Do not remove this copyright notice -->
+	</div>
+	
+	<div class="smallfont" align="center">
+	<!-- Do not remove  or your scheduled tasks will cease to function -->
+	
+	<!-- Do not remove  or your scheduled tasks will cease to function -->
+	
+	Copyright Azzurra IRC Network © 1997-2005
+	</div>
+</div>
+
+</form>
+
+
+<script type="text/javascript">
+<!--
+	// Main vBulletin Javascript Initialization
+	vBulletin_init();
+
+	// Initialize 'Active' Table Cells
+	//activecells_init();
+//-->
+</script>
+
+<!-- temp -->
+<div style="display:none">
+	<!-- thread rate -->
+	
+		
+	
+	<!-- / thread rate -->
+</div>
+
+</body>
+</html>

@@ -1,0 +1,1179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="generator" content="vBulletin 3.8.2" />
+
+<meta name="keywords" content=" cercasi disperatamente ....., azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+<meta name="description" content=" cercasi disperatamente ..... #carlotta" />
+
+
+<!-- CSS Stylesheet -->
+<style type="text/css" id="vbulletin_css">
+/**
+* vBulletin 3.8.2 CSS
+* Style: 'Azzurra3.0'; Style ID: 6
+*/
+body
+{
+	background: #efefef;
+	color: #000000;
+	font: 10pt "Lucida Grande", "Lucida Sans Unicode", Sans-Serif;
+	margin: 5px 10px 10px 10px;
+	padding: 0px;
+}
+a:link, body_alink
+{
+	color: #11518F;
+}
+a:visited, body_avisited
+{
+	color: #11518F;
+}
+a:hover, a:active, body_ahover
+{
+	color: #FF4400;
+}
+.page
+{
+	background: #ffffff;
+	color: #000000;
+}
+td, th, p, li
+{
+	font: 10pt "Lucida Grande", "Lucida Sans Unicode", Sans-Serif;
+}
+.tborder
+{
+	background: #cccccc;
+	color: #333333;
+}
+.tcat
+{
+	background: #97d2ec url(azzurra3.0/sfondotb.png) repeat-x top left;;
+	color: #11518F;
+	font: bold 10pt "Lucida Grande", "Lucida Sans Unicode", Sans-Serif;
+}
+.tcat a:link, .tcat_alink
+{
+	color: #51778B;
+	text-decoration: none;
+}
+.tcat a:visited, .tcat_avisited
+{
+	color: #51778B;
+	text-decoration: none;
+}
+.tcat a:hover, .tcat a:active, .tcat_ahover
+{
+	color: #FF4400;
+	text-decoration: none;
+}
+.thead
+{
+	background: #efefef;
+	color: #333333;
+	font: bold 11px "Lucida Grande", "Lucida Sans Unicode", Sans-Serif;
+}
+.thead a:link, .thead_alink
+{
+	color: #11518F;
+}
+.thead a:visited, .thead_avisited
+{
+	color: #11518F;
+}
+.thead a:hover, .thead a:active, .thead_ahover
+{
+	color: #FF4400;
+}
+.tfoot
+{
+	background: #ffffff;
+	color: #000000;
+}
+.tfoot a:link, .tfoot_alink
+{
+	color: #11518F;
+}
+.tfoot a:visited, .tfoot_avisited
+{
+	color: #11518F;
+}
+.tfoot a:hover, .tfoot a:active, .tfoot_ahover
+{
+	color: #FF4400;
+}
+.alt1, .alt1Active
+{
+	background: #F3F3FF;
+	color: #000000;
+}
+.alt2, .alt2Active
+{
+	background: #FDFDFD;
+	color: #000000;
+}
+.inlinemod
+{
+	background: #FFFFCC;
+	color: #000000;
+}
+.wysiwyg
+{
+	background: #FDFDFD;
+	color: #000000;
+	font: 10pt "Lucida Grande", "Lucida Sans Unicode", Sans-Serif;
+}
+textarea, .bginput
+{
+	font: 10pt "Lucida Grande", "Lucida Sans Unicode", Sans-Serif;
+}
+.bginput option, .bginput optgroup
+{
+	font-size: 10pt;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", Sans-Serif;
+}
+.button
+{
+	font: 11px "Lucida Grande", "Lucida Sans Unicode", Sans-Serif;
+}
+select
+{
+	font: 11px "Lucida Grande", "Lucida Sans Unicode", Sans-Serif;
+}
+option, optgroup
+{
+	font-size: 11px;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", Sans-Serif;
+}
+.smallfont
+{
+	font: 11px "Lucida Grande", "Lucida Sans Unicode", Sans-Serif;
+}
+.time
+{
+	color: #000000;
+}
+.navbar
+{
+	font: 11px "Lucida Grande", "Lucida Sans Unicode", Sans-Serif;
+}
+.highlight
+{
+	color: #FF0000;
+	font-weight: bold;
+}
+.fjsel
+{
+	background: #9FCFF4;
+	color: #000000;
+}
+.fjdpth0
+{
+	background: #F7F7F7;
+	color: #000000;
+}
+.panel
+{
+	background: #E4E7F5 url(images/gradients/gradient_panel.gif) repeat-x top left;
+	color: #000000;
+	padding: 10px;
+	border: 2px outset;
+}
+.panelsurround
+{
+	background: #D1D4E0 url(images/gradients/gradient_panelsurround.gif) repeat-x top left;
+	color: #000000;
+}
+legend
+{
+	color: #11518F;
+	font: 11px "Lucida Grande", "Lucida Sans Unicode", Sans-Serif;
+}
+.vbmenu_control
+{
+	background: url(azzurra3.0/misc/cat_back.png) repeat-x bottom left;
+	color: #f0f0f0;
+	font: bold 11px "Lucida Grande", "Lucida Sans Unicode", Sans-Serif;
+	padding: 3px 6px 3px 6px;
+	white-space: nowrap;
+	height:25px;
+}
+.vbmenu_control a:link, .vbmenu_control_alink
+{
+	color: #f0f0f0;
+	text-decoration: none;
+}
+.vbmenu_control a:visited, .vbmenu_control_avisited
+{
+	color: #f0f0f0;
+	text-decoration: none;
+}
+.vbmenu_control a:hover, .vbmenu_control a:active, .vbmenu_control_ahover
+{
+	color: #5CBDE7;
+	text-decoration: none;
+}
+.vbmenu_popup
+{
+	background: #FFFFFF;
+	color: #000000;
+	border: 1px solid #999999;
+}
+.vbmenu_option
+{
+	background: #DEE6ED;
+	color: #000000;
+	font: 11px "Lucida Grande", "Lucida Sans Unicode", Sans-Serif;
+	white-space: nowrap;
+	cursor: pointer;
+}
+.vbmenu_option a:link, .vbmenu_option_alink
+{
+	color: #11518F;
+	text-decoration: none;
+}
+.vbmenu_option a:visited, .vbmenu_option_avisited
+{
+	color: #11518F;
+	text-decoration: none;
+}
+.vbmenu_option a:hover, .vbmenu_option a:active, .vbmenu_option_ahover
+{
+	color: #FF4400;
+	text-decoration: none;
+}
+.vbmenu_hilite
+{
+	background: #8A949E;
+	color: #FFFFFF;
+	font: 11px "Lucida Grande", "Lucida Sans Unicode", Sans-Serif;
+	white-space: nowrap;
+	cursor: pointer;
+}
+.vbmenu_hilite a:link, .vbmenu_hilite_alink
+{
+	color: #11518F;
+	text-decoration: none;
+}
+.vbmenu_hilite a:visited, .vbmenu_hilite_avisited
+{
+	color: #11518F;
+	text-decoration: none;
+}
+.vbmenu_hilite a:hover, .vbmenu_hilite a:active, .vbmenu_hilite_ahover
+{
+	color: #FF4400;
+	text-decoration: none;
+}
+.wg_menu
+{
+	background-color: #EDF0FF;
+	color: #000000;
+	font-size: 12px;
+         font-family: Lucida Grande", "Lucida Sans Unicode", Sans-Serif;
+}
+.wg_gbalt1
+{
+	background-color: #FFFFFF;
+	color: #000000;
+}
+.wg_gbalt2
+{
+	background-color: #EDF0FF;
+	color: #000000;
+}
+.wg_form
+{
+	background-color: #EDF0FF;
+	color: #000000;
+}
+/* ***** styling for 'big' usernames on postbit etc. ***** */
+.bigusername { font-size: 14pt; }
+
+/* ***** small padding on 'thead' elements ***** */
+td.thead, div.thead { padding: 4px; }
+
+/* ***** basic styles for multi-page nav elements */
+.pagenav a { text-decoration: none; }
+.pagenav td { padding: 2px 4px 2px 4px; }
+
+/* ***** define margin and font-size for elements inside panels ***** */
+.fieldset { margin-bottom: 6px; }
+.fieldset, .fieldset td, .fieldset p, .fieldset li { font-size: 11px; }
+
+/* ***** don't change the following ***** */
+form { display: inline; }
+label { cursor: default; }
+.normal { font-weight: normal; }
+.inlineimg { vertical-align: middle; }
+</style>
+<link rel="stylesheet" type="text/css" href="clientscript/vbulletin_important.css?v=382" />
+
+
+<!-- / CSS Stylesheet -->
+
+<script type="text/javascript" src="clientscript/yui/yahoo-dom-event/yahoo-dom-event.js?v=382"></script>
+<script type="text/javascript" src="clientscript/yui/connection/connection-min.js?v=382"></script>
+<script type="text/javascript">
+<!--
+var SESSIONURL = "";
+var SECURITYTOKEN = "guest";
+var IMGDIR_MISC = "azzurra3.0/misc";
+var vb_disable_ajax = parseInt("0", 10);
+// -->
+</script>
+<script type="text/javascript" src="clientscript/vbulletin_global.js?v=382"></script>
+
+
+
+	<link rel="alternate" type="application/rss+xml" title="Azzurra IRC Network Forum RSS Feed" href="external.php?type=RSS2" />
+	
+		<link rel="alternate" type="application/rss+xml" title="Azzurra IRC Network Forum - #carlotta - RSS Feed" href="external.php?type=RSS2&amp;forumids=112" />
+	
+
+	<title> cercasi disperatamente ..... - Azzurra IRC Network Forum</title>
+	<script type="text/javascript" src="clientscript/vbulletin_post_loader.js?v=382"></script>
+	<style type="text/css" id="vbulletin_showthread_css">
+	<!--
+	
+	#links div { white-space: nowrap; }
+	#links img { vertical-align: middle; }
+	-->
+	</style>
+</head>
+<body onload="">
+<!-- logo -->
+<a name="top"></a>
+<table border="0" width="98%" cellpadding="0" cellspacing="0" align="center">
+<tr>
+	<td align="left"><a href="index.php"><img src="http://forum.azzurra.org/azzurra3.0/logoforum.png" border="0" alt="Azzurra IRC Network Forum" /></a></td>
+	<td align="right" id="header_right_cell">
+		&nbsp;
+	</td>
+</tr>
+</table>
+<!-- /logo -->
+
+<!-- content table -->
+<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width:98%; text-align:left">
+		<div style="padding:0px 10px 0px 10px" align="left">
+
+
+
+
+
+<br />
+
+<!-- breadcrumb, login, pm info -->
+<table class="tborder" cellpadding="6" cellspacing="1" border="0" width="100%" align="center">
+<tr>
+	<td class="alt1" width="100%">
+		
+			<table cellpadding="0" cellspacing="0" border="0">
+			<tr valign="bottom">
+				<td><a href="#" onclick="history.back(1); return false;"><img src="azzurra3.0/misc/navbits_start.gif" alt="Torna indietro" border="0" /></a></td>
+				<td>&nbsp;</td>
+				<td width="100%"><span class="navbar"><a href="index.php" accesskey="1">Azzurra IRC Network Forum</a></span> 
+	<span class="navbar">&gt; <a href="forumdisplay.php?f=7">I Vostri Forum</a></span>
+
+
+	<span class="navbar">&gt; <a href="forumdisplay.php?f=112">#carlotta</a></span>
+
+</td>
+			</tr>
+			<tr>
+				<td class="navbar" style="font-size:10pt; padding-top:1px" colspan="3"><a href="/showthread.php?t=14404"><img class="inlineimg" src="azzurra3.0/misc/navbits_finallink_ltr.gif" alt="Ricarica questa pagina" border="0" /></a> <strong>
+	 cercasi disperatamente .....
+
+</strong></td>
+			</tr>
+			</table>
+		
+	</td>
+
+	<td class="alt2" nowrap="nowrap" style="padding:0px">
+		<!-- login form -->
+		<form action="login.php?do=login" method="post" onsubmit="md5hash(vb_login_password, vb_login_md5password, vb_login_md5password_utf, 0)">
+		<script type="text/javascript" src="clientscript/vbulletin_md5.js?v=382"></script>
+		<table cellpadding="0" cellspacing="3" border="0">
+		<tr>
+			<td class="smallfont" style="white-space: nowrap;"><label for="navbar_username">User Name</label></td>
+			<td><input type="text" class="bginput" style="font-size: 11px" name="vb_login_username" id="navbar_username" size="10" accesskey="u" tabindex="101" value="User Name" onfocus="if (this.value == 'User Name') this.value = '';" /></td>
+			<td class="smallfont" nowrap="nowrap"><label for="cb_cookieuser_navbar"><input type="checkbox" name="cookieuser" value="1" tabindex="103" id="cb_cookieuser_navbar" accesskey="c" />Ricordami?</label></td>
+		</tr>
+		<tr>
+			<td class="smallfont"><label for="navbar_password">Password</label></td>
+			<td><input type="password" class="bginput" style="font-size: 11px" name="vb_login_password" id="navbar_password" size="10" tabindex="102" /></td>
+			<td><input type="submit" class="button" value="Accedi" tabindex="104" title="Inserisci la tua username e la password nelle caselle a disposizione per accedere, oppure clicca sul bottone 'registrati' per crearti un profilo." accesskey="s" /></td>
+		</tr>
+		</table>
+		<input type="hidden" name="s" value="" />
+		<input type="hidden" name="securitytoken" value="guest" />
+		<input type="hidden" name="do" value="login" />
+		<input type="hidden" name="vb_login_md5password" />
+		<input type="hidden" name="vb_login_md5password_utf" />
+		</form>
+		<!-- / login form -->
+	</td>
+
+</tr>
+</table>
+<!-- / breadcrumb, login, pm info -->
+
+<!-- nav buttons bar -->
+<div class="tborder" style="padding:1px; border-top-width:0px">
+	<table cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
+	<tr align="center">
+		
+		
+			<td class="vbmenu_control"><a href="register.php" rel="nofollow">Registrati</a></td>
+		
+		
+		<td class="vbmenu_control"><a rel="help" href="faq.php" accesskey="5">FAQ</a></td>
+		
+			
+				<td class="vbmenu_control"><a href="memberlist.php">Lista utenti</a></td>
+			
+			
+				<td class="vbmenu_control"><a href="group.php?">Social Groups</a></td>
+			
+		
+		<td class="vbmenu_control"><a href="calendar.php">Calendario</a></td>
+		
+			
+				<td class="vbmenu_control"><a href="search.php" accesskey="4">Cerca</a></td>
+				
+				<td class="vbmenu_control"><a href="search.php?do=getdaily" accesskey="2">I messaggi di oggi</a></td>
+				
+			
+			<td class="vbmenu_control"><a href="forumdisplay.php?do=markread" rel="nofollow">Segna i forums come letti</a></td>
+			
+		
+		
+		
+		</tr>
+	</table>
+</div>
+<!-- / nav buttons bar -->
+
+<br />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a name="poststop" id="poststop"></a>
+
+<!-- controls above postbits -->
+<table cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:3px">
+<tr valign="bottom">
+	
+		<td class="smallfont">&nbsp;</td>
+	
+	
+</tr>
+</table>
+<!-- / controls above postbits -->
+
+<!-- toolbar -->
+<table class="tborder" cellpadding="6" cellspacing="1" border="0" width="100%" align="center" style="border-bottom-width:0px">
+<tr>
+	<td class="tcat" width="100%">
+		<div class="smallfont">
+		
+		&nbsp;
+		</div>
+	</td>
+	<td class="vbmenu_control" id="threadtools" nowrap="nowrap">
+		<a href="#goto_threadtools">Strumenti discussione</a>
+		
+	</td>
+	
+	
+	
+	<td class="vbmenu_control" id="displaymodes" nowrap="nowrap">
+		<a href="#goto_displaymodes">Modalità di visualizzazione</a>
+		
+	</td>
+	
+
+	
+
+</tr>
+</table>
+<!-- / toolbar -->
+
+
+
+<!-- end content table -->
+
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- / end content table -->
+
+
+<!-- thread posts list -->
+<script type="text/javascript">
+<!--
+var imgdir_statusicon = "azzurra3.0/statusicon";
+var imgdir_misc = "azzurra3.0/misc";
+var cleargifurl = "clear.gif";
+var guestphrase = "Ospite";
+var morephrase = "Altre risposte sotto la profondità attuale...";
+var highlightwords = "";
+//-->
+</script>
+<script type="text/javascript" src="clientscript/vbulletin_thrdpostlist.js?v=382"></script>
+<script type="text/javascript">
+<!--
+// initialize some variables
+var curpostid = 452126;
+var quickreply = false;
+
+// cached posts (no page reload required to view)
+pd[452126] = '<!-' + '- post #452126 -' + '->\r\n\r\n	<!-' + '- open content container -' + '->\r\n\r\n<div align="center">\r\n	<div class="page" style="width:98%; text-align:left">\r\n		<div style="padding:0px 10px 0px 10px" align="left">\r\n\r\n	<div id="edit452126" style="padding:0px 0px 6px 0px">\r\n	<!-' + '- this is not the last post shown on the page -' + '->\r\n\r\n\r\n\r\n<table id="post452126" class="tborder" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">\r\n<tr>\r\n	\r\n		<td class="thead" style="font-weight:normal; border: 1px solid #cccccc; border-right: 0px" >\r\n			<!-' + '- status icon and date -' + '->\r\n			<a name="post452126"><img class="inlineimg" src="azzurra3.0/statusicon/post_old.gif" alt="Vecchio" border="0" /></a>\r\n			06-04-2007, 13:58\r\n			\r\n			<!-' + '- / status icon and date -' + '->\r\n		</td>\r\n		<td class="thead" style="font-weight:normal; border: 1px solid #cccccc; border-left: 0px" align="right">\r\n			&nbsp;\r\n			#<a href="showpost.php?p=452126&amp;postcount=1" target="new" rel="nofollow" id="postcount452126" name="1"><strong>1</strong></a>\r\n			\r\n		</td>\r\n	\r\n</tr>\r\n<tr valign="top">\r\n	<td class="alt2" width="175" style="border: 1px solid #cccccc; border-top: 0px; border-bottom: 0px">\r\n\r\n			<div id="postmenu_452126">\r\n				\r\n				<a class="bigusername" href="member.php?u=1984">^Mis^</a>\r\n				<script type="text/javascript"> vbmenu_register("postmenu_452126", true); <\/scr' + 'ipt>\r\n				\r\n			</div>\r\n\r\n			<div class="smallfont">Forum Jedi Knight</div>\r\n			\r\n			\r\n\r\n			\r\n				<div class="smallfont">\r\n					&nbsp;<br /><a href="member.php?u=1984"><img src="customavatars/avatar1984_31.gif"   alt="L\'Avatar di ^Mis^" border="0" /></a>\r\n				</div>\r\n			\r\n\r\n			<div class="smallfont">\r\n				&nbsp;<br />\r\n				<div>Data Iscrizione: 11-05-2003</div>\r\n				<div>Residenza: Brescia provincia</div>\r\n				\r\n				<div>\r\n					Messaggi: 7.214\r\n				</div>\r\n				\r\n				\r\n				Potenza Reputazione: <span id="reppower_452126_1984">14</span> <div><span id="repdisplay_452126_1984"><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="^Mis^ brilla e risplende di luce propria" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="^Mis^ brilla e risplende di luce propria" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="^Mis^ brilla e risplende di luce propria" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="^Mis^ brilla e risplende di luce propria" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="^Mis^ brilla e risplende di luce propria" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_highpos.gif" alt="^Mis^ brilla e risplende di luce propria" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_highpos.gif" alt="^Mis^ brilla e risplende di luce propria" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_highpos.gif" alt="^Mis^ brilla e risplende di luce propria" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_highpos.gif" alt="^Mis^ brilla e risplende di luce propria" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_highpos.gif" alt="^Mis^ brilla e risplende di luce propria" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_highpos.gif" alt="^Mis^ brilla e risplende di luce propria" border="0" /></span></div>\r\n				\r\n				<div>    </div>\r\n			</div>\r\n\r\n	</td>\r\n	\r\n	<td class="alt1" id="td_post_452126" style="border-right: 1px solid #cccccc">\r\n	\r\n		\r\n		\r\n			<!-' + '- icon and title -' + '->\r\n			<div class="smallfont">\r\n				<img class="inlineimg" src="images/icons/icon1.gif" alt="Base" border="0" />\r\n				<strong>cercasi disperatamente .....</strong>\r\n			</div>\r\n			<hr size="1" style="color:#cccccc; background-color:#cccccc" />\r\n			<!-' + '- / icon and title -' + '->\r\n		\r\n\r\n		<!-' + '- message -' + '->\r\n		<div id="post_message_452126">\r\n			\r\n			Ma Carlottina che fine ha fatto?\r\n		</div>\r\n		<!-' + '- / message -' + '->\r\n\r\n		\r\n\r\n		\r\n		\r\n\r\n		\r\n		<!-' + '- sig -' + '->\r\n			<div>\r\n				__________________<br />\r\n				<b><font size="1">&quot;Vivere, finche c\'è poesia, vivere finchè c\'è nostagia.... vivere, finchè c\'è gioventù, perchè la vita è bella la voglio vivere sempre più....&quot;  <br />\r\nTommy17_</font><br />\r\n</b>\r\n			</div>\r\n		<!-' + '- / sig -' + '->\r\n		\r\n\r\n		\r\n\r\n		\r\n\r\n	</td>\r\n</tr>\r\n<tr>\r\n	<td class="alt2" style="border: 1px solid #cccccc; border-top: 0px">\r\n		<img class="inlineimg" src="azzurra3.0/statusicon/user_offline.gif" alt="^Mis^ non è collegato" border="0" />\r\n\r\n\r\n		\r\n		\r\n		\r\n		\r\n		&nbsp;\r\n	</td>\r\n	\r\n	<td class="alt1" align="right" style="border: 1px solid #cccccc; border-left: 0px; border-top: 0px">\r\n	\r\n		<!-' + '- controls -' + '->\r\n		\r\n		\r\n		\r\n			<a href="newreply.php?do=newreply&amp;p=452126" rel="nofollow"><img src="azzurra3.0/buttons/quote.gif" alt="Rispondi Citando" border="0" /></a>\r\n		\r\n		\r\n		\r\n		\r\n		\r\n		\r\n		\r\n			\r\n		\r\n		\r\n		<!-' + '- / controls -' + '->\r\n	</td>\r\n</tr>\r\n</table>\r\n\r\n\r\n<!-' + '- post 452126 popup menu -' + '->\r\n<div class="vbmenu_popup" id="postmenu_452126_menu" style="display:none">\r\n	<table cellpadding="4" cellspacing="1" border="0">\r\n	<tr>\r\n		<td class="thead">^Mis^</td>\r\n	</tr>\r\n	\r\n		<tr><td class="vbmenu_option"><a href="member.php?u=1984">Vedi Profilo Pubblico</a></td></tr>\r\n	\r\n	\r\n		<tr><td class="vbmenu_option"><a href="private.php?do=newpm&amp;u=1984" rel="nofollow">Invia un messaggio privato a ^Mis^</a></td></tr>\r\n	\r\n	\r\n	\r\n	\r\n		<tr><td class="vbmenu_option"><a href="search.php?do=finduser&amp;u=1984" rel="nofollow">Trova altri messaggi di ^Mis^</a></td></tr>\r\n	\r\n	\r\n	\r\n	</table>\r\n</div>\r\n<!-' + '- / post 452126 popup menu -' + '->\r\n\r\n\r\n	</div>\r\n	\r\n		</div>\r\n	</div>\r\n</div>\r\n\r\n<!-' + '- / close content container -' + '->\r\n\r\n<!-' + '- / post #452126 -' + '->';
+pd[452143] = '<!-' + '- post #452143 -' + '->\r\n\r\n	<!-' + '- open content container -' + '->\r\n\r\n<div align="center">\r\n	<div class="page" style="width:98%; text-align:left">\r\n		<div style="padding:0px 10px 0px 10px" align="left">\r\n\r\n	<div id="edit452143" style="padding:0px 0px 6px 0px">\r\n	<!-' + '- this is not the last post shown on the page -' + '->\r\n\r\n\r\n\r\n<table id="post452143" class="tborder" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">\r\n<tr>\r\n	\r\n		<td class="thead" style="font-weight:normal; border: 1px solid #cccccc; border-right: 0px" >\r\n			<!-' + '- status icon and date -' + '->\r\n			<a name="post452143"><img class="inlineimg" src="azzurra3.0/statusicon/post_old.gif" alt="Vecchio" border="0" /></a>\r\n			06-04-2007, 18:41\r\n			\r\n			<!-' + '- / status icon and date -' + '->\r\n		</td>\r\n		<td class="thead" style="font-weight:normal; border: 1px solid #cccccc; border-left: 0px" align="right">\r\n			&nbsp;\r\n			#<a href="showpost.php?p=452143&amp;postcount=2" target="new" rel="nofollow" id="postcount452143" name="2"><strong>2</strong></a>\r\n			\r\n		</td>\r\n	\r\n</tr>\r\n<tr valign="top">\r\n	<td class="alt2" width="175" style="border: 1px solid #cccccc; border-top: 0px; border-bottom: 0px">\r\n\r\n			<div id="postmenu_452143">\r\n				\r\n				<a class="bigusername" href="member.php?u=5833">carlotta85</a>\r\n				<script type="text/javascript"> vbmenu_register("postmenu_452143", true); <\/scr' + 'ipt>\r\n				\r\n			</div>\r\n\r\n			<div class="smallfont">Forum Jedi Knight</div>\r\n			\r\n			\r\n\r\n			\r\n				<div class="smallfont">\r\n					&nbsp;<br /><a href="member.php?u=5833"><img src="customavatars/avatar5833_49.gif"   alt="L\'Avatar di carlotta85" border="0" /></a>\r\n				</div>\r\n			\r\n\r\n			<div class="smallfont">\r\n				&nbsp;<br />\r\n				<div>Data Iscrizione: 21-06-2005</div>\r\n				\r\n				\r\n				<div>\r\n					Messaggi: 5.842\r\n				</div>\r\n				\r\n				\r\n				Potenza Reputazione: <span id="reppower_452143_5833">11</span> <div><span id="repdisplay_452143_5833"><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="carlotta85 ha fan che lo seguono ovunque" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="carlotta85 ha fan che lo seguono ovunque" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="carlotta85 ha fan che lo seguono ovunque" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="carlotta85 ha fan che lo seguono ovunque" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="carlotta85 ha fan che lo seguono ovunque" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_highpos.gif" alt="carlotta85 ha fan che lo seguono ovunque" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_highpos.gif" alt="carlotta85 ha fan che lo seguono ovunque" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_highpos.gif" alt="carlotta85 ha fan che lo seguono ovunque" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_highpos.gif" alt="carlotta85 ha fan che lo seguono ovunque" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_highpos.gif" alt="carlotta85 ha fan che lo seguono ovunque" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_highpos.gif" alt="carlotta85 ha fan che lo seguono ovunque" border="0" /></span></div>\r\n				\r\n				<div>    </div>\r\n			</div>\r\n\r\n	</td>\r\n	\r\n	<td class="alt1" id="td_post_452143" style="border-right: 1px solid #cccccc">\r\n	\r\n		\r\n		\r\n			<!-' + '- icon and title -' + '->\r\n			<div class="smallfont">\r\n				<img class="inlineimg" src="images/icons/icon1.gif" alt="Base" border="0" />\r\n				<strong>Re: cercasi disperatamente .....</strong>\r\n			</div>\r\n			<hr size="1" style="color:#cccccc; background-color:#cccccc" />\r\n			<!-' + '- / icon and title -' + '->\r\n		\r\n\r\n		<!-' + '- message -' + '->\r\n		<div id="post_message_452143">\r\n			\r\n			Ci sono, tranquilla. <img src="images/smilies/classic/icon_smile_wink.gif" border="0" alt="" title="Icon Smile Wink" class="inlineimg" /> <img src="images/smilies/classic/icon_smile_kisses.gif" border="0" alt="" title="Icon Smile Kisses" class="inlineimg" />(O meglio, ci sarò)\r\n		</div>\r\n		<!-' + '- / message -' + '->\r\n\r\n		\r\n\r\n		\r\n		\r\n\r\n		\r\n		<!-' + '- sig -' + '->\r\n			<div>\r\n				__________________<br />\r\n				<div align="left"><font color="black">Carlotta </font></div>\r\n			</div>\r\n		<!-' + '- / sig -' + '->\r\n		\r\n\r\n		\r\n\r\n		\r\n		<!-' + '- edit note -' + '->\r\n			<div class="smallfont">\r\n				<hr size="1" style="color:#cccccc; background-color:#cccccc" />\r\n				<em>\r\n					\r\n						Ultima Modifica di carlotta85 : 06-04-2007 alle <span class="time">18:43</span>\r\n					\r\n					\r\n				</em>\r\n			</div>\r\n		<!-' + '- / edit note -' + '->\r\n		\r\n\r\n	</td>\r\n</tr>\r\n<tr>\r\n	<td class="alt2" style="border: 1px solid #cccccc; border-top: 0px">\r\n		<img class="inlineimg" src="azzurra3.0/statusicon/user_offline.gif" alt="carlotta85 non è collegato" border="0" />\r\n\r\n\r\n		\r\n		\r\n		\r\n		\r\n		&nbsp;\r\n	</td>\r\n	\r\n	<td class="alt1" align="right" style="border: 1px solid #cccccc; border-left: 0px; border-top: 0px">\r\n	\r\n		<!-' + '- controls -' + '->\r\n		\r\n		\r\n		\r\n			<a href="newreply.php?do=newreply&amp;p=452143" rel="nofollow"><img src="azzurra3.0/buttons/quote.gif" alt="Rispondi Citando" border="0" /></a>\r\n		\r\n		\r\n		\r\n		\r\n		\r\n		\r\n		\r\n			\r\n		\r\n		\r\n		<!-' + '- / controls -' + '->\r\n	</td>\r\n</tr>\r\n</table>\r\n\r\n\r\n<!-' + '- post 452143 popup menu -' + '->\r\n<div class="vbmenu_popup" id="postmenu_452143_menu" style="display:none">\r\n	<table cellpadding="4" cellspacing="1" border="0">\r\n	<tr>\r\n		<td class="thead">carlotta85</td>\r\n	</tr>\r\n	\r\n		<tr><td class="vbmenu_option"><a href="member.php?u=5833">Vedi Profilo Pubblico</a></td></tr>\r\n	\r\n	\r\n		<tr><td class="vbmenu_option"><a href="private.php?do=newpm&amp;u=5833" rel="nofollow">Invia un messaggio privato a carlotta85</a></td></tr>\r\n	\r\n	\r\n	\r\n	\r\n		<tr><td class="vbmenu_option"><a href="search.php?do=finduser&amp;u=5833" rel="nofollow">Trova altri messaggi di carlotta85</a></td></tr>\r\n	\r\n	\r\n	\r\n	</table>\r\n</div>\r\n<!-' + '- / post 452143 popup menu -' + '->\r\n\r\n\r\n	</div>\r\n	\r\n		</div>\r\n	</div>\r\n</div>\r\n\r\n<!-' + '- / close content container -' + '->\r\n\r\n<!-' + '- / post #452143 -' + '->';
+pd[452198] = '<!-' + '- post #452198 -' + '->\r\n\r\n	<!-' + '- open content container -' + '->\r\n\r\n<div align="center">\r\n	<div class="page" style="width:98%; text-align:left">\r\n		<div style="padding:0px 10px 0px 10px" align="left">\r\n\r\n	<div id="edit452198" style="padding:0px 0px 6px 0px">\r\n	<!-' + '- this is not the last post shown on the page -' + '->\r\n\r\n\r\n\r\n<table id="post452198" class="tborder" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">\r\n<tr>\r\n	\r\n		<td class="thead" style="font-weight:normal; border: 1px solid #cccccc; border-right: 0px" >\r\n			<!-' + '- status icon and date -' + '->\r\n			<a name="post452198"><img class="inlineimg" src="azzurra3.0/statusicon/post_old.gif" alt="Vecchio" border="0" /></a>\r\n			07-04-2007, 12:17\r\n			\r\n			<!-' + '- / status icon and date -' + '->\r\n		</td>\r\n		<td class="thead" style="font-weight:normal; border: 1px solid #cccccc; border-left: 0px" align="right">\r\n			&nbsp;\r\n			#<a href="showpost.php?p=452198&amp;postcount=3" target="new" rel="nofollow" id="postcount452198" name="3"><strong>3</strong></a>\r\n			\r\n		</td>\r\n	\r\n</tr>\r\n<tr valign="top">\r\n	<td class="alt2" width="175" style="border: 1px solid #cccccc; border-top: 0px; border-bottom: 0px">\r\n\r\n			<div id="postmenu_452198">\r\n				\r\n				<a class="bigusername" href="member.php?u=1984">^Mis^</a>\r\n				<script type="text/javascript"> vbmenu_register("postmenu_452198", true); <\/scr' + 'ipt>\r\n				\r\n			</div>\r\n\r\n			<div class="smallfont">Forum Jedi Knight</div>\r\n			\r\n			\r\n\r\n			\r\n				<div class="smallfont">\r\n					&nbsp;<br /><a href="member.php?u=1984"><img src="customavatars/avatar1984_31.gif"   alt="L\'Avatar di ^Mis^" border="0" /></a>\r\n				</div>\r\n			\r\n\r\n			<div class="smallfont">\r\n				&nbsp;<br />\r\n				<div>Data Iscrizione: 11-05-2003</div>\r\n				<div>Residenza: Brescia provincia</div>\r\n				\r\n				<div>\r\n					Messaggi: 7.214\r\n				</div>\r\n				\r\n				\r\n				Potenza Reputazione: <span id="reppower_452198_1984">14</span> <div><span id="repdisplay_452198_1984"><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="^Mis^ brilla e risplende di luce propria" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="^Mis^ brilla e risplende di luce propria" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="^Mis^ brilla e risplende di luce propria" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="^Mis^ brilla e risplende di luce propria" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="^Mis^ brilla e risplende di luce propria" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_highpos.gif" alt="^Mis^ brilla e risplende di luce propria" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_highpos.gif" alt="^Mis^ brilla e risplende di luce propria" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_highpos.gif" alt="^Mis^ brilla e risplende di luce propria" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_highpos.gif" alt="^Mis^ brilla e risplende di luce propria" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_highpos.gif" alt="^Mis^ brilla e risplende di luce propria" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_highpos.gif" alt="^Mis^ brilla e risplende di luce propria" border="0" /></span></div>\r\n				\r\n				<div>    </div>\r\n			</div>\r\n\r\n	</td>\r\n	\r\n	<td class="alt1" id="td_post_452198" style="border-right: 1px solid #cccccc">\r\n	\r\n		\r\n		\r\n			<!-' + '- icon and title -' + '->\r\n			<div class="smallfont">\r\n				<img class="inlineimg" src="images/icons/icon1.gif" alt="Base" border="0" />\r\n				<strong>Re: cercasi disperatamente .....</strong>\r\n			</div>\r\n			<hr size="1" style="color:#cccccc; background-color:#cccccc" />\r\n			<!-' + '- / icon and title -' + '->\r\n		\r\n\r\n		<!-' + '- message -' + '->\r\n		<div id="post_message_452198">\r\n			\r\n			CARLOTTTTTTTTTTINA, MA CHE FINE HAI FATTO?<br />\n<br />\nBENTORNATA COMUNQUE <img src="images/smilies/classic/icon_smile_kisses.gif" border="0" alt="" title="Icon Smile Kisses" class="inlineimg" />\r\n		</div>\r\n		<!-' + '- / message -' + '->\r\n\r\n		\r\n\r\n		\r\n		\r\n\r\n		\r\n		<!-' + '- sig -' + '->\r\n			<div>\r\n				__________________<br />\r\n				<b><font size="1">&quot;Vivere, finche c\'è poesia, vivere finchè c\'è nostagia.... vivere, finchè c\'è gioventù, perchè la vita è bella la voglio vivere sempre più....&quot;  <br />\r\nTommy17_</font><br />\r\n</b>\r\n			</div>\r\n		<!-' + '- / sig -' + '->\r\n		\r\n\r\n		\r\n\r\n		\r\n\r\n	</td>\r\n</tr>\r\n<tr>\r\n	<td class="alt2" style="border: 1px solid #cccccc; border-top: 0px">\r\n		<img class="inlineimg" src="azzurra3.0/statusicon/user_offline.gif" alt="^Mis^ non è collegato" border="0" />\r\n\r\n\r\n		\r\n		\r\n		\r\n		\r\n		&nbsp;\r\n	</td>\r\n	\r\n	<td class="alt1" align="right" style="border: 1px solid #cccccc; border-left: 0px; border-top: 0px">\r\n	\r\n		<!-' + '- controls -' + '->\r\n		\r\n		\r\n		\r\n			<a href="newreply.php?do=newreply&amp;p=452198" rel="nofollow"><img src="azzurra3.0/buttons/quote.gif" alt="Rispondi Citando" border="0" /></a>\r\n		\r\n		\r\n		\r\n		\r\n		\r\n		\r\n		\r\n			\r\n		\r\n		\r\n		<!-' + '- / controls -' + '->\r\n	</td>\r\n</tr>\r\n</table>\r\n\r\n\r\n<!-' + '- post 452198 popup menu -' + '->\r\n<div class="vbmenu_popup" id="postmenu_452198_menu" style="display:none">\r\n	<table cellpadding="4" cellspacing="1" border="0">\r\n	<tr>\r\n		<td class="thead">^Mis^</td>\r\n	</tr>\r\n	\r\n		<tr><td class="vbmenu_option"><a href="member.php?u=1984">Vedi Profilo Pubblico</a></td></tr>\r\n	\r\n	\r\n		<tr><td class="vbmenu_option"><a href="private.php?do=newpm&amp;u=1984" rel="nofollow">Invia un messaggio privato a ^Mis^</a></td></tr>\r\n	\r\n	\r\n	\r\n	\r\n		<tr><td class="vbmenu_option"><a href="search.php?do=finduser&amp;u=1984" rel="nofollow">Trova altri messaggi di ^Mis^</a></td></tr>\r\n	\r\n	\r\n	\r\n	</table>\r\n</div>\r\n<!-' + '- / post 452198 popup menu -' + '->\r\n\r\n\r\n	</div>\r\n	\r\n		</div>\r\n	</div>\r\n</div>\r\n\r\n<!-' + '- / close content container -' + '->\r\n\r\n<!-' + '- / post #452198 -' + '->';
+pd[452199] = '<!-' + '- post #452199 -' + '->\r\n\r\n	<!-' + '- open content container -' + '->\r\n\r\n<div align="center">\r\n	<div class="page" style="width:98%; text-align:left">\r\n		<div style="padding:0px 10px 0px 10px" align="left">\r\n\r\n	<div id="edit452199" style="padding:0px 0px 6px 0px">\r\n	<!-' + '- this is not the last post shown on the page -' + '->\r\n\r\n\r\n\r\n<table id="post452199" class="tborder" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">\r\n<tr>\r\n	\r\n		<td class="thead" style="font-weight:normal; border: 1px solid #cccccc; border-right: 0px" >\r\n			<!-' + '- status icon and date -' + '->\r\n			<a name="post452199"><img class="inlineimg" src="azzurra3.0/statusicon/post_old.gif" alt="Vecchio" border="0" /></a>\r\n			07-04-2007, 12:21\r\n			\r\n			<!-' + '- / status icon and date -' + '->\r\n		</td>\r\n		<td class="thead" style="font-weight:normal; border: 1px solid #cccccc; border-left: 0px" align="right">\r\n			&nbsp;\r\n			#<a href="showpost.php?p=452199&amp;postcount=4" target="new" rel="nofollow" id="postcount452199" name="4"><strong>4</strong></a>\r\n			\r\n		</td>\r\n	\r\n</tr>\r\n<tr valign="top">\r\n	<td class="alt2" width="175" style="border: 1px solid #cccccc; border-top: 0px; border-bottom: 0px">\r\n\r\n			<div id="postmenu_452199">\r\n				\r\n				<a class="bigusername" href="member.php?u=5920">Braxton Bragg</a>\r\n				<script type="text/javascript"> vbmenu_register("postmenu_452199", true); <\/scr' + 'ipt>\r\n				\r\n			</div>\r\n\r\n			<div class="smallfont">Wonderful User</div>\r\n			\r\n			\r\n\r\n			\r\n				<div class="smallfont">\r\n					&nbsp;<br /><a href="member.php?u=5920"><img src="images/avatars/gallery/Mix/Nemo3.jpg"   alt="L\'Avatar di Braxton Bragg" border="0" /></a>\r\n				</div>\r\n			\r\n\r\n			<div class="smallfont">\r\n				&nbsp;<br />\r\n				<div>Data Iscrizione: 11-07-2005</div>\r\n				\r\n				\r\n				<div>\r\n					Messaggi: 2.705\r\n				</div>\r\n				\r\n				\r\n				Potenza Reputazione: <span id="reppower_452199_5920">10</span> <div><span id="repdisplay_452199_5920"><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="Braxton Bragg ha fan che lo seguono ovunque" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="Braxton Bragg ha fan che lo seguono ovunque" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="Braxton Bragg ha fan che lo seguono ovunque" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="Braxton Bragg ha fan che lo seguono ovunque" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="Braxton Bragg ha fan che lo seguono ovunque" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_highpos.gif" alt="Braxton Bragg ha fan che lo seguono ovunque" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_highpos.gif" alt="Braxton Bragg ha fan che lo seguono ovunque" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_highpos.gif" alt="Braxton Bragg ha fan che lo seguono ovunque" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_highpos.gif" alt="Braxton Bragg ha fan che lo seguono ovunque" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_highpos.gif" alt="Braxton Bragg ha fan che lo seguono ovunque" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_highpos.gif" alt="Braxton Bragg ha fan che lo seguono ovunque" border="0" /></span></div>\r\n				\r\n				<div>    </div>\r\n			</div>\r\n\r\n	</td>\r\n	\r\n	<td class="alt1" id="td_post_452199" style="border-right: 1px solid #cccccc">\r\n	\r\n		\r\n		\r\n			<!-' + '- icon and title -' + '->\r\n			<div class="smallfont">\r\n				<img class="inlineimg" src="images/icons/icon1.gif" alt="Base" border="0" />\r\n				<strong>Re: cercasi disperatamente .....</strong>\r\n			</div>\r\n			<hr size="1" style="color:#cccccc; background-color:#cccccc" />\r\n			<!-' + '- / icon and title -' + '->\r\n		\r\n\r\n		<!-' + '- message -' + '->\r\n		<div id="post_message_452199">\r\n			\r\n			( Era ora, Dannazione!)<br />\n<img src="images/smilies/classic/icon_smile.gif" border="0" alt="" title="Icon Smile" class="inlineimg" />\r\n		</div>\r\n		<!-' + '- / message -' + '->\r\n\r\n		\r\n\r\n		\r\n		\r\n\r\n		\r\n\r\n		\r\n\r\n		\r\n\r\n	</td>\r\n</tr>\r\n<tr>\r\n	<td class="alt2" style="border: 1px solid #cccccc; border-top: 0px">\r\n		<img class="inlineimg" src="azzurra3.0/statusicon/user_offline.gif" alt="Braxton Bragg non è collegato" border="0" />\r\n\r\n\r\n		\r\n		\r\n		\r\n		\r\n		&nbsp;\r\n	</td>\r\n	\r\n	<td class="alt1" align="right" style="border: 1px solid #cccccc; border-left: 0px; border-top: 0px">\r\n	\r\n		<!-' + '- controls -' + '->\r\n		\r\n		\r\n		\r\n			<a href="newreply.php?do=newreply&amp;p=452199" rel="nofollow"><img src="azzurra3.0/buttons/quote.gif" alt="Rispondi Citando" border="0" /></a>\r\n		\r\n		\r\n		\r\n		\r\n		\r\n		\r\n		\r\n			\r\n		\r\n		\r\n		<!-' + '- / controls -' + '->\r\n	</td>\r\n</tr>\r\n</table>\r\n\r\n\r\n<!-' + '- post 452199 popup menu -' + '->\r\n<div class="vbmenu_popup" id="postmenu_452199_menu" style="display:none">\r\n	<table cellpadding="4" cellspacing="1" border="0">\r\n	<tr>\r\n		<td class="thead">Braxton Bragg</td>\r\n	</tr>\r\n	\r\n		<tr><td class="vbmenu_option"><a href="member.php?u=5920">Vedi Profilo Pubblico</a></td></tr>\r\n	\r\n	\r\n		<tr><td class="vbmenu_option"><a href="private.php?do=newpm&amp;u=5920" rel="nofollow">Invia un messaggio privato a Braxton Bragg</a></td></tr>\r\n	\r\n	\r\n	\r\n		<tr><td class="vbmenu_option"><a href="http://xoomer.alice.it/tuttestorie/">Visita la homepage di Braxton Bragg!</a></td></tr>\r\n	\r\n	\r\n		<tr><td class="vbmenu_option"><a href="search.php?do=finduser&amp;u=5920" rel="nofollow">Trova altri messaggi di Braxton Bragg</a></td></tr>\r\n	\r\n	\r\n	\r\n	</table>\r\n</div>\r\n<!-' + '- / post 452199 popup menu -' + '->\r\n\r\n\r\n	</div>\r\n	\r\n		</div>\r\n	</div>\r\n</div>\r\n\r\n<!-' + '- / close content container -' + '->\r\n\r\n<!-' + '- / post #452199 -' + '->';
+pd[452236] = '<!-' + '- post #452236 -' + '->\r\n\r\n	<!-' + '- open content container -' + '->\r\n\r\n<div align="center">\r\n	<div class="page" style="width:98%; text-align:left">\r\n		<div style="padding:0px 10px 0px 10px" align="left">\r\n\r\n	<div id="edit452236" style="padding:0px 0px 6px 0px">\r\n	<!-' + '- this is not the last post shown on the page -' + '->\r\n\r\n\r\n\r\n<table id="post452236" class="tborder" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">\r\n<tr>\r\n	\r\n		<td class="thead" style="font-weight:normal; border: 1px solid #cccccc; border-right: 0px" >\r\n			<!-' + '- status icon and date -' + '->\r\n			<a name="post452236"><img class="inlineimg" src="azzurra3.0/statusicon/post_old.gif" alt="Vecchio" border="0" /></a>\r\n			07-04-2007, 20:23\r\n			\r\n			<!-' + '- / status icon and date -' + '->\r\n		</td>\r\n		<td class="thead" style="font-weight:normal; border: 1px solid #cccccc; border-left: 0px" align="right">\r\n			&nbsp;\r\n			#<a href="showpost.php?p=452236&amp;postcount=5" target="new" rel="nofollow" id="postcount452236" name="5"><strong>5</strong></a>\r\n			\r\n		</td>\r\n	\r\n</tr>\r\n<tr valign="top">\r\n	<td class="alt2" width="175" style="border: 1px solid #cccccc; border-top: 0px; border-bottom: 0px">\r\n\r\n			<div id="postmenu_452236">\r\n				\r\n				<a class="bigusername" href="member.php?u=6740">.:~*~:.CROW.:~*~:.</a>\r\n				<script type="text/javascript"> vbmenu_register("postmenu_452236", true); <\/scr' + 'ipt>\r\n				\r\n			</div>\r\n\r\n			<div class="smallfont">Forum Jedi Knight</div>\r\n			\r\n			\r\n\r\n			\r\n				<div class="smallfont">\r\n					&nbsp;<br /><a href="member.php?u=6740"><img src="customavatars/avatar6740_46.gif"   alt="L\'Avatar di .:~*~:.CROW.:~*~:." border="0" /></a>\r\n				</div>\r\n			\r\n\r\n			<div class="smallfont">\r\n				&nbsp;<br />\r\n				<div>Data Iscrizione: 15-12-2005</div>\r\n				<div>Residenza: Napoli</div>\r\n				\r\n				<div>\r\n					Messaggi: 5.198\r\n				</div>\r\n				\r\n				\r\n				Potenza Reputazione: <span id="reppower_452236_6740">9</span> <div><span id="repdisplay_452236_6740"><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt=".:~*~:.CROW.:~*~:. è una persona estremamente popolare" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt=".:~*~:.CROW.:~*~:. è una persona estremamente popolare" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt=".:~*~:.CROW.:~*~:. è una persona estremamente popolare" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt=".:~*~:.CROW.:~*~:. è una persona estremamente popolare" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt=".:~*~:.CROW.:~*~:. è una persona estremamente popolare" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_highpos.gif" alt=".:~*~:.CROW.:~*~:. è una persona estremamente popolare" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_highpos.gif" alt=".:~*~:.CROW.:~*~:. è una persona estremamente popolare" border="0" /></span></div>\r\n				\r\n				<div>  <a href="#" onclick="imwindow(\'msn\', \'6740\', 400, 200); return false;"><img src="azzurra3.0/misc/im_msn.gif" alt="Invia un messaggio via MSN a .:~*~:.CROW.:~*~:." border="0" /></a>  </div>\r\n			</div>\r\n\r\n	</td>\r\n	\r\n	<td class="alt1" id="td_post_452236" style="border-right: 1px solid #cccccc">\r\n	\r\n		\r\n		\r\n			<!-' + '- icon and title -' + '->\r\n			<div class="smallfont">\r\n				<img class="inlineimg" src="images/icons/icon1.gif" alt="Base" border="0" />\r\n				<strong>Re: cercasi disperatamente .....</strong>\r\n			</div>\r\n			<hr size="1" style="color:#cccccc; background-color:#cccccc" />\r\n			<!-' + '- / icon and title -' + '->\r\n		\r\n\r\n		<!-' + '- message -' + '->\r\n		<div id="post_message_452236">\r\n			\r\n			<img src="images/smilies/sm404.gif" border="0" alt="" title="Smart" class="inlineimg" />  di me nessuno si preoccupa? <img src="images/smilies/sospiro.gif" border="0" alt="" title="Sospiro" class="inlineimg" />  na cartolina, una telefonata <img src="images/smilies/sospiro.gif" border="0" alt="" title="Sospiro" class="inlineimg" />  ah sti giovani d\'oggi <img src="images/smilies/muoio.gif" border="0" alt="" title="Rotfl" class="inlineimg" />\r\n		</div>\r\n		<!-' + '- / message -' + '->\r\n\r\n		\r\n\r\n		\r\n		\r\n\r\n		\r\n		<!-' + '- sig -' + '->\r\n			<div>\r\n				__________________<br />\r\n				<div align="center"><font face="Comic Sans MS"><font size="3"><font color="DarkSlateBlue"><i><img src="images/smilies/icone/icone117.gif" border="0" alt="" title="Icone117" class="inlineimg" /> </i></font></font></font><font face="Comic Sans MS"><font size="3"><font color="DarkSlateBlue"><i><img src="images/smilies/icone/icone146.gif" border="0" alt="" title="Icone146" class="inlineimg" /></i></font></font></font><font face="Comic Sans MS"><font size="3"><font color="DarkSlateBlue"><i> anche le stelle cadono </i></font></font></font><br />\n<font face="Comic Sans MS"><font size="3"><font color="DarkSlateBlue"><i>alcune sia fuori che dentro </i></font></font></font><br />\n<font face="Comic Sans MS"><font size="3"><font color="DarkSlateBlue"><i>per un desiderio che esprimi </i></font></font></font><br />\n<font face="Comic Sans MS"><font size="3"><font color="DarkSlateBlue"><i>te ne</i></font></font></font><font face="Comic Sans MS"><font size="3"><font color="DarkSlateBlue"><i> rimangono fuori altri cento  </i></font></font></font><font face="Comic Sans MS"><font size="3"><font color="DarkSlateBlue"><i><img src="images/smilies/icone/icone146.gif" border="0" alt="" title="Icone146" class="inlineimg" /></i></font></font></font><font face="Comic Sans MS"><font size="3"><font color="DarkSlateBlue"><i> <img src="images/smilies/icone/icone117.gif" border="0" alt="" title="Icone117" class="inlineimg" /></i></font></font></font></div>\r\n			</div>\r\n		<!-' + '- / sig -' + '->\r\n		\r\n\r\n		\r\n\r\n		\r\n\r\n	</td>\r\n</tr>\r\n<tr>\r\n	<td class="alt2" style="border: 1px solid #cccccc; border-top: 0px">\r\n		<img class="inlineimg" src="azzurra3.0/statusicon/user_offline.gif" alt=".:~*~:.CROW.:~*~:. non è collegato" border="0" />\r\n\r\n\r\n		\r\n		\r\n		\r\n		\r\n		&nbsp;\r\n	</td>\r\n	\r\n	<td class="alt1" align="right" style="border: 1px solid #cccccc; border-left: 0px; border-top: 0px">\r\n	\r\n		<!-' + '- controls -' + '->\r\n		\r\n		\r\n		\r\n			<a href="newreply.php?do=newreply&amp;p=452236" rel="nofollow"><img src="azzurra3.0/buttons/quote.gif" alt="Rispondi Citando" border="0" /></a>\r\n		\r\n		\r\n		\r\n		\r\n		\r\n		\r\n		\r\n			\r\n		\r\n		\r\n		<!-' + '- / controls -' + '->\r\n	</td>\r\n</tr>\r\n</table>\r\n\r\n\r\n<!-' + '- post 452236 popup menu -' + '->\r\n<div class="vbmenu_popup" id="postmenu_452236_menu" style="display:none">\r\n	<table cellpadding="4" cellspacing="1" border="0">\r\n	<tr>\r\n		<td class="thead">.:~*~:.CROW.:~*~:.</td>\r\n	</tr>\r\n	\r\n		<tr><td class="vbmenu_option"><a href="member.php?u=6740">Vedi Profilo Pubblico</a></td></tr>\r\n	\r\n	\r\n		<tr><td class="vbmenu_option"><a href="private.php?do=newpm&amp;u=6740" rel="nofollow">Invia un messaggio privato a .:~*~:.CROW.:~*~:.</a></td></tr>\r\n	\r\n	\r\n	\r\n		<tr><td class="vbmenu_option"><a href="http://vivoforte.spaces.live.com">Visita la homepage di .:~*~:.CROW.:~*~:.!</a></td></tr>\r\n	\r\n	\r\n		<tr><td class="vbmenu_option"><a href="search.php?do=finduser&amp;u=6740" rel="nofollow">Trova altri messaggi di .:~*~:.CROW.:~*~:.</a></td></tr>\r\n	\r\n	\r\n	\r\n	</table>\r\n</div>\r\n<!-' + '- / post 452236 popup menu -' + '->\r\n\r\n\r\n	</div>\r\n	\r\n		</div>\r\n	</div>\r\n</div>\r\n\r\n<!-' + '- / close content container -' + '->\r\n\r\n<!-' + '- / post #452236 -' + '->';
+pd[452286] = '<!-' + '- post #452286 -' + '->\r\n\r\n	<!-' + '- open content container -' + '->\r\n\r\n<div align="center">\r\n	<div class="page" style="width:98%; text-align:left">\r\n		<div style="padding:0px 10px 0px 10px" align="left">\r\n\r\n	<div id="edit452286" style="padding:0px 0px 6px 0px">\r\n	<!-' + '- this is not the last post shown on the page -' + '->\r\n\r\n\r\n\r\n<table id="post452286" class="tborder" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">\r\n<tr>\r\n	\r\n		<td class="thead" style="font-weight:normal; border: 1px solid #cccccc; border-right: 0px" >\r\n			<!-' + '- status icon and date -' + '->\r\n			<a name="post452286"><img class="inlineimg" src="azzurra3.0/statusicon/post_old.gif" alt="Vecchio" border="0" /></a>\r\n			09-04-2007, 15:03\r\n			\r\n			<!-' + '- / status icon and date -' + '->\r\n		</td>\r\n		<td class="thead" style="font-weight:normal; border: 1px solid #cccccc; border-left: 0px" align="right">\r\n			&nbsp;\r\n			#<a href="showpost.php?p=452286&amp;postcount=6" target="new" rel="nofollow" id="postcount452286" name="6"><strong>6</strong></a>\r\n			\r\n		</td>\r\n	\r\n</tr>\r\n<tr valign="top">\r\n	<td class="alt2" width="175" style="border: 1px solid #cccccc; border-top: 0px; border-bottom: 0px">\r\n\r\n			<div id="postmenu_452286">\r\n				\r\n				<a class="bigusername" href="member.php?u=236">joce</a>\r\n				<script type="text/javascript"> vbmenu_register("postmenu_452286", true); <\/scr' + 'ipt>\r\n				\r\n			</div>\r\n\r\n			<div class="smallfont">Forum Jedi Knight</div>\r\n			\r\n			\r\n\r\n			\r\n				<div class="smallfont">\r\n					&nbsp;<br /><a href="member.php?u=236"><img src="customavatars/avatar236_48.gif"   alt="L\'Avatar di joce" border="0" /></a>\r\n				</div>\r\n			\r\n\r\n			<div class="smallfont">\r\n				&nbsp;<br />\r\n				<div>Data Iscrizione: 31-01-2002</div>\r\n				<div>Residenza: Sovico (MB)</div>\r\n				\r\n				<div>\r\n					Messaggi: 8.531\r\n				</div>\r\n				\r\n				\r\n				Potenza Reputazione: <span id="reppower_452286_236">15</span> <div><span id="repdisplay_452286_236"><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="joce è un fiore nel deserto" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="joce è un fiore nel deserto" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="joce è un fiore nel deserto" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="joce è un fiore nel deserto" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="joce è un fiore nel deserto" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_highpos.gif" alt="joce è un fiore nel deserto" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_highpos.gif" alt="joce è un fiore nel deserto" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_highpos.gif" alt="joce è un fiore nel deserto" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_highpos.gif" alt="joce è un fiore nel deserto" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_highpos.gif" alt="joce è un fiore nel deserto" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_highpos.gif" alt="joce è un fiore nel deserto" border="0" /></span></div>\r\n				\r\n				<div>    </div>\r\n			</div>\r\n\r\n	</td>\r\n	\r\n	<td class="alt1" id="td_post_452286" style="border-right: 1px solid #cccccc">\r\n	\r\n		\r\n		\r\n			<!-' + '- icon and title -' + '->\r\n			<div class="smallfont">\r\n				<img class="inlineimg" src="images/icons/icon1.gif" alt="Base" border="0" />\r\n				<strong>Re: cercasi disperatamente .....</strong>\r\n			</div>\r\n			<hr size="1" style="color:#cccccc; background-color:#cccccc" />\r\n			<!-' + '- / icon and title -' + '->\r\n		\r\n\r\n		<!-' + '- message -' + '->\r\n		<div id="post_message_452286">\r\n			\r\n			Ciao Carlotta, ci risentiremo per gli auguri di Natale <img src="images/smilies/classic/icon_smile_tongue.gif" border="0" alt="" title="Icon Smile Tongue" class="inlineimg" />\r\n		</div>\r\n		<!-' + '- / message -' + '->\r\n\r\n		\r\n\r\n		\r\n		\r\n\r\n		\r\n		<!-' + '- sig -' + '->\r\n			<div>\r\n				__________________<br />\r\n				<img src="http://i1.tinypic.com/23tjkw9.png" border="0" alt="" /><br />\r\n<img src="http://i4.tinypic.com/10eok05.jpg" border="0" alt="" /><br />\r\n<img src="http://img297.imageshack.us/img297/8627/6511464888995jy.png" border="0" alt="" />\r\n			</div>\r\n		<!-' + '- / sig -' + '->\r\n		\r\n\r\n		\r\n\r\n		\r\n\r\n	</td>\r\n</tr>\r\n<tr>\r\n	<td class="alt2" style="border: 1px solid #cccccc; border-top: 0px">\r\n		<img class="inlineimg" src="azzurra3.0/statusicon/user_offline.gif" alt="joce non è collegato" border="0" />\r\n\r\n\r\n		\r\n		\r\n		\r\n		\r\n		&nbsp;\r\n	</td>\r\n	\r\n	<td class="alt1" align="right" style="border: 1px solid #cccccc; border-left: 0px; border-top: 0px">\r\n	\r\n		<!-' + '- controls -' + '->\r\n		\r\n		\r\n		\r\n			<a href="newreply.php?do=newreply&amp;p=452286" rel="nofollow"><img src="azzurra3.0/buttons/quote.gif" alt="Rispondi Citando" border="0" /></a>\r\n		\r\n		\r\n		\r\n		\r\n		\r\n		\r\n		\r\n			\r\n		\r\n		\r\n		<!-' + '- / controls -' + '->\r\n	</td>\r\n</tr>\r\n</table>\r\n\r\n\r\n<!-' + '- post 452286 popup menu -' + '->\r\n<div class="vbmenu_popup" id="postmenu_452286_menu" style="display:none">\r\n	<table cellpadding="4" cellspacing="1" border="0">\r\n	<tr>\r\n		<td class="thead">joce</td>\r\n	</tr>\r\n	\r\n		<tr><td class="vbmenu_option"><a href="member.php?u=236">Vedi Profilo Pubblico</a></td></tr>\r\n	\r\n	\r\n		<tr><td class="vbmenu_option"><a href="private.php?do=newpm&amp;u=236" rel="nofollow">Invia un messaggio privato a joce</a></td></tr>\r\n	\r\n	\r\n	\r\n	\r\n		<tr><td class="vbmenu_option"><a href="search.php?do=finduser&amp;u=236" rel="nofollow">Trova altri messaggi di joce</a></td></tr>\r\n	\r\n	\r\n	\r\n	</table>\r\n</div>\r\n<!-' + '- / post 452286 popup menu -' + '->\r\n\r\n\r\n	</div>\r\n	\r\n		</div>\r\n	</div>\r\n</div>\r\n\r\n<!-' + '- / close content container -' + '->\r\n\r\n<!-' + '- / post #452286 -' + '->';
+pd[452294] = '<!-' + '- post #452294 -' + '->\r\n\r\n	<!-' + '- open content container -' + '->\r\n\r\n<div align="center">\r\n	<div class="page" style="width:98%; text-align:left">\r\n		<div style="padding:0px 10px 0px 10px" align="left">\r\n\r\n	<div id="edit452294" style="padding:0px 0px 6px 0px">\r\n	<!-' + '- this is not the last post shown on the page -' + '->\r\n\r\n\r\n\r\n<table id="post452294" class="tborder" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">\r\n<tr>\r\n	\r\n		<td class="thead" style="font-weight:normal; border: 1px solid #cccccc; border-right: 0px" >\r\n			<!-' + '- status icon and date -' + '->\r\n			<a name="post452294"><img class="inlineimg" src="azzurra3.0/statusicon/post_old.gif" alt="Vecchio" border="0" /></a>\r\n			09-04-2007, 23:28\r\n			\r\n			<!-' + '- / status icon and date -' + '->\r\n		</td>\r\n		<td class="thead" style="font-weight:normal; border: 1px solid #cccccc; border-left: 0px" align="right">\r\n			&nbsp;\r\n			#<a href="showpost.php?p=452294&amp;postcount=7" target="new" rel="nofollow" id="postcount452294" name="7"><strong>7</strong></a>\r\n			\r\n		</td>\r\n	\r\n</tr>\r\n<tr valign="top">\r\n	<td class="alt2" width="175" style="border: 1px solid #cccccc; border-top: 0px; border-bottom: 0px">\r\n\r\n			<div id="postmenu_452294">\r\n				\r\n				<a class="bigusername" href="member.php?u=5695">pumpkins79</a>\r\n				<script type="text/javascript"> vbmenu_register("postmenu_452294", true); <\/scr' + 'ipt>\r\n				\r\n			</div>\r\n\r\n			<div class="smallfont">Forum Jedi Knight</div>\r\n			\r\n			\r\n\r\n			\r\n				<div class="smallfont">\r\n					&nbsp;<br /><a href="member.php?u=5695"><img src="customavatars/avatar5695_6.gif"   alt="L\'Avatar di pumpkins79" border="0" /></a>\r\n				</div>\r\n			\r\n\r\n			<div class="smallfont">\r\n				&nbsp;<br />\r\n				<div>Data Iscrizione: 29-05-2005</div>\r\n				<div>Residenza: Aversa (CE)</div>\r\n				\r\n				<div>\r\n					Messaggi: 5.608\r\n				</div>\r\n				\r\n				\r\n				Potenza Reputazione: <span id="reppower_452294_5695">10</span> <div><span id="repdisplay_452294_5695"><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="pumpkins79 ha fan che lo seguono ovunque" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="pumpkins79 ha fan che lo seguono ovunque" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="pumpkins79 ha fan che lo seguono ovunque" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="pumpkins79 ha fan che lo seguono ovunque" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="pumpkins79 ha fan che lo seguono ovunque" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_highpos.gif" alt="pumpkins79 ha fan che lo seguono ovunque" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_highpos.gif" alt="pumpkins79 ha fan che lo seguono ovunque" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_highpos.gif" alt="pumpkins79 ha fan che lo seguono ovunque" border="0" /></span></div>\r\n				\r\n				<div><a href="#" onclick="imwindow(\'icq\', \'5695\', 500, 450); return false;"><img src="azzurra3.0/misc/im_icq.gif" alt="Invia un messaggio via ICQ a pumpkins79" border="0" /></a>  <a href="#" onclick="imwindow(\'msn\', \'5695\', 400, 200); return false;"><img src="azzurra3.0/misc/im_msn.gif" alt="Invia un messaggio via MSN a pumpkins79" border="0" /></a> <a href="#" onclick="imwindow(\'yahoo\', \'5695\', 400, 200); return false;"><img src="azzurra3.0/misc/im_yahoo.gif" alt="Invia un messaggio via Yahoo a pumpkins79" border="0" /></a> <a href="#" onclick="imwindow(\'skype\', \'5695\', 400, 285); return false;"><img src="http://mystatus.skype.com/smallicon/pumpkins79" alt="Manda un messaggio con Skype a pumpkins79" border="0" /></a></div>\r\n			</div>\r\n\r\n	</td>\r\n	\r\n	<td class="alt1" id="td_post_452294" style="border-right: 1px solid #cccccc">\r\n	\r\n		\r\n		\r\n			<!-' + '- icon and title -' + '->\r\n			<div class="smallfont">\r\n				<img class="inlineimg" src="images/icons/icon1.gif" alt="Base" border="0" />\r\n				<strong>Re: cercasi disperatamente .....</strong>\r\n			</div>\r\n			<hr size="1" style="color:#cccccc; background-color:#cccccc" />\r\n			<!-' + '- / icon and title -' + '->\r\n		\r\n\r\n		<!-' + '- message -' + '->\r\n		<div id="post_message_452294">\r\n			\r\n			<font color="red">Carlotta <img src="images/smilies/classic/icon_smile_kisses.gif" border="0" alt="" title="Icon Smile Kisses" class="inlineimg" /></font>\r\n		</div>\r\n		<!-' + '- / message -' + '->\r\n\r\n		\r\n\r\n		\r\n		\r\n\r\n		\r\n		<!-' + '- sig -' + '->\r\n			<div>\r\n				__________________<br />\r\n				<font face="Book Antiqua"><font color="red"><b>Qu\'est ce qu\'il en sait celui-là si je suis folle?</b></font></font><br />\n<font face="Book Antiqua"><font color="red"><b>Il est-y dans ma tête? <img src="images/smilies/classic/icon_smile_clown.gif" border="0" alt="" title="Icon Smile Clown" class="inlineimg" /> </b></font></font><br />\n <br />\n<font face="Book Antiqua"><font color="red"><b>L.F.Céline_Voyage au bout de la nuit<img src="http://www.ilcannocchiale.it/blogs/bloggerimg/200312982182046.gif" border="0" alt="" /> </b></font></font><br />\n <br />\n<b><img src="http://img.interia.pl/rozrywka/nimg/Smashing_Pumpkins_powroca_900089.jpg" border="0" alt="" /> <img src="http://www.librisco.it/ammanitiprog.jpg" border="0" alt="" /></b><br />\n <br />\n<font face="Book Antiqua"><font color="red"><b>Starla dear serve yourself no one else can do for you like you No one else fails like me *SP* <img src="images/smilies/classic/icon_smile_clown.gif" border="0" alt="" title="Icon Smile Clown" class="inlineimg" /> </b></font></font>\r\n			</div>\r\n		<!-' + '- / sig -' + '->\r\n		\r\n\r\n		\r\n\r\n		\r\n\r\n	</td>\r\n</tr>\r\n<tr>\r\n	<td class="alt2" style="border: 1px solid #cccccc; border-top: 0px">\r\n		<img class="inlineimg" src="azzurra3.0/statusicon/user_offline.gif" alt="pumpkins79 non è collegato" border="0" />\r\n\r\n\r\n		\r\n		\r\n		\r\n		\r\n		&nbsp;\r\n	</td>\r\n	\r\n	<td class="alt1" align="right" style="border: 1px solid #cccccc; border-left: 0px; border-top: 0px">\r\n	\r\n		<!-' + '- controls -' + '->\r\n		\r\n		\r\n		\r\n			<a href="newreply.php?do=newreply&amp;p=452294" rel="nofollow"><img src="azzurra3.0/buttons/quote.gif" alt="Rispondi Citando" border="0" /></a>\r\n		\r\n		\r\n		\r\n		\r\n		\r\n		\r\n		\r\n			\r\n		\r\n		\r\n		<!-' + '- / controls -' + '->\r\n	</td>\r\n</tr>\r\n</table>\r\n\r\n\r\n<!-' + '- post 452294 popup menu -' + '->\r\n<div class="vbmenu_popup" id="postmenu_452294_menu" style="display:none">\r\n	<table cellpadding="4" cellspacing="1" border="0">\r\n	<tr>\r\n		<td class="thead">pumpkins79</td>\r\n	</tr>\r\n	\r\n		<tr><td class="vbmenu_option"><a href="member.php?u=5695">Vedi Profilo Pubblico</a></td></tr>\r\n	\r\n	\r\n		<tr><td class="vbmenu_option"><a href="private.php?do=newpm&amp;u=5695" rel="nofollow">Invia un messaggio privato a pumpkins79</a></td></tr>\r\n	\r\n	\r\n	\r\n		<tr><td class="vbmenu_option"><a href="htt://pumpkins79.ilcannocchiale.it">Visita la homepage di pumpkins79!</a></td></tr>\r\n	\r\n	\r\n		<tr><td class="vbmenu_option"><a href="search.php?do=finduser&amp;u=5695" rel="nofollow">Trova altri messaggi di pumpkins79</a></td></tr>\r\n	\r\n	\r\n	\r\n	</table>\r\n</div>\r\n<!-' + '- / post 452294 popup menu -' + '->\r\n\r\n\r\n	</div>\r\n	\r\n		</div>\r\n	</div>\r\n</div>\r\n\r\n<!-' + '- / close content container -' + '->\r\n\r\n<!-' + '- / post #452294 -' + '->';
+pd[452301] = '<!-' + '- post #452301 -' + '->\r\n\r\n	<!-' + '- open content container -' + '->\r\n\r\n<div align="center">\r\n	<div class="page" style="width:98%; text-align:left">\r\n		<div style="padding:0px 10px 0px 10px" align="left">\r\n\r\n	<div id="edit452301" style="padding:0px 0px 6px 0px">\r\n	<!-' + '- this is not the last post shown on the page -' + '->\r\n\r\n\r\n\r\n<table id="post452301" class="tborder" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">\r\n<tr>\r\n	\r\n		<td class="thead" style="font-weight:normal; border: 1px solid #cccccc; border-right: 0px" >\r\n			<!-' + '- status icon and date -' + '->\r\n			<a name="post452301"><img class="inlineimg" src="azzurra3.0/statusicon/post_old.gif" alt="Vecchio" border="0" /></a>\r\n			10-04-2007, 08:13\r\n			\r\n			<!-' + '- / status icon and date -' + '->\r\n		</td>\r\n		<td class="thead" style="font-weight:normal; border: 1px solid #cccccc; border-left: 0px" align="right">\r\n			&nbsp;\r\n			#<a href="showpost.php?p=452301&amp;postcount=8" target="new" rel="nofollow" id="postcount452301" name="8"><strong>8</strong></a>\r\n			\r\n		</td>\r\n	\r\n</tr>\r\n<tr valign="top">\r\n	<td class="alt2" width="175" style="border: 1px solid #cccccc; border-top: 0px; border-bottom: 0px">\r\n\r\n			<div id="postmenu_452301">\r\n				\r\n				<a class="bigusername" href="member.php?u=5130">Psycho^^</a>\r\n				<script type="text/javascript"> vbmenu_register("postmenu_452301", true); <\/scr' + 'ipt>\r\n				\r\n			</div>\r\n\r\n			<div class="smallfont">Forum Jedi Knight</div>\r\n			\r\n			\r\n\r\n			\r\n				<div class="smallfont">\r\n					&nbsp;<br /><a href="member.php?u=5130"><img src="customavatars/avatar5130_13.gif"   alt="L\'Avatar di Psycho^^" border="0" /></a>\r\n				</div>\r\n			\r\n\r\n			<div class="smallfont">\r\n				&nbsp;<br />\r\n				<div>Data Iscrizione: 16-02-2005</div>\r\n				<div>Residenza: Roma</div>\r\n				\r\n				<div>\r\n					Messaggi: 8.394\r\n				</div>\r\n				\r\n				\r\n				Potenza Reputazione: <span id="reppower_452301_5130">11</span> <div><span id="repdisplay_452301_5130"><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="Psycho^^ è una persona estremamente popolare" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="Psycho^^ è una persona estremamente popolare" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="Psycho^^ è una persona estremamente popolare" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="Psycho^^ è una persona estremamente popolare" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="Psycho^^ è una persona estremamente popolare" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_highpos.gif" alt="Psycho^^ è una persona estremamente popolare" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_highpos.gif" alt="Psycho^^ è una persona estremamente popolare" border="0" /></span></div>\r\n				\r\n				<div>  <a href="#" onclick="imwindow(\'msn\', \'5130\', 400, 200); return false;"><img src="azzurra3.0/misc/im_msn.gif" alt="Invia un messaggio via MSN a Psycho^^" border="0" /></a>  </div>\r\n			</div>\r\n\r\n	</td>\r\n	\r\n	<td class="alt1" id="td_post_452301" style="border-right: 1px solid #cccccc">\r\n	\r\n		\r\n		\r\n			<!-' + '- icon and title -' + '->\r\n			<div class="smallfont">\r\n				<img class="inlineimg" src="images/icons/icon1.gif" alt="Base" border="0" />\r\n				<strong>Re: cercasi disperatamente .....</strong>\r\n			</div>\r\n			<hr size="1" style="color:#cccccc; background-color:#cccccc" />\r\n			<!-' + '- / icon and title -' + '->\r\n		\r\n\r\n		<!-' + '- message -' + '->\r\n		<div id="post_message_452301">\r\n			\r\n			carlottina <img src="images/smilies/classic/icon_smile_kisses.gif" border="0" alt="" title="Icon Smile Kisses" class="inlineimg" />*************\r\n		</div>\r\n		<!-' + '- / message -' + '->\r\n\r\n		\r\n\r\n		\r\n		\r\n\r\n		\r\n		<!-' + '- sig -' + '->\r\n			<div>\r\n				__________________<br />\r\n				<div align="left">   <div align="center"><b><font face="Palatino Linotype"><font color="Blue">I can shine like the sun if you’ll be the only one </font></font></b><br />\n<b> <font face="Palatino Linotype"><font color="Blue">Waterfall, where my light will shine on </font></font></b><br />\n </div>           <br />\n <div align="center"><i><font face="Comic Sans MS"><b><font color="Green"><font size="3"><img src="http://img331.imageshack.us/img331/7710/psycho0eo.gif" border="0" alt="" /><br />\n</font></font></b></font><font face="Arial Black"><font color="Red">Fire Walk With Me...</font></font></i><i><font face="Comic Sans MS"><b><font color="Green"><font size="3"><br />\n<font color="Red"><br />\n</font> </font></font></b></font></i>  </div>          </div>          <i><font size="4"><font face="Comic Sans MS"><font color="Red"><font size="6"><font color="Green"><font size="3"><br />\n</font> </font></font></font></font></font></i>\r\n			</div>\r\n		<!-' + '- / sig -' + '->\r\n		\r\n\r\n		\r\n\r\n		\r\n\r\n	</td>\r\n</tr>\r\n<tr>\r\n	<td class="alt2" style="border: 1px solid #cccccc; border-top: 0px">\r\n		<img class="inlineimg" src="azzurra3.0/statusicon/user_offline.gif" alt="Psycho^^ non è collegato" border="0" />\r\n\r\n\r\n		\r\n		\r\n		\r\n		\r\n		&nbsp;\r\n	</td>\r\n	\r\n	<td class="alt1" align="right" style="border: 1px solid #cccccc; border-left: 0px; border-top: 0px">\r\n	\r\n		<!-' + '- controls -' + '->\r\n		\r\n		\r\n		\r\n			<a href="newreply.php?do=newreply&amp;p=452301" rel="nofollow"><img src="azzurra3.0/buttons/quote.gif" alt="Rispondi Citando" border="0" /></a>\r\n		\r\n		\r\n		\r\n		\r\n		\r\n		\r\n		\r\n			\r\n		\r\n		\r\n		<!-' + '- / controls -' + '->\r\n	</td>\r\n</tr>\r\n</table>\r\n\r\n\r\n<!-' + '- post 452301 popup menu -' + '->\r\n<div class="vbmenu_popup" id="postmenu_452301_menu" style="display:none">\r\n	<table cellpadding="4" cellspacing="1" border="0">\r\n	<tr>\r\n		<td class="thead">Psycho^^</td>\r\n	</tr>\r\n	\r\n		<tr><td class="vbmenu_option"><a href="member.php?u=5130">Vedi Profilo Pubblico</a></td></tr>\r\n	\r\n	\r\n		<tr><td class="vbmenu_option"><a href="private.php?do=newpm&amp;u=5130" rel="nofollow">Invia un messaggio privato a Psycho^^</a></td></tr>\r\n	\r\n	\r\n	\r\n		<tr><td class="vbmenu_option"><a href="http://www.novellanet.it/foto/foto-gratis.php/u/Lion_80">Visita la homepage di Psycho^^!</a></td></tr>\r\n	\r\n	\r\n		<tr><td class="vbmenu_option"><a href="search.php?do=finduser&amp;u=5130" rel="nofollow">Trova altri messaggi di Psycho^^</a></td></tr>\r\n	\r\n	\r\n	\r\n	</table>\r\n</div>\r\n<!-' + '- / post 452301 popup menu -' + '->\r\n\r\n\r\n	</div>\r\n	\r\n		</div>\r\n	</div>\r\n</div>\r\n\r\n<!-' + '- / close content container -' + '->\r\n\r\n<!-' + '- / post #452301 -' + '->';
+pd[452431] = '<!-' + '- post #452431 -' + '->\r\n\r\n	<!-' + '- open content container -' + '->\r\n\r\n<div align="center">\r\n	<div class="page" style="width:98%; text-align:left">\r\n		<div style="padding:0px 10px 0px 10px" align="left">\r\n\r\n	<div id="edit452431" style="padding:0px 0px 6px 0px">\r\n	<!-' + '- this is not the last post shown on the page -' + '->\r\n\r\n\r\n\r\n<table id="post452431" class="tborder" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">\r\n<tr>\r\n	\r\n		<td class="thead" style="font-weight:normal; border: 1px solid #cccccc; border-right: 0px" >\r\n			<!-' + '- status icon and date -' + '->\r\n			<a name="post452431"><img class="inlineimg" src="azzurra3.0/statusicon/post_old.gif" alt="Vecchio" border="0" /></a>\r\n			11-04-2007, 12:17\r\n			\r\n			<!-' + '- / status icon and date -' + '->\r\n		</td>\r\n		<td class="thead" style="font-weight:normal; border: 1px solid #cccccc; border-left: 0px" align="right">\r\n			&nbsp;\r\n			#<a href="showpost.php?p=452431&amp;postcount=9" target="new" rel="nofollow" id="postcount452431" name="9"><strong>9</strong></a>\r\n			\r\n		</td>\r\n	\r\n</tr>\r\n<tr valign="top">\r\n	<td class="alt2" width="175" style="border: 1px solid #cccccc; border-top: 0px; border-bottom: 0px">\r\n\r\n			<div id="postmenu_452431">\r\n				\r\n				<a class="bigusername" href="member.php?u=2233">memole82</a>\r\n				<script type="text/javascript"> vbmenu_register("postmenu_452431", true); <\/scr' + 'ipt>\r\n				\r\n			</div>\r\n\r\n			<div class="smallfont">Forum Jedi Knight</div>\r\n			\r\n			\r\n\r\n			\r\n				<div class="smallfont">\r\n					&nbsp;<br /><a href="member.php?u=2233"><img src="customavatars/avatar2233_17.gif"   alt="L\'Avatar di memole82" border="0" /></a>\r\n				</div>\r\n			\r\n\r\n			<div class="smallfont">\r\n				&nbsp;<br />\r\n				<div>Data Iscrizione: 16-06-2003</div>\r\n				<div>Residenza: Viterbo</div>\r\n				\r\n				<div>\r\n					Messaggi: 6.287\r\n				</div>\r\n				\r\n				\r\n				Potenza Reputazione: <span id="reppower_452431_2233">13</span> <div><span id="repdisplay_452431_2233"><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="memole82 ha fan che lo seguono ovunque" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="memole82 ha fan che lo seguono ovunque" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="memole82 ha fan che lo seguono ovunque" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="memole82 ha fan che lo seguono ovunque" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="memole82 ha fan che lo seguono ovunque" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_highpos.gif" alt="memole82 ha fan che lo seguono ovunque" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_highpos.gif" alt="memole82 ha fan che lo seguono ovunque" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_highpos.gif" alt="memole82 ha fan che lo seguono ovunque" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_highpos.gif" alt="memole82 ha fan che lo seguono ovunque" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_highpos.gif" alt="memole82 ha fan che lo seguono ovunque" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_highpos.gif" alt="memole82 ha fan che lo seguono ovunque" border="0" /></span></div>\r\n				\r\n				<div>    </div>\r\n			</div>\r\n\r\n	</td>\r\n	\r\n	<td class="alt1" id="td_post_452431" style="border-right: 1px solid #cccccc">\r\n	\r\n		\r\n		\r\n			<!-' + '- icon and title -' + '->\r\n			<div class="smallfont">\r\n				<img class="inlineimg" src="images/icons/icon1.gif" alt="Base" border="0" />\r\n				<strong>Re: cercasi disperatamente .....</strong>\r\n			</div>\r\n			<hr size="1" style="color:#cccccc; background-color:#cccccc" />\r\n			<!-' + '- / icon and title -' + '->\r\n		\r\n\r\n		<!-' + '- message -' + '->\r\n		<div id="post_message_452431">\r\n			\r\n			Io l\'ho vista, io l\'ho vista!!!\r\n		</div>\r\n		<!-' + '- / message -' + '->\r\n\r\n		\r\n\r\n		\r\n		\r\n\r\n		\r\n		<!-' + '- sig -' + '->\r\n			<div>\r\n				__________________<br />\r\n				<div align="left"><div align="center"><font color="RoyalBlue"><b>... there is a light that never goes out... <br />\n</b></font><br />\n </div><div align="center"><br />\n</div>      </div>\r\n			</div>\r\n		<!-' + '- / sig -' + '->\r\n		\r\n\r\n		\r\n\r\n		\r\n\r\n	</td>\r\n</tr>\r\n<tr>\r\n	<td class="alt2" style="border: 1px solid #cccccc; border-top: 0px">\r\n		<img class="inlineimg" src="azzurra3.0/statusicon/user_offline.gif" alt="memole82 non è collegato" border="0" />\r\n\r\n\r\n		\r\n		\r\n		\r\n		\r\n		&nbsp;\r\n	</td>\r\n	\r\n	<td class="alt1" align="right" style="border: 1px solid #cccccc; border-left: 0px; border-top: 0px">\r\n	\r\n		<!-' + '- controls -' + '->\r\n		\r\n		\r\n		\r\n			<a href="newreply.php?do=newreply&amp;p=452431" rel="nofollow"><img src="azzurra3.0/buttons/quote.gif" alt="Rispondi Citando" border="0" /></a>\r\n		\r\n		\r\n		\r\n		\r\n		\r\n		\r\n		\r\n			\r\n		\r\n		\r\n		<!-' + '- / controls -' + '->\r\n	</td>\r\n</tr>\r\n</table>\r\n\r\n\r\n<!-' + '- post 452431 popup menu -' + '->\r\n<div class="vbmenu_popup" id="postmenu_452431_menu" style="display:none">\r\n	<table cellpadding="4" cellspacing="1" border="0">\r\n	<tr>\r\n		<td class="thead">memole82</td>\r\n	</tr>\r\n	\r\n		<tr><td class="vbmenu_option"><a href="member.php?u=2233">Vedi Profilo Pubblico</a></td></tr>\r\n	\r\n	\r\n		<tr><td class="vbmenu_option"><a href="private.php?do=newpm&amp;u=2233" rel="nofollow">Invia un messaggio privato a memole82</a></td></tr>\r\n	\r\n	\r\n	\r\n	\r\n		<tr><td class="vbmenu_option"><a href="search.php?do=finduser&amp;u=2233" rel="nofollow">Trova altri messaggi di memole82</a></td></tr>\r\n	\r\n	\r\n	\r\n	</table>\r\n</div>\r\n<!-' + '- / post 452431 popup menu -' + '->\r\n\r\n\r\n	</div>\r\n	\r\n		</div>\r\n	</div>\r\n</div>\r\n\r\n<!-' + '- / close content container -' + '->\r\n\r\n<!-' + '- / post #452431 -' + '->';
+pd[452548] = '<!-' + '- post #452548 -' + '->\r\n\r\n	<!-' + '- open content container -' + '->\r\n\r\n<div align="center">\r\n	<div class="page" style="width:98%; text-align:left">\r\n		<div style="padding:0px 10px 0px 10px" align="left">\r\n\r\n	<div id="edit452548" style="padding:0px 0px 6px 0px">\r\n	<!-' + '- this is not the last post shown on the page -' + '->\r\n\r\n\r\n\r\n<table id="post452548" class="tborder" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">\r\n<tr>\r\n	\r\n		<td class="thead" style="font-weight:normal; border: 1px solid #cccccc; border-right: 0px" >\r\n			<!-' + '- status icon and date -' + '->\r\n			<a name="post452548"><img class="inlineimg" src="azzurra3.0/statusicon/post_old.gif" alt="Vecchio" border="0" /></a>\r\n			11-04-2007, 19:17\r\n			\r\n			<!-' + '- / status icon and date -' + '->\r\n		</td>\r\n		<td class="thead" style="font-weight:normal; border: 1px solid #cccccc; border-left: 0px" align="right">\r\n			&nbsp;\r\n			#<a href="showpost.php?p=452548&amp;postcount=10" target="new" rel="nofollow" id="postcount452548" name="10"><strong>10</strong></a>\r\n			\r\n		</td>\r\n	\r\n</tr>\r\n<tr valign="top">\r\n	<td class="alt2" width="175" style="border: 1px solid #cccccc; border-top: 0px; border-bottom: 0px">\r\n\r\n			<div id="postmenu_452548">\r\n				\r\n				<a class="bigusername" href="member.php?u=6740">.:~*~:.CROW.:~*~:.</a>\r\n				<script type="text/javascript"> vbmenu_register("postmenu_452548", true); <\/scr' + 'ipt>\r\n				\r\n			</div>\r\n\r\n			<div class="smallfont">Forum Jedi Knight</div>\r\n			\r\n			\r\n\r\n			\r\n				<div class="smallfont">\r\n					&nbsp;<br /><a href="member.php?u=6740"><img src="customavatars/avatar6740_46.gif"   alt="L\'Avatar di .:~*~:.CROW.:~*~:." border="0" /></a>\r\n				</div>\r\n			\r\n\r\n			<div class="smallfont">\r\n				&nbsp;<br />\r\n				<div>Data Iscrizione: 15-12-2005</div>\r\n				<div>Residenza: Napoli</div>\r\n				\r\n				<div>\r\n					Messaggi: 5.198\r\n				</div>\r\n				\r\n				\r\n				Potenza Reputazione: <span id="reppower_452548_6740">9</span> <div><span id="repdisplay_452548_6740"><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt=".:~*~:.CROW.:~*~:. è una persona estremamente popolare" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt=".:~*~:.CROW.:~*~:. è una persona estremamente popolare" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt=".:~*~:.CROW.:~*~:. è una persona estremamente popolare" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt=".:~*~:.CROW.:~*~:. è una persona estremamente popolare" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt=".:~*~:.CROW.:~*~:. è una persona estremamente popolare" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_highpos.gif" alt=".:~*~:.CROW.:~*~:. è una persona estremamente popolare" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_highpos.gif" alt=".:~*~:.CROW.:~*~:. è una persona estremamente popolare" border="0" /></span></div>\r\n				\r\n				<div>  <a href="#" onclick="imwindow(\'msn\', \'6740\', 400, 200); return false;"><img src="azzurra3.0/misc/im_msn.gif" alt="Invia un messaggio via MSN a .:~*~:.CROW.:~*~:." border="0" /></a>  </div>\r\n			</div>\r\n\r\n	</td>\r\n	\r\n	<td class="alt1" id="td_post_452548" style="border-right: 1px solid #cccccc">\r\n	\r\n		\r\n		\r\n			<!-' + '- icon and title -' + '->\r\n			<div class="smallfont">\r\n				<img class="inlineimg" src="images/icons/icon1.gif" alt="Base" border="0" />\r\n				<strong>Re: cercasi disperatamente .....</strong>\r\n			</div>\r\n			<hr size="1" style="color:#cccccc; background-color:#cccccc" />\r\n			<!-' + '- / icon and title -' + '->\r\n		\r\n\r\n		<!-' + '- message -' + '->\r\n		<div id="post_message_452548">\r\n			\r\n			<div style="margin:20px; margin-top:5px; ">\r\n	<div class="smallfont" style="margin-bottom:2px">Cita:</div>\r\n	<table cellpadding="6" cellspacing="0" border="0" width="100%">\r\n	<tr>\r\n		<td class="alt2" style="border:1px inset">\r\n			\r\n				<div>\r\n					Scritto originariamente da <strong>memole82</strong>\r\n					<a href="showthread.php?p=452431#post452431" rel="nofollow"><img class="inlineimg" src="azzurra3.0/buttons/viewpost.gif" border="0" alt="Guarda il messaggio" /></a>\r\n				</div>\r\n				<div style="font-style:italic">Io l\'ho vista, io l\'ho vista!!!</div>\r\n			\r\n		</td>\r\n	</tr>\r\n	</table>\r\n</div><img src="images/smilies/classic/icon_smile_shock.gif" border="0" alt="" title="Icon Smile Shock" class="inlineimg" />  MIRACOLO!\r\n		</div>\r\n		<!-' + '- / message -' + '->\r\n\r\n		\r\n\r\n		\r\n		\r\n\r\n		\r\n		<!-' + '- sig -' + '->\r\n			<div>\r\n				__________________<br />\r\n				<div align="center"><font face="Comic Sans MS"><font size="3"><font color="DarkSlateBlue"><i><img src="images/smilies/icone/icone117.gif" border="0" alt="" title="Icone117" class="inlineimg" /> </i></font></font></font><font face="Comic Sans MS"><font size="3"><font color="DarkSlateBlue"><i><img src="images/smilies/icone/icone146.gif" border="0" alt="" title="Icone146" class="inlineimg" /></i></font></font></font><font face="Comic Sans MS"><font size="3"><font color="DarkSlateBlue"><i> anche le stelle cadono </i></font></font></font><br />\n<font face="Comic Sans MS"><font size="3"><font color="DarkSlateBlue"><i>alcune sia fuori che dentro </i></font></font></font><br />\n<font face="Comic Sans MS"><font size="3"><font color="DarkSlateBlue"><i>per un desiderio che esprimi </i></font></font></font><br />\n<font face="Comic Sans MS"><font size="3"><font color="DarkSlateBlue"><i>te ne</i></font></font></font><font face="Comic Sans MS"><font size="3"><font color="DarkSlateBlue"><i> rimangono fuori altri cento  </i></font></font></font><font face="Comic Sans MS"><font size="3"><font color="DarkSlateBlue"><i><img src="images/smilies/icone/icone146.gif" border="0" alt="" title="Icone146" class="inlineimg" /></i></font></font></font><font face="Comic Sans MS"><font size="3"><font color="DarkSlateBlue"><i> <img src="images/smilies/icone/icone117.gif" border="0" alt="" title="Icone117" class="inlineimg" /></i></font></font></font></div>\r\n			</div>\r\n		<!-' + '- / sig -' + '->\r\n		\r\n\r\n		\r\n\r\n		\r\n\r\n	</td>\r\n</tr>\r\n<tr>\r\n	<td class="alt2" style="border: 1px solid #cccccc; border-top: 0px">\r\n		<img class="inlineimg" src="azzurra3.0/statusicon/user_offline.gif" alt=".:~*~:.CROW.:~*~:. non è collegato" border="0" />\r\n\r\n\r\n		\r\n		\r\n		\r\n		\r\n		&nbsp;\r\n	</td>\r\n	\r\n	<td class="alt1" align="right" style="border: 1px solid #cccccc; border-left: 0px; border-top: 0px">\r\n	\r\n		<!-' + '- controls -' + '->\r\n		\r\n		\r\n		\r\n			<a href="newreply.php?do=newreply&amp;p=452548" rel="nofollow"><img src="azzurra3.0/buttons/quote.gif" alt="Rispondi Citando" border="0" /></a>\r\n		\r\n		\r\n		\r\n		\r\n		\r\n		\r\n		\r\n			\r\n		\r\n		\r\n		<!-' + '- / controls -' + '->\r\n	</td>\r\n</tr>\r\n</table>\r\n\r\n\r\n<!-' + '- post 452548 popup menu -' + '->\r\n<div class="vbmenu_popup" id="postmenu_452548_menu" style="display:none">\r\n	<table cellpadding="4" cellspacing="1" border="0">\r\n	<tr>\r\n		<td class="thead">.:~*~:.CROW.:~*~:.</td>\r\n	</tr>\r\n	\r\n		<tr><td class="vbmenu_option"><a href="member.php?u=6740">Vedi Profilo Pubblico</a></td></tr>\r\n	\r\n	\r\n		<tr><td class="vbmenu_option"><a href="private.php?do=newpm&amp;u=6740" rel="nofollow">Invia un messaggio privato a .:~*~:.CROW.:~*~:.</a></td></tr>\r\n	\r\n	\r\n	\r\n		<tr><td class="vbmenu_option"><a href="http://vivoforte.spaces.live.com">Visita la homepage di .:~*~:.CROW.:~*~:.!</a></td></tr>\r\n	\r\n	\r\n		<tr><td class="vbmenu_option"><a href="search.php?do=finduser&amp;u=6740" rel="nofollow">Trova altri messaggi di .:~*~:.CROW.:~*~:.</a></td></tr>\r\n	\r\n	\r\n	\r\n	</table>\r\n</div>\r\n<!-' + '- / post 452548 popup menu -' + '->\r\n\r\n\r\n	</div>\r\n	\r\n		</div>\r\n	</div>\r\n</div>\r\n\r\n<!-' + '- / close content container -' + '->\r\n\r\n<!-' + '- / post #452548 -' + '->';
+
+// next/previous post info
+pn[452126] = "452548,452143";
+pn[0] = ",452126";
+pn[452143] = "452126,452198";
+pn[452198] = "452143,452199";
+pn[452199] = "452198,452236";
+pn[452236] = "452199,452286";
+pn[452286] = "452236,452294";
+pn[452294] = "452286,452301";
+pn[452301] = "452294,452431";
+pn[452431] = "452301,452548";
+pn[452548] = "452431,452126";
+
+// cached usernames
+pu[0] = guestphrase;
+pu[1984] = "^Mis^";
+pu[5833] = "carlotta85";
+pu[5920] = "Braxton Bragg";
+pu[6740] = ".:~*~:.CROW.:~*~:.";
+pu[236] = "joce";
+pu[5695] = "pumpkins79";
+pu[5130] = "Psycho^^";
+pu[2233] = "memole82";
+
+// -->
+</script>
+
+<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width:98%; text-align:left">
+		<div style="padding:0px 10px 0px 10px" align="left">
+
+
+<table class="tborder" cellpadding="6" cellspacing="1" border="0" width="100%" align="center" style="border-top-width:0px; margin-bottom:6px">
+<tr>
+	<td class="alt2">
+	<div style="height:150px;  overflow:auto; border:2px inset; padding: 0px; text-align:left;" class="alt1" id="links">
+		<div class="smallfont">
+		<!-- start post links -->
+<script type="text/javascript">
+<!--
+writeLink(452126, 0, 0, 1984, "", "cercasi disperatamente .....", "06-04-2007", "13:58", 0);
+  writeLink(452143, 0, 0, 5833, "T", "Re: cercasi disperatamente...", "06-04-2007", "18:41", 0);
+    writeLink(452198, 0, 0, 1984, "I,L", "Re: cercasi disperatamente...", "07-04-2007", "12:17", 0);
+  writeLink(452199, 0, 0, 5920, "T", "Re: cercasi disperatamente...", "07-04-2007", "12:21", 0);
+    writeLink(452236, 0, 0, 6740, "I,L", "Re: cercasi disperatamente...", "07-04-2007", "20:23", 0);
+  writeLink(452286, 0, 0, 236, "T", "Re: cercasi disperatamente...", "09-04-2007", "15:03", 0);
+  writeLink(452294, 0, 0, 5695, "T", "Re: cercasi disperatamente...", "09-04-2007", "23:28", 0);
+    writeLink(452301, 0, 0, 5130, "I,L", "Re: cercasi disperatamente...", "10-04-2007", "08:13", 0);
+  writeLink(452431, 0, 0, 2233, "L", "Re: cercasi disperatamente...", "11-04-2007", "12:17", 0);
+    writeLink(452548, 0, 0, 6740, "1,L", "Re: cercasi disperatamente...", "11-04-2007", "19:17", 0);
+
+//-->
+</script>
+		<!-- end post links -->
+		</div>
+	</div>
+	</td>
+</tr>
+
+<tr>
+	<td class="tfoot" align="center"><div class="smallfont">
+		<a href="javascript:showPrevNextPost(0)">Prec</a>
+		<a href="javascript:showPrevNextPost(0)"><img class="inlineimg" src="azzurra3.0/buttons/sortdesc.gif" alt="Messaggio Precedente" border="0" /></a>
+		&nbsp;
+		<a href="javascript:showPrevNextPost(1)"><img class="inlineimg" src="azzurra3.0/buttons/sortasc.gif" alt="Prossimo Messaggio" border="0" /></a>
+		<a href="javascript:showPrevNextPost(1)">Prossimo</a>
+	</div></td>
+</tr>
+
+</table>
+
+
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- /thread posts list -->
+
+
+
+
+<div id="posts"><!-- post #452126 -->
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width:98%; text-align:left">
+		<div style="padding:0px 10px 0px 10px" align="left">
+
+	<div id="edit452126" style="padding:0px 0px 6px 0px">
+	<!-- this is not the last post shown on the page -->
+
+
+
+<table id="post452126" class="tborder" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">
+<tr>
+	
+		<td class="thead" style="font-weight:normal; border: 1px solid #cccccc; border-right: 0px" >
+			<!-- status icon and date -->
+			<a name="post452126"><img class="inlineimg" src="azzurra3.0/statusicon/post_old.gif" alt="Vecchio" border="0" /></a>
+			06-04-2007, 13:58
+			
+			<!-- / status icon and date -->
+		</td>
+		<td class="thead" style="font-weight:normal; border: 1px solid #cccccc; border-left: 0px" align="right">
+			&nbsp;
+			#<a href="showpost.php?p=452126&amp;postcount=1" target="new" rel="nofollow" id="postcount452126" name="1"><strong>1</strong></a>
+			
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt2" width="175" style="border: 1px solid #cccccc; border-top: 0px; border-bottom: 0px">
+
+			<div id="postmenu_452126">
+				
+				<a class="bigusername" href="member.php?u=1984">^Mis^</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_452126", true); </script>
+				
+			</div>
+
+			<div class="smallfont">Forum Jedi Knight</div>
+			
+			
+
+			
+				<div class="smallfont">
+					&nbsp;<br /><a href="member.php?u=1984"><img src="customavatars/avatar1984_31.gif"   alt="L'Avatar di ^Mis^" border="0" /></a>
+				</div>
+			
+
+			<div class="smallfont">
+				&nbsp;<br />
+				<div>Data Iscrizione: 11-05-2003</div>
+				<div>Residenza: Brescia provincia</div>
+				
+				<div>
+					Messaggi: 7.214
+				</div>
+				
+				
+				Potenza Reputazione: <span id="reppower_452126_1984">14</span> <div><span id="repdisplay_452126_1984"><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="^Mis^ brilla e risplende di luce propria" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="^Mis^ brilla e risplende di luce propria" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="^Mis^ brilla e risplende di luce propria" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="^Mis^ brilla e risplende di luce propria" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_pos.gif" alt="^Mis^ brilla e risplende di luce propria" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_highpos.gif" alt="^Mis^ brilla e risplende di luce propria" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_highpos.gif" alt="^Mis^ brilla e risplende di luce propria" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_highpos.gif" alt="^Mis^ brilla e risplende di luce propria" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_highpos.gif" alt="^Mis^ brilla e risplende di luce propria" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_highpos.gif" alt="^Mis^ brilla e risplende di luce propria" border="0" /><img class="inlineimg" src="azzurra3.0/reputation/reputation_highpos.gif" alt="^Mis^ brilla e risplende di luce propria" border="0" /></span></div>
+				
+				<div>    </div>
+			</div>
+
+	</td>
+	
+	<td class="alt1" id="td_post_452126" style="border-right: 1px solid #cccccc">
+	
+		
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				<img class="inlineimg" src="images/icons/icon1.gif" alt="Base" border="0" />
+				<strong>cercasi disperatamente .....</strong>
+			</div>
+			<hr size="1" style="color:#cccccc; background-color:#cccccc" />
+			<!-- / icon and title -->
+		
+
+		<!-- message -->
+		<div id="post_message_452126">
+			
+			Ma Carlottina che fine ha fatto?
+		</div>
+		<!-- / message -->
+
+		
+
+		
+		
+
+		
+		<!-- sig -->
+			<div>
+				__________________<br />
+				<b><font size="1">&quot;Vivere, finche c'è poesia, vivere finchè c'è nostagia.... vivere, finchè c'è gioventù, perchè la vita è bella la voglio vivere sempre più....&quot;  <br />
+Tommy17_</font><br />
+</b>
+			</div>
+		<!-- / sig -->
+		
+
+		
+
+		
+
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="border: 1px solid #cccccc; border-top: 0px">
+		<img class="inlineimg" src="azzurra3.0/statusicon/user_offline.gif" alt="^Mis^ non è collegato" border="0" />
+
+
+		
+		
+		
+		
+		&nbsp;
+	</td>
+	
+	<td class="alt1" align="right" style="border: 1px solid #cccccc; border-left: 0px; border-top: 0px">
+	
+		<!-- controls -->
+		
+		
+		
+			<a href="newreply.php?do=newreply&amp;p=452126" rel="nofollow"><img src="azzurra3.0/buttons/quote.gif" alt="Rispondi Citando" border="0" /></a>
+		
+		
+		
+		
+		
+		
+		
+			
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</table>
+
+
+<!-- post 452126 popup menu -->
+<div class="vbmenu_popup" id="postmenu_452126_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tr>
+		<td class="thead">^Mis^</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="member.php?u=1984">Vedi Profilo Pubblico</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="private.php?do=newpm&amp;u=1984" rel="nofollow">Invia un messaggio privato a ^Mis^</a></td></tr>
+	
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="search.php?do=finduser&amp;u=1984" rel="nofollow">Trova altri messaggi di ^Mis^</a></td></tr>
+	
+	
+	
+	</table>
+</div>
+<!-- / post 452126 popup menu -->
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #452126 --><div id="lastpost"></div></div>
+
+<!-- start content table -->
+<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width:98%; text-align:left">
+		<div style="padding:0px 10px 0px 10px" align="left">
+
+<!-- / start content table -->
+
+<!-- controls below postbits -->
+<table cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top:-3px">
+<tr valign="top">
+	
+		<td class="smallfont">&nbsp;</td>
+	
+	
+</tr>
+</table>
+<!-- / controls below postbits -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- next / previous links -->
+	<br />
+	<div class="smallfont" align="center">
+		<strong>&laquo;</strong>
+			<a href="showthread.php?t=14404&amp;goto=nextoldest" rel="nofollow">Discussione precedente</a>
+			|
+			<a href="showthread.php?t=14404&amp;goto=nextnewest" rel="nofollow">Discussione successiva</a>
+		<strong>&raquo;</strong>
+	</div>
+<!-- / next / previous links -->
+
+
+
+<!-- currently active users -->
+	<br />
+	<table class="tborder" cellpadding="6" cellspacing="1" border="0" width="100%" align="center">
+	<tr>
+		<td class="tcat" colspan="2">
+			Utenti attualmente attivi che stanno leggendo questa discussione: 1 <span class="normal">(0 membri e 1 ospiti)</span>
+		</td>
+	</tr>
+	<tr>
+		<td class="alt1" colspan="2">
+			<span class="smallfont">&nbsp;</span>
+		</td>
+	</tr>
+	</table>
+<!-- end currently active users -->
+
+
+
+
+
+<!-- controls for non-popup browsers -->
+
+
+<table class="tborder" cellpadding="6" cellspacing="1" border="0" width="100%" align="center" style="border-top-width:0px">
+<tr>
+	<td class="thead" colspan="2">Strumenti discussione<a name="goto_threadtools"></a></td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt1" colspan="2">
+
+	<!-- thread tools -->
+	<div class="smallfont">
+		
+
+			<div><img class="inlineimg" src="azzurra3.0/buttons/printer.gif" alt="Mostra versione Stampabile" vspace="1" /> <a href="printthread.php?t=14404" rel="nofollow">Mostra versione Stampabile</a></div>
+			<div><img class="inlineimg" src="azzurra3.0/buttons/sendtofriend.gif" alt="Invia questa Pagina via Email" vspace="1" /> <a href="sendmessage.php?do=sendtofriend&amp;t=14404" rel="nofollow">Invia questa Pagina via Email</a></div>
+		
+		
+		
+	</div>
+	<!-- / thread tools -->
+
+	</td>
+	
+</tr>
+
+<tr>
+	<td class="thead" colspan="2">Modalità di visualizzazione<a name="goto_displaymodes"></a></td>
+	
+</tr>
+<tr valign="top">
+	
+	<td class="alt2" colspan="2">
+
+	<!-- thread display modes -->
+
+	<div class="smallfont">
+		<div><img class="inlineimg" src="azzurra3.0/buttons/mode_linear.gif" alt="Modalità Lineare" vspace="1" /> <a href="showthread.php?p=452126&amp;mode=linear#post452126">Vai in Modalità Lineare</a></div>
+		<div><img class="inlineimg" src="azzurra3.0/buttons/mode_hybrid.gif" alt="Modalità Ibrida" vspace="1" /> <a href="showthread.php?mode=hybrid&amp;t=14404">Vai in Modalità Ibrida</a></div>
+		<div><img class="inlineimg" src="azzurra3.0/buttons/mode_threaded.gif" alt="Modalità Elencata" vspace="1" /> <strong>Modalità Elencata</strong></div>
+	</div>
+
+	<!-- / thread display modes -->
+
+	</td>
+	
+	
+</tr>
+
+</table>
+<br />
+
+
+<!-- / controls for non-popup browsers -->
+
+
+<!-- forum rules and admin links -->
+<table cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
+<tr valign="bottom">
+	<td width="100%" valign="top">
+		<table class="tborder" cellpadding="6" cellspacing="1" border="0" width="210">
+<thead>
+<tr>
+	<td class="thead">
+		<a style="float:right" href="#top" onclick="return toggle_collapse('forumrules')"><img id="collapseimg_forumrules" src="azzurra3.0/buttons/collapse_thead.gif" alt="" border="0" /></a>
+		Regole di scrittura
+	</td>
+</tr>
+</thead>
+<tbody id="collapseobj_forumrules" style="">
+<tr>
+	<td class="alt1" nowrap="nowrap"><div class="smallfont">
+		
+		<div>You <strong>may not</strong> post new threads</div>
+		<div>You <strong>may not</strong> post replies</div>
+		<div>You <strong>may not</strong> post attachments</div>
+		<div>You <strong>may not</strong> edit your posts</div>
+		<hr />
+		
+		<div><a href="misc.php?do=bbcode" target="_blank">BB code</a> is <strong>On</strong></div>
+		<div><a href="misc.php?do=showsmilies" target="_blank">Gli smilies</a> sono <strong>On</strong></div>
+		<div>Il codice <a href="misc.php?do=bbcode#imgcode" target="_blank">[IMG]</a> è <strong>On</strong></div>
+		<div>Il codice HTML è <strong>Off</strong></div>
+		<hr />
+		<div><a href="misc.php?do=showrules" target="_blank">Forum Rules</a></div>
+	</div></td>
+</tr>
+</tbody>
+</table>
+	</td>
+	<td class="smallfont" align="right">
+		<table cellpadding="0" cellspacing="0" border="0">
+		
+		<tr>
+			<td>
+			<div class="smallfont" style="text-align:left; white-space:nowrap">
+	<form action="forumdisplay.php" method="get">
+	<input type="hidden" name="s" value="" />
+	<input type="hidden" name="daysprune" value="" />
+	<strong>Vai al forum</strong><br />
+	<select name="f" onchange="this.form.submit();">
+		<optgroup label="Aree sito">
+			<option value="cp" >Pannello di controllo utente</option>
+			<option value="pm" >Messaggi Privati</option>
+			<option value="subs" >Iscrizioni</option>
+			<option value="wol" >Chi c'è online</option>
+			<option value="search" >Cerca nei forums</option>
+			<option value="home" >Home dei Forum</option>
+		</optgroup>
+		
+		<optgroup label="Forums">
+		<option value="3" class="fjdpth0" > Azzurra IRC Network Forum</option>
+<option value="15" class="fjdpth1" >&nbsp; &nbsp;  Canali - i vostri canali su Azzurra.</option>
+<option value="10" class="fjdpth1" >&nbsp; &nbsp;  Discussioni e commenti su Azzurra</option>
+<option value="39" class="fjdpth1" >&nbsp; &nbsp;  Il Porto Spaziale di Mos Eisley</option>
+<option value="41" class="fjdpth1" >&nbsp; &nbsp;  Azzurra Gamers OnLine</option>
+<option value="6" class="fjdpth0" > Network Central</option>
+<option value="137" class="fjdpth1" >&nbsp; &nbsp;  #Azzurra - Il canale ufficiale della rete</option>
+<option value="19" class="fjdpth1" >&nbsp; &nbsp;  Comunicazioni ufficiali di Azzurra</option>
+<option value="18" class="fjdpth1" >&nbsp; &nbsp;  Forum Help Area</option>
+<option value="11" class="fjdpth1" >&nbsp; &nbsp;  IRCHelp - Aiuto su IRC e Servizi di Azzurra</option>
+<option value="63" class="fjdpth1" >&nbsp; &nbsp;  La Chat #Italia di Azzurra IRC Network</option>
+<option value="30" class="fjdpth1" >&nbsp; &nbsp;  Services - I servizi IRC di Azzurra</option>
+<option value="36" class="fjdpth1" >&nbsp; &nbsp;  Javirc</option>
+<option value="138" class="fjdpth0" > Apple</option>
+<option value="139" class="fjdpth1" >&nbsp; &nbsp;  Mac</option>
+<option value="140" class="fjdpth1" >&nbsp; &nbsp;  OS X</option>
+<option value="141" class="fjdpth1" >&nbsp; &nbsp;  iPod &amp; iPhone</option>
+<option value="142" class="fjdpth1" >&nbsp; &nbsp;  Devel</option>
+<option value="8" class="fjdpth0" > Azzurra - Tech Center</option>
+<option value="13" class="fjdpth1" >&nbsp; &nbsp;  Angolo tecnico</option>
+<option value="28" class="fjdpth1" >&nbsp; &nbsp;  Discussioni Linux</option>
+<option value="60" class="fjdpth1" >&nbsp; &nbsp;  Quantum leap</option>
+<option value="23" class="fjdpth1" >&nbsp; &nbsp;  Programmazione e dintorni</option>
+<option value="4" class="fjdpth0" > Happy Hour</option>
+<option value="17" class="fjdpth1" >&nbsp; &nbsp;  Cazzeggiando qua e la...</option>
+<option value="20" class="fjdpth1" >&nbsp; &nbsp;  Ditelo con il Forum</option>
+<option value="25" class="fjdpth1" >&nbsp; &nbsp;  L'angolo del piccolo menomato informatico</option>
+<option value="16" class="fjdpth1" >&nbsp; &nbsp;  Questi mitici log!</option>
+<option value="7" class="fjdpth0" > I Vostri Forum</option>
+<option value="21" class="fjdpth1" >&nbsp; &nbsp;  #debiAn</option>
+<option value="24" class="fjdpth1" >&nbsp; &nbsp;  #altrove</option>
+<option value="42" class="fjdpth1" >&nbsp; &nbsp;  #italia_area</option>
+<option value="131" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  hattrick</option>
+<option value="136" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Giochi</option>
+<option value="44" class="fjdpth1" >&nbsp; &nbsp;  #amicimiei</option>
+<option value="58" class="fjdpth1" >&nbsp; &nbsp;  #bodomlake</option>
+<option value="72" class="fjdpth1" >&nbsp; &nbsp;  #roma</option>
+<option value="48" class="fjdpth1" >&nbsp; &nbsp;  #quizzer</option>
+<option value="45" class="fjdpth1" >&nbsp; &nbsp;  #desideri&amp;sogni</option>
+<option value="68" class="fjdpth1" >&nbsp; &nbsp;  #lamerandia</option>
+<option value="35" class="fjdpth1" >&nbsp; &nbsp;  #cuori</option>
+<option value="112" class="fjsel" selected="selected">&nbsp; &nbsp;  #carlotta</option>
+<option value="116" class="fjdpth1" >&nbsp; &nbsp;  #pelo</option>
+<option value="31" class="fjdpth1" >&nbsp; &nbsp;  #LiberoZone</option>
+<option value="117" class="fjdpth1" >&nbsp; &nbsp;  #buduscript</option>
+<option value="27" class="fjdpth1" >&nbsp; &nbsp;  #fonzie</option>
+<option value="122" class="fjdpth1" >&nbsp; &nbsp;  #MiglioVerde</option>
+<option value="129" class="fjdpth1" >&nbsp; &nbsp;  #casteddu</option>
+<option value="65" class="fjdpth1" >&nbsp; &nbsp;  #piemonte.it</option>
+<option value="69" class="fjdpth1" >&nbsp; &nbsp;  #friuli.it</option>
+<option value="71" class="fjdpth1" >&nbsp; &nbsp;  #blues and #cibo</option>
+<option value="127" class="fjdpth1" >&nbsp; &nbsp;  #mtv</option>
+<option value="130" class="fjdpth1" >&nbsp; &nbsp;  #lunapark</option>
+<option value="79" class="fjdpth1" >&nbsp; &nbsp;  #templary</option>
+<option value="74" class="fjdpth1" >&nbsp; &nbsp;  #ircgirls</option>
+<option value="81" class="fjdpth1" >&nbsp; &nbsp;  #pub</option>
+<option value="83" class="fjdpth1" >&nbsp; &nbsp;  #NightAngels</option>
+<option value="135" class="fjdpth1" >&nbsp; &nbsp;  #StayinAlive</option>
+<option value="144" class="fjdpth1" >&nbsp; &nbsp;  #lord_shinva</option>
+<option value="5" class="fjdpth0" > Test Area</option>
+<option value="14" class="fjdpth1" >&nbsp; &nbsp;  Test - Forum dedicato ai messaggi di prova</option>
+<option value="75" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Sottoforum di prova</option>
+<option value="76" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Cugino del sottoforum di prova</option>
+
+		</optgroup>
+		
+	</select><input type="submit" class="button" value="Vai"  />
+	</form>
+</div>
+			</td>
+		</tr>
+		</table>
+	</td>
+</tr>
+</table>
+<!-- /forum rules and admin links -->
+
+<br />
+
+
+
+
+
+<br />
+<div class="smallfont" align="center">Tutti gli orari sono GMT +1. Ora sono le <span class="time">16:48</span>.</div>
+<br />
+
+
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- /content area table -->
+
+<form action="index.php" method="get" style="clear:left">
+
+<table cellpadding="6" cellspacing="0" border="0" width="98%" class="page" align="center">
+<tr>
+	
+	
+		<td class="tfoot">
+			<select name="langid" onchange="switch_id(this, 'lang')">
+				<optgroup label="Scelta veloce linguaggio">
+					<option value="1" class="" >-- English (US)</option>
+<option value="4" class="" selected="selected">-- Italiano</option>
+
+				</optgroup>
+			</select>
+		</td>
+	
+	<td class="tfoot" align="right" width="100%">
+		<div class="smallfont">
+			<strong>
+				<a href="sendmessage.php" rel="nofollow" accesskey="9">Contattaci</a> -
+				<a href="http://www.azzurra.org">Azzurra IRC Network</a> -
+				
+				
+				<a href="archive/index.php">Archivio</a> -
+				
+				
+				
+				<a href="#top" onclick="self.scrollTo(0, 0); return false;">Vai in cima</a>
+			</strong>
+		</div>
+	</td>
+</tr>
+</table>
+
+<br />
+
+<div align="center">
+	<div class="smallfont" align="center">
+	<!-- Do not remove this copyright notice -->
+	Sviluppato da: vBulletin Version 3.8.2<br />Copyright &copy;2000 - 2012, Jelsoft Enterprises Ltd.
+<br />
+Traduzione Italiana a cura dello Staff di Azzurra &copy; 2012
+	<!-- Do not remove this copyright notice -->
+	</div>
+
+	<div class="smallfont" align="center">
+	<!-- Do not remove cronimage or your scheduled tasks will cease to function -->
+	
+	<!-- Do not remove cronimage or your scheduled tasks will cease to function -->
+
+	Copyright Azzurra IRC Network © 1997-2007
+	</div>
+</div>
+
+</form>
+
+
+
+
+<script type="text/javascript">
+<!--
+	// Main vBulletin Javascript Initialization
+	vBulletin_init();
+//-->
+</script>
+
+<!-- temp -->
+<div style="display:none">
+	<!-- thread rate -->
+	
+		
+	
+	<!-- / thread rate -->
+</div>
+
+</body>
+</html>

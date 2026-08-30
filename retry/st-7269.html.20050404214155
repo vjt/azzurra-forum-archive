@@ -1,0 +1,2453 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<title>Azzurra IRC Network Forum - Meeting a Roma - 9-10 Aprile 2005</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="generator" content="vBulletin 3.0.6" />
+<meta name="keywords" content="azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+<meta name="description" content="Azzurra IRC Network Forum" />
+
+<!-- CSS Stylesheet -->
+<style type="text/css">
+<!--
+/* vBulletin 3 CSS For Style 'Azzurra' (styleid: 3) */
+body
+{
+	background-color: #FFFFFF;
+	color: #000000;
+	font: 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	margin: 5px 10px 10px 10px;
+	padding: 0px;
+}
+a:link
+{
+	color: #000066;
+}
+a:visited
+{
+	color: #000066;
+}
+a:hover, a:active
+{
+	color: #FF4400;
+}
+.page
+{
+	background-color: #FFFFFF;
+	color: #000000;
+}
+td, th, p, li
+{
+	font: 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.tborder
+{
+	background-color: #0F3178;
+	color: #000000;
+	border: 1px solid #0B198C;
+}
+.tcat
+{
+	background: #F9F9F9 url(azzurra/misc/cat_back.gif) repeat-x top left;
+	color: #000000;
+	font: bold 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.tcat a:link
+{
+	color: #000066;
+	text-decoration: none;
+}
+.tcat a:visited
+{
+	color: #000066;
+	text-decoration: none;
+}
+.tcat a:hover, .tcat a:active
+{
+	color: #FF4400;
+	text-decoration: underline;
+}
+.thead
+{
+	background-color: #B6D2E6;
+	color: #000000;
+	font: bold 11px tahoma, verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.thead a:link
+{
+	color: #000066;
+}
+.thead a:visited
+{
+	color: #000066;
+}
+.thead a:hover, .thead a:active
+{
+	color: #FF4400;
+}
+.tfoot
+{
+	background-color: #F7F7F7;
+	color: #000000;
+}
+.tfoot a:link
+{
+	color: #000066;
+}
+.tfoot a:visited
+{
+	color: #000066;
+}
+.tfoot a:hover, .tfoot a:active
+{
+	color: #FF4400;
+}
+.alt1, .alt1Active
+{
+	background-color: #F3F3FF;
+	color: #000000;
+}
+.alt2, .alt2Active
+{
+	background-color: #FDFDFD;
+	color: #000000;
+}
+.wysiwyg
+{
+	background-color: #FDFDFD;
+	color: #000000;
+	font: 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+textarea, .bginput
+{
+	font: 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.button
+{
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+select
+{
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+option, optgroup
+{
+	font-size: 11px;
+	font-family: verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.smallfont
+{
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.time
+{
+	color: #000000;
+}
+.navbar
+{
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.highlight
+{
+	color: #FF0000;
+	font-weight: bold;
+}
+.fjsel
+{
+	background-color: #3E5C92;
+	color: #E0E0F6;
+}
+.fjdpth0
+{
+	background-color: #F7F7F7;
+	color: #000000;
+}
+.panel
+{
+	background: #E4E7F5 url(images/gradients/gradient_panel.gif) repeat-x top left;
+	color: #000000;
+	padding: 10px;
+	border: 2px outset;
+}
+.panelsurround
+{
+	background: #D5D8E5 url(images/gradients/gradient_panelsurround.gif) repeat-x top left;
+	color: #000000;
+}
+legend
+{
+	color: #000066;
+	font: 11px tahoma, verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.vbmenu_control
+{
+	background-color: #166A97;
+	color: #FFFFFF;
+	font: bold 11px tahoma, verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	padding: 3px 6px 3px 6px;
+	white-space: nowrap;
+}
+.vbmenu_control a:link
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.vbmenu_control a:visited
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.vbmenu_control a:hover, .vbmenu_control a:active
+{
+	color: #FF4400;
+	text-decoration: underline;
+}
+.vbmenu_popup
+{
+	background-color: #FFFFFF;
+	color: #000000;
+	border: 1px solid #0B198C;
+}
+.vbmenu_option
+{
+	background-color: #DEE6ED;
+	color: #000000;
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	white-space: nowrap;
+	cursor: pointer;
+}
+.vbmenu_option a:link
+{
+	color: #000066;
+	text-decoration: none;
+}
+.vbmenu_option a:visited
+{
+	color: #000066;
+	text-decoration: none;
+}
+.vbmenu_option a:hover, .vbmenu_option a:active
+{
+	color: #FF4400;
+	text-decoration: none;
+}
+.vbmenu_hilite
+{
+	background-color: #8A949E;
+	color: #FFFFFF;
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	white-space: nowrap;
+	cursor: pointer;
+}
+.vbmenu_hilite a:link
+{
+	color: #000066;
+	text-decoration: none;
+}
+.vbmenu_hilite a:visited
+{
+	color: #000066;
+	text-decoration: none;
+}
+.vbmenu_hilite a:hover, .vbmenu_hilite a:active
+{
+	color: #FF4400;
+	text-decoration: none;
+}
+/* ***** styling for 'big' usernames on postbit etc. ***** */
+.bigusername { font-size: 14pt; }
+
+/* ***** small padding on 'thead' elements ***** */
+td.thead, div.thead { padding: 4px; }
+
+/* ***** basic styles for multi-page nav elements */
+.pagenav a { text-decoration: none; }
+.pagenav td { padding: 2px 4px 2px 4px; }
+
+/* ***** define margin and font-size for elements inside panels ***** */
+.fieldset { margin-bottom: 6px; }
+.fieldset, .fieldset td, .fieldset p, .fieldset li { font-size: 11px; }
+
+/* ***** don't change the following ***** */
+form { display: inline; }
+label { cursor: default; }
+.normal { font-weight: normal; }
+.inlineimg { vertical-align: middle; }
+-->
+</style>
+
+<!-- / CSS Stylesheet -->
+
+<script type="text/javascript">
+<!--
+var SESSIONURL = "s=8f0daeab87598dde3ea9c7caf9678126&amp;";
+var IMGDIR_MISC = "azzurra/misc";
+// -->
+</script>
+
+<script type="text/javascript" src="clientscript/vbulletin_global.js"></script>
+
+
+</head>
+<body onload="">
+<!-- logo -->
+<a name="top"></a>
+<table border="0" width="98%" cellpadding="0" cellspacing="0" align="center">
+<tr>
+	<td align="left"><a href="index.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;"><img src="images/misc/vbulletin3_logo_white.gif" border="0" alt="Azzurra IRC Network Forum" /></a></td>
+	<td align="right">
+		&nbsp;
+	</td>
+</tr>
+</table>
+<!-- /logo -->
+
+<!-- content table -->
+<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width:98%; text-align:left">
+			<div style="padding:0px 6px 0px 6px">
+
+
+
+
+<script type="text/javascript">
+<!--
+function log_out()
+{
+	ht = document.getElementsByTagName("html");
+	ht[0].style.filter = "progid:DXImageTransform.Microsoft.BasicImage(grayscale=1)";
+	if (confirm('Sei certo di voler uscire?'))
+	{
+		return true;
+	}
+	else
+	{
+		ht[0].style.filter = "";
+		return false;
+	}
+}
+//-->
+</script>
+
+<br />
+
+<!-- breadcrumb, login, pm info -->
+<table class="tborder" cellpadding="6" cellspacing="1" border="0" width="100%" align="center">
+<tr>
+	<td class="alt1" width="100%">
+		
+			<table cellpadding="0" cellspacing="0" border="0">
+			<tr valign="bottom">
+				<td><a href="#" onclick="history.back(1)"><img src="azzurra/misc/navbits_start.gif" alt="Indietro" border="0" /></a></td>
+				<td>&nbsp;</td>
+				<td width="100%"><span class="navbar"><a href="index.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;" accesskey="1">Azzurra IRC Network Forum</a></span> 
+	<span class="navbar">&gt; <a href="forumdisplay.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;f=7">I Vostri Forum</a></span>
+
+
+	<span class="navbar">&gt; <a href="forumdisplay.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;f=42">#italia_area</a></span>
+
+</td>
+			</tr>
+			<tr>
+				<td class="navbar" style="font-size:10pt; padding-top:1px" colspan="3"><a href="/showthread.php?t=7269"><img class="inlineimg" src="azzurra/misc/navbits_finallink.gif" alt="Aggiorna questa pagina" border="0" /></a> <strong>
+	Meeting a Roma - 9-10 Aprile 2005
+
+</strong></td>
+			</tr>
+			</table>			
+		
+	</td>	
+	
+	
+		
+		<td class="alt2" nowrap="nowrap" style="padding:0px">
+			
+		<!-- login form -->
+		<form action="login.php" method="post" onsubmit="md5hash(vb_login_password,vb_login_md5password,vb_login_md5password_utf)">
+		<script type="text/javascript" src="clientscript/vbulletin_md5.js"></script>
+		<table cellpadding="0" cellspacing="3" border="0">
+		<tr>
+			<td class="smallfont">Nome utente</td>
+			<td><input type="text" class="button" name="vb_login_username" id="navbar_username" size="10" accesskey="u" tabindex="1" value="Nome utente" onfocus="if (this.value == 'Nome utente') this.value = '';" /></td>
+			<td class="smallfont" colspan="2" nowrap="nowrap"><label for="cb_cookieuser_navbar"><input type="checkbox" name="cookieuser" value="1" tabindex="3" id="cb_cookieuser_navbar" accesskey="c" checked="checked" />Salva impostazioni?</label></td>
+		</tr>
+		<tr>
+			<td class="smallfont">Password</td>
+			<td><input type="password" class="button" name="vb_login_password" size="10" accesskey="p" tabindex="2" /></td>
+			<td><input type="submit" class="button" value="Accedi" tabindex="4" title="Digita il tuo nome utente e la password nelle caselle qui sotto per accedere, oppure clicca sul pulsante 'Registrazione' per creare un nuovo profilo." accesskey="s" /></td>
+		</tr>
+		</table>
+		<input type="hidden" name="s" value="8f0daeab87598dde3ea9c7caf9678126" />
+		<input type="hidden" name="do" value="login" />
+		<input type="hidden" name="forceredirect" value="1" />			
+		<input type="hidden" name="vb_login_md5password" />
+		<input type="hidden" name="vb_login_md5password_utf" />
+		</form>
+		<!-- / login form -->
+			
+		</td>
+		
+		
+	
+</tr>
+</table>
+<!-- / breadcrumb, login, pm info -->
+
+<!-- nav buttons bar -->
+<div align="center">
+	<table class="tborder" cellpadding="6" cellspacing="0" border="0" width="100%" align="center" style="border-top-width:0px">
+	<tr align="center">	
+		<!--<td class="vbmenu_control"><a href="index.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;">Home</a></td>-->
+		
+		
+		
+			<td class="vbmenu_control"><a href="register.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;">Registra</a></td>
+		
+		<td class="vbmenu_control"><a href="faq.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;" accesskey="5">FAQ</a></td>
+		<td class="vbmenu_control"><a href="memberlist.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;">Elenco membri</a></td>
+		<td class="vbmenu_control"><a href="calendar.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;">Calendario</a></td>
+				
+			
+				<td class="vbmenu_control"><a href="search.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;" accesskey="4">Cerca</a></td>
+				
+				<td class="vbmenu_control"><a href="search.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;do=getdaily" accesskey="2">Messaggi di oggi</a></td>
+				
+			
+			<td class="vbmenu_control"><a href="forumdisplay.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;do=markread">Segna tutti i forum visitati</a></td>
+						
+		
+		
+	</tr>
+	</table>
+</div>
+<!-- / nav buttons bar -->
+
+<br />
+<br />
+
+
+
+
+
+<a name="poststop" id="poststop"></a>
+
+<!-- controls above postbits -->
+<table cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:3px">
+<tr valign="bottom">
+	
+		<td class="smallfont"><a href="newreply.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;do=newreply&amp;noquote=1&amp;p=153460"><img src="azzurra/buttons/reply.gif" alt="Rispondi" border="0" /></a></td>
+	
+	<td align="right"><div class="pagenav" align="right">
+<table class="tborder" cellpadding="3" cellspacing="1" border="0">
+<tr>
+	<td class="vbmenu_control" style="font-weight:normal"><!--<img src="azzurra/misc/multipage.gif" alt="Mostra risultati 1 a 10 di 455 (46 pagine)" /> -->Pagina 1 di 46</td>
+	
+	
+		<td class="alt2"><span class="smallfont" title="Mostra risultati 1 a 10 di 455"><strong>1</strong></span></td>
+ 	<td class="alt1"><a class="smallfont" href="showthread.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;t=7269&amp;page=2&amp;pp=10" title="Mostra risultati 11 a 20 di 455">2</a></td>
+	<td class="alt1"><a class="smallfont" href="showthread.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;t=7269&amp;page=3&amp;pp=10" title="Mostra risultati 21 a 30 di 455">3</a></td>
+	<td class="alt1"><a class="smallfont" href="showthread.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;t=7269&amp;page=4&amp;pp=10" title="Mostra risultati 31 a 40 di 455">4</a></td>
+	<td class="alt1"><a class="smallfont" href="showthread.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;t=7269&amp;page=5&amp;pp=10" title="Mostra risultati 41 a 50 di 455">5</a></td>
+
+	<td class="alt1"><a class="smallfont" href="showthread.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;t=7269&amp;page=2&amp;pp=10" title="Prossima pagina - Risultati 11 a 20 di 455">&gt;</a></td>
+	<td class="alt1"><a class="smallfont" href="showthread.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;t=7269&amp;page=46&amp;pp=10" title="Ultima pagina - Risultati 451 a 455 di 455">Ultimo <strong>&raquo;</strong></a></td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<!-- / controls above postbits -->
+
+<!-- toolbar -->
+<table class="tborder" cellpadding="6" cellspacing="1" border="0" width="100%" align="center" style="border-bottom-width:0px">
+<tr>
+	<td class="tcat" width="100%">
+		<div class="smallfont">
+		
+		&nbsp;
+		</div>
+	</td>
+	<td class="vbmenu_control" id="threadtools">
+		<a href="#goto_threadtools">Strumenti discussione</a>
+		
+	</td>
+	
+		<td class="vbmenu_control" id="threadsearch">
+			<a href="#goto_threadsearch">Cerca in questa discussione</a>
+			
+		</td>
+	
+	
+	
+	<td class="vbmenu_control" id="displaymodes">
+		<a href="#goto_displaymodes">Modalità di visualizzazione</a>
+		
+	</td>
+	
+</tr>
+</table>
+<!-- / toolbar -->
+
+<!-- end content table -->
+
+		</div>	
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- / end content table -->
+
+
+
+<div id="posts"><!-- post #153460 -->
+<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width:98%; text-align:left">
+			<div style="padding:0px 6px 0px 6px">
+<div style="padding:0px 0px 6px 0px">
+
+<table class="tborder" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">
+<tr>
+	
+		<td class="thead" style="font-weight:normal" >		
+			<!-- status icon and date -->
+			<a name="post153460"><img class="inlineimg" src="azzurra/statusicon/post_old.gif" alt="Vecchio" border="0" /></a>
+			07-02-2005, 11:21
+			
+			<!-- / status icon and date -->				
+		</td>
+		<td class="thead" style="font-weight:normal" align="right">
+			&nbsp;
+			#<a href="showpost.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;p=153460&amp;postcount=1" target="new"><strong>1</strong></a>
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt2" width="175">
+			
+			<div id="postmenu_153460">
+				
+				<a class="bigusername" href="member.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;u=1580">Superfre`</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_153460", true); </script>
+				
+			</div>
+			
+			<div class="smallfont">Forum Jedi Knight</div>
+			
+		
+			
+				<div class="smallfont">
+					&nbsp;<br /><a href="member.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;u=1580"><img src="customavatars/avatar1580_2.gif" alt="Superfre` avatar" border="0" /></a>
+				</div>
+			
+			
+			<div class="smallfont">
+				&nbsp;<br />
+				<div>Data registrazione: 04-03-2003</div>
+				<div>Luogo: Torino</div>
+				
+				<div>
+					Messaggi: 22.866
+				</div>
+				<div>Potenza Rep.: 33 <img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="Superfre` ha fascino e carisma" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="Superfre` ha fascino e carisma" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="Superfre` ha fascino e carisma" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="Superfre` ha fascino e carisma" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="Superfre` ha fascino e carisma" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_highpos.gif" alt="Superfre` ha fascino e carisma" border="0" /></div>
+				<div><a href="#" onclick="return imwindow('icq', '1580', 500, 450)"><img src="azzurra/misc/im_icq.gif" alt="Invia un messaggio via ICQ a Superfre`" border="0" /></a>  <a href="#" onclick="return imwindow('msn', '1580', 400, 200)"><img src="azzurra/misc/im_msn.gif" alt="Invia un messaggio via MSN a Superfre`" border="0" /></a> </div>
+			</div>					
+		
+	</td>
+	<td class="alt1">
+	
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				<img class="inlineimg" src="images/icons/icon1.gif" alt="Predefinito" border="0" />
+				<strong>Meeting a Roma - 9-10 Aprile 2005</strong>
+			</div>
+			<hr size="1" style="color:#0F3178" />
+			<!-- / icon and title -->
+		
+		
+		<!-- message -->
+		<div>Il C.O.M.A. organizza il meeting di primavera delle room #Italia_area e #Mestruati a Roma per i giorni 9 e 10 aprile. Le modalita sono le solite degli altri meeting ormai le conoscete o casomai chiedete.<br />
+<br />
+Vi chiedo la massima serieta' per evitare gente che si tira indietro all'ultimo momento. Come per l'ultimo meeting al motorshow ci saranno scadenze prefissate per darci conferma e escluderemo d'ufficio dal meeting chi non ci dara' le necessarie conferme. quindi vi invito a leggere periodicamente questo 3d e in particolare <u>questo</u> mio messaggio che sara' rieditato di volta in volta in modo da fungere da <u>riepilogo</u> <br />
+<br />
+I particolari sul menu, il luogo di ritrovo, il ristorante prescelto, il modo di arrivarci, il luogo per andare a dormire saranno comunicati prossimamente in questo 3d.<br />
+<br />
+<font color="Red">ATTENZIONE: AI MINORENNI SARA' TASSATIVAMENTE PROIBITO BERE ALCOOLICI. INOLTRE IL COMA E' ESTRANEO AD OGNI RESPONSABILITA'</font><br />
+<br />
+<font size="5"><b>Partecipanti:</b></font><br />
+<b>Akeron</b> (Roma) [pasta]<br />
+<b>BlackWitch</b> (roma) [pizza]<br />
+<b>BlackWitch, amico di</b> (roma) [pizza]<br />
+<b>CarmenDj</b> (Bologna) [pizza]<br />
+<b>Cool7it</b> (nonmiricordo) [pizza]<br />
+<b>Dare Devil</b> (rovigo) [pasta]<br />
+<b>Guidoz</b> (Roma) [pizza]<br />
+<b>Giallo</b> (roma) [pizza]<br />
+<b>Justarius</b> (Milano) [pizza]<br />
+<b>Lacuna</b> (Roma)<br />
+<b>Lilliput</b> (Padova) [insalata]<br />
+<b>Lillo</b> (roma) [pizza]<br />
+<b>Lillo, la ragazza</b> (roma) [pizza]<br />
+<b>Magnolya</b> (Frosinone) [pizza]<br />
+<b>Matto</b> (Udine) [pizza] <br />
+<b>Melarossa123</b> (Roma) [menu antiallergia]<br />
+<b>Mr Kikko</b> (Bologna) [pizza]<br />
+<b>Mr Kikko [amico]</b> (Bologna) [pizza]<br />
+<b>Phisicus</b> (Ascoli-Roma) [pasta]<br />
+<b>PiccolaStella^_^</b> (Roma) [pasta]<br />
+<b>Psyco</b> (Roma) [pasta]<br />
+<b>Pseudo</b> (Lucca) [pizza]<br />
+<b>Seya_Gran_Capo</b> (Napoli) [pizza]<br />
+<b>Superfre`</b> (Torino) [pasta]<br />
+<b>^Tata^_^</b> (Bergamo) [pizza]<br />
+<b>Yomo</b> (roma) [pizza]<br />
+<b>Zaffiro</b> (Catania) [pasta]<br />
+<b>Zaffiro</b> [amica] (Roma) [pasta]<br />
+<b>Zimmy</b> (Roma) [pizza]<br />
+<br />
+<br />
+Devono confermarci per la cena:<br />
+<br />
+<br />
+<br />
+Interverranno anche...<br />
+<b>Blackmore</b> (roma)<br />
+<b>Chibiusa</b> (Roma) No Cena<br />
+<b>Danilo77</b> (Roma) NO CENA<br />
+<b>Fonte</b> (roma)<br />
+<b>Giorgione</b> (Caserta) Domenica<br />
+<b>Gitan</b> (Roma) NO CENA<br />
+<b>Giuliaa</b> (Roma) NO CENA<br />
+<b>Raziel182</b> (Roma)<br />
+<b>ScRaTcHy</b> (Roma) (no cena)<br />
+Silma (Perugia)<br />
+<b>X-Maglilla</b> (Caserta) domenica<br />
+Zuccherina83 (Avellino)<br />
+DolceDelirio (Perugia) [pizza]<br />
+Nikotina (Roma)<br />
+TJ Eddoing (Roma)<br />
+<br />
+<br />
+<br />
+eventuali guest stars che mi devono confermare<br />
+<br />
+<font size="3"><font color="Red">RISTORANTE</font> </font> <br />
+Ristorante Pizzeria &quot;L'insalata Ricca&quot; di Via Giulio Cesare Santini<br />
+<a href="http://www.linsalataricca.it/home.htm" target="_blank">http://www.linsalataricca.it/home.htm</a><br />
+<img src="http://www.linsalataricca.it/locali/santini.jpg" border="0" alt="" /><br />
+<br />
+Ci sono 3 menu:<br />
+<br />
+<b>menu pizza </b><br />
+-bruschetta pomodoro <br />
+-pizza a scelta <br />
+-dolce a scelta <br />
+max 12,00<br />
+<br />
+<b>menu insalata</b><br />
+-bruschetta pomodoro<br />
+-insalata a scelta<br />
+-dolce <br />
+max 14,00<br />
+<br />
+<b>menu pasta</b><br />
+-bruschetta pomodoro <br />
+-pasta ( carbonara o amatriciana o arrabbiata ) <br />
+-vitella con patate<br />
+-dolce <br />
+max 19,00 <br />
+<br />
+<b>Dovete dirmi quale menu scegliete grazie</b><br />
+<br />
+<br />
+<font size="3"><font color="Red">PUNTI D'INCONTRO</font></font><br />
+Sabato 9 Aprile: <br />
+Ritrovo in stazione termini <b>h 17:00</b> (piazzale dei 500, di fronte l'uscita in direzione del centro città)<br />
+Ritrovo in viale trastevere <b>h 18:30</b> sulle scalette del ministero della pubblica istruzione<br />
+Cena h 21 - 21:30<br />
+<br />
+<br />
+Per chi non conosce Roma e' consigliabile venire in stazione termini, per tutti gli altri non fatemi girare le palle e venite per le 18:30 (puntuali) e non direttamente a cena</div>
+		<!-- / message -->
+	
+		
+		
+		
+		<!-- sig -->
+			<div>
+				__________________<br />
+				<font face="Comic Sans MS"><div align="center"><a href="http://www.areamestruati.com" target="_blank"><img src="http://www.areamestruati.altervista.org/LETTERJAMES.DE/Ponte.jpg" border="0" alt="" /></a><br />
+<font size="2"><font face="Microsoft Sans Serif"><font color="Blue"><b>#ITALIA_AREA &amp; #MESTRUATI: Ah, li mi cuniji!</b></font></font></font><br />
+<i><a href="http://www.areamestruati.altervista.org/Italia_Area.shtml" target="_blank">Chatta su #Italia_area</a> - <a href="http://www.areamestruati.com" target="_blank">Sito Web</a> - <a href="http://www.areamestruati.altervista.org/Mestruati.shtml" target="_blank">Chatta su #Mestruati </a> <br />
+</i></div></font>
+			</div>
+		<!-- / sig -->
+		
+		
+		
+		<!-- edit note -->
+			<div class="smallfont">			<hr size="1" style="color:#0F3178" />
+				<em>
+				Ultima modifica di Superfre`  Oggi alle ore <span class="time">11:10</span>.
+				
+				</em>
+			</div>
+		<!-- / edit note -->
+		
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2">
+		
+<img class="inlineimg" src="azzurra/statusicon/user_online.gif" alt="Superfre` è connesso" border="0" />
+
+		
+		
+		
+		&nbsp;
+	</td>
+	<td class="alt1" align="right">
+		<!-- controls -->
+		
+		
+		
+			<a href="newreply.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;do=newreply&amp;p=153460"><img src="azzurra/buttons/quote.gif" alt="Replica con citazione" border="0" /></a>
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</table>
+
+<!-- post 153460 popup menu -->
+<div class="vbmenu_popup" id="postmenu_153460_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tr>
+		<td class="thead">Superfre`</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="member.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;userid=1580">Mostra profilo pubblico</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="private.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;do=newpm&amp;userid=1580">Invia un messaggio privato a Superfre`</a></td></tr>
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://www.areamestruati.altervista.org">Visita la pagina principale di Superfre`!</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="search.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;do=finduser&amp;userid=1580">Cerca altri messaggi di Superfre`</a></td></tr>
+	
+	
+	<tr><td class="vbmenu_option"><a href="profile.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;do=addlist&amp;userlist=buddy&amp;u=1580">Aggiungi Superfre` all'elenco amici</a></td></tr>
+	
+	</table>
+</div>
+<!-- / post 153460 popup menu -->
+
+</div>
+		</div>	
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- / post #153460 --><!-- post #153468 -->
+<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width:98%; text-align:left">
+			<div style="padding:0px 6px 0px 6px">
+<div style="padding:0px 0px 6px 0px">
+
+<table class="tborder" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">
+<tr>
+	
+		<td class="thead" style="font-weight:normal" >		
+			<!-- status icon and date -->
+			<a name="post153468"><img class="inlineimg" src="azzurra/statusicon/post_old.gif" alt="Vecchio" border="0" /></a>
+			07-02-2005, 11:37
+			
+			<!-- / status icon and date -->				
+		</td>
+		<td class="thead" style="font-weight:normal" align="right">
+			&nbsp;
+			#<a href="showpost.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;p=153468&amp;postcount=2" target="new"><strong>2</strong></a>
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt2" width="175">
+			
+			<div id="postmenu_153468">
+				
+				<a class="bigusername" href="member.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;u=1541">^pioggia^</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_153468", true); </script>
+				
+			</div>
+			
+			<div class="smallfont">Great User</div>
+			
+		
+			
+				<div class="smallfont">
+					&nbsp;<br /><a href="member.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;u=1541"><img src="customavatars/avatar1541_2.gif" alt="^pioggia^ avatar" border="0" /></a>
+				</div>
+			
+			
+			<div class="smallfont">
+				&nbsp;<br />
+				<div>Data registrazione: 01-03-2003</div>
+				<div>Luogo: baurg panighèl: la zitè d'la ducati</div>
+				
+				<div>
+					Messaggi: 1.426
+				</div>
+				<div>Potenza Rep.: 34 <img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="^pioggia^ brilla e risplende di luce propria" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="^pioggia^ brilla e risplende di luce propria" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="^pioggia^ brilla e risplende di luce propria" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="^pioggia^ brilla e risplende di luce propria" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="^pioggia^ brilla e risplende di luce propria" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_highpos.gif" alt="^pioggia^ brilla e risplende di luce propria" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_highpos.gif" alt="^pioggia^ brilla e risplende di luce propria" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_highpos.gif" alt="^pioggia^ brilla e risplende di luce propria" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_highpos.gif" alt="^pioggia^ brilla e risplende di luce propria" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_highpos.gif" alt="^pioggia^ brilla e risplende di luce propria" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_highpos.gif" alt="^pioggia^ brilla e risplende di luce propria" border="0" /></div>
+				<div>  <a href="#" onclick="return imwindow('msn', '1541', 400, 200)"><img src="azzurra/misc/im_msn.gif" alt="Invia un messaggio via MSN a ^pioggia^" border="0" /></a> </div>
+			</div>					
+		
+	</td>
+	<td class="alt1">
+	
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				<img class="inlineimg" src="images/icons/icon1.gif" alt="Predefinito" border="0" />
+				<strong>Re: Meeting a Roma - 9-10 Aprile 2005</strong>
+			</div>
+			<hr size="1" style="color:#0F3178" />
+			<!-- / icon and title -->
+		
+		
+		<!-- message -->
+		<div>io purtroppo lo saprò fine marzo o primi di aprile... i soliti turni di lavoro comandano sopra ogni cosa :-(</div>
+		<!-- / message -->
+	
+		
+		
+		
+		<!-- sig -->
+			<div>
+				__________________<br />
+				...pioggia saro' e pioggia tu sarai<br />
+i miei occhi si chiariranno e fioriranno i nevai<br />
+Impareremo a camminare<br />
+per mano insieme a camminare<br />
+domenica...<br />
+<div align="center"><a href="http://www.areamestruati.altervista.org/Bambini.shtml" target="_blank">Come Eravamo</a> - <a href="http://www.areamestruati.altervista.org/DonaLaVita.shtml" target="_blank">Dona La Vita</a></div>
+			</div>
+		<!-- / sig -->
+		
+		
+		
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2">
+		<img class="inlineimg" src="azzurra/statusicon/user_offline.gif" alt="^pioggia^ non è connesso" border="0" />
+
+
+		
+		
+		
+		&nbsp;
+	</td>
+	<td class="alt1" align="right">
+		<!-- controls -->
+		
+		
+		
+			<a href="newreply.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;do=newreply&amp;p=153468"><img src="azzurra/buttons/quote.gif" alt="Replica con citazione" border="0" /></a>
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</table>
+
+<!-- post 153468 popup menu -->
+<div class="vbmenu_popup" id="postmenu_153468_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tr>
+		<td class="thead">^pioggia^</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="member.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;userid=1541">Mostra profilo pubblico</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="private.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;do=newpm&amp;userid=1541">Invia un messaggio privato a ^pioggia^</a></td></tr>
+	
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="search.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;do=finduser&amp;userid=1541">Cerca altri messaggi di ^pioggia^</a></td></tr>
+	
+	
+	<tr><td class="vbmenu_option"><a href="profile.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;do=addlist&amp;userlist=buddy&amp;u=1541">Aggiungi ^pioggia^ all'elenco amici</a></td></tr>
+	
+	</table>
+</div>
+<!-- / post 153468 popup menu -->
+
+</div>
+		</div>	
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- / post #153468 --><!-- post #153471 -->
+<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width:98%; text-align:left">
+			<div style="padding:0px 6px 0px 6px">
+<div style="padding:0px 0px 6px 0px">
+
+<table class="tborder" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">
+<tr>
+	
+		<td class="thead" style="font-weight:normal" >		
+			<!-- status icon and date -->
+			<a name="post153471"><img class="inlineimg" src="azzurra/statusicon/post_old.gif" alt="Vecchio" border="0" /></a>
+			07-02-2005, 11:39
+			
+			<!-- / status icon and date -->				
+		</td>
+		<td class="thead" style="font-weight:normal" align="right">
+			&nbsp;
+			#<a href="showpost.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;p=153471&amp;postcount=3" target="new"><strong>3</strong></a>
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt2" width="175">
+			
+			<div id="postmenu_153471">
+				
+				<a class="bigusername" href="member.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;u=1580">Superfre`</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_153471", true); </script>
+				
+			</div>
+			
+			<div class="smallfont">Forum Jedi Knight</div>
+			
+		
+			
+				<div class="smallfont">
+					&nbsp;<br /><a href="member.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;u=1580"><img src="customavatars/avatar1580_2.gif" alt="Superfre` avatar" border="0" /></a>
+				</div>
+			
+			
+			<div class="smallfont">
+				&nbsp;<br />
+				<div>Data registrazione: 04-03-2003</div>
+				<div>Luogo: Torino</div>
+				
+				<div>
+					Messaggi: 22.866
+				</div>
+				<div>Potenza Rep.: 33 <img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="Superfre` ha fascino e carisma" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="Superfre` ha fascino e carisma" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="Superfre` ha fascino e carisma" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="Superfre` ha fascino e carisma" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="Superfre` ha fascino e carisma" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_highpos.gif" alt="Superfre` ha fascino e carisma" border="0" /></div>
+				<div><a href="#" onclick="return imwindow('icq', '1580', 500, 450)"><img src="azzurra/misc/im_icq.gif" alt="Invia un messaggio via ICQ a Superfre`" border="0" /></a>  <a href="#" onclick="return imwindow('msn', '1580', 400, 200)"><img src="azzurra/misc/im_msn.gif" alt="Invia un messaggio via MSN a Superfre`" border="0" /></a> </div>
+			</div>					
+		
+	</td>
+	<td class="alt1">
+	
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				<img class="inlineimg" src="images/icons/icon1.gif" alt="Predefinito" border="0" />
+				<strong>Re: Meeting a Roma - 9-10 Aprile 2005</strong>
+			</div>
+			<hr size="1" style="color:#0F3178" />
+			<!-- / icon and title -->
+		
+		
+		<!-- message -->
+		<div>Vabbeh pio' fammi compagnia nella lista su! <img src="images/smilies/classic/icon_smile_kisses.gif" border="0" alt="" title="Icon Smile Kisses" class="inlineimg" /></div>
+		<!-- / message -->
+	
+		
+		
+		
+		<!-- sig -->
+			<div>
+				__________________<br />
+				<font face="Comic Sans MS"><div align="center"><a href="http://www.areamestruati.com" target="_blank"><img src="http://www.areamestruati.altervista.org/LETTERJAMES.DE/Ponte.jpg" border="0" alt="" /></a><br />
+<font size="2"><font face="Microsoft Sans Serif"><font color="Blue"><b>#ITALIA_AREA &amp; #MESTRUATI: Ah, li mi cuniji!</b></font></font></font><br />
+<i><a href="http://www.areamestruati.altervista.org/Italia_Area.shtml" target="_blank">Chatta su #Italia_area</a> - <a href="http://www.areamestruati.com" target="_blank">Sito Web</a> - <a href="http://www.areamestruati.altervista.org/Mestruati.shtml" target="_blank">Chatta su #Mestruati </a> <br />
+</i></div></font>
+			</div>
+		<!-- / sig -->
+		
+		
+		
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2">
+		
+<img class="inlineimg" src="azzurra/statusicon/user_online.gif" alt="Superfre` è connesso" border="0" />
+
+		
+		
+		
+		&nbsp;
+	</td>
+	<td class="alt1" align="right">
+		<!-- controls -->
+		
+		
+		
+			<a href="newreply.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;do=newreply&amp;p=153471"><img src="azzurra/buttons/quote.gif" alt="Replica con citazione" border="0" /></a>
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</table>
+
+<!-- post 153471 popup menu -->
+<div class="vbmenu_popup" id="postmenu_153471_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tr>
+		<td class="thead">Superfre`</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="member.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;userid=1580">Mostra profilo pubblico</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="private.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;do=newpm&amp;userid=1580">Invia un messaggio privato a Superfre`</a></td></tr>
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://www.areamestruati.altervista.org">Visita la pagina principale di Superfre`!</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="search.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;do=finduser&amp;userid=1580">Cerca altri messaggi di Superfre`</a></td></tr>
+	
+	
+	<tr><td class="vbmenu_option"><a href="profile.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;do=addlist&amp;userlist=buddy&amp;u=1580">Aggiungi Superfre` all'elenco amici</a></td></tr>
+	
+	</table>
+</div>
+<!-- / post 153471 popup menu -->
+
+</div>
+		</div>	
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- / post #153471 --><!-- post #153481 -->
+<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width:98%; text-align:left">
+			<div style="padding:0px 6px 0px 6px">
+<div style="padding:0px 0px 6px 0px">
+
+<table class="tborder" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">
+<tr>
+	
+		<td class="thead" style="font-weight:normal" >		
+			<!-- status icon and date -->
+			<a name="post153481"><img class="inlineimg" src="azzurra/statusicon/post_old.gif" alt="Vecchio" border="0" /></a>
+			07-02-2005, 11:50
+			
+			<!-- / status icon and date -->				
+		</td>
+		<td class="thead" style="font-weight:normal" align="right">
+			&nbsp;
+			#<a href="showpost.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;p=153481&amp;postcount=4" target="new"><strong>4</strong></a>
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt2" width="175">
+			
+			<div id="postmenu_153481">
+				
+				<a class="bigusername" href="member.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;u=1548">Kira</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_153481", true); </script>
+				
+			</div>
+			
+			<div class="smallfont">Forum Jedi Knight</div>
+			
+		
+			
+				<div class="smallfont">
+					&nbsp;<br /><a href="member.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;u=1548"><img src="customavatars/avatar1548_1.gif" alt="Kira avatar" border="0" /></a>
+				</div>
+			
+			
+			<div class="smallfont">
+				&nbsp;<br />
+				<div>Data registrazione: 01-03-2003</div>
+				<div>Luogo: Roccia del drago</div>
+				
+				<div>
+					Messaggi: 3.726
+				</div>
+				<div>Potenza Rep.: 32 <img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="Kira brilla e risplende di luce propria" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="Kira brilla e risplende di luce propria" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="Kira brilla e risplende di luce propria" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="Kira brilla e risplende di luce propria" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="Kira brilla e risplende di luce propria" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_highpos.gif" alt="Kira brilla e risplende di luce propria" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_highpos.gif" alt="Kira brilla e risplende di luce propria" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_highpos.gif" alt="Kira brilla e risplende di luce propria" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_highpos.gif" alt="Kira brilla e risplende di luce propria" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_highpos.gif" alt="Kira brilla e risplende di luce propria" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_highpos.gif" alt="Kira brilla e risplende di luce propria" border="0" /></div>
+				<div>   </div>
+			</div>					
+		
+	</td>
+	<td class="alt1">
+	
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				<img class="inlineimg" src="images/icons/icon1.gif" alt="Predefinito" border="0" />
+				<strong>Re: Meeting a Roma - 9-10 Aprile 2005</strong>
+			</div>
+			<hr size="1" style="color:#0F3178" />
+			<!-- / icon and title -->
+		
+		
+		<!-- message -->
+		<div>Io penso che, togliendo impegni improvvisi, io e la mia austera metà parteciperemo alla grande ^_^</div>
+		<!-- / message -->
+	
+		
+		
+		
+		<!-- sig -->
+			<div>
+				__________________<br />
+				<font color="Blue"><b>A volte per tirare un colpo vincente bisogna arretrare, ma se arretri troppo non combatti più...</b><i><br />
+&quot;Million Dollar Baby&quot;</i></font><br />
+***<br />
+<font face="Garamond"><font size="3"><b><i><font color="DarkOrchid">Il muro della camera magica si dissolse, soffiarono venti, senza portare aria nella caverna colma di spettri, perché anch’essi non erano che fantasmi di venti.</font></i></b></font></font><br />
+<font face="Palatino Linotype"><i><font size="2"><b><font size="3"><font color="Purple"> <br />
+</font></font></b></font></i></font>
+			</div>
+		<!-- / sig -->
+		
+		
+		
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2">
+		<img class="inlineimg" src="azzurra/statusicon/user_offline.gif" alt="Kira non è connesso" border="0" />
+
+
+		
+		
+		
+		&nbsp;
+	</td>
+	<td class="alt1" align="right">
+		<!-- controls -->
+		
+		
+		
+			<a href="newreply.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;do=newreply&amp;p=153481"><img src="azzurra/buttons/quote.gif" alt="Replica con citazione" border="0" /></a>
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</table>
+
+<!-- post 153481 popup menu -->
+<div class="vbmenu_popup" id="postmenu_153481_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tr>
+		<td class="thead">Kira</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="member.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;userid=1548">Mostra profilo pubblico</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="private.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;do=newpm&amp;userid=1548">Invia un messaggio privato a Kira</a></td></tr>
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://kirachan.interfree.it">Visita la pagina principale di Kira!</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="search.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;do=finduser&amp;userid=1548">Cerca altri messaggi di Kira</a></td></tr>
+	
+	
+	<tr><td class="vbmenu_option"><a href="profile.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;do=addlist&amp;userlist=buddy&amp;u=1548">Aggiungi Kira all'elenco amici</a></td></tr>
+	
+	</table>
+</div>
+<!-- / post 153481 popup menu -->
+
+</div>
+		</div>	
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- / post #153481 --><!-- post #153497 -->
+<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width:98%; text-align:left">
+			<div style="padding:0px 6px 0px 6px">
+<div style="padding:0px 0px 6px 0px">
+
+<table class="tborder" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">
+<tr>
+	
+		<td class="thead" style="font-weight:normal" >		
+			<!-- status icon and date -->
+			<a name="post153497"><img class="inlineimg" src="azzurra/statusicon/post_old.gif" alt="Vecchio" border="0" /></a>
+			07-02-2005, 12:09
+			
+			<!-- / status icon and date -->				
+		</td>
+		<td class="thead" style="font-weight:normal" align="right">
+			&nbsp;
+			#<a href="showpost.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;p=153497&amp;postcount=5" target="new"><strong>5</strong></a>
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt2" width="175">
+			
+			<div id="postmenu_153497">
+				
+				<a class="bigusername" href="member.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;u=1580">Superfre`</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_153497", true); </script>
+				
+			</div>
+			
+			<div class="smallfont">Forum Jedi Knight</div>
+			
+		
+			
+				<div class="smallfont">
+					&nbsp;<br /><a href="member.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;u=1580"><img src="customavatars/avatar1580_2.gif" alt="Superfre` avatar" border="0" /></a>
+				</div>
+			
+			
+			<div class="smallfont">
+				&nbsp;<br />
+				<div>Data registrazione: 04-03-2003</div>
+				<div>Luogo: Torino</div>
+				
+				<div>
+					Messaggi: 22.866
+				</div>
+				<div>Potenza Rep.: 33 <img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="Superfre` ha fascino e carisma" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="Superfre` ha fascino e carisma" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="Superfre` ha fascino e carisma" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="Superfre` ha fascino e carisma" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="Superfre` ha fascino e carisma" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_highpos.gif" alt="Superfre` ha fascino e carisma" border="0" /></div>
+				<div><a href="#" onclick="return imwindow('icq', '1580', 500, 450)"><img src="azzurra/misc/im_icq.gif" alt="Invia un messaggio via ICQ a Superfre`" border="0" /></a>  <a href="#" onclick="return imwindow('msn', '1580', 400, 200)"><img src="azzurra/misc/im_msn.gif" alt="Invia un messaggio via MSN a Superfre`" border="0" /></a> </div>
+			</div>					
+		
+	</td>
+	<td class="alt1">
+	
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				<img class="inlineimg" src="images/icons/icon1.gif" alt="Predefinito" border="0" />
+				<strong>Re: Meeting a Roma - 9-10 Aprile 2005</strong>
+			</div>
+			<hr size="1" style="color:#0F3178" />
+			<!-- / icon and title -->
+		
+		
+		<!-- message -->
+		<div>yeah! Ci contavo <img src="images/smilies/classic/icon_smile_big.gif" border="0" alt="" title="Icon Smile Big" class="inlineimg" /></div>
+		<!-- / message -->
+	
+		
+		
+		
+		<!-- sig -->
+			<div>
+				__________________<br />
+				<font face="Comic Sans MS"><div align="center"><a href="http://www.areamestruati.com" target="_blank"><img src="http://www.areamestruati.altervista.org/LETTERJAMES.DE/Ponte.jpg" border="0" alt="" /></a><br />
+<font size="2"><font face="Microsoft Sans Serif"><font color="Blue"><b>#ITALIA_AREA &amp; #MESTRUATI: Ah, li mi cuniji!</b></font></font></font><br />
+<i><a href="http://www.areamestruati.altervista.org/Italia_Area.shtml" target="_blank">Chatta su #Italia_area</a> - <a href="http://www.areamestruati.com" target="_blank">Sito Web</a> - <a href="http://www.areamestruati.altervista.org/Mestruati.shtml" target="_blank">Chatta su #Mestruati </a> <br />
+</i></div></font>
+			</div>
+		<!-- / sig -->
+		
+		
+		
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2">
+		
+<img class="inlineimg" src="azzurra/statusicon/user_online.gif" alt="Superfre` è connesso" border="0" />
+
+		
+		
+		
+		&nbsp;
+	</td>
+	<td class="alt1" align="right">
+		<!-- controls -->
+		
+		
+		
+			<a href="newreply.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;do=newreply&amp;p=153497"><img src="azzurra/buttons/quote.gif" alt="Replica con citazione" border="0" /></a>
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</table>
+
+<!-- post 153497 popup menu -->
+<div class="vbmenu_popup" id="postmenu_153497_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tr>
+		<td class="thead">Superfre`</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="member.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;userid=1580">Mostra profilo pubblico</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="private.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;do=newpm&amp;userid=1580">Invia un messaggio privato a Superfre`</a></td></tr>
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://www.areamestruati.altervista.org">Visita la pagina principale di Superfre`!</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="search.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;do=finduser&amp;userid=1580">Cerca altri messaggi di Superfre`</a></td></tr>
+	
+	
+	<tr><td class="vbmenu_option"><a href="profile.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;do=addlist&amp;userlist=buddy&amp;u=1580">Aggiungi Superfre` all'elenco amici</a></td></tr>
+	
+	</table>
+</div>
+<!-- / post 153497 popup menu -->
+
+</div>
+		</div>	
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- / post #153497 --><!-- post #153557 -->
+<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width:98%; text-align:left">
+			<div style="padding:0px 6px 0px 6px">
+<div style="padding:0px 0px 6px 0px">
+
+<table class="tborder" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">
+<tr>
+	
+		<td class="thead" style="font-weight:normal" >		
+			<!-- status icon and date -->
+			<a name="post153557"><img class="inlineimg" src="azzurra/statusicon/post_old.gif" alt="Vecchio" border="0" /></a>
+			07-02-2005, 13:09
+			
+			<!-- / status icon and date -->				
+		</td>
+		<td class="thead" style="font-weight:normal" align="right">
+			&nbsp;
+			#<a href="showpost.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;p=153557&amp;postcount=6" target="new"><strong>6</strong></a>
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt2" width="175">
+			
+			<div id="postmenu_153557">
+				
+				<a class="bigusername" href="member.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;u=1136">mukkacamilla</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_153557", true); </script>
+				
+			</div>
+			
+			<div class="smallfont">Forum Jedi Knight</div>
+			
+		
+			
+				<div class="smallfont">
+					&nbsp;<br /><a href="member.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;u=1136"><img src="customavatars/avatar1136_0.gif" alt="mukkacamilla avatar" border="0" /></a>
+				</div>
+			
+			
+			<div class="smallfont">
+				&nbsp;<br />
+				<div>Data registrazione: 30-11-2002</div>
+				<div>Luogo: Milano</div>
+				
+				<div>
+					Messaggi: 3.327
+				</div>
+				<div>Potenza Rep.: 32 <img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="mukkacamilla brilla e risplende di luce propria" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="mukkacamilla brilla e risplende di luce propria" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="mukkacamilla brilla e risplende di luce propria" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="mukkacamilla brilla e risplende di luce propria" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="mukkacamilla brilla e risplende di luce propria" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_highpos.gif" alt="mukkacamilla brilla e risplende di luce propria" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_highpos.gif" alt="mukkacamilla brilla e risplende di luce propria" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_highpos.gif" alt="mukkacamilla brilla e risplende di luce propria" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_highpos.gif" alt="mukkacamilla brilla e risplende di luce propria" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_highpos.gif" alt="mukkacamilla brilla e risplende di luce propria" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_highpos.gif" alt="mukkacamilla brilla e risplende di luce propria" border="0" /></div>
+				<div><a href="#" onclick="return imwindow('icq', '1136', 500, 450)"><img src="azzurra/misc/im_icq.gif" alt="Invia un messaggio via ICQ a mukkacamilla" border="0" /></a>  <a href="#" onclick="return imwindow('msn', '1136', 400, 200)"><img src="azzurra/misc/im_msn.gif" alt="Invia un messaggio via MSN a mukkacamilla" border="0" /></a> </div>
+			</div>					
+		
+	</td>
+	<td class="alt1">
+	
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				<img class="inlineimg" src="images/icons/icon1.gif" alt="Predefinito" border="0" />
+				<strong>Re: Meeting a Roma - 9-10 Aprile 2005</strong>
+			</div>
+			<hr size="1" style="color:#0F3178" />
+			<!-- / icon and title -->
+		
+		
+		<!-- message -->
+		<div>io sicuramente non ci sarò... <img src="images/smilies/piangoo.gif" border="0" alt="" title="Cry" class="inlineimg" /></div>
+		<!-- / message -->
+	
+		
+		
+		
+		<!-- sig -->
+			<div>
+				__________________<br />
+				Climb your fatal apple tree<br />
+try to catch the sun, hide from your little brother's gun, dream yourself away.. <img src="images/smilies/sonno/sonno14.gif" border="0" alt="" title="Sonno14" class="inlineimg" /><br />
+<div align="center"><img src="http://mukkacamilla.altervista.org/th_x_mukka_3.jpg" border="0" alt="" /><br />
+<i>Richard</i>: Sei pazza!<br />
+<i>Ally</i>: E' naturale, tutte le vere donne lo sono.</div>
+			</div>
+		<!-- / sig -->
+		
+		
+		
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2">
+		<img class="inlineimg" src="azzurra/statusicon/user_offline.gif" alt="mukkacamilla non è connesso" border="0" />
+
+
+		
+		
+		
+		&nbsp;
+	</td>
+	<td class="alt1" align="right">
+		<!-- controls -->
+		
+		
+		
+			<a href="newreply.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;do=newreply&amp;p=153557"><img src="azzurra/buttons/quote.gif" alt="Replica con citazione" border="0" /></a>
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</table>
+
+<!-- post 153557 popup menu -->
+<div class="vbmenu_popup" id="postmenu_153557_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tr>
+		<td class="thead">mukkacamilla</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="member.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;userid=1136">Mostra profilo pubblico</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="private.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;do=newpm&amp;userid=1136">Invia un messaggio privato a mukkacamilla</a></td></tr>
+	
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="search.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;do=finduser&amp;userid=1136">Cerca altri messaggi di mukkacamilla</a></td></tr>
+	
+	
+	<tr><td class="vbmenu_option"><a href="profile.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;do=addlist&amp;userlist=buddy&amp;u=1136">Aggiungi mukkacamilla all'elenco amici</a></td></tr>
+	
+	</table>
+</div>
+<!-- / post 153557 popup menu -->
+
+</div>
+		</div>	
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- / post #153557 --><!-- post #153567 -->
+<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width:98%; text-align:left">
+			<div style="padding:0px 6px 0px 6px">
+<div style="padding:0px 0px 6px 0px">
+
+<table class="tborder" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">
+<tr>
+	
+		<td class="thead" style="font-weight:normal" >		
+			<!-- status icon and date -->
+			<a name="post153567"><img class="inlineimg" src="azzurra/statusicon/post_old.gif" alt="Vecchio" border="0" /></a>
+			07-02-2005, 13:33
+			
+			<!-- / status icon and date -->				
+		</td>
+		<td class="thead" style="font-weight:normal" align="right">
+			&nbsp;
+			#<a href="showpost.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;p=153567&amp;postcount=7" target="new"><strong>7</strong></a>
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt2" width="175">
+			
+			<div id="postmenu_153567">
+				
+				<a class="bigusername" href="member.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;u=1580">Superfre`</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_153567", true); </script>
+				
+			</div>
+			
+			<div class="smallfont">Forum Jedi Knight</div>
+			
+		
+			
+				<div class="smallfont">
+					&nbsp;<br /><a href="member.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;u=1580"><img src="customavatars/avatar1580_2.gif" alt="Superfre` avatar" border="0" /></a>
+				</div>
+			
+			
+			<div class="smallfont">
+				&nbsp;<br />
+				<div>Data registrazione: 04-03-2003</div>
+				<div>Luogo: Torino</div>
+				
+				<div>
+					Messaggi: 22.866
+				</div>
+				<div>Potenza Rep.: 33 <img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="Superfre` ha fascino e carisma" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="Superfre` ha fascino e carisma" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="Superfre` ha fascino e carisma" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="Superfre` ha fascino e carisma" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="Superfre` ha fascino e carisma" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_highpos.gif" alt="Superfre` ha fascino e carisma" border="0" /></div>
+				<div><a href="#" onclick="return imwindow('icq', '1580', 500, 450)"><img src="azzurra/misc/im_icq.gif" alt="Invia un messaggio via ICQ a Superfre`" border="0" /></a>  <a href="#" onclick="return imwindow('msn', '1580', 400, 200)"><img src="azzurra/misc/im_msn.gif" alt="Invia un messaggio via MSN a Superfre`" border="0" /></a> </div>
+			</div>					
+		
+	</td>
+	<td class="alt1">
+	
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				<img class="inlineimg" src="images/icons/icon1.gif" alt="Predefinito" border="0" />
+				<strong>Re: Meeting a Roma - 9-10 Aprile 2005</strong>
+			</div>
+			<hr size="1" style="color:#0F3178" />
+			<!-- / icon and title -->
+		
+		
+		<!-- message -->
+		<div>nuuuuuuuuuuuuuuuu</div>
+		<!-- / message -->
+	
+		
+		
+		
+		<!-- sig -->
+			<div>
+				__________________<br />
+				<font face="Comic Sans MS"><div align="center"><a href="http://www.areamestruati.com" target="_blank"><img src="http://www.areamestruati.altervista.org/LETTERJAMES.DE/Ponte.jpg" border="0" alt="" /></a><br />
+<font size="2"><font face="Microsoft Sans Serif"><font color="Blue"><b>#ITALIA_AREA &amp; #MESTRUATI: Ah, li mi cuniji!</b></font></font></font><br />
+<i><a href="http://www.areamestruati.altervista.org/Italia_Area.shtml" target="_blank">Chatta su #Italia_area</a> - <a href="http://www.areamestruati.com" target="_blank">Sito Web</a> - <a href="http://www.areamestruati.altervista.org/Mestruati.shtml" target="_blank">Chatta su #Mestruati </a> <br />
+</i></div></font>
+			</div>
+		<!-- / sig -->
+		
+		
+		
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2">
+		
+<img class="inlineimg" src="azzurra/statusicon/user_online.gif" alt="Superfre` è connesso" border="0" />
+
+		
+		
+		
+		&nbsp;
+	</td>
+	<td class="alt1" align="right">
+		<!-- controls -->
+		
+		
+		
+			<a href="newreply.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;do=newreply&amp;p=153567"><img src="azzurra/buttons/quote.gif" alt="Replica con citazione" border="0" /></a>
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</table>
+
+<!-- post 153567 popup menu -->
+<div class="vbmenu_popup" id="postmenu_153567_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tr>
+		<td class="thead">Superfre`</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="member.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;userid=1580">Mostra profilo pubblico</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="private.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;do=newpm&amp;userid=1580">Invia un messaggio privato a Superfre`</a></td></tr>
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://www.areamestruati.altervista.org">Visita la pagina principale di Superfre`!</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="search.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;do=finduser&amp;userid=1580">Cerca altri messaggi di Superfre`</a></td></tr>
+	
+	
+	<tr><td class="vbmenu_option"><a href="profile.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;do=addlist&amp;userlist=buddy&amp;u=1580">Aggiungi Superfre` all'elenco amici</a></td></tr>
+	
+	</table>
+</div>
+<!-- / post 153567 popup menu -->
+
+</div>
+		</div>	
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- / post #153567 --><!-- post #153662 -->
+<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width:98%; text-align:left">
+			<div style="padding:0px 6px 0px 6px">
+<div style="padding:0px 0px 6px 0px">
+
+<table class="tborder" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">
+<tr>
+	
+		<td class="thead" style="font-weight:normal" >		
+			<!-- status icon and date -->
+			<a name="post153662"><img class="inlineimg" src="azzurra/statusicon/post_old.gif" alt="Vecchio" border="0" /></a>
+			07-02-2005, 15:49
+			
+			<!-- / status icon and date -->				
+		</td>
+		<td class="thead" style="font-weight:normal" align="right">
+			&nbsp;
+			#<a href="showpost.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;p=153662&amp;postcount=8" target="new"><strong>8</strong></a>
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt2" width="175">
+			
+			<div id="postmenu_153662">
+				
+				<a class="bigusername" href="member.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;u=3537">Giorgione</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_153662", true); </script>
+				
+			</div>
+			
+			<div class="smallfont">Great User</div>
+			
+		
+			
+				<div class="smallfont">
+					&nbsp;<br /><a href="member.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;u=3537"><img src="customavatars/avatar3537_17.gif" alt="Giorgione avatar" border="0" /></a>
+				</div>
+			
+			
+			<div class="smallfont">
+				&nbsp;<br />
+				<div>Data registrazione: 30-03-2004</div>
+				<div>Luogo: Terronia</div>
+				
+				<div>
+					Messaggi: 1.359
+				</div>
+				<div>Potenza Rep.: 21 <img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="Giorgione è un fiore nel deserto" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="Giorgione è un fiore nel deserto" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="Giorgione è un fiore nel deserto" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="Giorgione è un fiore nel deserto" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="Giorgione è un fiore nel deserto" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_highpos.gif" alt="Giorgione è un fiore nel deserto" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_highpos.gif" alt="Giorgione è un fiore nel deserto" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_highpos.gif" alt="Giorgione è un fiore nel deserto" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_highpos.gif" alt="Giorgione è un fiore nel deserto" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_highpos.gif" alt="Giorgione è un fiore nel deserto" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_highpos.gif" alt="Giorgione è un fiore nel deserto" border="0" /></div>
+				<div>   </div>
+			</div>					
+		
+	</td>
+	<td class="alt1">
+	
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				<img class="inlineimg" src="images/icons/icon1.gif" alt="Predefinito" border="0" />
+				<strong>Re: Meeting a Roma - 9-10 Aprile 2005</strong>
+			</div>
+			<hr size="1" style="color:#0F3178" />
+			<!-- / icon and title -->
+		
+		
+		<!-- message -->
+		<div>io credo che na giornata me la vengo a fa.dipende pure dagli esami,ma penso di averli finiti per quella data.aggiungi va.poi devo vedè che giorno vengo.se no è cazzo che finisce come l'anno scorso.</div>
+		<!-- / message -->
+	
+		
+		
+		
+		<!-- sig -->
+			<div>
+				__________________<br />
+				Non c'è ingegno senza un po' di pazzia. <img src="http://www.webalice.it/obesix/lol.gif" border="0" alt="" /><br />
+ <a href="http://marinai.altervista.org" target="_blank">#blues</a>
+			</div>
+		<!-- / sig -->
+		
+		
+		
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2">
+		<img class="inlineimg" src="azzurra/statusicon/user_offline.gif" alt="Giorgione non è connesso" border="0" />
+
+
+		
+		
+		
+		&nbsp;
+	</td>
+	<td class="alt1" align="right">
+		<!-- controls -->
+		
+		
+		
+			<a href="newreply.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;do=newreply&amp;p=153662"><img src="azzurra/buttons/quote.gif" alt="Replica con citazione" border="0" /></a>
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</table>
+
+<!-- post 153662 popup menu -->
+<div class="vbmenu_popup" id="postmenu_153662_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tr>
+		<td class="thead">Giorgione</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="member.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;userid=3537">Mostra profilo pubblico</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="private.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;do=newpm&amp;userid=3537">Invia un messaggio privato a Giorgione</a></td></tr>
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://marinai.altervista.org">Visita la pagina principale di Giorgione!</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="search.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;do=finduser&amp;userid=3537">Cerca altri messaggi di Giorgione</a></td></tr>
+	
+	
+	<tr><td class="vbmenu_option"><a href="profile.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;do=addlist&amp;userlist=buddy&amp;u=3537">Aggiungi Giorgione all'elenco amici</a></td></tr>
+	
+	</table>
+</div>
+<!-- / post 153662 popup menu -->
+
+</div>
+		</div>	
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- / post #153662 --><!-- post #153717 -->
+<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width:98%; text-align:left">
+			<div style="padding:0px 6px 0px 6px">
+<div style="padding:0px 0px 6px 0px">
+
+<table class="tborder" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">
+<tr>
+	
+		<td class="thead" style="font-weight:normal" >		
+			<!-- status icon and date -->
+			<a name="post153717"><img class="inlineimg" src="azzurra/statusicon/post_old.gif" alt="Vecchio" border="0" /></a>
+			07-02-2005, 17:21
+			
+			<!-- / status icon and date -->				
+		</td>
+		<td class="thead" style="font-weight:normal" align="right">
+			&nbsp;
+			#<a href="showpost.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;p=153717&amp;postcount=9" target="new"><strong>9</strong></a>
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt2" width="175">
+			
+			<div id="postmenu_153717">
+				
+				<a class="bigusername" href="member.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;u=1833">DolceDelirio</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_153717", true); </script>
+				
+			</div>
+			
+			<div class="smallfont">Wonderful User</div>
+			
+		
+			
+				<div class="smallfont">
+					&nbsp;<br /><a href="member.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;u=1833"><img src="customavatars/avatar1833_4.gif" alt="DolceDelirio avatar" border="0" /></a>
+				</div>
+			
+			
+			<div class="smallfont">
+				&nbsp;<br />
+				<div>Data registrazione: 23-04-2003</div>
+				<div>Luogo: ..::Reo TeMPo::..</div>
+				
+				<div>
+					Messaggi: 1.856
+				</div>
+				<div>Potenza Rep.: 18 <img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="DolceDelirio ha fan che lo seguono ovunque" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="DolceDelirio ha fan che lo seguono ovunque" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="DolceDelirio ha fan che lo seguono ovunque" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="DolceDelirio ha fan che lo seguono ovunque" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="DolceDelirio ha fan che lo seguono ovunque" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_highpos.gif" alt="DolceDelirio ha fan che lo seguono ovunque" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_highpos.gif" alt="DolceDelirio ha fan che lo seguono ovunque" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_highpos.gif" alt="DolceDelirio ha fan che lo seguono ovunque" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_highpos.gif" alt="DolceDelirio ha fan che lo seguono ovunque" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_highpos.gif" alt="DolceDelirio ha fan che lo seguono ovunque" border="0" /></div>
+				<div><a href="#" onclick="return imwindow('icq', '1833', 500, 450)"><img src="azzurra/misc/im_icq.gif" alt="Invia un messaggio via ICQ a DolceDelirio" border="0" /></a>  <a href="#" onclick="return imwindow('msn', '1833', 400, 200)"><img src="azzurra/misc/im_msn.gif" alt="Invia un messaggio via MSN a DolceDelirio" border="0" /></a> </div>
+			</div>					
+		
+	</td>
+	<td class="alt1">
+	
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				<img class="inlineimg" src="images/icons/icon1.gif" alt="Predefinito" border="0" />
+				<strong>Re: Meeting a Roma - 9-10 Aprile 2005</strong>
+			</div>
+			<hr size="1" style="color:#0F3178" />
+			<!-- / icon and title -->
+		
+		
+		<!-- message -->
+		<div>SALINAAAAAAA EVVAAAIIIIIIII pepeepepepep xD<br />
+<br />
+No vabè, apparte gli scherzi, se non organizzano degli altri progetti scolastici ci sarò di sicuro : °D</div>
+		<!-- / message -->
+	
+		
+		
+		
+		<!-- sig -->
+			<div>
+				__________________<br />
+				<div align="center"><font size="3"><b><font color="pourple"><font face="Times New Roman"><div align="center">&quot;È forse l'anima un'ombra seduta nella casa del peccato?&quot;<br />
+</div></font></font></b></font></div>
+<div align="center"><b><font color="black"><font size="5"><font face="Times New Roman"> </b></font></font></font></div>
+<div align="center"><font color="black"><font size="4"><font face="Times New Roman"><font color="#0000ff"><b><font size="5"><font color="black">#ITALIA_AREA &amp; #MESTRUATI</font></font></b></font></font></font></font></div>
+<div align="center"><font size="4"><font color="blu"><font face="Times New Roman"><i><b><a href="http://www.areamestruati.altervista.org/Giochi.shtml" target="_blank">Giochi</a> - <a href="http://www.areamestruati.altervista.org/Facce.shtml" target="_blank">Gli Utenti</a> - <a href="http://www.areamestruati.altervista.org/meeting.shtml" target="_blank">Meeting</a></font></font></font></i></b></div>
+			</div>
+		<!-- / sig -->
+		
+		
+		
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2">
+		<img class="inlineimg" src="azzurra/statusicon/user_offline.gif" alt="DolceDelirio non è connesso" border="0" />
+
+
+		
+		
+		
+		&nbsp;
+	</td>
+	<td class="alt1" align="right">
+		<!-- controls -->
+		
+		
+		
+			<a href="newreply.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;do=newreply&amp;p=153717"><img src="azzurra/buttons/quote.gif" alt="Replica con citazione" border="0" /></a>
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</table>
+
+<!-- post 153717 popup menu -->
+<div class="vbmenu_popup" id="postmenu_153717_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tr>
+		<td class="thead">DolceDelirio</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="member.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;userid=1833">Mostra profilo pubblico</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="private.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;do=newpm&amp;userid=1833">Invia un messaggio privato a DolceDelirio</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="sendmessage.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;do=mailmember&amp;u=1833">Manda E-Mail a DolceDelirio</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://killing-moon.splinder.com">Visita la pagina principale di DolceDelirio!</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="search.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;do=finduser&amp;userid=1833">Cerca altri messaggi di DolceDelirio</a></td></tr>
+	
+	
+	<tr><td class="vbmenu_option"><a href="profile.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;do=addlist&amp;userlist=buddy&amp;u=1833">Aggiungi DolceDelirio all'elenco amici</a></td></tr>
+	
+	</table>
+</div>
+<!-- / post 153717 popup menu -->
+
+</div>
+		</div>	
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- / post #153717 --><!-- post #153865 -->
+<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width:98%; text-align:left">
+			<div style="padding:0px 6px 0px 6px">
+
+
+<table class="tborder" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">
+<tr>
+	
+		<td class="thead" style="font-weight:normal" >		
+			<!-- status icon and date -->
+			<a name="post153865"><img class="inlineimg" src="azzurra/statusicon/post_old.gif" alt="Vecchio" border="0" /></a>
+			07-02-2005, 20:05
+			
+			<!-- / status icon and date -->				
+		</td>
+		<td class="thead" style="font-weight:normal" align="right">
+			&nbsp;
+			#<a href="showpost.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;p=153865&amp;postcount=10" target="new"><strong>10</strong></a>
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt2" width="175">
+			
+			<div id="postmenu_153865">
+				
+				<a class="bigusername" href="member.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;u=1580">Superfre`</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_153865", true); </script>
+				
+			</div>
+			
+			<div class="smallfont">Forum Jedi Knight</div>
+			
+		
+			
+				<div class="smallfont">
+					&nbsp;<br /><a href="member.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;u=1580"><img src="customavatars/avatar1580_2.gif" alt="Superfre` avatar" border="0" /></a>
+				</div>
+			
+			
+			<div class="smallfont">
+				&nbsp;<br />
+				<div>Data registrazione: 04-03-2003</div>
+				<div>Luogo: Torino</div>
+				
+				<div>
+					Messaggi: 22.866
+				</div>
+				<div>Potenza Rep.: 33 <img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="Superfre` ha fascino e carisma" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="Superfre` ha fascino e carisma" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="Superfre` ha fascino e carisma" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="Superfre` ha fascino e carisma" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="Superfre` ha fascino e carisma" border="0" /><img class="inlineimg" src="azzurra/reputation/reputation_highpos.gif" alt="Superfre` ha fascino e carisma" border="0" /></div>
+				<div><a href="#" onclick="return imwindow('icq', '1580', 500, 450)"><img src="azzurra/misc/im_icq.gif" alt="Invia un messaggio via ICQ a Superfre`" border="0" /></a>  <a href="#" onclick="return imwindow('msn', '1580', 400, 200)"><img src="azzurra/misc/im_msn.gif" alt="Invia un messaggio via MSN a Superfre`" border="0" /></a> </div>
+			</div>					
+		
+	</td>
+	<td class="alt1">
+	
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				<img class="inlineimg" src="images/icons/icon1.gif" alt="Predefinito" border="0" />
+				<strong>Re: Meeting a Roma - 9-10 Aprile 2005</strong>
+			</div>
+			<hr size="1" style="color:#0F3178" />
+			<!-- / icon and title -->
+		
+		
+		<!-- message -->
+		<div>@Giorgione. Mica farai come a giugno che ti volatilizzi per cena? Ti voglio a tavola con noi come a bologna.<br />
+<br />
+@Dolcedelirio. Assicurati di poter venire e trascinati dietro la tua amichetta bionda <img src="images/smilies/classic/icon_smile.gif" border="0" alt="" title="Icon Smile" class="inlineimg" /></div>
+		<!-- / message -->
+	
+		
+		
+		
+		<!-- sig -->
+			<div>
+				__________________<br />
+				<font face="Comic Sans MS"><div align="center"><a href="http://www.areamestruati.com" target="_blank"><img src="http://www.areamestruati.altervista.org/LETTERJAMES.DE/Ponte.jpg" border="0" alt="" /></a><br />
+<font size="2"><font face="Microsoft Sans Serif"><font color="Blue"><b>#ITALIA_AREA &amp; #MESTRUATI: Ah, li mi cuniji!</b></font></font></font><br />
+<i><a href="http://www.areamestruati.altervista.org/Italia_Area.shtml" target="_blank">Chatta su #Italia_area</a> - <a href="http://www.areamestruati.com" target="_blank">Sito Web</a> - <a href="http://www.areamestruati.altervista.org/Mestruati.shtml" target="_blank">Chatta su #Mestruati </a> <br />
+</i></div></font>
+			</div>
+		<!-- / sig -->
+		
+		
+		
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2">
+		
+<img class="inlineimg" src="azzurra/statusicon/user_online.gif" alt="Superfre` è connesso" border="0" />
+
+		
+		
+		
+		&nbsp;
+	</td>
+	<td class="alt1" align="right">
+		<!-- controls -->
+		
+		
+		
+			<a href="newreply.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;do=newreply&amp;p=153865"><img src="azzurra/buttons/quote.gif" alt="Replica con citazione" border="0" /></a>
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</table>
+
+<!-- post 153865 popup menu -->
+<div class="vbmenu_popup" id="postmenu_153865_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tr>
+		<td class="thead">Superfre`</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="member.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;userid=1580">Mostra profilo pubblico</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="private.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;do=newpm&amp;userid=1580">Invia un messaggio privato a Superfre`</a></td></tr>
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://www.areamestruati.altervista.org">Visita la pagina principale di Superfre`!</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="search.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;do=finduser&amp;userid=1580">Cerca altri messaggi di Superfre`</a></td></tr>
+	
+	
+	<tr><td class="vbmenu_option"><a href="profile.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;do=addlist&amp;userlist=buddy&amp;u=1580">Aggiungi Superfre` all'elenco amici</a></td></tr>
+	
+	</table>
+</div>
+<!-- / post 153865 popup menu -->
+
+
+		</div>	
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- / post #153865 --></div>
+
+<!-- start content table -->
+<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width:98%; text-align:left">
+			<div style="padding:0px 6px 0px 6px">
+
+<!-- / start content table -->
+
+<!-- controls below postbits -->
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr valign="top">
+	
+		<td class="smallfont"><a href="newreply.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;do=newreply&amp;noquote=1&amp;p=153865"><img src="azzurra/buttons/reply.gif" alt="Rispondi" border="0" /></a></td>
+		
+	<td align="right"><div class="pagenav" align="right">
+<table class="tborder" cellpadding="3" cellspacing="1" border="0">
+<tr>
+	<td class="vbmenu_control" style="font-weight:normal"><!--<img src="azzurra/misc/multipage.gif" alt="Mostra risultati 1 a 10 di 455 (46 pagine)" /> -->Pagina 1 di 46</td>
+	
+	
+		<td class="alt2"><span class="smallfont" title="Mostra risultati 1 a 10 di 455"><strong>1</strong></span></td>
+ 	<td class="alt1"><a class="smallfont" href="showthread.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;t=7269&amp;page=2&amp;pp=10" title="Mostra risultati 11 a 20 di 455">2</a></td>
+	<td class="alt1"><a class="smallfont" href="showthread.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;t=7269&amp;page=3&amp;pp=10" title="Mostra risultati 21 a 30 di 455">3</a></td>
+	<td class="alt1"><a class="smallfont" href="showthread.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;t=7269&amp;page=4&amp;pp=10" title="Mostra risultati 31 a 40 di 455">4</a></td>
+	<td class="alt1"><a class="smallfont" href="showthread.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;t=7269&amp;page=5&amp;pp=10" title="Mostra risultati 41 a 50 di 455">5</a></td>
+
+	<td class="alt1"><a class="smallfont" href="showthread.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;t=7269&amp;page=2&amp;pp=10" title="Prossima pagina - Risultati 11 a 20 di 455">&gt;</a></td>
+	<td class="alt1"><a class="smallfont" href="showthread.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;t=7269&amp;page=46&amp;pp=10" title="Ultima pagina - Risultati 451 a 455 di 455">Ultimo <strong>&raquo;</strong></a></td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<!-- / controls below postbits -->
+
+<br />
+
+<div class="smallfont" align="center">
+	<strong>&laquo;</strong>
+		<td width="100%"><span class="navbar"><a href="index.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;" accesskey="1">Azzurra IRC Network Forum</a></span> 
+	<span class="navbar">&gt; <a href="forumdisplay.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;f=7">I Vostri Forum</a></span>
+
+
+	<span class="navbar">&gt; <a href="forumdisplay.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;f=42">#italia_area</a></span>
+
+</td>
+	<strong>&raquo;</strong>
+</div>
+
+<br />
+
+
+
+<!-- currently active users -->
+
+<!-- currently active users -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- controls for non-popup browsers -->
+
+
+<table class="tborder" cellpadding="6" cellspacing="1" border="0" width="100%" align="center" style="border-top-width:0px">
+<tr>
+	<td class="thead" >Strumenti discussione<a name="goto_threadtools"></a></td>
+	<td class="thead">Cerca in questa discussione<a name="goto_threadsearch"></a></td>
+</tr>
+<tr valign="top">
+	<td class="alt1" >
+	
+	<!-- thread tools -->
+	<div class="smallfont">
+		<div><img class="inlineimg" src="azzurra/buttons/printer.gif" alt="Mostra versione stampabile" vspace="1" /> <a href="printthread.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;t=7269" accesskey="p">Mostra versione stampabile</a></div>
+		<div><img class="inlineimg" src="azzurra/buttons/sendtofriend.gif" alt="Invia questa pagina via E-Mail" vspace="1" /> <a href="sendmessage.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;do=sendtofriend&amp;t=7269">Invia questa pagina via E-Mail</a></div>
+		
+		
+	</div>
+	<!-- / thread tools -->
+	
+	</td>
+	
+	<td class="alt1">
+	
+	<!-- search this thread -->
+	<form action="search.php" method="post">
+	<div class="smallfont">
+		<input type="hidden" name="s" value="8f0daeab87598dde3ea9c7caf9678126" />
+		<input type="hidden" name="do" value="process" />
+		<input type="hidden" name="searchthread" value="1" />
+		<input type="hidden" name="showposts" value="1" />
+		<input type="hidden" name="searchthreadid" value="7269" />
+		<strong>Cerca in questa discussione</strong>:<br />
+		<input type="text" class="bginput" name="query" size="20" style="width:175px" /><!-- go button -->
+<input type="submit" class="button" value="Vai"  /><br />
+		<a href="search.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;">Ricerca avanzata</a>
+	</div>
+	</form>
+	<!-- /  search this thread -->
+	
+	</td>
+	
+</tr>
+
+<tr>
+	<td class="thead" colspan="2">Modalità di visualizzazione<a name="goto_displaymodes"></a></td>
+	
+</tr>
+<tr valign="top">
+	
+	<td class="alt2" colspan="2">
+	
+	<!-- thread display modes -->
+	
+	<div class="smallfont">
+		<div><img class="inlineimg" src="azzurra/buttons/mode_linear.gif" alt="Modalità lineare" vspace="1" /> <strong>Modalità lineare</strong></div>
+		<div><img class="inlineimg" src="azzurra/buttons/mode_hybrid.gif" alt="Modalità ibrida" vspace="1" /> <a href="showthread.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;mode=hybrid&amp;t=7269">Passa alla modalità ibrida</a></div>
+		<div><img class="inlineimg" src="azzurra/buttons/mode_threaded.gif" alt="Modalità sequenziale" vspace="1" /> <a href="showthread.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;p=153460&amp;mode=threaded#post153460">Passa alla modalità sequenziale</a></div>
+	</div>
+	
+	<!-- / thread display modes -->
+	
+	</td>
+	
+	
+</tr>
+
+</table>
+<br />
+
+
+<!-- / controls for non-popup browsers -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- forum rules and admin links -->
+<table cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
+<tr valign="bottom">
+	<td class="smallfont" align="left">
+		<table class="tborder" cellpadding="6" cellspacing="1" border="0" width="180">
+<thead>
+<tr>
+	<td class="thead">
+		<a style="float:right" href="#top" onclick="return toggle_collapse('forumrules')"><img id="collapseimg_forumrules" src="azzurra/buttons/collapse_thead.gif" alt="" border="0" /></a>
+		Regole messaggi
+	</td>
+</tr>
+</thead>
+<tbody id="collapseobj_forumrules" style="">
+<tr>
+	<td class="alt1" nowrap="nowrap"><div class="smallfont">
+		
+		<div><strong>Non Puoi </strong> creare nuove discussioni</div>
+		<div><strong>Non Puoi </strong> rispondere ai messaggi</div>
+		<div><strong>Non Puoi </strong> inviare allegati</div>
+		<div><strong>Non Puoi </strong> modificare i tuoi messaggi</div>
+		<hr />
+		
+		<div><a href="misc.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;do=bbcode" target="_blank">Codice vB</a> è <strong>attivato</strong></div>
+		<div><a href="misc.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;do=showsmilies" target="_blank">Emoticons</a> sono <strong>attivato</strong></div>
+		<div><a href="misc.php?s=8f0daeab87598dde3ea9c7caf9678126&amp;do=bbcode#imgcode" target="_blank">Codice [IMG]</a> è <strong>attivato</strong></div>
+		<div>Codice HTML è <strong>disattivato</strong></div>
+	</div></td>
+</tr>
+</tbody>
+</table>
+	</td>
+	<td class="smallfont" align="right">
+		<table cellpadding="0" cellspacing="0" border="0">
+		
+		<tr>
+			<td>
+			<div class="smallfont" style="text-align:left; white-space:nowrap">
+	<form action="forumdisplay.php" method="get">
+	<input type="hidden" name="s" value="8f0daeab87598dde3ea9c7caf9678126" />
+	<input type="hidden" name="daysprune" value="" />
+	<strong>Salta al forum</strong><br />
+	<select name="f" onchange="this.form.submit();">
+		<optgroup label="Aree sito">
+			<option value="-1" >Seleziona uno</option>
+			<option value="cp" >Pannello di controllo utente</option>
+			<option value="pm" >Messaggi privati</option>
+			<option value="subs" >Sottoscrizioni</option>
+			<option value="wol" >Chi è connesso</option>
+			<option value="search" >Cerca nei forum</option>
+			<option value="home" >Pagina principale</option>
+			<option value="-1">--------------------</option>
+		</optgroup>
+		<optgroup label="Forum">
+		<option value="3" class="fjdpth0" > Azzurra IRC Network Forum</option>
+<option value="15" class="fjdpth1" >&nbsp; &nbsp;  Canali - i vostri canali su Azzurra.</option>
+<option value="10" class="fjdpth1" >&nbsp; &nbsp;  Discussioni e commenti su Azzurra</option>
+<option value="39" class="fjdpth1" >&nbsp; &nbsp;  Il Porto Spaziale di Mos Eisley</option>
+<option value="43" class="fjdpth1" >&nbsp; &nbsp;  Radio Azzurra</option>
+<option value="41" class="fjdpth1" >&nbsp; &nbsp;  Azzurra Gamers OnLine</option>
+<option value="6" class="fjdpth0" > Network Central</option>
+<option value="19" class="fjdpth1" >&nbsp; &nbsp;  Comunicazioni ufficiali di Azzurra</option>
+<option value="18" class="fjdpth1" >&nbsp; &nbsp;  Forum Help Area</option>
+<option value="11" class="fjdpth1" >&nbsp; &nbsp;  IRCHelp - Aiuto su IRC e Servizi di Azzurra</option>
+<option value="30" class="fjdpth1" >&nbsp; &nbsp;  Services - I servizi IRC di Azzurra</option>
+<option value="36" class="fjdpth1" >&nbsp; &nbsp;  Javirc</option>
+<option value="8" class="fjdpth0" > Azzurra - Tech Center</option>
+<option value="13" class="fjdpth1" >&nbsp; &nbsp;  Angolo tecnico</option>
+<option value="28" class="fjdpth1" >&nbsp; &nbsp;  Discussioni Linux</option>
+<option value="62" class="fjdpth1" >&nbsp; &nbsp;  Discussioni Mac</option>
+<option value="60" class="fjdpth1" >&nbsp; &nbsp;  Quantum leap</option>
+<option value="23" class="fjdpth1" >&nbsp; &nbsp;  Programmazione e dintorni</option>
+<option value="4" class="fjdpth0" > Happy Hour</option>
+<option value="17" class="fjdpth1" >&nbsp; &nbsp;  Cazzeggiando qua e la...</option>
+<option value="20" class="fjdpth1" >&nbsp; &nbsp;  Ditelo con il Forum</option>
+<option value="25" class="fjdpth1" >&nbsp; &nbsp;  L'angolo del piccolo menomato informatico</option>
+<option value="16" class="fjdpth1" >&nbsp; &nbsp;  Questi mitici log!</option>
+<option value="9" class="fjdpth0" > ZeroNave</option>
+<option value="56" class="fjdpth1" >&nbsp; &nbsp;  #ZeroNave</option>
+<option value="7" class="fjdpth0" > I Vostri Forum</option>
+<option value="21" class="fjdpth1" >&nbsp; &nbsp;  #debiAn</option>
+<option value="24" class="fjdpth1" >&nbsp; &nbsp;  #altrove</option>
+<option value="42" class="fjsel" selected="selected">&nbsp; &nbsp;  #italia_area</option>
+<option value="44" class="fjdpth1" >&nbsp; &nbsp;  #amicimiei</option>
+<option value="58" class="fjdpth1" >&nbsp; &nbsp;  #bodomlake</option>
+<option value="72" class="fjdpth1" >&nbsp; &nbsp;  #roma</option>
+<option value="48" class="fjdpth1" >&nbsp; &nbsp;  #quizzer</option>
+<option value="45" class="fjdpth1" >&nbsp; &nbsp;  #desideri&amp;sogni</option>
+<option value="68" class="fjdpth1" >&nbsp; &nbsp;  #lamerandia</option>
+<option value="77" class="fjdpth1" >&nbsp; &nbsp;  #number_one</option>
+<option value="35" class="fjdpth1" >&nbsp; &nbsp;  #cuori</option>
+<option value="22" class="fjdpth1" >&nbsp; &nbsp;  #netparty</option>
+<option value="37" class="fjdpth1" >&nbsp; &nbsp;  #mangaring</option>
+<option value="85" class="fjdpth1" >&nbsp; &nbsp;  #blulandia</option>
+<option value="86" class="fjdpth1" >&nbsp; &nbsp;  #duran_duran</option>
+<option value="31" class="fjdpth1" >&nbsp; &nbsp;  #LiberoZone</option>
+<option value="53" class="fjdpth1" >&nbsp; &nbsp;  #romaitalia</option>
+<option value="87" class="fjdpth1" >&nbsp; &nbsp;  #Milan</option>
+<option value="49" class="fjdpth1" >&nbsp; &nbsp;  #motociclisti</option>
+<option value="61" class="fjdpth1" >&nbsp; &nbsp;  #gaia</option>
+<option value="38" class="fjdpth1" >&nbsp; &nbsp;  #bari</option>
+<option value="63" class="fjdpth1" >&nbsp; &nbsp;  #italia</option>
+<option value="65" class="fjdpth1" >&nbsp; &nbsp;  #piemonte.it</option>
+<option value="69" class="fjdpth1" >&nbsp; &nbsp;  #friuli.it</option>
+<option value="70" class="fjdpth1" >&nbsp; &nbsp;  #veneto.it</option>
+<option value="71" class="fjdpth1" >&nbsp; &nbsp;  #blues and #cibo</option>
+<option value="32" class="fjdpth1" >&nbsp; &nbsp;  #radioitalia</option>
+<option value="79" class="fjdpth1" >&nbsp; &nbsp;  #templary</option>
+<option value="52" class="fjdpth1" >&nbsp; &nbsp;  #tuning</option>
+<option value="59" class="fjdpth1" >&nbsp; &nbsp;  #chatsicilia</option>
+<option value="64" class="fjdpth1" >&nbsp; &nbsp;  #romantici</option>
+<option value="74" class="fjdpth1" >&nbsp; &nbsp;  #ircgirls</option>
+<option value="78" class="fjdpth1" >&nbsp; &nbsp;  #desideri</option>
+<option value="80" class="fjdpth1" >&nbsp; &nbsp;  #leiamalei</option>
+<option value="81" class="fjdpth1" >&nbsp; &nbsp;  #pub</option>
+<option value="82" class="fjdpth1" >&nbsp; &nbsp;  #palmari</option>
+<option value="83" class="fjdpth1" >&nbsp; &nbsp;  #NightAngels</option>
+<option value="50" class="fjdpth1" >&nbsp; &nbsp;  #targato-na</option>
+<option value="27" class="fjdpth1" >&nbsp; &nbsp;  #fonzie</option>
+<option value="26" class="fjdpth1" >&nbsp; &nbsp;  #punkazzurra</option>
+<option value="5" class="fjdpth0" > Test Area</option>
+<option value="14" class="fjdpth1" >&nbsp; &nbsp;  Test - Forum dedicato ai messaggi di prova</option>
+<option value="75" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Sottoforum di prova</option>
+<option value="76" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Cugino del sottoforum di prova</option>
+
+		</optgroup>
+	</select><!-- go button -->
+<input type="submit" class="button" value="Vai"  />
+	</form>
+</div>
+			</td>
+		</tr>		
+		</table>
+	</td>
+</tr>
+</table>
+<!-- /forum rules and admin links -->
+
+<br />
+
+
+
+<br />
+
+<br />
+<div class="smallfont" align="center">Tutte le ore sono GMT +2. L'ora corrente è <span class="time">23:42</span>.</div>
+<br />
+
+
+		</div>	
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- /content area table -->
+
+<form action="index.php" method="get">
+	
+<table cellpadding="6" cellspacing="0" border="0" width="98%" class="page" align="center">
+<tr>
+	
+	<td class="tfoot" align="right">
+		<div class="smallfont">
+			<strong>
+				<a href="sendmessage.php">Contattaci</a> -
+				<a href="http://www.azzurra.org">Azzurra IRC Network</a> -
+				
+				
+				<a href="archive/index.php">Archivio</a> -
+				
+				<a href="#top" onclick="self.scrollTo(0, 0); return false;">Inizio pagina</a>
+			</strong>
+		</div>
+	</td>
+</tr>
+</table>
+
+<br />
+
+<div align="center">
+	<div class="smallfont" align="center">
+	<!-- Do not remove this copyright notice -->
+	vBulletin Copyright &copy;2000 - 2005, Jelsoft Enterprises Ltd.
+	<!-- Do not remove this copyright notice -->
+	</div>
+	
+	<div class="smallfont" align="center">
+	<!-- Do not remove  or your scheduled tasks will cease to function -->
+	
+	<!-- Do not remove  or your scheduled tasks will cease to function -->
+	
+	Copyright Azzurra IRC Network © 1997-2005
+	</div>
+</div>
+
+</form>
+
+
+<script type="text/javascript">
+<!--
+	// Main vBulletin Javascript Initialization
+	vBulletin_init();
+
+	// Initialize 'Active' Table Cells
+	//activecells_init();
+//-->
+</script>
+
+<!-- temp -->
+<div style="display:none">
+	<!-- thread rate -->
+	
+		
+	
+	<!-- / thread rate -->
+</div>
+
+</body>
+</html>

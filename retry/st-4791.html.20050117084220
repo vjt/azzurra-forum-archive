@@ -1,0 +1,2407 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="it">
+<head>
+	<title>Azzurra IRC Network Forum - simpatia...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="generator" content="vBulletin 3.0.4" />
+<meta name="keywords" content="azzurra,irc,chat,vbulletin,forum,bbs,discussion,jelsoft,bulletin board, Azzurra, AzzurraNet, IRC, mIRC, IRC Network, Chat, chattare, xchat, BitchX, irssi, ircle, canali, nickserv, chanserv, memoserv, statserv, livestats, web, gamersrevolt, infostrada, libero, wind, caltanet, cto, ctonet, quarta profezia, daoc, timoria, bahamut, dalnet, nick, nickname, registrazione nick, registrazione canali, amici, sesso, giochi, gdr, giochi di ruolo, messenger, icq, network, unreal, ircd, psybnc, shell, eggdrop, bot, server, cybcop, kline, abuse, botserv, botnet, tcl, script, services, services.net, net, proxy, socks, firewall" />
+<meta name="description" content="Azzurra IRC Network Forum" />
+
+<!-- CSS Stylesheet -->
+<style type="text/css">
+<!--
+/* vBulletin 3 CSS For Style 'Azzurra' (styleid: 3) */
+body
+{
+	background-color: #FFFFFF;
+	color: #000000;
+	font: 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	margin: 5px 10px 10px 10px;
+	padding: 0px;
+}
+a:link
+{
+	color: #000066;
+}
+a:visited
+{
+	color: #000066;
+}
+a:hover, a:active
+{
+	color: #FF4400;
+}
+.page
+{
+	background-color: #FFFFFF;
+	color: #000000;
+}
+td, th, p, li
+{
+	font: 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.tborder
+{
+	background-color: #0F3178;
+	color: #000000;
+	border: 1px solid #0B198C;
+}
+.tcat
+{
+	background: #F9F9F9 url(azzurra/misc/cat_back.gif) repeat-x top left;
+	color: #000000;
+	font: bold 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.tcat a:link
+{
+	color: #000066;
+	text-decoration: none;
+}
+.tcat a:visited
+{
+	color: #000066;
+	text-decoration: none;
+}
+.tcat a:hover, .tcat a:active
+{
+	color: #FF4400;
+	text-decoration: underline;
+}
+.thead
+{
+	background-color: #B6D2E6;
+	color: #000000;
+	font: bold 11px tahoma, verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.thead a:link
+{
+	color: #000066;
+}
+.thead a:visited
+{
+	color: #000066;
+}
+.thead a:hover, .thead a:active
+{
+	color: #FF4400;
+}
+.tfoot
+{
+	background-color: #F7F7F7;
+	color: #000000;
+}
+.tfoot a:link
+{
+	color: #000066;
+}
+.tfoot a:visited
+{
+	color: #000066;
+}
+.tfoot a:hover, .tfoot a:active
+{
+	color: #FF4400;
+}
+.alt1, .alt1Active
+{
+	background-color: #F3F3FF;
+	color: #000000;
+}
+.alt2, .alt2Active
+{
+	background-color: #FDFDFD;
+	color: #000000;
+}
+.wysiwyg
+{
+	background-color: #FDFDFD;
+	color: #000000;
+	font: 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+textarea, .bginput
+{
+	font: 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.button
+{
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+select
+{
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+option, optgroup
+{
+	font-size: 11px;
+	font-family: verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.smallfont
+{
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.time
+{
+	color: #000000;
+}
+.navbar
+{
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.highlight
+{
+	color: #FF0000;
+	font-weight: bold;
+}
+.fjsel
+{
+	background-color: #3E5C92;
+	color: #E0E0F6;
+}
+.fjdpth0
+{
+	background-color: #F7F7F7;
+	color: #000000;
+}
+.panel
+{
+	background: #E4E7F5 url(images/gradients/gradient_panel.gif) repeat-x top left;
+	color: #000000;
+	padding: 10px;
+	border: 2px outset;
+}
+.panelsurround
+{
+	background: #D5D8E5 url(images/gradients/gradient_panelsurround.gif) repeat-x top left;
+	color: #000000;
+}
+legend
+{
+	color: #000066;
+	font: 11px tahoma, verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.vbmenu_control
+{
+	background-color: #166A97;
+	color: #FFFFFF;
+	font: bold 11px tahoma, verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	padding: 3px 6px 3px 6px;
+	white-space: nowrap;
+}
+.vbmenu_control a:link
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.vbmenu_control a:visited
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.vbmenu_control a:hover, .vbmenu_control a:active
+{
+	color: #FF4400;
+	text-decoration: underline;
+}
+.vbmenu_popup
+{
+	background-color: #FFFFFF;
+	color: #000000;
+	border: 1px solid #0B198C;
+}
+.vbmenu_option
+{
+	background-color: #DEE6ED;
+	color: #000000;
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	white-space: nowrap;
+	cursor: pointer;
+}
+.vbmenu_option a:link
+{
+	color: #000066;
+	text-decoration: none;
+}
+.vbmenu_option a:visited
+{
+	color: #000066;
+	text-decoration: none;
+}
+.vbmenu_option a:hover, .vbmenu_option a:active
+{
+	color: #FF4400;
+	text-decoration: none;
+}
+.vbmenu_hilite
+{
+	background-color: #8A949E;
+	color: #FFFFFF;
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	white-space: nowrap;
+	cursor: pointer;
+}
+.vbmenu_hilite a:link
+{
+	color: #000066;
+	text-decoration: none;
+}
+.vbmenu_hilite a:visited
+{
+	color: #000066;
+	text-decoration: none;
+}
+.vbmenu_hilite a:hover, .vbmenu_hilite a:active
+{
+	color: #FF4400;
+	text-decoration: none;
+}
+/* ***** styling for 'big' usernames on postbit etc. ***** */
+.bigusername { font-size: 14pt; }
+
+/* ***** small padding on 'thead' elements ***** */
+td.thead, div.thead { padding: 4px; }
+
+/* ***** basic styles for multi-page nav elements */
+.pagenav a { text-decoration: none; }
+.pagenav td { padding: 2px 4px 2px 4px; }
+
+/* ***** define margin and font-size for elements inside panels ***** */
+.fieldset { margin-bottom: 6px; }
+.fieldset, .fieldset td, .fieldset p, .fieldset li { font-size: 11px; }
+
+/* ***** don't change the following ***** */
+form { display: inline; }
+label { cursor: default; }
+.normal { font-weight: normal; }
+.inlineimg { vertical-align: middle; }
+-->
+</style>
+
+<!-- / CSS Stylesheet -->
+
+<script type="text/javascript">
+<!--
+var SESSIONURL = "s=73590126910a477b4d24e4bb156ffff6&amp;";
+var IMGDIR_MISC = "azzurra/misc";
+// -->
+</script>
+
+<script type="text/javascript" src="clientscript/vbulletin_global.js"></script>
+
+
+</head>
+<body onload="">
+<!-- logo -->
+<a name="top"></a>
+<table border="0" width="98%" cellpadding="0" cellspacing="0" align="center">
+<tr>
+	<td align="left"><a href="index.php?s=73590126910a477b4d24e4bb156ffff6&amp;"><img src="images/misc/vbulletin3_logo_white.gif" border="0" alt="Azzurra IRC Network Forum" /></a></td>
+	<td align="right">
+		&nbsp;
+	</td>
+</tr>
+</table>
+<!-- /logo -->
+
+<!-- content table -->
+<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width:98%; text-align:left">
+			<div style="padding:0px 6px 0px 6px">
+
+
+
+
+<script type="text/javascript">
+<!--
+function log_out()
+{
+	ht = document.getElementsByTagName("html");
+	ht[0].style.filter = "progid:DXImageTransform.Microsoft.BasicImage(grayscale=1)";
+	if (confirm('Sei certo di voler uscire?'))
+	{
+		return true;
+	}
+	else
+	{
+		ht[0].style.filter = "";
+		return false;
+	}
+}
+//-->
+</script>
+
+<br />
+
+<!-- breadcrumb, login, pm info -->
+<table class="tborder" cellpadding="6" cellspacing="1" border="0" width="100%" align="center">
+<tr>
+	<td class="alt1" width="100%">
+		
+			<table cellpadding="0" cellspacing="0" border="0">
+			<tr valign="bottom">
+				<td><a href="#" onclick="history.back(1)"><img src="azzurra/misc/navbits_start.gif" alt="Indietro" border="0" /></a></td>
+				<td>&nbsp;</td>
+				<td width="100%"><span class="navbar"><a href="index.php?s=73590126910a477b4d24e4bb156ffff6&amp;" accesskey="1">Azzurra IRC Network Forum</a></span> 
+	<span class="navbar">&gt; <a href="forumdisplay.php?s=73590126910a477b4d24e4bb156ffff6&amp;f=8">Azzurra - Tech Center</a></span>
+
+
+	<span class="navbar">&gt; <a href="forumdisplay.php?s=73590126910a477b4d24e4bb156ffff6&amp;f=62">Discussioni Mac</a></span>
+
+</td>
+			</tr>
+			<tr>
+				<td class="navbar" style="font-size:10pt; padding-top:1px" colspan="3"><a href="/showthread.php?t=4791&amp;page=1"><img class="inlineimg" src="azzurra/misc/navbits_finallink.gif" alt="Aggiorna questa pagina" border="0" /></a> <strong>
+	simpatia...
+
+</strong></td>
+			</tr>
+			</table>			
+		
+	</td>	
+	
+	
+		
+		<td class="alt2" nowrap="nowrap" style="padding:0px">
+			
+		<!-- login form -->
+		<form action="login.php" method="post" onsubmit="md5hash(vb_login_password,vb_login_md5password,vb_login_md5password_utf)">
+		<script type="text/javascript" src="clientscript/vbulletin_md5.js"></script>
+		<table cellpadding="0" cellspacing="3" border="0">
+		<tr>
+			<td class="smallfont">Nome utente</td>
+			<td><input type="text" class="button" name="vb_login_username" id="navbar_username" size="10" accesskey="u" tabindex="1" value="Nome utente" onfocus="if (this.value == 'Nome utente') this.value = '';" /></td>
+			<td class="smallfont" colspan="2" nowrap="nowrap"><label for="cb_cookieuser_navbar"><input type="checkbox" name="cookieuser" value="1" tabindex="3" id="cb_cookieuser_navbar" accesskey="c" checked="checked" />Salva impostazioni?</label></td>
+		</tr>
+		<tr>
+			<td class="smallfont">Password</td>
+			<td><input type="password" class="button" name="vb_login_password" size="10" accesskey="p" tabindex="2" /></td>
+			<td><input type="submit" class="button" value="Accedi" tabindex="4" title="Digita il tuo nome utente e la password nelle caselle qui sotto per accedere, oppure clicca sul pulsante 'Registrazione' per creare un nuovo profilo." accesskey="s" /></td>
+		</tr>
+		</table>
+		<input type="hidden" name="s" value="73590126910a477b4d24e4bb156ffff6" />
+		<input type="hidden" name="do" value="login" />
+		<input type="hidden" name="forceredirect" value="1" />			
+		<input type="hidden" name="vb_login_md5password" />
+		<input type="hidden" name="vb_login_md5password_utf" />
+		</form>
+		<!-- / login form -->
+			
+		</td>
+		
+		
+	
+</tr>
+</table>
+<!-- / breadcrumb, login, pm info -->
+
+<!-- nav buttons bar -->
+<div align="center">
+	<table class="tborder" cellpadding="6" cellspacing="0" border="0" width="100%" align="center" style="border-top-width:0px">
+	<tr align="center">	
+		<!--<td class="vbmenu_control"><a href="index.php?s=73590126910a477b4d24e4bb156ffff6&amp;">Home</a></td>-->
+		
+		
+		
+			<td class="vbmenu_control"><a href="register.php?s=73590126910a477b4d24e4bb156ffff6&amp;">Registra</a></td>
+		
+		<td class="vbmenu_control"><a href="faq.php?s=73590126910a477b4d24e4bb156ffff6&amp;" accesskey="5">FAQ</a></td>
+		<td class="vbmenu_control"><a href="memberlist.php?s=73590126910a477b4d24e4bb156ffff6&amp;">Elenco membri</a></td>
+		<td class="vbmenu_control"><a href="calendar.php?s=73590126910a477b4d24e4bb156ffff6&amp;">Calendario</a></td>
+				
+			
+				<td class="vbmenu_control"><a href="search.php?s=73590126910a477b4d24e4bb156ffff6&amp;" accesskey="4">Cerca</a></td>
+				
+				<td class="vbmenu_control"><a href="search.php?s=73590126910a477b4d24e4bb156ffff6&amp;do=getdaily" accesskey="2">Messaggi di oggi</a></td>
+				
+			
+			<td class="vbmenu_control"><a href="forumdisplay.php?s=73590126910a477b4d24e4bb156ffff6&amp;do=markread">Segna tutti i forum visitati</a></td>
+						
+		
+		
+	</tr>
+	</table>
+</div>
+<!-- / nav buttons bar -->
+
+<br />
+<br />
+
+
+
+<table class="tborder" cellpadding="6" cellspacing="1" border="0" width="100%" align="center">
+<tr>
+	<td class="tcat" colspan="4">
+		
+		Mostra risultati sondaggio<span class="normal">: XTC ti sta simpatico?</span>
+	</td>
+</tr>
+
+<tr>
+	<td class="alt1" width="50%">
+		
+			Sì
+		
+	</td>
+	<td class="alt2" width="50%">
+		<img src="azzurra/polls/bar2-l.gif" alt="" width="3" height="10"
+		/><img src="azzurra/polls/bar2.gif" alt="" width="110" height="10"
+	    /><img src="azzurra/polls/bar2-r.gif" alt="" width="3" height="10" />
+		
+	</td>
+	<td class="alt1" align="center" title="Voti"><strong><a href="poll.php?s=73590126910a477b4d24e4bb156ffff6&amp;do=showresults&amp;pollid=315">5</a></strong></td>
+	<td class="alt2" align="right" nowrap="nowrap">55,56%</td>
+</tr>
+<tr>
+	<td class="alt1" width="50%">
+		
+			No
+		
+	</td>
+	<td class="alt2" width="50%">
+		<img src="azzurra/polls/bar3-l.gif" alt="" width="3" height="10"
+		/><img src="azzurra/polls/bar3.gif" alt="" width="0" height="10"
+	    /><img src="azzurra/polls/bar3-r.gif" alt="" width="3" height="10" />
+		
+	</td>
+	<td class="alt1" align="center" title="Voti"><strong>0</strong></td>
+	<td class="alt2" align="right" nowrap="nowrap">0%</td>
+</tr>
+<tr>
+	<td class="alt1" width="50%">
+		
+			Quasi
+		
+	</td>
+	<td class="alt2" width="50%">
+		<img src="azzurra/polls/bar4-l.gif" alt="" width="3" height="10"
+		/><img src="azzurra/polls/bar4.gif" alt="" width="0" height="10"
+	    /><img src="azzurra/polls/bar4-r.gif" alt="" width="3" height="10" />
+		
+	</td>
+	<td class="alt1" align="center" title="Voti"><strong>0</strong></td>
+	<td class="alt2" align="right" nowrap="nowrap">0%</td>
+</tr>
+<tr>
+	<td class="alt1" width="50%">
+		
+			Forse
+		
+	</td>
+	<td class="alt2" width="50%">
+		<img src="azzurra/polls/bar5-l.gif" alt="" width="3" height="10"
+		/><img src="azzurra/polls/bar5.gif" alt="" width="44" height="10"
+	    /><img src="azzurra/polls/bar5-r.gif" alt="" width="3" height="10" />
+		
+	</td>
+	<td class="alt1" align="center" title="Voti"><strong><a href="poll.php?s=73590126910a477b4d24e4bb156ffff6&amp;do=showresults&amp;pollid=315">2</a></strong></td>
+	<td class="alt2" align="right" nowrap="nowrap">22,22%</td>
+</tr>
+<tr>
+	<td class="alt1" width="50%">
+		
+			roxa veramente troppo!
+		
+	</td>
+	<td class="alt2" width="50%">
+		<img src="azzurra/polls/bar6-l.gif" alt="" width="3" height="10"
+		/><img src="azzurra/polls/bar6.gif" alt="" width="22" height="10"
+	    /><img src="azzurra/polls/bar6-r.gif" alt="" width="3" height="10" />
+		
+	</td>
+	<td class="alt1" align="center" title="Voti"><strong><a href="poll.php?s=73590126910a477b4d24e4bb156ffff6&amp;do=showresults&amp;pollid=315">1</a></strong></td>
+	<td class="alt2" align="right" nowrap="nowrap">11,11%</td>
+</tr>
+<tr>
+	<td class="alt1" width="50%">
+		
+			non sa/non risponde
+		
+	</td>
+	<td class="alt2" width="50%">
+		<img src="azzurra/polls/bar1-l.gif" alt="" width="3" height="10"
+		/><img src="azzurra/polls/bar1.gif" alt="" width="22" height="10"
+	    /><img src="azzurra/polls/bar1-r.gif" alt="" width="3" height="10" />
+		
+	</td>
+	<td class="alt1" align="center" title="Voti"><strong><a href="poll.php?s=73590126910a477b4d24e4bb156ffff6&amp;do=showresults&amp;pollid=315">1</a></strong></td>
+	<td class="alt2" align="right" nowrap="nowrap">11,11%</td>
+</tr>
+
+<tr>
+	<td class="tfoot" colspan="4" align="center"><span class="smallfont">Elettori: <strong>9</strong>. Non puoi votare a questo sondaggio</span></td>
+</tr>
+</table>
+
+<br />
+
+
+<a name="poststop" id="poststop"></a>
+
+<!-- controls above postbits -->
+<table cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:3px">
+<tr valign="bottom">
+	
+		<td class="smallfont"><a href="newreply.php?s=73590126910a477b4d24e4bb156ffff6&amp;do=newreply&amp;noquote=1&amp;p=67799"><img src="azzurra/buttons/reply.gif" alt="Rispondi" border="0" /></a></td>
+	
+	<td align="right"><div class="pagenav" align="right">
+<table class="tborder" cellpadding="3" cellspacing="1" border="0">
+<tr>
+	<td class="vbmenu_control" style="font-weight:normal"><!--<img src="azzurra/misc/multipage.gif" alt="Mostra risultati 1 a 10 di 13 (2 pagine)" /> -->Pagina 1 di 2</td>
+	
+	
+		<td class="alt2"><span class="smallfont" title="Mostra risultati 1 a 10 di 13"><strong>1</strong></span></td>
+ 	<td class="alt1"><a class="smallfont" href="showthread.php?s=73590126910a477b4d24e4bb156ffff6&amp;t=4791&amp;page=2&amp;pp=10" title="Mostra risultati 11 a 13 di 13">2</a></td>
+
+	<td class="alt1"><a class="smallfont" href="showthread.php?s=73590126910a477b4d24e4bb156ffff6&amp;t=4791&amp;page=2&amp;pp=10" title="Prossima pagina - Risultati 11 a 13 di 13">&gt;</a></td>
+	
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<!-- / controls above postbits -->
+
+<!-- toolbar -->
+<table class="tborder" cellpadding="6" cellspacing="1" border="0" width="100%" align="center" style="border-bottom-width:0px">
+<tr>
+	<td class="tcat" width="100%">
+		<div class="smallfont">
+		
+		&nbsp;
+		</div>
+	</td>
+	<td class="vbmenu_control" id="threadtools">
+		<a href="#goto_threadtools">Strumenti discussione</a>
+		
+	</td>
+	
+		<td class="vbmenu_control" id="threadsearch">
+			<a href="#goto_threadsearch">Cerca in questa discussione</a>
+			
+		</td>
+	
+	
+	
+	<td class="vbmenu_control" id="displaymodes">
+		<a href="#goto_displaymodes">Modalità di visualizzazione</a>
+		
+	</td>
+	
+</tr>
+</table>
+<!-- / toolbar -->
+
+<!-- end content table -->
+
+		</div>	
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- / end content table -->
+
+
+
+<div id="posts"><!-- post #67799 -->
+<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width:98%; text-align:left">
+			<div style="padding:0px 6px 0px 6px">
+<div style="padding:0px 0px 6px 0px">
+
+<table class="tborder" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">
+<tr>
+	
+		<td class="thead" style="font-weight:normal" >		
+			<!-- status icon and date -->
+			<a name="post67799"><img class="inlineimg" src="azzurra/statusicon/post_old.gif" alt="Vecchio" border="0" /></a>
+			21-05-2004, 13:22
+			
+			<!-- / status icon and date -->				
+		</td>
+		<td class="thead" style="font-weight:normal" align="right">
+			&nbsp;
+			#<a href="showpost.php?s=73590126910a477b4d24e4bb156ffff6&amp;p=67799&amp;postcount=1" target="new"><strong>1</strong></a>
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt2" width="175">
+			
+			<div id="postmenu_67799">
+				
+				<a class="bigusername" href="member.php?s=73590126910a477b4d24e4bb156ffff6&amp;u=253">XTC</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_67799", true); </script>
+				
+			</div>
+			
+			<div class="smallfont">Normal User</div>
+			
+		
+			
+				<div class="smallfont">
+					&nbsp;<br /><a href="member.php?s=73590126910a477b4d24e4bb156ffff6&amp;u=253"><img src="customavatars/avatar253_0.gif" alt="XTC avatar" border="0" /></a>
+				</div>
+			
+			
+			<div class="smallfont">
+				&nbsp;<br />
+				<div>Data registrazione: 22-02-2002</div>
+				<div>Luogo: Roma</div>
+				
+				<div>
+					Messaggi: 92
+				</div>
+				<div>Potenza Rep.: 14 <img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="XTC è sulla buona strada" border="0" /></div>
+				<div>   </div>
+			</div>					
+		
+	</td>
+	<td class="alt1">
+	
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				<img class="inlineimg" src="images/icons/icon1.gif" alt="Predefinito" border="0" />
+				<strong>simpatia...</strong>
+			</div>
+			<hr size="1" style="color:#0F3178" />
+			<!-- / icon and title -->
+		
+		
+		<!-- message -->
+		<div>Tanto per gradire <img src="images/smilies/classic/icon_smile.gif" border="0" alt="" title="Icon Smile" class="inlineimg" /></div>
+		<!-- / message -->
+	
+		
+		
+		
+		<!-- sig -->
+			<div>
+				__________________<br />
+				<b>[eks][ti:][si:]</b> no joke!!!
+			</div>
+		<!-- / sig -->
+		
+		
+		
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2">
+		<img class="inlineimg" src="azzurra/statusicon/user_offline.gif" alt="XTC non è connesso" border="0" />
+
+
+		
+		
+		
+		&nbsp;
+	</td>
+	<td class="alt1" align="right">
+		<!-- controls -->
+		
+		
+		
+			<a href="newreply.php?s=73590126910a477b4d24e4bb156ffff6&amp;do=newreply&amp;p=67799"><img src="azzurra/buttons/quote.gif" alt="Replica con citazione" border="0" /></a>
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</table>
+
+<!-- post 67799 popup menu -->
+<div class="vbmenu_popup" id="postmenu_67799_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tr>
+		<td class="thead">XTC</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="member.php?s=73590126910a477b4d24e4bb156ffff6&amp;userid=253">Mostra profilo pubblico</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="private.php?s=73590126910a477b4d24e4bb156ffff6&amp;do=newpm&amp;userid=253">Invia un messaggio privato a XTC</a></td></tr>
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://www.sonarweb.org">Visita la pagina principale di XTC!</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="search.php?s=73590126910a477b4d24e4bb156ffff6&amp;do=finduser&amp;userid=253">Cerca altri messaggi di XTC</a></td></tr>
+	
+	
+	<tr><td class="vbmenu_option"><a href="profile.php?s=73590126910a477b4d24e4bb156ffff6&amp;do=addlist&amp;userlist=buddy&amp;u=253">Aggiungi XTC all'elenco amici</a></td></tr>
+	
+	</table>
+</div>
+<!-- / post 67799 popup menu -->
+
+</div>
+		</div>	
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- / post #67799 --><!-- post #67801 -->
+<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width:98%; text-align:left">
+			<div style="padding:0px 6px 0px 6px">
+<div style="padding:0px 0px 6px 0px">
+
+<table class="tborder" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">
+<tr>
+	
+		<td class="thead" style="font-weight:normal" >		
+			<!-- status icon and date -->
+			<a name="post67801"><img class="inlineimg" src="azzurra/statusicon/post_old.gif" alt="Vecchio" border="0" /></a>
+			21-05-2004, 13:28
+			
+			<!-- / status icon and date -->				
+		</td>
+		<td class="thead" style="font-weight:normal" align="right">
+			&nbsp;
+			#<a href="showpost.php?s=73590126910a477b4d24e4bb156ffff6&amp;p=67801&amp;postcount=2" target="new"><strong>2</strong></a>
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt2" width="175">
+			
+			<div id="postmenu_67801">
+				
+				<a class="bigusername" href="member.php?s=73590126910a477b4d24e4bb156ffff6&amp;u=3710">morpe</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_67801", true); </script>
+				
+			</div>
+			
+			<div class="smallfont">New User</div>
+			
+		
+			
+				<div class="smallfont">
+					&nbsp;<br /><a href="member.php?s=73590126910a477b4d24e4bb156ffff6&amp;u=3710"><img src="customavatars/avatar3710_0.gif" alt="morpe avatar" border="0" /></a>
+				</div>
+			
+			
+			<div class="smallfont">
+				&nbsp;<br />
+				<div>Data registrazione: 07-05-2004</div>
+				
+				
+				<div>
+					Messaggi: 19
+				</div>
+				<div>Potenza Rep.: 0 <img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="morpe è sulla buona strada" border="0" /></div>
+				<div>   </div>
+			</div>					
+		
+	</td>
+	<td class="alt1">
+	
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				<img class="inlineimg" src="images/icons/icon1.gif" alt="Predefinito" border="0" />
+				
+			</div>
+			<hr size="1" style="color:#0F3178" />
+			<!-- / icon and title -->
+		
+		
+		<!-- message -->
+		<div>per la cronaca io ho vatato SI<br />
+<br />
+ :evil:</div>
+		<!-- / message -->
+	
+		
+		
+		
+		<!-- sig -->
+			<div>
+				__________________<br />
+				Individuo poco raccomandabile completamente incapace ad essere serio, e perdipiu Machista dal 91 e Metallaro!!!! (morpe---&amp;gt;  #mela)
+			</div>
+		<!-- / sig -->
+		
+		
+		
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2">
+		<img class="inlineimg" src="azzurra/statusicon/user_offline.gif" alt="morpe non è connesso" border="0" />
+
+
+		
+		
+		
+		&nbsp;
+	</td>
+	<td class="alt1" align="right">
+		<!-- controls -->
+		
+		
+		
+			<a href="newreply.php?s=73590126910a477b4d24e4bb156ffff6&amp;do=newreply&amp;p=67801"><img src="azzurra/buttons/quote.gif" alt="Replica con citazione" border="0" /></a>
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</table>
+
+<!-- post 67801 popup menu -->
+<div class="vbmenu_popup" id="postmenu_67801_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tr>
+		<td class="thead">morpe</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="member.php?s=73590126910a477b4d24e4bb156ffff6&amp;userid=3710">Mostra profilo pubblico</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="private.php?s=73590126910a477b4d24e4bb156ffff6&amp;do=newpm&amp;userid=3710">Invia un messaggio privato a morpe</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="sendmessage.php?s=73590126910a477b4d24e4bb156ffff6&amp;do=mailmember&amp;u=3710">Manda E-Mail a morpe</a></td></tr>
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="search.php?s=73590126910a477b4d24e4bb156ffff6&amp;do=finduser&amp;userid=3710">Cerca altri messaggi di morpe</a></td></tr>
+	
+	
+	<tr><td class="vbmenu_option"><a href="profile.php?s=73590126910a477b4d24e4bb156ffff6&amp;do=addlist&amp;userlist=buddy&amp;u=3710">Aggiungi morpe all'elenco amici</a></td></tr>
+	
+	</table>
+</div>
+<!-- / post 67801 popup menu -->
+
+</div>
+		</div>	
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- / post #67801 --><!-- post #67834 -->
+<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width:98%; text-align:left">
+			<div style="padding:0px 6px 0px 6px">
+<div style="padding:0px 0px 6px 0px">
+
+<table class="tborder" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">
+<tr>
+	
+		<td class="thead" style="font-weight:normal" >		
+			<!-- status icon and date -->
+			<a name="post67834"><img class="inlineimg" src="azzurra/statusicon/post_old.gif" alt="Vecchio" border="0" /></a>
+			21-05-2004, 15:10
+			
+			<!-- / status icon and date -->				
+		</td>
+		<td class="thead" style="font-weight:normal" align="right">
+			&nbsp;
+			#<a href="showpost.php?s=73590126910a477b4d24e4bb156ffff6&amp;p=67834&amp;postcount=3" target="new"><strong>3</strong></a>
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt2" width="175">
+			
+			<div id="postmenu_67834">
+				
+				<a class="bigusername" href="member.php?s=73590126910a477b4d24e4bb156ffff6&amp;u=3657">kome</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_67834", true); </script>
+				
+			</div>
+			
+			<div class="smallfont">New User</div>
+			
+		
+			
+				<div class="smallfont">
+					&nbsp;<br /><a href="member.php?s=73590126910a477b4d24e4bb156ffff6&amp;u=3657"><img src="customavatars/avatar3657_0.gif" alt="kome avatar" border="0" /></a>
+				</div>
+			
+			
+			<div class="smallfont">
+				&nbsp;<br />
+				<div>Data registrazione: 23-04-2004</div>
+				<div>Luogo: Davanti un eMac.</div>
+				
+				<div>
+					Messaggi: 9
+				</div>
+				<div>Potenza Rep.: 0 <img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="kome è sulla buona strada" border="0" /></div>
+				<div>   <a href="#" onclick="return imwindow('yahoo', '3657', 400, 200)"><img src="azzurra/misc/im_yahoo.gif" alt="Invia un messaggio via Yahoo a kome" border="0" /></a></div>
+			</div>					
+		
+	</td>
+	<td class="alt1">
+	
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				<img class="inlineimg" src="images/icons/icon1.gif" alt="Predefinito" border="0" />
+				
+			</div>
+			<hr size="1" style="color:#0F3178" />
+			<!-- / icon and title -->
+		
+		
+		<!-- message -->
+		<div>i av voted ies. <br />
+<br />
+^-^</div>
+		<!-- / message -->
+	
+		
+		
+		
+		
+		
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2">
+		<img class="inlineimg" src="azzurra/statusicon/user_offline.gif" alt="kome non è connesso" border="0" />
+
+
+		
+		
+		
+		&nbsp;
+	</td>
+	<td class="alt1" align="right">
+		<!-- controls -->
+		
+		
+		
+			<a href="newreply.php?s=73590126910a477b4d24e4bb156ffff6&amp;do=newreply&amp;p=67834"><img src="azzurra/buttons/quote.gif" alt="Replica con citazione" border="0" /></a>
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</table>
+
+<!-- post 67834 popup menu -->
+<div class="vbmenu_popup" id="postmenu_67834_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tr>
+		<td class="thead">kome</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="member.php?s=73590126910a477b4d24e4bb156ffff6&amp;userid=3657">Mostra profilo pubblico</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="private.php?s=73590126910a477b4d24e4bb156ffff6&amp;do=newpm&amp;userid=3657">Invia un messaggio privato a kome</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="sendmessage.php?s=73590126910a477b4d24e4bb156ffff6&amp;do=mailmember&amp;u=3657">Manda E-Mail a kome</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://kome.altervista.org/">Visita la pagina principale di kome!</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="search.php?s=73590126910a477b4d24e4bb156ffff6&amp;do=finduser&amp;userid=3657">Cerca altri messaggi di kome</a></td></tr>
+	
+	
+	<tr><td class="vbmenu_option"><a href="profile.php?s=73590126910a477b4d24e4bb156ffff6&amp;do=addlist&amp;userlist=buddy&amp;u=3657">Aggiungi kome all'elenco amici</a></td></tr>
+	
+	</table>
+</div>
+<!-- / post 67834 popup menu -->
+
+</div>
+		</div>	
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- / post #67834 --><!-- post #67843 -->
+<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width:98%; text-align:left">
+			<div style="padding:0px 6px 0px 6px">
+<div style="padding:0px 0px 6px 0px">
+
+<table class="tborder" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">
+<tr>
+	
+		<td class="thead" style="font-weight:normal" >		
+			<!-- status icon and date -->
+			<a name="post67843"><img class="inlineimg" src="azzurra/statusicon/post_old.gif" alt="Vecchio" border="0" /></a>
+			21-05-2004, 15:37
+			
+			<!-- / status icon and date -->				
+		</td>
+		<td class="thead" style="font-weight:normal" align="right">
+			&nbsp;
+			#<a href="showpost.php?s=73590126910a477b4d24e4bb156ffff6&amp;p=67843&amp;postcount=4" target="new"><strong>4</strong></a>
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt2" width="175">
+			
+			<div id="postmenu_67843">
+				
+				<a class="bigusername" href="member.php?s=73590126910a477b4d24e4bb156ffff6&amp;u=2249">blaze</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_67843", true); </script>
+				
+			</div>
+			
+			<div class="smallfont">Super User</div>
+			
+		
+			
+				<div class="smallfont">
+					&nbsp;<br /><a href="member.php?s=73590126910a477b4d24e4bb156ffff6&amp;u=2249"><img src="customavatars/avatar2249_0.gif" alt="blaze avatar" border="0" /></a>
+				</div>
+			
+			
+			<div class="smallfont">
+				&nbsp;<br />
+				<div>Data registrazione: 19-06-2003</div>
+				<div>Luogo: Sardegna</div>
+				
+				<div>
+					Messaggi: 216
+				</div>
+				<div>Potenza Rep.: 8 <img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="blaze è sulla buona strada" border="0" /></div>
+				<div>   </div>
+			</div>					
+		
+	</td>
+	<td class="alt1">
+	
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				<img class="inlineimg" src="images/icons/icon1.gif" alt="Predefinito" border="0" />
+				
+			</div>
+			<hr size="1" style="color:#0F3178" />
+			<!-- / icon and title -->
+		
+		
+		<!-- message -->
+		<div>anche io <img src="images/smilies/classic/icon_smile.gif" border="0" alt="" title="Icon Smile" class="inlineimg" /></div>
+		<!-- / message -->
+	
+		
+		
+		
+		<!-- sig -->
+			<div>
+				__________________<br />
+				Proud Mac User.<br />
+<br />
+<a href="http://web.kalieye.net" target="_blank">http://web.kalieye.net</a>
+			</div>
+		<!-- / sig -->
+		
+		
+		
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2">
+		<img class="inlineimg" src="azzurra/statusicon/user_offline.gif" alt="blaze non è connesso" border="0" />
+
+
+		
+		
+		
+		&nbsp;
+	</td>
+	<td class="alt1" align="right">
+		<!-- controls -->
+		
+		
+		
+			<a href="newreply.php?s=73590126910a477b4d24e4bb156ffff6&amp;do=newreply&amp;p=67843"><img src="azzurra/buttons/quote.gif" alt="Replica con citazione" border="0" /></a>
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</table>
+
+<!-- post 67843 popup menu -->
+<div class="vbmenu_popup" id="postmenu_67843_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tr>
+		<td class="thead">blaze</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="member.php?s=73590126910a477b4d24e4bb156ffff6&amp;userid=2249">Mostra profilo pubblico</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="private.php?s=73590126910a477b4d24e4bb156ffff6&amp;do=newpm&amp;userid=2249">Invia un messaggio privato a blaze</a></td></tr>
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://web.kalieye.net">Visita la pagina principale di blaze!</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="search.php?s=73590126910a477b4d24e4bb156ffff6&amp;do=finduser&amp;userid=2249">Cerca altri messaggi di blaze</a></td></tr>
+	
+	
+	<tr><td class="vbmenu_option"><a href="profile.php?s=73590126910a477b4d24e4bb156ffff6&amp;do=addlist&amp;userlist=buddy&amp;u=2249">Aggiungi blaze all'elenco amici</a></td></tr>
+	
+	</table>
+</div>
+<!-- / post 67843 popup menu -->
+
+</div>
+		</div>	
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- / post #67843 --><!-- post #69916 -->
+<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width:98%; text-align:left">
+			<div style="padding:0px 6px 0px 6px">
+<div style="padding:0px 0px 6px 0px">
+
+<table class="tborder" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">
+<tr>
+	
+		<td class="thead" style="font-weight:normal" >		
+			<!-- status icon and date -->
+			<a name="post69916"><img class="inlineimg" src="azzurra/statusicon/post_old.gif" alt="Vecchio" border="0" /></a>
+			01-06-2004, 13:40
+			
+			<!-- / status icon and date -->				
+		</td>
+		<td class="thead" style="font-weight:normal" align="right">
+			&nbsp;
+			#<a href="showpost.php?s=73590126910a477b4d24e4bb156ffff6&amp;p=69916&amp;postcount=5" target="new"><strong>5</strong></a>
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt2" width="175">
+			
+			<div id="postmenu_69916">
+				
+				<a class="bigusername" href="member.php?s=73590126910a477b4d24e4bb156ffff6&amp;u=3710">morpe</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_69916", true); </script>
+				
+			</div>
+			
+			<div class="smallfont">New User</div>
+			
+		
+			
+				<div class="smallfont">
+					&nbsp;<br /><a href="member.php?s=73590126910a477b4d24e4bb156ffff6&amp;u=3710"><img src="customavatars/avatar3710_0.gif" alt="morpe avatar" border="0" /></a>
+				</div>
+			
+			
+			<div class="smallfont">
+				&nbsp;<br />
+				<div>Data registrazione: 07-05-2004</div>
+				
+				
+				<div>
+					Messaggi: 19
+				</div>
+				<div>Potenza Rep.: 0 <img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="morpe è sulla buona strada" border="0" /></div>
+				<div>   </div>
+			</div>					
+		
+	</td>
+	<td class="alt1">
+	
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				<img class="inlineimg" src="images/icons/icon1.gif" alt="Predefinito" border="0" />
+				
+			</div>
+			<hr size="1" style="color:#0F3178" />
+			<!-- / icon and title -->
+		
+		
+		<!-- message -->
+		<div>XTC!!!!!!!<br />
+<br />
+e tornaaaaaaa!!!!<br />
+<br />
+ |)</div>
+		<!-- / message -->
+	
+		
+		
+		
+		<!-- sig -->
+			<div>
+				__________________<br />
+				Individuo poco raccomandabile completamente incapace ad essere serio, e perdipiu Machista dal 91 e Metallaro!!!! (morpe---&amp;gt;  #mela)
+			</div>
+		<!-- / sig -->
+		
+		
+		
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2">
+		<img class="inlineimg" src="azzurra/statusicon/user_offline.gif" alt="morpe non è connesso" border="0" />
+
+
+		
+		
+		
+		&nbsp;
+	</td>
+	<td class="alt1" align="right">
+		<!-- controls -->
+		
+		
+		
+			<a href="newreply.php?s=73590126910a477b4d24e4bb156ffff6&amp;do=newreply&amp;p=69916"><img src="azzurra/buttons/quote.gif" alt="Replica con citazione" border="0" /></a>
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</table>
+
+<!-- post 69916 popup menu -->
+<div class="vbmenu_popup" id="postmenu_69916_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tr>
+		<td class="thead">morpe</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="member.php?s=73590126910a477b4d24e4bb156ffff6&amp;userid=3710">Mostra profilo pubblico</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="private.php?s=73590126910a477b4d24e4bb156ffff6&amp;do=newpm&amp;userid=3710">Invia un messaggio privato a morpe</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="sendmessage.php?s=73590126910a477b4d24e4bb156ffff6&amp;do=mailmember&amp;u=3710">Manda E-Mail a morpe</a></td></tr>
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="search.php?s=73590126910a477b4d24e4bb156ffff6&amp;do=finduser&amp;userid=3710">Cerca altri messaggi di morpe</a></td></tr>
+	
+	
+	<tr><td class="vbmenu_option"><a href="profile.php?s=73590126910a477b4d24e4bb156ffff6&amp;do=addlist&amp;userlist=buddy&amp;u=3710">Aggiungi morpe all'elenco amici</a></td></tr>
+	
+	</table>
+</div>
+<!-- / post 69916 popup menu -->
+
+</div>
+		</div>	
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- / post #69916 --><!-- post #69918 -->
+<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width:98%; text-align:left">
+			<div style="padding:0px 6px 0px 6px">
+<div style="padding:0px 0px 6px 0px">
+
+<table class="tborder" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">
+<tr>
+	
+		<td class="thead" style="font-weight:normal" >		
+			<!-- status icon and date -->
+			<a name="post69918"><img class="inlineimg" src="azzurra/statusicon/post_old.gif" alt="Vecchio" border="0" /></a>
+			01-06-2004, 14:02
+			
+			<!-- / status icon and date -->				
+		</td>
+		<td class="thead" style="font-weight:normal" align="right">
+			&nbsp;
+			#<a href="showpost.php?s=73590126910a477b4d24e4bb156ffff6&amp;p=69918&amp;postcount=6" target="new"><strong>6</strong></a>
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt2" width="175">
+			
+			<div id="postmenu_69918">
+				
+				<a class="bigusername" href="member.php?s=73590126910a477b4d24e4bb156ffff6&amp;u=3728">Ste_</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_69918", true); </script>
+				
+			</div>
+			
+			<div class="smallfont">New User</div>
+			
+		
+			
+			
+			<div class="smallfont">
+				&nbsp;<br />
+				<div>Data registrazione: 10-05-2004</div>
+				
+				
+				<div>
+					Messaggi: 5
+				</div>
+				<div>Potenza Rep.: 0 <img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="Ste_ è sulla buona strada" border="0" /></div>
+				<div>   </div>
+			</div>					
+		
+	</td>
+	<td class="alt1">
+	
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				<img class="inlineimg" src="images/icons/icon1.gif" alt="Predefinito" border="0" />
+				<strong>TORNA!!!!</strong>
+			</div>
+			<hr size="1" style="color:#0F3178" />
+			<!-- / icon and title -->
+		
+		
+		<!-- message -->
+		<div>XTC torna o ci toccherà fare un rito apotropaico!!! <img src="images/smilies/wink.gif" border="0" alt="" title="Wink" class="inlineimg" /></div>
+		<!-- / message -->
+	
+		
+		
+		
+		<!-- sig -->
+			<div>
+				__________________<br />
+				Cara mamma la vita è bastarda. Caro figlio anche tu. Cara mamma nn lo sapevo. Caro figlio neanche tuo padre.
+			</div>
+		<!-- / sig -->
+		
+		
+		
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2">
+		<img class="inlineimg" src="azzurra/statusicon/user_offline.gif" alt="Ste_ non è connesso" border="0" />
+
+
+		
+		
+		
+		&nbsp;
+	</td>
+	<td class="alt1" align="right">
+		<!-- controls -->
+		
+		
+		
+			<a href="newreply.php?s=73590126910a477b4d24e4bb156ffff6&amp;do=newreply&amp;p=69918"><img src="azzurra/buttons/quote.gif" alt="Replica con citazione" border="0" /></a>
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</table>
+
+<!-- post 69918 popup menu -->
+<div class="vbmenu_popup" id="postmenu_69918_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tr>
+		<td class="thead">Ste_</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="member.php?s=73590126910a477b4d24e4bb156ffff6&amp;userid=3728">Mostra profilo pubblico</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="private.php?s=73590126910a477b4d24e4bb156ffff6&amp;do=newpm&amp;userid=3728">Invia un messaggio privato a Ste_</a></td></tr>
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://homepage.mac.com/tintoretto">Visita la pagina principale di Ste_!</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="search.php?s=73590126910a477b4d24e4bb156ffff6&amp;do=finduser&amp;userid=3728">Cerca altri messaggi di Ste_</a></td></tr>
+	
+	
+	<tr><td class="vbmenu_option"><a href="profile.php?s=73590126910a477b4d24e4bb156ffff6&amp;do=addlist&amp;userlist=buddy&amp;u=3728">Aggiungi Ste_ all'elenco amici</a></td></tr>
+	
+	</table>
+</div>
+<!-- / post 69918 popup menu -->
+
+</div>
+		</div>	
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- / post #69918 --><!-- post #70642 -->
+<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width:98%; text-align:left">
+			<div style="padding:0px 6px 0px 6px">
+<div style="padding:0px 0px 6px 0px">
+
+<table class="tborder" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">
+<tr>
+	
+		<td class="thead" style="font-weight:normal" >		
+			<!-- status icon and date -->
+			<a name="post70642"><img class="inlineimg" src="azzurra/statusicon/post_old.gif" alt="Vecchio" border="0" /></a>
+			05-06-2004, 16:32
+			
+			<!-- / status icon and date -->				
+		</td>
+		<td class="thead" style="font-weight:normal" align="right">
+			&nbsp;
+			#<a href="showpost.php?s=73590126910a477b4d24e4bb156ffff6&amp;p=70642&amp;postcount=7" target="new"><strong>7</strong></a>
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt2" width="175">
+			
+			<div id="postmenu_70642">
+				
+				<a class="bigusername" href="member.php?s=73590126910a477b4d24e4bb156ffff6&amp;u=3657">kome</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_70642", true); </script>
+				
+			</div>
+			
+			<div class="smallfont">New User</div>
+			
+		
+			
+				<div class="smallfont">
+					&nbsp;<br /><a href="member.php?s=73590126910a477b4d24e4bb156ffff6&amp;u=3657"><img src="customavatars/avatar3657_0.gif" alt="kome avatar" border="0" /></a>
+				</div>
+			
+			
+			<div class="smallfont">
+				&nbsp;<br />
+				<div>Data registrazione: 23-04-2004</div>
+				<div>Luogo: Davanti un eMac.</div>
+				
+				<div>
+					Messaggi: 9
+				</div>
+				<div>Potenza Rep.: 0 <img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="kome è sulla buona strada" border="0" /></div>
+				<div>   <a href="#" onclick="return imwindow('yahoo', '3657', 400, 200)"><img src="azzurra/misc/im_yahoo.gif" alt="Invia un messaggio via Yahoo a kome" border="0" /></a></div>
+			</div>					
+		
+	</td>
+	<td class="alt1">
+	
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				<img class="inlineimg" src="images/icons/icon1.gif" alt="Predefinito" border="0" />
+				
+			</div>
+			<hr size="1" style="color:#0F3178" />
+			<!-- / icon and title -->
+		
+		
+		<!-- message -->
+		<div>Torna.</div>
+		<!-- / message -->
+	
+		
+		
+		
+		
+		
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2">
+		<img class="inlineimg" src="azzurra/statusicon/user_offline.gif" alt="kome non è connesso" border="0" />
+
+
+		
+		
+		
+		&nbsp;
+	</td>
+	<td class="alt1" align="right">
+		<!-- controls -->
+		
+		
+		
+			<a href="newreply.php?s=73590126910a477b4d24e4bb156ffff6&amp;do=newreply&amp;p=70642"><img src="azzurra/buttons/quote.gif" alt="Replica con citazione" border="0" /></a>
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</table>
+
+<!-- post 70642 popup menu -->
+<div class="vbmenu_popup" id="postmenu_70642_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tr>
+		<td class="thead">kome</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="member.php?s=73590126910a477b4d24e4bb156ffff6&amp;userid=3657">Mostra profilo pubblico</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="private.php?s=73590126910a477b4d24e4bb156ffff6&amp;do=newpm&amp;userid=3657">Invia un messaggio privato a kome</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="sendmessage.php?s=73590126910a477b4d24e4bb156ffff6&amp;do=mailmember&amp;u=3657">Manda E-Mail a kome</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://kome.altervista.org/">Visita la pagina principale di kome!</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="search.php?s=73590126910a477b4d24e4bb156ffff6&amp;do=finduser&amp;userid=3657">Cerca altri messaggi di kome</a></td></tr>
+	
+	
+	<tr><td class="vbmenu_option"><a href="profile.php?s=73590126910a477b4d24e4bb156ffff6&amp;do=addlist&amp;userlist=buddy&amp;u=3657">Aggiungi kome all'elenco amici</a></td></tr>
+	
+	</table>
+</div>
+<!-- / post 70642 popup menu -->
+
+</div>
+		</div>	
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- / post #70642 --><!-- post #71244 -->
+<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width:98%; text-align:left">
+			<div style="padding:0px 6px 0px 6px">
+<div style="padding:0px 0px 6px 0px">
+
+<table class="tborder" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">
+<tr>
+	
+		<td class="thead" style="font-weight:normal" >		
+			<!-- status icon and date -->
+			<a name="post71244"><img class="inlineimg" src="azzurra/statusicon/post_old.gif" alt="Vecchio" border="0" /></a>
+			10-06-2004, 00:10
+			
+			<!-- / status icon and date -->				
+		</td>
+		<td class="thead" style="font-weight:normal" align="right">
+			&nbsp;
+			#<a href="showpost.php?s=73590126910a477b4d24e4bb156ffff6&amp;p=71244&amp;postcount=8" target="new"><strong>8</strong></a>
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt2" width="175">
+			
+			<div id="postmenu_71244">
+				
+				<a class="bigusername" href="member.php?s=73590126910a477b4d24e4bb156ffff6&amp;u=253">XTC</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_71244", true); </script>
+				
+			</div>
+			
+			<div class="smallfont">Normal User</div>
+			
+		
+			
+				<div class="smallfont">
+					&nbsp;<br /><a href="member.php?s=73590126910a477b4d24e4bb156ffff6&amp;u=253"><img src="customavatars/avatar253_0.gif" alt="XTC avatar" border="0" /></a>
+				</div>
+			
+			
+			<div class="smallfont">
+				&nbsp;<br />
+				<div>Data registrazione: 22-02-2002</div>
+				<div>Luogo: Roma</div>
+				
+				<div>
+					Messaggi: 92
+				</div>
+				<div>Potenza Rep.: 14 <img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="XTC è sulla buona strada" border="0" /></div>
+				<div>   </div>
+			</div>					
+		
+	</td>
+	<td class="alt1">
+	
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				<img class="inlineimg" src="images/icons/icon1.gif" alt="Predefinito" border="0" />
+				
+			</div>
+			<hr size="1" style="color:#0F3178" />
+			<!-- / icon and title -->
+		
+		
+		<!-- message -->
+		<div>vi seguo da molto lontano!<br />
+<br />
+grazie a tutti per l'&quot;affetto&quot; <br />
+<br />
+grazie a morpe per la DEMENZA  <img src="images/smilies/classic/icon_lol.gif" border="0" alt="" title="Icon Lol" class="inlineimg" /></div>
+		<!-- / message -->
+	
+		
+		
+		
+		<!-- sig -->
+			<div>
+				__________________<br />
+				<b>[eks][ti:][si:]</b> no joke!!!
+			</div>
+		<!-- / sig -->
+		
+		
+		
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2">
+		<img class="inlineimg" src="azzurra/statusicon/user_offline.gif" alt="XTC non è connesso" border="0" />
+
+
+		
+		
+		
+		&nbsp;
+	</td>
+	<td class="alt1" align="right">
+		<!-- controls -->
+		
+		
+		
+			<a href="newreply.php?s=73590126910a477b4d24e4bb156ffff6&amp;do=newreply&amp;p=71244"><img src="azzurra/buttons/quote.gif" alt="Replica con citazione" border="0" /></a>
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</table>
+
+<!-- post 71244 popup menu -->
+<div class="vbmenu_popup" id="postmenu_71244_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tr>
+		<td class="thead">XTC</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="member.php?s=73590126910a477b4d24e4bb156ffff6&amp;userid=253">Mostra profilo pubblico</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="private.php?s=73590126910a477b4d24e4bb156ffff6&amp;do=newpm&amp;userid=253">Invia un messaggio privato a XTC</a></td></tr>
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://www.sonarweb.org">Visita la pagina principale di XTC!</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="search.php?s=73590126910a477b4d24e4bb156ffff6&amp;do=finduser&amp;userid=253">Cerca altri messaggi di XTC</a></td></tr>
+	
+	
+	<tr><td class="vbmenu_option"><a href="profile.php?s=73590126910a477b4d24e4bb156ffff6&amp;do=addlist&amp;userlist=buddy&amp;u=253">Aggiungi XTC all'elenco amici</a></td></tr>
+	
+	</table>
+</div>
+<!-- / post 71244 popup menu -->
+
+</div>
+		</div>	
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- / post #71244 --><!-- post #71472 -->
+<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width:98%; text-align:left">
+			<div style="padding:0px 6px 0px 6px">
+<div style="padding:0px 0px 6px 0px">
+
+<table class="tborder" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">
+<tr>
+	
+		<td class="thead" style="font-weight:normal" >		
+			<!-- status icon and date -->
+			<a name="post71472"><img class="inlineimg" src="azzurra/statusicon/post_old.gif" alt="Vecchio" border="0" /></a>
+			11-06-2004, 17:42
+			
+			<!-- / status icon and date -->				
+		</td>
+		<td class="thead" style="font-weight:normal" align="right">
+			&nbsp;
+			#<a href="showpost.php?s=73590126910a477b4d24e4bb156ffff6&amp;p=71472&amp;postcount=9" target="new"><strong>9</strong></a>
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt2" width="175">
+			
+			<div id="postmenu_71472">
+				
+				<a class="bigusername" href="member.php?s=73590126910a477b4d24e4bb156ffff6&amp;u=3710">morpe</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_71472", true); </script>
+				
+			</div>
+			
+			<div class="smallfont">New User</div>
+			
+		
+			
+				<div class="smallfont">
+					&nbsp;<br /><a href="member.php?s=73590126910a477b4d24e4bb156ffff6&amp;u=3710"><img src="customavatars/avatar3710_0.gif" alt="morpe avatar" border="0" /></a>
+				</div>
+			
+			
+			<div class="smallfont">
+				&nbsp;<br />
+				<div>Data registrazione: 07-05-2004</div>
+				
+				
+				<div>
+					Messaggi: 19
+				</div>
+				<div>Potenza Rep.: 0 <img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="morpe è sulla buona strada" border="0" /></div>
+				<div>   </div>
+			</div>					
+		
+	</td>
+	<td class="alt1">
+	
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				<img class="inlineimg" src="images/icons/icon1.gif" alt="Predefinito" border="0" />
+				
+			</div>
+			<hr size="1" style="color:#0F3178" />
+			<!-- / icon and title -->
+		
+		
+		<!-- message -->
+		<div>XTC!!!!!!!!!!!!!!!!!!!!!!!<br />
+<br />
+....spero che tu non sia diventato demente per colpa mia!!<br />
+<br />
+ps: non fare il demente e torna a casa lessi... ops.... XTC!!!!</div>
+		<!-- / message -->
+	
+		
+		
+		
+		<!-- sig -->
+			<div>
+				__________________<br />
+				Individuo poco raccomandabile completamente incapace ad essere serio, e perdipiu Machista dal 91 e Metallaro!!!! (morpe---&amp;gt;  #mela)
+			</div>
+		<!-- / sig -->
+		
+		
+		
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2">
+		<img class="inlineimg" src="azzurra/statusicon/user_offline.gif" alt="morpe non è connesso" border="0" />
+
+
+		
+		
+		
+		&nbsp;
+	</td>
+	<td class="alt1" align="right">
+		<!-- controls -->
+		
+		
+		
+			<a href="newreply.php?s=73590126910a477b4d24e4bb156ffff6&amp;do=newreply&amp;p=71472"><img src="azzurra/buttons/quote.gif" alt="Replica con citazione" border="0" /></a>
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</table>
+
+<!-- post 71472 popup menu -->
+<div class="vbmenu_popup" id="postmenu_71472_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tr>
+		<td class="thead">morpe</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="member.php?s=73590126910a477b4d24e4bb156ffff6&amp;userid=3710">Mostra profilo pubblico</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="private.php?s=73590126910a477b4d24e4bb156ffff6&amp;do=newpm&amp;userid=3710">Invia un messaggio privato a morpe</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="sendmessage.php?s=73590126910a477b4d24e4bb156ffff6&amp;do=mailmember&amp;u=3710">Manda E-Mail a morpe</a></td></tr>
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="search.php?s=73590126910a477b4d24e4bb156ffff6&amp;do=finduser&amp;userid=3710">Cerca altri messaggi di morpe</a></td></tr>
+	
+	
+	<tr><td class="vbmenu_option"><a href="profile.php?s=73590126910a477b4d24e4bb156ffff6&amp;do=addlist&amp;userlist=buddy&amp;u=3710">Aggiungi morpe all'elenco amici</a></td></tr>
+	
+	</table>
+</div>
+<!-- / post 71472 popup menu -->
+
+</div>
+		</div>	
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- / post #71472 --><!-- post #71515 -->
+<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width:98%; text-align:left">
+			<div style="padding:0px 6px 0px 6px">
+
+
+<table class="tborder" cellpadding="6" cellspacing="0" border="0" width="100%" align="center">
+<tr>
+	
+		<td class="thead" style="font-weight:normal" >		
+			<!-- status icon and date -->
+			<a name="post71515"><img class="inlineimg" src="azzurra/statusicon/post_old.gif" alt="Vecchio" border="0" /></a>
+			12-06-2004, 00:55
+			
+			<!-- / status icon and date -->				
+		</td>
+		<td class="thead" style="font-weight:normal" align="right">
+			&nbsp;
+			#<a href="showpost.php?s=73590126910a477b4d24e4bb156ffff6&amp;p=71515&amp;postcount=10" target="new"><strong>10</strong></a>
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt2" width="175">
+			
+			<div id="postmenu_71515">
+				
+				<a class="bigusername" href="member.php?s=73590126910a477b4d24e4bb156ffff6&amp;u=2249">blaze</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_71515", true); </script>
+				
+			</div>
+			
+			<div class="smallfont">Super User</div>
+			
+		
+			
+				<div class="smallfont">
+					&nbsp;<br /><a href="member.php?s=73590126910a477b4d24e4bb156ffff6&amp;u=2249"><img src="customavatars/avatar2249_0.gif" alt="blaze avatar" border="0" /></a>
+				</div>
+			
+			
+			<div class="smallfont">
+				&nbsp;<br />
+				<div>Data registrazione: 19-06-2003</div>
+				<div>Luogo: Sardegna</div>
+				
+				<div>
+					Messaggi: 216
+				</div>
+				<div>Potenza Rep.: 8 <img class="inlineimg" src="azzurra/reputation/reputation_pos.gif" alt="blaze è sulla buona strada" border="0" /></div>
+				<div>   </div>
+			</div>					
+		
+	</td>
+	<td class="alt1">
+	
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				<img class="inlineimg" src="images/icons/icon1.gif" alt="Predefinito" border="0" />
+				
+			</div>
+			<hr size="1" style="color:#0F3178" />
+			<!-- / icon and title -->
+		
+		
+		<!-- message -->
+		<div>torna.</div>
+		<!-- / message -->
+	
+		
+		
+		
+		<!-- sig -->
+			<div>
+				__________________<br />
+				Proud Mac User.<br />
+<br />
+<a href="http://web.kalieye.net" target="_blank">http://web.kalieye.net</a>
+			</div>
+		<!-- / sig -->
+		
+		
+		
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2">
+		<img class="inlineimg" src="azzurra/statusicon/user_offline.gif" alt="blaze non è connesso" border="0" />
+
+
+		
+		
+		
+		&nbsp;
+	</td>
+	<td class="alt1" align="right">
+		<!-- controls -->
+		
+		
+		
+			<a href="newreply.php?s=73590126910a477b4d24e4bb156ffff6&amp;do=newreply&amp;p=71515"><img src="azzurra/buttons/quote.gif" alt="Replica con citazione" border="0" /></a>
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</table>
+
+<!-- post 71515 popup menu -->
+<div class="vbmenu_popup" id="postmenu_71515_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tr>
+		<td class="thead">blaze</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="member.php?s=73590126910a477b4d24e4bb156ffff6&amp;userid=2249">Mostra profilo pubblico</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="private.php?s=73590126910a477b4d24e4bb156ffff6&amp;do=newpm&amp;userid=2249">Invia un messaggio privato a blaze</a></td></tr>
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://web.kalieye.net">Visita la pagina principale di blaze!</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="search.php?s=73590126910a477b4d24e4bb156ffff6&amp;do=finduser&amp;userid=2249">Cerca altri messaggi di blaze</a></td></tr>
+	
+	
+	<tr><td class="vbmenu_option"><a href="profile.php?s=73590126910a477b4d24e4bb156ffff6&amp;do=addlist&amp;userlist=buddy&amp;u=2249">Aggiungi blaze all'elenco amici</a></td></tr>
+	
+	</table>
+</div>
+<!-- / post 71515 popup menu -->
+
+
+		</div>	
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- / post #71515 --></div>
+
+<!-- start content table -->
+<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width:98%; text-align:left">
+			<div style="padding:0px 6px 0px 6px">
+
+<!-- / start content table -->
+
+<!-- controls below postbits -->
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr valign="top">
+	
+		<td class="smallfont"><a href="newreply.php?s=73590126910a477b4d24e4bb156ffff6&amp;do=newreply&amp;noquote=1&amp;p=71515"><img src="azzurra/buttons/reply.gif" alt="Rispondi" border="0" /></a></td>
+		
+	<td align="right"><div class="pagenav" align="right">
+<table class="tborder" cellpadding="3" cellspacing="1" border="0">
+<tr>
+	<td class="vbmenu_control" style="font-weight:normal"><!--<img src="azzurra/misc/multipage.gif" alt="Mostra risultati 1 a 10 di 13 (2 pagine)" /> -->Pagina 1 di 2</td>
+	
+	
+		<td class="alt2"><span class="smallfont" title="Mostra risultati 1 a 10 di 13"><strong>1</strong></span></td>
+ 	<td class="alt1"><a class="smallfont" href="showthread.php?s=73590126910a477b4d24e4bb156ffff6&amp;t=4791&amp;page=2&amp;pp=10" title="Mostra risultati 11 a 13 di 13">2</a></td>
+
+	<td class="alt1"><a class="smallfont" href="showthread.php?s=73590126910a477b4d24e4bb156ffff6&amp;t=4791&amp;page=2&amp;pp=10" title="Prossima pagina - Risultati 11 a 13 di 13">&gt;</a></td>
+	
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<!-- / controls below postbits -->
+
+<br />
+
+<div class="smallfont" align="center">
+	<strong>&laquo;</strong>
+		<td width="100%"><span class="navbar"><a href="index.php?s=73590126910a477b4d24e4bb156ffff6&amp;" accesskey="1">Azzurra IRC Network Forum</a></span> 
+	<span class="navbar">&gt; <a href="forumdisplay.php?s=73590126910a477b4d24e4bb156ffff6&amp;f=8">Azzurra - Tech Center</a></span>
+
+
+	<span class="navbar">&gt; <a href="forumdisplay.php?s=73590126910a477b4d24e4bb156ffff6&amp;f=62">Discussioni Mac</a></span>
+
+</td>
+	<strong>&raquo;</strong>
+</div>
+
+<br />
+
+
+
+<!-- currently active users -->
+
+<!-- currently active users -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- controls for non-popup browsers -->
+
+
+<table class="tborder" cellpadding="6" cellspacing="1" border="0" width="100%" align="center" style="border-top-width:0px">
+<tr>
+	<td class="thead" >Strumenti discussione<a name="goto_threadtools"></a></td>
+	<td class="thead">Cerca in questa discussione<a name="goto_threadsearch"></a></td>
+</tr>
+<tr valign="top">
+	<td class="alt1" >
+	
+	<!-- thread tools -->
+	<div class="smallfont">
+		<div><img class="inlineimg" src="azzurra/buttons/printer.gif" alt="Mostra versione stampabile" vspace="1" /> <a href="printthread.php?s=73590126910a477b4d24e4bb156ffff6&amp;t=4791" accesskey="p">Mostra versione stampabile</a></div>
+		<div><img class="inlineimg" src="azzurra/buttons/sendtofriend.gif" alt="Invia questa pagina via E-Mail" vspace="1" /> <a href="sendmessage.php?s=73590126910a477b4d24e4bb156ffff6&amp;do=sendtofriend&amp;t=4791">Invia questa pagina via E-Mail</a></div>
+		
+		
+	</div>
+	<!-- / thread tools -->
+	
+	</td>
+	
+	<td class="alt1">
+	
+	<!-- search this thread -->
+	<form action="search.php" method="post">
+	<div class="smallfont">
+		<input type="hidden" name="s" value="73590126910a477b4d24e4bb156ffff6" />
+		<input type="hidden" name="do" value="process" />
+		<input type="hidden" name="searchthread" value="1" />
+		<input type="hidden" name="showposts" value="1" />
+		<input type="hidden" name="searchthreadid" value="4791" />
+		<strong>Cerca in questa discussione</strong>:<br />
+		<input type="text" class="bginput" name="query" size="20" style="width:175px" /><!-- go button -->
+<input type="submit" class="button" value="Vai"  /><br />
+		<a href="search.php?s=73590126910a477b4d24e4bb156ffff6&amp;">Ricerca avanzata</a>
+	</div>
+	</form>
+	<!-- /  search this thread -->
+	
+	</td>
+	
+</tr>
+
+<tr>
+	<td class="thead" colspan="2">Modalità di visualizzazione<a name="goto_displaymodes"></a></td>
+	
+</tr>
+<tr valign="top">
+	
+	<td class="alt2" colspan="2">
+	
+	<!-- thread display modes -->
+	
+	<div class="smallfont">
+		<div><img class="inlineimg" src="azzurra/buttons/mode_linear.gif" alt="Modalità lineare" vspace="1" /> <strong>Modalità lineare</strong></div>
+		<div><img class="inlineimg" src="azzurra/buttons/mode_hybrid.gif" alt="Modalità ibrida" vspace="1" /> <a href="showthread.php?s=73590126910a477b4d24e4bb156ffff6&amp;mode=hybrid&amp;t=4791">Passa alla modalità ibrida</a></div>
+		<div><img class="inlineimg" src="azzurra/buttons/mode_threaded.gif" alt="Modalità sequenziale" vspace="1" /> <a href="showthread.php?s=73590126910a477b4d24e4bb156ffff6&amp;p=67799&amp;mode=threaded#post67799">Passa alla modalità sequenziale</a></div>
+	</div>
+	
+	<!-- / thread display modes -->
+	
+	</td>
+	
+	
+</tr>
+
+</table>
+<br />
+
+
+<!-- / controls for non-popup browsers -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- forum rules and admin links -->
+<table cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
+<tr valign="bottom">
+	<td class="smallfont" align="left">
+		<table class="tborder" cellpadding="6" cellspacing="1" border="0" width="180">
+<thead>
+<tr>
+	<td class="thead">
+		<a style="float:right" href="#top" onclick="return toggle_collapse('forumrules')"><img id="collapseimg_forumrules" src="azzurra/buttons/collapse_thead.gif" alt="" border="0" /></a>
+		Regole messaggi
+	</td>
+</tr>
+</thead>
+<tbody id="collapseobj_forumrules" style="">
+<tr>
+	<td class="alt1" nowrap="nowrap"><div class="smallfont">
+		
+		<div><strong>Non Puoi </strong> creare nuove discussioni</div>
+		<div><strong>Non Puoi </strong> rispondere ai messaggi</div>
+		<div><strong>Non Puoi </strong> inviare allegati</div>
+		<div><strong>Non Puoi </strong> modificare i tuoi messaggi</div>
+		<hr />
+		
+		<div><a href="misc.php?s=73590126910a477b4d24e4bb156ffff6&amp;do=bbcode" target="_blank">Codice vB</a> è <strong>attivato</strong></div>
+		<div><a href="misc.php?s=73590126910a477b4d24e4bb156ffff6&amp;do=showsmilies" target="_blank">Emoticons</a> sono <strong>attivato</strong></div>
+		<div><a href="misc.php?s=73590126910a477b4d24e4bb156ffff6&amp;do=bbcode#imgcode" target="_blank">Codice [IMG]</a> è <strong>attivato</strong></div>
+		<div>Codice HTML è <strong>disattivato</strong></div>
+	</div></td>
+</tr>
+</tbody>
+</table>
+	</td>
+	<td class="smallfont" align="right">
+		<table cellpadding="0" cellspacing="0" border="0">
+		
+		<tr>
+			<td>
+			<div class="smallfont" style="text-align:left; white-space:nowrap">
+	<form action="forumdisplay.php" method="get">
+	<input type="hidden" name="s" value="73590126910a477b4d24e4bb156ffff6" />
+	<input type="hidden" name="daysprune" value="" />
+	<strong>Salta al forum</strong><br />
+	<select name="f" onchange="this.form.submit();">
+		<optgroup label="Aree sito">
+			<option value="-1" >Seleziona uno</option>
+			<option value="cp" >Pannello di controllo utente</option>
+			<option value="pm" >Messaggi privati</option>
+			<option value="subs" >Sottoscrizioni</option>
+			<option value="wol" >Chi è connesso</option>
+			<option value="search" >Cerca nei forum</option>
+			<option value="home" >Pagina principale</option>
+			<option value="-1">--------------------</option>
+		</optgroup>
+		<optgroup label="Forum">
+		<option value="3" class="fjdpth0" > Azzurra IRC Network Forum</option>
+<option value="15" class="fjdpth1" >&nbsp; &nbsp;  Canali - i vostri canali su Azzurra.</option>
+<option value="10" class="fjdpth1" >&nbsp; &nbsp;  Discussioni e commenti su Azzurra</option>
+<option value="39" class="fjdpth1" >&nbsp; &nbsp;  Il Porto Spaziale di Mos Eisley</option>
+<option value="43" class="fjdpth1" >&nbsp; &nbsp;  Radio Azzurra</option>
+<option value="41" class="fjdpth1" >&nbsp; &nbsp;  Azzurra Gamers OnLine</option>
+<option value="6" class="fjdpth0" > Network Central</option>
+<option value="19" class="fjdpth1" >&nbsp; &nbsp;  Comunicazioni ufficiali di Azzurra</option>
+<option value="18" class="fjdpth1" >&nbsp; &nbsp;  Forum Help Area</option>
+<option value="11" class="fjdpth1" >&nbsp; &nbsp;  IRCHelp - Aiuto su IRC e Servizi di Azzurra</option>
+<option value="30" class="fjdpth1" >&nbsp; &nbsp;  Services - I servizi IRC di Azzurra</option>
+<option value="36" class="fjdpth1" >&nbsp; &nbsp;  Javirc</option>
+<option value="8" class="fjdpth0" > Azzurra - Tech Center</option>
+<option value="13" class="fjdpth1" >&nbsp; &nbsp;  Angolo tecnico</option>
+<option value="28" class="fjdpth1" >&nbsp; &nbsp;  Discussioni Linux</option>
+<option value="62" class="fjsel" selected="selected">&nbsp; &nbsp;  Discussioni Mac</option>
+<option value="60" class="fjdpth1" >&nbsp; &nbsp;  Quantum leap</option>
+<option value="23" class="fjdpth1" >&nbsp; &nbsp;  Programmazione e dintorni</option>
+<option value="4" class="fjdpth0" > Happy Hour</option>
+<option value="17" class="fjdpth1" >&nbsp; &nbsp;  Cazzeggiando qua e la...</option>
+<option value="20" class="fjdpth1" >&nbsp; &nbsp;  Ditelo con il Forum</option>
+<option value="25" class="fjdpth1" >&nbsp; &nbsp;  L'angolo del piccolo menomato informatico</option>
+<option value="16" class="fjdpth1" >&nbsp; &nbsp;  Questi mitici log!</option>
+<option value="9" class="fjdpth0" > ZeroNave</option>
+<option value="56" class="fjdpth1" >&nbsp; &nbsp;  #ZeroNave</option>
+<option value="7" class="fjdpth0" > I Vostri Forum</option>
+<option value="21" class="fjdpth1" >&nbsp; &nbsp;  #debiAn</option>
+<option value="24" class="fjdpth1" >&nbsp; &nbsp;  #altrove</option>
+<option value="42" class="fjdpth1" >&nbsp; &nbsp;  #italia_area</option>
+<option value="44" class="fjdpth1" >&nbsp; &nbsp;  #amicimiei</option>
+<option value="58" class="fjdpth1" >&nbsp; &nbsp;  #bodomlake</option>
+<option value="72" class="fjdpth1" >&nbsp; &nbsp;  #roma</option>
+<option value="48" class="fjdpth1" >&nbsp; &nbsp;  #quizzer</option>
+<option value="45" class="fjdpth1" >&nbsp; &nbsp;  #desideri&amp;sogni</option>
+<option value="68" class="fjdpth1" >&nbsp; &nbsp;  #lamerandia</option>
+<option value="77" class="fjdpth1" >&nbsp; &nbsp;  #number_one</option>
+<option value="35" class="fjdpth1" >&nbsp; &nbsp;  #cuori</option>
+<option value="22" class="fjdpth1" >&nbsp; &nbsp;  #netparty</option>
+<option value="27" class="fjdpth1" >&nbsp; &nbsp;  #fonzie</option>
+<option value="37" class="fjdpth1" >&nbsp; &nbsp;  #mangaring</option>
+<option value="26" class="fjdpth1" >&nbsp; &nbsp;  #punkazzurra</option>
+<option value="50" class="fjdpth1" >&nbsp; &nbsp;  #targato-na</option>
+<option value="31" class="fjdpth1" >&nbsp; &nbsp;  #LiberoZone</option>
+<option value="53" class="fjdpth1" >&nbsp; &nbsp;  #romaitalia</option>
+<option value="49" class="fjdpth1" >&nbsp; &nbsp;  #motociclisti</option>
+<option value="61" class="fjdpth1" >&nbsp; &nbsp;  #gaia</option>
+<option value="38" class="fjdpth1" >&nbsp; &nbsp;  #bari</option>
+<option value="63" class="fjdpth1" >&nbsp; &nbsp;  #italia</option>
+<option value="65" class="fjdpth1" >&nbsp; &nbsp;  #piemonte.it</option>
+<option value="69" class="fjdpth1" >&nbsp; &nbsp;  #friuli.it</option>
+<option value="70" class="fjdpth1" >&nbsp; &nbsp;  #veneto.it</option>
+<option value="71" class="fjdpth1" >&nbsp; &nbsp;  #blues and #cibo</option>
+<option value="32" class="fjdpth1" >&nbsp; &nbsp;  #radioitalia</option>
+<option value="79" class="fjdpth1" >&nbsp; &nbsp;  #templary</option>
+<option value="52" class="fjdpth1" >&nbsp; &nbsp;  #tuning</option>
+<option value="59" class="fjdpth1" >&nbsp; &nbsp;  #chatsicilia</option>
+<option value="64" class="fjdpth1" >&nbsp; &nbsp;  #romantici</option>
+<option value="74" class="fjdpth1" >&nbsp; &nbsp;  #ircgirls</option>
+<option value="78" class="fjdpth1" >&nbsp; &nbsp;  #desideri</option>
+<option value="80" class="fjdpth1" >&nbsp; &nbsp;  #leiamalei</option>
+<option value="81" class="fjdpth1" >&nbsp; &nbsp;  #pub</option>
+<option value="5" class="fjdpth0" > Test Area</option>
+<option value="14" class="fjdpth1" >&nbsp; &nbsp;  Test - Forum dedicato ai messaggi di prova</option>
+<option value="75" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Sottoforum di prova</option>
+<option value="76" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Cugino del sottoforum di prova</option>
+
+		</optgroup>
+	</select><!-- go button -->
+<input type="submit" class="button" value="Vai"  />
+	</form>
+</div>
+			</td>
+		</tr>		
+		</table>
+	</td>
+</tr>
+</table>
+<!-- /forum rules and admin links -->
+
+<br />
+
+
+
+<br />
+
+<br />
+<div class="smallfont" align="center">Tutte le ore sono GMT +2. L'ora corrente è <span class="time">10:42</span>.</div>
+<br />
+
+
+		</div>	
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- /content area table -->
+
+<form action="index.php" method="get">
+	
+<table cellpadding="6" cellspacing="0" border="0" width="98%" class="page" align="center">
+<tr>
+	
+	<td class="tfoot" align="right">
+		<div class="smallfont">
+			<strong>
+				<a href="sendmessage.php">Contattaci</a> -
+				<a href="http://www.azzurra.org">Azzurra IRC Network</a> -
+				
+				
+				<a href="archive/index.php">Archivio</a> -
+				
+				<a href="#top" onclick="self.scrollTo(0, 0); return false;">Inizio pagina</a>
+			</strong>
+		</div>
+	</td>
+</tr>
+</table>
+
+<br />
+
+<div align="center">
+	<div class="smallfont" align="center">
+	<!-- Do not remove this copyright notice -->
+	vBulletin Copyright &copy;2000 - 2005, Jelsoft Enterprises Ltd.
+	<!-- Do not remove this copyright notice -->
+	</div>
+	
+	<div class="smallfont" align="center">
+	<!-- Do not remove  or your scheduled tasks will cease to function -->
+	
+	<!-- Do not remove  or your scheduled tasks will cease to function -->
+	
+	Copyright Azzurra IRC Network © 1997-2005
+	</div>
+</div>
+
+</form>
+
+
+<script type="text/javascript">
+<!--
+	// Main vBulletin Javascript Initialization
+	vBulletin_init();
+
+	// Initialize 'Active' Table Cells
+	//activecells_init();
+//-->
+</script>
+
+<!-- temp -->
+<div style="display:none">
+	<!-- thread rate -->
+	
+		
+	
+	<!-- / thread rate -->
+</div>
+
+</body>
+</html>
