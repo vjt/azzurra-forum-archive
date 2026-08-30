@@ -8,3 +8,8 @@ __pycache__/
 
 # retry/ IS tracked on purpose: the losing candidates are Archive material too, and
 # refetching them costs hours. Only the DB stays out.
+
+# site/ is generated: forum_render.py rebuilds the 6706 pages in 14 seconds and
+# bin/pagefind indexes them in 27. Same reasoning as forum.db — the sources are the
+# archaeology, the rendered site is a build artifact.
+site/
