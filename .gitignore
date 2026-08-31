@@ -13,3 +13,13 @@ __pycache__/
 # bin/pagefind indexes them in 27. Same reasoning as forum.db — the sources are the
 # archaeology, the rendered site is a build artifact.
 site/
+
+# Fetch logs and the miss lists they write: run artefacts, not archaeology. The
+# assets themselves ARE tracked, same reasoning as retry/ — hours of polite
+# crawling against the Archive that nobody should have to spend twice.
+*.log
+assets_miss*.txt
+assets_miss.tmp
+assets_fetch.done
+forum.db.bak
+forum.db.pre-divfix

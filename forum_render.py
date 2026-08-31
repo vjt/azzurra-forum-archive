@@ -34,6 +34,7 @@ Design notes worth keeping:
 from __future__ import annotations
 
 import argparse
+import hashlib
 import html
 import re
 import sqlite3
@@ -126,11 +127,50 @@ def smiley_for(name: str) -> str | None:
     return None
 
 
+# The GIFs themselves came back: the Archive did capture the board's own
+# /images/smilies/ tree (508 files), which an earlier pass had written off.
+# So the emoji map is now the FALLBACK, not the answer — `smilies/` is filled
+# by fetch_smilies.sh and copied into the site at render time.  Keys are both
+# the path under images/smilies/ and the bare stem, because half the posts name
+# the file (`classic/icon_smile.gif`) and half only the code (`:rotfl:`).
+SMILEY_DIR = Path("smilies")
+SMILEY_FILES: dict[str, str] = {}
+
+
+def load_smilies() -> None:
+    SMILEY_FILES.clear()
+    if not SMILEY_DIR.is_dir():
+        return
+    for f in SMILEY_DIR.rglob("*"):
+        if not f.is_file():
+            continue
+        rel = f.relative_to(SMILEY_DIR).as_posix()
+        SMILEY_FILES[rel.lower()] = rel
+        # A bare stem is ambiguous across packs; first one in wins and the
+        # packs do not collide in practice (measured: 3 duplicate stems).
+        SMILEY_FILES.setdefault(f.stem.lower(), rel)
+
+
+def smiley_file(name: str) -> str | None:
+    """The board's own GIF for this smiley, when the Archive kept it."""
+    key = name.split("images/smilies/", 1)[-1].split("images/smiles/", 1)[-1]
+    key = key.split("?")[0].lstrip("/").lower()
+    return (SMILEY_FILES.get(key)
+            or SMILEY_FILES.get(key.rsplit("/", 1)[-1])
+            or SMILEY_FILES.get(key.rsplit("/", 1)[-1].rsplit(".", 1)[0]))
+
+
 def smiley_span(name: str) -> str:
     """Render one smiley.  The file name is kept as the tooltip: it is the
     only surviving evidence of which image the poster actually picked."""
-    emoji = smiley_for(name)
     tip = esc(name.rsplit("/", 1)[-1])
+    # Thread pages are the only place post bodies are rendered, and they all
+    # sit at thread/<id>-<slug>/, two levels down.
+    rel = smiley_file(name)
+    if rel:
+        return (f'<img class="smi" src="../../smilies/{rel}" alt="{tip}" '
+                f'title="{tip}" loading="lazy">')
+    emoji = smiley_for(name)
     if emoji:
         return f'<span class="emo" title="{tip}">{emoji}</span>'
     # 5% of the tail (`cart31.gif`, `kaoani09.gif`) is anyone's guess: an
@@ -159,6 +199,10 @@ RE_TAG_SPLIT = re.compile(r"(<[^>]*>)")
 
 def _text_smiley(m: re.Match[str]) -> str:
     name = m.group(1).lower()
+    rel = smiley_file(name)
+    if rel:
+        return (f'<img class="smi" src="../../smilies/{rel}" alt=":{name}:" '
+                f'title=":{name}:" loading="lazy">')
     emoji = smiley_for(name)
     if emoji:
         return f'<span class="emo" title=":{name}:">{emoji}</span>'
@@ -283,6 +327,11 @@ def _bb_img(m: re.Match[str]) -> str:
     url = m.group(1)
     if "/smile" in url.lower():          # icon_razz.gif & co: same map as <img>
         return smiley_span(url)
+    # Only 8 posts in the whole board use [img], and the host is dead in all of
+    # them — so this stays a link unless we actually recovered the file, in
+    # which case `local_assets()` rewrites the src to our copy.
+    if ASSET_FILES and RE_SAFE_URL.match(url) and asset_name(url) in ASSET_FILES:
+        return f'<img src="{esc(url)}" alt="" loading="lazy">'
     return _bb_link(url, "[immagine]") or "[immagine]"
 
 
@@ -508,10 +557,27 @@ def irc_logs(body: str) -> str:
 # resolvable targets are older than the post linking them (95%, i.e. right), but
 # `forum/viewtopic.php?t=N` scores 12 of 39 (31%) — the phpBB board it came from
 # numbered its topics in a different space, so those ids are NOT ours and are
-# left alone.  Same for the ids that land on a thread newer than the link.
+# left alone.
+#
+# The 5% that point *forward* in time used to be dropped as foreign ids too.
+# They are not: all 13 of them sit in index posts that were edited for years
+# after they were written — the first post of `Il Manabile di #altrove` (2004)
+# links its own Appendices A to D (2004 to 2007), and thread 6306 is a link
+# list.  `posted_at` is when the post was created, never when it last changed,
+# so it cannot rule any link out.  The id resolving inside our own vB numbering
+# is the whole test.
+#
+# vB wrote its own board links relative (`href="showthread.php?s=<sid>&t=N"`),
+# and those need the same treatment: on the mirror they resolve against the
+# thread directory and 404.  Bare URLs in the text stay absolute-only — a naked
+# `showthread.php` in prose is prose.
 RE_OLD_THREAD = re.compile(
     r"https?://(?:www\.)?forum\.azzurra\.org/showthread\.php\?"
     r"(?P<q>[\w=&;%#.+-]{0,120})", re.I)
+RE_HREF_BOARD = re.compile(
+    r"(?:https?://(?:www\.)?forum\.azzurra\.org/)?show(?:thread|post)\.php\?"
+    r"(?P<q>[\w=&;%#.+-]{0,120})", re.I)
+RE_VB_SID = re.compile(r"(?:^|&amp;|[&;])s=[0-9a-f]{16,40}", re.I)
 RE_Q_T = re.compile(r"(?:^|[&;])t=(\d+)", re.I)
 RE_Q_P = re.compile(r"(?:^|[&;])p=(\d+)", re.I)
 RE_OLD_POST = re.compile(
@@ -522,7 +588,7 @@ THREAD_LINKS: dict[int, tuple[str, str, str]] = {}   # id -> (href, title, first
 POST_LINKS: dict[int, tuple[int, int]] = {}          # vb post id -> (thread, seq)
 
 
-def _local_href(m: re.Match[str], when_posted: str) -> tuple[str, int] | None:
+def _local_href(m: re.Match[str]) -> tuple[str, int] | None:
     q = html.unescape(m.group("q")).replace("&amp;", "&")
     tid = seq = None
     hit = RE_Q_T.search(q)
@@ -534,45 +600,69 @@ def _local_href(m: re.Match[str], when_posted: str) -> tuple[str, int] | None:
             tid, seq = POST_LINKS[int(hit.group(1))]
     if tid is None or tid not in THREAD_LINKS:
         return None
-    href, _title, first = THREAD_LINKS[tid]
-    # A thread cannot be linked before it exists: that is a foreign id, not ours.
-    if first and when_posted and first > when_posted:
-        return None
+    href, _title, _first = THREAD_LINKS[tid]
     return href + (f"#post-{seq}" if seq else ""), tid
 
 
 RE_A_HREF = re.compile(r"<a\s[^>]*href=\"([^\"]+)\"[^>]*>(.*?)</a>", re.I | re.S)
+RE_A_BLOCK = re.compile(r"<a\s[^>]*>.*?</a>", re.I | re.S)
+
+
+def _outside_anchors(body: str, fn) -> str:
+    """Apply `fn` to the text between anchors, never inside one.
+
+    A post that linked the board relatively and showed the absolute URL as the
+    link text — vB's own habit — used to come out as `<a …><a …>title</a></a>`:
+    the bare-URL pass rewrote the visible text of a link it had already left
+    alone.  Nested anchors are not markup any browser agrees on.
+    """
+    out, pos = [], 0
+    for m in RE_A_BLOCK.finditer(body):
+        out.append(fn(body[pos:m.start()]))
+        out.append(m.group(0))
+        pos = m.end()
+    out.append(fn(body[pos:]))
+    return "".join(out)
 
 
 def internal_links(body: str, when_posted: str = "") -> str:
     """Repoint old board URLs at the local pages, in the href and in the text."""
-    if "forum.azzurra.org" not in body:
+    if "showthread.php" not in body and "showpost.php" not in body:
         return body
 
     def fix_anchor(m: re.Match[str]) -> str:
         url, text = m.group(1), m.group(2)
-        hit = RE_OLD_THREAD.match(url) or RE_OLD_POST.match(url)
-        found = _local_href(hit, when_posted) if hit else None
+        hit = RE_HREF_BOARD.match(url)
+        found = _local_href(hit) if hit else None
         if not found:
+            # A relative board link we cannot resolve (a `p=` id off a page the
+            # Archive never took) points at nothing here.  Spell it out as the
+            # board URL it was, minus vB's session id, and let `archive_links`
+            # send it where the copy actually is.
+            if hit and not url.lower().startswith("http"):
+                q = RE_VB_SID.sub("", hit.group("q")).lstrip("&;")
+                return m.group(0).replace(
+                    f'"{url}"', f'"http://forum.azzurra.org/{url.split("?")[0]}?{q}"')
             return m.group(0)
         new, tid = found
         # When the visible text is the dead URL itself, the thread title says
         # more than a link nobody can follow.
-        if "azzurra.org" in RE_TAGS.sub("", text):
+        if "azzurra.org" in RE_TAGS.sub("", text) or "showthread" in text:
             text = esc(THREAD_LINKS[tid][1])
         return f'<a href="{new}">{text}</a>'
 
     body = RE_A_HREF.sub(fix_anchor, body)
 
     def fix_bare(m: re.Match[str]) -> str:
-        found = _local_href(m, when_posted)
+        found = _local_href(m)
         if not found:
             return m.group(0)
         new, tid = found
         return f'<a href="{new}">{esc(THREAD_LINKS[tid][1])}</a>'
 
-    body = RE_OLD_THREAD.sub(fix_bare, body)
-    return RE_OLD_POST.sub(fix_bare, body)
+    return _outside_anchors(
+        body, lambda chunk: RE_OLD_POST.sub(fix_bare,
+                                            RE_OLD_THREAD.sub(fix_bare, chunk)))
 
 
 # Whatever is left points at a board that has been down since 2016: the phpBB
@@ -590,6 +680,34 @@ def _wayback(url: str, year: str) -> str:
     # The href is HTML: the query string's `&` has to go back in escaped.
     plain = html.unescape(url)
     return WAYBACK.format(year=year, url=plain).replace("&", "&amp;")
+
+
+def flatten_anchors(body: str) -> str:
+    """Last net: an anchor inside an anchor keeps its text, loses its tags.
+
+    The link passes cannot nest any more, but the 2005 posters could — one post
+    ships `[URL=x]<a …>[/URL` with the closing bracket missing, and BBCode does
+    what it is told.  Browsers disagree on what that means; nobody disagrees
+    about the text.
+    """
+    if body.count("<a ") < 2:
+        return body
+    out: list[str] = []
+    open_a = False
+    dropped: list[bool] = []
+    for part in RE_TAG_SPLIT.split(body):
+        head = part[:3].lower()
+        if part.startswith("<") and head.startswith("<a") and not head.startswith("</"):
+            dropped.append(open_a)
+            if open_a:
+                continue
+            open_a = True
+        elif part.startswith("<") and head.startswith("</a"):
+            if dropped and dropped.pop():
+                continue
+            open_a = False
+        out.append(part)
+    return "".join(out)
 
 
 def archive_links(body: str, when_posted: str = "") -> str:
@@ -612,10 +730,69 @@ def archive_links(body: str, when_posted: str = "") -> str:
         return (f'<a href="{_wayback(m.group(0), year)}" '
                 f'title="copia su archive.org">{m.group(0)}</a>')
 
-    return "".join(
-        in_tag(part) if part.startswith("<") else RE_OLD_ANY.sub(in_text, part)
-        for part in RE_TAG_SPLIT.split(body)
-    )
+    # A board URL used as the *text* of a link is already inside an `<a>`: wrap
+    # it again and the post ships nested anchors.  Depth counting is enough —
+    # `sanitise` has already thrown out whatever else claimed to be markup.
+    out, depth = [], 0
+    for part in RE_TAG_SPLIT.split(body):
+        if part.startswith("<"):
+            low = part[:3].lower()
+            if low.startswith("<a") and not part.startswith("</"):
+                depth += 1
+            elif low.startswith("</a"):
+                depth = max(0, depth - 1)
+            out.append(in_tag(part))
+        else:
+            out.append(part if depth else RE_OLD_ANY.sub(in_text, part))
+    return "".join(out)
+
+
+# ------------------------------------------------------------ hotlinked imgs
+# The posters hotlinked from ~200 hosts, nearly all dead for fifteen years.
+# fetch_assets.sh pulls back whatever the Archive kept, named by the sha1 of
+# the URL plus its extension — the basenames collide constantly (twenty
+# different `image.jpg`) and the hash is the only thing that does not.  The
+# ones the Archive never took keep the original `src`: a broken image that
+# still names the host it came from is a better record than a silent deletion.
+ASSET_DIR = Path("assets")
+ASSET_FILES: set[str] = set()
+
+RE_IMG_SRC_ATTR = re.compile(r"(<img[^>]*\ssrc=\")([^\"]+)(\")", re.I)
+
+
+def load_assets() -> None:
+    ASSET_FILES.clear()
+    if ASSET_DIR.is_dir():
+        ASSET_FILES.update(
+            f.name for f in ASSET_DIR.iterdir()
+            if f.is_file() and f.stat().st_size and not f.name.endswith(".part")
+        )
+
+
+def asset_name(url: str) -> str:
+    """The name fetch_assets.sh wrote — must stay in step with assets_list.py."""
+    ext = re.sub(r"[^a-z0-9]", "", url.split("?")[0].rsplit(".", 1)[-1].lower())[:4]
+    return hashlib.sha1(url.encode()).hexdigest() + "." + (ext or "bin")
+
+
+def local_assets(body: str) -> str:
+    """Point the surviving hotlinks at our own copy."""
+    if not ASSET_FILES or "<img" not in body:
+        return body
+
+    def one(m: re.Match[str]) -> str:
+        # assets_list.py hashed the URL with only `&amp;` undone, so undo
+        # exactly that much here or the two names never meet.
+        url = m.group(2).strip().replace("&amp;", "&")
+        if not url.lower().startswith(("http://", "https://")):
+            return m.group(0)
+        name = asset_name(url)
+        if name not in ASSET_FILES:
+            return m.group(0)
+        # Thread pages sit two levels down, same as the smilies above.
+        return f"{m.group(1)}../../assets/{name}{m.group(3)}"
+
+    return RE_IMG_SRC_ATTR.sub(one, body)
 
 
 # ------------------------------------------------------------- mIRC controls
@@ -745,15 +922,94 @@ def edit_notes(body: str) -> str:
     return RE_ESC_FONT.sub(lambda m: f"<{m.group(1)}>", body)
 
 
+# --------------------------------------------------- vBulletin quote/code boxes
+#
+# The full `showthread` pages never went through BBCode: vB had already rendered
+# quotes and code as markup, and until the import learned to count nested divs
+# those boxes were cut off the end of 2780 posts.  Now they arrive intact, as a
+# table (quote) or a `<pre class="alt2">` (code) wrapped in a labelled div:
+#
+#   <div ...><div class="smallfont">Cita:</div><table>…<td class="alt2">BODY</td>…</table></div>
+#   <div ...><div class="smallfont">Codice:</div><pre class="alt2" …>BODY</pre></div>
+#
+# Reuse the site's own `blockquote.bbq` / `pre.bbc-code` instead of shipping the
+# 2004 table markup: same shape as every other quote on the board.  The `Cita:`
+# label is vB's chrome, but the header INSIDE the cell names the author, so it
+# becomes the `<cite>` — and lifting it out here also keeps `flat_quotes()` from
+# meeting a header it would wrap a second time.
+RE_VB_BOX = re.compile(
+    r'<div[^>]*>\s*<div class="smallfont"[^>]*>\s*'
+    r'(?P<kind>Cita|Citazione|Quote|Codice|Code)\s*:\s*</div>\s*', re.I)
+RE_VB_CELL = re.compile(r'<td[^>]*class="alt2"[^>]*>', re.I)
+RE_VB_PRE = re.compile(r'<pre[^>]*>(?P<in>.*?)</pre>', re.I | re.S)
+# `Originale inviato da` (vB3) and `Scritto originariamente da` (the later skin,
+# which also wraps the line in its own `<div>`) are the same header.
+RE_VB3_CITE = re.compile(
+    r'^\s*(?:<br\s*/?>\s*)*(?:<div[^>]*>\s*)?(?:Citazione\s*:\s*(?:<br\s*/?>\s*)*)?'
+    r'(?:Originale inviato da|Scritto originariamente da)\s*'
+    r'<(?:b|strong)>(?P<who>.{1,40}?)</(?:b|strong)>'
+    r'\s*(?:</div>\s*)?(?:<br\s*/?>\s*)*', re.I)
+RE_VB2_CITE = re.compile(
+    r'^\s*(?:<br\s*/?>\s*)*In data\s+[^,<]{4,40},\s*(?P<who>.{1,40}?)\s+scrive\s*:'
+    r'\s*(?:<br\s*/?>\s*)*', re.I)
+RE_NEST = {t: re.compile(rf"<(/?){t}\b", re.I) for t in ("div", "td")}
+
+
+def _tag_end(body: str, start: int, tag: str = "div") -> int:
+    """Offset of the `</tag>` closing the one open at depth 1 from `start`, or len.
+    Nesting has to be counted: quotes contain quotes, so the FIRST `</td>` after a
+    quote cell is usually the inner quote's, not this one's."""
+    depth = 1
+    for m in RE_NEST[tag].finditer(body, start):
+        depth += -1 if m.group(1) else 1
+        if depth == 0:
+            return m.start()
+    return len(body)
+
+
+def vb_boxes(body: str, depth: int = 0) -> str:
+    # Quotes nest: vB puts the whole inner box inside the outer one's cell, so the
+    # cell text has to go through this again or 276 nested boxes keep their tables.
+    if "smallfont" not in body or depth > 8:
+        return body
+    out, pos = [], 0
+    while (m := RE_VB_BOX.search(body, pos)) is not None:
+        end = _tag_end(body, m.end())
+        inner = body[m.end():end]
+        code = m.group("kind").lower() in ("codice", "code")
+        cell = (RE_VB_PRE if code else RE_VB_CELL).search(inner)
+        if cell is None:                  # not the shape we know — leave it alone
+            out.append(body[pos:m.end()])
+            pos = m.end()
+            continue
+        if code:
+            text = cell.group("in")
+            box = f'<pre class="bbc-code">{text.strip()}</pre>'
+        else:
+            text = vb_boxes(inner[cell.end():_tag_end(inner, cell.end(), "td")],
+                            depth + 1)
+            cm = RE_VB3_CITE.match(text) or RE_VB2_CITE.match(text)
+            cite = f'<cite>{esc(cm.group("who"))} ha scritto:</cite>' if cm else ""
+            if cm:
+                text = text[cm.end():]
+            box = f'<blockquote class="bbq">{cite}{text.strip()}</blockquote>'
+        out.append(body[pos:m.start()])
+        out.append(box)
+        pos = min(end + len("</div>"), len(body))
+    out.append(body[pos:])
+    return "".join(out)
+
+
 def body_html(raw: str, siblings: str = "", when_posted: str = "") -> str:
     """Entities first (BBCode hides inside `&#91;b&#93;`), then tags, then scrub."""
-    body = edit_notes(bbcode(unescape_entities(raw)))
+    body = edit_notes(bbcode(vb_boxes(unescape_entities(raw))))
     if siblings:
         body = flat_quotes(body, siblings)
     body = internal_links(sanitise(body), when_posted)
     # Colours last: irc_logs still has to see the line starts as text, and the
     # spans this emits would hide them.
-    return mirc_colors(irc_logs(archive_links(body, when_posted)))
+    return mirc_colors(irc_logs(local_assets(
+        flatten_anchors(archive_links(body, when_posted)))))
 
 
 RE_BB_ANY = re.compile(
@@ -827,6 +1083,14 @@ article.post header .who{color:var(--fg);font-weight:600}
 article.post .body{overflow-x:auto}
 article.post img{max-width:100%;height:auto}
 .smiley{color:var(--dim);font-size:.85em}
+.smi{height:1.3em;width:auto;vertical-align:-.25em;display:inline-block}
+#q{width:100%;padding:.6rem .7rem;font:inherit;color:var(--fg);
+background:var(--card);border:1px solid var(--line);border-radius:6px}
+.res{list-style:none;padding:0;margin:1rem 0}
+.res li{padding:.7rem 0;border-top:1px solid var(--line)}
+.res a{font-weight:600}
+.res .ex{margin:.25rem 0 0;color:var(--dim);font-size:.92rem}
+.res mark{background:var(--acc);color:var(--bg);padding:0 .15em;border-radius:2px}
 .emo{font-size:1.1em;line-height:1;font-family:"Apple Color Emoji","Segoe UI Emoji",
   "Noto Color Emoji",sans-serif}
 .trunc{font-size:.8rem;color:var(--acc);margin-top:.4rem}
@@ -859,6 +1123,88 @@ table{max-width:100%;display:block;overflow-x:auto}
 # Pagefind's Svelte-scoped selectors (`.pagefind-ui__result-title.svelte-xxxx
 # .pagefind-ui__result-link.svelte-xxxx`, four classes) are written long enough
 # to match that weight and win on order.
+# Pagefind stems what it indexes, so `tac` also answers for `tacca` and there is
+# no option to turn that off.  The search page therefore drives Pagefind's JS
+# API directly instead of its stock UI: whatever the reader quotes ("tac") or
+# marks with a plus (+tac) is checked again, verbatim and on a word boundary,
+# against the page's own text before the result is shown.  Everything else keeps
+# behaving like a normal fuzzy search.
+SEARCH_JS = """\
+<script type="module">
+const box = document.getElementById("q");
+const out = document.getElementById("res");
+const note = document.getElementById("note");
+const pf = await import("../pagefind/pagefind.js");
+await pf.options({ bundlePath: "../pagefind/" });
+let token = 0;
+
+// `"due parole"` and `+parola` both mean: exactly this, no stemming.
+function parse(raw) {
+  const exact = [];
+  let q = raw.replace(/"([^"]+)"/g, (_m, p) => { exact.push(p.trim()); return " " + p + " "; });
+  q = q.replace(/(^|\\s)\\+(\\S+)/g, (_m, s, w) => { exact.push(w); return s + w; });
+  return { q: q.trim(), exact: exact.filter(Boolean) };
+}
+
+function wordRx(term) {
+  const esc = term.replace(/[.*+?^${}()|[\\]\\\\]/g, "\\\\$&").replace(/\\s+/g, "\\\\s+");
+  try {
+    return new RegExp("(?<![\\\\p{L}\\\\p{N}_])" + esc + "(?![\\\\p{L}\\\\p{N}_])", "iu");
+  } catch (e) {                      // no lookbehind: fall back to a loose match
+    return new RegExp(esc, "iu");
+  }
+}
+
+function card(d) {
+  const sub = (d.sub_results && d.sub_results[0]) || null;
+  const href = sub ? sub.url : d.url;
+  const li = document.createElement("li");
+  const a = document.createElement("a");
+  a.href = href;
+  a.textContent = d.meta && d.meta.title ? d.meta.title : d.url;
+  const p = document.createElement("p");
+  p.className = "ex";
+  p.innerHTML = (sub ? sub.excerpt : d.excerpt) || "";
+  li.append(a, p);
+  return li;
+}
+
+async function run() {
+  const mine = ++token;
+  const raw = box.value.trim();
+  out.replaceChildren();
+  if (raw.length < 2) { note.textContent = ""; return; }
+  const { q, exact } = parse(raw);
+  note.textContent = "cerco...";
+  const search = await pf.search(q);
+  if (mine !== token) return;
+  const rx = exact.map(wordRx);
+  const kept = [];
+  let scanned = 0;
+  for (const r of search.results) {
+    if (mine !== token) return;
+    if (kept.length >= 30) break;
+    const d = await r.data();
+    scanned++;
+    if (rx.length && !rx.every((x) => x.test(d.raw_content || ""))) continue;
+    kept.push(d);
+    out.append(card(d));
+  }
+  if (mine !== token) return;
+  const more = search.results.length > scanned ? " (primi " + scanned + " esaminati)" : "";
+  note.textContent = kept.length
+    ? kept.length + " risultati" + (rx.length ? ", filtrati esatti" : "") + more
+    : "nessun risultato" + (rx.length ? " con la parola esatta" : "");
+}
+
+let t;
+box.addEventListener("input", () => { clearTimeout(t); t = setTimeout(run, 250); });
+box.addEventListener("keydown", (e) => { if (e.key === "Enter") { clearTimeout(t); run(); } });
+const pre = new URLSearchParams(location.search).get("q");
+if (pre) { box.value = pre; run(); }
+</script>
+"""
+
 PAGEFIND_CSS = """\
 <style>
 :root{--pagefind-ui-primary:var(--acc);--pagefind-ui-text:var(--fg);
@@ -958,6 +1304,24 @@ def render(db_path: Path, out: Path, base_url: str) -> None:
     db.row_factory = sqlite3.Row
     out.mkdir(parents=True, exist_ok=True)
     (out / "style.css").write_text(CSS, encoding="utf-8")
+
+    # The recovered GIFs ride along with the pages: rendering is the only step
+    # that knows which ones exist, and the site has to be self-contained.
+    load_smilies()
+    if SMILEY_FILES:
+        for src in SMILEY_DIR.rglob("*"):
+            if src.is_file():
+                dst = out / "smilies" / src.relative_to(SMILEY_DIR)
+                if not dst.exists() or dst.stat().st_size != src.stat().st_size:
+                    dst.parent.mkdir(parents=True, exist_ok=True)
+                    dst.write_bytes(src.read_bytes())
+
+    load_assets()
+    for name in ASSET_FILES:
+        src, dst = ASSET_DIR / name, out / "assets" / name
+        if not dst.exists() or dst.stat().st_size != src.stat().st_size:
+            dst.parent.mkdir(parents=True, exist_ok=True)
+            dst.write_bytes(src.read_bytes())
 
     forums = db.execute(
         "SELECT id, name, thread_count FROM forums ORDER BY thread_count DESC, id"
@@ -1093,17 +1457,19 @@ def render(db_path: Path, out: Path, base_url: str) -> None:
     write(out / "cerca" / "index.html", title="Cerca — Archivio forum Azzurra",
           crumb='<a href="../">forum</a> &rsaquo; cerca', root="../",
           desc="Ricerca full-text nell'archivio dei forum di Azzurra.",
-          extra=('<link rel="stylesheet" href="../pagefind/pagefind-ui.css">'
-                 + PAGEFIND_CSS),
           body=('<h2 class="tt">Cerca nell\'archivio</h2>'
-                '<div id="search"></div>'
+                '<input id="q" type="search" autocomplete="off" '
+                'placeholder="parole da cercare" aria-label="cerca">'
+                '<p class="meta">Le virgolette o il <code>+</code> chiedono la '
+                'parola <strong>esatta</strong>: <code>"tac"</code> o '
+                '<code>+tac</code> non tirano su <em>tacca</em>. Senza, la '
+                'ricerca resta larga.</p>'
+                '<p class="meta" id="note"></p>'
+                '<ol class="res" id="res"></ol>'
                 '<noscript><p class="meta">La ricerca ha bisogno di JavaScript. '
                 'Senza, si naviga dall\'<a href="../">indice dei forum</a>: '
                 'ogni pagina e\' HTML statico.</p></noscript>'
-                '<script src="../pagefind/pagefind-ui.js"></script>'
-                '<script>window.addEventListener("DOMContentLoaded",function(){'
-                'new PagefindUI({element:"#search",bundlePath:"../pagefind/",'
-                'showSubResults:true,pageSize:20});});</script>'))
+                + SEARCH_JS))
     n_files += 1
 
     # --- sitemap ------------------------------------------------------------

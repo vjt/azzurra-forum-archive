@@ -23,6 +23,7 @@ Usage:  ./forum_import.py [--pages DIR] [--db FILE] [--limit N]
 from __future__ import annotations
 
 import argparse
+import hashlib
 import html
 import re
 import sqlite3
@@ -46,7 +47,7 @@ RE_LOFI_POST = re.compile(
     r'<div class="post">.*?'
     r'<div class="username">(?P<user>.*?)</div>.*?'
     r'<div class="date">(?P<date>.*?)</div>.*?'
-    r'<div class="posttext">(?P<body>.*?)(?:</div>|\Z)',
+    r'<div class="posttext">',
     re.S,
 )
 BOARD = r"Azzurra IRC Network Forum"
@@ -74,9 +75,28 @@ RE_FULL_POST = re.compile(
     r'id="postcount(?P=pid)"[^>]*name="(?P<seq>\d+)".*?'
     r'(?:<a class="bigusername" href="(?P<href>[^"]*)"[^>]*>(?P<user>.*?)</a>'
     r'|<div id="postmenu_(?P=pid)">\s*(?P<user2>[^<]*?)\s*</div>).*?'
-    r'<div id="post_message_(?P=pid)">(?P<body>.*?)(?:</div>|\Z)',
+    r'<div id="post_message_(?P=pid)">',
     re.S,
 )
+
+# The body ends at the `</div>` that MATCHES its opening tag, not at the first one:
+# vB3 renders quote and code boxes as `<div style="margin:20px"><div class="smallfont">
+# Cita:</div><table>…`, so a non-greedy `.*?</div>` cut 2744 posts at the word "Cita:"
+# and 36 at "Codice:" — and set `truncated` to 0 on all of them, because the regex was
+# perfectly happy. Count the nesting instead. `\Z` still terminates: an Archive snapshot
+# cut mid-post has no closing tag at all, and half a post beats none.
+RE_DIV_TAG = re.compile(r"<(/?)div\b", re.I)
+
+
+def div_body(text: str, start: int) -> tuple[str, bool]:
+    """Slice `text` from `start` (just past an opening `<div>`) to its matching close.
+    Returns (body, truncated) — truncated when the snapshot ends before the tag does."""
+    depth = 1
+    for m in RE_DIV_TAG.finditer(text, start):
+        depth += -1 if m.group(1) else 1
+        if depth == 0:
+            return text[start:m.start()], False
+    return text[start:], True
 RE_MEMBER_ID = re.compile(r"[?&](?:amp;)?u=(\d+)")
 RE_FULL_CRUMB = re.compile(r'href="[^"]*forumdisplay\.php\?[^"]*?f=(\d+)"[^>]*>\s*(?P<name>[^<]*?)\s*</a>')
 
@@ -137,10 +157,33 @@ CREATE VIRTUAL TABLE posts_fts USING fts5(
 """
 
 
+# vB3 preloads the thread's other pages into a JS array so "show post" needs no
+# reload: `pd[24560] = '<!-' + '- post #24560 -' + '->\r\n…<table id="post24560">…';`
+# — one long single-quoted line per post, with the whitespace backslash-escaped and
+# the HTML comments split across string concatenations to keep the browser from
+# closing the block early.  The post regexes matched inside it anyway and stored 218
+# posts whose markup carried literal `\r\n`, which no later pass could read.  Decode
+# the block back into plain HTML instead of dropping it: on 90 pages it is the only
+# copy of posts whose own page never got snapshotted, and once decoded the duplicates
+# collapse under the existing same-author/same-minute/same-body dedup.
+RE_JS_CACHE = re.compile(r"^\s*pd\[\d+\]\s*=\s*'(?P<js>.*)';\s*$", re.M)
+RE_JS_JOIN = re.compile(r"'\s*\+\s*'")
+RE_JS_ESC = re.compile(r"\\(.)")
+JS_UNESC = {"r": "\r", "n": "\n", "t": "\t", "\\": "\\", "'": "'", '"': '"', "/": "/"}
+
+
+def unpack_js_cache(text: str) -> str:
+    def one(m: re.Match[str]) -> str:
+        js = RE_JS_JOIN.sub("", m.group("js"))
+        return RE_JS_ESC.sub(lambda e: JS_UNESC.get(e.group(1), e.group(1)), js)
+    return RE_JS_CACHE.sub(one, text)
+
+
 def read_page(path: Path) -> str:
     """Decode one scraped page. Everything on disk is ISO-8859-1; a few pages carry
     stray bytes, so decoding never raises — a broken byte is worth less than the post."""
-    return path.read_bytes().decode("iso-8859-1", errors="replace")
+    text = path.read_bytes().decode("iso-8859-1", errors="replace")
+    return unpack_js_cache(text) if "pd[" in text else text
 
 
 def clean_text(fragment: str) -> str:
@@ -191,7 +234,8 @@ def parse_lofi(text: str, page: int) -> tuple[str | None, int | None, list[dict]
 
     posts = []
     for i, m in enumerate(RE_LOFI_POST.finditer(text), start=1):
-        body_html = m.group("body").strip()
+        raw_body, cut = div_body(text, m.end())
+        body_html = raw_body.strip()
         posts.append(
             {
                 "seq": i,
@@ -203,7 +247,7 @@ def parse_lofi(text: str, page: int) -> tuple[str | None, int | None, list[dict]
                 "body_html": body_html,
                 "body_text": clean_text(body_html),
                 "source": "lofi",
-                "truncated": int(not m.group(0).endswith("</div>")),
+                "truncated": int(cut),
             }
         )
     return title, forum_id, posts
@@ -219,7 +263,8 @@ def parse_full(text: str, page: int) -> tuple[str | None, int | None, list[dict]
 
     posts = []
     for m in RE_FULL_POST.finditer(text):
-        body_html = m.group("body").strip()
+        raw_body, cut = div_body(text, m.end())
+        body_html = raw_body.strip()
         user = m.group("user") or m.group("user2") or ""
         uid_m = RE_MEMBER_ID.search(m.group("href") or "")
         posts.append(
@@ -233,7 +278,7 @@ def parse_full(text: str, page: int) -> tuple[str | None, int | None, list[dict]
                 "body_html": body_html,
                 "body_text": clean_text(body_html),
                 "source": "showthread",
-                "truncated": int(not m.group(0).endswith("</div>")),
+                "truncated": int(cut),
             }
         )
     return title, forum_id, posts
@@ -344,13 +389,35 @@ def main() -> int:
             (tid, forums.get(tid) or thread_forum.get(tid), titles.get(tid)),
         )
 
+    # Some snapshots carry the same thread rendered several times over (t-343
+    # holds every post five times): same author, same minute, same body is the
+    # snapshot stuttering, not a poster double-posting. 686 posts across 62
+    # threads. Dropped here, and the survivors renumbered so `seq` stays 1..N —
+    # it is the anchor in the rendered page.
+    rows, dropped = [], 0
+    for tid in sorted({t for t, _ in collected}):
+        seen_body: set[tuple[str | None, str | None, str]] = set()
+        seq = 0
+        for (_t, _s), post in sorted(
+            ((k, v) for k, v in collected.items() if k[0] == tid)
+        ):
+            key = (post["username"], post["posted_at"],
+                   hashlib.md5((post["body_text"] or "").encode()).hexdigest())
+            if key in seen_body:
+                dropped += 1
+                continue
+            seen_body.add(key)
+            seq += 1
+            rows.append(dict(post, thread_id=tid, seq=seq))
+    print(f"deduped: {dropped} repeated posts dropped", file=sys.stderr)
+
     db.executemany(
         """INSERT INTO posts
              (thread_id, seq, page, vb_post_id, username, member_id, posted_at,
               body_html, body_text, source, truncated)
            VALUES (:thread_id, :seq, :page, :vb_post_id, :username, :member_id,
                    :posted_at, :body_html, :body_text, :source, :truncated)""",
-        [dict(post, thread_id=tid) for (tid, _seq), post in sorted(collected.items())],
+        rows,
     )
 
     # Forums referenced only by a breadcrumb have no index page; keep the id anyway.
