@@ -784,6 +784,7 @@ def archive_links(body: str, when_posted: str = "") -> str:
 # ones the Archive never took keep the original `src`: a broken image that
 # still names the host it came from is a better record than a silent deletion.
 ASSET_DIR = Path("assets")
+SKIN_DIR = Path("skin")
 ASSET_FILES: set[str] = set()
 
 RE_IMG_SRC_ATTR = re.compile(r"(<img[^>]*\ssrc=\")([^\"]+)(\")", re.I)
@@ -1085,31 +1086,71 @@ def when(iso: str | None) -> str:
     return f"{dd}/{m}/{y}" + (f" {t[:5]}" if t else "")
 
 
+# The palette is not invented: it is the board's own `Azzurra3.0` skin, vBulletin
+# 3.8.2, style id 6.  Every snapshot carries that stylesheet inline in a
+# `<style id="vbulletin_css">` block, so the colours below were read off the
+# archive rather than guessed — `#11518F` links going `#FF4400` on hover,
+# `#97d2ec` category bars, the `#F3F3FF`/`#FDFDFD` alternating post rows.  The
+# four images the skin points at (`fetch_skin.sh`) come from the Archive.
+#
+# What is NOT copied is the 2009 layout itself: fixed-width tables, nested
+# `<td class="alt1">`, a login box in the header.  The mirror has to read on a
+# phone and it has no login, so the look is rebuilt with the old paint on top of
+# the layout that already worked.  Dark mode is ours too — the skin had none,
+# and the hues are pulled towards the same blue rather than replaced.
 CSS = """\
-:root{--bg:#faf9f7;--fg:#1b1b1b;--dim:#6a6a6a;--line:#ddd9d2;--acc:#7a1f1f;--card:#fff}
-@media(prefers-color-scheme:dark){:root{--bg:#141414;--fg:#e6e3de;--dim:#9a948c;
---line:#2e2c29;--acc:#e0a0a0;--card:#1c1b1a}}
+:root{--bg:#efefef;--fg:#000;--dim:#555;--line:#ccc;--acc:#11518F;--hot:#f40;
+--card:#fff;--cat:#9ad4ec;--catfg:#11518F;--bar:#4f7488;--barfg:#f0f0f0;
+--alt1:#f3f3ff;--alt2:#fdfdfd;--catimg:url(skin/sfondotb.png);
+--barimg:url(skin/misc/cat_back.png)}
+@media(prefers-color-scheme:dark){:root{--bg:#12161a;--fg:#e2e6ea;--dim:#93a1ab;
+--line:#2b343c;--acc:#7fb6e6;--hot:#ff7a4d;--card:#171d23;--cat:#1e2c38;
+--catfg:#9fd0ee;--bar:#22303b;--barfg:#cfe3ef;--alt1:#171e26;--alt2:#141a20;
+--catimg:none;--barimg:none}}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 -apple-system,
-BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
-a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
-.wrap{max-width:52rem;margin:0 auto;padding:1.2rem 1rem 4rem}
-header.top{border-bottom:1px solid var(--line);margin-bottom:1.4rem;padding-bottom:.8rem;
-display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap}
-header.top .site{font-size:1.15rem;font-weight:600;margin:0 0 .2rem}
-header.top .crumb{font-size:.85rem;color:var(--dim)}
-header.top .find{font-size:.85rem;white-space:nowrap}
-h1.tt,h2.tt{font-size:1.35rem;line-height:1.3;margin:.2rem 0 .3rem;font-weight:600}
-p.meta{font-size:.85rem;color:var(--dim)}
-ul.list{list-style:none;margin:0;padding:0}
-ul.list li{border-bottom:1px solid var(--line);padding:.55rem 0}
-ul.list .meta{font-size:.8rem;color:var(--dim)}
-article.post{background:var(--card);border:1px solid var(--line);border-radius:6px;
-margin:0 0 .9rem;padding:.7rem .85rem;overflow-wrap:anywhere}
-article.post header{font-size:.85rem;color:var(--dim);margin-bottom:.45rem;
-border-bottom:1px solid var(--line);padding-bottom:.35rem}
-article.post header .who{color:var(--fg);font-weight:600}
-article.post .body{overflow-x:auto}
+body{margin:0;background:var(--bg);color:var(--fg);
+font:15px/1.6 "Lucida Grande","Lucida Sans Unicode",Verdana,sans-serif}
+a{color:var(--acc);text-decoration:none}a:hover,a:active{color:var(--hot)}
+.wrap{max-width:62rem;margin:0 auto;padding:.6rem .7rem 3rem}
+/* The header is the board's: logo left on its own `#efefef`, then the grey
+   breadcrumb strip vB drew as a one-pixel-spaced table. */
+header.top{margin:0 0 1rem}
+header.top .brand{display:block;line-height:0;margin:0 0 .6rem}
+header.top .brand img{max-width:100%;height:auto}
+/* The logo is opaque `#efefef`, the light page's own background: on a dark page
+   it would be a white slab, so it is dimmed rather than replaced — it is the
+   board's banner and there is no dark version of it to use. */
+@media(prefers-color-scheme:dark){header.top .brand{background:#e6e6e6;
+border:1px solid var(--line)}header.top .brand img{filter:brightness(.88)}}
+header.top .site{display:none}
+header.top .bar{background:var(--card);border:1px solid var(--line);
+padding:.45rem .6rem;display:flex;justify-content:space-between;
+align-items:center;gap:1rem;flex-wrap:wrap}
+header.top .crumb{font-size:12.5px;color:var(--dim);background:
+var(--nav,transparent) no-repeat left center;padding-left:22px;
+background-image:url(skin/misc/navbits_start.gif)}
+header.top .crumb a{font-weight:bold}
+header.top .find{font-size:12.5px;white-space:nowrap}
+h1.tt,h2.tt{font-size:1.35rem;line-height:1.3;margin:0 0 .5rem;font-weight:bold;
+background:var(--cat) var(--catimg) repeat-x top left;color:var(--catfg);
+border:1px solid var(--line);padding:.4rem .6rem}
+p.meta{font-size:12.5px;color:var(--dim)}
+ul.list{list-style:none;margin:0 0 1rem;padding:0;border:1px solid var(--line);
+border-top:0;background:var(--card)}
+ul.list li{border-top:1px solid var(--line);padding:.5rem .6rem .5rem 2rem;
+background-color:var(--alt2);background-image:url(skin/statusicon/post_old.gif);
+background-repeat:no-repeat;background-position:.55rem .7rem}
+ul.list li:nth-child(odd){background-color:var(--alt1)}
+ul.list li>a{font-weight:bold}
+ul.list .meta{font-size:12.5px;color:var(--dim)}
+article.post{background:var(--alt2);border:1px solid var(--line);
+margin:0 0 .6rem;padding:0;overflow-wrap:anywhere}
+article.post:nth-of-type(odd){background:var(--alt1)}
+article.post header{font-size:12.5px;color:var(--dim);background:var(--bg);
+border-bottom:1px solid var(--line);padding:.35rem .6rem;margin:0}
+article.post header .who{color:var(--fg);font-weight:bold;font-size:14px}
+article.post .body{overflow-x:auto;padding:.6rem}
+article.post>.trunc{padding:0 .6rem .5rem}
 article.post img{max-width:100%;height:auto}
 .smiley{color:var(--dim);font-size:.85em}
 .smi{height:1.3em;width:auto;vertical-align:-.25em;display:inline-block}
@@ -1122,25 +1163,34 @@ background:var(--card);border:1px solid var(--line);border-radius:6px}
 .res mark{background:var(--acc);color:var(--bg);padding:0 .15em;border-radius:2px}
 .emo{font-size:1.1em;line-height:1;font-family:"Apple Color Emoji","Segoe UI Emoji",
   "Noto Color Emoji",sans-serif}
-.trunc{font-size:.8rem;color:var(--acc);margin-top:.4rem}
-.edited{font-size:.8rem;color:var(--dim);margin-top:.5rem;font-style:italic}
-blockquote.bbq{margin:.5rem 0;padding:.4rem .7rem;border-left:3px solid var(--line);
-background:var(--bg);border-radius:0 4px 4px 0}
-blockquote.bbq cite{display:block;font-size:.8rem;color:var(--dim);font-style:normal;
-margin-bottom:.25rem}
-pre.bbc-code{margin:.5rem 0;padding:.5rem .7rem;background:var(--bg);border:1px solid
-var(--line);border-radius:4px;overflow-x:auto;font-size:.85em;white-space:pre-wrap}
-pre.irclog{margin:.5rem 0;padding:.5rem .7rem;background:var(--bg);border-left:3px solid
-var(--line);border-radius:0 4px 4px 0;overflow-x:auto;font-size:.85em;line-height:1.45;
+.trunc{font-size:12.5px;color:#a30;margin-top:.4rem}
+@media(prefers-color-scheme:dark){.trunc{color:var(--hot)}}
+.edited{font-size:12.5px;color:var(--dim);margin-top:.5rem;font-style:italic}
+/* vB drew a quote as a bordered box with the attribution in bold above it. */
+blockquote.bbq{margin:.5rem 0;padding:.4rem .7rem;border:1px solid var(--line);
+background:var(--card)}
+blockquote.bbq cite{display:block;font-size:12.5px;color:var(--dim);font-style:normal;
+font-weight:bold;border-bottom:1px solid var(--line);padding-bottom:.2rem;
+margin-bottom:.3rem}
+pre.bbc-code{margin:.5rem 0;padding:.5rem .7rem;background:var(--card);border:1px solid
+var(--line);overflow-x:auto;font-size:.9em;white-space:pre-wrap}
+pre.irclog{margin:.5rem 0;padding:.5rem .7rem;background:var(--card);border:1px solid
+var(--line);border-left:3px solid var(--cat);overflow-x:auto;font-size:.9em;
+line-height:1.45;
 font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
 white-space:pre-wrap;word-break:break-word}
 ul.bbl,ol.bbl{margin:.4rem 0 .4rem 1.2rem;padding:0}
 .bbc{text-align:center}
-.pager{margin:1.2rem 0;font-size:.9rem}
-.pager a,.pager span{display:inline-block;padding:.15rem .45rem}
-.pager .cur{background:var(--line);border-radius:4px}
-footer.foot{margin-top:2.5rem;border-top:1px solid var(--line);padding-top:.8rem;
-font-size:.8rem;color:var(--dim)}
+/* The page numbers were small bordered boxes, the current one filled. */
+.pager{margin:1rem 0;font-size:12.5px}
+.pager a,.pager span{display:inline-block;padding:.15rem .45rem;margin-right:.2rem;
+border:1px solid var(--line);background:var(--card)}
+.pager .cur{background:var(--bar) var(--barimg) repeat-x bottom left;
+color:var(--barfg);border-color:var(--bar);font-weight:bold}
+footer.foot{margin-top:2rem;background:var(--bar) var(--barimg) repeat-x bottom left;
+color:var(--barfg);border:1px solid var(--line);padding:.5rem .6rem;font-size:12.5px}
+footer.foot a{color:#cfe6f4}
+footer.foot a:hover{color:var(--hot)}
 table{max-width:100%;display:block;overflow-x:auto}
 """
 
@@ -1269,10 +1319,13 @@ PAGE = """\
 <link rel="stylesheet" href="{root}style.css">
 {extra}</head>
 <body><div class="wrap">
-<header class="top" data-pagefind-ignore><div>
+<header class="top" data-pagefind-ignore>
+<a class="brand" href="{root}"><img src="{root}skin/logoforum.png" width="500"
+height="96" alt="Azzurra IRC Network Forum"></a>
+<div class="bar">
 <div class="site"><a href="{root}">Archivio forum Azzurra</a></div>
-<div class="crumb">{crumb}</div></div>
-<div class="find"><a href="{root}cerca/">cerca</a></div></header>
+<div class="crumb">{crumb}</div>
+<div class="find"><a href="{root}cerca/">cerca</a></div></div></header>
 {body}
 <footer class="foot">{foot}</footer>
 </div></body></html>
@@ -1333,6 +1386,17 @@ def render(db_path: Path, out: Path, base_url: str) -> None:
     db.row_factory = sqlite3.Row
     out.mkdir(parents=True, exist_ok=True)
     (out / "style.css").write_text(CSS, encoding="utf-8")
+
+    # The skin's own images (`fetch_skin.sh`).  Copied whole rather than listed
+    # here: the CSS is the only thing that decides which of them matter, and a
+    # list in two places goes out of step the first time one changes.
+    for src in sorted(SKIN_DIR.rglob("*")) if SKIN_DIR.is_dir() else ():
+        if not src.is_file():
+            continue
+        dst = out / "skin" / src.relative_to(SKIN_DIR)
+        if not dst.exists() or dst.stat().st_size != src.stat().st_size:
+            dst.parent.mkdir(parents=True, exist_ok=True)
+            dst.write_bytes(src.read_bytes())
 
     # The recovered GIFs ride along with the pages: rendering is the only step
     # that knows which ones exist, and the site has to be self-contained.
