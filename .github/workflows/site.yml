@@ -1,0 +1,125 @@
+# Build the archive once, hand it to three places.
+#
+# `pages/`, `retry/`, `assets/` and `smilies/` are the only things this
+# repository stores: the database and the site are derived from them in about
+# three minutes, so committing them would add a fresh 169 MB blob and 6706
+# rewritten files to a history that never forgets, every time a parser or
+# renderer bug gets fixed — and there have been several. They are built here.
+#
+#   build    pages/ -> forum.db -> site/ + pagefind index
+#   deploy   the same site/ published on GitHub Pages
+#   release  on a v* tag, the database and an offline copy of the site attached
+#            as release assets (a 169 MB file cannot go in the repo: GitHub
+#            rejects anything over 100 MB outright)
+
+name: site
+
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+# One deployment at a time, and never cancel one half-way: Pages would be left
+# serving a partial site.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install zstd
+        run: zstd --version >/dev/null 2>&1 || sudo apt-get install -y -qq zstd
+
+      - name: Build database, site and search index
+        env:
+          # Links inside the site are relative, so the base URL only reaches the
+          # sitemap. Pages serves the repo under its own name.
+          BASE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
+        run: |
+          make db
+          make site BASE_URL="$BASE_URL"
+          make search PAGEFIND="npx -y pagefind"
+
+      - name: Report what came out
+        run: |
+          make check
+          echo "html: $(find site -name '*.html' | wc -l) files, $(du -sh --exclude=pagefind site | cut -f1)"
+          echo "index: $(du -sh site/pagefind | cut -f1)"
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+      - name: Pack the release assets
+        if: startsWith(github.ref, 'refs/tags/v')
+        run: |
+          mkdir -p dist
+          zstd -19 -T0 -q -f forum.db -o dist/forum.db.zst
+          tar --zstd -cf dist/forum-site.tar.zst site
+          ls -lh dist
+
+      - uses: actions/upload-artifact@v4
+        if: startsWith(github.ref, 'refs/tags/v')
+        with:
+          name: release-assets
+          path: dist
+          retention-days: 1
+
+  # Only from the branch. The `github-pages` environment refuses a deployment
+  # from a tag ("Tag v1.0 is not allowed to deploy to github-pages due to
+  # environment protection rules"), and the push that carried the tagged commit
+  # has already published the same site.
+  deploy:
+    needs: build
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
+
+  release:
+    needs: build
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: release-assets
+          path: dist
+
+      - name: Publish the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "${{ github.ref_name }}" \
+            --repo "${{ github.repository }}" \
+            --title "${{ github.ref_name }}" \
+            --notes "I forum di Azzurra, ricostruiti dagli snapshot di Internet Archive.
+
+          * \`forum.db.zst\` — il database SQLite completo, indice full-text incluso.
+            \`zstd -d forum.db.zst\` e ci si parla in SQL: tabelle \`forums\`, \`threads\`,
+            \`posts\` e l'indice \`posts_fts\`.
+          * \`forum-site.tar.zst\` — copia offline del sito, ricerca compresa.
+
+          Entrambi si rifanno da zero con \`make\` a partire da \`pages/\`, che insieme a
+          \`retry/\`, \`assets/\` e \`smilies/\` e' l'unica cosa che questo repository
+          conserva davvero." \
+            dist/forum.db.zst \
+            dist/forum-site.tar.zst

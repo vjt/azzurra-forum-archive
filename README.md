@@ -5,7 +5,12 @@ Machine, insieme agli strumenti che l'hanno tirato giù, all'importatore che lo 
 in un database interrogabile e al generatore che ne ricava un sito statico. Il forum non
 esiste più: qui c'è tutto quello che l'Archive aveva ancora.
 
-Il risultato è online: **<https://sindro.me/t/forum-azzurra/>**
+Il risultato è online: **<https://vjt.github.io/azzurra-forum-archive/>**
+(il vecchio indirizzo `sindro.me/t/forum-azzurra/` reindirizza qui, link profondi
+compresi). Lo costruisce GitHub Actions a ogni push e lo pubblica su Pages, quindi
+il sito nel repository non entra mai; il database e una copia offline sono allegati
+alle [release](https://github.com/vjt/azzurra-forum-archive/releases), perché
+`forum.db` da solo pesa 169 MB e GitHub rifiuta i file oltre i 100 MB.
 
 ## Cosa c'è nel repository
 
@@ -47,16 +52,19 @@ DELAY=4 COOL=240 nohup ./retry_zero.sh > slow_get_zero.log 2>&1 &
 python3 pick_zero.py --dry-run     # prima si guarda
 python3 pick_zero.py               # poi si promuove
 
-# 4. ricostruisci il database da quello che c'è su disco (~30 s, sempre da zero)
-python3 forum_import.py
+# 4. ricostruisci il database da quello che c'è su disco (sempre da zero)
+make db
 ```
 
-E per rifare il sito statico:
+E per rifare tutto — database, sito e indice di ricerca — basta:
 
 ```sh
-python3 forum_render.py                          # ~6700 pagine in una ventina di secondi
-./bin/pagefind --site site --output-subdir pagefind
+make          # db (~2 min) + 6706 pagine (~20 s) + ricerca (~30 s)
+make serve    # e lo si guarda su http://localhost:8000/
 ```
+
+`make check` ristampa i numeri di questo README interrogando il database. I singoli
+passi restano `make db`, `make site`, `make search`.
 
 **Mai due fetcher insieme**, e prima di lanciarne uno si controlla:
 

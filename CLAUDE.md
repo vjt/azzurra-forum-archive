@@ -17,15 +17,21 @@ kinds of thing live here, and they are not equally valuable:
 3. **`forum.db` and `site/` — build artifacts**, both gitignored. Rebuilt from the pages
    in seconds. Nothing about them is precious.
 
-The rendered result is published at <https://sindro.me/t/forum-azzurra/>.
+The rendered result is published at <https://vjt.github.io/azzurra-forum-archive/>;
+`sindro.me/t/forum-azzurra/` redirects there, deep links included.
 
 ## The pipeline
 
 ```sh
-python3 forum_import.py                              # pages/ -> forum.db     (~30 s)
-python3 forum_render.py                              # forum.db -> site/      (~20 s, 6706 pages)
-./bin/pagefind --site site --output-subdir pagefind   # search index          (6565 pages, 249507 words)
+make                                                 # all three, in order
+make db                                              # pages/ -> forum.db     (~2 min)
+make site                                            # forum.db -> site/      (~20 s, 6706 pages)
+make search                                          # search index           (6565 pages, 249507 words)
 ```
+
+CI runs the same targets (`.github/workflows/site.yml`) and publishes the result to
+GitHub Pages, so the site is never committed. `bin/pagefind` in this repo is an arm64
+build; CI overrides it with `make search PAGEFIND="npx -y pagefind"`.
 
 Fetching is a separate, much slower world (`slow_get.sh`, `retry_zero.sh`,
 `fetch_assets.sh`) and is only needed when there are still holes to close.
