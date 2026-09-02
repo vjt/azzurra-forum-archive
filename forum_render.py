@@ -571,25 +571,50 @@ def irc_logs(body: str) -> str:
 # and those need the same treatment: on the mirror they resolve against the
 # thread directory and 404.  Bare URLs in the text stay absolute-only — a naked
 # `showthread.php` in prose is prose.
+#
+# The board answered on two hostnames over its life: `azzurra.org/forum/` in
+# 2004-2005, `forum.azzurra.org/` after the move.  Posts from either era link
+# the shape of their own day, and the ids behind both are the ids we hold — 22
+# section links and 16 thread links were going to the Archive for a page two
+# directories away.
+BOARD_HOST = r"(?:www\.)?(?:forum\.azzurra\.org|azzurra\.org/forum)/"
+BOARD_Q = r"(?P<q>[\w=&;%#.+-]{0,120})"
 RE_OLD_THREAD = re.compile(
-    r"https?://(?:www\.)?forum\.azzurra\.org/showthread\.php\?"
-    r"(?P<q>[\w=&;%#.+-]{0,120})", re.I)
+    rf"https?://{BOARD_HOST}showthread\.php\?{BOARD_Q}", re.I)
 RE_HREF_BOARD = re.compile(
-    r"(?:https?://(?:www\.)?forum\.azzurra\.org/)?show(?:thread|post)\.php\?"
-    r"(?P<q>[\w=&;%#.+-]{0,120})", re.I)
+    rf"(?:https?://{BOARD_HOST})?"
+    rf"(?P<script>show(?:thread|post)|forumdisplay)\.php\?{BOARD_Q}", re.I)
 RE_VB_SID = re.compile(r"(?:^|&amp;|[&;])s=[0-9a-f]{16,40}", re.I)
 RE_Q_T = re.compile(r"(?:^|[&;])t=(\d+)", re.I)
 RE_Q_P = re.compile(r"(?:^|[&;])p=(\d+)", re.I)
+RE_Q_F = re.compile(r"(?:^|[&;])f=(\d+)", re.I)
 RE_OLD_POST = re.compile(
-    r"https?://(?:www\.)?forum\.azzurra\.org/showpost\.php\?"
-    r"(?P<q>[\w=&;%#.+-]{0,120})", re.I)
+    rf"https?://{BOARD_HOST}showpost\.php\?{BOARD_Q}", re.I)
+# A board section: `forumdisplay.php?f=42` is the "Italia Area" listing, and we
+# hold that page ourselves.
+RE_OLD_FORUM = re.compile(
+    rf"https?://{BOARD_HOST}(?P<script>forumdisplay)\.php\?{BOARD_Q}", re.I)
 
 THREAD_LINKS: dict[int, tuple[str, str, str]] = {}   # id -> (href, title, first)
 POST_LINKS: dict[int, tuple[int, int]] = {}          # vb post id -> (thread, seq)
+FORUM_LINKS: dict[int, tuple[str, str]] = {}         # id -> (href, name)
 
 
-def _local_href(m: re.Match[str]) -> tuple[str, int] | None:
+def _local_href(m: re.Match[str]) -> tuple[str, str] | None:
+    """Resolve a board URL to `(href, label)` on the mirror, or None.
+
+    `f=` is read only off a `forumdisplay` URL: vB puts the forum id in plenty
+    of thread links too, and a thread link that falls back to its section would
+    quietly send the reader to the wrong page.
+    """
     q = html.unescape(m.group("q")).replace("&amp;", "&")
+    script = (m.groupdict().get("script") or "showthread").lower()
+    if script == "forumdisplay":
+        hit = RE_Q_F.search(q)
+        fid = int(hit.group(1)) if hit else None
+        if fid is None or fid not in FORUM_LINKS:
+            return None
+        return FORUM_LINKS[fid]
     tid = seq = None
     hit = RE_Q_T.search(q)
     if hit:
@@ -600,8 +625,8 @@ def _local_href(m: re.Match[str]) -> tuple[str, int] | None:
             tid, seq = POST_LINKS[int(hit.group(1))]
     if tid is None or tid not in THREAD_LINKS:
         return None
-    href, _title, _first = THREAD_LINKS[tid]
-    return href + (f"#post-{seq}" if seq else ""), tid
+    href, title, _first = THREAD_LINKS[tid]
+    return href + (f"#post-{seq}" if seq else ""), title
 
 
 RE_A_HREF = re.compile(r"<a\s[^>]*href=\"([^\"]+)\"[^>]*>(.*?)</a>", re.I | re.S)
@@ -627,7 +652,8 @@ def _outside_anchors(body: str, fn) -> str:
 
 def internal_links(body: str, when_posted: str = "") -> str:
     """Repoint old board URLs at the local pages, in the href and in the text."""
-    if "showthread.php" not in body and "showpost.php" not in body:
+    if not any(s in body for s in
+               ("showthread.php", "showpost.php", "forumdisplay.php")):
         return body
 
     def fix_anchor(m: re.Match[str]) -> str:
@@ -644,11 +670,12 @@ def internal_links(body: str, when_posted: str = "") -> str:
                 return m.group(0).replace(
                     f'"{url}"', f'"http://forum.azzurra.org/{url.split("?")[0]}?{q}"')
             return m.group(0)
-        new, tid = found
-        # When the visible text is the dead URL itself, the thread title says
-        # more than a link nobody can follow.
-        if "azzurra.org" in RE_TAGS.sub("", text) or "showthread" in text:
-            text = esc(THREAD_LINKS[tid][1])
+        new, label = found
+        # When the visible text is the dead URL itself, the thread title (or the
+        # section name) says more than a link nobody can follow.
+        plain = RE_TAGS.sub("", text)
+        if "azzurra.org" in plain or "showthread" in text or "forumdisplay" in text:
+            text = esc(label)
         return f'<a href="{new}">{text}</a>'
 
     body = RE_A_HREF.sub(fix_anchor, body)
@@ -657,12 +684,14 @@ def internal_links(body: str, when_posted: str = "") -> str:
         found = _local_href(m)
         if not found:
             return m.group(0)
-        new, tid = found
-        return f'<a href="{new}">{esc(THREAD_LINKS[tid][1])}</a>'
+        new, label = found
+        return f'<a href="{new}">{esc(label)}</a>'
 
     return _outside_anchors(
-        body, lambda chunk: RE_OLD_POST.sub(fix_bare,
-                                            RE_OLD_THREAD.sub(fix_bare, chunk)))
+        body,
+        lambda chunk: RE_OLD_FORUM.sub(
+            fix_bare, RE_OLD_POST.sub(fix_bare,
+                                      RE_OLD_THREAD.sub(fix_bare, chunk))))
 
 
 # Whatever is left points at a board that has been down since 2016: the phpBB
@@ -1393,6 +1422,13 @@ def render(db_path: Path, out: Path, base_url: str) -> None:
     # Index for the internal-link rewrite: thread pages are siblings, so the
     # href from inside one of them is `../<id>-<slug>/`.
     THREAD_LINKS.clear()
+    # Section listings live one level up from the thread pages: `forum/<slug>/`
+    # against `thread/<id>-<slug>/`.
+    FORUM_LINKS.clear()
+    FORUM_LINKS.update({
+        f["id"]: (f"../../forum/{fslug[f['id']]}/", fname[f["id"]])
+        for f in forums
+    })
     for t in db.execute("SELECT id, title, first_post_at FROM threads"):
         title = t["title"] or f"discussione {t['id']}"
         THREAD_LINKS[t["id"]] = (f"../{t['id']}-{slug(title)}/", title,
