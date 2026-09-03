@@ -1,12 +1,12 @@
 # Build the archive once, hand it to three places.
 #
-# `pages/`, `retry/`, `assets/` and `smilies/` are the only things this
-# repository stores: the database and the site are derived from them in about
-# three minutes, so committing them would add a fresh 169 MB blob and 6706
+# `pages/`, `retry/`, `assets/`, `smilies/` and `oldboard/` are the only things
+# this repository stores: the database and the site are derived from them in
+# about four minutes, so committing them would add a fresh 169 MB blob and 7229
 # rewritten files to a history that never forgets, every time a parser or
 # renderer bug gets fixed — and there have been several. They are built here.
 #
-#   build    pages/ -> forum.db -> site/ + pagefind index
+#   build    pages/ + oldboard/ -> forum.db -> site/ + pagefind index
 #   deploy   the same site/ published on GitHub Pages
 #   release  on a v* tag, the database and an offline copy of the site attached
 #            as release assets (a 169 MB file cannot go in the repo: GitHub

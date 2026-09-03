@@ -25,8 +25,16 @@ all: search
 db: $(DB)
 
 # The importer walks every page, so the stamp is the pages directory itself.
-$(DB): forum_import.py $(shell find pages retry -maxdepth 1 -type d 2>/dev/null)
+#
+# Three steps and not one: vBulletin first, then the phpBB mirror into its own
+# staging tables, then the merge that folds the second into the first.  The
+# corpus is single — it is the same forum, it only changed software — and a
+# rebuild that stopped after the first step would silently drop 5629 posts.
+$(DB): forum_import.py oldboard_import.py oldboard_merge.py \
+       $(shell find pages retry oldboard -maxdepth 1 -type d 2>/dev/null)
 	$(PYTHON) forum_import.py --db $(DB)
+	$(PYTHON) oldboard_import.py --db $(DB)
+	$(PYTHON) oldboard_merge.py --db $(DB)
 
 site: $(SITE)/index.html
 

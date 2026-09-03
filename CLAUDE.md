@@ -8,7 +8,7 @@ tour in Italian; this file is the set of rules that keep a session from wasting 
 A rescue of `forum.azzurra.org` (vBulletin, 2001-2016) from the Wayback Machine. Three
 kinds of thing live here, and they are not equally valuable:
 
-1. **`pages/`, `retry/`, `assets/`, `smilies/` — the archaeology.** Bytes fetched from the
+1. **`pages/`, `retry/`, `assets/`, `smilies/`, `oldboard/` — the archaeology.** Bytes fetched from the
    Archive over hours of deliberately slow crawling. Twelve threads are already gone for
    good. Treat these as write-once: never rewrite, never "clean up", never re-fetch what
    is already on disk.
@@ -24,9 +24,9 @@ The rendered result is published at <https://vjt.github.io/azzurra-forum-archive
 
 ```sh
 make                                                 # all three, in order
-make db                                              # pages/ -> forum.db     (~2 min)
-make site                                            # forum.db -> site/      (~20 s, 6706 pages)
-make search                                          # search index           (6565 pages, 249507 words)
+make db                                              # pages/ + oldboard/ -> forum.db  (~3 min)
+make site                                            # forum.db -> site/      (~20 s, 7229 pages)
+make search                                          # search index           (7070 pages, 256522 words)
 ```
 
 CI runs the same targets (`.github/workflows/site.yml`) and publishes the result to
@@ -44,7 +44,8 @@ Fetching is a separate, much slower world (`slow_get.sh`, `retry_zero.sh`,
 - **Never fetch in parallel.** The Archive rate-limits by returning `HTTP 200` with a
   zero-length body. `rc=0` reads as success and the corruption is silent. Serial, with
   `DELAY` and `COOL`, yields 100% on the same list.
-- **Never delete or overwrite anything under `pages/`, `retry/`, `assets/`, `smilies/`.**
+- **Never delete or overwrite anything under `pages/`, `retry/`, `assets/`, `smilies/`,
+  `oldboard/`.**
   If a page needs repairing, fetch the alternative into a *separate* directory and promote
   it with `pick_zero.py`. A resumed fetcher skips files that already have bytes, so
   "repair by re-running the fetcher" does nothing at all.
@@ -66,9 +67,9 @@ Every number in the README came from a query, and it must stay that way. Before 
 fix worked:
 
 ```sh
-sqlite3 forum.db "SELECT count(*) FROM posts"                       -- 154198
+sqlite3 forum.db "SELECT count(*) FROM posts"                       -- 159827
 sqlite3 forum.db "SELECT count(*) FROM posts WHERE truncated = 1"   -- 771 real cuts
-sqlite3 forum.db "SELECT count(*) FROM threads WHERE post_count=0"  -- 764 head-only snapshots
+sqlite3 forum.db "SELECT count(*) FROM threads WHERE post_count=0"  -- 596 head-only snapshots
 sqlite3 forum.db "SELECT source, count(*) FROM posts GROUP BY source"
 ```
 
@@ -99,6 +100,17 @@ Two specific traps that produced confident and wrong answers before:
 - **Parse loosely, record the damage.** Requiring well-formed markup threw away thousands
   of readable posts. Accept a body that ends at EOF and flag it with `posts.truncated = 1`;
   half a post from 2001 beats none.
+- **The old board is the same forum, not a second one.** `oldboard_merge.py` stitches the
+  phpBB mirror into the vBulletin threads; `make db` runs import → oldboard import → merge
+  and a rebuild that stops at the first step silently loses 5629 posts.
+- **Never dedup the two corpora on the timestamp.** They are an hour apart in places (the
+  DST change around the migration) and two posts by the same user minutes apart are
+  different posts. The key is same author + similar body (token containment ≥ 0.8, Jaccard
+  ≥ 0.5) inside 180 s of the corpus offset, and the offset is *measured*, not assumed.
+- **Do not anchor a phpBB 1.4.0 parser to the row background colour.** The board was
+  reskinned mid-life (`#EEEEEE`/`#aeddff` → `#F3F3F3`/`#A8CBFF`); anchoring to the first
+  pair seen dropped 655 posts across 125 pages and returned zero without an error. Anchor
+  to the *shape* of the row and check against the `Inviato:` count, page by page.
 - **Post bodies are untrusted markup.** The renderer strips `<script>`, `<style>`,
   `<iframe>`, `<object>`, `<embed>`, every `on*=` handler and every `javascript:` URL —
   including the unclosed variants an Archive cut leaves behind. Everything else passes

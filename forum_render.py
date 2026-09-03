@@ -34,6 +34,7 @@ Design notes worth keeping:
 from __future__ import annotations
 
 import argparse
+import collections
 import hashlib
 import html
 import re
@@ -553,11 +554,16 @@ def irc_logs(body: str) -> str:
 # Posts quote each other by URL on the dead board.  Those that name a thread we
 # hold get pointed at the local page instead of at a 404.
 #
-# `showthread.php?t=N` only: measured against the post dates, 202 of its 213
-# resolvable targets are older than the post linking them (95%, i.e. right), but
-# `forum/viewtopic.php?t=N` scores 12 of 39 (31%) — the phpBB board it came from
-# numbered its topics in a different space, so those ids are NOT ours and are
-# left alone.
+# `showthread.php?t=N`: measured against the post dates, 202 of its 213
+# resolvable targets are older than the post linking them (95%, i.e. right).
+#
+# `viewtopic.php` used to be left alone here, on the grounds that the phpBB
+# board numbered its topics in a space we did not hold.  We hold it now: the
+# mirror of the old board is merged into the same corpus and every thread it
+# stitched carries its `old_topic_id`, every post its `old_post_id`.  Those ids
+# resolve locally — 31 of the 105 phpBB topic ids the posts link, plus the
+# sections behind `viewforum.php?f=`.  The rest never made it into the mirror
+# and still go to the Archive.
 #
 # The 5% that point *forward* in time used to be dropped as foreign ids too.
 # They are not: all 13 of them sit in index posts that were edited for years
@@ -583,21 +589,34 @@ RE_OLD_THREAD = re.compile(
     rf"https?://{BOARD_HOST}showthread\.php\?{BOARD_Q}", re.I)
 RE_HREF_BOARD = re.compile(
     rf"(?:https?://{BOARD_HOST})?"
-    rf"(?P<script>show(?:thread|post)|forumdisplay)\.php\?{BOARD_Q}", re.I)
+    rf"(?P<script>show(?:thread|post)|forumdisplay|view(?:topic|forum))"
+    rf"\.php\?{BOARD_Q}", re.I)
 RE_VB_SID = re.compile(r"(?:^|&amp;|[&;])s=[0-9a-f]{16,40}", re.I)
 RE_Q_T = re.compile(r"(?:^|[&;])t=(\d+)", re.I)
 RE_Q_P = re.compile(r"(?:^|[&;])p=(\d+)", re.I)
 RE_Q_F = re.compile(r"(?:^|[&;])f=(\d+)", re.I)
+# phpBB spelled the same three ids out in full.  `topic=`/`forum=` are the
+# 1.4.0 shape, `t=`/`p=`/`f=` the 2.0 one; both appear in the posts.
+RE_Q_TOPIC = re.compile(r"(?:^|[&;])topic=(\d+)", re.I)
+RE_Q_FORUM = re.compile(r"(?:^|[&;])forum=(\d+)", re.I)
 RE_OLD_POST = re.compile(
     rf"https?://{BOARD_HOST}showpost\.php\?{BOARD_Q}", re.I)
 # A board section: `forumdisplay.php?f=42` is the "Italia Area" listing, and we
 # hold that page ourselves.
 RE_OLD_FORUM = re.compile(
     rf"https?://{BOARD_HOST}(?P<script>forumdisplay)\.php\?{BOARD_Q}", re.I)
+# The phpBB pair, same treatment.
+RE_OLD_VIEW = re.compile(
+    rf"https?://{BOARD_HOST}(?P<script>view(?:topic|forum))\.php\?{BOARD_Q}",
+    re.I)
 
 THREAD_LINKS: dict[int, tuple[str, str, str]] = {}   # id -> (href, title, first)
 POST_LINKS: dict[int, tuple[int, int]] = {}          # vb post id -> (thread, seq)
 FORUM_LINKS: dict[int, tuple[str, str]] = {}         # id -> (href, name)
+# The same three, keyed by the ids the *phpBB* board used before the migration.
+OLD_THREADS: dict[int, int] = {}                     # phpBB topic  -> thread id
+OLD_POSTS: dict[int, tuple[int, int]] = {}           # phpBB post   -> (thread, seq)
+OLD_FORUMS: dict[int, int] = {}                      # phpBB forum  -> forum id
 
 
 def _local_href(m: re.Match[str]) -> tuple[str, str] | None:
@@ -609,6 +628,8 @@ def _local_href(m: re.Match[str]) -> tuple[str, str] | None:
     """
     q = html.unescape(m.group("q")).replace("&amp;", "&")
     script = (m.groupdict().get("script") or "showthread").lower()
+    if script in ("viewtopic", "viewforum"):
+        return _old_board_href(script, q)
     if script == "forumdisplay":
         hit = RE_Q_F.search(q)
         fid = int(hit.group(1)) if hit else None
@@ -623,6 +644,30 @@ def _local_href(m: re.Match[str]) -> tuple[str, str] | None:
         hit = RE_Q_P.search(q)
         if hit and int(hit.group(1)) in POST_LINKS:
             tid, seq = POST_LINKS[int(hit.group(1))]
+    if tid is None or tid not in THREAD_LINKS:
+        return None
+    href, title, _first = THREAD_LINKS[tid]
+    return href + (f"#post-{seq}" if seq else ""), title
+
+
+def _old_board_href(script: str, q: str) -> tuple[str, str] | None:
+    """The phpBB side of the same job: `viewtopic.php` / `viewforum.php`.
+
+    A topic id is worth more than a post id here — `p=` was only ever written by
+    the 2.0 skin and the mirror holds the page, not the anchor, for most of them
+    — so `t=`/`topic=` is tried first and `p=` only fills in the gap.
+    """
+    if script == "viewforum":
+        hit = RE_Q_F.search(q) or RE_Q_FORUM.search(q)
+        fid = OLD_FORUMS.get(int(hit.group(1))) if hit else None
+        return FORUM_LINKS.get(fid) if fid is not None else None
+    seq = None
+    hit = RE_Q_T.search(q) or RE_Q_TOPIC.search(q)
+    tid = OLD_THREADS.get(int(hit.group(1))) if hit else None
+    if tid is None:
+        hit = RE_Q_P.search(q)
+        if hit and int(hit.group(1)) in OLD_POSTS:
+            tid, seq = OLD_POSTS[int(hit.group(1))]
     if tid is None or tid not in THREAD_LINKS:
         return None
     href, title, _first = THREAD_LINKS[tid]
@@ -653,7 +698,8 @@ def _outside_anchors(body: str, fn) -> str:
 def internal_links(body: str, when_posted: str = "") -> str:
     """Repoint old board URLs at the local pages, in the href and in the text."""
     if not any(s in body for s in
-               ("showthread.php", "showpost.php", "forumdisplay.php")):
+               ("showthread.php", "showpost.php", "forumdisplay.php",
+                "viewtopic.php", "viewforum.php")):
         return body
 
     def fix_anchor(m: re.Match[str]) -> str:
@@ -667,8 +713,14 @@ def internal_links(body: str, when_posted: str = "") -> str:
             # send it where the copy actually is.
             if hit and not url.lower().startswith("http"):
                 q = RE_VB_SID.sub("", hit.group("q")).lstrip("&;")
+                # phpBB answered on the other hostname: a relative `viewtopic`
+                # spelled out as `forum.azzurra.org/` would send the Archive
+                # after a page that never lived there.
+                base = ("http://www.azzurra.org/forum/"
+                        if hit.group("script").lower().startswith("view")
+                        else "http://forum.azzurra.org/")
                 return m.group(0).replace(
-                    f'"{url}"', f'"http://forum.azzurra.org/{url.split("?")[0]}?{q}"')
+                    f'"{url}"', f'"{base}{url.split("?")[0]}?{q}"')
             return m.group(0)
         new, label = found
         # When the visible text is the dead URL itself, the thread title (or the
@@ -689,9 +741,10 @@ def internal_links(body: str, when_posted: str = "") -> str:
 
     return _outside_anchors(
         body,
-        lambda chunk: RE_OLD_FORUM.sub(
-            fix_bare, RE_OLD_POST.sub(fix_bare,
-                                      RE_OLD_THREAD.sub(fix_bare, chunk))))
+        lambda chunk: RE_OLD_VIEW.sub(
+            fix_bare, RE_OLD_FORUM.sub(
+                fix_bare, RE_OLD_POST.sub(
+                    fix_bare, RE_OLD_THREAD.sub(fix_bare, chunk)))))
 
 
 # Whatever is left points at a board that has been down since 2016: the phpBB
@@ -1503,6 +1556,34 @@ def render(db_path: Path, out: Path, base_url: str) -> None:
         for r in db.execute("SELECT vb_post_id, thread_id, seq FROM posts "
                             "WHERE vb_post_id IS NOT NULL")
     })
+    # The phpBB numbering the board used before vBulletin. It survives the merge
+    # on the rows it came from, which is what makes a `viewtopic.php?t=` link
+    # resolvable at all.
+    OLD_THREADS.clear()
+    OLD_THREADS.update({
+        r["old_topic_id"]: r["id"]
+        for r in db.execute("SELECT id, old_topic_id FROM threads "
+                            "WHERE old_topic_id IS NOT NULL")
+    })
+    OLD_POSTS.clear()
+    OLD_POSTS.update({
+        r["old_post_id"]: (r["thread_id"], r["seq"])
+        for r in db.execute("SELECT old_post_id, thread_id, seq FROM posts "
+                            "WHERE old_post_id IS NOT NULL")
+    })
+    # A phpBB section has no id of its own in the schema: the threads that came
+    # from it say which vB forum it became, and the majority wins — the same
+    # vote `oldboard_merge.py` takes, recomputed here rather than stored twice.
+    OLD_FORUMS.clear()
+    fvotes: dict[int, collections.Counter] = collections.defaultdict(
+        collections.Counter)
+    for r in db.execute(
+            "SELECT o.forum_id AS old_id, t.forum_id AS new_id FROM threads t "
+            "JOIN old_topics o ON o.topic_id = t.old_topic_id "
+            "WHERE t.forum_id IS NOT NULL AND o.forum_id IS NOT NULL"):
+        fvotes[r["old_id"]][r["new_id"]] += 1
+    OLD_FORUMS.update({old: tally.most_common(1)[0][0]
+                       for old, tally in fvotes.items()})
     empty = 0
     for t in threads:
         posts = db.execute(

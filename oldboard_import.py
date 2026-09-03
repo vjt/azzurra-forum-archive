@@ -101,8 +101,12 @@ RE_20_SUBJ = re.compile(r'Oggetto del messaggio:\s*(?P<subj>.*?)</span>',
 RE_20_BODY = re.compile(r'<span class="postbody">', re.I)
 RE_20_CRUMB = re.compile(r'viewforum\.php\?f=(?P<fid>\d+)[^"]*"[^>]*>'
                          r'(?P<name>[^<]+)</a>', re.I)
-RE_20_TITLE = re.compile(r'<title>[^<]*?Leggi il Topic\s*-\s*(?P<title>[^<]*)'
-                         r'</title>', re.I | re.S)
+# The 2.0.x template was translated twice: 645 pages of this mirror say «Leggi
+# il Topic» and 285 say «Visualizza topic». Knowing only the first left 289
+# topics with no title at all — and a topic with no title cannot be matched to
+# the vBulletin thread it became.
+RE_20_TITLE = re.compile(r'<title>[^<]*?(?:Leggi il Topic|Visualizza topic)\s*-\s*'
+                         r'(?P<title>[^<]*)</title>', re.I | re.S)
 
 MONTHS = {"gen": "01", "feb": "02", "mar": "03", "apr": "04", "mag": "05",
           "giu": "06", "lug": "07", "ago": "08", "set": "09", "ott": "10",

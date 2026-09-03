@@ -1,9 +1,14 @@
 # Archivio del forum di Azzurra
 
-Recupero di `forum.azzurra.org` (vBulletin, 2001-06-28 → 2016-07-29) dalla Wayback
-Machine, insieme agli strumenti che l'hanno tirato giù, all'importatore che lo trasforma
-in un database interrogabile e al generatore che ne ricava un sito statico. Il forum non
-esiste più: qui c'è tutto quello che l'Archive aveva ancora.
+Recupero di `forum.azzurra.org` (2001-06-28 → 2016-07-29) dalla Wayback Machine, insieme
+agli strumenti che l'hanno tirato giù, all'importatore che lo trasforma in un database
+interrogabile e al generatore che ne ricava un sito statico. Il forum non esiste più: qui
+c'è tutto quello che l'Archive aveva ancora.
+
+Il forum ha cambiato software due volte — phpBB 1.4.0, poi phpBB 2.0.x, infine vBulletin —
+e le tre generazioni stanno in **un corpus solo**: non erano forum diversi, era lo stesso
+forum con un motore nuovo. Il mirror del vecchio board (`oldboard/`) viene ricucito dentro
+i thread di vBulletin, con il dedup che riconosce i post già presenti.
 
 Il risultato è online: **<https://vjt.github.io/azzurra-forum-archive/>**
 (il vecchio indirizzo `sindro.me/t/forum-azzurra/` reindirizza qui, link profondi
@@ -20,7 +25,10 @@ alle [release](https://github.com/vjt/azzurra-forum-archive/releases), perché
 | `retry/` | 1314 snapshot alternativi dei thread importati vuoti: i candidati perdenti restano, rifarli costa ore. |
 | `assets/` | 530 immagini allegate ai post (12 MB), recuperate dall'Archive e indirizzate per hash SHA-1. |
 | `smilies/` | 508 faccine della board originale. |
+| `oldboard/` | 1604 pagine del vecchio board phpBB (1.4.0 e 2.0.x, 2001-2004), stessa regola di `pages/`: write-once. |
 | `forum_import.py` | HTML → SQLite. Ricostruisce `forum.db` da zero a ogni giro (~30 s). |
+| `oldboard_import.py` | Le pagine phpBB → tabelle di appoggio `old_posts` / `old_topics` / `old_forums` (~3 s). |
+| `oldboard_merge.py` | Ricuce i thread del mirror dentro quelli di vBulletin e inserisce i post che mancano (~18 s). |
 | `forum_render.py` | SQLite → sito statico: un indice, una pagina per forum, una per thread, più la ricerca. |
 | `slow_get*.sh`, `batch_get*.sh`, `get_one.sh`, `retry_snaps.sh`, `retry_zero.sh` | I fetcher, nell'ordine in cui sono stati scritti. Quello che ha funzionato è `slow_get.sh`: pausa lunga, ripartibile, salta i file già pieni. |
 | `fetch_cdx*.sh`, `cdx_*.t*` | Interrogazioni all'indice CDX della Wayback e loro output: le liste di target nascono da qui. |
@@ -59,7 +67,7 @@ make db
 E per rifare tutto — database, sito e indice di ricerca — basta:
 
 ```sh
-make          # db (~2 min) + 6706 pagine (~20 s) + ricerca (~30 s)
+make          # db (~3 min) + 7229 pagine (~20 s) + ricerca (~30 s)
 make serve    # e lo si guarda su http://localhost:8000/
 ```
 
@@ -80,12 +88,30 @@ sqlite3 forum.db "SELECT count(*) FROM threads WHERE post_count = 0"
 sqlite3 forum.db "SELECT count(*) FROM posts WHERE truncated = 1"
 ```
 
-Stato attuale: **99 forum, 6565 discussioni, 154198 post** (133825 dal lo-fi, 20373 dallo
-showthread), 22 post senza data, arco `2001-06-28T22:29` → `2016-07-29T16:07`.
+Stato attuale: **114 forum, 7070 discussioni, 159827 post** (133825 dal lo-fi, 20373 dallo
+showthread, 3221 dal phpBB 2.0, 2408 dal phpBB 1.4.0), 22 post senza data, arco
+`2001-06-28T21:29` → `2016-07-29T16:07`.
 
 Schema: `forums` / `threads` / `posts`, più un indice FTS5 `posts_fts` su nome utente e
 testo (`unicode61 remove_diacritics 2`). Ogni post conserva sia `body_html` sia
-`body_text`; `source` dice da quale markup arriva.
+`body_text`; `source` dice da quale markup arriva. `threads.old_topic_id` e
+`posts.old_post_id` tengono la numerazione phpBB, ed è quella che rende risolvibili in
+locale i vecchi link `viewtopic.php`.
+
+## Un forum, due numerazioni
+
+vBulletin si portò dietro il contenuto phpBB — nel database ci sono già 4928 post del
+2001-2002 — quindi il mirror non è un `append`, è una **fusione con dedup**. Il dedup non
+può usare l'orario: fra i due corpus c'è uno scarto sistematico di un'ora (il cambio d'ora
+al momento della migrazione) e due post dello stesso utente a due minuti di distanza sono
+post diversi, non doppioni. La chiave che regge è *stesso autore + corpo simile* (token
+set, contenimento ≥ 0.8 e Jaccard ≥ 0.5) dentro una finestra di 180 s attorno all'offset
+di corpus, scelto provando 0/+1h/−1h e tenendo quello che spiega più coincidenze.
+
+Risultato misurato: 8686 post nel mirror, **5629 nuovi** e 3057 già presenti; 924 topic
+ricuciti su un thread esistente, 505 diventati thread nuovi, 48 lasciati staccati apposta
+(stesso titolo, nessun post in comune, oltre un anno di distanza). Otto forum che avevano
+raggiunto il crawler senza nome hanno riavuto il loro dal mirror.
 
 ## Tre markup, un forum
 
@@ -99,6 +125,17 @@ Dieci anni di skin vBulletin stanno qui dentro, e l'importatore li parsa tutti:
 - **`azzurra2.0`, 2001-2003** (id di thread bassi) — una skin di showthread senza i
   delimitatori `<!-- status icon and date -->`: la data sta nuda dentro `td.thead`.
 
+E due in più nel mirror del vecchio board, che `oldboard_import.py` parsa a parte:
+
+- **phpBB 2.0.x** (`class="postbody"`) — quattro patch level (2.0.1, 2.0.2, 2.0.5, 2.0.8)
+  che rendono lo stesso subSilver: un parser solo, il patch level non conta. Il template
+  però è tradotto in due modi — «Leggi il Topic» e «Visualizza topic» — e un regex che
+  conosceva solo il primo lasciava 289 topic senza titolo, quindi non agganciabili.
+- **phpBB 1.4.0** — nessuna classe CSS, solo `<FONT FACE="Verdana">` e tabelle. Ci si
+  ancora alla *forma* della riga (`<TR ... BGCOLOR="#xxxxxx" ... ALIGN="LEFT">`) e a
+  `Registrato:` / `Inviato:` / `_________________`: **non** al colore, che cambiò quando
+  il board fu riskinnato e faceva sparire in silenzio le pagine dell'altra skin.
+
 ## Snapshot troncati
 
 Molti snapshot sono stati salvati a metà: la testa c'è, l'ultimo `posttext` non riceve mai
@@ -111,7 +148,8 @@ SELECT count(*) FROM posts WHERE truncated = 1;
 
 ## Buchi noti
 
-- **764 discussioni hanno una pagina su disco e zero post**: lo snapshot è stato tagliato
+- **596 discussioni hanno una pagina su disco e zero post** (erano 764: 168 le ha riempite
+  il mirror phpBB): lo snapshot è stato tagliato
   *prima* del corpo, quindi il file contiene solo `<head>` e la barra di navigazione. Non
   c'è niente da parsare: servono snapshot alternativi, cioè lavoro di scraping, non di
   parser.
