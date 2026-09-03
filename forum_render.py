@@ -35,6 +35,7 @@ from __future__ import annotations
 
 import argparse
 import collections
+import colorsys
 import hashlib
 import html
 import re
@@ -1083,6 +1084,141 @@ def vb_boxes(body: str, depth: int = 0) -> str:
     return "".join(out)
 
 
+# --------------------------------------------------- authored colours, both themes
+#
+# The board was black on white and the posters coloured against that canvas: the
+# phpBB skin wrapped 3259 old posts in `<FONT COLOR="#000000">` and the vB
+# posters typed `black`, `navy`, `#000080` in 4400 more.  On the dark theme that
+# is black on black — /thread/1000938-il-genoma-umano/ was reported unreadable,
+# every post of it.  The colour stays in the record and stays on screen in the
+# light theme; the dark theme gets the same hue lifted until it is legible, and
+# only when it is not.  A colour that already reads (`red` is 5.2:1 on the dark
+# card) is left exactly as the poster wrote it.
+CSS_NAMED = {
+    "black": "#000000", "blue": "#0000ff", "brown": "#a52a2a",
+    "cyan": "#00ffff", "darkblue": "#00008b", "darkgreen": "#006400",
+    "darkolivegreen": "#556b2f", "darkorange": "#ff8c00",
+    "darkorchid": "#9932cc", "darkred": "#8b0000", "darkslateblue": "#483d8b",
+    "darkslategray": "#2f4f4f", "deepskyblue": "#00bfff",
+    "dimgray": "#696969", "gray": "#808080", "green": "#008000",
+    "indigo": "#4b0082", "lemonchiffon": "#fffacd", "lightblue": "#add8e6",
+    "lime": "#00ff00", "magenta": "#ff00ff", "mediumturquoise": "#48d1cc",
+    "navy": "#000080", "olive": "#808000", "orange": "#ffa500",
+    "paleturquoise": "#afeeee", "pink": "#ffc0cb", "plum": "#dda0dd",
+    "purple": "#800080", "red": "#ff0000", "royalblue": "#4169e1",
+    "sandybrown": "#f4a460", "seagreen": "#2e8b57", "sienna": "#a0522d",
+    "silver": "#c0c0c0", "slategray": "#708090", "teal": "#008080",
+    "violet": "#ee82ee", "wheat": "#f5deb3", "white": "#ffffff",
+    "yellow": "#ffff00", "yellowgreen": "#9acd32",
+}
+# The two post cards, `--alt2` light and dark: what the text actually sits on.
+LIGHT_CARD = (0xfd, 0xfd, 0xfd)
+DARK_CARD = (0x14, 0x1a, 0x20)
+UNREADABLE = 3.0        # WCAG ratio below which the text is not there at all
+READABLE = 4.5          # where an unreadable colour is lifted to
+
+
+def _rgb(colour: str) -> tuple[int, int, int] | None:
+    """`#abc`, `#aabbcc`, `#aabbccdd` or one of the names the corpus uses."""
+    c = colour.strip().lower()
+    c = CSS_NAMED.get(c, c)
+    if not c.startswith("#"):
+        return None
+    h = c[1:]
+    if len(h) in (3, 4):
+        h = "".join(ch * 2 for ch in h[:3])
+    elif len(h) in (6, 8):
+        h = h[:6]
+    else:
+        return None
+    try:
+        return int(h[0:2], 16), int(h[2:4], 16), int(h[4:6], 16)
+    except ValueError:
+        return None
+
+
+def _luma(rgb: tuple[int, int, int]) -> float:
+    def chan(v: float) -> float:
+        v /= 255
+        return v / 12.92 if v <= 0.04045 else ((v + 0.055) / 1.055) ** 2.4
+    r, g, b = (chan(v) for v in rgb)
+    return 0.2126 * r + 0.7152 * g + 0.0722 * b
+
+
+def _ratio(fg: tuple[int, int, int], bg: tuple[int, int, int]) -> float:
+    a, b = _luma(fg), _luma(bg)
+    hi, lo = max(a, b), min(a, b)
+    return (hi + 0.05) / (lo + 0.05)
+
+
+def _fit(rgb: tuple[int, int, int], bg: tuple[int, int, int]) -> str:
+    """Walk the colour's HLS lightness towards the readable side, hue kept."""
+    if _ratio(rgb, bg) >= UNREADABLE:
+        return "#%02x%02x%02x" % rgb
+    up = _luma(bg) < 0.5                       # dark card: lift; light: sink
+    h, l, s = colorsys.rgb_to_hls(*(v / 255 for v in rgb))
+    stop = 0.94 if up else 0.06
+    out = rgb
+    while (l < stop) if up else (l > stop):
+        l = min(stop, l + 0.02) if up else max(stop, l - 0.02)
+        out = tuple(round(v * 255) for v in colorsys.hls_to_rgb(h, l, s))
+        if _ratio(out, bg) >= READABLE:
+            break
+    return "#%02x%02x%02x" % out
+
+
+RE_SPAN_COLOUR = re.compile(r'<span style="color:([^";]+)((?:;[^"]*)?)">')
+RE_FONT_OPEN = re.compile(r"<font\b([^>]*)>", re.I)
+RE_FONT_COLOUR = re.compile(
+    r"""\bcolor\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s>]+))""", re.I)
+
+
+def _themed(colour: str) -> str | None:
+    """`--lc`/`--dc` for one authored colour, or None when both themes read it."""
+    rgb = _rgb(colour)
+    if rgb is None:
+        return None
+    # Grey has no hue to keep, and the grey the skin meant was "the body text":
+    # 3259 old posts are wrapped in `#000000` by the phpBB template alone, so
+    # they read as ordinary text rather than as a lifted grey.
+    grey = max(rgb) - min(rgb) < 8
+    light = "var(--fg)" if grey and _ratio(rgb, LIGHT_CARD) < UNREADABLE \
+        else _fit(rgb, LIGHT_CARD)
+    dark = "var(--fg)" if grey and _ratio(rgb, DARK_CARD) < UNREADABLE \
+        else _fit(rgb, DARK_CARD)
+    return f"--lc:{light};--dc:{dark}"
+
+
+def theme_colours(body: str) -> str:
+    """Give every authored colour a per-theme value; `.uc` in the CSS picks one.
+
+    The custom properties go inline and the `color` comes from the stylesheet:
+    an inline `color` would outrank the dark-theme rule and we would be back to
+    black on black.  The `<font color=...>` attribute is left in place — it is a
+    presentation hint, the class beats it, and the record keeps its markup."""
+    def span(m: re.Match[str]) -> str:
+        # A span that brought its own background carries the canvas the poster
+        # drew on — mIRC's white window — and needs no help from the theme.
+        rest = m.group(2)
+        if "background" in rest:
+            return m.group(0)
+        props = _themed(m.group(1))
+        return f'<span class="uc" style="{props}{rest}">' if props else m.group(0)
+
+    def font(m: re.Match[str]) -> str:
+        attr = RE_FONT_COLOUR.search(m.group(1))
+        if not attr:
+            return m.group(0)
+        props = _themed(next(g for g in attr.groups() if g is not None))
+        return f'<font{m.group(1)} class="uc" style="{props}">' if props \
+            else m.group(0)
+
+    if "color" in body.lower():
+        body = RE_SPAN_COLOUR.sub(span, body)
+        body = RE_FONT_OPEN.sub(font, body)
+    return body
+
+
 def body_html(raw: str, siblings: str = "", when_posted: str = "") -> str:
     """Entities first (BBCode hides inside `&#91;b&#93;`), then tags, then scrub."""
     body = edit_notes(bbcode(vb_boxes(unescape_entities(raw))))
@@ -1091,8 +1227,8 @@ def body_html(raw: str, siblings: str = "", when_posted: str = "") -> str:
     body = internal_links(sanitise(body), when_posted)
     # Colours last: irc_logs still has to see the line starts as text, and the
     # spans this emits would hide them.
-    return mirc_colors(irc_logs(local_assets(
-        flatten_anchors(archive_links(body, when_posted)))))
+    return theme_colours(mirc_colors(irc_logs(local_assets(
+        flatten_anchors(archive_links(body, when_posted))))))
 
 
 RE_BB_ANY = re.compile(
@@ -1205,6 +1341,11 @@ article.post header .who{color:var(--fg);font-weight:bold;font-size:14px}
 article.post .body{overflow-x:auto;padding:.6rem}
 article.post>.trunc{padding:0 .6rem .5rem}
 article.post img{max-width:100%;height:auto}
+/* Authored colours: `theme_colours()` writes both values inline, the rule
+   picks one. A `<font color>` attribute loses to this; an inline `color`
+   would have won, which is why there is not one. */
+.uc{color:var(--lc)}
+@media(prefers-color-scheme:dark){.uc{color:var(--dc)}}
 .smiley{color:var(--dim);font-size:.85em}
 .smi{height:1.3em;width:auto;vertical-align:-.25em;display:inline-block}
 #q{width:100%;padding:.6rem .7rem;font:inherit;color:var(--fg);
