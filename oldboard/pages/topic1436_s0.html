@@ -1,0 +1,372 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<LINK REL="SHORTCUT ICON" href="http://www.azzurra.org/Azzurra.ico">
+</head>
+<body bgcolor="#EEEEEE" text="#000000" link="#006699" vlink="#5493B4" />
+
+<link rel="top" href="index.php" title="" />
+<link rel="search" href="search.php" title="" />
+<link rel="help" href="faq.php" title="" />
+<link rel="author" href="memberlist.php" title="" />
+
+<title>Azzurra IRC Network Forum :: </title>
+<!-- link rel="stylesheet" href="templates/subSilverAzzurra/subSilver.css" type="text/css" -->
+<style type="text/css">
+<!--
+/*
+  The original subSilver Theme for phpBB version 2+
+  Created by subBlue design
+  http://www.subBlue.com
+
+  NOTE: These CSS definitions are stored within the main page body so that you can use the phpBB2
+  theme administration centre. When you have finalised your style you could cut the final CSS code
+  and place it in an external file, deleting this section to save bandwidth.
+*/
+
+/* General page style. The scroll bar colours only visible in IE5.5+ */
+body {
+	background-color: #EEEEEE;
+	scrollbar-face-color: #DEE3E7;
+	scrollbar-highlight-color: #FFFFFF;
+	scrollbar-shadow-color: #DEE3E7;
+	scrollbar-3dlight-color: #D1D7DC;
+	scrollbar-arrow-color:  #006699;
+	scrollbar-track-color: #EFEFEF;
+	scrollbar-darkshadow-color: #98AAB1;
+}
+
+/* General font families for common tags */
+font,th,td,p { font-family: Verdana, Arial, Helvetica, sans-serif }
+a:link,a:active,a:visited { color : #006699; }
+a:hover		{ text-decoration: underline; color : #DD6900; }
+hr	{ height: 0px; border: solid #D1D7DC 0px; border-top-width: 1px;}
+
+/* This is the border line & background colour round the entire page */
+.bodyline	{ background-color: #FFFFFF; border: 1px #98AAB1 solid; }
+
+/* This is the outline round the main forum tables */
+.forumline	{ background-color: #FFFFFF; border: 2px #009999 solid; }
+
+/* Main table cell colours and backgrounds */
+td.row1	{ background-color: #EFEFEF; }
+td.row2	{ background-color: #DEE3E7; }
+td.row3	{ background-color: #D1D7DC; }
+
+/*
+  This is for the table cell above the Topics, Post & Last posts on the index.php page
+  By default this is the fading out gradiated silver background.
+  However, you could replace this with a bitmap specific for each forum
+*/
+td.rowpic {
+		background-color: #FFFFFF;
+		background-image: url(templates/subSilverAzzurra/images/cellpic2.jpg);
+		background-repeat: repeat-y;
+}
+
+/* Header cells - the blue and silver gradient backgrounds */
+th	{
+	color: #66CCFF; font-size: 11px; font-weight : bold;
+	background-color: #006699; height: 25px;
+	background-image: url(templates/subSilverAzzurra/images/cellpic3.gif);
+}
+
+td.cat,td.catHead,td.catSides,td.catLeft,td.catRight,td.catBottom {
+			background-image: url(templates/subSilverAzzurra/images/cellpic1.gif);
+			background-color:#D1D7DC; border: #FFFFFF; border-style: solid; height: 28px;
+}
+
+/*
+  Setting additional nice inner borders for the main table cells.
+  The names indicate which sides the border will be on.
+  Don't worry if you don't understand this, just ignore it :-)
+*/
+td.cat,td.catHead,td.catBottom {
+	height: 29px;
+	border-width: 0px 0px 0px 0px;
+}
+th.thHead,th.thSides,th.thTop,th.thLeft,th.thRight,th.thBottom,th.thCornerL,th.thCornerR {
+	font-weight: bold; border: #FFFFFF; border-style: solid; height: 28px;
+}
+td.row3Right,td.spaceRow {
+	background-color: #D1D7DC; border: #FFFFFF; border-style: solid;
+}
+
+th.thHead,td.catHead { font-size: 12px; border-width: 1px 1px 0px 1px; }
+th.thSides,td.catSides,td.spaceRow	 { border-width: 0px 1px 0px 1px; }
+th.thRight,td.catRight,td.row3Right	 { border-width: 0px 1px 0px 0px; }
+th.thLeft,td.catLeft	  { border-width: 0px 0px 0px 1px; }
+th.thBottom,td.catBottom  { border-width: 0px 1px 1px 1px; }
+th.thTop	 { border-width: 1px 0px 0px 0px; }
+th.thCornerL { border-width: 1px 0px 0px 1px; }
+th.thCornerR { border-width: 1px 1px 0px 0px; }
+
+/* The largest text used in the index page title and toptic title etc. */
+.maintitle	{
+	font-weight: bold; font-size: 20px; font-family: "Trebuchet MS",Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none; line-height : 120%; color : #000000;
+}
+
+/* General text */
+.gen { font-size : 12px; }
+.genmed { font-size : 11px; }
+.gensmall { font-size : 10px; }
+.gen,.genmed,.gensmall { color : #000000; }
+a.gen,a.genmed,a.gensmall { color: #006699; text-decoration: none; }
+a.gen:hover,a.genmed:hover,a.gensmall:hover	{ color: #DD6900; text-decoration: underline; }
+
+/* The register, login, search etc links at the top of the page */
+.mainmenu		{ font-size : 11px; color : #000000 }
+a.mainmenu		{ text-decoration: none; color : #006699;  }
+a.mainmenu:hover{ text-decoration: underline; color : #DD6900; }
+
+/* Forum category titles */
+.cattitle		{ font-weight: bold; font-size: 12px ; letter-spacing: 1px; color : #006699}
+a.cattitle		{ text-decoration: none; color : #006699; }
+a.cattitle:hover{ text-decoration: underline; }
+
+/* Forum title: Text and link to the forums used in: index.php */
+.forumlink		{ font-weight: bold; font-size: 12px; color : #006699; }
+a.forumlink 	{ text-decoration: none; color : #006699; }
+a.forumlink:hover{ text-decoration: underline; color : #DD6900; }
+
+/* Used for the navigation text, (Page 1,2,3 etc) and the navigation bar when in a forum */
+.nav			{ font-weight: bold; font-size: 11px; color : #000000;}
+a.nav			{ text-decoration: none; color : #006699; }
+a.nav:hover		{ text-decoration: underline; }
+
+/* titles for the topics: could specify viewed link colour too */
+.topictitle,h1,h2	{ font-weight: bold; font-size: 11px; color : #000000; }
+a.topictitle:link   { text-decoration: none; color : #006699; }
+a.topictitle:visited { text-decoration: none; color : #5493B4; }
+a.topictitle:hover	{ text-decoration: underline; color : #DD6900; }
+
+/* Name of poster in viewmsg.php and viewtopic.php and other places */
+.name			{ font-size : 11px; color : #000000;}
+
+/* Location, number of posts, post date etc */
+.postdetails		{ font-size : 10px; color : #000000; }
+
+/* The content of the posts (body of text) */
+.postbody { font-size : 12px; line-height: 18px}
+a.postlink:link	{ text-decoration: none; color : #006699 }
+a.postlink:visited { text-decoration: none; color : #5493B4; }
+a.postlink:hover { text-decoration: underline; color : #DD6900}
+
+/* Quote & Code blocks */
+.code {
+	font-family: Courier, 'Courier New', sans-serif; font-size: 11px; color: #006600;
+	background-color: #FAFAFA; border: #D1D7DC; border-style: solid;
+	border-left-width: 1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px
+}
+
+.quote {
+	font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; color: #444444; line-height: 125%;
+	background-color: #FAFAFA; border: #D1D7DC; border-style: solid;
+	border-left-width: 1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px
+}
+
+/* Copyright and bottom info */
+.copyright		{ font-size: 10px; font-family: Verdana, Arial, Helvetica, sans-serif; color: #444444; letter-spacing: -1px;}
+a.copyright		{ color: #444444; text-decoration: none;}
+a.copyright:hover { color: #000000; text-decoration: underline;}
+
+/* Form elements */
+input,textarea, select {
+	color : #000000;
+	font: normal 11px Verdana, Arial, Helvetica, sans-serif;
+	border-color : #000000;
+}
+
+/* The text input fields background colour */
+input.post, textarea.post, select {
+	background-color : #FFFFFF;
+}
+
+input { text-indent : 2px; }
+
+/* The buttons used for bbCode styling in message post */
+input.button {
+	background-color : #EFEFEF;
+	color : #000000;
+	font-size: 11px; font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+/* The main submit button option */
+input.mainoption {
+	background-color : #FAFAFA;
+	font-weight : bold;
+}
+
+/* None-bold submit button */
+input.liteoption {
+	background-color : #FAFAFA;
+	font-weight : normal;
+}
+
+/* This is the line in the posting page which shows the rollover
+  help line. This is actually a text box, but if set to be the same
+  colour as the background no one will know ;)
+*/
+.helpline { background-color: #DEE3E7; border-style: none; }
+
+.newsbutton {
+	color: #000000;
+	background-color: #EFEFEF;
+	border: 1px solid #98AAB1;
+	width: 13;
+	height: 13;
+	font-family: Verdana, Tahoma, Arial, Sans-Serif;
+	font-size: 7pt;
+	border-style: solid;
+	border-width: 1px;
+	cursor: hand;
+}
+/* Import the fancy styles for IE only (NS4.x doesn't use the @import function) */
+@import url("templates/subSilverAzzurra/formIE.css");
+-->
+</style>
+<script type="text/javascript" src="templates/rollout.js"></script>
+<script language="JavaScript" type="text/javascript">
+<!--
+window.status="Accedi per i messaggi privati"
+// -->
+</script>
+
+
+<OBJECT classid='clsid:B69003B3-C55E-4B48-836C-BC5946FC3B28' codeType='application/x-oleobject' height='1' id='MsgrObj' width='1'></OBJECT>
+<script>
+function DoInstantMessage(person,screen)
+{
+	try
+	{
+		if(confirm("Aggiungere "+screen+" alla tua lista contatti ?")==true)MsgrObj.AddContact(0,person);
+		if(confirm("Inviare a "+screen+" un messaggio ?")==true)MsgrObj.InstantMessage(person);
+	}
+	catch(e)
+	{
+		alert("Si è verificato un errore nel tentativo di avviare MSN Messenger\nVerifica di avere Messenger correttamente installato e di aver effettuato il login al servizio\nCodice di errore: "+e.number);
+	}
+
+}
+</script>
+<a name="top"></a>
+
+<table width="100%" cellspacing="0" cellpadding="10" border="0" align="center">
+	<tr>
+		<td class="bodyline"><table width="100%" cellspacing="0" cellpadding="0" border="0">
+			<tr>
+				<td><a href="index.php?sid=60e1edf0f44b17a4e649594190921183"><img src="templates/subSilverAzzurra/images/toplogo.gif" border="0" alt="Indice del Forum" vspace="1" /></a></td>
+				<td align="right" width="100%"><img src="rankimg/smaster.gif" align="absmiddle" border="0">&nbsp;<span class="maintitle">Azzurra IRC Network Forum</span><br /><span class="gen">Benvenuto al forum di Azzurra<br />&nbsp; </span> </td>
+			</tr>
+		</table>
+
+<br />
+<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr>
+<td width="25%">
+<div align="center"><span class="mainmenu"><a href="faq.php?sid=60e1edf0f44b17a4e649594190921183" class="mainmenu"><img src="templates/subSilverAzzurra/images/icon_mini_faq.gif" border="0" alt="FAQ" hspace="3" align="absmiddle" /><br>
+FAQ</a></span><span class="mainmenu">&nbsp;</span></div>
+</td>
+<td width="25%">
+<div align="center"><span class="mainmenu"><a href="search.php?sid=60e1edf0f44b17a4e649594190921183" class="mainmenu"><img src="templates/subSilverAzzurra/images/icon_mini_search.gif" border="0" alt="Cerca" hspace="3" align="absmiddle" /><br>
+Cerca</a></span></div>
+</td>
+<td width="25%">
+<div align="center"><span class="mainmenu"><a href="memberlist.php?sid=60e1edf0f44b17a4e649594190921183" class="mainmenu"><img src="templates/subSilverAzzurra/images/icon_mini_members.gif" border="0" alt="Lista utenti" hspace="3" align="absmiddle" /><br>
+Lista utenti</a>&nbsp;</span></div>
+</td>
+<td width="25%">
+<div align="center"><span class="mainmenu">
+<a href="profile.php?mode=register&amp;sid=60e1edf0f44b17a4e649594190921183" class="mainmenu"><img src="templates/subSilverAzzurra/images/icon_mini_register.gif" border="0" alt="Registrati" hspace="3" align="absmiddle" /><br>
+Registrati</a></span>&nbsp;
+<span class="mainmenu"> </span></div>
+</td>
+</tr>
+<tr>
+ <td colspan="4"><span class="mainmenu">&nbsp;</span></td>
+</tr>
+<tr>
+<td width="25%">
+<div align="center"><span class="mainmenu"><a href="privmsg.php?folder=inbox&amp;sid=60e1edf0f44b17a4e649594190921183" class="mainmenu"><img src="templates/subSilverAzzurra/images/icon_mini_message.gif" border="0" alt="Accedi per i messaggi privati" hspace="3" align="absmiddle" /><br>
+Accedi per i messaggi privati</a>&nbsp; &nbsp;</span></div>
+</td>
+<td width="25%">
+<div align="center"><span class="mainmenu"><a href="profile.php?mode=editprofile&amp;sid=60e1edf0f44b17a4e649594190921183" class="mainmenu"><img src="templates/subSilverAzzurra/images/icon_mini_profile.gif" border="0" alt="Profilo" hspace="3" align="absmiddle" /><br>
+Profilo</a>&nbsp; </span></div>
+</td>
+<td width="25%">
+<div align="center"><span class="mainmenu"><a href="groupcp.php?sid=60e1edf0f44b17a4e649594190921183" class="mainmenu"><img src="templates/subSilverAzzurra/images/icon_mini_groups.gif" border="0" alt="Gruppi utenti" hspace="3" align="absmiddle" /><br>
+Gruppi utenti</a>&nbsp; </span></div>
+</td>
+<td width="25%">
+<div align="center"><span class="mainmenu"><a href="login.php?sid=60e1edf0f44b17a4e649594190921183" class="mainmenu"><img src="templates/subSilverAzzurra/images/icon_mini_login.gif" border="0" alt="Login" hspace="3" align="absmiddle" /><br>
+Login</a>&nbsp;</span></div>
+</td>
+</tr>
+</table>
+
+</table>
+
+<table width="100%" cellspacing="2" cellpadding="2" border="0" align="center">
+	<tr>
+		<td align="left" class="nav"><a href="index.php?sid=60e1edf0f44b17a4e649594190921183" class="nav">Indice del Forum</a></td>
+	</tr>
+</table>
+
+<table class="forumline" width="100%" cellspacing="1" cellpadding="4" border="0">
+	<tr>
+		<th class="thHead" height="25"><b>Informazione</b></th>
+	</tr>
+	<tr>
+		<td class="row1"><table width="100%" cellspacing="0" cellpadding="1" border="0">
+			<tr>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td align="center"><span class="gen">Il topic richiesto è inesistente</span></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+			</tr>
+		</table></td>
+	</tr>
+</table>
+
+<table width="100%" cellspacing="2" cellpadding="0" border="0" align="center">
+ <tr>
+  <td align="right">
+<form method="get" name="jumpbox" action="viewforum.php?sid=60e1edf0f44b17a4e649594190921183" onSubmit="if(document.jumpbox.f.value == -1){return false;}"><table cellspacing="0" cellpadding="0" border="0">
+	<tr>
+		<td nowrap="nowrap"><span class="gensmall">Vai a:&nbsp;<select name="f" onChange="if(this.options[this.selectedIndex].value != -1){ forms['jumpbox'].submit() }"><option value="-1">Seleziona un forum</option><option value="-1">&nbsp;</option><option value="-1">Azzurra IRC Network Forum</option><option value="-1">----------------</option><option value="7">Canali - i vostri canali su Azzurra.</option><option value="1">Discussioni e commenti su Azzurra</option><option value="61">Il Porto Spaziale di Mos Eisley</option><option value="62">A Ruota Libera!</option><option value="63">La terra dei sogni</option><option value="-1">&nbsp;</option><option value="-1">Network Central</option><option value="-1">----------------</option><option value="12">Comunicazioni ufficiali di Azzurra</option><option value="46">AzzurraScript</option><option value="11">Forum Help Area</option><option value="2">IRCHelp - Aiuto su IRC e Servizi di Azzurra</option><option value="3">Segnalazioni di Abusi e lamentele</option><option value="47">Services - I servizi IRC di Azzurra</option><option value="-1">&nbsp;</option><option value="-1">Azzurra - Tech Center</option><option value="-1">----------------</option><option value="4">Angolo tecnico</option><option value="37">Discussioni Linux</option><option value="44">Graphik Lab</option><option value="25">Programmazione e dintorni</option><option value="52">Virus & Security</option><option value="24">Web Development</option><option value="-1">&nbsp;</option><option value="-1">Happy Hour</option><option value="-1">----------------</option><option value="10">Cazzeggiando qua e la...</option><option value="13">Ditelo con il Forum</option><option value="28">L'angolo del piccolo menomato informatico</option><option value="8">Questi mitici log!</option><option value="-1">&nbsp;</option><option value="-1">ZeroNave</option><option value="-1">----------------</option><option value="57">ZeroNave</option><option value="58">Javirc</option><option value="-1">&nbsp;</option><option value="-1">I Vostri Forum</option><option value="-1">----------------</option><option value="18">#debiAn</option><option value="64">#italia</option><option value="26">#altrove</option><option value="19">#punkitalia</option><option value="21">#netparty</option><option value="29">#disobbedienti</option><option value="30">#punkazzurra</option><option value="31">#fonzie</option><option value="48">#LiberoZone</option><option value="38">#Templary</option><option value="39">#splash</option><option value="42">#adventure-zone</option><option value="60">#bari</option><option value="43">#fly_of_the_moon</option><option value="45">#italia*del*sud</option><option value="49">#shadow</option><option value="50">#sifattack</option><option value="51">#radioitalia</option><option value="53">#soleluna</option><option value="56">#cuori</option><option value="59">#mangaring</option><option value="-1">&nbsp;</option><option value="-1">Test Area</option><option value="-1">----------------</option><option value="6">Test - Forum dedicato ai messaggi di prova</option></select><input type="hidden" name="sid" value="sid=60e1edf0f44b17a4e649594190921183" />&nbsp;<input type="submit" value="Vai" class="liteoption" /></span></td>
+	</tr>
+</table></form>
+
+</td>
+ </tr>
+</table>
+
+<br clear="all" />
+
+
+<div align="center"><span class="copyright"><br /><br />
+<!--
+	We request you retain the full copyright notice below including the link to www.phpbb.com.
+	This not only gives respect to the large amount of time given freely by the developers
+	but also helps build interest, traffic and use of phpBB 2.0. If you cannot (for good
+	reason) retain the full copyright we request you at least leave in place the
+	Powered by phpBB 2.0.2 line, with phpBB linked to www.phpbb.com. If you refuse
+	to include even this then support on our forums may be affected.
+
+	The phpBB Group : 2002
+// -->
+Powered by <a href="http://www.phpbb.com/" target="_phpbb" class="copyright">phpBB</a> &copy; 2001, 2002 phpBB Group<br /></span></div>
+		</td>
+	</tr>
+</table>
+
+</body>
+</html>
+

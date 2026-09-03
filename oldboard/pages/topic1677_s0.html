@@ -1,0 +1,689 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<LINK REL="SHORTCUT ICON" href="http://www.azzurra.org/Azzurra.ico">
+</head>
+<body bgcolor="#EEEEEE" text="#000000" link="#006699" vlink="#5493B4" />
+
+<link rel="top" href="index.php" title="" />
+<link rel="search" href="search.php" title="" />
+<link rel="help" href="faq.php" title="" />
+<link rel="author" href="memberlist.php" title="" />
+<link rel="prev" href="viewtopic.php?t=1677&amp;view=previous&amp;sid=490e0f849324f9d24cd55c1b3ae18eeb" title="Visualizza il topic precedente" />
+<link rel="next" href="viewtopic.php?t=1677&amp;view=next&amp;sid=490e0f849324f9d24cd55c1b3ae18eeb" title="Visualizza il prossimo topic" />
+<link rel="up" href="viewforum.php?f=24&amp;sid=490e0f849324f9d24cd55c1b3ae18eeb" title="Web Development" />
+
+<title>Azzurra IRC Network Forum :: Visualizza topic - Script: Counter Grafico in PHP</title>
+<!-- link rel="stylesheet" href="templates/subSilverAzzurra/subSilver.css" type="text/css" -->
+<style type="text/css">
+<!--
+/*
+  The original subSilver Theme for phpBB version 2+
+  Created by subBlue design
+  http://www.subBlue.com
+
+  NOTE: These CSS definitions are stored within the main page body so that you can use the phpBB2
+  theme administration centre. When you have finalised your style you could cut the final CSS code
+  and place it in an external file, deleting this section to save bandwidth.
+*/
+
+/* General page style. The scroll bar colours only visible in IE5.5+ */
+body {
+	background-color: #EEEEEE;
+	scrollbar-face-color: #DEE3E7;
+	scrollbar-highlight-color: #FFFFFF;
+	scrollbar-shadow-color: #DEE3E7;
+	scrollbar-3dlight-color: #D1D7DC;
+	scrollbar-arrow-color:  #006699;
+	scrollbar-track-color: #EFEFEF;
+	scrollbar-darkshadow-color: #98AAB1;
+}
+
+/* General font families for common tags */
+font,th,td,p { font-family: Verdana, Arial, Helvetica, sans-serif }
+a:link,a:active,a:visited { color : #006699; }
+a:hover		{ text-decoration: underline; color : #DD6900; }
+hr	{ height: 0px; border: solid #D1D7DC 0px; border-top-width: 1px;}
+
+/* This is the border line & background colour round the entire page */
+.bodyline	{ background-color: #FFFFFF; border: 1px #98AAB1 solid; }
+
+/* This is the outline round the main forum tables */
+.forumline	{ background-color: #FFFFFF; border: 2px #009999 solid; }
+
+/* Main table cell colours and backgrounds */
+td.row1	{ background-color: #EFEFEF; }
+td.row2	{ background-color: #DEE3E7; }
+td.row3	{ background-color: #D1D7DC; }
+
+/*
+  This is for the table cell above the Topics, Post & Last posts on the index.php page
+  By default this is the fading out gradiated silver background.
+  However, you could replace this with a bitmap specific for each forum
+*/
+td.rowpic {
+		background-color: #FFFFFF;
+		background-image: url(templates/subSilverAzzurra/images/cellpic2.jpg);
+		background-repeat: repeat-y;
+}
+
+/* Header cells - the blue and silver gradient backgrounds */
+th	{
+	color: #66CCFF; font-size: 11px; font-weight : bold;
+	background-color: #006699; height: 25px;
+	background-image: url(templates/subSilverAzzurra/images/cellpic3.gif);
+}
+
+td.cat,td.catHead,td.catSides,td.catLeft,td.catRight,td.catBottom {
+			background-image: url(templates/subSilverAzzurra/images/cellpic1.gif);
+			background-color:#D1D7DC; border: #FFFFFF; border-style: solid; height: 28px;
+}
+
+/*
+  Setting additional nice inner borders for the main table cells.
+  The names indicate which sides the border will be on.
+  Don't worry if you don't understand this, just ignore it :-)
+*/
+td.cat,td.catHead,td.catBottom {
+	height: 29px;
+	border-width: 0px 0px 0px 0px;
+}
+th.thHead,th.thSides,th.thTop,th.thLeft,th.thRight,th.thBottom,th.thCornerL,th.thCornerR {
+	font-weight: bold; border: #FFFFFF; border-style: solid; height: 28px;
+}
+td.row3Right,td.spaceRow {
+	background-color: #D1D7DC; border: #FFFFFF; border-style: solid;
+}
+
+th.thHead,td.catHead { font-size: 12px; border-width: 1px 1px 0px 1px; }
+th.thSides,td.catSides,td.spaceRow	 { border-width: 0px 1px 0px 1px; }
+th.thRight,td.catRight,td.row3Right	 { border-width: 0px 1px 0px 0px; }
+th.thLeft,td.catLeft	  { border-width: 0px 0px 0px 1px; }
+th.thBottom,td.catBottom  { border-width: 0px 1px 1px 1px; }
+th.thTop	 { border-width: 1px 0px 0px 0px; }
+th.thCornerL { border-width: 1px 0px 0px 1px; }
+th.thCornerR { border-width: 1px 1px 0px 0px; }
+
+/* The largest text used in the index page title and toptic title etc. */
+.maintitle	{
+	font-weight: bold; font-size: 20px; font-family: "Trebuchet MS",Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none; line-height : 120%; color : #000000;
+}
+
+/* General text */
+.gen { font-size : 12px; }
+.genmed { font-size : 11px; }
+.gensmall { font-size : 10px; }
+.gen,.genmed,.gensmall { color : #000000; }
+a.gen,a.genmed,a.gensmall { color: #006699; text-decoration: none; }
+a.gen:hover,a.genmed:hover,a.gensmall:hover	{ color: #DD6900; text-decoration: underline; }
+
+/* The register, login, search etc links at the top of the page */
+.mainmenu		{ font-size : 11px; color : #000000 }
+a.mainmenu		{ text-decoration: none; color : #006699;  }
+a.mainmenu:hover{ text-decoration: underline; color : #DD6900; }
+
+/* Forum category titles */
+.cattitle		{ font-weight: bold; font-size: 12px ; letter-spacing: 1px; color : #006699}
+a.cattitle		{ text-decoration: none; color : #006699; }
+a.cattitle:hover{ text-decoration: underline; }
+
+/* Forum title: Text and link to the forums used in: index.php */
+.forumlink		{ font-weight: bold; font-size: 12px; color : #006699; }
+a.forumlink 	{ text-decoration: none; color : #006699; }
+a.forumlink:hover{ text-decoration: underline; color : #DD6900; }
+
+/* Used for the navigation text, (Page 1,2,3 etc) and the navigation bar when in a forum */
+.nav			{ font-weight: bold; font-size: 11px; color : #000000;}
+a.nav			{ text-decoration: none; color : #006699; }
+a.nav:hover		{ text-decoration: underline; }
+
+/* titles for the topics: could specify viewed link colour too */
+.topictitle,h1,h2	{ font-weight: bold; font-size: 11px; color : #000000; }
+a.topictitle:link   { text-decoration: none; color : #006699; }
+a.topictitle:visited { text-decoration: none; color : #5493B4; }
+a.topictitle:hover	{ text-decoration: underline; color : #DD6900; }
+
+/* Name of poster in viewmsg.php and viewtopic.php and other places */
+.name			{ font-size : 11px; color : #000000;}
+
+/* Location, number of posts, post date etc */
+.postdetails		{ font-size : 10px; color : #000000; }
+
+/* The content of the posts (body of text) */
+.postbody { font-size : 12px; line-height: 18px}
+a.postlink:link	{ text-decoration: none; color : #006699 }
+a.postlink:visited { text-decoration: none; color : #5493B4; }
+a.postlink:hover { text-decoration: underline; color : #DD6900}
+
+/* Quote & Code blocks */
+.code {
+	font-family: Courier, 'Courier New', sans-serif; font-size: 11px; color: #006600;
+	background-color: #FAFAFA; border: #D1D7DC; border-style: solid;
+	border-left-width: 1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px
+}
+
+.quote {
+	font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; color: #444444; line-height: 125%;
+	background-color: #FAFAFA; border: #D1D7DC; border-style: solid;
+	border-left-width: 1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px
+}
+
+/* Copyright and bottom info */
+.copyright		{ font-size: 10px; font-family: Verdana, Arial, Helvetica, sans-serif; color: #444444; letter-spacing: -1px;}
+a.copyright		{ color: #444444; text-decoration: none;}
+a.copyright:hover { color: #000000; text-decoration: underline;}
+
+/* Form elements */
+input,textarea, select {
+	color : #000000;
+	font: normal 11px Verdana, Arial, Helvetica, sans-serif;
+	border-color : #000000;
+}
+
+/* The text input fields background colour */
+input.post, textarea.post, select {
+	background-color : #FFFFFF;
+}
+
+input { text-indent : 2px; }
+
+/* The buttons used for bbCode styling in message post */
+input.button {
+	background-color : #EFEFEF;
+	color : #000000;
+	font-size: 11px; font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+/* The main submit button option */
+input.mainoption {
+	background-color : #FAFAFA;
+	font-weight : bold;
+}
+
+/* None-bold submit button */
+input.liteoption {
+	background-color : #FAFAFA;
+	font-weight : normal;
+}
+
+/* This is the line in the posting page which shows the rollover
+  help line. This is actually a text box, but if set to be the same
+  colour as the background no one will know ;)
+*/
+.helpline { background-color: #DEE3E7; border-style: none; }
+
+.newsbutton {
+	color: #000000;
+	background-color: #EFEFEF;
+	border: 1px solid #98AAB1;
+	width: 13;
+	height: 13;
+	font-family: Verdana, Tahoma, Arial, Sans-Serif;
+	font-size: 7pt;
+	border-style: solid;
+	border-width: 1px;
+	cursor: hand;
+}
+/* Import the fancy styles for IE only (NS4.x doesn't use the @import function) */
+@import url("templates/subSilverAzzurra/formIE.css");
+-->
+</style>
+<script type="text/javascript" src="templates/rollout.js"></script>
+<script language="JavaScript" type="text/javascript">
+<!--
+window.status="Accedi per i messaggi privati"
+// -->
+</script>
+
+
+<OBJECT classid='clsid:B69003B3-C55E-4B48-836C-BC5946FC3B28' codeType='application/x-oleobject' height='1' id='MsgrObj' width='1'></OBJECT>
+<script>
+function DoInstantMessage(person,screen)
+{
+	try
+	{
+		if(confirm("Aggiungere "+screen+" alla tua lista contatti ?")==true)MsgrObj.AddContact(0,person);
+		if(confirm("Inviare a "+screen+" un messaggio ?")==true)MsgrObj.InstantMessage(person);
+	}
+	catch(e)
+	{
+		alert("Si è verificato un errore nel tentativo di avviare MSN Messenger\nVerifica di avere Messenger correttamente installato e di aver effettuato il login al servizio\nCodice di errore: "+e.number);
+	}
+
+}
+</script>
+<a name="top"></a>
+
+<table width="100%" cellspacing="0" cellpadding="10" border="0" align="center">
+	<tr>
+		<td class="bodyline"><table width="100%" cellspacing="0" cellpadding="0" border="0">
+			<tr>
+				<td><a href="index.php?sid=490e0f849324f9d24cd55c1b3ae18eeb"><img src="templates/subSilverAzzurra/images/toplogo.gif" border="0" alt="Indice del Forum" vspace="1" /></a></td>
+				<td align="right" width="100%"><img src="rankimg/smaster.gif" align="absmiddle" border="0">&nbsp;<span class="maintitle">Azzurra IRC Network Forum</span><br /><span class="gen">Benvenuto al forum di Azzurra<br />&nbsp; </span> </td>
+			</tr>
+		</table>
+
+<br />
+<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr>
+<td width="25%">
+<div align="center"><span class="mainmenu"><a href="faq.php?sid=490e0f849324f9d24cd55c1b3ae18eeb" class="mainmenu"><img src="templates/subSilverAzzurra/images/icon_mini_faq.gif" border="0" alt="FAQ" hspace="3" align="absmiddle" /><br>
+FAQ</a></span><span class="mainmenu">&nbsp;</span></div>
+</td>
+<td width="25%">
+<div align="center"><span class="mainmenu"><a href="search.php?sid=490e0f849324f9d24cd55c1b3ae18eeb" class="mainmenu"><img src="templates/subSilverAzzurra/images/icon_mini_search.gif" border="0" alt="Cerca" hspace="3" align="absmiddle" /><br>
+Cerca</a></span></div>
+</td>
+<td width="25%">
+<div align="center"><span class="mainmenu"><a href="memberlist.php?sid=490e0f849324f9d24cd55c1b3ae18eeb" class="mainmenu"><img src="templates/subSilverAzzurra/images/icon_mini_members.gif" border="0" alt="Lista utenti" hspace="3" align="absmiddle" /><br>
+Lista utenti</a>&nbsp;</span></div>
+</td>
+<td width="25%">
+<div align="center"><span class="mainmenu">
+<a href="profile.php?mode=register&amp;sid=490e0f849324f9d24cd55c1b3ae18eeb" class="mainmenu"><img src="templates/subSilverAzzurra/images/icon_mini_register.gif" border="0" alt="Registrati" hspace="3" align="absmiddle" /><br>
+Registrati</a></span>&nbsp;
+<span class="mainmenu"> </span></div>
+</td>
+</tr>
+<tr>
+ <td colspan="4"><span class="mainmenu">&nbsp;</span></td>
+</tr>
+<tr>
+<td width="25%">
+<div align="center"><span class="mainmenu"><a href="privmsg.php?folder=inbox&amp;sid=490e0f849324f9d24cd55c1b3ae18eeb" class="mainmenu"><img src="templates/subSilverAzzurra/images/icon_mini_message.gif" border="0" alt="Accedi per i messaggi privati" hspace="3" align="absmiddle" /><br>
+Accedi per i messaggi privati</a>&nbsp; &nbsp;</span></div>
+</td>
+<td width="25%">
+<div align="center"><span class="mainmenu"><a href="profile.php?mode=editprofile&amp;sid=490e0f849324f9d24cd55c1b3ae18eeb" class="mainmenu"><img src="templates/subSilverAzzurra/images/icon_mini_profile.gif" border="0" alt="Profilo" hspace="3" align="absmiddle" /><br>
+Profilo</a>&nbsp; </span></div>
+</td>
+<td width="25%">
+<div align="center"><span class="mainmenu"><a href="groupcp.php?sid=490e0f849324f9d24cd55c1b3ae18eeb" class="mainmenu"><img src="templates/subSilverAzzurra/images/icon_mini_groups.gif" border="0" alt="Gruppi utenti" hspace="3" align="absmiddle" /><br>
+Gruppi utenti</a>&nbsp; </span></div>
+</td>
+<td width="25%">
+<div align="center"><span class="mainmenu"><a href="login.php?sid=490e0f849324f9d24cd55c1b3ae18eeb" class="mainmenu"><img src="templates/subSilverAzzurra/images/icon_mini_login.gif" border="0" alt="Login" hspace="3" align="absmiddle" /><br>
+Login</a>&nbsp;</span></div>
+</td>
+</tr>
+</table>
+
+</table>
+
+<table width="100%" cellspacing="2" cellpadding="2" border="0">
+  <tr>
+	<td align="left" valign="bottom" colspan="2"><a class="maintitle" href="viewtopic.php?t=1677&amp;start=0&amp;postdays=0&amp;postorder=asc&amp;highlight=&amp;sid=490e0f849324f9d24cd55c1b3ae18eeb">Script: Counter Grafico in PHP</a><br />
+	  <span class="gensmall"><b></b><br />
+	  &nbsp; </span></td>
+  </tr>
+</table>
+
+<table width="100%" cellspacing="2" cellpadding="2" border="0">
+  <tr>
+	<td align="left" valign="bottom" nowrap="nowrap"><span class="nav"><a href="posting.php?mode=newtopic&amp;f=24&amp;sid=490e0f849324f9d24cd55c1b3ae18eeb"><img src="templates/subSilverAzzurra/images/lang_italian/post.gif" border="0" alt="Crea nuovo topic" align="middle" /></a>&nbsp;&nbsp;&nbsp;<a href="posting.php?mode=reply&amp;t=1677&amp;sid=490e0f849324f9d24cd55c1b3ae18eeb"><img src="templates/subSilverAzzurra/images/lang_italian/reply.gif" border="0" alt="Rispondi al topic" align="middle" /></a></span></td>
+	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.php?sid=490e0f849324f9d24cd55c1b3ae18eeb" class="nav">Indice del Forum</a>
+	  -> <a href="viewforum.php?f=24&amp;sid=490e0f849324f9d24cd55c1b3ae18eeb" class="nav">Web Development</a></span></td>
+  </tr>
+</table>
+
+<table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0">
+	<tr align="right">
+		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="viewtopic.php?t=1677&amp;view=previous&amp;sid=490e0f849324f9d24cd55c1b3ae18eeb" class="nav">Visualizza il topic precedente</a> :: <a href="viewtopic.php?t=1677&amp;view=next&amp;sid=490e0f849324f9d24cd55c1b3ae18eeb" class="nav">Visualizza il prossimo topic</a> &nbsp;</span></td>
+	</tr>
+	
+	<tr>
+		<th class="thLeft" width="150" height="26" nowrap="nowrap">Autore</th>
+		<th class="thRight" nowrap="nowrap">Messaggio</th>
+	</tr>
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="11880"></a> <b><a href="profile.php?mode=viewprofile&amp;u=1143&amp;sid=490e0f849324f9d24cd55c1b3ae18eeb" class="name">fank</a></b></span><br /><span class="postdetails">Newbie<br /><img src="templates/subSilverAzzurra/images/rank_a1.gif" alt="Newbie" title="Newbie" border="0" /><br /><img src="http://utenti.lycos.it/profitterol/fankounter/counter.php?id=azzurra" height="110" width="90" alt="" border="0" /><br /><br />Registrato: 04 07 2002<br />Messaggi: 6<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="100%"><a href="viewtopic.php?p=11880&amp;sid=490e0f849324f9d24cd55c1b3ae18eeb#11880"><img src="templates/subSilverAzzurra/images/icon_minipost.gif" width="12" height="9" alt="Messaggio" title="Messaggio" border="0" /></a><span class="postdetails">Inviato: 11 Ott, 2002 - 01:03<span class="gen">&nbsp;</span>&nbsp; &nbsp;Oggetto del messaggio: Script: Counter Grafico in PHP</span></td>
+				<td valign="top" align="right" nowrap="nowrap"><a href="posting.php?mode=quote&amp;p=11880&amp;sid=490e0f849324f9d24cd55c1b3ae18eeb"><img src="templates/subSilverAzzurra/images/lang_italian/icon_quote.gif" alt="Rispondi quotando" title="Rispondi quotando" border="0" /></a>   </td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">&lt;b&gt;FanKounter&lt;/b&gt;
+<br />
+Contatore di accessi che include semplici report statistici.
+<br />
+Scritto in PHP4 da fanatiko e utilizzabile senza condizioni/restrizioni.
+<br />
+
+<br />
+&lt;b&gt;CARATTERISTICHE&lt;/b&gt; (alcune)
+<br />
+Doppia modalità: grafico/testo.
+<br />
+Altamente configurabile e personalizzabile.
+<br />
+
+<br />
+&lt;b&gt;REQUISITI&lt;/b&gt;
+<br />
+(i) Hosting su WEB Server che supporti PHP4.
+<br />
+(ii) Librerie GD supportate da PHP.
+<br />
+
+<br />
+&lt;b&gt;ESEMPIO&lt;/b&gt;
+<br />
+Guarda il mio avatar (si adatta ad ogni immagine PNG).
+<br />
+
+<br />
+Se sei interessato, per approfondimenti/istruzioni d'uso:
+<br />
+o vai <a href="http://utenti.lycos.it/profitterol/fankounter/index.htm" target="_blank" class="postlink">lì</a> (*),
+<br />
+o leggi <a href="http://utenti.lycos.it/profitterol/fankounter/readme.txt" target="_blank" class="postlink">qua</a> (*),
+<br />
+o scarica <a href="http://utenti.lycos.it/profitterol/fankounter/fkounter.zip" target="_blank" class="postlink">qui</a> (*).
+<br />
+_____
+<br />
+(*) tripod/lycos permettendo!
+<br />
+
+<br />
+Segue codice del modulo principale, anche &lt;u&gt;standalone&lt;/u&gt;...
+<br />
+
+<br />
+fanatiko<br />_________________<br />A prescindere...</span><span class="gensmall"><br /><br />Ultima modifica di fank avvenuta il 16 Ott, 2002 - 02:52, modificato 1 volta in tutto</span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Torna ad inizio pagina</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="top" nowrap="nowrap"><a href="profile.php?mode=viewprofile&amp;u=1143&amp;sid=490e0f849324f9d24cd55c1b3ae18eeb"><img src="templates/subSilverAzzurra/images/lang_italian/icon_profile.gif" alt="Visualizza profilo utente" title="Visualizza profilo utente" border="0" /></a> <a href="privmsg.php?mode=post&amp;u=1143&amp;sid=490e0f849324f9d24cd55c1b3ae18eeb"><img src="templates/subSilverAzzurra/images/lang_italian/icon_pm.gif" alt="Invia Messaggio Privato" title="Invia Messaggio Privato" border="0" /></a>      </td><td align="middle" nowrap="nowrap"><span align="right" style="font-size: 10px;">&nbsp;[ IP : Logged ]</span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/subSilverAzzurra/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="11882"></a> <b><a href="profile.php?mode=viewprofile&amp;u=1143&amp;sid=490e0f849324f9d24cd55c1b3ae18eeb" class="name">fank</a></b></span><br /><span class="postdetails">Newbie<br /><img src="templates/subSilverAzzurra/images/rank_a1.gif" alt="Newbie" title="Newbie" border="0" /><br /><img src="http://utenti.lycos.it/profitterol/fankounter/counter.php?id=azzurra" height="110" width="90" alt="" border="0" /><br /><br />Registrato: 04 07 2002<br />Messaggi: 6<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="100%"><a href="viewtopic.php?p=11882&amp;sid=490e0f849324f9d24cd55c1b3ae18eeb#11882"><img src="templates/subSilverAzzurra/images/icon_minipost.gif" width="12" height="9" alt="Messaggio" title="Messaggio" border="0" /></a><span class="postdetails">Inviato: 11 Ott, 2002 - 02:20<span class="gen">&nbsp;</span>&nbsp; &nbsp;Oggetto del messaggio: counter.php - di fanatiko</span></td>
+				<td valign="top" align="right" nowrap="nowrap"><a href="posting.php?mode=quote&amp;p=11882&amp;sid=490e0f849324f9d24cd55c1b3ae18eeb"><img src="templates/subSilverAzzurra/images/lang_italian/icon_quote.gif" alt="Rispondi quotando" title="Rispondi quotando" border="0" /></a>   </td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody"></span><table width="90%" cellspacing="1" cellpadding="3" border="0" align="center"><tr> 	  <td><span class="genmed"><b>Codice:</b></span></td>	</tr>	<tr>	  <td class="code">
+<br />
+&lt;?php
+<br />
+
+<br />
+########## CONFIGURAZIONE
+<br />
+
+<br />
+$start_count=0;
+<br />
+$img_base=&quot;counter.png&quot;;
+<br />
+$back_color=array&#40;&quot;R&quot;=&gt;0,&quot;G&quot;=&gt;0,&quot;B&quot;=&gt;0&#41;;
+<br />
+$text_color=array&#40;&quot;R&quot;=&gt;255,&quot;G&quot;=&gt;255,&quot;B&quot;=&gt;255&#41;;
+<br />
+$store_file=&quot;counter.dat&quot;;
+<br />
+$stats_file=&quot;stats.dat&quot;;
+<br />
+$ref_paths=array&#40;&#41;;
+<br />
+
+<br />
+########## PARAMETRO IN INPUT &#40;opzionale&#41;
+<br />
+
+<br />
+$mode=&#40;$mode==&quot;text&quot;&#41;?$mode&#58;&quot;graphic&quot;;
+<br />
+
+<br />
+########## SEZIONE OPERATIVA
+<br />
+
+<br />
+function manstats&#40;$safemode&#41;&#123;
+<br />
+&nbsp; global $store_file,$stats_file,$start_count;
+<br />
+&nbsp; global $REMOTE_ADDR,$HTTP_REFERER,$HTTP_USER_AGENT;
+<br />
+&nbsp; $return_count=0;
+<br />
+
+<br />
+&nbsp; if&#40;file_exists&#40;$store_file&#41;==TRUE&#41;&#123;
+<br />
+&nbsp; &nbsp; if&#40;&#40;$stats_id=fopen&#40;$stats_file,&quot;a&quot;&#41;&#41;!==FALSE&#41;&#123;
+<br />
+&nbsp; &nbsp; &nbsp; if&#40;flock&#40;$stats_id,LOCK_EX&#41;!=FALSE&#41;&#123;
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; if&#40;&#40;$store_id=fopen&#40;$store_file,&quot;r&quot;&#41;&#41;!==FALSE&#41;&#123;
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $return_count=fgets&#40;$store_id,filesize&#40;$store_file&#41;+1&#41;;
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; fclose&#40;$store_id&#41;;
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if&#40;$return_count!==FALSE&#41;&#123;
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; settype&#40;$return_count,&quot;integer&quot;&#41;;
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ++$return_count;
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if&#40;!$safemode&#41;&#123;
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if&#40;&#40;$store_id=fopen&#40;$store_file,&quot;w&quot;&#41;&#41;!==FALSE&#41;&#123;
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if&#40;fwrite&#40;$store_id,$return_count&#41;==strlen&#40;$return_count&#41;&#41;
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; fwrite&#40;$stats_id,$return_count.&quot;,&quot;.date&#40;&quot;d-m-Y&quot;&#41;.&quot;,&quot;.date&#40;&quot;H&#58;i&#58;s&quot;&#41;.&quot;,&quot;.$REMOTE_ADDR.&quot;,&quot;.$HTTP_USER_AGENT.&quot;,&quot;.$HTTP_REFERER.&quot;\n&quot;&#41;;
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; fclose&#40;$store_id&#41;;
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#125;
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#125;
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#125;
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &#125;
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; unset&#40;$store_id&#41;;
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; flock&#40;$stats_id,LOCK_UN&#41;;
+<br />
+&nbsp; &nbsp; &nbsp; &#125;
+<br />
+&nbsp; &nbsp; &nbsp; fclose&#40;$stats_id&#41;;
+<br />
+&nbsp; &nbsp; &#125;
+<br />
+&nbsp; &nbsp; unset&#40;$stats_id&#41;;
+<br />
+&nbsp; &#125;
+<br />
+&nbsp; elseif&#40;file_exists&#40;$store_file&#41;==FALSE&#41;&#123;
+<br />
+&nbsp; &nbsp; $return_count=$start_count;
+<br />
+&nbsp; &nbsp; $store_id=fopen&#40;$store_file,&quot;w&quot;&#41;;
+<br />
+&nbsp; &nbsp; fwrite&#40;$store_id,$return_count&#41;;
+<br />
+&nbsp; &nbsp; fclose&#40;$store_id&#41;;
+<br />
+&nbsp; &nbsp; unset&#40;$store_id&#41;;
+<br />
+&nbsp; &#125;
+<br />
+
+<br />
+&nbsp; return $return_count;
+<br />
+&nbsp; unset&#40;$safemode,$return_count&#41;;
+<br />
+&#125;
+<br />
+
+<br />
+if&#40;&#40;count&#40;$ref_paths&#41;==0&#41;||&#40;in_array&#40;&#40;&#40;strpos&#40;$HTTP_REFERER,&quot;?&quot;&#41;===FALSE&#41;?$HTTP_REFERER&#58;substr&#40;$HTTP_REFERER,0,strpos&#40;$HTTP_REFERER,&quot;?&quot;&#41;&#41;&#41;,$ref_paths&#41;&#41;&#41;
+<br />
+&nbsp; $new_count=manstats&#40;0&#41;;
+<br />
+else
+<br />
+&nbsp; $new_count=manstats&#40;1&#41;;
+<br />
+
+<br />
+if&#40;&#40;$mode==&quot;graphic&quot;&#41;&amp;&amp;&#40;function_exists&#40;&quot;imagepng&quot;&#41;&#41;&#41;&#123;
+<br />
+&nbsp; if&#40;&#40;$img_base==&quot;&quot;&#41;||&#40;!&#40;$myimg=imagecreatefrompng&#40;$img_base&#41;&#41;&#41;&#41;
+<br />
+&nbsp; &nbsp; $myimg=imagecreate&#40;60,15&#41;;
+<br />
+&nbsp; $basey=imagesy&#40;$myimg&#41;-15;
+<br />
+&nbsp; $basey=&#40;$basey&lt;0&#41;?0&#58;$basey;
+<br />
+&nbsp; $bgcolor=imagecolorallocate&#40;$myimg,$back_color&#91;R&#93;,$back_color&#91;G&#93;,$back_color&#91;B&#93;&#41;;
+<br />
+&nbsp; imagefilledrectangle&#40;$myimg,0,$basey,59,$basey+14,$bgcolor&#41;;
+<br />
+&nbsp; $txtcolor=imagecolorallocate&#40;$myimg,$text_color&#91;R&#93;,$text_color&#91;G&#93;,$text_color&#91;B&#93;&#41;;
+<br />
+&nbsp; imagestring&#40;$myimg,3,3,$basey+1,str_pad&#40;$new_count,8,&quot;0&quot;,STR_PAD_LEFT&#41;,$txtcolor&#41;;
+<br />
+&nbsp; header&#40;&quot;Content-type&#58; image/png&quot;&#41;;
+<br />
+&nbsp; imagepng&#40;$myimg&#41;;
+<br />
+&nbsp; imagedestroy&#40;$myimg&#41;;
+<br />
+&nbsp; unset&#40;$myimg,$txtcolor,$bgcolor,$basey&#41;;
+<br />
+&#125;
+<br />
+else
+<br />
+&nbsp; echo&quot;
+<br />
+&nbsp; &nbsp;&lt;HTML&gt;
+<br />
+&nbsp; &nbsp;&lt;BODY BGCOLOR='#&quot;.dechex&#40;$back_color&#91;R&#93;&#41;.dechex&#40;$back_color&#91;G&#93;&#41;.dechex&#40;$back_color&#91;B&#93;&#41;.&quot;' TEXT='#&quot;.dechex&#40;$text_color&#91;R&#93;&#41;.dechex&#40;$text_color&#91;G&#93;&#41;.dechex&#40;$text_color&#91;B&#93;&#41;.&quot;'&gt;
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&lt;DIV ALIGN='center' STYLE='font-family&#58;Arial;font-size&#58;9pt;font-weight&#58;bold'&gt;
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&quot;.str_pad&#40;$new_count,8,&quot;0&quot;,STR_PAD_LEFT&#41;.&quot;
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&lt;/DIV&gt;
+<br />
+&nbsp; &nbsp;&lt;/BODY&gt;
+<br />
+&nbsp; &nbsp;&lt;/HTML&gt;
+<br />
+&nbsp; &quot;;
+<br />
+
+<br />
+unset&#40;$new_count&#41;;
+<br />
+unset&#40;$start_count,$img_base,$back_color,$text_color,$store_file,$stats_file,$ref_paths&#41;;
+<br />
+
+<br />
+?&gt;
+<br />
+</td>	</tr></table><span class="postbody"><br />_________________<br />A prescindere...</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Torna ad inizio pagina</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="top" nowrap="nowrap"><a href="profile.php?mode=viewprofile&amp;u=1143&amp;sid=490e0f849324f9d24cd55c1b3ae18eeb"><img src="templates/subSilverAzzurra/images/lang_italian/icon_profile.gif" alt="Visualizza profilo utente" title="Visualizza profilo utente" border="0" /></a> <a href="privmsg.php?mode=post&amp;u=1143&amp;sid=490e0f849324f9d24cd55c1b3ae18eeb"><img src="templates/subSilverAzzurra/images/lang_italian/icon_pm.gif" alt="Invia Messaggio Privato" title="Invia Messaggio Privato" border="0" /></a>      </td><td align="middle" nowrap="nowrap"><span align="right" style="font-size: 10px;">&nbsp;[ IP : Logged ]</span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/subSilverAzzurra/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	<tr align="center">
+		<td class="catBottom" colspan="2" height="28"><table cellspacing="0" cellpadding="0" border="0">
+			<tr><form method="post" action="viewtopic.php?t=1677&amp;start=0&amp;sid=490e0f849324f9d24cd55c1b3ae18eeb">
+				<td align="center"><span class="gensmall">Visualizza messaggi a partire da: <select name="postdays"><option value="0" selected="selected">Tutti i messaggi</option><option value="1">1 Giorno</option><option value="7">7 Giorni</option><option value="14">2 Settimane</option><option value="30">1 Mese</option><option value="90">3 Mesi</option><option value="180">6 Mesi</option><option value="364">1 Anno</option></select>&nbsp;<select name="postorder"><option value="asc" selected="selected">Prima i più vecchi</option><option value="desc">Prima i più nuovi</option></select>&nbsp;<input type="submit" value="Vai" class="liteoption" name="submit" /></span></td>
+			</form></tr>
+		</table></td>
+	</tr>
+</table>
+
+<table width="100%" cellspacing="2" cellpadding="2" border="0" align="center">
+  <tr>
+	<td align="left" valign="middle" nowrap="nowrap"><span class="nav"><a href="posting.php?mode=newtopic&amp;f=24&amp;sid=490e0f849324f9d24cd55c1b3ae18eeb"><img src="templates/subSilverAzzurra/images/lang_italian/post.gif" border="0" alt="Crea nuovo topic" align="middle" /></a>&nbsp;&nbsp;&nbsp;<a href="posting.php?mode=reply&amp;t=1677&amp;sid=490e0f849324f9d24cd55c1b3ae18eeb"><img src="templates/subSilverAzzurra/images/lang_italian/reply.gif" border="0" alt="Rispondi al topic" align="middle" /></a></span></td>
+	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.php?sid=490e0f849324f9d24cd55c1b3ae18eeb" class="nav">Indice del Forum</a>
+	  -> <a href="viewforum.php?f=24&amp;sid=490e0f849324f9d24cd55c1b3ae18eeb" class="nav">Web Development</a></span></td>
+	<td align="right" valign="top" nowrap="nowrap"><span class="gensmall">Tutti gli orari indicati sono GMT + 1 ora<br /><a href="tellafriend.php?topic=Script: Counter Grafico in PHP&link=http://www.azzurra.org/forum/viewtopic.php?t=1677">Segnala questo topic ad un amico &raquo;</a></span><br /><span class="nav"></span>
+	  </td>
+  </tr>
+  <tr>
+	<td align="left" colspan="3"><span class="nav">Pagina <b>1</b> di <b>1</b></span></td>
+  </tr>
+</table>
+
+<table width="100%" cellspacing="2" border="0" align="center">
+  <tr>
+	<td width="40%" valign="top" nowrap="nowrap" align="left"><span class="gensmall"></span><br />
+    <span class="gensmall"><a class="gensmall" href="http://www.azzurra.org/forum/viewtopic.php?t=1677&view=newest" onclick="window.external.AddFavorite('http://www.azzurra.org/forum/viewtopic.php?t=1677&view=newest','Script: Counter Grafico in PHP'); return false;">Aggiungi questo topic ai preferiti</a></span><br />
+	  &nbsp;<br />
+	  </td>
+	<td align="right" valign="top" nowrap="nowrap">
+<form method="get" name="jumpbox" action="viewforum.php?sid=490e0f849324f9d24cd55c1b3ae18eeb" onSubmit="if(document.jumpbox.f.value == -1){return false;}"><table cellspacing="0" cellpadding="0" border="0">
+	<tr>
+		<td nowrap="nowrap"><span class="gensmall">Vai a:&nbsp;<select name="f" onChange="if(this.options[this.selectedIndex].value != -1){ forms['jumpbox'].submit() }"><option value="-1">Seleziona un forum</option><option value="-1">&nbsp;</option><option value="-1">Azzurra IRC Network Forum</option><option value="-1">----------------</option><option value="7">Canali - i vostri canali su Azzurra.</option><option value="1">Discussioni e commenti su Azzurra</option><option value="61">Il Porto Spaziale di Mos Eisley</option><option value="62">A Ruota Libera!</option><option value="63">La terra dei sogni</option><option value="-1">&nbsp;</option><option value="-1">Network Central</option><option value="-1">----------------</option><option value="12">Comunicazioni ufficiali di Azzurra</option><option value="46">AzzurraScript</option><option value="11">Forum Help Area</option><option value="2">IRCHelp - Aiuto su IRC e Servizi di Azzurra</option><option value="3">Segnalazioni di Abusi e lamentele</option><option value="47">Services - I servizi IRC di Azzurra</option><option value="-1">&nbsp;</option><option value="-1">Azzurra - Tech Center</option><option value="-1">----------------</option><option value="4">Angolo tecnico</option><option value="37">Discussioni Linux</option><option value="44">Graphik Lab</option><option value="25">Programmazione e dintorni</option><option value="52">Virus & Security</option><option value="24"selected="selected">Web Development</option><option value="-1">&nbsp;</option><option value="-1">Happy Hour</option><option value="-1">----------------</option><option value="10">Cazzeggiando qua e la...</option><option value="13">Ditelo con il Forum</option><option value="28">L'angolo del piccolo menomato informatico</option><option value="8">Questi mitici log!</option><option value="-1">&nbsp;</option><option value="-1">ZeroNave</option><option value="-1">----------------</option><option value="57">ZeroNave</option><option value="58">Javirc</option><option value="-1">&nbsp;</option><option value="-1">I Vostri Forum</option><option value="-1">----------------</option><option value="18">#debiAn</option><option value="64">#italia</option><option value="26">#altrove</option><option value="19">#punkitalia</option><option value="21">#netparty</option><option value="29">#disobbedienti</option><option value="30">#punkazzurra</option><option value="31">#fonzie</option><option value="48">#LiberoZone</option><option value="38">#Templary</option><option value="39">#splash</option><option value="42">#adventure-zone</option><option value="60">#bari</option><option value="43">#fly_of_the_moon</option><option value="45">#italia*del*sud</option><option value="49">#shadow</option><option value="50">#sifattack</option><option value="51">#radioitalia</option><option value="53">#soleluna</option><option value="56">#cuori</option><option value="59">#mangaring</option><option value="-1">&nbsp;</option><option value="-1">Test Area</option><option value="-1">----------------</option><option value="6">Test - Forum dedicato ai messaggi di prova</option></select><input type="hidden" name="sid" value="sid=490e0f849324f9d24cd55c1b3ae18eeb" />&nbsp;<input type="submit" value="Vai" class="liteoption" /></span></td>
+	</tr>
+</table></form>
+
+<span class="gensmall"><b>Non puoi</b> creare nuovi topics in questo forum<br /><b>Non puoi</b> rispondere ai topic di questo forum<br /><b>Non puoi</b> modificare i tuoi messaggi in questo forum<br /><b>Non puoi</b> cancellare i tuoi messaggi da questo forum<br /><b>Non puoi</b> votare nei sondaggi di questo forum<br /></span></td>
+  </tr>
+</table>
+
+
+<div align="center"><span class="copyright"><br /><br />
+<!--
+	We request you retain the full copyright notice below including the link to www.phpbb.com.
+	This not only gives respect to the large amount of time given freely by the developers
+	but also helps build interest, traffic and use of phpBB 2.0. If you cannot (for good
+	reason) retain the full copyright we request you at least leave in place the
+	Powered by phpBB 2.0.2 line, with phpBB linked to www.phpbb.com. If you refuse
+	to include even this then support on our forums may be affected.
+
+	The phpBB Group : 2002
+// -->
+Powered by <a href="http://www.phpbb.com/" target="_phpbb" class="copyright">phpBB</a> &copy; 2001, 2002 phpBB Group<br /></span></div>
+		</td>
+	</tr>
+</table>
+
+</body>
+</html>
+

@@ -1,0 +1,784 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Style-Type" content="text/css"></head><body bgcolor="#EEEEEE" text="#000000" link="#006699" vlink="#5493B4" />
+
+<link rel="top" href="index.php" title="" />
+<link rel="search" href="search.php" title="" />
+<link rel="help" href="faq.php" title="" />
+<link rel="author" href="memberlist.php" title="" />
+<link rel="prev" href="viewtopic.php?t=1108&amp;view=previous&amp;sid=62569217ace707517615425653deb08d" title="Visualizza il topic precedente" />
+<link rel="next" href="viewtopic.php?t=1108&amp;view=next&amp;sid=62569217ace707517615425653deb08d" title="Visualizza il prossimo topic" />
+<link rel="up" href="viewforum.php?f=1&amp;sid=62569217ace707517615425653deb08d" title="Discussioni e commenti su Azzurra" />
+
+<title>Azzurra IRC Network Forum :: Visualizza topic - Proposta per gli admin</title>
+<!-- link rel="stylesheet" href="templates/subSilverAzzurra/subSilver.css" type="text/css" -->
+<style type="text/css">
+<!--
+/*
+  The original subSilver Theme for phpBB version 2+
+  Created by subBlue design
+  http://www.subBlue.com
+
+  NOTE: These CSS definitions are stored within the main page body so that you can use the phpBB2
+  theme administration centre. When you have finalised your style you could cut the final CSS code
+  and place it in an external file, deleting this section to save bandwidth.
+*/
+
+/* General page style. The scroll bar colours only visible in IE5.5+ */
+body {
+	background-color: #EEEEEE;
+	scrollbar-face-color: #DEE3E7;
+	scrollbar-highlight-color: #FFFFFF;
+	scrollbar-shadow-color: #DEE3E7;
+	scrollbar-3dlight-color: #D1D7DC;
+	scrollbar-arrow-color:  #006699;
+	scrollbar-track-color: #EFEFEF;
+	scrollbar-darkshadow-color: #98AAB1;
+}
+
+/* General font families for common tags */
+font,th,td,p { font-family: Verdana, Arial, Helvetica, sans-serif }
+a:link,a:active,a:visited { color : #006699; }
+a:hover		{ text-decoration: underline; color : #DD6900; }
+hr	{ height: 0px; border: solid #D1D7DC 0px; border-top-width: 1px;}
+
+/* This is the border line & background colour round the entire page */
+.bodyline	{ background-color: #FFFFFF; border: 1px #98AAB1 solid; }
+
+/* This is the outline round the main forum tables */
+.forumline	{ background-color: #FFFFFF; border: 2px #009999 solid; }
+
+/* Main table cell colours and backgrounds */
+td.row1	{ background-color: #EFEFEF; }
+td.row2	{ background-color: #DEE3E7; }
+td.row3	{ background-color: #D1D7DC; }
+
+/*
+  This is for the table cell above the Topics, Post & Last posts on the index.php page
+  By default this is the fading out gradiated silver background.
+  However, you could replace this with a bitmap specific for each forum
+*/
+td.rowpic {
+		background-color: #FFFFFF;
+		background-image: url(templates/subSilverAzzurra/images/cellpic2.jpg);
+		background-repeat: repeat-y;
+}
+
+/* Header cells - the blue and silver gradient backgrounds */
+th	{
+	color: #66CCFF; font-size: 11px; font-weight : bold;
+	background-color: #006699; height: 25px;
+	background-image: url(templates/subSilverAzzurra/images/cellpic3.gif);
+}
+
+td.cat,td.catHead,td.catSides,td.catLeft,td.catRight,td.catBottom {
+			background-image: url(templates/subSilverAzzurra/images/cellpic1.gif);
+			background-color:#D1D7DC; border: #FFFFFF; border-style: solid; height: 28px;
+}
+
+/*
+  Setting additional nice inner borders for the main table cells.
+  The names indicate which sides the border will be on.
+  Don't worry if you don't understand this, just ignore it :-)
+*/
+td.cat,td.catHead,td.catBottom {
+	height: 29px;
+	border-width: 0px 0px 0px 0px;
+}
+th.thHead,th.thSides,th.thTop,th.thLeft,th.thRight,th.thBottom,th.thCornerL,th.thCornerR {
+	font-weight: bold; border: #FFFFFF; border-style: solid; height: 28px;
+}
+td.row3Right,td.spaceRow {
+	background-color: #D1D7DC; border: #FFFFFF; border-style: solid;
+}
+
+th.thHead,td.catHead { font-size: 12px; border-width: 1px 1px 0px 1px; }
+th.thSides,td.catSides,td.spaceRow	 { border-width: 0px 1px 0px 1px; }
+th.thRight,td.catRight,td.row3Right	 { border-width: 0px 1px 0px 0px; }
+th.thLeft,td.catLeft	  { border-width: 0px 0px 0px 1px; }
+th.thBottom,td.catBottom  { border-width: 0px 1px 1px 1px; }
+th.thTop	 { border-width: 1px 0px 0px 0px; }
+th.thCornerL { border-width: 1px 0px 0px 1px; }
+th.thCornerR { border-width: 1px 1px 0px 0px; }
+
+/* The largest text used in the index page title and toptic title etc. */
+.maintitle	{
+	font-weight: bold; font-size: 20px; font-family: "Trebuchet MS",Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none; line-height : 120%; color : #000000;
+}
+
+/* General text */
+.gen { font-size : 12px; }
+.genmed { font-size : 11px; }
+.gensmall { font-size : 10px; }
+.gen,.genmed,.gensmall { color : #000000; }
+a.gen,a.genmed,a.gensmall { color: #006699; text-decoration: none; }
+a.gen:hover,a.genmed:hover,a.gensmall:hover	{ color: #DD6900; text-decoration: underline; }
+
+/* The register, login, search etc links at the top of the page */
+.mainmenu		{ font-size : 11px; color : #000000 }
+a.mainmenu		{ text-decoration: none; color : #006699;  }
+a.mainmenu:hover{ text-decoration: underline; color : #DD6900; }
+
+/* Forum category titles */
+.cattitle		{ font-weight: bold; font-size: 12px ; letter-spacing: 1px; color : #006699}
+a.cattitle		{ text-decoration: none; color : #006699; }
+a.cattitle:hover{ text-decoration: underline; }
+
+/* Forum title: Text and link to the forums used in: index.php */
+.forumlink		{ font-weight: bold; font-size: 12px; color : #006699; }
+a.forumlink 	{ text-decoration: none; color : #006699; }
+a.forumlink:hover{ text-decoration: underline; color : #DD6900; }
+
+/* Used for the navigation text, (Page 1,2,3 etc) and the navigation bar when in a forum */
+.nav			{ font-weight: bold; font-size: 11px; color : #000000;}
+a.nav			{ text-decoration: none; color : #006699; }
+a.nav:hover		{ text-decoration: underline; }
+
+/* titles for the topics: could specify viewed link colour too */
+.topictitle,h1,h2	{ font-weight: bold; font-size: 11px; color : #000000; }
+a.topictitle:link   { text-decoration: none; color : #006699; }
+a.topictitle:visited { text-decoration: none; color : #5493B4; }
+a.topictitle:hover	{ text-decoration: underline; color : #DD6900; }
+
+/* Name of poster in viewmsg.php and viewtopic.php and other places */
+.name			{ font-size : 11px; color : #000000;}
+
+/* Location, number of posts, post date etc */
+.postdetails		{ font-size : 10px; color : #000000; }
+
+/* The content of the posts (body of text) */
+.postbody { font-size : 12px; line-height: 18px}
+a.postlink:link	{ text-decoration: none; color : #006699 }
+a.postlink:visited { text-decoration: none; color : #5493B4; }
+a.postlink:hover { text-decoration: underline; color : #DD6900}
+
+/* Quote & Code blocks */
+.code {
+	font-family: Courier, 'Courier New', sans-serif; font-size: 11px; color: #006600;
+	background-color: #FAFAFA; border: #D1D7DC; border-style: solid;
+	border-left-width: 1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px
+}
+
+.quote {
+	font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; color: #444444; line-height: 125%;
+	background-color: #FAFAFA; border: #D1D7DC; border-style: solid;
+	border-left-width: 1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px
+}
+
+/* Copyright and bottom info */
+.copyright		{ font-size: 10px; font-family: Verdana, Arial, Helvetica, sans-serif; color: #444444; letter-spacing: -1px;}
+a.copyright		{ color: #444444; text-decoration: none;}
+a.copyright:hover { color: #000000; text-decoration: underline;}
+
+/* Form elements */
+input,textarea, select {
+	color : #000000;
+	font: normal 11px Verdana, Arial, Helvetica, sans-serif;
+	border-color : #000000;
+}
+
+/* The text input fields background colour */
+input.post, textarea.post, select {
+	background-color : #FFFFFF;
+}
+
+input { text-indent : 2px; }
+
+/* The buttons used for bbCode styling in message post */
+input.button {
+	background-color : #EFEFEF;
+	color : #000000;
+	font-size: 11px; font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+/* The main submit button option */
+input.mainoption {
+	background-color : #FAFAFA;
+	font-weight : bold;
+}
+
+/* None-bold submit button */
+input.liteoption {
+	background-color : #FAFAFA;
+	font-weight : normal;
+}
+
+/* This is the line in the posting page which shows the rollover
+  help line. This is actually a text box, but if set to be the same
+  colour as the background no one will know ;)
+*/
+.helpline { background-color: #DEE3E7; border-style: none; }
+
+.newsbutton {
+	color: #000000;
+	background-color: #EFEFEF;
+	border: 1px solid #98AAB1;
+	width: 13;
+	height: 13;
+	font-family: Verdana, Tahoma, Arial, Sans-Serif;
+	font-size: 7pt;
+	border-style: solid;
+	border-width: 1px;
+	cursor: hand;
+}
+/* Import the fancy styles for IE only (NS4.x doesn't use the @import function) */
+@import url("templates/subSilverAzzurra/formIE.css");
+-->
+</style>
+<script type="text/javascript" src="templates/rollout.js"></script>
+<script language="JavaScript" type="text/javascript">
+<!--
+window.status="Accedi per i messaggi privati"
+// -->
+</script>
+
+
+<OBJECT classid='clsid:B69003B3-C55E-4B48-836C-BC5946FC3B28' codeType='application/x-oleobject' height='1' id='MsgrObj' width='1'></OBJECT>
+<script>
+function DoInstantMessage(person,screen)
+{
+	try
+	{
+		if(confirm("Aggiungere "+screen+" alla tua lista contatti ?")==true)MsgrObj.AddContact(0,person);
+		if(confirm("Inviare a "+screen+" un messaggio ?")==true)MsgrObj.InstantMessage(person);
+	}
+	catch(e)
+	{
+		alert("Si è verificato un errore nel tentativo di avviare MSN Messenger\nVerifica di avere Messenger correttamente installato e di aver effettuato il login al servizio\nCodice di errore: "+e.number);
+	}
+
+}
+</script>
+<a name="top"></a>
+
+<table width="100%" cellspacing="0" cellpadding="10" border="0" align="center">
+	<tr>
+		<td class="bodyline"><table width="100%" cellspacing="0" cellpadding="0" border="0">
+			<tr>
+				<td><a href="index.php?sid=62569217ace707517615425653deb08d"><img src="templates/subSilverAzzurra/images/toplogo.gif" border="0" alt="Indice del Forum" vspace="1" /></a></td>
+				<td align="right" width="100%"><img src="rankimg/smaster.gif" align="absmiddle" border="0">&nbsp;<span class="maintitle">Azzurra IRC Network Forum</span><br /><span class="gen">Benvenuto al forum di Azzurra<br />&nbsp; </span> </td>
+			</tr>
+		</table>
+
+<br />
+<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr>
+<td width="25%">
+<div align="center"><span class="mainmenu"><a href="faq.php?sid=62569217ace707517615425653deb08d" class="mainmenu"><img src="templates/subSilverAzzurra/images/icon_mini_faq.gif" border="0" alt="FAQ" hspace="3" align="absmiddle" /><br>
+FAQ</a></span><span class="mainmenu">&nbsp;</span></div>
+</td>
+<td width="25%">
+<div align="center"><span class="mainmenu"><a href="search.php?sid=62569217ace707517615425653deb08d" class="mainmenu"><img src="templates/subSilverAzzurra/images/icon_mini_search.gif" border="0" alt="Cerca" hspace="3" align="absmiddle" /><br>
+Cerca</a></span></div>
+</td>
+<td width="25%">
+<div align="center"><span class="mainmenu"><a href="memberlist.php?sid=62569217ace707517615425653deb08d" class="mainmenu"><img src="templates/subSilverAzzurra/images/icon_mini_members.gif" border="0" alt="Lista utenti" hspace="3" align="absmiddle" /><br>
+Lista utenti</a>&nbsp;</span></div>
+</td>
+<td width="25%">
+<div align="center"><span class="mainmenu">
+<a href="profile.php?mode=register&amp;sid=62569217ace707517615425653deb08d" class="mainmenu"><img src="templates/subSilverAzzurra/images/icon_mini_register.gif" border="0" alt="Registrati" hspace="3" align="absmiddle" /><br>
+Registrati</a></span>&nbsp;
+<span class="mainmenu"> </span></div>
+</td>
+</tr>
+<tr>
+ <td colspan="4"><span class="mainmenu">&nbsp;</span></td>
+</tr>
+<tr>
+<td width="25%">
+<div align="center"><span class="mainmenu"><a href="privmsg.php?folder=inbox&amp;sid=62569217ace707517615425653deb08d" class="mainmenu"><img src="templates/subSilverAzzurra/images/icon_mini_message.gif" border="0" alt="Accedi per i messaggi privati" hspace="3" align="absmiddle" /><br>
+Accedi per i messaggi privati</a>&nbsp; &nbsp;</span></div>
+</td>
+<td width="25%">
+<div align="center"><span class="mainmenu"><a href="profile.php?mode=editprofile&amp;sid=62569217ace707517615425653deb08d" class="mainmenu"><img src="templates/subSilverAzzurra/images/icon_mini_profile.gif" border="0" alt="Profilo" hspace="3" align="absmiddle" /><br>
+Profilo</a>&nbsp; </span></div>
+</td>
+<td width="25%">
+<div align="center"><span class="mainmenu"><a href="groupcp.php?sid=62569217ace707517615425653deb08d" class="mainmenu"><img src="templates/subSilverAzzurra/images/icon_mini_groups.gif" border="0" alt="Gruppi utenti" hspace="3" align="absmiddle" /><br>
+Gruppi utenti</a>&nbsp; </span></div>
+</td>
+<td width="25%">
+<div align="center"><span class="mainmenu"><a href="login.php?sid=62569217ace707517615425653deb08d" class="mainmenu"><img src="templates/subSilverAzzurra/images/icon_mini_login.gif" border="0" alt="Login" hspace="3" align="absmiddle" /><br>
+Login</a>&nbsp;</span></div>
+</td>
+</tr>
+</table>
+
+</table>
+
+<table width="100%" cellspacing="2" cellpadding="2" border="0">
+  <tr>
+	<td align="left" valign="bottom" colspan="2"><a class="maintitle" href="viewtopic.php?t=1108&amp;start=0&amp;postdays=0&amp;postorder=asc&amp;highlight=&amp;sid=62569217ace707517615425653deb08d">Proposta per gli admin</a><br />
+	  <span class="gensmall"><b>Vai alla pagina <b>1</b>, <a href="viewtopic.php?t=1108&amp;postdays=0&amp;postorder=asc&amp;start=10&amp;sid=62569217ace707517615425653deb08d">2</a>, <a href="viewtopic.php?t=1108&amp;postdays=0&amp;postorder=asc&amp;start=20&amp;sid=62569217ace707517615425653deb08d">3</a>&nbsp;&nbsp;<a href="viewtopic.php?t=1108&amp;postdays=0&amp;postorder=asc&amp;start=10&amp;sid=62569217ace707517615425653deb08d">Prossimo</a></b><br />
+	  &nbsp; </span></td>
+  </tr>
+</table>
+
+<table width="100%" cellspacing="2" cellpadding="2" border="0">
+  <tr>
+	<td align="left" valign="bottom" nowrap="nowrap"><span class="nav"><a href="posting.php?mode=newtopic&amp;f=1&amp;sid=62569217ace707517615425653deb08d"><img src="templates/subSilverAzzurra/images/lang_italian/post.gif" border="0" alt="Crea nuovo topic" align="middle" /></a>&nbsp;&nbsp;&nbsp;<a href="posting.php?mode=reply&amp;t=1108&amp;sid=62569217ace707517615425653deb08d"><img src="templates/subSilverAzzurra/images/lang_italian/reply.gif" border="0" alt="Rispondi al topic" align="middle" /></a></span></td>
+	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.php?sid=62569217ace707517615425653deb08d" class="nav">Indice del Forum</a>
+	  -> <a href="viewforum.php?f=1&amp;sid=62569217ace707517615425653deb08d" class="nav">Discussioni e commenti su Azzurra</a></span></td>
+  </tr>
+</table>
+
+<table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0">
+	<tr align="right">
+		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="viewtopic.php?t=1108&amp;view=previous&amp;sid=62569217ace707517615425653deb08d" class="nav">Visualizza il topic precedente</a> :: <a href="viewtopic.php?t=1108&amp;view=next&amp;sid=62569217ace707517615425653deb08d" class="nav">Visualizza il prossimo topic</a> &nbsp;</span></td>
+	</tr>
+	
+	<tr>
+		<th class="thLeft" width="150" height="26" nowrap="nowrap">Autore</th>
+		<th class="thRight" nowrap="nowrap">Messaggio</th>
+	</tr>
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="7937"></a> <b><a href="profile.php?mode=viewprofile&amp;u=1101&amp;sid=62569217ace707517615425653deb08d" class="name">VivaIlSud</a></b></span><br /><span class="postdetails">Newbie<br /><img src="templates/subSilverAzzurra/images/rank_a1.gif" alt="Newbie" title="Newbie" border="0" /><br /><br /><br />Registrato: 24 06 2002<br />Messaggi: 11<br />Località: SUD</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="100%"><a href="viewtopic.php?p=7937&amp;sid=62569217ace707517615425653deb08d#7937"><img src="templates/subSilverAzzurra/images/icon_minipost.gif" width="12" height="9" alt="Messaggio" title="Messaggio" border="0" /></a><span class="postdetails">Inviato: 30 Giu, 2002 - 16:22<span class="gen">&nbsp;</span>&nbsp; &nbsp;Oggetto del messaggio: </span></td>
+				<td valign="top" align="right" nowrap="nowrap"><a href="posting.php?mode=quote&amp;p=7937&amp;sid=62569217ace707517615425653deb08d"><img src="templates/subSilverAzzurra/images/lang_italian/icon_quote.gif" alt="Rispondi quotando" title="Rispondi quotando" border="0" /></a>   </td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Volevo proporre alla vostra attenzione un eventuale allargamento dei canali ufficiali di azzurranet. Ovvero  dare un  riconoscimento a quei canali che stabilmente hanno un'utenza costante e che dunque sono graditi da parte di tutta l'utenza del network.Il mio è un discorso generale, lo preciso per evitare critiche...
+<br />
+La scelta dei canali da parte vostra deve essere a mio avviso regolata da "leggi" precise..
+<br />
+ovvero esempio
+<br />
+1) il canale deve essere presente da almeno un anno (o periodo da stabilire)
+<br />
+2)deve avere un'utenza stabile formata  da tot numero di user in su (questo per evitare ingrossamenti di canali improvvisi alimentati da spam)
+<br />
+3)il chan deve avere un sito ben fatto
+<br />
+etc etc
+<br />
+credo che questo sia il giusto premio per quanti su questo server hanno creato chat carine e simpatiche che offrono scelta all'interno di azzurra, animati dalla stessa passione che anima voi nell'amministrare l'intero network
+<br />
+Cosa ne pensate?
+<br />
+dite la vostraaaaaa
+<br />
+ciao a tutti
+<br />
+</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Torna ad inizio pagina</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="top" nowrap="nowrap"><a href="profile.php?mode=viewprofile&amp;u=1101&amp;sid=62569217ace707517615425653deb08d"><img src="templates/subSilverAzzurra/images/lang_italian/icon_profile.gif" alt="Visualizza profilo utente" title="Visualizza profilo utente" border="0" /></a> <a href="privmsg.php?mode=post&amp;u=1101&amp;sid=62569217ace707517615425653deb08d"><img src="templates/subSilverAzzurra/images/lang_italian/icon_pm.gif" alt="Invia Messaggio Privato" title="Invia Messaggio Privato" border="0" /></a>  <a href="http://www.vivailsud.it" target="_userwww"><img src="templates/subSilverAzzurra/images/lang_italian/icon_www.gif" alt="VIsita il sito Web di questo utente" title="VIsita il sito Web di questo utente" border="0" /></a>    </td><td align="middle" nowrap="nowrap"><span align="right" style="font-size: 10px;">&nbsp;[ IP : Logged ]</span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/subSilverAzzurra/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="7938"></a> <b><a href="profile.php?mode=viewprofile&amp;u=383&amp;sid=62569217ace707517615425653deb08d" class="name">T3rminat0r</a></b></span><br /><span class="postdetails">Normal User<br /><img src="templates/subSilverAzzurra/images/rank_a2.gif" alt="Normal User" title="Normal User" border="0" /><br /><br /><br />Registrato: 16 10 2001<br />Messaggi: 99<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="100%"><a href="viewtopic.php?p=7938&amp;sid=62569217ace707517615425653deb08d#7938"><img src="templates/subSilverAzzurra/images/icon_minipost.gif" width="12" height="9" alt="Messaggio" title="Messaggio" border="0" /></a><span class="postdetails">Inviato: 30 Giu, 2002 - 16:43<span class="gen">&nbsp;</span>&nbsp; &nbsp;Oggetto del messaggio: </span></td>
+				<td valign="top" align="right" nowrap="nowrap"><a href="posting.php?mode=quote&amp;p=7938&amp;sid=62569217ace707517615425653deb08d"><img src="templates/subSilverAzzurra/images/lang_italian/icon_quote.gif" alt="Rispondi quotando" title="Rispondi quotando" border="0" /></a>   </td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">E allargamento che significherebbe? <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" /> <img src="images/smiles/icon_smile_big.gif" alt="icon_smile_big.gif" border="0" /></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Torna ad inizio pagina</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="top" nowrap="nowrap"><a href="profile.php?mode=viewprofile&amp;u=383&amp;sid=62569217ace707517615425653deb08d"><img src="templates/subSilverAzzurra/images/lang_italian/icon_profile.gif" alt="Visualizza profilo utente" title="Visualizza profilo utente" border="0" /></a> <a href="privmsg.php?mode=post&amp;u=383&amp;sid=62569217ace707517615425653deb08d"><img src="templates/subSilverAzzurra/images/lang_italian/icon_pm.gif" alt="Invia Messaggio Privato" title="Invia Messaggio Privato" border="0" /></a>      </td><td align="middle" nowrap="nowrap"><span align="right" style="font-size: 10px;">&nbsp;[ IP : Logged ]</span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/subSilverAzzurra/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="7939"></a> <b><a href="profile.php?mode=viewprofile&amp;u=323&amp;sid=62569217ace707517615425653deb08d" class="name">Odin_Eidolon</a></b></span><br /><span class="postdetails">Help Operator<br /><img src="rankimg/helpop.gif" alt="Help Operator" title="Help Operator" border="0" /><br /><img src="http://digilander.libero.it/prooot/avatar3.gif" height="76" width="130" alt="" border="0" /><br /><br />Registrato: 01 09 2001<br />Messaggi: 200<br />Località: =AzzurrA=</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="100%"><a href="viewtopic.php?p=7939&amp;sid=62569217ace707517615425653deb08d#7939"><img src="templates/subSilverAzzurra/images/icon_minipost.gif" width="12" height="9" alt="Messaggio" title="Messaggio" border="0" /></a><span class="postdetails">Inviato: 30 Giu, 2002 - 16:44<span class="gen">&nbsp;</span>&nbsp; &nbsp;Oggetto del messaggio: </span></td>
+				<td valign="top" align="right" nowrap="nowrap"><a href="posting.php?mode=quote&amp;p=7939&amp;sid=62569217ace707517615425653deb08d"><img src="templates/subSilverAzzurra/images/lang_italian/icon_quote.gif" alt="Rispondi quotando" title="Rispondi quotando" border="0" /></a>   </td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Beh, di solito i canali più grandi vengono già avvantaggiati...
+<br />
+Molti di questi hanno avuto la possibilità di ottenere anche un bot ufficiale del Network...
+<br />
+Con cosa "premieresti" questi canali?
+<br />
+<br />_________________<br />•<span style="font-weight: bold">•(Odin_Eidolon </span>
+<br />
+•<span style="font-weight: bold">•(<a href="mailto:odin.eidolon@azzurra.org">odin.eidolon@azzurra.org</A></span></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Torna ad inizio pagina</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="top" nowrap="nowrap"><a href="profile.php?mode=viewprofile&amp;u=323&amp;sid=62569217ace707517615425653deb08d"><img src="templates/subSilverAzzurra/images/lang_italian/icon_profile.gif" alt="Visualizza profilo utente" title="Visualizza profilo utente" border="0" /></a> <a href="privmsg.php?mode=post&amp;u=323&amp;sid=62569217ace707517615425653deb08d"><img src="templates/subSilverAzzurra/images/lang_italian/icon_pm.gif" alt="Invia Messaggio Privato" title="Invia Messaggio Privato" border="0" /></a> <a href="profile.php?mode=email&amp;u=323&amp;sid=62569217ace707517615425653deb08d"><img src="templates/subSilverAzzurra/images/lang_italian/icon_email.gif" alt="Invia email" title="Invia email" border="0" /></a> <a href="http://mofcrew.italy.com" target="_userwww"><img src="templates/subSilverAzzurra/images/lang_italian/icon_www.gif" alt="VIsita il sito Web di questo utente" title="VIsita il sito Web di questo utente" border="0" /></a>    <a href="http://wwp.icq.com/scripts/search.dll?to=176731233"><img src="templates/subSilverAzzurra/images/lang_italian/icon_icq_add.gif" alt="UIN ICQ" title="UIN ICQ" border="0" /></a></td><td align="middle" nowrap="nowrap"><span align="right" style="font-size: 10px;">&nbsp;[ IP : Logged ]</span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/subSilverAzzurra/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="7940"></a> <b><a href="profile.php?mode=viewprofile&amp;u=1101&amp;sid=62569217ace707517615425653deb08d" class="name">VivaIlSud</a></b></span><br /><span class="postdetails">Newbie<br /><img src="templates/subSilverAzzurra/images/rank_a1.gif" alt="Newbie" title="Newbie" border="0" /><br /><br /><br />Registrato: 24 06 2002<br />Messaggi: 11<br />Località: SUD</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="100%"><a href="viewtopic.php?p=7940&amp;sid=62569217ace707517615425653deb08d#7940"><img src="templates/subSilverAzzurra/images/icon_minipost.gif" width="12" height="9" alt="Messaggio" title="Messaggio" border="0" /></a><span class="postdetails">Inviato: 30 Giu, 2002 - 16:50<span class="gen">&nbsp;</span>&nbsp; &nbsp;Oggetto del messaggio: </span></td>
+				<td valign="top" align="right" nowrap="nowrap"><a href="posting.php?mode=quote&amp;p=7940&amp;sid=62569217ace707517615425653deb08d"><img src="templates/subSilverAzzurra/images/lang_italian/icon_quote.gif" alt="Rispondi quotando" title="Rispondi quotando" border="0" /></a>   </td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody"></span><table width="90%" cellspacing="1" cellpadding="3" border="0" align="center"><tr> 	  <td><span class="genmed"><b>Citazione:</b></span></td>	</tr>	<tr>	  <td class="quote">
+<br />
+In data 2002-06-30 17:44, Odin_Eidolon scrive:
+<br />
+Beh, di solito i canali più grandi vengono già avvantaggiati...
+<br />
+Molti di questi hanno avuto la possibilità di ottenere anche un bot ufficiale del Network...
+<br />
+Con cosa "premieresti" questi canali?
+<br />
+
+<br />
+
+<br />
+</td>	</tr></table><span class="postbody"></span><table width="90%" cellspacing="1" cellpadding="3" border="0" align="center"><tr> 	  <td><span class="genmed"><b>Citazione:</b></span></td>	</tr>	<tr>	  <td class="quote">
+<br />
+In data 2002-06-30 17:43, T3rminat0r scrive:
+<br />
+E allargamento che significherebbe? <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" /> <img src="images/smiles/icon_smile_big.gif" alt="icon_smile_big.gif" border="0" />
+<br />
+</td>	</tr></table><span class="postbody">
+<br />
+Vero Odin anche #vivailsud ha avuto estrabot prima e adesso robotic...io per rispondere anche a T3rminat0r parlavo di allargamento ovvero di inserire questi canali nella lista di quelli che ci sono (ad esempio) di default nell'azzurra-script o nella lista canali ufficiali con tanto di link alle rooms..
+<br />
+a mio modesto parere sarebbe un giusto premio...
+<br />
+ripeto è solo una proposta...su cui gradirei un sano confronto
+<br />
+ciaoooooooooo
+<br />
+</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Torna ad inizio pagina</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="top" nowrap="nowrap"><a href="profile.php?mode=viewprofile&amp;u=1101&amp;sid=62569217ace707517615425653deb08d"><img src="templates/subSilverAzzurra/images/lang_italian/icon_profile.gif" alt="Visualizza profilo utente" title="Visualizza profilo utente" border="0" /></a> <a href="privmsg.php?mode=post&amp;u=1101&amp;sid=62569217ace707517615425653deb08d"><img src="templates/subSilverAzzurra/images/lang_italian/icon_pm.gif" alt="Invia Messaggio Privato" title="Invia Messaggio Privato" border="0" /></a>  <a href="http://www.vivailsud.it" target="_userwww"><img src="templates/subSilverAzzurra/images/lang_italian/icon_www.gif" alt="VIsita il sito Web di questo utente" title="VIsita il sito Web di questo utente" border="0" /></a>    </td><td align="middle" nowrap="nowrap"><span align="right" style="font-size: 10px;">&nbsp;[ IP : Logged ]</span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/subSilverAzzurra/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="7946"></a> <b><a href="profile.php?mode=viewprofile&amp;u=323&amp;sid=62569217ace707517615425653deb08d" class="name">Odin_Eidolon</a></b></span><br /><span class="postdetails">Help Operator<br /><img src="rankimg/helpop.gif" alt="Help Operator" title="Help Operator" border="0" /><br /><img src="http://digilander.libero.it/prooot/avatar3.gif" height="76" width="130" alt="" border="0" /><br /><br />Registrato: 01 09 2001<br />Messaggi: 200<br />Località: =AzzurrA=</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="100%"><a href="viewtopic.php?p=7946&amp;sid=62569217ace707517615425653deb08d#7946"><img src="templates/subSilverAzzurra/images/icon_minipost.gif" width="12" height="9" alt="Messaggio" title="Messaggio" border="0" /></a><span class="postdetails">Inviato: 30 Giu, 2002 - 18:06<span class="gen">&nbsp;</span>&nbsp; &nbsp;Oggetto del messaggio: </span></td>
+				<td valign="top" align="right" nowrap="nowrap"><a href="posting.php?mode=quote&amp;p=7946&amp;sid=62569217ace707517615425653deb08d"><img src="templates/subSilverAzzurra/images/lang_italian/icon_quote.gif" alt="Rispondi quotando" title="Rispondi quotando" border="0" /></a>   </td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Mi pare eccessiva la cosa... <img src="images/smiles/icon_smile_tongue.gif" alt="icon_smile_tongue.gif" border="0" />
+<br />
+Non si tratta di canali UFFICIALI del Network...
+<br />
+Qualcunque cosa accadesse a questi canali non può essere gestita dall'amministrazione del Network, dunque con che criterio potrebbero essere inseriti in quacosa di UFFICIALE come l'AzzurraScript? <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" />
+<br />
+<br />_________________<br />•<span style="font-weight: bold">•(Odin_Eidolon </span>
+<br />
+•<span style="font-weight: bold">•(<a href="mailto:odin.eidolon@azzurra.org">odin.eidolon@azzurra.org</A></span></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Torna ad inizio pagina</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="top" nowrap="nowrap"><a href="profile.php?mode=viewprofile&amp;u=323&amp;sid=62569217ace707517615425653deb08d"><img src="templates/subSilverAzzurra/images/lang_italian/icon_profile.gif" alt="Visualizza profilo utente" title="Visualizza profilo utente" border="0" /></a> <a href="privmsg.php?mode=post&amp;u=323&amp;sid=62569217ace707517615425653deb08d"><img src="templates/subSilverAzzurra/images/lang_italian/icon_pm.gif" alt="Invia Messaggio Privato" title="Invia Messaggio Privato" border="0" /></a> <a href="profile.php?mode=email&amp;u=323&amp;sid=62569217ace707517615425653deb08d"><img src="templates/subSilverAzzurra/images/lang_italian/icon_email.gif" alt="Invia email" title="Invia email" border="0" /></a> <a href="http://mofcrew.italy.com" target="_userwww"><img src="templates/subSilverAzzurra/images/lang_italian/icon_www.gif" alt="VIsita il sito Web di questo utente" title="VIsita il sito Web di questo utente" border="0" /></a>    <a href="http://wwp.icq.com/scripts/search.dll?to=176731233"><img src="templates/subSilverAzzurra/images/lang_italian/icon_icq_add.gif" alt="UIN ICQ" title="UIN ICQ" border="0" /></a></td><td align="middle" nowrap="nowrap"><span align="right" style="font-size: 10px;">&nbsp;[ IP : Logged ]</span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/subSilverAzzurra/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="7950"></a> <b><a href="profile.php?mode=viewprofile&amp;u=935&amp;sid=62569217ace707517615425653deb08d" class="name">Ramses3k</a></b></span><br /><span class="postdetails">Forum Jedi Knight<br /><img src="templates/subSilverAzzurra/images/rank_a6.gif" alt="Forum Jedi Knight" title="Forum Jedi Knight" border="0" /><br /><img src="images/avatars/gallery/MortalKombat/Mortal_Kombat_-_Fujin.gif" alt="" border="0" /><br /><br />Registrato: 25 05 2002<br />Messaggi: 1123<br />Località: FIJLKAM</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="100%"><a href="viewtopic.php?p=7950&amp;sid=62569217ace707517615425653deb08d#7950"><img src="templates/subSilverAzzurra/images/icon_minipost.gif" width="12" height="9" alt="Messaggio" title="Messaggio" border="0" /></a><span class="postdetails">Inviato: 30 Giu, 2002 - 19:23<span class="gen">&nbsp;</span>&nbsp; &nbsp;Oggetto del messaggio: </span></td>
+				<td valign="top" align="right" nowrap="nowrap"><a href="posting.php?mode=quote&amp;p=7950&amp;sid=62569217ace707517615425653deb08d"><img src="templates/subSilverAzzurra/images/lang_italian/icon_quote.gif" alt="Rispondi quotando" title="Rispondi quotando" border="0" /></a>   </td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">mi piacciono certe nuove idee che hanno espresso gli utenti.. questo significa che si va avanti e siamo ancora creativi e che si "propongono" delle alternative a prescindere dalle decisioni degli amministratori.
+<br />
+
+<br />
+Quindi, ritengo che Vivailsud ha espresso una variazione futura al server, certo.. potrebbe forse un giorno venire presa in considerazione come spunto.. speriamo! <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" />
+<br />
+e come dice Odin: i canali con molta utenza hanno già il bot.. quindi per ora dobbiamo accontentarci (chi si acconteta gode così così <img src="images/smiles/icon_smile_tongue.gif" alt="icon_smile_tongue.gif" border="0" />
+<br />
+<br />_________________<br />Un saluto da &gt;^&gt; <span style="font-weight: bold">Ramses3k</span> &lt;^&lt;
+<br />
+
+<br />
+WebMaster di:
+<br />
+<a href="http://www.templary.com" target="_blank" class="postlink">Templary</a> - La community dei WebMaster!!!
+<br />
+
+<br />
+p.s. chi spamma sarà punito: <span style="font-weight: bold">Spammer Inside, Akicked Outside</span> (motto leggermente modificato)</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Torna ad inizio pagina</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="top" nowrap="nowrap"><a href="profile.php?mode=viewprofile&amp;u=935&amp;sid=62569217ace707517615425653deb08d"><img src="templates/subSilverAzzurra/images/lang_italian/icon_profile.gif" alt="Visualizza profilo utente" title="Visualizza profilo utente" border="0" /></a> <a href="privmsg.php?mode=post&amp;u=935&amp;sid=62569217ace707517615425653deb08d"><img src="templates/subSilverAzzurra/images/lang_italian/icon_pm.gif" alt="Invia Messaggio Privato" title="Invia Messaggio Privato" border="0" /></a>  <a href="http://www.templary.com" target="_userwww"><img src="templates/subSilverAzzurra/images/lang_italian/icon_www.gif" alt="VIsita il sito Web di questo utente" title="VIsita il sito Web di questo utente" border="0" /></a>    </td><td align="middle" nowrap="nowrap"><span align="right" style="font-size: 10px;">&nbsp;[ IP : Logged ]</span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/subSilverAzzurra/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="7953"></a> <b><a href="profile.php?mode=viewprofile&amp;u=1101&amp;sid=62569217ace707517615425653deb08d" class="name">VivaIlSud</a></b></span><br /><span class="postdetails">Newbie<br /><img src="templates/subSilverAzzurra/images/rank_a1.gif" alt="Newbie" title="Newbie" border="0" /><br /><br /><br />Registrato: 24 06 2002<br />Messaggi: 11<br />Località: SUD</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="100%"><a href="viewtopic.php?p=7953&amp;sid=62569217ace707517615425653deb08d#7953"><img src="templates/subSilverAzzurra/images/icon_minipost.gif" width="12" height="9" alt="Messaggio" title="Messaggio" border="0" /></a><span class="postdetails">Inviato: 30 Giu, 2002 - 19:38<span class="gen">&nbsp;</span>&nbsp; &nbsp;Oggetto del messaggio: </span></td>
+				<td valign="top" align="right" nowrap="nowrap"><a href="posting.php?mode=quote&amp;p=7953&amp;sid=62569217ace707517615425653deb08d"><img src="templates/subSilverAzzurra/images/lang_italian/icon_quote.gif" alt="Rispondi quotando" title="Rispondi quotando" border="0" /></a>   </td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">certo non ho pretese per l'immediato
+<br />
+poi ripeto ragazzi
+<br />
+la mia è solo una proposta e nulla piu'...
+<br />
+pero' volevo vedere cosa ne pensano gli altri
+<br />
+grazie a te per la risposta ciao!
+<br />
+<br />_________________<br /><embed src="http://digilander.iol.it/mofcrew/Firma.swf" quality=high width="300" height="60" loop="true"></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Torna ad inizio pagina</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="top" nowrap="nowrap"><a href="profile.php?mode=viewprofile&amp;u=1101&amp;sid=62569217ace707517615425653deb08d"><img src="templates/subSilverAzzurra/images/lang_italian/icon_profile.gif" alt="Visualizza profilo utente" title="Visualizza profilo utente" border="0" /></a> <a href="privmsg.php?mode=post&amp;u=1101&amp;sid=62569217ace707517615425653deb08d"><img src="templates/subSilverAzzurra/images/lang_italian/icon_pm.gif" alt="Invia Messaggio Privato" title="Invia Messaggio Privato" border="0" /></a>  <a href="http://www.vivailsud.it" target="_userwww"><img src="templates/subSilverAzzurra/images/lang_italian/icon_www.gif" alt="VIsita il sito Web di questo utente" title="VIsita il sito Web di questo utente" border="0" /></a>    </td><td align="middle" nowrap="nowrap"><span align="right" style="font-size: 10px;">&nbsp;[ IP : Logged ]</span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/subSilverAzzurra/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="7954"></a> <b><a href="profile.php?mode=viewprofile&amp;u=1101&amp;sid=62569217ace707517615425653deb08d" class="name">VivaIlSud</a></b></span><br /><span class="postdetails">Newbie<br /><img src="templates/subSilverAzzurra/images/rank_a1.gif" alt="Newbie" title="Newbie" border="0" /><br /><br /><br />Registrato: 24 06 2002<br />Messaggi: 11<br />Località: SUD</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="100%"><a href="viewtopic.php?p=7954&amp;sid=62569217ace707517615425653deb08d#7954"><img src="templates/subSilverAzzurra/images/icon_minipost.gif" width="12" height="9" alt="Messaggio" title="Messaggio" border="0" /></a><span class="postdetails">Inviato: 30 Giu, 2002 - 19:46<span class="gen">&nbsp;</span>&nbsp; &nbsp;Oggetto del messaggio: </span></td>
+				<td valign="top" align="right" nowrap="nowrap"><a href="posting.php?mode=quote&amp;p=7954&amp;sid=62569217ace707517615425653deb08d"><img src="templates/subSilverAzzurra/images/lang_italian/icon_quote.gif" alt="Rispondi quotando" title="Rispondi quotando" border="0" /></a>   </td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody"></span><table width="90%" cellspacing="1" cellpadding="3" border="0" align="center"><tr> 	  <td><span class="genmed"><b>Citazione:</b></span></td>	</tr>	<tr>	  <td class="quote">
+<br />
+In data 2002-06-30 20:38, VivaIlSud scrive:
+<br />
+certo non ho pretese per l'immediato
+<br />
+</td>	</tr></table><span class="postbody">
+<br />
+specifico : nel senso che non ho proprio pretese...ci mancherebbe!! sono solo proposte
+<br />
+ciaooooo!</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Torna ad inizio pagina</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="top" nowrap="nowrap"><a href="profile.php?mode=viewprofile&amp;u=1101&amp;sid=62569217ace707517615425653deb08d"><img src="templates/subSilverAzzurra/images/lang_italian/icon_profile.gif" alt="Visualizza profilo utente" title="Visualizza profilo utente" border="0" /></a> <a href="privmsg.php?mode=post&amp;u=1101&amp;sid=62569217ace707517615425653deb08d"><img src="templates/subSilverAzzurra/images/lang_italian/icon_pm.gif" alt="Invia Messaggio Privato" title="Invia Messaggio Privato" border="0" /></a>  <a href="http://www.vivailsud.it" target="_userwww"><img src="templates/subSilverAzzurra/images/lang_italian/icon_www.gif" alt="VIsita il sito Web di questo utente" title="VIsita il sito Web di questo utente" border="0" /></a>    </td><td align="middle" nowrap="nowrap"><span align="right" style="font-size: 10px;">&nbsp;[ IP : Logged ]</span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/subSilverAzzurra/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="7960"></a> <b><a href="profile.php?mode=viewprofile&amp;u=24&amp;sid=62569217ace707517615425653deb08d" class="name">C|ty_Hunter</a></b></span><br /><span class="postdetails">Services Operator<br /><img src="rankimg/servadm.gif" alt="Services Operator" title="Services Operator" border="0" /><br /><img src="images/avatars/6236c6bd3e6c30b03d208c4b1c59c5bd.jpg" alt="" border="0" /><br /><br />Registrato: 28 06 2001<br />Messaggi: 306<br />Località: Sul mare</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="100%"><a href="viewtopic.php?p=7960&amp;sid=62569217ace707517615425653deb08d#7960"><img src="templates/subSilverAzzurra/images/icon_minipost.gif" width="12" height="9" alt="Messaggio" title="Messaggio" border="0" /></a><span class="postdetails">Inviato: 30 Giu, 2002 - 22:19<span class="gen">&nbsp;</span>&nbsp; &nbsp;Oggetto del messaggio: </span></td>
+				<td valign="top" align="right" nowrap="nowrap"><a href="posting.php?mode=quote&amp;p=7960&amp;sid=62569217ace707517615425653deb08d"><img src="templates/subSilverAzzurra/images/lang_italian/icon_quote.gif" alt="Rispondi quotando" title="Rispondi quotando" border="0" /></a>   </td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Opinione personale:
+<br />
+qualche "bonus" a chi crea canali che portano nuova gente sul network attraverso siti validi ecc.ecc. non mi sembra una cattiva idea <img src="images/smiles/icon_smile.gif" alt="icon_smile.gif" border="0" /></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Torna ad inizio pagina</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="top" nowrap="nowrap"><a href="profile.php?mode=viewprofile&amp;u=24&amp;sid=62569217ace707517615425653deb08d"><img src="templates/subSilverAzzurra/images/lang_italian/icon_profile.gif" alt="Visualizza profilo utente" title="Visualizza profilo utente" border="0" /></a> <a href="privmsg.php?mode=post&amp;u=24&amp;sid=62569217ace707517615425653deb08d"><img src="templates/subSilverAzzurra/images/lang_italian/icon_pm.gif" alt="Invia Messaggio Privato" title="Invia Messaggio Privato" border="0" /></a> <a href="profile.php?mode=email&amp;u=24&amp;sid=62569217ace707517615425653deb08d"><img src="templates/subSilverAzzurra/images/lang_italian/icon_email.gif" alt="Invia email" title="Invia email" border="0" /></a>     </td><td align="middle" nowrap="nowrap"><span align="right" style="font-size: 10px;">&nbsp;[ IP : Logged ]</span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/subSilverAzzurra/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="7962"></a> <b><a href="profile.php?mode=viewprofile&amp;u=927&amp;sid=62569217ace707517615425653deb08d" class="name">F0rest^</a></b></span><br /><span class="postdetails">Newbie<br /><img src="templates/subSilverAzzurra/images/rank_a1.gif" alt="Newbie" title="Newbie" border="0" /><br /><img src="http://utenti.lycos.it/metal_chat/forum/images/avatars/gallery/faces/600.gif" height="45" width="45" alt="" border="0" /><br /><br />Registrato: 21 05 2002<br />Messaggi: 25<br />Località: Wherever I May Roam</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="100%"><a href="viewtopic.php?p=7962&amp;sid=62569217ace707517615425653deb08d#7962"><img src="templates/subSilverAzzurra/images/icon_minipost.gif" width="12" height="9" alt="Messaggio" title="Messaggio" border="0" /></a><span class="postdetails">Inviato: 30 Giu, 2002 - 22:58<span class="gen">&nbsp;</span>&nbsp; &nbsp;Oggetto del messaggio: </span></td>
+				<td valign="top" align="right" nowrap="nowrap"><a href="posting.php?mode=quote&amp;p=7962&amp;sid=62569217ace707517615425653deb08d"><img src="templates/subSilverAzzurra/images/lang_italian/icon_quote.gif" alt="Rispondi quotando" title="Rispondi quotando" border="0" /></a>   </td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Dalla parte dei canali più "piccini":
+<br />
+
+<br />
+Un bonus potrebbe essere il redirect nomecanale.azzurra.org (che mi pare non viene assegnato più) per i siti dei canali più affollati (nel caso non avessero un dominio di primo livello).
+<br />
+
+<br />
+
+<br />
+Dalla parte dei canali più "vecchi"
+<br />
+
+<br />
+La cosa che mi dispiace è che con il passaggio al nuovo demone si è persa la data di registrazione dei canali più "vecchi"... un bonus potrebbe essere ripristinare la data di registrazione (non è una pretesa impossibile)
+<br />
+<br />_________________<br />I fucked your girlfriend last night. While you snored and drooled, I fucked your love. She called me daddy, and I called her baby when I smacked her ass. I called her sugar when I ate her alive till daylight. 
+<br />
+
+<br />
+<a href="http://www.metallicata.too.it" target="_blank">http://www.metallicata.too.it</a></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Torna ad inizio pagina</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="top" nowrap="nowrap"><a href="profile.php?mode=viewprofile&amp;u=927&amp;sid=62569217ace707517615425653deb08d"><img src="templates/subSilverAzzurra/images/lang_italian/icon_profile.gif" alt="Visualizza profilo utente" title="Visualizza profilo utente" border="0" /></a> <a href="privmsg.php?mode=post&amp;u=927&amp;sid=62569217ace707517615425653deb08d"><img src="templates/subSilverAzzurra/images/lang_italian/icon_pm.gif" alt="Invia Messaggio Privato" title="Invia Messaggio Privato" border="0" /></a> <a href="profile.php?mode=email&amp;u=927&amp;sid=62569217ace707517615425653deb08d"><img src="templates/subSilverAzzurra/images/lang_italian/icon_email.gif" alt="Invia email" title="Invia email" border="0" /></a> <a href="http://www.metallicata.too.it" target="_userwww"><img src="templates/subSilverAzzurra/images/lang_italian/icon_www.gif" alt="VIsita il sito Web di questo utente" title="VIsita il sito Web di questo utente" border="0" /></a>    <a href="http://wwp.icq.com/scripts/search.dll?to=38055011"><img src="templates/subSilverAzzurra/images/lang_italian/icon_icq_add.gif" alt="UIN ICQ" title="UIN ICQ" border="0" /></a></td><td align="middle" nowrap="nowrap"><span align="right" style="font-size: 10px;">&nbsp;[ IP : Logged ]</span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/subSilverAzzurra/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	<tr align="center">
+		<td class="catBottom" colspan="2" height="28"><table cellspacing="0" cellpadding="0" border="0">
+			<tr><form method="post" action="viewtopic.php?t=1108&amp;start=0&amp;sid=62569217ace707517615425653deb08d">
+				<td align="center"><span class="gensmall">Visualizza messaggi a partire da: <select name="postdays"><option value="0" selected="selected">Tutti i messaggi</option><option value="1">1 Giorno</option><option value="7">7 Giorni</option><option value="14">2 Settimane</option><option value="30">1 Mese</option><option value="90">3 Mesi</option><option value="180">6 Mesi</option><option value="364">1 Anno</option></select>&nbsp;<select name="postorder"><option value="asc" selected="selected">Prima i più vecchi</option><option value="desc">Prima i più nuovi</option></select>&nbsp;<input type="submit" value="Vai" class="liteoption" name="submit" /></span></td>
+			</form></tr>
+		</table></td>
+	</tr>
+</table>
+
+<table width="100%" cellspacing="2" cellpadding="2" border="0" align="center">
+  <tr>
+	<td align="left" valign="middle" nowrap="nowrap"><span class="nav"><a href="posting.php?mode=newtopic&amp;f=1&amp;sid=62569217ace707517615425653deb08d"><img src="templates/subSilverAzzurra/images/lang_italian/post.gif" border="0" alt="Crea nuovo topic" align="middle" /></a>&nbsp;&nbsp;&nbsp;<a href="posting.php?mode=reply&amp;t=1108&amp;sid=62569217ace707517615425653deb08d"><img src="templates/subSilverAzzurra/images/lang_italian/reply.gif" border="0" alt="Rispondi al topic" align="middle" /></a></span></td>
+	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.php?sid=62569217ace707517615425653deb08d" class="nav">Indice del Forum</a>
+	  -> <a href="viewforum.php?f=1&amp;sid=62569217ace707517615425653deb08d" class="nav">Discussioni e commenti su Azzurra</a></span></td>
+	<td align="right" valign="top" nowrap="nowrap"><span class="gensmall">Tutti gli orari indicati sono GMT + 1 ora<br /><a href="tellafriend.php?topic=Proposta per gli admin&link=http://www.azzurra.org/forum/viewtopic.php?t=1108">Segnala questo topic ad un amico &raquo;</a></span><br /><span class="nav">Vai alla pagina <b>1</b>, <a href="viewtopic.php?t=1108&amp;postdays=0&amp;postorder=asc&amp;start=10&amp;sid=62569217ace707517615425653deb08d">2</a>, <a href="viewtopic.php?t=1108&amp;postdays=0&amp;postorder=asc&amp;start=20&amp;sid=62569217ace707517615425653deb08d">3</a>&nbsp;&nbsp;<a href="viewtopic.php?t=1108&amp;postdays=0&amp;postorder=asc&amp;start=10&amp;sid=62569217ace707517615425653deb08d">Prossimo</a></span>
+	  </td>
+  </tr>
+  <tr>
+	<td align="left" colspan="3"><span class="nav">Pagina <b>1</b> di <b>3</b></span></td>
+  </tr>
+</table>
+
+<table width="100%" cellspacing="2" border="0" align="center">
+  <tr>
+	<td width="40%" valign="top" nowrap="nowrap" align="left"><span class="gensmall"></span><br />
+    <span class="gensmall"><a class="gensmall" href="http://www.azzurra.org/forum/viewtopic.php?t=1108&view=newest" onclick="window.external.AddFavorite('http://www.azzurra.org/forum/viewtopic.php?t=1108&view=newest','Proposta per gli admin'); return false;">Aggiungi questo topic ai preferiti</a></span><br />
+	  &nbsp;<br />
+	  </td>
+	<td align="right" valign="top" nowrap="nowrap">
+<form method="get" name="jumpbox" action="viewforum.php?sid=62569217ace707517615425653deb08d" onSubmit="if(document.jumpbox.f.value == -1){return false;}"><table cellspacing="0" cellpadding="0" border="0">
+	<tr>
+		<td nowrap="nowrap"><span class="gensmall">Vai a:&nbsp;<select name="f" onChange="if(this.options[this.selectedIndex].value != -1){ forms['jumpbox'].submit() }"><option value="-1">Seleziona un forum</option><option value="-1">&nbsp;</option><option value="-1">Azzurra IRC Network Forum</option><option value="-1">----------------</option><option value="7">Canali - i vostri canali su Azzurra.</option><option value="1"selected="selected">Discussioni e commenti su Azzurra</option><option value="61">Il Porto Spaziale di Mos Eisley</option><option value="62">A Ruota Libera!</option><option value="63">La terra dei sogni</option><option value="-1">&nbsp;</option><option value="-1">Network Central</option><option value="-1">----------------</option><option value="12">Comunicazioni ufficiali di Azzurra</option><option value="46">AzzurraScript</option><option value="11">Forum Help Area</option><option value="2">IRCHelp - Aiuto su IRC e Servizi di Azzurra</option><option value="3">Segnalazioni di Abusi e lamentele</option><option value="47">Services - I servizi IRC di Azzurra</option><option value="-1">&nbsp;</option><option value="-1">Azzurra - Tech Center</option><option value="-1">----------------</option><option value="4">Angolo tecnico</option><option value="37">Discussioni Linux</option><option value="44">Graphik Lab</option><option value="25">Programmazione e dintorni</option><option value="52">Virus & Security</option><option value="24">Web Development</option><option value="-1">&nbsp;</option><option value="-1">Happy Hour</option><option value="-1">----------------</option><option value="10">Cazzeggiando qua e la...</option><option value="13">Ditelo con il Forum</option><option value="28">L'angolo del piccolo menomato informatico</option><option value="8">Questi mitici log!</option><option value="-1">&nbsp;</option><option value="-1">ZeroNave</option><option value="-1">----------------</option><option value="57">ZeroNave</option><option value="58">Javirc</option><option value="-1">&nbsp;</option><option value="-1">I Vostri Forum</option><option value="-1">----------------</option><option value="18">#debiAn</option><option value="26">#italia</option><option value="19">#punkitalia</option><option value="21">#netparty</option><option value="29">#disobbedienti</option><option value="30">#punkazzurra</option><option value="31">#fonzie</option><option value="48">#LiberoZone</option><option value="38">#Templary</option><option value="39">#splash</option><option value="42">#adventure-zone</option><option value="60">#bari</option><option value="43">#fly_of_the_moon</option><option value="45">#italia*del*sud</option><option value="49">#shadow</option><option value="50">#sifattack</option><option value="51">#radioitalia</option><option value="53">#soleluna</option><option value="56">#cuori</option><option value="59">#mangaring</option><option value="-1">&nbsp;</option><option value="-1">Test Area</option><option value="-1">----------------</option><option value="6">Test - Forum dedicato ai messaggi di prova</option></select><input type="hidden" name="sid" value="sid=62569217ace707517615425653deb08d" />&nbsp;<input type="submit" value="Vai" class="liteoption" /></span></td>
+	</tr>
+</table></form>
+
+<span class="gensmall"><b>Non puoi</b> creare nuovi topics in questo forum<br /><b>Non puoi</b> rispondere ai topic di questo forum<br /><b>Non puoi</b> modificare i tuoi messaggi in questo forum<br /><b>Non puoi</b> cancellare i tuoi messaggi da questo forum<br /><b>Non puoi</b> votare nei sondaggi di questo forum<br /></span></td>
+  </tr>
+</table>
+
+
+<div align="center"><span class="copyright"><br /><br />
+<!--
+	We request you retain the full copyright notice below including the link to www.phpbb.com.
+	This not only gives respect to the large amount of time given freely by the developers
+	but also helps build interest, traffic and use of phpBB 2.0. If you cannot (for good
+	reason) retain the full copyright we request you at least leave in place the
+	Powered by phpBB 2.0.2 line, with phpBB linked to www.phpbb.com. If you refuse
+	to include even this then support on our forums may be affected.
+
+	The phpBB Group : 2002
+// -->
+Powered by <a href="http://www.phpbb.com/" target="_phpbb" class="copyright">phpBB</a> &copy; 2001, 2002 phpBB Group<br /></span></div>
+		</td>
+	</tr>
+</table>
+
+</body>
+</html>
+
