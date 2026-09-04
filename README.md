@@ -88,8 +88,8 @@ sqlite3 forum.db "SELECT count(*) FROM threads WHERE post_count = 0"
 sqlite3 forum.db "SELECT count(*) FROM posts WHERE truncated = 1"
 ```
 
-Stato attuale: **114 forum, 7070 discussioni, 159485 post** (133825 dal lo-fi, 20373 dallo
-showthread, 3056 dal phpBB 2.0, 2231 dal phpBB 1.4.0), 22 post senza data, arco
+Stato attuale: **114 forum, 7070 discussioni, 159484 post** (133825 dal lo-fi, 20373 dallo
+showthread, 3056 dal phpBB 2.0, 2230 dal phpBB 1.4.0), 22 post senza data, arco
 `2001-06-28T22:11` → `2016-07-29T16:07`.
 
 Schema: `forums` / `threads` / `posts`, più un indice FTS5 `posts_fts` su nome utente e
@@ -119,7 +119,7 @@ Due cose che sembravano dettagli e valevano 296 doppioni rimasti in pagina:
   per tutto il thread ne lasciava in piedi altri 104. L'interleaving usa lo scarto del
   doppione più vicino nel tempo.
 
-Risultato misurato: 8686 post nel mirror, **5287 nuovi** e 3399 già presenti; 924 topic
+Risultato misurato: 8686 post nel mirror, **5286 nuovi** e 3400 già presenti; 924 topic
 ricuciti su un thread esistente, 505 diventati thread nuovi, 48 lasciati staccati apposta
 (stesso titolo, nessun post in comune, oltre un anno di distanza). Otto forum che avevano
 raggiunto il crawler senza nome hanno riavuto il loro dal mirror. I 30 doppioni che

@@ -67,7 +67,7 @@ Every number in the README came from a query, and it must stay that way. Before 
 fix worked:
 
 ```sh
-sqlite3 forum.db "SELECT count(*) FROM posts"                       -- 159485
+sqlite3 forum.db "SELECT count(*) FROM posts"                       -- 159484
 sqlite3 forum.db "SELECT count(*) FROM posts WHERE truncated = 1"   -- 771 real cuts
 sqlite3 forum.db "SELECT count(*) FROM threads WHERE post_count=0"  -- 596 head-only snapshots
 sqlite3 forum.db "SELECT source, count(*) FROM posts GROUP BY source"
@@ -107,6 +107,13 @@ Two specific traps that produced confident and wrong answers before:
   (the DST change around the migration) and two posts by the same user minutes apart are
   different posts. The key is the body (token containment ≥ 0.8, Jaccard ≥ 0.5) within
   180 s of one of the offsets 0/±1h, and the offset is *measured*, not assumed.
+- **A cut mirror body defeats the dedup with the words it is missing.** The Jaccard floor
+  assumes both copies are whole; a snapshot that ended mid-tag is a *prefix*, so it scores
+  high on containment and low on the union and ships as a second, broken post beside the
+  whole one (thread 63: 0.90 and 0.43, and the truncated head rendered as a raw quote
+  table). One body in 5287 — `body_cut()` finds it by the quote fence it never closes, and
+  containment alone decides for it. Do not chase the rendering of such a post: it is a
+  duplicate, and the fix belongs in the merge.
 - **The author is evidence, not a dedup key.** vBulletin's import rewrote nicks it could
   not spell (`C|ty_Hunter` → `City_Hunter`, `_theone_` → `theo`), so indexing by name left
   175 copies standing. The name only confirms, and is required only under five words.

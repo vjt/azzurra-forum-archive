@@ -114,7 +114,35 @@ def tokens(s: str | None) -> set[str]:
     return set(norm_body(s).split())
 
 
-def same_post(a: set[str], b: set[str]) -> bool:
+# A mirror body the Archive cut in half. One in 5287, measured: thread 63 post
+# 10 stops inside `<IMG SRC="&gt;`, so it opens a `BBCode Quote Start` fence that
+# never closes and keeps only the quotation, losing jesse's reply under it.
+RE_PB_FENCE = re.compile(r"BBCode Quote (Start|End)", re.I)
+
+
+def body_cut(html_body: str | None) -> bool:
+    """Did the snapshot end inside this body?
+
+    Two signals, both structural: a quote fence opened and never closed, and a
+    body whose last `<` has no `>` after it. The mirror importer records
+    `truncated` per snapshot and reads 0 here, so the body itself is the only
+    witness.
+    """
+    if not html_body:
+        return False
+    marks = [m.group(1).lower() for m in RE_PB_FENCE.finditer(html_body)]
+    if marks.count("start") != marks.count("end"):
+        return True
+    return html_body.rfind("<") > html_body.rfind(">")
+
+
+# Under this many words a cut body is not an identity either: the surviving
+# head of a long post can be trusted to name it, three words of quotation
+# cannot.
+CUT_TOKENS = 10
+
+
+def same_post(a: set[str], b: set[str], cut: bool = False) -> bool:
     """Is this the same post rendered by two different forums?
 
     Equality is too strict, measured: vBulletin's lo-fi view keeps the smilie
@@ -123,11 +151,21 @@ def same_post(a: set[str], b: set[str]) -> bool:
     shorter text has to be almost entirely inside the longer one, and the two
     must still overlap substantially — containment alone would call every
     one-word "quoto" a copy of every other.
+
+    A cut body is a *prefix* of the whole post, so the union test rejects it on
+    the very evidence that it is a copy: the words it is missing. On thread 63
+    the pair scores 0.90 containment and 0.43 on the union, and the truncated
+    duplicate shipped as post #10 next to the whole one at #9. When the body
+    says it was cut, containment decides alone.
     """
     if not a or not b:
         return False
     inter = len(a & b)
-    return inter / min(len(a), len(b)) >= 0.8 and inter / len(a | b) >= 0.5
+    if inter / min(len(a), len(b)) < 0.8:
+        return False
+    if cut and min(len(a), len(b)) >= CUT_TOKENS:
+        return True
+    return inter / len(a | b) >= 0.5
 
 
 # How far the two clocks may sit apart once the corpus offset is taken out.
@@ -185,6 +223,7 @@ def dedup(existing: list, rows: list) -> tuple[_Offsets, list, int]:
         ts = parse_ts(r["posted_at"])
         user = norm_user(r["username"])
         toks = tokens(r["body_text"])
+        cut = body_cut(r["body_html"])
         best: tuple[tuple[int, float], object, float] | None = None
         for ets, euser, etoks, eid in pool:
             if eid in used or not ets or not ts:
@@ -192,7 +231,7 @@ def dedup(existing: list, rows: list) -> tuple[_Offsets, list, int]:
             delta = (ets - ts).total_seconds()
             if all(abs(delta - c) > NEAR_SECONDS for c in CANDIDATE_OFFSETS):
                 continue
-            if not same_post(toks, etoks):
+            if not same_post(toks, etoks, cut):
                 continue
             same_user = euser == user
             if not same_user and min(len(toks), len(etoks)) < SHORT_TOKENS:
