@@ -239,6 +239,42 @@ def _sub_text_smilies(text: str) -> str:
             i = nxt if RE_TEXT_SMILEY.match(text, nxt) else m.end()
 
 
+# The lo-fi view flattened `<img>` down to its bare `src`, so a smiley reaches
+# us as a naked path in the middle of a sentence: thread 63 opens with `Cosa
+# aspetti ancora?! /images/smiles/icon_eek.gif`.  Posters also hotlinked other
+# boards' packs as plain URLs.  1196 such paths survive the tag pass above, in
+# 93 rendered pages, and every one of them read as a broken image to a reader.
+RE_BARE_SMILEY = re.compile(
+    r"(?:https?://[^\s\"'<>]+?)?/?(?:[\w.-]+/)*"
+    r"images/smil(?:ies|es)/[\w./-]+\.(?:gif|png|jpe?g)",
+    re.I,
+)
+
+
+def _bare_smiley(m: re.Match[str]) -> str:
+    url = m.group(0)
+    if re.match(r"https?://", url, re.I) and "azzurra.org" not in url.lower():
+        # Another board's pack (`forumvalley`, `giuda.it`, …): the file name
+        # still says what the poster meant, but our own GIF is NOT that image,
+        # so it never stands in for it.  Emoji, or the honest placeholder.
+        tip = esc(url.rsplit("/", 1)[-1])
+        emoji = smiley_for(url)
+        if emoji:
+            return f'<span class="emo" title="{tip}">{emoji}</span>'
+        return f'<span class="smiley" title="{tip}">*</span>'
+    return smiley_span(url)
+
+
+def bare_smilies(body: str) -> str:
+    """Map smiley paths the lo-fi flattening left naked in the text."""
+    if "images/smil" not in body.lower():
+        return body
+    return "".join(
+        part if part.startswith("<") else RE_BARE_SMILEY.sub(_bare_smiley, part)
+        for part in RE_TAG_SPLIT.split(body)
+    )
+
+
 def text_smilies(body: str) -> str:
     """Map the bare `:name:` codes, and only those the smiley map can name."""
     if ":" not in body:
@@ -254,7 +290,7 @@ def sanitise(body: str) -> str:
     body = RE_BAD_OPEN.sub("", body)
     body = RE_ON_ATTR.sub("", body)
     body = RE_JS_URL.sub(r"\1#", body)
-    return text_smilies(RE_SMILEY.sub(_smiley_to_text, body))
+    return text_smilies(bare_smilies(RE_SMILEY.sub(_smiley_to_text, body)))
 
 
 # ------------------------------------------------------------------ entities
@@ -1391,7 +1427,11 @@ def plain(text: str) -> str:
     string that `esc()` re-escapes for the attribute, so `<scorpion4>` must be
     a real character here or it ships as a visible `&lt;scorpion4&gt;`.
     """
-    return RE_WS.sub(" ", html.unescape(RE_BB_ANY.sub("", unescape_entities(text or "")))).strip()
+    text = html.unescape(RE_BB_ANY.sub("", unescape_entities(text or "")))
+    # `body_text` keeps the flattened smiley paths the lo-fi view left behind;
+    # in a description they are pure noise, and a `:razz:` code at least reads
+    # as something the poster typed, so only the paths go.
+    return RE_WS.sub(" ", RE_BARE_SMILEY.sub("", text)).strip()
 
 
 # ------------------------------------------------------------------ helpers
