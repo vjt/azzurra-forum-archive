@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS old_posts (
   topic_id   INTEGER NOT NULL,
   forum_id   INTEGER,
   seq        INTEGER,                    -- position within the page, 1-based
-  page       INTEGER NOT NULL DEFAULT 1, -- `start=` / 15 + 1
+  page       INTEGER NOT NULL DEFAULT 1, -- `start=` / PER_PAGE + 1
   username   TEXT,
   user_id    INTEGER,                    -- phpBB user id, not the vB one
   posted_at  TEXT,                       -- ISO 8601, minute resolution
@@ -113,6 +113,14 @@ MONTHS = {"gen": "01", "feb": "02", "mar": "03", "apr": "04", "mag": "05",
           "nov": "11", "dic": "12"}
 
 RE_FILE = re.compile(r'topic(?P<topic>\d+)_s(?P<start>\d+)\.html$')
+
+# The board paginated by ten, not by the phpBB default of fifteen: every `start=`
+# in the mirror is a multiple of 10 (0, 10, 20 … 130) and no page holds more than
+# ten posts. Dividing by 15 folded `s0` and `s10` onto page 1 — and the merge,
+# which orders a topic by (page, seq), then zipped the two files together, so
+# /thread/1000281-… alternated October 1st with October 29th. 72 topics were
+# interleaved this way.
+PER_PAGE = 10
 
 # Both parsers cut the body at a landmark that sits *inside* an element the page
 # opened earlier: 1.4's second `<HR>` is fenced by the date line's `</FONT>`, and
@@ -270,7 +278,7 @@ def main() -> int:
         if not m:
             continue
         topic_id = int(m.group("topic"))
-        page = int(m.group("start")) // 15 + 1
+        page = int(m.group("start")) // PER_PAGE + 1
         text = read_page(path)
         kind = version(text)
         if kind is None:

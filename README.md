@@ -125,6 +125,37 @@ ricuciti su un thread esistente, 505 diventati thread nuovi, 48 lasciati staccat
 raggiunto il crawler senza nome hanno riavuto il loro dal mirror. I 30 doppioni che
 restano sono doppi post veri del board, non copie.
 
+## L'ordine dei messaggi
+
+Un thread si legge in ordine di data, e per tre motivi diversi non era così in 144
+discussioni. Nessuno dei tre era il parser: erano tre modi di credere che la posizione nella
+pagina scaricata fosse la posizione nel forum.
+
+- **La pagina del vecchio board tiene dieci post, non quindici.** Ogni `start=` del mirror è
+  un multiplo di 10, e dividere per 15 faceva finire `topic281_s0` e `topic281_s10` sulla
+  stessa pagina 1: la fusione, che ordinava per `(pagina, posizione)`, li incrociava uno a
+  uno, e il *Sondaggio : chi è il/la più gnocco/a di #punkitalia??* alternava il 1° ottobre
+  col 29. Erano 72 topic. Oggi l'ordine del mirror è l'**id del post phpBB**, che è la
+  numerazione del board e concorda con l'orologio in 8685 righe su 8686.
+- **Quattrocentosessanta date erano su dodici ore.** vBulletin rende l'orario secondo le
+  preferenze di chi guarda, e in quelle pagine dice `01:21 PM`: leggere l'ora e buttare via
+  il marcatore metteva il post dodici ore prima, cioè una risposta del pomeriggio sopra la
+  domanda del mattino.
+- **`seq` è la posizione nello *snapshot*, non nel thread.** Due copie della stessa pagina
+  prese a mesi di distanza non concordano — un post cancellato in mezzo sposta tutti quelli
+  dopo — e la dimensione della pagina non è nemmeno costante fra una scansione e l'altra.
+  Dove il post ha il suo id vero l'ordine torna a essere quello (721 post rimessi a posto);
+  dove il thread esiste solo in lo-fi, e id non ce ne sono, l'unico ordine disponibile è
+  l'orologio.
+- **L'ora del mirror va anche mostrata, non solo usata.** Il post del vecchio board viene
+  inserito nel thread con lo scarto misurato sui doppioni vicini; salvarlo poi con l'ora
+  grezza lo faceva comparire alle 09:53 sotto le 10:53 a cui rispondeva.
+
+Restano **8 discussioni su 7070** con un salto all'indietro: lì gli id dicono che l'ordine è
+quello giusto ed è l'orologio a mentire, perché due pagine dello stesso thread furono
+salvate dall'Archive ai due lati del cambio d'ora. Fra il rimettere in ordine i post e il
+credere all'orologio, vince il board.
+
 ## Tre markup, un forum
 
 Dieci anni di skin vBulletin stanno qui dentro, e l'importatore li parsa tutti:

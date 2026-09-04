@@ -348,7 +348,12 @@ def merge(db: sqlite3.Connection, mapping: dict[int, int]) -> dict[str, int]:
     for r in db.execute(
         "SELECT post_id, topic_id, seq, page, username, posted_at, subject, "
         "       body_html, body_text, source "
-        "FROM old_posts ORDER BY topic_id, page, seq, post_id"
+        # Order by the phpBB post id, not by (page, seq). The id is the board's
+        # own insertion order and agrees with the clock in 8685 of 8686 rows,
+        # while (page, seq) is a property of the *snapshot*: two files of the
+        # same topic taken years apart carry overlapping seq numbers, and any
+        # miscount of the page size zips them together instead of appending.
+        "FROM old_posts ORDER BY topic_id, post_id"
     ):
         posts_by_topic[r["topic_id"]].append(r)
 
@@ -403,9 +408,19 @@ def merge(db: sqlite3.Connection, mapping: dict[int, int]) -> dict[str, int]:
         for e in existing:
             ts = parse_ts(e["posted_at"]) or datetime.min
             merged.append((ts, e["seq"], ("old", e["id"])))
+        # The mirror's clock is the one the *old* board kept, and it sits up to
+        # an hour away from vBulletin's around the migration. The post is placed
+        # by the corrected stamp, so it must also be *shown* with it: storing the
+        # raw one put a post at 09:53 under the 10:53 it answers, which reads as
+        # a thread out of order even though the order is right.
+        shifted: dict[int, str] = {}
         for i, r in enumerate(fresh):
             ts = parse_ts(r["posted_at"])
-            ts = (ts + offsets.at(ts)) if ts else datetime.min
+            if ts:
+                ts += offsets.at(ts)
+                shifted[i] = ts.isoformat(timespec="minutes")
+            else:
+                ts = datetime.min
             # Ties keep phpBB's own order, after everything vB already had at
             # the same minute: the mirror's minute is a rounding, not a clock.
             merged.append((ts, 1 << 20, ("new", i)))
@@ -421,7 +436,8 @@ def merge(db: sqlite3.Connection, mapping: dict[int, int]) -> dict[str, int]:
                 new_posts.append(
                     dict(
                         thread_id=thread_id, seq=seq, page=r["page"], vb_post_id=None,
-                        username=r["username"], member_id=None, posted_at=r["posted_at"],
+                        username=r["username"], member_id=None,
+                        posted_at=shifted.get(idx, r["posted_at"]),
                         body_html=r["body_html"], body_text=r["body_text"],
                         source=r["source"], truncated=0, old_post_id=r["post_id"],
                     )

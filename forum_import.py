@@ -104,8 +104,13 @@ RE_FULL_CRUMB = re.compile(r'href="[^"]*forumdisplay\.php\?[^"]*?f=(\d+)"[^>]*>\
 RE_INDEX_NAME = re.compile(r'Mostra versione intera\s*:\s*<a href="[^"]*"\s*>(?P<name>[^<]*)</a>')
 RE_INDEX_THREAD = re.compile(r'<li><a href="t-(\d+)\.html">(?P<title>.*?)</a></li>', re.S)
 
-# vBulletin renders dd-mm-yyyy, hh:mm in this board's locale.
-RE_DATE = re.compile(r"(\d{2})-(\d{2})-(\d{4}),?\s*(\d{2}):(\d{2})")
+# vBulletin renders dd-mm-yyyy, hh:mm in this board's locale — except on 460
+# stamps, where the member had the English 12-hour clock and the page says
+# `01:21 PM`. Reading the hour and dropping the marker put those posts twelve
+# hours early, which is why 150 threads showed an afternoon reply above the
+# morning one it answered. The marker is optional and only present on those.
+RE_DATE = re.compile(r"(\d{2})-(\d{2})-(\d{4}),?\s*(\d{2}):(\d{2})"
+                     r"(?:\s*(?P<ampm>[AP]M))?", re.I)
 
 RE_TAG = re.compile(r"<[^>]+>")
 RE_BR = re.compile(r"<br\s*/?>", re.I)
@@ -216,7 +221,11 @@ def parse_date(raw: str) -> str | None:
     m = RE_DATE.search(raw)
     if not m:
         return None
-    day, month, year, hour, minute = m.groups()
+    day, month, year, hour, minute = m.groups()[:5]
+    ampm = (m.group("ampm") or "").upper()
+    if ampm:
+        h = int(hour) % 12          # 12 AM is midnight, 12 PM is noon
+        hour = f"{h + (12 if ampm == 'PM' else 0):02d}"
     return f"{year}-{month}-{day}T{hour}:{minute}"
 
 
@@ -305,6 +314,83 @@ def load_forum_indexes(files: list[Path], db: sqlite3.Connection) -> dict[int, i
         sorted(names.items()),
     )
     return thread_forum
+
+
+def reorder_by_post_id(db: sqlite3.Connection) -> int:
+    """Put each page back in the order vBulletin itself gave the posts.
+
+    `seq` is the position the post held *in the snapshot*, and two snapshots of
+    the same page taken months apart do not agree: a post deleted in between
+    shifts everything after it, so the merge of the two interleaves them and a
+    reply lands above the line it answers. The real post id says what the order
+    was, and it is monotonic in time across the whole corpus.
+
+    Only posts that carry an id are touched, and only where the whole group has
+    one: a thread half read from the lo-fi view has nothing to sort by. A thread
+    where every post has an id is sorted whole — the page size was not constant
+    across the crawls either, so a thread can hold a page 1 of twenty posts and
+    a page 2 of ten that overlap it — and otherwise page by page, which at least
+    repairs the snapshots that disagree inside one page.
+    """
+    groups = [
+        (r[0], None)
+        for r in db.execute(
+            "SELECT thread_id FROM posts GROUP BY thread_id "
+            " HAVING count(*) = count(vb_post_id) AND count(*) > 1"
+        )
+    ]
+    whole = {t for t, _ in groups}
+    groups += [
+        (r[0], r[1])
+        for r in db.execute(
+            "SELECT thread_id, page FROM posts GROUP BY thread_id, page "
+            " HAVING count(*) = count(vb_post_id) AND count(*) > 1"
+        )
+        if r[0] not in whole
+    ]
+    # A thread read only from the lo-fi view has no post ids at all, and there
+    # the clock is the only order there is. Sort those by the stamp, keeping the
+    # snapshot's order for posts of the same minute — it repairs the handful of
+    # threads whose pages were crawled under two different page sizes and so
+    # overlap at the boundary, and leaves every thread already in order alone.
+    groups += [
+        (r[0], "clock")
+        for r in db.execute(
+            "SELECT thread_id FROM posts GROUP BY thread_id "
+            " HAVING count(vb_post_id) = 0 AND count(*) > 1"
+        )
+    ]
+    moved = 0
+    for thread_id, page in groups:
+        if page == "clock":
+            rows = db.execute(
+                "SELECT id, seq, posted_at FROM posts WHERE thread_id = ? ORDER BY seq",
+                (thread_id,),
+            ).fetchall()
+        elif page is None:
+            rows = db.execute(
+                "SELECT id, seq, vb_post_id FROM posts WHERE thread_id = ? ORDER BY seq",
+                (thread_id,),
+            ).fetchall()
+        else:
+            rows = db.execute(
+                "SELECT id, seq, vb_post_id FROM posts WHERE thread_id = ? AND page = ? ORDER BY seq",
+                (thread_id, page),
+            ).fetchall()
+        # A post whose stamp the snapshot lost sorts last rather than raising.
+        want = sorted(rows, key=lambda r: (r[2] is None, r[2]))
+        if [r[0] for r in want] == [r[0] for r in rows]:
+            continue
+        slots = sorted(r[1] for r in rows)
+        # UNIQUE(thread_id, seq) forbids the permutation in place: park the rows
+        # at -seq first, exactly as the phpBB merge does when it renumbers.
+        db.executemany("UPDATE posts SET seq = -seq WHERE id = ?", [(r[0],) for r in rows])
+        db.executemany(
+            "UPDATE posts SET seq = ? WHERE id = ?",
+            [(slot, r[0]) for slot, r in zip(slots, want)],
+        )
+        moved += sum(1 for a, b in zip(rows, want) if a[0] != b[0])
+    return moved
 
 
 def main() -> int:
@@ -419,6 +505,9 @@ def main() -> int:
                    :posted_at, :body_html, :body_text, :source, :truncated)""",
         rows,
     )
+
+    reordered = reorder_by_post_id(db)
+    print(f"reordered: {reordered} posts put back in the board's own order", file=sys.stderr)
 
     # Forums referenced only by a breadcrumb have no index page; keep the id anyway.
     db.execute(

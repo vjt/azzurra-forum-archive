@@ -127,6 +127,20 @@ Two specific traps that produced confident and wrong answers before:
   reskinned mid-life (`#EEEEEE`/`#aeddff` → `#F3F3F3`/`#A8CBFF`); anchoring to the first
   pair seen dropped 655 posts across 125 pages and returned zero without an error. Anchor
   to the *shape* of the row and check against the `Inviato:` count, page by page.
+- **`seq` is a property of the snapshot, not of the thread.** Two copies of a page taken
+  months apart disagree — a post deleted in between shifts every position after it — and
+  the page size is not constant either: the old board paginated by ten (`start=` is always
+  a multiple of 10, and `//15` folded `s0` and `s10` onto page 1, interleaving 72 topics),
+  and the vB crawls disagree with each other. Order by the board's own post id wherever
+  there is one; fall back to the clock only for threads read solely from the lo-fi view,
+  where no id exists.
+- **vBulletin renders the time in the reader's own format.** 460 stamps in the corpus say
+  `01:21 PM`: reading the hour and dropping the marker put those posts twelve hours early.
+  Any date regex here needs the optional `[AP]M`, and `12 AM` is midnight.
+- **A stamp that was used for sorting must also be the one shown.** The phpBB mirror is
+  placed in a vB thread with the offset measured on the nearest duplicate; storing the raw
+  stamp afterwards showed a post at 09:53 under the 10:53 it answers, which reads as a bug
+  even though the position is right.
 - **Post bodies are untrusted markup.** The renderer strips `<script>`, `<style>`,
   `<iframe>`, `<object>`, `<embed>`, every `on*=` handler and every `javascript:` URL —
   including the unclosed variants an Archive cut leaves behind. Everything else passes
