@@ -26,7 +26,7 @@ The rendered result is published at <https://vjt.github.io/azzurra-forum-archive
 make                                                 # all three, in order
 make db                                              # pages/ + oldboard/ -> forum.db  (~3 min)
 make site                                            # forum.db -> site/      (~20 s, 7229 pages)
-make search                                          # search index           (7070 pages, 256522 words)
+make search                                          # search index           (7070 pages, 256743 words)
 ```
 
 CI runs the same targets (`.github/workflows/site.yml`) and publishes the result to
@@ -67,7 +67,7 @@ Every number in the README came from a query, and it must stay that way. Before 
 fix worked:
 
 ```sh
-sqlite3 forum.db "SELECT count(*) FROM posts"                       -- 159827
+sqlite3 forum.db "SELECT count(*) FROM posts"                       -- 159485
 sqlite3 forum.db "SELECT count(*) FROM posts WHERE truncated = 1"   -- 771 real cuts
 sqlite3 forum.db "SELECT count(*) FROM threads WHERE post_count=0"  -- 596 head-only snapshots
 sqlite3 forum.db "SELECT source, count(*) FROM posts GROUP BY source"
@@ -103,10 +103,26 @@ Two specific traps that produced confident and wrong answers before:
 - **The old board is the same forum, not a second one.** `oldboard_merge.py` stitches the
   phpBB mirror into the vBulletin threads; `make db` runs import → oldboard import → merge
   and a rebuild that stops at the first step silently loses 5629 posts.
-- **Never dedup the two corpora on the timestamp.** They are an hour apart in places (the
-  DST change around the migration) and two posts by the same user minutes apart are
-  different posts. The key is same author + similar body (token containment ≥ 0.8, Jaccard
-  ≥ 0.5) inside 180 s of the corpus offset, and the offset is *measured*, not assumed.
+- **Never dedup the two corpora on the timestamp alone.** They are an hour apart in places
+  (the DST change around the migration) and two posts by the same user minutes apart are
+  different posts. The key is the body (token containment ≥ 0.8, Jaccard ≥ 0.5) within
+  180 s of one of the offsets 0/±1h, and the offset is *measured*, not assumed.
+- **The author is evidence, not a dedup key.** vBulletin's import rewrote nicks it could
+  not spell (`C|ty_Hunter` → `City_Hunter`, `_theone_` → `theo`), so indexing by name left
+  175 copies standing. The name only confirms, and is required only under five words.
+- **Measure the corpus offset per post, not per thread.** A thread that ran from March to
+  November crosses the DST change and holds duplicates at two offsets; one offset for the
+  whole thread left another 104 copies in place.
+- **Both phpBB generations fence the post body with markup they opened outside it.** 1.4
+  closes the date line's `</font>` after the first `<HR>` and draws a quote as a table with
+  two more `<HR>` inside it — so the body is `rules[0]:rules[-1]`, never `rules[1]`, or 213
+  posts stop at their first quote. 2.0 closes `span.postbody` before a quote table and
+  reopens it after. Strip the orphan close tag at import; nothing downstream that anchors
+  on the start of a body works while it is there.
+- **A phpBB quote is a table, not BBCode.** `bbcode()` never sees one; `phpbb_boxes()`
+  rewrites both generations (and 2.0's `td.code`) into the site's own `blockquote.bbq`.
+  Read the author out of the header BEFORE recursing into the nested boxes — the other
+  order lets the nick pattern eat the `<blockquote><cite>` the recursion just emitted.
 - **Do not anchor a phpBB 1.4.0 parser to the row background colour.** The board was
   reskinned mid-life (`#EEEEEE`/`#aeddff` → `#F3F3F3`/`#A8CBFF`); anchoring to the first
   pair seen dropped 655 posts across 125 pages and returned zero without an error. Anchor

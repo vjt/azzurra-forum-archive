@@ -88,9 +88,9 @@ sqlite3 forum.db "SELECT count(*) FROM threads WHERE post_count = 0"
 sqlite3 forum.db "SELECT count(*) FROM posts WHERE truncated = 1"
 ```
 
-Stato attuale: **114 forum, 7070 discussioni, 159827 post** (133825 dal lo-fi, 20373 dallo
-showthread, 3221 dal phpBB 2.0, 2408 dal phpBB 1.4.0), 22 post senza data, arco
-`2001-06-28T21:29` → `2016-07-29T16:07`.
+Stato attuale: **114 forum, 7070 discussioni, 159485 post** (133825 dal lo-fi, 20373 dallo
+showthread, 3056 dal phpBB 2.0, 2231 dal phpBB 1.4.0), 22 post senza data, arco
+`2001-06-28T22:11` → `2016-07-29T16:07`.
 
 Schema: `forums` / `threads` / `posts`, più un indice FTS5 `posts_fts` su nome utente e
 testo (`unicode61 remove_diacritics 2`). Ogni post conserva sia `body_html` sia
@@ -102,16 +102,28 @@ locale i vecchi link `viewtopic.php`.
 
 vBulletin si portò dietro il contenuto phpBB — nel database ci sono già 4928 post del
 2001-2002 — quindi il mirror non è un `append`, è una **fusione con dedup**. Il dedup non
-può usare l'orario: fra i due corpus c'è uno scarto sistematico di un'ora (il cambio d'ora
-al momento della migrazione) e due post dello stesso utente a due minuti di distanza sono
-post diversi, non doppioni. La chiave che regge è *stesso autore + corpo simile* (token
-set, contenimento ≥ 0.8 e Jaccard ≥ 0.5) dentro una finestra di 180 s attorno all'offset
-di corpus, scelto provando 0/+1h/−1h e tenendo quello che spiega più coincidenze.
+può usare l'orario da solo: fra i due corpus c'è uno scarto di un'ora (il cambio d'ora
+attorno alla migrazione) e due post dello stesso utente a due minuti di distanza sono post
+diversi, non doppioni. La chiave che regge è il **corpo** (token set, contenimento ≥ 0.8 e
+Jaccard ≥ 0.5) dentro 180 s da uno degli scarti 0/+1h/−1h.
 
-Risultato misurato: 8686 post nel mirror, **5629 nuovi** e 3057 già presenti; 924 topic
+Due cose che sembravano dettagli e valevano 296 doppioni rimasti in pagina:
+
+- **l'autore è un indizio, non una chiave.** L'importatore di vBulletin riscrisse i nick
+  che non sapeva scrivere — `C|ty_Hunter` diventò `City_Hunter`, `_theone_` diventò
+  `theo` — e indicizzare per nome lasciava passare 175 copie. Oggi il nome pesa solo come
+  conferma, ed è obbligatorio soltanto sotto le cinque parole, dove «quoto» non identifica
+  niente.
+- **lo scarto si misura per post, non per thread.** Una discussione che va da marzo a
+  novembre attraversa il cambio d'ora e ha doppioni a due scarti diversi: sceglierne uno
+  per tutto il thread ne lasciava in piedi altri 104. L'interleaving usa lo scarto del
+  doppione più vicino nel tempo.
+
+Risultato misurato: 8686 post nel mirror, **5287 nuovi** e 3399 già presenti; 924 topic
 ricuciti su un thread esistente, 505 diventati thread nuovi, 48 lasciati staccati apposta
 (stesso titolo, nessun post in comune, oltre un anno di distanza). Otto forum che avevano
-raggiunto il crawler senza nome hanno riavuto il loro dal mirror.
+raggiunto il crawler senza nome hanno riavuto il loro dal mirror. I 30 doppioni che
+restano sono doppi post veri del board, non copie.
 
 ## Tre markup, un forum
 
@@ -134,7 +146,17 @@ E due in più nel mirror del vecchio board, che `oldboard_import.py` parsa a par
 - **phpBB 1.4.0** — nessuna classe CSS, solo `<FONT FACE="Verdana">` e tabelle. Ci si
   ancora alla *forma* della riga (`<TR ... BGCOLOR="#xxxxxx" ... ALIGN="LEFT">`) e a
   `Registrato:` / `Inviato:` / `_________________`: **non** al colore, che cambiò quando
-  il board fu riskinnato e faceva sparire in silenzio le pagine dell'altra skin.
+  il board fu riskinnato e faceva sparire in silenzio le pagine dell'altra skin. Il corpo
+  sta fra due `<HR>`, ma fra il **primo e l'ultimo** della riga, non fra il primo e il
+  secondo: una citazione è una tabella che si porta dietro due `<HR>` suoi, e chiudere sul
+  secondo tagliava 213 post alla loro prima citazione.
+
+Le due generazioni phpBB disegnavano la citazione come tabella, non come BBCode, e la
+fetta del corpo ereditava dal markup intorno un tag di chiusura orfano (2408 `</font>` in
+1.4.0, 445 `</span>` in 2.0.x): il primo chiudeva il `<font color>` della skin e rendeva
+illeggibile mezza pagina, il secondo faceva fallire ogni passata ancorata all'inizio del
+corpo. Oggi il tag orfano cade all'import e il renderer riscrive quelle tabelle nello
+stesso `blockquote.bbq` di tutte le altre citazioni del sito.
 
 ## Snapshot troncati
 

@@ -429,12 +429,24 @@ def bbcode(body: str) -> str:
 # is the quote, everything else is the reply.  No heuristic, an equality test.
 RE_CHUNK_SPLIT = re.compile(r"(?:\s*<br\s*/?>\s*){2,}", re.I)
 RE_VB2_HEAD = re.compile(
-    r"^\s*In data\s+([^,<]{4,40}?)\s*,\s*(.{1,40}?)\s+scrive\s*:\s*(?:<br\s*/?>\s*)?",
+    r"\s*In data\s+([^,<]{4,40}?)\s*,\s*(.{1,40}?)\s+scrive\s*:\s*(?:<br\s*/?>\s*)?",
     re.I)
 RE_VB3_HEAD = re.compile(
-    r"^\s*Citazione\s*:\s*(?:<br\s*/?>\s*)?"
+    r"\s*Citazione\s*:\s*(?:<br\s*/?>\s*)?"
     r"(?:Originale inviato da\s+(.{1,40}?)\s*(?:<br\s*/?>\s*|$))?",
     re.I)
+# The header does not always open the chunk. The phpBB skin wraps every body it
+# served in its own `<FONT COLOR=…>`, so 2853 mirror posts start with a tag and
+# the header sits just behind it; anchoring hard at the chunk start missed every
+# one of them (/thread/689-gestione-schifosa-del-forum/, posts 5 and 8). Only
+# markup may stand in front — anything else means this chunk is prose.
+RE_LEAD_MARKUP = re.compile(
+    r"(?:\s|<(?:br\s*/?|/?(?:font|span|b|i|u|em|strong|p)\b[^>]{0,300})>)*",
+    re.I)
+# A `[quote]` with no nick survives BBCode as a citeless box, and the header the
+# poster left inside it is the nick. Lift it out before the chunk pass, or that
+# pass sees a header, wraps it a second time and nests a quote inside itself.
+RE_CITELESS_BBQ = re.compile(r'<blockquote class="bbq">(?!<cite>)', re.I)
 RE_TAGS = re.compile(r"<[^>]{1,300}>")
 # Cheap unanchored probe: is it worth building this thread's sibling text at all?
 RE_FLAT_HEAD = re.compile(r"In data\s[^,<]{4,40},.{1,40}?\sscrive\s*:|Citazione\s*:", re.I)
@@ -454,13 +466,31 @@ def _wrap(chunks: list[str], cite: str | None) -> str:
     return f'<blockquote class="bbq">{head}{inner}</blockquote>'
 
 
+def lift_flat_cite(body: str) -> str:
+    """Turn a flattened header inside a citeless quote box into its `<cite>`."""
+    out, pos = [], 0
+    for m in RE_CITELESS_BBQ.finditer(body):
+        at = RE_LEAD_MARKUP.match(body, m.end()).end()
+        h = RE_VB2_HEAD.match(body, at) or RE_VB3_HEAD.match(body, at)
+        who = (h.group(2) if h and h.re is RE_VB2_HEAD else h.group(1)) if h else None
+        if not who:
+            continue
+        out.append(body[pos:m.end()])
+        out.append(f"<cite>{esc(who)} ha scritto:</cite>")
+        out.append(body[m.end():at])
+        pos = h.end()
+    out.append(body[pos:])
+    return "".join(out)
+
+
 def flat_quotes(body: str, siblings: str) -> str:
     """Rebuild the quote blocks the lo-fi renderer flattened into plain text."""
     chunks = RE_CHUNK_SPLIT.split(body)
     who, seen_head = None, False
     kept, is_quote = [], []
     for chunk in chunks:
-        m = RE_VB2_HEAD.match(chunk) or RE_VB3_HEAD.match(chunk)
+        at = RE_LEAD_MARKUP.match(chunk).end()
+        m = RE_VB2_HEAD.match(chunk, at) or RE_VB3_HEAD.match(chunk, at)
         if m:
             # A header eats itself; its own chunk's remainder is the quote it
             # introduces, by construction. Only the FIRST header names a nick —
@@ -468,7 +498,9 @@ def flat_quotes(body: str, siblings: str) -> str:
             if who is None:
                 who = m.group(2) if m.re is RE_VB2_HEAD else m.group(1)
             seen_head = True
-            kept.append(chunk[m.end():])
+            # The markup in front of the header opened elements the rest of the
+            # post still closes, so it is kept and only the header itself goes.
+            kept.append(chunk[:at] + chunk[m.end():])
             is_quote.append(True)
             continue
         kept.append(chunk)
@@ -1084,6 +1116,120 @@ def vb_boxes(body: str, depth: int = 0) -> str:
     return "".join(out)
 
 
+# ------------------------------------------------------- phpBB quote/code boxes
+#
+# The board's two phpBB generations drew a quote as a table, so `bbcode()` never
+# sees one — the BBCode was already rendered when the page was served:
+#
+#   1.4  <!-- BBCode Quote Start --><TABLE>…<BLOCKQUOTE>TEXT</BLOCKQUOTE>…</TABLE>
+#        <!-- BBCode Quote End -->                    (author inside TEXT)
+#   2.0  <table …><tr><td><span class="genmed"><b>nick ha scritto:</b></span></td>
+#        </tr><tr><td class="quote">TEXT</td></tr></table>   (author in the label)
+#
+# 2.0 draws code the same way with `td.code` and the label `Codice:`. Left alone
+# they render as a bare 2002 table inside the post; turned into the site's own
+# `blockquote.bbq` / `pre.bbc-code` they read like every other quote here, and
+# the author line stops being mistaken for a second post by whoever was quoted
+# (reported on /thread/689-gestione-schifosa-del-forum/).
+#
+# The skin closes its `span.postbody` before the table and reopens it after, so
+# an extracted cell starts with an orphan `</span>` and the text after the table
+# starts with an opener the post never closes; both are chrome and go.
+RE_PB14_Q = re.compile(r'<!--\s*BBCode Quote (?P<end>Start|End)\s*-->', re.I)
+RE_PB14_INNER = re.compile(r'<blockquote[^>]*>(?P<in>.*)</blockquote>', re.I | re.S)
+RE_PB20_BOX = re.compile(
+    r'<table[^>]*>\s*<tr>\s*<td>\s*<span class="genmed">\s*<b>\s*'
+    r'(?P<label>[^<]*?)\s*</b>\s*</span>\s*</td>\s*</tr>\s*'
+    r'<tr>\s*<td class="(?P<kind>quote|code)">', re.I | re.S)
+RE_PB20_CLOSE = re.compile(r'\s*</td>\s*</tr>\s*</table>\s*'
+                           r'(?:<span class="postbody">)?', re.I)
+RE_PB_LEAD_CLOSE = re.compile(r'^\s*(?:</span>\s*)+', re.I)
+# `Citazione:` and `Codice:` are the template's own words; anything else in that
+# label is the nick the poster quoted.
+RE_PB20_WHO = re.compile(r'^(?P<who>.+?)\s+ha scritto\s*:?\s*$', re.I)
+RE_PB_CITE = re.compile(
+    r'^\s*(?:<br\s*/?>\s*)*(?P<who>[^<]{1,40}?)\s+ha scritto\s*:'
+    r'\s*(?:<br\s*/?>\s*)*', re.I)
+
+
+def _pb_quote(text: str, who: str | None, depth: int) -> str:
+    # The header is read BEFORE the inner boxes are rewritten: run the other way
+    # round and the nick pattern happily swallows the `<blockquote><cite>` this
+    # very function just emitted for the quote nested inside.
+    text = RE_PB_LEAD_CLOSE.sub("", text)
+    if who is None:
+        cm = RE_VB2_CITE.match(text) or RE_PB_CITE.match(text)
+        if cm:
+            who = cm.group("who")
+            text = text[cm.end():]
+    text = phpbb_boxes(text, depth + 1)
+    cite = f"<cite>{esc(who)} ha scritto:</cite>" if who else ""
+    return f'<blockquote class="bbq">{cite}{text.strip()}</blockquote>'
+
+
+# One post of /thread/1005560-how-many-quotes-can-i-annidare/ nests 50 boxes —
+# it was written to find out how many the board would take. The recursion is one
+# frame per box, so the ceiling only has to stay under Python's own.
+def phpbb_boxes(body: str, depth: int = 0) -> str:
+    if depth > 64:
+        return body
+    if "BBCode Quote Start" in body:
+        body = _pb14_boxes(body, depth)
+    if 'class="genmed"' not in body:
+        return body
+    out, pos = [], 0
+    while (m := RE_PB20_BOX.search(body, pos)) is not None:
+        end = _tag_end(body, m.end(), "td")
+        inner = body[m.end():end]
+        if m.group("kind").lower() == "code":
+            box = f'<pre class="bbc-code">{inner.strip()}</pre>'
+        else:
+            wm = RE_PB20_WHO.match(m.group("label"))
+            box = _pb_quote(inner, wm.group("who") if wm else None, depth)
+        out.append(body[pos:m.start()])
+        out.append(box)
+        cm = RE_PB20_CLOSE.match(body, end)
+        pos = cm.end() if cm else end
+    out.append(body[pos:])
+    return "".join(out)
+
+
+def _pb14_boxes(body: str, depth: int) -> str:
+    """The 1.4 box, fenced by comments instead of by a class."""
+    out, pos = [], 0
+    marks = list(RE_PB14_Q.finditer(body))
+    i = 0
+    while i < len(marks):
+        m = marks[i]
+        if m.group("end").lower() == "end":       # a close with no open: chrome
+            out.append(body[pos:m.start()])
+            pos = m.end()
+            i += 1
+            continue
+        # Quotes nest, and so do the comments that fence them: walk to the End
+        # that brings the depth back to zero, not to the first one.
+        level, j = 1, i + 1
+        while j < len(marks) and level:
+            level += -1 if marks[j].group("end").lower() == "end" else 1
+            j += 1
+        end = marks[j - 1] if level == 0 else None
+        table = body[m.end():end.start() if end else len(body)]
+        im = RE_PB14_INNER.search(table)
+        # No `<blockquote>` means the snapshot cut the box open: leave the bytes
+        # as they are rather than invent a quote around half a table.
+        if im is None:
+            out.append(body[pos:m.end()])
+            pos = m.end()
+            i += 1
+            continue
+        out.append(body[pos:m.start()])
+        out.append(_pb_quote(im.group("in"), None, depth))
+        pos = end.end() if end else len(body)
+        i = j
+    out.append(body[pos:])
+    return "".join(out)
+
+
 # --------------------------------------------------- authored colours, both themes
 #
 # The board was black on white and the posters coloured against that canvas: the
@@ -1221,7 +1367,8 @@ def theme_colours(body: str) -> str:
 
 def body_html(raw: str, siblings: str = "", when_posted: str = "") -> str:
     """Entities first (BBCode hides inside `&#91;b&#93;`), then tags, then scrub."""
-    body = edit_notes(bbcode(vb_boxes(unescape_entities(raw))))
+    body = lift_flat_cite(edit_notes(bbcode(phpbb_boxes(vb_boxes(
+        unescape_entities(raw))))))
     if siblings:
         body = flat_quotes(body, siblings)
     body = internal_links(sanitise(body), when_posted)

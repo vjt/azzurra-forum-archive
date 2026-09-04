@@ -114,6 +114,22 @@ MONTHS = {"gen": "01", "feb": "02", "mar": "03", "apr": "04", "mag": "05",
 
 RE_FILE = re.compile(r'topic(?P<topic>\d+)_s(?P<start>\d+)\.html$')
 
+# Both parsers cut the body at a landmark that sits *inside* an element the page
+# opened earlier: 1.4's second `<HR>` is fenced by the date line's `</FONT>`, and
+# 2.0's `<span class="postbody">` is sometimes preceded by a `</span>` of the
+# cell around it. The slice therefore opens with a close tag that has no opener
+# in it — 2408 phpbb14 bodies and 445 phpbb20 ones. Left in, it closes whatever
+# the page had open around the post (the `<font color>` of the skin, measured on
+# /thread/689-gestione-schifosa-del-forum/), and it stops every downstream pass
+# that anchors on the start of the body from ever matching.
+RE_LEAD_CLOSE = re.compile(r'^\s*(?:</(?:font|span|b|i|u|em|strong|p|div)>\s*)+',
+                           re.I)
+
+
+def strip_lead_close(body: str) -> str:
+    """Drop the close tags the slice inherited from the markup around the post."""
+    return RE_LEAD_CLOSE.sub("", body).strip()
+
 
 def version(text: str) -> str | None:
     """Which generation wrote this page. 1.4 says so in the page footer; every
@@ -142,13 +158,17 @@ def parse_14(text: str, page: int) -> tuple[dict, list[dict]]:
         if not date:
             continue           # the header row, or a row with no post in it
         # The body sits between the rule that closes the date line and the one
-        # that opens the profile icons. Anchoring on the second `<HR>` rather
-        # than on a tag name is what makes this survive the missing classes.
-        rules = [m.end() for m in re.finditer(r'<HR>', row, re.I)]
+        # that opens the profile icons. Anchoring on a `<HR>` rather than on a
+        # tag name is what makes this survive the missing classes — but it must
+        # be the LAST rule of the row, not the second: 1.4 draws a quote box as
+        # a table fenced by two more `<HR>`, so `rules[1]` cuts 213 posts off at
+        # their first quote (measured: every one of them kept a `BBCode Quote
+        # Start` and lost its `Quote End`).
+        rules = list(re.finditer(r'<HR>', row, re.I))
         if len(rules) < 2:
             continue
-        body_html = row[rules[0]:rules[1]]
-        body_html = re.sub(r'<HR>\s*$', "", body_html, flags=re.I).strip()
+        body_html = row[rules[0].end():rules[-1].start()]
+        body_html = strip_lead_close(body_html.strip())
         user = RE_14_USER.search(row)
         pid = RE_14_PID.search(row)
         uid = RE_14_UID.search(row)
@@ -191,6 +211,7 @@ def parse_20(text: str, page: int) -> tuple[dict, list[dict]]:
             tail = block.find("</td>", body.end())
         body_html = block[body.end():tail if tail > 0 else len(block)]
         body_html = re.sub(r'</span>\s*$', "", body_html.strip()).strip()
+        body_html = strip_lead_close(body_html)
         subj = RE_20_SUBJ.search(block[:body.start()])
         posts.append({
             "post_id": int(m.group("pid")),

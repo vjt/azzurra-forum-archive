@@ -134,51 +134,83 @@ def same_post(a: set[str], b: set[str]) -> bool:
 # The mirror stamps to the minute and vBulletin to the minute, so this is
 # rounding slack, not a search window.
 NEAR_SECONDS = 180
-# The offsets to try when a thread has no exact duplicate to measure with.
-# Measured across the corpus: 0, +1h, -1h — the migration crossed a DST change.
+# The offsets a duplicate may sit at. Measured across the corpus: 0, +1h, -1h —
+# the migration crossed a DST change. They are tried PER POST, not per thread:
+# a thread that ran from March to November holds duplicates at two different
+# offsets, and picking one offset for the whole thread left 104 copies standing
+# (/thread/421-forum-azzurranet-e-bestemmie/ is one of them).
 CANDIDATE_OFFSETS = (0, 3600, -3600)
+# Below this many words a body is not an identity: "quoto", "ok anche per me".
+# Two posts that short are the same post only if the author says so too.
+SHORT_TOKENS = 5
 
 
-def dedup(existing: list, rows: list) -> tuple[float, list, int]:
-    """Split the mirror's posts into (clock offset, new posts, duplicates).
+class _Offsets:
+    """The clock offset as a function of when the post was written.
 
-    The offset between the two corpora is not known in advance, so each
-    candidate offset is scored by how many mirror posts it makes coincide with
-    a post already in the thread; the winner is the offset that explains most
-    of the overlap.
+    One number per thread is wrong for a thread that crossed the DST change: the
+    March posts sit an hour off the November ones. Each mirror post is placed
+    with the offset measured at the duplicate nearest to it in time.
     """
-    by_user: dict[str, list[tuple[datetime | None, set[str], object]]] = defaultdict(list)
-    for e in existing:
-        by_user[norm_user(e["username"])].append((parse_ts(e["posted_at"]), tokens(e["body_text"]), e["id"]))
 
-    best: tuple[int, float, list, int] | None = None
-    for cand in CANDIDATE_OFFSETS:
-        used: set[object] = set()
-        fresh: list = []
-        deltas: list[float] = []
-        for r in rows:
-            ts = parse_ts(r["posted_at"])
-            toks = tokens(r["body_text"])
-            twin = None
-            for ets, etoks, eid in by_user.get(norm_user(r["username"]), ()):
-                if eid in used or not ets or not ts:
-                    continue
-                if abs((ets - ts).total_seconds() - cand) > NEAR_SECONDS:
-                    continue
-                if same_post(toks, etoks):
-                    twin = (eid, (ets - ts).total_seconds())
-                    break
-            if twin is None:
-                fresh.append(r)
-            else:
-                used.add(twin[0])
-                deltas.append(twin[1])
-        score = len(deltas)
-        if best is None or score > best[0]:
-            offset = sorted(deltas)[len(deltas) // 2] if deltas else float(cand)
-            best = (score, offset, fresh, score)
-    assert best is not None
-    return best[1], best[2], best[3]
+    def __init__(self, twins: list[tuple[datetime, float]], median: float) -> None:
+        self._twins = twins
+        self._median = median
+
+    def at(self, ts: datetime | None) -> timedelta:
+        if ts is None or not self._twins:
+            return timedelta(seconds=self._median)
+        near = min(self._twins, key=lambda t: abs((t[0] - ts).total_seconds()))
+        return timedelta(seconds=near[1])
+
+
+def dedup(existing: list, rows: list) -> tuple[_Offsets, list, int]:
+    """Split the mirror's posts into (clock offsets, new posts, duplicates).
+
+    A mirror post is a copy of one already in the thread when the bodies match
+    and the two stamps sit one candidate offset apart. The author is evidence,
+    not a key: vBulletin's importer rewrote nicks it could not spell — phpBB's
+    `C|ty_Hunter` is vB's `City_Hunter`, `_theone_` is `theo` — and keying on
+    the name left 175 copies of a post standing next to the original.
+    """
+    pool = [
+        (parse_ts(e["posted_at"]), norm_user(e["username"]),
+         tokens(e["body_text"]), e["id"])
+        for e in existing
+    ]
+    used: set[object] = set()
+    fresh: list = []
+    twins: list[tuple[datetime, float]] = []
+    for r in rows:
+        ts = parse_ts(r["posted_at"])
+        user = norm_user(r["username"])
+        toks = tokens(r["body_text"])
+        best: tuple[tuple[int, float], object, float] | None = None
+        for ets, euser, etoks, eid in pool:
+            if eid in used or not ets or not ts:
+                continue
+            delta = (ets - ts).total_seconds()
+            if all(abs(delta - c) > NEAR_SECONDS for c in CANDIDATE_OFFSETS):
+                continue
+            if not same_post(toks, etoks):
+                continue
+            same_user = euser == user
+            if not same_user and min(len(toks), len(etoks)) < SHORT_TOKENS:
+                continue
+            # Same author beats a rewritten one, and the smaller offset beats
+            # the larger: both say "this is the copy" more loudly.
+            rank = (0 if same_user else 1, abs(delta))
+            if best is None or rank < best[0]:
+                best = (rank, eid, delta)
+        if best is None:
+            fresh.append(r)
+        else:
+            used.add(best[1])
+            twins.append((ts, best[2]))
+
+    twins.sort()
+    median = sorted(d for _, d in twins)[len(twins) // 2] if twins else 0.0
+    return _Offsets(twins, median), fresh, len(twins)
 
 
 def ensure_columns(db: sqlite3.Connection) -> None:
@@ -362,8 +394,7 @@ def merge(db: sqlite3.Connection, mapping: dict[int, int]) -> dict[str, int]:
             "SELECT id, seq, username, posted_at, body_text FROM posts WHERE thread_id = ? ORDER BY seq",
             (thread_id,),
         ).fetchall()
-        seconds, fresh, dups = dedup(existing, rows)
-        offset = timedelta(seconds=seconds)
+        offsets, fresh, dups = dedup(existing, rows)
         stats["posts_duplicate"] += dups
         if not fresh:
             continue
@@ -374,7 +405,7 @@ def merge(db: sqlite3.Connection, mapping: dict[int, int]) -> dict[str, int]:
             merged.append((ts, e["seq"], ("old", e["id"])))
         for i, r in enumerate(fresh):
             ts = parse_ts(r["posted_at"])
-            ts = (ts + offset) if ts else datetime.min
+            ts = (ts + offsets.at(ts)) if ts else datetime.min
             # Ties keep phpBB's own order, after everything vB already had at
             # the same minute: the mirror's minute is a rounding, not a clock.
             merged.append((ts, 1 << 20, ("new", i)))
