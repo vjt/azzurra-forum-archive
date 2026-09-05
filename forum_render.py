@@ -1096,10 +1096,19 @@ RE_VB_CELL = re.compile(r'<td[^>]*class="alt2"[^>]*>', re.I)
 RE_VB_PRE = re.compile(r'<pre[^>]*>(?P<in>.*?)</pre>', re.I | re.S)
 # `Originale inviato da` (vB3) and `Scritto originariamente da` (the later skin,
 # which also wraps the line in its own `<div>`) are the same header.
+#
+# The azzurra3.0 skin closes that header with a "go to the quoted post" link —
+# `<a href="showthread.php?p=…"><img src="azzurra3.0/buttons/viewpost.gif"></a>`
+# — between the nick and the `</div>`.  Not eating it left three wrecks in one:
+# an image pointing at a skin path that was never fetched, a stray `</div>` that
+# closed `div.body` and threw the rest of the thread OUT of the post, and the
+# quoted text in a bare italic div beside the box.  1080 posts across 216
+# threads (reported on /thread/4751-finalmente-qualcuno-che-lo-ammette-xd/).
 RE_VB3_CITE = re.compile(
     r'^\s*(?:<br\s*/?>\s*)*(?:<div[^>]*>\s*)?(?:Citazione\s*:\s*(?:<br\s*/?>\s*)*)?'
     r'(?:Originale inviato da|Scritto originariamente da)\s*'
     r'<(?:b|strong)>(?P<who>.{1,40}?)</(?:b|strong)>'
+    r'\s*(?:<a[^>]*>\s*(?:<img[^>]*>\s*)?</a>\s*)?'
     r'\s*(?:</div>\s*)?(?:<br\s*/?>\s*)*', re.I)
 RE_VB2_CITE = re.compile(
     r'^\s*(?:<br\s*/?>\s*)*In data\s+[^,<]{4,40},\s*(?P<who>.{1,40}?)\s+scrive\s*:'
@@ -1573,6 +1582,8 @@ footer.foot{margin-top:2rem;background:var(--bar) var(--barimg) repeat-x bottom 
 color:var(--barfg);border:1px solid var(--line);padding:.5rem .6rem;font-size:12.5px}
 footer.foot a{color:#cfe6f4}
 footer.foot a:hover{color:var(--hot)}
+a.cta{font-weight:bold;text-decoration:underline}
+footer.foot a.cta{color:#fff}
 table{max-width:100%;display:block;overflow-x:auto}
 """
 
@@ -1729,7 +1740,9 @@ height="96" alt="Azzurra IRC Network Forum"></a>
 
 FOOT = ('Archivio dei forum di Azzurra, ricostruito dagli snapshot di '
         '<a href="https://web.archive.org/">Internet Archive</a>. '
-        'I contenuti sono dei rispettivi autori.')
+        'I contenuti sono dei rispettivi autori.<br>'
+        'Il forum e\' fermo, la rete no: '
+        '<a class="cta" href="https://grappa.chat/it/">torna su IRC</a>.')
 
 THREADS_PER_PAGE = 100
 
@@ -2092,6 +2105,10 @@ def render(db_path: Path, out: Path, base_url: str) -> None:
                 '<code>+tac</code> non tirano su <em>tacca</em>. Senza, la '
                 'ricerca resta larga.</p>'
                 '<p class="meta" id="note"></p>'
+                '<p class="meta">Cercarsi il proprio nick e\' meta\' del '
+                'divertimento; l\'altra meta\' e\' che la rete non e\' mai '
+                'morta. <a class="cta" href="https://grappa.chat/it/">Torna '
+                'su IRC</a>.</p>'
                 '<ol class="res" id="res"></ol>'
                 '<noscript><p class="meta">La ricerca ha bisogno di JavaScript. '
                 'Senza, si naviga dall\'<a href="../">indice dei forum</a>: '
