@@ -1622,6 +1622,10 @@ function card(d) {
   const li = document.createElement("li");
   const a = document.createElement("a");
   a.href = href;
+  // A result opens in its own tab: the search box keeps its query and its
+  // result list, so you can walk a dozen hits without retyping (vjt, 2026-09-05).
+  a.target = "_blank";
+  a.rel = "noopener";
   a.textContent = d.meta && d.meta.title ? d.meta.title : d.url;
   const p = document.createElement("p");
   p.className = "ex";
