@@ -29,7 +29,7 @@ alle [release](https://github.com/vjt/azzurra-forum-archive/releases), perché
 | `forum_import.py` | HTML → SQLite. Ricostruisce `forum.db` da zero a ogni giro (~30 s). |
 | `oldboard_import.py` | Le pagine phpBB → tabelle di appoggio `old_posts` / `old_topics` / `old_forums` (~3 s). |
 | `oldboard_merge.py` | Ricuce i thread del mirror dentro quelli di vBulletin e inserisce i post che mancano (~18 s). |
-| `forum_render.py` | SQLite → sito statico: un indice, una pagina per forum, una per thread, più la ricerca. |
+| `forum_render.py` | SQLite → sito statico: un indice (sezioni + le 25 discussioni più lunghe), una pagina per forum, una per thread con messaggi, `senza-sezione/` per gli orfani, più la ricerca. |
 | `slow_get*.sh`, `batch_get*.sh`, `get_one.sh`, `retry_snaps.sh`, `retry_zero.sh` | I fetcher, nell'ordine in cui sono stati scritti. Quello che ha funzionato è `slow_get.sh`: pausa lunga, ripartibile, salta i file già pieni. |
 | `fetch_cdx*.sh`, `cdx_*.t*` | Interrogazioni all'indice CDX della Wayback e loro output: le liste di target nascono da qui. |
 | `fetch_assets.sh`, `assets_list.py`, `assets.tsv` | Il giro sulle immagini dei post: estrazione dei riferimenti, probe CDX, download. |
@@ -67,7 +67,7 @@ make db
 E per rifare tutto — database, sito e indice di ricerca — basta:
 
 ```sh
-make          # db (~3 min) + 7229 pagine (~20 s) + ricerca (~30 s)
+make          # db (~3 min) + 6634 pagine (~25 s) + ricerca (~30 s)
 make serve    # e lo si guarda su http://localhost:8000/
 ```
 
@@ -205,7 +205,13 @@ SELECT count(*) FROM posts WHERE truncated = 1;
   il mirror phpBB): lo snapshot è stato tagliato
   *prima* del corpo, quindi il file contiene solo `<head>` e la barra di navigazione. Non
   c'è niente da parsare: servono snapshot alternativi, cioè lavoro di scraping, non di
-  parser.
+  parser. Il sito **non le rende più**: una pagina col solo titolo non è un documento, e
+  i conteggi delle sezioni le escludono, quindi da nessun indice parte un link che muore.
+- **273 discussioni non appartengono a nessuna sezione** (`forum_id` NULL) e **58 sezioni
+  non hanno un nome** nello snapshot: entrambe finiscono in
+  [`senza-sezione/`](https://vjt.github.io/azzurra-forum-archive/senza-sezione/), che
+  esiste perché altrimenti quelle 206 discussioni con messaggi sarebbero raggiungibili
+  solo dalla ricerca.
 - **12 discussioni sono perse per sempre**: `t-{3009,3222,6976,7382,8149,8286,8438,8439,10312,11104,11198,12455}`.
   Ogni snapshot che l'Archive elenca per loro restituisce un corpo vuoto.
 - **22 post senza data**: lo snapshot non la conteneva.

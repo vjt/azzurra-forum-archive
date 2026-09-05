@@ -6,7 +6,7 @@
 #
 #   make            db + site + search index
 #   make db         pages/ -> forum.db              (~2 min)
-#   make site       forum.db -> site/               (~20 s, 7229 pages)
+#   make site       forum.db -> site/               (~25 s, 6634 pages)
 #   make search     site/ -> site/pagefind/         (~30 s)
 #   make serve      browse it at http://localhost:8000/
 #   make clean      throw away both artifacts

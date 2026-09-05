@@ -25,8 +25,8 @@ The rendered result is published at <https://vjt.github.io/azzurra-forum-archive
 ```sh
 make                                                 # all three, in order
 make db                                              # pages/ + oldboard/ -> forum.db  (~3 min)
-make site                                            # forum.db -> site/      (~20 s, 7229 pages)
-make search                                          # search index           (7070 pages, 256743 words)
+make site                                            # forum.db -> site/      (~25 s, 6634 pages)
+make search                                          # search index           (6474 pages, 256574 words)
 ```
 
 CI runs the same targets (`.github/workflows/site.yml`) and publishes the result to

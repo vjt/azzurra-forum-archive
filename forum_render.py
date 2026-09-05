@@ -1540,6 +1540,7 @@ background:var(--card);border:1px solid var(--line);border-radius:6px}
 .res{list-style:none;padding:0;margin:1rem 0}
 .res li{padding:.7rem 0;border-top:1px solid var(--line)}
 .res a{font-weight:600}
+.res .fo{margin:.15rem 0 0;color:var(--dim);font-size:.85rem}
 .res .ex{margin:.25rem 0 0;color:var(--dim);font-size:.92rem}
 .res mark{background:var(--acc);color:var(--bg);padding:0 .15em;border-radius:2px}
 .emo{font-size:1.1em;line-height:1;font-family:"Apple Color Emoji","Segoe UI Emoji",
@@ -1625,7 +1626,17 @@ function card(d) {
   const p = document.createElement("p");
   p.className = "ex";
   p.innerHTML = (sub ? sub.excerpt : d.excerpt) || "";
-  li.append(a, p);
+  li.append(a);
+  // The title alone does not say where a thread lived; `forum` comes from the
+  // data-pagefind-meta on the thread page (vjt, 2026-09-05).
+  const where = d.meta && d.meta.forum;
+  if (where) {
+    const f = document.createElement("p");
+    f.className = "fo";
+    f.textContent = where;
+    li.append(f);
+  }
+  li.append(p);
   return li;
 }
 
@@ -1718,6 +1729,11 @@ FOOT = ('Archivio dei forum di Azzurra, ricostruito dagli snapshot di '
 
 THREADS_PER_PAGE = 100
 
+# Where the sections without a saved name, and the threads without a section,
+# are collected.  One page for everything the board could not label, so the
+# main index stays a list of places people can recognise.
+OTHER_DIR = "senza-sezione"
+
 
 def write(path: Path, *, title: str, crumb: str, body: str, root: str,
           desc: str = "", extra: str = "") -> None:
@@ -1797,18 +1813,41 @@ def render(db_path: Path, out: Path, base_url: str) -> None:
             dst.parent.mkdir(parents=True, exist_ok=True)
             dst.write_bytes(src.read_bytes())
 
+    # `forums.thread_count` counts what the board had; the site can only show
+    # what the Archive saved, and 596 of those threads came back as a header
+    # with no posts under it.  Count the renderable ones, or every section
+    # advertises discussions that lead to an empty page.
     forums = db.execute(
-        "SELECT id, name, thread_count FROM forums ORDER BY thread_count DESC, id"
+        "SELECT f.id, f.name, count(t.id) AS thread_count "
+        "FROM forums f LEFT JOIN threads t "
+        "  ON t.forum_id = f.id AND t.post_count > 0 "
+        "GROUP BY f.id, f.name HAVING thread_count > 0 "
+        "ORDER BY thread_count DESC, f.id"
     ).fetchall()
     fslug = {f["id"]: f"{f['id']}-{slug(f['name'], 'forum')}" for f in forums}
-    fname = {f["id"]: (f["name"] or f"forum {f['id']}") for f in forums}
+    fname = {f["id"]: (f["name"] or f"sezione {f['id']}") for f in forums}
+    # 58 sections reached us through pages that never showed their own name —
+    # the lo-fi view carries the thread list and no heading.  They are real
+    # sections with real threads, so they keep their pages; they just do not
+    # belong in an index whose whole job is to be read by name.
+    named = [f for f in forums if f["name"]]
+    unnamed = [f for f in forums if not f["name"]]
+    # 206 threads were read from a page that named neither their section nor a
+    # link back to it.  Without this listing they exist, are rendered, and are
+    # reachable from nowhere.
+    orphans = db.execute(
+        "SELECT id, title, post_count, first_post_at, last_post_at "
+        "FROM threads WHERE forum_id IS NULL AND post_count > 0 "
+        "ORDER BY coalesce(last_post_at, first_post_at) DESC, id DESC"
+    ).fetchall()
 
     urls: list[str] = [""]
     n_files = 0
 
     # --- index -------------------------------------------------------------
     n_threads, n_posts = db.execute(
-        "SELECT (SELECT count(*) FROM threads), (SELECT count(*) FROM posts)"
+        "SELECT (SELECT count(*) FROM threads WHERE post_count > 0), "
+        "       (SELECT count(*) FROM posts)"
     ).fetchone()
     span = db.execute(
         "SELECT min(posted_at), max(posted_at) FROM posts WHERE posted_at IS NOT NULL"
@@ -1816,8 +1855,31 @@ def render(db_path: Path, out: Path, base_url: str) -> None:
     rows = "".join(
         f'<li><a href="forum/{fslug[f["id"]]}/">{esc(fname[f["id"]])}</a>'
         f'<div class="meta">{f["thread_count"]} discussioni</div></li>'
-        for f in forums
+        for f in named
     )
+    # The longest threads are the archive's own landmarks: four thousand posts
+    # of "oggi mi sento" say more about the place than any section listing.
+    top = db.execute(
+        "SELECT id, title, post_count, forum_id, first_post_at, last_post_at "
+        "FROM threads WHERE post_count > 0 ORDER BY post_count DESC, id LIMIT 25"
+    ).fetchall()
+    top_rows = "".join(
+        f'<li><a href="thread/{t["id"]}-{slug(t["title"])}/">'
+        f'{esc(t["title"] or f"discussione {t['id']}")}</a>'
+        f'<div class="meta">{t["post_count"]} messaggi'
+        + (f' &middot; {esc(fname[t["forum_id"]])}'
+           if t["forum_id"] in fname and fname[t["forum_id"]] else "")
+        + f' &middot; {when(t["first_post_at"])} &rarr; '
+          f'{when(t["last_post_at"])}</div></li>'
+        for t in top
+    )
+    n_other = sum(f["thread_count"] for f in unnamed) + len(orphans)
+    other_note = (
+        f'<p class="meta"><a href="{OTHER_DIR}/">Discussioni senza sezione</a> '
+        f'&mdash; {n_other} discussioni cadute fuori dall\'indice: '
+        f'{len(unnamed)} sezioni di cui non si e\' salvato il nome e '
+        f'{len(orphans)} discussioni che non dicono da quale venissero.</p>'
+        if n_other else "")
     write(out / "index.html", title="Archivio forum Azzurra",
           crumb="indice dei forum", root="",
           desc=f"I forum storici di Azzurra: {n_threads} discussioni e "
@@ -1825,6 +1887,9 @@ def render(db_path: Path, out: Path, base_url: str) -> None:
           body=(f'<p class="meta">{len(forums)} forum, {n_threads} discussioni, '
                 f'{n_posts} messaggi, dal {when(span[0])} al {when(span[1])}.</p>'
                 f'<ul class="list">{rows}</ul>'
+                + other_note
+                + '<h2 class="tt">Le discussioni piu\' lunghe</h2>'
+                f'<ul class="list">{top_rows}</ul>'
                 + db_download_note(out)))
     n_files += 1
 
@@ -1832,7 +1897,7 @@ def render(db_path: Path, out: Path, base_url: str) -> None:
     for f in forums:
         threads = db.execute(
             "SELECT id, title, post_count, first_post_at, last_post_at "
-            "FROM threads WHERE forum_id = ? "
+            "FROM threads WHERE forum_id = ? AND post_count > 0 "
             "ORDER BY coalesce(last_post_at, first_post_at) DESC, id DESC",
             (f["id"],),
         ).fetchall()
@@ -1860,9 +1925,52 @@ def render(db_path: Path, out: Path, base_url: str) -> None:
             urls.append(rel)
             n_files += 1
 
+    # --- what has no name and no section ------------------------------------
+    if unnamed or orphans:
+        sect = "".join(
+            f'<li><a href="../forum/{fslug[f["id"]]}/">sezione {f["id"]}</a>'
+            f'<div class="meta">{f["thread_count"]} discussioni</div></li>'
+            for f in unnamed
+        )
+        opages = max(1, -(-len(orphans) // THREADS_PER_PAGE))
+        for p in range(1, opages + 1):
+            chunk = orphans[(p - 1) * THREADS_PER_PAGE: p * THREADS_PER_PAGE]
+            up = "../" if p == 1 else "../../"
+            items = "".join(
+                f'<li><a href="{up}thread/{t["id"]}-{slug(t["title"])}/">'
+                f'{esc(t["title"] or f"discussione {t['id']}")}</a>'
+                f'<div class="meta">{t["post_count"]} messaggi &middot; '
+                f'{when(t["first_post_at"])} &rarr; {when(t["last_post_at"])}</div></li>'
+                for t in chunk
+            )
+            rel = f"{OTHER_DIR}/" + ("" if p == 1 else f"page-{p}/")
+            write(out / rel / "index.html",
+                  title="Senza sezione — Archivio forum Azzurra",
+                  crumb=f'<a href="{up}">forum</a> &rsaquo; senza sezione',
+                  root=up,
+                  desc="Le sezioni di cui non si e' salvato il nome e le "
+                       "discussioni che non dicono da quale venissero.",
+                  body=('<h2 class="tt">Senza sezione</h2>'
+                        '<p class="meta">Gli snapshot da cui viene questa roba '
+                        'non portavano l\'intestazione della sezione. Le '
+                        'discussioni sono intere: manca solo il nome del posto '
+                        'da cui venivano.</p>'
+                        + (f'<h3 class="tt">{len(unnamed)} sezioni senza nome</h3>'
+                           f'<ul class="list">{sect}</ul>' if sect and p == 1 else "")
+                        + (f'<h3 class="tt">{len(orphans)} discussioni senza '
+                           f'sezione</h3>' if orphans and p == 1 else "")
+                        + f'<ul class="list">{items}</ul>'
+                        + pager(opages, p, up, OTHER_DIR)))
+            urls.append(rel)
+            n_files += 1
+
     # --- threads ------------------------------------------------------------
+    # Empty threads are not rendered at all: a page that says "the Archive
+    # saved only the header" is a dead end for a reader and a dead end for
+    # search.  They stay in the DB, which is where that fact belongs.
     threads = db.execute(
-        "SELECT id, title, forum_id, post_count FROM threads ORDER BY id"
+        "SELECT id, title, forum_id, post_count FROM threads "
+        "WHERE post_count > 0 ORDER BY id"
     ).fetchall()
     # Index for the internal-link rewrite: thread pages are siblings, so the
     # href from inside one of them is `../<id>-<slug>/`.
@@ -1874,7 +1982,11 @@ def render(db_path: Path, out: Path, base_url: str) -> None:
         f["id"]: (f"../../forum/{fslug[f['id']]}/", fname[f["id"]])
         for f in forums
     })
-    for t in db.execute("SELECT id, title, first_post_at FROM threads"):
+    # Only the threads that get a page: rewriting a link to an empty one would
+    # trade a dead old-board URL for a dead local 404, which is worse — the
+    # reader can at least try the Archive with the original.
+    for t in db.execute("SELECT id, title, first_post_at FROM threads "
+                        "WHERE post_count > 0"):
         title = t["title"] or f"discussione {t['id']}"
         THREAD_LINKS[t["id"]] = (f"../{t['id']}-{slug(title)}/", title,
                                  t["first_post_at"] or "")
@@ -1912,7 +2024,8 @@ def render(db_path: Path, out: Path, base_url: str) -> None:
         fvotes[r["old_id"]][r["new_id"]] += 1
     OLD_FORUMS.update({old: tally.most_common(1)[0][0]
                        for old, tally in fvotes.items()})
-    empty = 0
+    empty = db.execute(
+        "SELECT count(*) FROM threads WHERE post_count = 0").fetchone()[0]
     for t in threads:
         posts = db.execute(
             "SELECT seq, username, posted_at, body_html, body_text, truncated "
@@ -1941,22 +2054,23 @@ def render(db_path: Path, out: Path, base_url: str) -> None:
                 f'{body_html(p["body_html"], sib, p["posted_at"] or "")}</div>'
                 f"{trunc}</article>"
             )
-        if not blocks:
-            empty += 1
-            blocks.append('<article class="post"><div class="body"><em>'
-                          "Di questa discussione l'Archive ha salvato solo "
-                          "l'intestazione: nessun messaggio recuperabile."
-                          "</em></div></article>")
         crumb = '<a href="../../">forum</a>'
+        # The section name doubles as a search result's second line, so it has
+        # to say something even when the section never told us its own name.
         if t["forum_id"] in fslug:
+            where = fname[t["forum_id"]]
             crumb += (f' &rsaquo; <a href="../../forum/{fslug[t["forum_id"]]}/">'
-                      f'{esc(fname[t["forum_id"]])}</a>')
+                      f'{esc(where)}</a>')
+        else:
+            where = "senza sezione"
+            crumb += f' &rsaquo; <a href="../../{OTHER_DIR}/">senza sezione</a>'
         rel = f"thread/{t['id']}-{slug(title)}/"
         write(out / rel / "index.html",
               title=f"{title} — Archivio forum Azzurra", crumb=crumb, root="../../",
               desc=(plain(posts[0]["body_text"])[:180] if posts else
                     f"Discussione {t['id']} dei forum di Azzurra."),
-              body=(f'<div data-pagefind-body>'
+              body=(f'<div data-pagefind-body '
+                    f'data-pagefind-meta="forum:{esc(where)}">'
                     f'<h1 class="tt" data-pagefind-meta="title">{esc(title)}</h1>'
                     f'{"".join(blocks)}</div>'))
         urls.append(rel)
